@@ -1,14 +1,7 @@
 import { useState } from "react"
+import {data} from "../../data/words"
 export function Arabic(){
-    const all_words =[ 
-        {language: "Arabic", topic: "Food", englishWord: "potato", foreignWord: "batatis (بَطَاطِس)"},
-        {language: "Arabic", topic: "Food", englishWord: "bread", foreignWord: "khubz (خُبْز)"},
-        {language: "Arabic", topic: "Colours", englishWord: "yellow", foreignWord: "asfar (أَصْفَر)"},
-        {language: "Arabic", topic: "Colours", englishWord: "blue", foreignWord: "azraq (أَزْرَق)"},
-        {language: "Arabic", topic: "Numbers", englishWord: "two", foreignWord: "ithnain (اِثْنَان)"},
-        {language: "Arabic", topic: "Numbers", englishWord: "five", foreignWord: "khamsah (خَمْسَة)"},
-        {language: "Arabic", topic: "Numbers", englishWord: "one", foreignWord: "waheed (وَاحِد)"}
-    ]
+    const all_words = data.filter((word) => {return word.language === "Arabic" })
     
         const clothes = all_words.filter((word) => {return word.topic === "Food" })
         const colours = all_words.filter((word) => {return word.topic === "Colours" })

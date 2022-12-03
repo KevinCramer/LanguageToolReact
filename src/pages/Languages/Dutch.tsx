@@ -1,15 +1,7 @@
 import { useState } from "react"
-
+import {data} from "../../data/words"
 export function Dutch(){
-    const all_words =[ 
-    {language: "Dutch", topic: "Clothes", englishWord: "trousers", foreignWord: "broek"},
-    {language: "Dutch", topic: "Clothes", englishWord: "sweater", foreignWord: "trui"},
-    {language: "Dutch", topic: "Colours", englishWord: "red", foreignWord: "rood"},
-    {language: "Dutch", topic: "Colours", englishWord: "blue", foreignWord: "blauw"},
-    {language: "Dutch", topic: "Numbers", englishWord: "six", foreignWord: "zes"},
-    {language: "Dutch", topic: "Numbers", englishWord: "eight", foreignWord: "acht"},
-    {language: "Dutch", topic: "Numbers", englishWord: "eleven", foreignWord: "elf"}
-]
+    const all_words = data.filter((word) => {return word.language === "Dutch" })
 
     const clothes = all_words.filter((word) => {return word.topic === "Clothes" })
     const colours = all_words.filter((word) => {return word.topic === "Colours" })
