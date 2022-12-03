@@ -1,7 +1,6 @@
 import { useState } from "react"
 import {dutch as language} from "../../data/words"
 
-
 export function Dutch(){
     var x =1;
     var setting = "Study"
@@ -15,7 +14,7 @@ export function Dutch(){
     const changeCategoryToNumbers = () => { return setCategory("Numbers")}
     var [setting,setSetting] = useState(setting)
     const changeSetting = () => { return setSetting((setting === "Study" ? "Quiz": "Study"))}
-    function Arabic2( StudyOrQuiz: string){
+    function ToggleQuiz( StudyOrQuiz: string){
         if (StudyOrQuiz === "Study") {
             return (
    
@@ -39,7 +38,7 @@ export function Dutch(){
 
         return (
         <div>    
-            <h1>Dutch</h1>
+            <h1>Arabic</h1>
                 <button onClick={handleClick} >Toggle Languages</button>
                 <button onClick={changeCategoryToFood} >Food</button>
                 <button onClick={changeCategoryToClothes} >Clothes</button>
@@ -47,7 +46,7 @@ export function Dutch(){
                 <button onClick={changeCategoryToNumbers} >Numbers</button>
                 <button onClick={changeSetting} >Quiz/Study</button>
                 <p></p>
-                {Arabic2(setting)}
+                {ToggleQuiz(setting)}
         </div>
         )
     }

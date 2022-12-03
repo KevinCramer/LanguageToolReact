@@ -7,7 +7,7 @@ export function Arabic(){
     var setting = "Study"
     var [x,setX] = useState(x)
     const handleClick = () => { return setX(x*(-1))}
-    var category = "Food"
+    var category = "Clothes"
     var [category,setCategory] = useState(category)
     const changeCategoryToFood = () => { return setCategory("Food")}
     const changeCategoryToClothes = () => { return setCategory("Clothes")}
@@ -15,7 +15,7 @@ export function Arabic(){
     const changeCategoryToNumbers = () => { return setCategory("Numbers")}
     var [setting,setSetting] = useState(setting)
     const changeSetting = () => { return setSetting((setting === "Study" ? "Quiz": "Study"))}
-    function Arabic2( StudyOrQuiz: string){
+    function ToggleQuiz( StudyOrQuiz: string){
         if (StudyOrQuiz === "Study") {
             return (
    
@@ -47,7 +47,7 @@ export function Arabic(){
                 <button onClick={changeCategoryToNumbers} >Numbers</button>
                 <button onClick={changeSetting} >Quiz/Study</button>
                 <p></p>
-                {Arabic2(setting)}
+                {ToggleQuiz(setting)}
         </div>
         )
     }
