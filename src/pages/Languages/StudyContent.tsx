@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { Key, useState } from "react"
 
 const StudyContent = (props: any) => {
     const language = props.language
@@ -20,14 +20,14 @@ const StudyContent = (props: any) => {
             return (
    
                 <div>
-                    {category_words.map(word => (<div key={word.englishWord} > {x===1? word.englishWord + " = " + word.foreignWord : word.foreignWord + " = " + word.englishWord} </div>))}
+                    {category_words.map((word: { englishWord: Key | null | undefined; foreignWord: string; }) => (<div key={word.englishWord} > {x===1? word.englishWord + " = " + word.foreignWord : word.foreignWord + " = " + word.englishWord} </div>))}
                 </div>
         )
         }
         if (StudyOrQuiz === "Quiz") {
             return (
                 <div>
-                    {category_words.map(word => (<div><div key={word.englishWord} >{x===1? word.englishWord + " = " : word.foreignWord + " = "}  <form style={{ display: 'flex', flexDirection : 'row'}}><input type="text" id="name" /></form></div></div>))}
+                    {category_words.map((word: { englishWord: Key | null | undefined; foreignWord: string; }) => (<div><div key={word.englishWord} >{x===1? word.englishWord + " = " : word.foreignWord + " = "}  <form style={{ display: 'flex', flexDirection : 'row'}}><input type="text" id="name" /></form></div></div>))}
                     
                 </div>
             )
@@ -35,7 +35,7 @@ const StudyContent = (props: any) => {
 
     }
 
-    var category_words = language.filter((word) => {return word.topic === category} )
+    var category_words = language.filter((word: { topic: string; }) => {return word.topic === category} )
     return (
         <div>    
             <h1>{languageName}</h1>
