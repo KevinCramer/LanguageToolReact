@@ -1,7 +1,7 @@
 import { useState } from "react"
-import {dutch as language} from "../../data/words"
+import {arabic as language} from "../../data/words"
 
-export function Dutch(){
+const StudyContent = () => {
     var x =1;
     var setting = "Study"
     var [x,setX] = useState(x)
@@ -35,10 +35,9 @@ export function Dutch(){
     }
 
     var category_words = language.filter((word) => {return word.topic === category} )
-
-        return (
+    return (
         <div>    
-            <h1>Dutch</h1>
+            <h1>Arabic</h1>
                 <button onClick={handleClick} >Toggle Languages</button>
                 <button onClick={changeCategoryToFood} >Food</button>
                 <button onClick={changeCategoryToClothes} >Clothes</button>
@@ -48,8 +47,7 @@ export function Dutch(){
                 <p></p>
                 {ToggleQuiz(setting)}
         </div>
-        )
-    }
-
-
-    
+      );
+}
+ 
+export default StudyContent;
