@@ -13,12 +13,12 @@ export function NavbarLanguages(){
                 <Nav.Link to="/study/dutch" as= {NavLink}>
                     Dutch
                 </Nav.Link>
-              {/*   <Nav.Link to="/study/japanese" as= {NavLink}>
+        {/*         <Nav.Link to="/study/japanese" as= {NavLink}>
                     Japanese
-                </Nav.Link>
+                </Nav.Link> */}
                 <Nav.Link to="/study/spanish" as= {NavLink}>
                     Spanish
-                </Nav.Link> */}
+                </Nav.Link>
             </Nav>
         </Container>
     </NavbarBs>

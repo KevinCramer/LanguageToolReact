@@ -1,7 +1,8 @@
 import { useState } from "react"
-import {arabic as language} from "../../data/words"
 
-const StudyContent = () => {
+const StudyContent = (props: any) => {
+    const language = props.language
+    const languageName = props.languageName
     var x =1;
     var setting = "Study"
     var [x,setX] = useState(x)
@@ -37,7 +38,7 @@ const StudyContent = () => {
     var category_words = language.filter((word) => {return word.topic === category} )
     return (
         <div>    
-            <h1>Arabic</h1>
+            <h1>{languageName}</h1>
                 <button onClick={handleClick} >Toggle Languages</button>
                 <button onClick={changeCategoryToFood} >Food</button>
                 <button onClick={changeCategoryToClothes} >Clothes</button>

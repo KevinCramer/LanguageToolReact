@@ -1,12 +1,10 @@
-import { useState } from "react"
-import {arabic as language} from "../../data/words"
 import StudyContent from "./StudyContent"
-
+import {arabic} from "../../data/words"
 
 export function Arabic(){
         return (
         <div>    
-            <StudyContent/>
+            <StudyContent language = {arabic} languageName = "Arabic"/>
         </div>
         )
     }
