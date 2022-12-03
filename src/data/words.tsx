@@ -1,4 +1,14 @@
-export const dutch = [ 
+export const dutch = [
+{topic: "Food", englishWord: "potato", foreignWord: "aardappel"},
+{topic: "Food", englishWord: "bread", foreignWord: "brood"},
+{topic: "Food", englishWord: "meat", foreignWord: "vlees"},
+{topic: "Food", englishWord: "egg", foreignWord: "ei"},
+{topic: "Food", englishWord: "strawberry", foreignWord: "aardbei"},
+{topic: "Food", englishWord: "garlic", foreignWord: "knoflook"},
+{topic: "Food", englishWord: "butter", foreignWord: "boter"},
+{topic: "Food", englishWord: "fish", foreignWord: "vis"},
+{topic: "Food", englishWord: "chicken", foreignWord: "kip"},
+{topic: "Food", englishWord: "cheese", foreignWord: "kaas"}, 
 {topic: "Clothes", englishWord: "trousers", foreignWord: "broek"},
 {topic: "Clothes", englishWord: "sweater", foreignWord: "trui"},
 {topic: "Clothes", englishWord: "underwear", foreignWord: "onderbroek"},
@@ -32,6 +42,16 @@ export const dutch = [
 
 ]
 export const arabic = [
+{topic: "Clothes", englishWord: "trousers", foreignWord: "banṭalūn (بَنْطَلُون)"},
+{topic: "Clothes", englishWord: "dress", foreignWord: "fustān (فُسْتَان)"},
+{topic: "Clothes", englishWord: "robe", foreignWord: "thawb (ثَوْب)"},
+{topic: "Clothes", englishWord: "suit", foreignWord: "badhlah (بَذْلَة)"},
+{topic: "Clothes", englishWord: "sock", foreignWord: "jārib (حِذَاء)"},
+{topic: "Clothes", englishWord: "shoes", foreignWord: "ḥidhā` (حِذَاء)"},
+{topic: "Clothes", englishWord: "belt", foreignWord: "ḥizām (حِزَام)"},
+{topic: "Clothes", englishWord: "coat", foreignWord: "mi'ṭaf (مِعْطَف)"},
+{topic: "Clothes", englishWord: "cap", foreignWord: "qubba'ah (قُبَّعَة)"},
+{topic: "Clothes", englishWord: "shirt", foreignWord: "qamīṣ (قَمِيص)"},
 {topic: "Food", englishWord: "potato", foreignWord: "batatis (بَطَاطِس)"},
 {topic: "Food", englishWord: "bread", foreignWord: "khubz (خُبْز)"},
 {topic: "Food", englishWord: "meat", foreignWord: "laḥm (لَحْم)"},

@@ -10,6 +10,7 @@ export function Arabic(){
     var category = "Food"
     var [category,setCategory] = useState(category)
     const changeCategoryToFood = () => { return setCategory("Food")}
+    const changeCategoryToClothes = () => { return setCategory("Clothes")}
     const changeCategoryToColours = () => { return setCategory("Colours")}
     const changeCategoryToNumbers = () => { return setCategory("Numbers")}
     var [setting,setSetting] = useState(setting)
@@ -41,6 +42,7 @@ export function Arabic(){
             <h1>Arabic</h1>
                 <button onClick={handleClick} >Toggle Languages</button>
                 <button onClick={changeCategoryToFood} >Food</button>
+                <button onClick={changeCategoryToClothes} >Clothes</button>
                 <button onClick={changeCategoryToColours} >Colours</button>
                 <button onClick={changeCategoryToNumbers} >Numbers</button>
                 <button onClick={changeSetting} >Quiz/Study</button>

@@ -9,6 +9,7 @@ export function Dutch(){
     const handleClick = () => { return setX(x*(-1))}
     var category = "Clothes"
     var [category,setCategory] = useState(category)
+    const changeCategoryToFood = () => { return setCategory("Food")}
     const changeCategoryToClothes = () => { return setCategory("Clothes")}
     const changeCategoryToColours = () => { return setCategory("Colours")}
     const changeCategoryToNumbers = () => { return setCategory("Numbers")}
@@ -40,6 +41,7 @@ export function Dutch(){
         <div>    
             <h1>Dutch</h1>
                 <button onClick={handleClick} >Toggle Languages</button>
+                <button onClick={changeCategoryToFood} >Food</button>
                 <button onClick={changeCategoryToClothes} >Clothes</button>
                 <button onClick={changeCategoryToColours} >Colours</button>
                 <button onClick={changeCategoryToNumbers} >Numbers</button>
