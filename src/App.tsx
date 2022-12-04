@@ -1,5 +1,4 @@
 import {Routes, Route} from "react-router-dom"
-import {Container} from "react-bootstrap"
 import {Home} from "./pages/Home"
 import {Study} from "./pages/Study"
 import {About} from "./pages/About"
@@ -8,16 +7,14 @@ import {Arabic} from "./pages/Languages/Arabic"
 import {Dutch} from "./pages/Languages/Dutch"
 import {Japanese} from "./pages/Languages/Japanese"
 import {Spanish} from "./pages/Languages/Spanish"
-
-
 import {Navbar} from "./components/Navbar"
+import './App.css';
 
 
 function App() {
   return( 
     <>
   <Navbar/>
-  <Container className = "mb-4">
     <Routes>
       <Route path ="/" element = {<Home/>}/>
       <Route path ="/study" element = {<Study/>}/>
@@ -30,7 +27,6 @@ function App() {
 
 
     </Routes>
-  </Container>
   </>
   
   )

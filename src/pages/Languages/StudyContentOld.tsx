@@ -1,7 +1,5 @@
 import { Key, useState } from "react"
 import './button.css';
-import Button from "./Button"
-
 
 const StudyContent = (props: any) => {
     const language = props.language
@@ -45,7 +43,6 @@ const StudyContent = (props: any) => {
     return (
         <div>    
             <h1>{languageName}</h1>
-                <StudyContent clickMethod = {handleClick} ButtonName = "Toggle Languages"/>
                 <button className="btn" onClick={handleClick}  >Toggle Languages</button>
                 <button className="btn"onClick={changeCurrentTopicToFood} >Food</button>
                 <button className="btn"onClick={changeCurrentTopicToClothes} >Clothes</button>
