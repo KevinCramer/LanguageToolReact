@@ -1,6 +1,5 @@
 import {Nav} from "react-bootstrap"
 import {NavLink} from "react-router-dom"
-import  "./navbarlanguages.css"
 import  "./navbar.css"
 export function Navbar(){
     return( 

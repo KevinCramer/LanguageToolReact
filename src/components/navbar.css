@@ -3,3 +3,10 @@
     align-items: center;
     justify-content: space-between;
 }
+
+.mynavbarlanguages {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 100px;
+}

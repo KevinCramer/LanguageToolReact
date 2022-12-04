@@ -1,6 +1,5 @@
 import {Routes, Route} from "react-router-dom"
 import {Home} from "./pages/Home"
-import {Study} from "./pages/Study"
 import {About} from "./pages/About"
 import {Amharic} from "./pages/Languages/Amharic"
 import {Arabic} from "./pages/Languages/Arabic"
@@ -17,7 +16,6 @@ function App() {
   <Navbar/>
     <Routes>
       <Route path ="/" element = {<Home/>}/>
-      <Route path ="/study" element = {<Study/>}/>
       <Route path ="/about" element = {<About/>}/>
       <Route path ="/study/amharic" element = {<Amharic/>}/>
       <Route path ="/study/arabic" element = {<Arabic/>}/>
