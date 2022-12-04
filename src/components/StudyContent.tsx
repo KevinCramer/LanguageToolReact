@@ -25,7 +25,7 @@ const StudyContent = (props: any) => {
         if (quiz) {
             return (
                 <div>
-                    {topic_words.map((word: { englishWord: Key | null | undefined; foreignWord: string; }) => (<div><div key={word.englishWord} >{showBaseLanguage? word.englishWord + " = " : word.foreignWord + " = "}  <form style={{ display: 'flex', flexDirection : 'row'}}><input type="text" id="name" /></form></div></div>))}
+                    {topic_words.map((word: { englishWord: Key | null | undefined; foreignWord: string; }) => (<div><div className = "Container" key={word.englishWord} >{showBaseLanguage? word.englishWord: word.foreignWord}  <form><input type="text" id="name" /></form></div></div>))}
                 </div>
            
         )
@@ -33,7 +33,7 @@ const StudyContent = (props: any) => {
         else {
             return (
                 <div>
-                    {topic_words.map((word: { englishWord: Key | null | undefined; foreignWord: string; }) => (<div key={word.englishWord} > {showBaseLanguage? word.englishWord + " = " + word.foreignWord : word.foreignWord + " = " + word.englishWord} </div>))}
+                    {topic_words.map((word: { englishWord: Key | null | undefined; foreignWord: string; }) => (<div key={word.englishWord} > {showBaseLanguage? word.englishWord + word.foreignWord : word.foreignWord + word.englishWord} </div>))}
                 </div>
 
             )
