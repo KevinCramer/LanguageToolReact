@@ -1,4 +1,4 @@
-import StudyContent from "./StudyContentOld"
+import StudyContent from "../../components/StudyContent"
 import {arabic} from "../../data/words"
 
 export function Arabic(){

@@ -1,4 +1,4 @@
-import StudyContent from "./StudyContentOld"
+import StudyContent from "../../components/StudyContent"
 import {spanish} from "../../data/words"
 export function Spanish(){
         return (
