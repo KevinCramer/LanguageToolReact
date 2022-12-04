@@ -5,6 +5,11 @@
     font-family: 'PT Sans', sans-serif;
 }
 
+.Container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
 
 

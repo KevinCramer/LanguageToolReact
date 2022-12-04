@@ -45,12 +45,14 @@ const StudyContent = (props: any) => {
     return (
         <div>    
             <h1>{languageName}</h1>
-                <Button clickMethod = {handleClick} ButtonName = "Toggle Languages"/>
-                <Button clickMethod = {changeCurrentTopicToClothes} ButtonName = "Clothes"/>
-                <Button clickMethod = {changeCurrentTopicToColours} ButtonName = "Colours"/>
-                <Button clickMethod = {changeCurrentTopicToFood} ButtonName = "Food"/>
-                <Button clickMethod = {changeCurrentTopicToNumbers} ButtonName = "Numbers"/>
-                <Button clickMethod = {changeQuizState} ButtonName = "Quiz/Study"/>
+                <div className = "Container">
+                    <Button clickMethod = {handleClick} ButtonName = "Toggle Languages"/>
+                    <Button clickMethod = {changeCurrentTopicToClothes} ButtonName = "Clothes"/>
+                    <Button clickMethod = {changeCurrentTopicToColours} ButtonName = "Colours"/>
+                    <Button clickMethod = {changeCurrentTopicToFood} ButtonName = "Food"/>
+                    <Button clickMethod = {changeCurrentTopicToNumbers} ButtonName = "Numbers"/>
+                    <Button clickMethod = {changeQuizState} ButtonName = "Quiz/Study"/>
+                </div>
                 <p></p>
                 {ToggleQuiz()}
         </div>
