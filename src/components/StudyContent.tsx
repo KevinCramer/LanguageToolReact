@@ -18,7 +18,7 @@ const StudyContent = (props: any) => {
     const changeCurrentTopicToFood = () => { return setCurrentTopic(topics[2])}
     const changeCurrentTopicToNumbers = () => { return setCurrentTopic(topics[3])}
 
-    var quiz = true
+    var quiz = false
     var [quiz,setQuiz] = useState(quiz)
     const changeQuizState = () => { return setQuiz((!quiz))}
     function ToggleQuiz(){
