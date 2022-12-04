@@ -1,4 +1,5 @@
 import { Key, useState } from "react"
+import './button.css';
 
 const StudyContent = (props: any) => {
     const language = props.language
@@ -42,12 +43,12 @@ const StudyContent = (props: any) => {
     return (
         <div>    
             <h1>{languageName}</h1>
-                <button onClick={handleClick} >Toggle Languages</button>
-                <button onClick={changeCurrentTopicToFood} >Food</button>
-                <button onClick={changeCurrentTopicToClothes} >Clothes</button>
-                <button onClick={changeCurrentTopicToColours} >Colours</button>
-                <button onClick={changeCurrentTopicToNumbers} >Numbers</button>
-                <button onClick={changeQuizState} >Quiz/Study</button>
+                <button className="btn" onClick={handleClick}  >Toggle Languages</button>
+                <button className="btn"onClick={changeCurrentTopicToFood} >Food</button>
+                <button className="btn"onClick={changeCurrentTopicToClothes} >Clothes</button>
+                <button className="btn"onClick={changeCurrentTopicToColours} >Colours</button>
+                <button className="btn"onClick={changeCurrentTopicToNumbers} >Numbers</button>
+                <button className="btn"onClick={changeQuizState} >Quiz/Study</button>
                 <p></p>
                 {ToggleQuiz()}
         </div>
