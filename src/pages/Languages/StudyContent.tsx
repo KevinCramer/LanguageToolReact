@@ -3,50 +3,53 @@ import { Key, useState } from "react"
 const StudyContent = (props: any) => {
     const language = props.language
     const languageName = props.languageName
-    var x =1;
-    var setting = "Study"
-    var [x,setX] = useState(x)
-    const handleClick = () => { return setX(x*(-1))}
-    var category = "Clothes"
-    var [category,setCategory] = useState(category)
-    const changeCategoryToFood = () => { return setCategory("Food")}
-    const changeCategoryToClothes = () => { return setCategory("Clothes")}
-    const changeCategoryToColours = () => { return setCategory("Colours")}
-    const changeCategoryToNumbers = () => { return setCategory("Numbers")}
-    var [setting,setSetting] = useState(setting)
-    const changeSetting = () => { return setSetting((setting === "Study" ? "Quiz": "Study"))}
-    function ToggleQuiz( StudyOrQuiz: string){
-        if (StudyOrQuiz === "Study") {
+    
+    var showBaseLanguage = true;
+    var [showBaseLanguage,setShowBaseLanguage] = useState(showBaseLanguage)
+    const handleClick = () => { return setShowBaseLanguage(!showBaseLanguage)}
+    var topics = ["Clothes","Colours","Food","Numbers"]
+    var current_topic = topics[0]
+    var [current_topic,setCurrentTopic] = useState(current_topic)
+    const changeCurrentTopicToClothes = () => { return setCurrentTopic(topics[0])}
+    const changeCurrentTopicToColours = () => { return setCurrentTopic(topics[1])}
+    const changeCurrentTopicToFood = () => { return setCurrentTopic(topics[2])}
+    const changeCurrentTopicToNumbers = () => { return setCurrentTopic(topics[3])}
+
+    var quiz = true
+    var [quiz,setQuiz] = useState(quiz)
+    const changeQuizState = () => { return setQuiz((!quiz))}
+    function ToggleQuiz(){
+        if (quiz) {
             return (
-   
                 <div>
-                    {category_words.map((word: { englishWord: Key | null | undefined; foreignWord: string; }) => (<div key={word.englishWord} > {x===1? word.englishWord + " = " + word.foreignWord : word.foreignWord + " = " + word.englishWord} </div>))}
+                    {topic_words.map((word: { englishWord: Key | null | undefined; foreignWord: string; }) => (<div><div key={word.englishWord} >{showBaseLanguage? word.englishWord + " = " : word.foreignWord + " = "}  <form style={{ display: 'flex', flexDirection : 'row'}}><input type="text" id="name" /></form></div></div>))}
                 </div>
+           
         )
         }
-        if (StudyOrQuiz === "Quiz") {
+        else {
             return (
                 <div>
-                    {category_words.map((word: { englishWord: Key | null | undefined; foreignWord: string; }) => (<div><div key={word.englishWord} >{x===1? word.englishWord + " = " : word.foreignWord + " = "}  <form style={{ display: 'flex', flexDirection : 'row'}}><input type="text" id="name" /></form></div></div>))}
-                    
+                    {topic_words.map((word: { englishWord: Key | null | undefined; foreignWord: string; }) => (<div key={word.englishWord} > {showBaseLanguage? word.englishWord + " = " + word.foreignWord : word.foreignWord + " = " + word.englishWord} </div>))}
                 </div>
+
             )
         }
 
     }
 
-    var category_words = language.filter((word: { topic: string; }) => {return word.topic === category} )
+    var topic_words = language.filter((word: { topic: string; }) => {return word.topic === current_topic} )
     return (
         <div>    
             <h1>{languageName}</h1>
                 <button onClick={handleClick} >Toggle Languages</button>
-                <button onClick={changeCategoryToFood} >Food</button>
-                <button onClick={changeCategoryToClothes} >Clothes</button>
-                <button onClick={changeCategoryToColours} >Colours</button>
-                <button onClick={changeCategoryToNumbers} >Numbers</button>
-                <button onClick={changeSetting} >Quiz/Study</button>
+                <button onClick={changeCurrentTopicToFood} >Food</button>
+                <button onClick={changeCurrentTopicToClothes} >Clothes</button>
+                <button onClick={changeCurrentTopicToColours} >Colours</button>
+                <button onClick={changeCurrentTopicToNumbers} >Numbers</button>
+                <button onClick={changeQuizState} >Quiz/Study</button>
                 <p></p>
-                {ToggleQuiz(setting)}
+                {ToggleQuiz()}
         </div>
       );
 }
