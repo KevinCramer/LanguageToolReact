@@ -1,6 +1,8 @@
 import { Key, useState } from "react"
 import './button.css';
 import Button from "./Button"
+import Quiz from "./Quiz"
+
 
 
 const StudyContent = (props: any) => {
@@ -29,7 +31,7 @@ const StudyContent = (props: any) => {
     const onSubmit = (e:any, submitted_answer:string, correct_answer:string) => {
         e.preventDefault();
         console.log(e)
-        const does_it_match = (submitted_answer === correct_answer) ? "✓" : " X the correct answer is " + "'" + correct_answer +  "'" + " not " +  "'" + submitted_answer +  "'" 
+        const does_it_match = (submitted_answer === correct_answer) ? "✔" : " ✘ the correct answer is " + "'" + correct_answer +  "'" + " not " +  "'" + submitted_answer +  "'" 
         setResponse(does_it_match)
       };
 
@@ -44,7 +46,7 @@ const StudyContent = (props: any) => {
                 <form  onSubmit={e => onSubmit(e, formValues.answer, "stropdas")}>
                     <div className="ui form">
                         <div className="field">
-                            <label>{word}</label>
+                            <label>{word} </label>
                             <input type="text" name="answer" placeholder="" value={formValues.answer} onChange = {handleChange} autoComplete="off" spellCheck ="false"/>
                         </div>
                     </div>
