@@ -17,9 +17,10 @@ const StudyContent = (props: any) => {
     const changeCurrentTopicToColours = () => { return setCurrentTopic(topics[1])}
     const changeCurrentTopicToFood = () => { return setCurrentTopic(topics[2])}
     const changeCurrentTopicToNumbers = () => { return setCurrentTopic(topics[3])}
-    const initialAnswer = {answer: "sdfsdfsd"}
+    const initialAnswer = {answer: ""}
     const [formValues, setFormValues] = useState(initialAnswer)
-
+    var initialResponse = {answer: ""}
+    const [response, setResponse] = useState(initialResponse)
     const handleChange = (e:any) => {
         const {name,value} = e.target;
         setFormValues({...formValues, [name]: value})
@@ -27,6 +28,13 @@ const StudyContent = (props: any) => {
 
     const onSubmit = (e:any) => {
         e.preventDefault();
+        console.log(e.target.innerHTML)
+        const text = e.target.innerHTML.slice(118,1000)
+        console.log(text)
+        const end = text.indexOf('"');
+        const userSubmission = text.slice(0,end)
+        const does_it_match = (userSubmission === "broek") ? "✓" : " X the correct answer is 'broek' not " + JSON.stringify(userSubmission)
+        response.answer = does_it_match
       };
 
     var quiz = false
@@ -39,12 +47,12 @@ const StudyContent = (props: any) => {
                 <form  onSubmit={onSubmit}>
                     <div className="ui form">
                         <div className="field">
-                            <label>hello</label>
+                            <label>trousers</label>
                             <input type="text" name="answer" placeholder="" value={formValues.answer} onChange = {handleChange}/>
                         </div>
                     </div>
                 </form>
-                <div> {formValues.answer}</div>
+                <div> {response.answer}</div>
                 </div>
         )
         }
@@ -99,7 +107,3 @@ export default StudyContent;
 </form>
             </div></div>))}
         </div> */
-
-
-
-
