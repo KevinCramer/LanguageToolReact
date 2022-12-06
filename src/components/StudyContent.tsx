@@ -19,18 +19,18 @@ const StudyContent = (props: any) => {
     const changeCurrentTopicToNumbers = () => { return setCurrentTopic(topics[3])}
     const initialAnswer = {answer: ""}
     const [formValues, setFormValues] = useState(initialAnswer)
-    var initialResponse = {answer: ""}
+    var initialResponse = ""
     const [response, setResponse] = useState(initialResponse)
     const handleChange = (e:any) => {
         const {name,value} = e.target;
         setFormValues({...formValues, [name]: value})
     }
 
-    const onSubmit = (e:any, correct_answer:string, submitted_answer:string) => {
+    const onSubmit = (e:any, submitted_answer:string, correct_answer:string) => {
         e.preventDefault();
         console.log(e)
-        const does_it_match = (correct_answer === submitted_answer) ? "✓" : " X the correct answer is " + "'" + correct_answer +  "'" + " not " +  "'" + submitted_answer +  "'" 
-        response.answer = does_it_match
+        const does_it_match = (submitted_answer === correct_answer) ? "✓" : " X the correct answer is " + "'" + correct_answer +  "'" + " not " +  "'" + submitted_answer +  "'" 
+        setResponse(does_it_match)
       };
 
     var quiz = false
@@ -41,15 +41,15 @@ const StudyContent = (props: any) => {
         if (quiz) {
             return (
                 <div className="Container">
-                <form  onSubmit={e => onSubmit(e,word, formValues.answer)}>
+                <form  onSubmit={e => onSubmit(e, formValues.answer, "stropdas")}>
                     <div className="ui form">
                         <div className="field">
                             <label>{word}</label>
-                            <input type="text" name="answer" placeholder="" value={formValues.answer} onChange = {handleChange}/>
+                            <input type="text" name="answer" placeholder="" value={formValues.answer} onChange = {handleChange} autoComplete="off" spellCheck ="false"/>
                         </div>
                     </div>
                 </form>
-                <div> {response.answer}</div>
+                <div> {response}</div>
                 </div>
         )
         }
