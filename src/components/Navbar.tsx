@@ -9,7 +9,6 @@ export function Navbar(){
                     <Nav.Link to ="/about" as= {NavLink}>About</Nav.Link>
                     <div className="mynavbarlanguages">
                         <Nav.Link to ="/study/arabic" as= {NavLink}>Arabic</Nav.Link>
-
                     <div className="mynavbarlanguages">
                     <Nav.Link to ="/study/dutch" as= {NavLink}>Dutch</Nav.Link>
                     </div>
