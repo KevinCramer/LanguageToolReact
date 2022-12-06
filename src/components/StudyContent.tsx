@@ -17,6 +17,17 @@ const StudyContent = (props: any) => {
     const changeCurrentTopicToColours = () => { return setCurrentTopic(topics[1])}
     const changeCurrentTopicToFood = () => { return setCurrentTopic(topics[2])}
     const changeCurrentTopicToNumbers = () => { return setCurrentTopic(topics[3])}
+    const initialAnswer = {answer: "sdfsdfsd"}
+    const [formValues, setFormValues] = useState(initialAnswer)
+
+    const handleChange = (e:any) => {
+        const {name,value} = e.target;
+        setFormValues({...formValues, [name]: value})
+    }
+
+    const onSubmit = (e:any) => {
+        e.preventDefault();
+      };
 
     var quiz = false
     var [quiz,setQuiz] = useState(quiz)
@@ -24,10 +35,17 @@ const StudyContent = (props: any) => {
     function ToggleQuiz(){
         if (quiz) {
             return (
-                <div>
-                    {topic_words.map((word: { englishWord: Key | null | undefined; foreignWord: string; }) => (<div><div className = "Container" key={word.englishWord} >{showBaseLanguage? word.englishWord + "  " : word.foreignWord + "  "}  <form><input type="text" id="name" /></form></div></div>))}
+                <div className="Container">
+                <form  onSubmit={onSubmit}>
+                    <div className="ui form">
+                        <div className="field">
+                            <label>hello</label>
+                            <input type="text" name="answer" placeholder="" value={formValues.answer} onChange = {handleChange}/>
+                        </div>
+                    </div>
+                </form>
+                <div> {formValues.answer}</div>
                 </div>
-           
         )
         }
         else {
@@ -60,3 +78,28 @@ const StudyContent = (props: any) => {
 }
  
 export default StudyContent;
+
+
+
+
+//<form><input type="text" id="name" /></form>
+
+
+/* if (quiz) {
+    return (
+        <div>
+            {topic_words.map((word: { englishWord: Key | null | undefined; foreignWord: string; }) => (<div><div className = "Container" key={word.englishWord} >{showBaseLanguage? word.englishWord + "  " : word.foreignWord + "  "}
+            <form>
+<div className="ui form">
+<div className="field">
+    <label></label>
+    <input type="text" name="" placeholder="" />
+</div>
+</div>
+</form>
+            </div></div>))}
+        </div> */
+
+
+
+
