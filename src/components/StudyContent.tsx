@@ -19,31 +19,20 @@ const StudyContent = (props: any) => {
     const changeCurrentTopicToColours = () => { return setCurrentTopic(topics[1])}
     const changeCurrentTopicToFood = () => { return setCurrentTopic(topics[2])}
     const changeCurrentTopicToNumbers = () => { return setCurrentTopic(topics[3])}
-    const initialAnswer = {answer: ""}
-    const [formValues, setFormValues] = useState(initialAnswer)
-    var initialResponse = ""
-    const [response, setResponse] = useState(initialResponse)
-    const handleChange = (e:any) => {
-        const {name,value} = e.target;
-        setFormValues({...formValues, [name]: value})
-    }
-
-    const onSubmit = (e:any, submitted_answer:string, correct_answer:string) => {
-        e.preventDefault();
-        console.log(e)
-        const does_it_match = (submitted_answer === correct_answer) ? "✔" : " ✘ the correct answer is " + "'" + correct_answer +  "'" + " not " +  "'" + submitted_answer +  "'" 
-        setResponse(does_it_match)
-      };
-
     var quiz = false
     var [quiz,setQuiz] = useState(quiz)
     const changeQuizState = () => { return setQuiz((!quiz))}
+
     function ToggleQuiz(){
-        const QuestionWord = "tie"
-        const AnswerWord = "stropdas"
         if (quiz) {
-            return (
-                    <QuizElement QuestionWord = {QuestionWord} AnswerWord = {AnswerWord}/>
+            return ( 
+                <div>
+                    {topic_words.map((pair: any) =>
+                    <div>
+                                            <QuizElement QuestionWord = {pair.englishWord} AnswerWord = {pair.foreignWord}/>
+                    </div>                    
+                    )}
+                </div>
         )
         }
         else {
