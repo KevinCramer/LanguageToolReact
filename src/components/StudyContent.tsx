@@ -26,14 +26,10 @@ const StudyContent = (props: any) => {
         setFormValues({...formValues, [name]: value})
     }
 
-    const onSubmit = (e:any) => {
+    const onSubmit = (e:any, correct_answer:string, submitted_answer:string) => {
         e.preventDefault();
-        console.log(e.target.innerHTML)
-        const text = e.target.innerHTML.slice(118,1000)
-        console.log(text)
-        const end = text.indexOf('"');
-        const userSubmission = text.slice(0,end)
-        const does_it_match = (userSubmission === "broek") ? "✓" : " X the correct answer is 'broek' not " + JSON.stringify(userSubmission)
+        console.log(e)
+        const does_it_match = (correct_answer === submitted_answer) ? "✓" : " X the correct answer is " + "'" + correct_answer +  "'" + " not " +  "'" + submitted_answer +  "'" 
         response.answer = does_it_match
       };
 
@@ -41,13 +37,14 @@ const StudyContent = (props: any) => {
     var [quiz,setQuiz] = useState(quiz)
     const changeQuizState = () => { return setQuiz((!quiz))}
     function ToggleQuiz(){
+        const word = "tie"
         if (quiz) {
             return (
                 <div className="Container">
-                <form  onSubmit={onSubmit}>
+                <form  onSubmit={e => onSubmit(e,word, formValues.answer)}>
                     <div className="ui form">
                         <div className="field">
-                            <label>trousers</label>
+                            <label>{word}</label>
                             <input type="text" name="answer" placeholder="" value={formValues.answer} onChange = {handleChange}/>
                         </div>
                     </div>
