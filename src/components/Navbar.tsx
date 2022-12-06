@@ -1,23 +1,17 @@
-import {Nav} from "react-bootstrap"
+import {Nav, Container, Navbar as NavbarBs} from "react-bootstrap"
 import {NavLink} from "react-router-dom"
-import  "./navbar.css"
 export function Navbar(){
-    return( 
-            <div>
-                <div className="mynavbar">
+    return(
+            <NavbarBs className = "bg-white shadow-sm mb-3">
+                <Container>
                     <Nav.Link to ="/" as= {NavLink}>Home</Nav.Link>
                     <Nav.Link to ="/about" as= {NavLink}>About</Nav.Link>
-                    <div className="mynavbarlanguages">
-                        <Nav.Link to ="/study/arabic" as= {NavLink}>Arabic</Nav.Link>
-                    <div className="mynavbarlanguages">
-                    <Nav.Link to ="/study/dutch" as= {NavLink}>Dutch</Nav.Link>
-                    </div>
-                    <div className="mynavbarlanguages">
-                    <Nav.Link to ="/study/spanish" as= {NavLink}>Spanish</Nav.Link>
-                    </div>
-                    </div>
-
-                </div>
-            </div>   
+                    <NavbarBs className = "bg-white  mb-1">
+                        <Nav.Link to ="/study/arabic" as= {NavLink}><label style= {{width: "100px"}}>Arabic</label></Nav.Link>
+                        <Nav.Link to ="/study/dutch" as= {NavLink}><label style= {{width: "100px"}}>Dutch</label></Nav.Link>
+                        <Nav.Link to ="/study/spanish" as= {NavLink}><label style= {{width: "100px"}}>Spanish</label></Nav.Link>
+                    </NavbarBs>
+                </Container>
+            </NavbarBs>
     )
 }

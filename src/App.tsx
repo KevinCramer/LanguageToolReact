@@ -5,7 +5,7 @@ import {Arabic} from "./pages/Languages/Arabic"
 import {Dutch} from "./pages/Languages/Dutch"
 import {Spanish} from "./pages/Languages/Spanish"
 import {Navbar} from "./components/Navbar"
-import './App.css';
+import "bootstrap/dist/css/bootstrap.min.css"
 
 
 function App() {

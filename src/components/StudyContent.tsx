@@ -1,9 +1,9 @@
 import { Key, useState } from "react"
-import './button.css';
 import Button from "./Button"
 import QuizElement from "./QuizElement"
+import StudyElement from "./StudyElement"
 
-
+import {Container, Navbar as NavbarBs} from "react-bootstrap"
 
 const StudyContent = (props: any) => {
     const language = props.language
@@ -38,9 +38,12 @@ const StudyContent = (props: any) => {
         else {
             return (
                 <div>
-                    {topic_words.map((word: { englishWord: Key | null | undefined; foreignWord: string; }) => (<div key={word.englishWord} > {showBaseLanguage? word.englishWord + "  " + word.foreignWord : word.foreignWord + "  " + word.englishWord} </div>))}
+                    {topic_words.map((pair: any) =>
+                    <div>
+                                            <StudyElement BaseLanguageWord = { showBaseLanguage? pair.englishWord: pair.foreignWord } ForeignLanguageWord = {showBaseLanguage? pair.foreignWord: pair.englishWord}/>
+                    </div>                    
+                    )}
                 </div>
-
             )
         }
 
@@ -48,41 +51,21 @@ const StudyContent = (props: any) => {
 
     var topic_words = language.filter((word: { topic: string; }) => {return word.topic === current_topic} )
     return (
-        <div>    
-            <h1>{languageName}</h1>
-                <div className = "Container">
+        <Container>    
+            <NavbarBs className = "bg-white shadow-sm mb-3">
+                <Container>
                     <Button clickMethod = {handleClick} ButtonName = "Toggle Languages"/>
                     <Button clickMethod = {changeCurrentTopicToClothes} ButtonName = "Clothes"/>
                     <Button clickMethod = {changeCurrentTopicToColours} ButtonName = "Colours"/>
                     <Button clickMethod = {changeCurrentTopicToFood} ButtonName = "Food"/>
                     <Button clickMethod = {changeCurrentTopicToNumbers} ButtonName = "Numbers"/>
                     <Button clickMethod = {changeQuizState} ButtonName = "Quiz/Study"/>
-                </div>
+                </Container>
+            </NavbarBs>
                 <p></p>
                 {ToggleQuiz()}
-        </div>
+        </Container>
       );
 }
  
 export default StudyContent;
-
-
-
-
-//<form><input type="text" id="name" /></form>
-
-
-// if (quiz) {
-//     return (
-//         <div>
-//             {topic_words.map((word: { englishWord: Key | null | undefined; foreignWord: string; }) => (<div><div className = "Container" key={word.englishWord} >{showBaseLanguage? word.englishWord + "  " : word.foreignWord + "  "}
-//             <form>
-// <div className="ui form">
-// <div className="field">
-//     <label></label>
-//     <input type="text" name="" placeholder="" />
-// </div>
-// </div>
-// </form>
-//             </div></div>))}
-//         </div> 

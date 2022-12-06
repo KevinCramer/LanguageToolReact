@@ -1,5 +1,5 @@
 import { Key, useState } from "react"
-
+import {Navbar, Container} from "react-bootstrap"
 
 const QuizElement = (props: any) => {
     const QuestionWord = props.QuestionWord
@@ -21,17 +21,15 @@ const QuizElement = (props: any) => {
       };
 
     return (
-      <div className="Container">
+      <Navbar>
       <form  onSubmit={e => onSubmit(e, formValues.answer, AnswerWord)}>
           <div className="ui form">
-              <div className="field">
-                  <label>{QuestionWord} </label>
+                  <label style= {{width: "200px"}}>{QuestionWord} </label>
                   <input type="text" name="answer" placeholder="" value={formValues.answer} onChange = {handleChange} autoComplete="off" spellCheck ="false"/>
-              </div>
           </div>
       </form>
       <div> {response}</div>
-      </div>
+      </Navbar>
       );
 }
  
