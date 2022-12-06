@@ -29,7 +29,7 @@ const StudyContent = (props: any) => {
                 <div>
                     {topic_words.map((pair: any) =>
                     <div>
-                                            <QuizElement QuestionWord = {pair.englishWord} AnswerWord = {pair.foreignWord}/>
+                                            <QuizElement QuestionWord = { showBaseLanguage? pair.englishWord: pair.foreignWord } AnswerWord = {showBaseLanguage? pair.foreignWord: pair.englishWord}/>
                     </div>                    
                     )}
                 </div>
