@@ -39,10 +39,11 @@ const StudyContent = (props: any) => {
     var [quiz,setQuiz] = useState(quiz)
     const changeQuizState = () => { return setQuiz((!quiz))}
     function ToggleQuiz(){
-        const word = "tie"
+        const QuestionWord = "tie"
+        const AnswerWord = "stropdas"
         if (quiz) {
             return (
-                <QuizElement QuestionWord = {word}/>
+                    <QuizElement QuestionWord = {QuestionWord} AnswerWord = {AnswerWord}/>
         )
         }
         else {
@@ -82,17 +83,17 @@ export default StudyContent;
 //<form><input type="text" id="name" /></form>
 
 
-/* if (quiz) {
-    return (
-        <div>
-            {topic_words.map((word: { englishWord: Key | null | undefined; foreignWord: string; }) => (<div><div className = "Container" key={word.englishWord} >{showBaseLanguage? word.englishWord + "  " : word.foreignWord + "  "}
-            <form>
-<div className="ui form">
-<div className="field">
-    <label></label>
-    <input type="text" name="" placeholder="" />
-</div>
-</div>
-</form>
-            </div></div>))}
-        </div> */
+// if (quiz) {
+//     return (
+//         <div>
+//             {topic_words.map((word: { englishWord: Key | null | undefined; foreignWord: string; }) => (<div><div className = "Container" key={word.englishWord} >{showBaseLanguage? word.englishWord + "  " : word.foreignWord + "  "}
+//             <form>
+// <div className="ui form">
+// <div className="field">
+//     <label></label>
+//     <input type="text" name="" placeholder="" />
+// </div>
+// </div>
+// </form>
+//             </div></div>))}
+//         </div> 

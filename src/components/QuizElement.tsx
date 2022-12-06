@@ -3,6 +3,7 @@ import { Key, useState } from "react"
 
 const QuizElement = (props: any) => {
     const QuestionWord = props.QuestionWord
+    const AnswerWord = props.AnswerWord
     const initialAnswer = {answer: ""}
     const [formValues, setFormValues] = useState(initialAnswer)
     var initialResponse = ""
@@ -21,7 +22,7 @@ const QuizElement = (props: any) => {
 
     return (
       <div className="Container">
-      <form  onSubmit={e => onSubmit(e, formValues.answer, "stropdas")}>
+      <form  onSubmit={e => onSubmit(e, formValues.answer, AnswerWord)}>
           <div className="ui form">
               <div className="field">
                   <label>{QuestionWord} </label>
