@@ -1,7 +1,7 @@
 import { Key, useState } from "react"
 import './button.css';
 import Button from "./Button"
-import Quiz from "./Quiz"
+import QuizElement from "./QuizElement"
 
 
 
@@ -42,17 +42,7 @@ const StudyContent = (props: any) => {
         const word = "tie"
         if (quiz) {
             return (
-                <div className="Container">
-                <form  onSubmit={e => onSubmit(e, formValues.answer, "stropdas")}>
-                    <div className="ui form">
-                        <div className="field">
-                            <label>{word} </label>
-                            <input type="text" name="answer" placeholder="" value={formValues.answer} onChange = {handleChange} autoComplete="off" spellCheck ="false"/>
-                        </div>
-                    </div>
-                </form>
-                <div> {response}</div>
-                </div>
+                <QuizElement QuestionWord = {word}/>
         )
         }
         else {

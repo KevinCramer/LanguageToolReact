@@ -1,7 +1,7 @@
 import { Key, useState } from "react"
 
 
-const Quiz = (props: any) => {
+const QuizElement = (props: any) => {
     const QuestionWord = props.QuestionWord
     const initialAnswer = {answer: ""}
     const [formValues, setFormValues] = useState(initialAnswer)
@@ -34,4 +34,4 @@ const Quiz = (props: any) => {
       );
 }
  
-export default Quiz;
+export default QuizElement;
