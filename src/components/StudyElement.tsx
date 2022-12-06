@@ -6,9 +6,9 @@ const StudyElement = (props: any) => {
   const ForeignLanguageWord = props.ForeignLanguageWord
   return (
     <Navbar>
-    <label style= {{width: "200px", textAlign: "center"}}>{BaseLanguageWord} </label>
+    <label style= {{width: "200px", textAlign: "left"}}>{BaseLanguageWord} </label>
     <label style= {{width: "40px"}}></label>
-    <label style= {{width: "200px", textAlign: "center"}}>{ForeignLanguageWord} </label>
+    <label style= {{width: "200px", textAlign: "left"}}>{ForeignLanguageWord} </label>
     </Navbar>
     );
 }
