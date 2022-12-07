@@ -80,7 +80,7 @@ const StudyContent = (props: any) => {
                     </DropdownButton>
                     <DropdownButton id="Settings" title="Learning Parameters">
                         <Dropdown.Item onClick = {handleClick}>Toggle base language</Dropdown.Item>
-                        <Dropdown.Item onClick = {changeQuizState}>Quiz/Study</Dropdown.Item>
+                        <Dropdown.Item onClick = {changeQuizState}>Revise/Quiz</Dropdown.Item>
                     </DropdownButton>
                 </Container>
             </NavbarBs>
