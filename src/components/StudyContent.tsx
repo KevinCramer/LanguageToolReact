@@ -64,18 +64,16 @@ const StudyContent = (props: any) => {
                         <Dropdown.Item><Nav.Link to ="/study/spanish" as= {NavLink}>Spanish</Nav.Link></Dropdown.Item>
                     </DropdownButton>
                     <DropdownButton id="Topics" title={"Topic: " + current_topic}>
-                        <Dropdown.Item><Button clickMethod = {changeCurrentTopicToClothes} ButtonName = "Clothes"/></Dropdown.Item>
-                        <Dropdown.Item><Button clickMethod = {changeCurrentTopicToColours} ButtonName = "Colours"/></Dropdown.Item>
-                        <Dropdown.Item><Button clickMethod = {changeCurrentTopicToFood} ButtonName = "Food"/></Dropdown.Item>
-                        <Dropdown.Item><Button clickMethod = {changeCurrentTopicToNumbers} ButtonName = "Numbers"/></Dropdown.Item>
-                    </DropdownButton>
-                    <DropdownButton id="Settings" title="Settings">
-                        <Dropdown.Item><Button clickMethod = {handleClick} ButtonName = "Toggle Languages"/></Dropdown.Item>
-                        <Dropdown.Item><Button clickMethod = {changeQuizState} ButtonName = "Quiz/Study"/></Dropdown.Item>
+                        <Dropdown.Item onClick = {changeCurrentTopicToClothes}>Clothes</Dropdown.Item>
+                        <Dropdown.Item onClick = {changeCurrentTopicToColours}>Colours</Dropdown.Item>
+                        <Dropdown.Item onClick = {changeCurrentTopicToFood}>Food</Dropdown.Item>
+                        <Dropdown.Item onClick = {changeCurrentTopicToNumbers}>Numbers</Dropdown.Item>
 
                     </DropdownButton>
-                    
-                    
+                    <DropdownButton id="Settings" title="Settings">
+                        <Dropdown.Item onClick = {handleClick}>Toggle base language</Dropdown.Item>
+                        <Dropdown.Item onClick = {changeQuizState}>Quiz/Study</Dropdown.Item>
+                    </DropdownButton>
                 </Container>
             </NavbarBs>
                 <p></p>
