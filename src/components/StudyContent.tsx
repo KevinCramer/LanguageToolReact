@@ -2,8 +2,12 @@ import { Key, useState } from "react"
 import Button from "./Button"
 import QuizElement from "./QuizElement"
 import StudyElement from "./StudyElement"
+import {Container, Navbar as NavbarBs, Nav} from "react-bootstrap"
+import Dropdown from 'react-bootstrap/Dropdown';
+import DropdownButton from 'react-bootstrap/DropdownButton';
+import {NavLink} from "react-router-dom"
 
-import {Container, Navbar as NavbarBs} from "react-bootstrap"
+
 
 const StudyContent = (props: any) => {
     const language = props.language
@@ -54,12 +58,24 @@ const StudyContent = (props: any) => {
         <Container>    
             <NavbarBs className = "bg-white shadow-sm mb-3">
                 <Container>
-                    <Button clickMethod = {handleClick} ButtonName = "Toggle Languages"/>
-                    <Button clickMethod = {changeCurrentTopicToClothes} ButtonName = "Clothes"/>
-                    <Button clickMethod = {changeCurrentTopicToColours} ButtonName = "Colours"/>
-                    <Button clickMethod = {changeCurrentTopicToFood} ButtonName = "Food"/>
-                    <Button clickMethod = {changeCurrentTopicToNumbers} ButtonName = "Numbers"/>
-                    <Button clickMethod = {changeQuizState} ButtonName = "Quiz/Study"/>
+                    <DropdownButton id="Languages" title={"Language: " + (window.location.href.split("/")[4]).charAt(0).toUpperCase() + (window.location.href.split("/")[4]).slice(1)}> 
+                        <Dropdown.Item href="/study/arabic"><Nav.Link to ="/study/arabic" as= {NavLink}>Arabic</Nav.Link></Dropdown.Item>
+                        <Dropdown.Item href="/study/dutch"><Nav.Link to ="/study/dutch" as= {NavLink}>Dutch</Nav.Link></Dropdown.Item>
+                        <Dropdown.Item><Nav.Link to ="/study/spanish" as= {NavLink}>Spanish</Nav.Link></Dropdown.Item>
+                    </DropdownButton>
+                    <DropdownButton id="Topics" title={"Topic: " + current_topic}>
+                        <Dropdown.Item><Button clickMethod = {changeCurrentTopicToClothes} ButtonName = "Clothes"/></Dropdown.Item>
+                        <Dropdown.Item><Button clickMethod = {changeCurrentTopicToColours} ButtonName = "Colours"/></Dropdown.Item>
+                        <Dropdown.Item><Button clickMethod = {changeCurrentTopicToFood} ButtonName = "Food"/></Dropdown.Item>
+                        <Dropdown.Item><Button clickMethod = {changeCurrentTopicToNumbers} ButtonName = "Numbers"/></Dropdown.Item>
+                    </DropdownButton>
+                    <DropdownButton id="Settings" title="Settings">
+                        <Dropdown.Item><Button clickMethod = {handleClick} ButtonName = "Toggle Languages"/></Dropdown.Item>
+                        <Dropdown.Item><Button clickMethod = {changeQuizState} ButtonName = "Quiz/Study"/></Dropdown.Item>
+
+                    </DropdownButton>
+                    
+                    
                 </Container>
             </NavbarBs>
                 <p></p>

@@ -9,10 +9,12 @@ export function Navbar(){
                 <Container>
                     <Nav.Link to ="/" as= {NavLink}>Home</Nav.Link>
                     <Nav.Link to ="/about" as= {NavLink}>About</Nav.Link>
-                    <DropdownButton id="Languages" title="Languages">
-                        <Dropdown.Item href="/study/arabic"><Nav.Link to ="/study/arabic" as= {NavLink}>Arabic</Nav.Link></Dropdown.Item>
-                        <Dropdown.Item href="/study/dutch"><Nav.Link to ="/study/dutch" as= {NavLink}>Dutch</Nav.Link></Dropdown.Item>
-                        <Dropdown.Item><Nav.Link to ="/study/spanish" as= {NavLink}>Spanish</Nav.Link></Dropdown.Item>
+                    <Nav.Link to ="/study/Arabic" as= {NavLink}>Study</Nav.Link>
+                    <DropdownButton id="LT" title="LT">
+                        <Dropdown.Item>Settings</Dropdown.Item>
+                        <Dropdown.Item>Login</Dropdown.Item>
+                        <Dropdown.Item>Sign Up</Dropdown.Item>
+                        <Dropdown.Item>Sign Out</Dropdown.Item>
                     </DropdownButton>
                 </Container>
             </NavbarBs>
