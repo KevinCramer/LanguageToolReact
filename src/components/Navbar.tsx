@@ -9,7 +9,7 @@ export function Navbar(){
                 <Container>
                     <Nav.Link to ="/" as= {NavLink}>Home</Nav.Link>
                     <Nav.Link to ="/about" as= {NavLink}>About</Nav.Link>
-                    <Nav.Link to ="/study/Arabic" as= {NavLink}>Learn</Nav.Link>
+                    <Nav.Link to ="/study" as= {NavLink}>Learn</Nav.Link>
                     <DropdownButton variant="Success" id="LT" title="LT">
                         <Dropdown.Item>Settings</Dropdown.Item>
                         <Dropdown.Item>Login</Dropdown.Item>

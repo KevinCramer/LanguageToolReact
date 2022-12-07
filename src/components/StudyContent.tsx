@@ -6,12 +6,19 @@ import {Container, Navbar as NavbarBs, Nav} from "react-bootstrap"
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import {NavLink} from "react-router-dom"
+import {arabic,dutch,spanish} from "../data/words"
 
 
 
 const StudyContent = (props: any) => {
-    const language = props.language
-    const languageName = props.languageName
+    var language = arabic  
+    var languageName = "Arabic"
+    var [language,setLanguage] = useState(language)
+    var [languageName,setLanguageName] = useState(languageName)
+    const changeCurrentLanguageToArabic = () => { return setLanguage(arabic),setLanguageName("Arabic")}
+    const changeCurrentLanguageToDutch = () => { return setLanguage(dutch),setLanguageName("Dutch")}
+    const changeCurrentLanguageToSpanish = () => { return setLanguage(spanish),setLanguageName("Spanish")}
+
     
     var showBaseLanguage = true;
     var [showBaseLanguage,setShowBaseLanguage] = useState(showBaseLanguage)
@@ -59,10 +66,10 @@ const StudyContent = (props: any) => {
         <Container>    
             <NavbarBs className = "bg-white shadow-sm mb-3">
                 <Container>
-                    <DropdownButton id="Languages" title={"Language: " + (window.location.href.split("/")[4]).charAt(0).toUpperCase() + (window.location.href.split("/")[4]).slice(1)}> 
-                        <Dropdown.Item href="/study/arabic"><Nav.Link to ="/study/arabic" as= {NavLink}>Arabic</Nav.Link></Dropdown.Item>
-                        <Dropdown.Item href="/study/dutch"><Nav.Link to ="/study/dutch" as= {NavLink}>Dutch</Nav.Link></Dropdown.Item>
-                        <Dropdown.Item><Nav.Link to ="/study/spanish" as= {NavLink}>Spanish</Nav.Link></Dropdown.Item>
+                    <DropdownButton id="Languages" title={"Language: " + String(languageName)}> 
+                        <Dropdown.Item onClick = {changeCurrentLanguageToArabic}>Arabic</Dropdown.Item>
+                        <Dropdown.Item onClick = {changeCurrentLanguageToDutch}>Dutch</Dropdown.Item>
+                        <Dropdown.Item onClick = {changeCurrentLanguageToSpanish}>spanish</Dropdown.Item>
                     </DropdownButton>
                     <DropdownButton id="Topics" title={"Topic: " + current_topic}>
                         <Dropdown.Item onClick = {changeCurrentTopicToClothes}>Clothes</Dropdown.Item>

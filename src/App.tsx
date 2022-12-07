@@ -9,7 +9,7 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import  "./index.css"
 import video from "./assets/720p.mp4"
 import image from "./assets/ocean.jpg"
-
+import StudyContent from "./components/StudyContent"
 
 
 function App() {
@@ -24,9 +24,7 @@ function App() {
 <Routes>
   <Route path ="/" element = {<Home/>}/>
   <Route path ="/about" element = {<About/>}/>
-  <Route path ="/study/arabic" element = {<Arabic/>}/>
-  <Route path ="/study/dutch" element = {<Dutch/>}/>
-  <Route path ="/study/Spanish" element = {<Spanish/>}/>
+  <Route path ="/study" element = {<StudyContent/>}/>
 </Routes>  
     </div>
     </div> 
