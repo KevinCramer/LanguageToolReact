@@ -55,6 +55,7 @@ const StudyContent = (props: any) => {
 
     var topic_words = language.filter((word: { topic: string; }) => {return word.topic === current_topic} )
     return (
+        <div style = {{backgroundColor: "white", height: "100vh"}}>
         <Container>    
             <NavbarBs className = "bg-white shadow-sm mb-3">
                 <Container>
@@ -79,6 +80,7 @@ const StudyContent = (props: any) => {
                 <p></p>
                 {ToggleQuiz()}
         </Container>
+        </div>
       );
 }
  

@@ -6,22 +6,35 @@ import {Dutch} from "./pages/Languages/Dutch"
 import {Spanish} from "./pages/Languages/Spanish"
 import {Navbar} from "./components/Navbar"
 import "bootstrap/dist/css/bootstrap.min.css"
+import  "./index.css"
+import video from "./assets/720p.mp4"
+import image from "./assets/ocean.jpg"
+
 
 
 function App() {
-  return( 
-    <>
-  <Navbar/>
-    <Routes>
-      <Route path ="/" element = {<Home/>}/>
-      <Route path ="/about" element = {<About/>}/>
-      <Route path ="/study/arabic" element = {<Arabic/>}/>
-      <Route path ="/study/dutch" element = {<Dutch/>}/>
-      <Route path ="/study/Spanish" element = {<Spanish/>}/>
-    </Routes>
-  </>
-  
+  return(
+    <div className = "Main">
+      <div className= "overlay"></div>
+{/*       <img src={image}></img>*/}
+     <video src={video} autoPlay loop muted></video> 
+
+    <div className = "content">
+      <Navbar/>
+<Routes>
+  <Route path ="/" element = {<Home/>}/>
+  <Route path ="/about" element = {<About/>}/>
+  <Route path ="/study/arabic" element = {<Arabic/>}/>
+  <Route path ="/study/dutch" element = {<Dutch/>}/>
+  <Route path ="/study/Spanish" element = {<Spanish/>}/>
+</Routes>  
+    </div>
+    </div> 
+    
   )
 }
 
 export default App
+
+
+
