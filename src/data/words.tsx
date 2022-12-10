@@ -1,3 +1,4 @@
+
 export const dutch_topics = ["Clothes","Colours","Food","Family","Numbers"]
 
 export const dutch = [
@@ -166,3 +167,5 @@ export const spanish = [
     {topic: "Numbers", englishWord: "ten", foreignWord: "diez"}
     
     ]
+
+    export const languages = [{languageName: "Arabic", Content: arabic, topics: arabic_topics },{languageName: "Dutch", Content: dutch, topics: dutch_topics},{languageName: "Spanish", Content: spanish, topics: spanish_topics} ]

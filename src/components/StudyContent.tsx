@@ -4,7 +4,7 @@ import StudyElement from "./StudyElement"
 import {Container, Navbar as NavbarBs, Nav} from "react-bootstrap"
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
-import {arabic, arabic_topics, dutch, dutch_topics, spanish, spanish_topics} from "../data/words"
+import {languages, arabic, arabic_topics, dutch, dutch_topics, spanish, spanish_topics} from "../data/words"
 
 
 
@@ -20,17 +20,14 @@ const StudyContent = (props: any) => {
     const changeCurrentLanguageToArabic = () => { return setLanguage(arabic),setLanguageName("Arabic"),setCurrentLanguageTopics(arabic_topics)}
     const changeCurrentLanguageToDutch = () => { return setLanguage(dutch),setLanguageName("Dutch"),setCurrentLanguageTopics(dutch_topics)}
     const changeCurrentLanguageToSpanish = () => { return setLanguage(spanish),setLanguageName("Spanish"),setCurrentLanguageTopics(spanish_topics)}
+    const changeCurrentLanguageToX= (languageName:string, languageContent:any) => { return setLanguage(languageContent),setLanguageName(languageName)}
 
     
     var showBaseLanguage = true;
     var [showBaseLanguage,setShowBaseLanguage] = useState(showBaseLanguage)
     const handleClick = () => { return setShowBaseLanguage(!showBaseLanguage)}
 
-    const changeCurrentTopicToClothes = () => { return setCurrentTopic(currentLanguageTopics[0])}
-    const changeCurrentTopicToColours = () => { return setCurrentTopic(currentLanguageTopics[1])}
-    const changeCurrentTopicToFood = () => { return setCurrentTopic(currentLanguageTopics[2])}
-    const changeCurrentTopicToNumbers = () => { return setCurrentTopic(currentLanguageTopics[3])}
-    var changeCurrentTopicToX = (i:number) => { return setCurrentTopic(currentLanguageTopics[i])}
+    var changeCurrentTopicToX = (topic:string) => { return setCurrentTopic(topic)}
 
     var quiz = false
     var [quiz,setQuiz] = useState(quiz)
@@ -74,13 +71,8 @@ const StudyContent = (props: any) => {
                         <Dropdown.Item onClick = {changeCurrentLanguageToSpanish}>Spanish</Dropdown.Item>
                     </DropdownButton>
                     <DropdownButton id="Topics" title={"Topic: " + current_topic}>
-                        <Dropdown.Item onClick = {changeCurrentTopicToClothes}>{currentLanguageTopics[0]}</Dropdown.Item>
-                        <Dropdown.Item onClick = {changeCurrentTopicToColours}>{currentLanguageTopics[1]}</Dropdown.Item>
-                        <Dropdown.Item onClick = {changeCurrentTopicToFood}>{currentLanguageTopics[2]}</Dropdown.Item>
-                        <Dropdown.Item onClick = {changeCurrentTopicToNumbers}>{currentLanguageTopics[3]}</Dropdown.Item>
-                        <Dropdown.Item onClick = {() => changeCurrentTopicToX(4)}>{currentLanguageTopics[4]}</Dropdown.Item>
-
-
+                        {currentLanguageTopics.map((topic: string) =>
+                        <Dropdown.Item onClick = {() => changeCurrentTopicToX(topic)}>{topic}</Dropdown.Item>)}
                     </DropdownButton>
                     <DropdownButton id="Settings" title="Learning Parameters">
                         <Dropdown.Item onClick = {handleClick}>Toggle base language</Dropdown.Item>
