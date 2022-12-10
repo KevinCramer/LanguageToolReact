@@ -1,14 +1,10 @@
 import {Routes, Route} from "react-router-dom"
 import {Home} from "./pages/Home"
 import {About} from "./pages/About"
-import {Arabic} from "./pages/Languages/Arabic"
-import {Dutch} from "./pages/Languages/Dutch"
-import {Spanish} from "./pages/Languages/Spanish"
 import {Navbar} from "./components/Navbar"
 import "bootstrap/dist/css/bootstrap.min.css"
 import  "./index.css"
 import video from "./assets/720p.mp4"
-import image from "./assets/ocean.jpg"
 import StudyContent from "./components/StudyContent"
 
 
