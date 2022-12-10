@@ -1,3 +1,5 @@
+export const dutch_topics = ["Clothes","Colours","Food","Family","Numbers"]
+
 export const dutch = [
 {topic: "Food", englishWord: "potato", foreignWord: "aardappel"},
 {topic: "Food", englishWord: "bread", foreignWord: "brood"},
@@ -56,9 +58,27 @@ export const dutch = [
 {topic: "Numbers", englishWord: "seven", foreignWord: "zeven"},
 {topic: "Numbers", englishWord: "eight", foreignWord: "acht"},
 {topic: "Numbers", englishWord: "nine", foreignWord: "negen"},
-{topic: "Numbers", englishWord: "ten", foreignWord: "tien"}
+{topic: "Numbers", englishWord: "ten", foreignWord: "tien"},
+{topic: "Family", englishWord: "brother", foreignWord: "een"},
+{topic: "Family", englishWord: "sister ", foreignWord: "twee"},
+{topic: "Family", englishWord: "mother", foreignWord: "drie"},
+{topic: "Family", englishWord: "father", foreignWord: "vier"},
+{topic: "Family", englishWord: "son", foreignWord: "vijf"},
+{topic: "Family", englishWord: "daughter", foreignWord: "zes"},
+{topic: "Family", englishWord: "aunt", foreignWord: "zeven"},
+{topic: "Family", englishWord: "uncle", foreignWord: "acht"},
+{topic: "Family", englishWord: "grandfather", foreignWord: "negen"},
+{topic: "Family", englishWord: "grandmother", foreignWord: "tien"},
+{topic: "Family", englishWord: "cousin (m)", foreignWord: "neef"},
+{topic: "Family", englishWord: "cousin (f)", foreignWord: "nicht"},
+{topic: "Family", englishWord: "niece", foreignWord: "nicht"},
+{topic: "Family", englishWord: "nephew", foreignWord: "neef"}
 
 ]
+
+
+export const arabic_topics = ["Clothes","Colours","Food","Numbers"]
+
 export const arabic = [
 {topic: "Clothes", englishWord: "trousers", foreignWord: "banṭalūn (بَنْطَلُون)"},
 {topic: "Clothes", englishWord: "dress", foreignWord: "fustān (فُسْتَان)"},
@@ -94,12 +114,14 @@ export const arabic = [
 {topic: "Numbers", englishWord: "three", foreignWord: "thalāthah (ثَلَاثَة)"},
 {topic: "Numbers", englishWord: "four", foreignWord: "arba'ah (أَرْبَعَة)"},
 {topic: "Numbers", englishWord: "five", foreignWord: "khamsah (خَمْسَة)"},
-{topic: "Numbers", englishWord: "six", foreignWord: "waheed (وَاحِد)"},
+{topic: "Numbers", englishWord: "six", foreignWord: "sittah (سِتَّة)"},
 {topic: "Numbers", englishWord: "seven", foreignWord: "sab'ah (سَبْعَة)"},
 {topic: "Numbers", englishWord: "eight", foreignWord: "thamāniyah (ثَمَانِيَة)"},
 {topic: "Numbers", englishWord: "nine", foreignWord: "tis'ah (تِسْعَة)"},
 {topic: "Numbers", englishWord: "ten", foreignWord: "'asharah (عَشَرَة)"}
 ]
+
+export const spanish_topics = ["Clothes","Colours","Food","Numbers"]
 
 export const spanish = [
     {topic: "Food", englishWord: "potato", foreignWord: "papa"},
