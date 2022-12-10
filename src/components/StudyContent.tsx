@@ -7,7 +7,6 @@ import DropdownButton from 'react-bootstrap/DropdownButton';
 import {languages} from "../data/words"
 
 
-
 const StudyContent = (props: any) => {
     var currentLanguageName = languages[0].languageName
     var [currentLanguageName,setLanguageName] = useState(currentLanguageName)
@@ -23,8 +22,13 @@ const StudyContent = (props: any) => {
 
     var showBaseLanguage = true;
     var [showBaseLanguage,setShowBaseLanguage] = useState(showBaseLanguage)
+    const changeBaseLanguage = () => { return setShowBaseLanguage(!showBaseLanguage)}
 
-    const handleClick = () => { return setShowBaseLanguage(!showBaseLanguage)}
+    var showTrueOrder = true;
+    var [showTrueOrder,setShowTrueOrder] = useState(showTrueOrder)
+    const changeOrder = () => { return setShowTrueOrder(!showTrueOrder)}
+
+    
     const changeCurrentLanguage= (languageName:string, languageContent:any, topics: any) => { return setLanguage(languageContent),setLanguageName(languageName), setCurrentLanguageTopics(topics)}
     const changeCurrentTopic = (topic:string) => { return setCurrentTopic(topic)}
 
@@ -57,8 +61,14 @@ const StudyContent = (props: any) => {
         }
 
     }
-
-    var topic_words = currentLanguage.filter((word: { topic: string; }) => {return word.topic === current_topic} )
+    if(showTrueOrder)
+    {
+        var topic_words = currentLanguage.filter((word: { topic: string; }) => {return word.topic === current_topic} )
+    }
+    else
+    {
+        var topic_words = currentLanguage.filter((word: { topic: string; }) => {return word.topic === current_topic}).sort((a, b) => 0.5 - Math.random());
+    }
     return (
         <div style = {{backgroundColor: "white", height: "100vh"}}>
         <Container>    
@@ -73,8 +83,9 @@ const StudyContent = (props: any) => {
                         <Dropdown.Item onClick = {() => changeCurrentTopic(topic)}>{topic}</Dropdown.Item>)}
                     </DropdownButton>
                     <DropdownButton id="Settings" title="Learning Parameters">
-                        <Dropdown.Item onClick = {handleClick}>Toggle base language</Dropdown.Item>
+                        <Dropdown.Item onClick = {changeBaseLanguage}>Toggle base language</Dropdown.Item>
                         <Dropdown.Item onClick = {changeQuizState}>Revise/Quiz</Dropdown.Item>
+                        <Dropdown.Item onClick = {changeOrder}>{showTrueOrder? "random ordering":"default ordering"}</Dropdown.Item>
                     </DropdownButton>
                 </Container>
             </NavbarBs>
