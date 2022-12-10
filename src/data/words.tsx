@@ -1,7 +1,7 @@
 
-export const dutch_topics = ["Clothes","Colours","Food","Family","Numbers"]
+const dutch_topics = ["Clothes","Colours","Food","Family","Numbers"]
 
-export const dutch = [
+const dutch = [
 {topic: "Food", englishWord: "potato", foreignWord: "aardappel"},
 {topic: "Food", englishWord: "bread", foreignWord: "brood"},
 {topic: "Food", englishWord: "meat", foreignWord: "vlees"},
@@ -74,13 +74,11 @@ export const dutch = [
 {topic: "Family", englishWord: "cousin (f)", foreignWord: "nicht"},
 {topic: "Family", englishWord: "niece", foreignWord: "nicht"},
 {topic: "Family", englishWord: "nephew", foreignWord: "neef"}
-
 ]
 
+const arabic_topics = ["Clothes","Colours","Food","Numbers"]
 
-export const arabic_topics = ["Clothes","Colours","Food","Numbers"]
-
-export const arabic = [
+const arabic = [
 {topic: "Clothes", englishWord: "trousers", foreignWord: "banṭalūn (بَنْطَلُون)"},
 {topic: "Clothes", englishWord: "dress", foreignWord: "fustān (فُسْتَان)"},
 {topic: "Clothes", englishWord: "robe", foreignWord: "thawb (ثَوْب)"},
@@ -122,9 +120,9 @@ export const arabic = [
 {topic: "Numbers", englishWord: "ten", foreignWord: "'asharah (عَشَرَة)"}
 ]
 
-export const spanish_topics = ["Clothes","Colours","Food","Numbers"]
+const spanish_topics = ["Clothes","Colours","Food","Numbers"]
 
-export const spanish = [
+const spanish = [
     {topic: "Food", englishWord: "potato", foreignWord: "papa"},
     {topic: "Food", englishWord: "bread", foreignWord: "pan"},
     {topic: "Food", englishWord: "meat", foreignWord: "carne"},
