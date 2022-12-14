@@ -1,4 +1,4 @@
-The **Language Tool** is a website built in React with Typescript made to help people learn foreign languages faster. 
+The Language Tool is a website built in React with Typescript made to help people learn foreign languages faster. 
 
 **src/data/words.tsx** contains all of the vocabulary for the languages. 
 
