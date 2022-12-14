@@ -1,6 +1,6 @@
 The Language Tool is a website built in React with Typescript made to help people learn foreign languages faster. 
 
-src/data/words.tsx contains all of the vocabulary for the languages. 
+**src/data/words.tsx** contains all of the vocabulary for the languages. 
 
 src/components/StudyContent.tsx is the component that contains all the logic for generating a learning experience for different languages, topics, and learning parameters. 
 
