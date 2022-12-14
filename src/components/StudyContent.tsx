@@ -1,7 +1,7 @@
 import { Key, useState } from "react"
 import QuizElement from "./QuizElement"
 import StudyElement from "./StudyElement"
-import {Container, Navbar as NavbarBs, Nav} from "react-bootstrap"
+import {Container, Navbar as NavbarBs} from "react-bootstrap"
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import {languages} from "../data/words"

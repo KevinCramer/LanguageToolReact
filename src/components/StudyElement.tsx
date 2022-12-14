@@ -1,5 +1,4 @@
-import { Key, useState } from "react"
-import {Navbar, Container} from "react-bootstrap"
+import {Navbar} from "react-bootstrap"
 
 const StudyElement = (props: any) => {
   const BaseLanguageWord = props.BaseLanguageWord
