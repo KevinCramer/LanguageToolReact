@@ -5,6 +5,8 @@ import {Container, Navbar as NavbarBs, Nav} from "react-bootstrap"
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import {languages} from "../data/words"
+import ReactGA from 'react-ga'
+
 
 
 const StudyContent = (props: any) => {
@@ -17,6 +19,9 @@ const StudyContent = (props: any) => {
     var currentLanguageTopics = languages[0].topics
     var [currentLanguageTopics,setCurrentLanguageTopics] = useState(currentLanguageTopics)
 
+    var currentNumForeignAlphabets = languages[0].num_foreign_alphabets
+    var [currentNumForeignAlphabets,setCurrentNumForeignAlphabets] = useState(currentNumForeignAlphabets)
+
     var current_topic = currentLanguageTopics[0]
     var [current_topic,setCurrentTopic] = useState(current_topic)
 
@@ -24,17 +29,23 @@ const StudyContent = (props: any) => {
     var [showBaseLanguage,setShowBaseLanguage] = useState(showBaseLanguage)
     const changeBaseLanguage = () => { return setShowBaseLanguage(!showBaseLanguage)}
 
+    var currentAlphabet: number = 0;
+    var [currentAlphabet,setCurrentAlphabet] = useState(currentAlphabet)
+    const changeCurrentAlphabet = () => { return setCurrentAlphabet(currentAlphabet = (currentAlphabet +1)% currentNumForeignAlphabets)}
+
     var showTrueOrder = true;
     var [showTrueOrder,setShowTrueOrder] = useState(showTrueOrder)
     const changeOrder = () => { return setShowTrueOrder(!showTrueOrder)}
 
     
-    const changeCurrentLanguage= (languageName:string, languageContent:any, topics: any) => { return setLanguage(languageContent),setLanguageName(languageName), setCurrentLanguageTopics(topics)}
+    const changeCurrentLanguage= (languageName:string, languageContent:any, topics: any, num_foreign_alphabets:any) => { return setLanguage(languageContent),setLanguageName(languageName), setCurrentLanguageTopics(topics), setCurrentNumForeignAlphabets(num_foreign_alphabets)}
     const changeCurrentTopic = (topic:string) => { return setCurrentTopic(topic)}
 
     var quiz = false
     var [quiz,setQuiz] = useState(quiz)
-    const changeQuizState = () => { return setQuiz((!quiz))}
+    const changeQuizState = () => {
+        ReactGA.event({category: "quizStateWasChanged", action: "",label: "",value: 4});
+        return setQuiz((!quiz))}
 
     function ToggleQuiz(){
         if (quiz) {
@@ -42,7 +53,7 @@ const StudyContent = (props: any) => {
                 <div>
                     {topic_words.map((pair: any) =>
                     <div>
-                                            <QuizElement QuestionWord = { showBaseLanguage? pair.englishWord: pair.foreignWord } AnswerWord = {showBaseLanguage? pair.foreignWord: pair.englishWord}/>
+                                            <QuizElement QuestionWord = { showBaseLanguage? pair.englishWord: pair.foreignWord[currentAlphabet] } AnswerWord = {showBaseLanguage? pair.foreignWord[currentAlphabet]: pair.englishWord}/>
                     </div>                    
                     )}
                 </div>
@@ -53,7 +64,7 @@ const StudyContent = (props: any) => {
                 <div>
                     {topic_words.map((pair: any) =>
                     <div>
-                                            <StudyElement BaseLanguageWord = { showBaseLanguage? pair.englishWord: pair.foreignWord } ForeignLanguageWord = {showBaseLanguage? pair.foreignWord: pair.englishWord}/>
+                                            <StudyElement BaseLanguageWord = { showBaseLanguage? pair.englishWord: pair.foreignWord[currentAlphabet]} ForeignLanguageWord = {showBaseLanguage? pair.foreignWord[currentAlphabet]: pair.englishWord}/>
                     </div>                    
                     )}
                 </div>
@@ -76,7 +87,7 @@ const StudyContent = (props: any) => {
                 <Container>
                     <DropdownButton id="Languages" title={"Language: " + String(currentLanguageName)}> 
                         {languages.map((languageItem: any) =>
-                        <Dropdown.Item onClick = {() => changeCurrentLanguage(languageItem.languageName, languageItem.Content,languageItem.topics)}>{languageItem.languageName}</Dropdown.Item>)}
+                        <Dropdown.Item onClick = {() => changeCurrentLanguage(languageItem.languageName, languageItem.Content,languageItem.topics, languageItem.num_foreign_alphabets)}>{languageItem.languageName}</Dropdown.Item>)}
                     </DropdownButton>
                     <DropdownButton id="Topics" title={"Topic: " + current_topic}>
                         {currentLanguageTopics.map((topic: string) =>
@@ -86,6 +97,7 @@ const StudyContent = (props: any) => {
                         <Dropdown.Item onClick = {changeBaseLanguage}>Toggle base language</Dropdown.Item>
                         <Dropdown.Item onClick = {changeQuizState}>Revise/Quiz</Dropdown.Item>
                         <Dropdown.Item onClick = {changeOrder}>{showTrueOrder? "random ordering":"default ordering"}</Dropdown.Item>
+                        <Dropdown.Item onClick = {changeCurrentAlphabet}>{currentNumForeignAlphabets>1 ? "Toggle foreign alphabet": null}</Dropdown.Item>
                     </DropdownButton>
                 </Container>
             </NavbarBs>
