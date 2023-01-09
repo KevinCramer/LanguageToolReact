@@ -68,7 +68,7 @@ const StudyContent = (props: any) => {
                 <div>
                     {topic_words.map((pair: any) =>
                     <div>
-                                            <StudyElement BaseLanguageWord = { showBaseLanguage? pair.englishWord: pair.foreignWord[currentAlphabet]} ForeignLanguageWord = {showBaseLanguage? pair.foreignWord[currentAlphabet]: pair.englishWord}  ForeignLanguageWordAudio = {pair.foreignAudio} showAudio = {displayAudio}/>
+                                            <StudyElement BaseLanguageWord = { showBaseLanguage? pair.englishWord: pair.foreignWord[currentAlphabet]} ForeignLanguageWord = {showBaseLanguage? pair.foreignWord[currentAlphabet]: pair.englishWord}  ForeignLanguageWordAudio = {pair.foreignAudio} showAudio = {displayAudio} showBaseLanguageFirst = {showBaseLanguage}/>
                     </div>                    
                     )}
                 </div>

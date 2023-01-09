@@ -8,15 +8,29 @@ const StudyElement = (props: any) => {
   const ForeignLanguageWord = props.ForeignLanguageWord
   const ForeignLanguageWordAudio = props.ForeignLanguageWordAudio
   const showAudio = props.showAudio
+  const showBaseLanguageFirst= props.showBaseLanguageFirst
+
   if(showAudio){
+    if(showBaseLanguageFirst){
     return (
       <Navbar>
-      <label style= {{width: "200px", textAlign: "left"}}>{BaseLanguageWord} </label>
-      <label style= {{width: "40px"}}></label>
-      <label style= {{width: "200px", textAlign: "left"}}>{ForeignLanguageWord} </label>
-      <label style= {{width: "200px", textAlign: "left"}}><audio src={ForeignLanguageWordAudio} controls autoPlay ={false}></audio> </label>
+        <label style= {{width: "200px", textAlign: "left"}}>{BaseLanguageWord} </label>
+        <label style= {{width: "40px"}}></label>
+        <label style= {{width: "200px", textAlign: "left"}}>{ForeignLanguageWord} </label>
+        <label style= {{width: "200px", textAlign: "left"}}><audio src={ForeignLanguageWordAudio} controls autoPlay ={false}></audio> </label>
       </Navbar>
       )
+    }
+    else{
+      return (
+        <Navbar>
+        <label style= {{width: "200px", textAlign: "left"}}>{BaseLanguageWord} </label>
+        <label style= {{width: "200px", textAlign: "left"}}><audio src={ForeignLanguageWordAudio} controls autoPlay ={false}></audio> </label>
+        <label style= {{width: "40px"}}></label>
+        <label style= {{width: "300px", textAlign: "right"}}>{ForeignLanguageWord} </label>
+        </Navbar>
+      )
+    }
   }
   else {
     return (
