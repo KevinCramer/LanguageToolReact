@@ -7,7 +7,7 @@ import  "./index.css"
 import video from "./assets/720p.mp4"
 import StudyContent from "./components/StudyContent"
 import ReactGA from 'react-ga' 
-const TRACKING_ID = "G-4CF04KQWBM"
+const TRACKING_ID = "UA-253414467-1"
 ReactGA.initialize(TRACKING_ID)
 
 function App() {
