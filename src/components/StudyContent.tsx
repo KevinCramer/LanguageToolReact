@@ -44,7 +44,7 @@ const StudyContent = (props: any) => {
     var quiz = false
     var [quiz,setQuiz] = useState(quiz)
     const changeQuizState = () => {
-        ReactGA.event({category: "quizStateWasChanged", action: "",label: "",value: 4});
+        ReactGA.event({category: "quizStateWasChanged", action: "hdfg",label: "dasfg",value: 4});
         return setQuiz((!quiz))}
 
     function ToggleQuiz(){

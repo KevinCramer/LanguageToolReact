@@ -6,8 +6,8 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import  "./index.css"
 import video from "./assets/720p.mp4"
 import StudyContent from "./components/StudyContent"
-import ReactGA from 'react-ga'
-const TRACKING_ID = "G-DV4ZEWYFH2"
+import ReactGA from 'react-ga' 
+const TRACKING_ID = "G-4CF04KQWBM"
 ReactGA.initialize(TRACKING_ID)
 
 function App() {
