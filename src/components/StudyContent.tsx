@@ -1,14 +1,12 @@
-import { Key, useState } from "react"
-import QuizElement from "./QuizElement"
-import StudyElement from "./StudyElement"
-import {Container, Navbar as NavbarBs, Nav} from "react-bootstrap"
+import { Key, useState } from "react";
+import QuizElement from "./QuizElement";
+import StudyElement from "./StudyElement";
+import {Container, Navbar as NavbarBs, Nav} from "react-bootstrap";
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
-import {languages} from "../data/words"
-import ReactGA from 'react-ga'
-import Purple from 'src/data/audio/purple.mp3'
-
-
+import {languages} from "../data/words";
+import ReactGA from 'react-ga';
+import Purple from '../data/audio/purple.mp3';
 
 const StudyContent = (props: any) => {
     var currentLanguageName = languages[0].languageName
@@ -48,6 +46,11 @@ const StudyContent = (props: any) => {
         ReactGA.event({category: "quizStateWasChanged", action: "hdfg",label: "dasfg",value: 4});
         return setQuiz((!quiz))}
 
+    var displayAudio = true
+    var [displayAudio,setAudio] = useState(displayAudio)
+    const changeAudioState = () => {
+        return setAudio((!displayAudio))}
+    
     function ToggleQuiz(){
         if (quiz) {
             return ( 
@@ -65,7 +68,7 @@ const StudyContent = (props: any) => {
                 <div>
                     {topic_words.map((pair: any) =>
                     <div>
-                                            <StudyElement BaseLanguageWord = { showBaseLanguage? pair.englishWord: pair.foreignWord[currentAlphabet]} ForeignLanguageWord = {showBaseLanguage? pair.foreignWord[currentAlphabet]: pair.englishWord}/>
+                                            <StudyElement BaseLanguageWord = { showBaseLanguage? pair.englishWord: pair.foreignWord[currentAlphabet]} ForeignLanguageWord = {showBaseLanguage? pair.foreignWord[currentAlphabet]: pair.englishWord}  ForeignLanguageWordAudio = {pair.foreignAudio} showAudio = {displayAudio}/>
                     </div>                    
                     )}
                 </div>
@@ -97,9 +100,11 @@ const StudyContent = (props: any) => {
                     <DropdownButton id="Settings" title="Learning Parameters">
                         <Dropdown.Item onClick = {changeBaseLanguage}>Toggle base language</Dropdown.Item>
                         <Dropdown.Item onClick = {changeQuizState}>Revise/Quiz</Dropdown.Item>
+                        <Dropdown.Item onClick = {changeAudioState}>Show/Hide Audio</Dropdown.Item>
                         <Dropdown.Item onClick = {changeOrder}>{showTrueOrder? "random ordering":"default ordering"}</Dropdown.Item>
                         <Dropdown.Item onClick = {changeCurrentAlphabet}>{currentNumForeignAlphabets>1 ? "Toggle foreign alphabet": null}</Dropdown.Item>
                     </DropdownButton>
+                    
                 </Container>
             </NavbarBs>
                 <p></p>

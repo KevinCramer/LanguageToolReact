@@ -1,4 +1,5 @@
 
+
 const dutch_topics = ["Clothes","Colours","Food","Family","Numbers"]
 
 const dutch = [
@@ -99,15 +100,15 @@ const arabic = [
 {topic: "Food", englishWord: "zucchini", foreignWord: ["kūsah", "كوسَة"]},
 {topic: "Food", englishWord: "eggplant", foreignWord: ["bādhinjān", "باذِنْجان"]},
 {topic: "Food", englishWord: "cheese", foreignWord: ["jubnah", "جُبْنَة"]},
-{topic: "Colours", englishWord: "yellow", foreignWord: ["asfar", "أَصْفَر"]},
-{topic: "Colours", englishWord: "blue", foreignWord: ["azraq", "أَزْرَق"]},
-{topic: "Colours", englishWord: "gray", foreignWord: ["ramādiyy", "رَمَادِيّ"]},
-{topic: "Colours", englishWord: "green", foreignWord: ["akhḍar", "أَخْضَر"]},
-{topic: "Colours", englishWord: "purple", foreignWord: ["banafsajiyy", "بَنَفْسَجِيّ"]},
-{topic: "Colours", englishWord: "pink", foreignWord: ["wardiyy", "وَرْدِيّ"]},
-{topic: "Colours", englishWord: "black", foreignWord: ["aswad", "أَسْوَد"]},
-{topic: "Colours", englishWord: "orange", foreignWord: ["burtuqāliyy", "بُرْتُقَاْلِيّ"]},
-{topic: "Colours", englishWord: "red", foreignWord: ["aḥmar", "أَحْمَر"]},
+{topic: "Colours", englishWord: "yellow", foreignWord: ["asfar", "أَصْفَر"], foreignAudio: arabic_yellow},
+{topic: "Colours", englishWord: "blue", foreignWord: ["azraq", "أَزْرَق"], foreignAudio: arabic_blue},
+{topic: "Colours", englishWord: "grey", foreignWord: ["ramādiyy", "رَمَادِيّ"], foreignAudio: arabic_grey},
+{topic: "Colours", englishWord: "green", foreignWord: ["akhḍar", "أَخْضَر"], foreignAudio: arabic_green},
+{topic: "Colours", englishWord: "purple", foreignWord: ["banafsajiyy", "بَنَفْسَجِيّ"], foreignAudio: arabic_purple},
+{topic: "Colours", englishWord: "pink", foreignWord: ["wardiyy", "وَرْدِيّ"], foreignAudio: arabic_pink},
+{topic: "Colours", englishWord: "black", foreignWord: ["aswad", "أَسْوَد"], foreignAudio: arabic_black},
+{topic: "Colours", englishWord: "orange", foreignWord: ["burtuqāliyy", "بُرْتُقَاْلِيّ"], foreignAudio: arabic_orange},
+{topic: "Colours", englishWord: "red", foreignWord: ["aḥmar", "أَحْمَر"], foreignAudio: arabic_purple},
 {topic: "Numbers", englishWord: "one", foreignWord: ["waheed", "وَاحِد"]},
 {topic: "Numbers", englishWord: "two", foreignWord: ["ithnain", "اِثْنَان"]},
 {topic: "Numbers", englishWord: "three", foreignWord: ["thalāthah", "ثَلَاثَة"]},
@@ -167,3 +168,17 @@ const spanish = [
     ]
 
     export const languages = [{languageName: "Arabic", Content: arabic, topics: arabic_topics, num_foreign_alphabets: 2},{languageName: "Dutch", Content: dutch, topics: dutch_topics, num_foreign_alphabets: 1},{languageName: "Spanish", Content: spanish, topics: spanish_topics, num_foreign_alphabets: 1} ]
+
+
+
+import arabic_black from '../data/audio/black.mp3';
+import arabic_blue from '../data/audio/blue.mp3';
+import arabic_brown from '../data/audio/brown.mp3';
+import arabic_green from '../data/audio/green.mp3';
+import arabic_grey from '../data/audio/grey.mp3';
+import arabic_orange from '../data/audio/orange.mp3';
+import arabic_pink from '../data/audio/pink.mp3';
+import arabic_purple from '../data/audio/purple.mp3';
+import arabic_red from '../data/audio/red.mp3';
+import arabic_white from '../data/audio/white.mp3';
+import arabic_yellow from '../data/audio/yellow.mp3';
