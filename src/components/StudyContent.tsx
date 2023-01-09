@@ -6,6 +6,7 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import {languages} from "../data/words"
 import ReactGA from 'react-ga'
+import Purple from 'src/data/audio/purple.mp3'
 
 
 
