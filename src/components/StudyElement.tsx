@@ -14,7 +14,7 @@ const StudyElement = (props: any) => {
       <label style= {{width: "200px", textAlign: "left"}}>{BaseLanguageWord} </label>
       <label style= {{width: "40px"}}></label>
       <label style= {{width: "200px", textAlign: "left"}}>{ForeignLanguageWord} </label>
-      <label style= {{width: "200px", textAlign: "left"}}><audio src={ForeignLanguageWordAudio} controls autoplay></audio> </label>
+      <label style= {{width: "200px", textAlign: "left"}}><audio src={ForeignLanguageWordAudio} controls autoPlay ={false}></audio> </label>
       </Navbar>
       )
   }
