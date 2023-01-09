@@ -108,7 +108,7 @@ const arabic = [
 {topic: "Colours", englishWord: "pink", foreignWord: ["wardiyy", "وَرْدِيّ"], foreignAudio: arabic_pink},
 {topic: "Colours", englishWord: "black", foreignWord: ["aswad", "أَسْوَد"], foreignAudio: arabic_black},
 {topic: "Colours", englishWord: "orange", foreignWord: ["burtuqāliyy", "بُرْتُقَاْلِيّ"], foreignAudio: arabic_orange},
-{topic: "Colours", englishWord: "red", foreignWord: ["aḥmar", "أَحْمَر"], foreignAudio: arabic_purple},
+{topic: "Colours", englishWord: "red", foreignWord: ["aḥmar", "أَحْمَر"], foreignAudio: arabic_red},
 {topic: "Numbers", englishWord: "one", foreignWord: ["waheed", "وَاحِد"]},
 {topic: "Numbers", englishWord: "two", foreignWord: ["ithnain", "اِثْنَان"]},
 {topic: "Numbers", englishWord: "three", foreignWord: ["thalāthah", "ثَلَاثَة"]},
