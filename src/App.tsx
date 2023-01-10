@@ -7,6 +7,7 @@ import  "./index.css"
 import video from "./assets/720p.mp4"
 import StudyContent from "./components/StudyContent"
 import ReactGA from 'react-ga' 
+import Counter from "./redux/counter"
 const TRACKING_ID = "UA-253414467-1"
 ReactGA.initialize(TRACKING_ID)
 

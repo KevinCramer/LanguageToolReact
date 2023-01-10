@@ -41,9 +41,9 @@ const StudyContent = (props: any) => {
     
     const changeCurrentLanguage= (languageName:string, languageContent:any, topics: any, num_foreign_alphabets:any) => { return setLanguage(languageContent),setLanguageName(languageName), setCurrentLanguageTopics(topics), setCurrentNumForeignAlphabets(num_foreign_alphabets)}
     const changeCurrentTopic = (topic:string) => { return setCurrentTopic(topic)}
-    var { count } = useSelector((state:any) => state.counter) 
-    console.log(count)
+    const count = useSelector((state:any) => state.counter.count);
     const dispatch = useDispatch();
+    console.log(count)
     var quiz = false
     var [quiz,setQuiz] = useState(quiz)
     const changeQuizState = () => {
@@ -108,7 +108,7 @@ const StudyContent = (props: any) => {
                         <Dropdown.Item onClick = {changeOrder}>{showTrueOrder? "random ordering":"default ordering"}</Dropdown.Item>
                         <Dropdown.Item onClick = {changeCurrentAlphabet}>{currentNumForeignAlphabets>1 ? "Toggle foreign alphabet": null}</Dropdown.Item>
                     </DropdownButton>
-                    <button onClick= {() => dispatch(increment())}>{count}{234}</button>
+                    <button onClick= {() => dispatch(increment())}>{count}</button>
                     
                 </Container>
             </NavbarBs>
