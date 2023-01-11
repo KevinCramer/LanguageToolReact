@@ -77,7 +77,7 @@ const dutch = [
 {topic: "Family", englishWord: "nephew", foreignWord: ["neef"], foreignAudio: ""}
 ]
 
-const arabic_topics = ["Clothes","Colours","Food","Numbers"]
+const arabic_topics = ["Colours","Clothes","Food","Numbers"]
 
 const arabic = [
 {topic: "Clothes", englishWord: "trousers", foreignWord: ["banṭalūn", "بَنْطَلُون"], foreignAudio: ""},
