@@ -8,11 +8,11 @@ export const audioSlice = createSlice({
   name: 'displayAudio',
   initialState,
   reducers: {
-    flip: (state) => {
+    flipAudioBool: (state) => {
       state.audioBool = !state.audioBool
     },
   },
 })
-export const { flip } = audioSlice.actions
+export const { flipAudioBool } = audioSlice.actions
 
 export default audioSlice.reducer

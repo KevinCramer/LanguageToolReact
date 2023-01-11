@@ -7,7 +7,11 @@ import DropdownButton from 'react-bootstrap/DropdownButton';
 import {languages} from "../data/words";
 import ReactGA from 'react-ga';
 import {useSelector,useDispatch} from "react-redux"
-import {flip} from "../redux/displayAudio";
+import {flipAudioBool} from "../redux/displayAudio";
+import {flipBaseLanguage} from "../redux/baseLanguage";
+import {flipQuizState} from "../redux/quiz";
+
+
 
 const StudyContent = (props: any) => {
     var currentLanguageName = languages[0].languageName
@@ -25,9 +29,6 @@ const StudyContent = (props: any) => {
     var current_topic = currentLanguageTopics[0]
     var [current_topic,setCurrentTopic] = useState(current_topic)
 
-    var showBaseLanguage = true;
-    var [showBaseLanguage,setShowBaseLanguage] = useState(showBaseLanguage)
-    const changeBaseLanguage = () => { return setShowBaseLanguage(!showBaseLanguage)}
 
     var currentAlphabet: number = 0;
     var [currentAlphabet,setCurrentAlphabet] = useState(currentAlphabet)
@@ -41,22 +42,18 @@ const StudyContent = (props: any) => {
     const changeCurrentLanguage= (languageName:string, languageContent:any, topics: any, num_foreign_alphabets:any) => { return setLanguage(languageContent),setLanguageName(languageName), setCurrentLanguageTopics(topics), setCurrentNumForeignAlphabets(num_foreign_alphabets)}
     const changeCurrentTopic = (topic:string) => { return setCurrentTopic(topic)}
 
-    var quiz = false
-    var [quiz,setQuiz] = useState(quiz)
-    const changeQuizState = () => {
-        ReactGA.event({category: "quizStateWasChanged", action: "hdfg",label: "dasfg",value: 4});
-        return setQuiz((!quiz))}
-    
     const audioBool = useSelector((state:any) => state.audio.audioBool);
+    const baseLanguageBool = useSelector((state:any) => state.baseLanguage.baseLanguageBool);
+    const quizState = useSelector((state:any) => state.quiz.quizBool);
     const dispatch = useDispatch();
-    
+    console.log(quizState)
     function ToggleQuiz(){
-        if (quiz) {
+        if (quizState) {
             return ( 
                 <div>
                     {topic_words.map((pair: any) =>
                     <div>
-                                            <QuizElement QuestionWord = { showBaseLanguage? pair.englishWord: pair.foreignWord[currentAlphabet] } AnswerWord = {showBaseLanguage? pair.foreignWord[currentAlphabet]: pair.englishWord}/>
+                                            <QuizElement QuestionWord = { baseLanguageBool? pair.englishWord: pair.foreignWord[currentAlphabet] } AnswerWord = {baseLanguageBool? pair.foreignWord[currentAlphabet]: pair.englishWord}/>
                     </div>                    
                     )}
                 </div>
@@ -67,7 +64,7 @@ const StudyContent = (props: any) => {
                 <div>
                     {topic_words.map((pair: any) =>
                     <div>
-                                            <StudyElement BaseLanguageWord = { showBaseLanguage? pair.englishWord: pair.foreignWord[currentAlphabet]} ForeignLanguageWord = {showBaseLanguage? pair.foreignWord[currentAlphabet]: pair.englishWord}  ForeignLanguageWordAudio = {pair.foreignAudio} showAudio = {audioBool} showBaseLanguageFirst = {showBaseLanguage}/>
+                                            <StudyElement BaseLanguageWord = { baseLanguageBool? pair.englishWord: pair.foreignWord[currentAlphabet]} ForeignLanguageWord = {baseLanguageBool? pair.foreignWord[currentAlphabet]: pair.englishWord}  ForeignLanguageWordAudio = {pair.foreignAudio} showAudio = {audioBool} showBaseLanguageFirst = {baseLanguageBool}/>
                     </div>                    
                     )}
                 </div>
@@ -97,9 +94,9 @@ const StudyContent = (props: any) => {
                         <Dropdown.Item onClick = {() => changeCurrentTopic(topic)}>{topic}</Dropdown.Item>)}
                     </DropdownButton>
                     <DropdownButton id="Settings" title="Learning Parameters">
-                        <Dropdown.Item onClick = {changeBaseLanguage}>Toggle base language</Dropdown.Item>
-                        <Dropdown.Item onClick = {changeQuizState}>Revise/Quiz</Dropdown.Item>
-                        <Dropdown.Item onClick = {() => dispatch(flip())}>Show/Hide Audio</Dropdown.Item>
+                        <Dropdown.Item onClick = {() => dispatch(flipBaseLanguage())}>Toggle base language</Dropdown.Item>
+                        <Dropdown.Item onClick = {() => [dispatch(flipQuizState()), ReactGA.event({category: "quizStateWasChanged", action: "",label: "",value: 0})]}>Revise/Quiz</Dropdown.Item>
+                        <Dropdown.Item onClick = {() => dispatch(flipAudioBool())}>Show/Hide Audio</Dropdown.Item>
                         <Dropdown.Item onClick = {changeOrder}>{showTrueOrder? "random ordering":"default ordering"}</Dropdown.Item>
                         <Dropdown.Item onClick = {changeCurrentAlphabet}>{currentNumForeignAlphabets>1 ? "Toggle foreign alphabet": null}</Dropdown.Item>
                     </DropdownButton>                    
