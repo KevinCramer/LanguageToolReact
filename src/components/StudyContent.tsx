@@ -42,7 +42,7 @@ const StudyContent = (props: any) => {
     const baseLanguageBool = useSelector((state:any) => state.baseLanguage.baseLanguageBool);
     const quizState = useSelector((state:any) => state.quiz.quizBool);
     const trueOrder = useSelector((state:any) => state.trueOrder.trueOrderBool);
-    
+
     const dispatch = useDispatch();
     console.log(quizState)
     function ToggleQuiz(){
@@ -95,7 +95,7 @@ const StudyContent = (props: any) => {
                         <Dropdown.Item onClick = {() => dispatch(flipBaseLanguage())}>Toggle base language</Dropdown.Item>
                         <Dropdown.Item onClick = {() => [dispatch(flipQuizState()), ReactGA.event({category: "quizStateWasChanged", action: "",label: "",value: 0})]}>Revise/Quiz</Dropdown.Item>
                         <Dropdown.Item onClick = {() => dispatch(flipAudioBool())}>Show/Hide Audio</Dropdown.Item>
-                        <Dropdown.Item onClick = {changeOrder}>{trueOrder? "random ordering":"default ordering"}</Dropdown.Item>
+                        <Dropdown.Item onClick = {() => dispatch(flipTrueOrderState())}>{trueOrder? "random ordering":"default ordering"}</Dropdown.Item>
                         <Dropdown.Item onClick = {changeCurrentAlphabet}>{currentNumForeignAlphabets>1 ? "Toggle foreign alphabet": null}</Dropdown.Item>
                     </DropdownButton>                    
                 </Container>
