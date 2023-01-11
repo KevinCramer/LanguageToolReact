@@ -10,6 +10,8 @@ import {useSelector,useDispatch} from "react-redux"
 import {flipAudioBool} from "../redux/displayAudio";
 import {flipBaseLanguage} from "../redux/baseLanguage";
 import {flipQuizState} from "../redux/quiz";
+import {flipTrueOrderState} from "../redux/trueOrder";
+
 
 
 
@@ -33,18 +35,14 @@ const StudyContent = (props: any) => {
     var currentAlphabet: number = 0;
     var [currentAlphabet,setCurrentAlphabet] = useState(currentAlphabet)
     const changeCurrentAlphabet = () => { return setCurrentAlphabet(currentAlphabet = (currentAlphabet +1)% currentNumForeignAlphabets)}
-
-    var showTrueOrder = true;
-    var [showTrueOrder,setShowTrueOrder] = useState(showTrueOrder)
-    const changeOrder = () => { return setShowTrueOrder(!showTrueOrder)}
-
-    
     const changeCurrentLanguage= (languageName:string, languageContent:any, topics: any, num_foreign_alphabets:any) => { return setLanguage(languageContent),setLanguageName(languageName), setCurrentLanguageTopics(topics), setCurrentNumForeignAlphabets(num_foreign_alphabets)}
     const changeCurrentTopic = (topic:string) => { return setCurrentTopic(topic)}
 
     const audioBool = useSelector((state:any) => state.audio.audioBool);
     const baseLanguageBool = useSelector((state:any) => state.baseLanguage.baseLanguageBool);
     const quizState = useSelector((state:any) => state.quiz.quizBool);
+    const trueOrder = useSelector((state:any) => state.trueOrder.trueOrderBool);
+    
     const dispatch = useDispatch();
     console.log(quizState)
     function ToggleQuiz(){
@@ -72,7 +70,7 @@ const StudyContent = (props: any) => {
         }
 
     }
-    if(showTrueOrder)
+    if(trueOrder)
     {
         var topic_words = currentLanguage.filter((word: { topic: string; }) => {return word.topic === current_topic} )
     }
@@ -97,7 +95,7 @@ const StudyContent = (props: any) => {
                         <Dropdown.Item onClick = {() => dispatch(flipBaseLanguage())}>Toggle base language</Dropdown.Item>
                         <Dropdown.Item onClick = {() => [dispatch(flipQuizState()), ReactGA.event({category: "quizStateWasChanged", action: "",label: "",value: 0})]}>Revise/Quiz</Dropdown.Item>
                         <Dropdown.Item onClick = {() => dispatch(flipAudioBool())}>Show/Hide Audio</Dropdown.Item>
-                        <Dropdown.Item onClick = {changeOrder}>{showTrueOrder? "random ordering":"default ordering"}</Dropdown.Item>
+                        <Dropdown.Item onClick = {changeOrder}>{trueOrder? "random ordering":"default ordering"}</Dropdown.Item>
                         <Dropdown.Item onClick = {changeCurrentAlphabet}>{currentNumForeignAlphabets>1 ? "Toggle foreign alphabet": null}</Dropdown.Item>
                     </DropdownButton>                    
                 </Container>
