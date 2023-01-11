@@ -11,6 +11,8 @@ import {flipAudioBool} from "../redux/displayAudio";
 import {flipBaseLanguage} from "../redux/baseLanguage";
 import {flipQuizState} from "../redux/quiz";
 import {flipTrueOrderState} from "../redux/trueOrder";
+import {makeTrue} from "../redux/resetForms";
+
 
 
 
@@ -42,9 +44,10 @@ const StudyContent = (props: any) => {
     const baseLanguageBool = useSelector((state:any) => state.baseLanguage.baseLanguageBool);
     const quizState = useSelector((state:any) => state.quiz.quizBool);
     const trueOrder = useSelector((state:any) => state.trueOrder.trueOrderBool);
+    const resetMyForms = useSelector((state:any) => state.resetForms.resetFormsBool);
+
 
     const dispatch = useDispatch();
-    console.log(quizState)
     function ToggleQuiz(){
         if (quizState) {
             return ( 
@@ -89,7 +92,7 @@ const StudyContent = (props: any) => {
                     </DropdownButton>
                     <DropdownButton id="Topics" title={"Topic: " + current_topic}>
                         {currentLanguageTopics.map((topic: string) =>
-                        <Dropdown.Item onClick = {() => changeCurrentTopic(topic)}>{topic}</Dropdown.Item>)}
+                        <Dropdown.Item onClick = {() => [dispatch(makeTrue()),changeCurrentTopic(topic)]}>{topic}</Dropdown.Item>)}
                     </DropdownButton>
                     <DropdownButton id="Settings" title="Learning Parameters">
                         <Dropdown.Item onClick = {() => dispatch(flipBaseLanguage())}>Toggle base language</Dropdown.Item>
