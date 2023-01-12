@@ -10,7 +10,6 @@ export const trueOrderSlice = createSlice({
   reducers: {
     flipTrueOrderState: (state) => {
       state.trueOrderBool = !state.trueOrderBool.valueOf;
-      console.log("321453145")
     },
   },
 })

@@ -10,11 +10,9 @@ export const resetFormsSlice = createSlice({
   reducers: {
     makeTrue: (state) => {
       state.resetFormsBool = true
-      console.log("Hello makeTrue")
     },
     makeFalse: (state) => {
       state.resetFormsBool = false
-      console.log("Hello makeFalse")
     },
   },
 })
