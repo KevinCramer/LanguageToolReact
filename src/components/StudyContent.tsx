@@ -55,7 +55,7 @@ const StudyContent = (props: any) => {
             return ( 
                 <div>
                     {topic_words.map((pair: any) =>
-                    <div>
+                    <div key ={showTrueOrder+ pair.englishWord + pair.foreignWord[currentAlphabet] + showBaseLanguage}>
                                             <QuizElement QuestionWord = { showBaseLanguage? pair.englishWord: pair.foreignWord[currentAlphabet] } AnswerWord = {showBaseLanguage? pair.foreignWord[currentAlphabet]: pair.englishWord}/>
                     </div>                    
                     )}
@@ -90,7 +90,7 @@ const StudyContent = (props: any) => {
                 <Container>
                     <DropdownButton id="Languages" title={"Language: " + String(currentLanguageName)}> 
                         {languages.map((languageItem: any) =>
-                        <Dropdown.Item onClick = {() => changeCurrentLanguage(languageItem.languageName, languageItem.Content,languageItem.topics, languageItem.num_foreign_alphabets)}>{languageItem.languageName}</Dropdown.Item>)}
+                        <Dropdown.Item onClick = {() => [changeCurrentLanguage(languageItem.languageName, languageItem.Content,languageItem.topics, languageItem.num_foreign_alphabets), setCurrentAlphabet(0) ]}>{languageItem.languageName}</Dropdown.Item>)}
                     </DropdownButton>
                     <DropdownButton id="Topics" title={"Topic: " + current_topic}>
                         {currentLanguageTopics.map((topic: string) =>
