@@ -59,7 +59,7 @@ const StudyContent = (props: any) => {
                 <div>
                     {topic_words.map((pair: any) =>
                     <div key ={showTrueOrder+ pair.englishWord + pair.foreignWord[currentAlphabet] + showBaseLanguage}>
-                                            <QuizElement QuestionWord = { showBaseLanguage? pair.englishWord: pair.foreignWord[currentAlphabet] } AnswerWord = {showBaseLanguage? pair.foreignWord[currentAlphabet]: pair.englishWord}/>
+                                            <QuizElement QuestionWord = { showBaseLanguage? pair.englishWord: pair.foreignWord[currentAlphabet] } AnswerWord = {showBaseLanguage? pair.foreignWord[currentAlphabet]: pair.englishWord} isVerb = {current_topic=== "Verbs"}/>
                     </div>                    
                     )}
                 </div>

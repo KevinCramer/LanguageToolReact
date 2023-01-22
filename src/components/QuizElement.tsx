@@ -2,8 +2,9 @@ import { Key, useState } from "react"
 import {Navbar, Container} from "react-bootstrap"
 
 const QuizElement = (props: any) => {
-    const QuestionWord = props.QuestionWord
-    const AnswerWord = props.AnswerWord
+    const isVerb = props.isVerb
+    const QuestionWord = isVerb? props.QuestionWord.infinitive: props.QuestionWord
+    const AnswerWord = isVerb? props.AnswerWord.infinitive: props.AnswerWord
     const initialAnswer = {answer: ""}
     const [formValues, setFormValues] = useState(initialAnswer)
     var initialResponse = ""
