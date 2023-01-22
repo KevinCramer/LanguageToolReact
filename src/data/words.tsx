@@ -121,7 +121,7 @@ const arabic = [
 {topic: "Numbers", englishWord: "ten", foreignWord: ["'asharah", "عَشَرَة"], foreignAudio: ""}
 ]
 
-const spanish_topics = ["Clothes","Colours","Food","Numbers"]
+const spanish_topics = ["Clothes","Colours","Food","Numbers", "Verbs"]
 
 const spanish = [
     {topic: "Food", englishWord: "potato", foreignWord: ["papa"], foreignAudio: ""},
@@ -163,12 +163,12 @@ const spanish = [
     {topic: "Numbers", englishWord: "seven", foreignWord: ["siete"], foreignAudio: ""},
     {topic: "Numbers", englishWord: "eight", foreignWord: ["ocho"], foreignAudio: ""},
     {topic: "Numbers", englishWord: "nine", foreignWord: ["nueve"], foreignAudio: ""},
-    {topic: "Numbers", englishWord: "ten", foreignWord: ["diez"], foreignAudio: ""}
-    
+    {topic: "Numbers", englishWord: "ten", foreignWord: ["diez"], foreignAudio: ""},
+    {topic: "Verbs", englishWord: {infinitive: "to call",englishWordConjugation: {past_tense: ["called","called", "called","called","called", "called"],present_tense: ["call","call", "calls","call","call", "call"], future_tense: ["will call","will call", "will call","will call","will call", "will call"]}}, foreignWord: [{infinitive: "llamar",foreignWordConjugation: {past_tense: ["llamé","llamaste","llamó","llamamos","llamasteis","llamaron"],present_tense: ["llamo","llamas", "llama","llamamos","llamáis", "llaman"], future_tense: ["llamaré","llamarás", "llamará","llamaremos","llamaréis", "llamarán"]}}], foreignAudio: ""},
+    {topic: "Verbs", englishWord: {infinitive: "to study",englishWordConjugation: {past_tense: ["studied","studied", "studied","studied","studied", "studied"],present_tense: ["study","study", "studies","study","study", "study"], future_tense: ["will study","will study", "will study","will study","will study", "will study"]}}, foreignWord: [{infinitive: "estudiar",foreignWordConjugation: {past_tense: ["estudié","estudiaste","estudió","estudiamos","estudiasteis","estudiaron"],present_tense: ["estudio","estudias", "estudia","estudiamos","estudiáis", "estudian"], future_tense: ["estudiaré","estudiarás", "estudiará","estudiaremos","estudiareis", "estudiarán"]}}], foreignAudio: ""}
     ]
 
     export const languages = [{languageName: "Arabic", Content: arabic, topics: arabic_topics, num_foreign_alphabets: 2},{languageName: "Dutch", Content: dutch, topics: dutch_topics, num_foreign_alphabets: 1},{languageName: "Spanish", Content: spanish, topics: spanish_topics, num_foreign_alphabets: 1} ]
-
 
 
 import arabic_black from '../data/audio/black.mp3';

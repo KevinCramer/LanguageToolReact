@@ -1,7 +1,7 @@
 import { Key, useState } from "react";
 import QuizElement from "./QuizElement";
 import StudyElement from "./StudyElement";
-import {Container, Navbar as NavbarBs, Nav} from "react-bootstrap";
+import {Container, Navbar as NavbarBs} from "react-bootstrap";
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import {languages} from "../data/words";
@@ -24,6 +24,7 @@ const StudyContent = (props: any) => {
 
     var current_topic = currentLanguageTopics[0]
     var [current_topic,setCurrentTopic] = useState(current_topic)
+
 
     var showBaseLanguage = true;
     var [showBaseLanguage,setShowBaseLanguage] = useState(showBaseLanguage)
@@ -49,6 +50,8 @@ const StudyContent = (props: any) => {
     
     const audioBool = useSelector((state:any) => state.audio.audioBool);
     const dispatch = useDispatch();
+
+
     
     function ToggleQuiz(){
         if (quiz) {
@@ -67,7 +70,7 @@ const StudyContent = (props: any) => {
                 <div>
                     {topic_words.map((pair: any) =>
                     <div>
-                                            <StudyElement BaseLanguageWord = { showBaseLanguage? pair.englishWord: pair.foreignWord[currentAlphabet]} ForeignLanguageWord = {showBaseLanguage? pair.foreignWord[currentAlphabet]: pair.englishWord}  ForeignLanguageWordAudio = {pair.foreignAudio} showAudio = {audioBool} showBaseLanguageFirst = {showBaseLanguage}/>
+                                            <StudyElement BaseLanguageWord = { showBaseLanguage? pair.englishWord: pair.foreignWord[currentAlphabet]} ForeignLanguageWord = {showBaseLanguage? pair.foreignWord[currentAlphabet]: pair.englishWord}  ForeignLanguageWordAudio = {pair.foreignAudio} showAudio = {audioBool} showBaseLanguageFirst = {showBaseLanguage} isVerb = {current_topic=== "Verbs"}/>
                     </div>                    
                     )}
                 </div>
@@ -102,7 +105,7 @@ const StudyContent = (props: any) => {
                         <Dropdown.Item onClick = {() => dispatch(flip())}>Show/Hide Audio</Dropdown.Item>
                         <Dropdown.Item onClick = {changeOrder}>{showTrueOrder? "random ordering":"default ordering"}</Dropdown.Item>
                         <Dropdown.Item onClick = {changeCurrentAlphabet}>{currentNumForeignAlphabets>1 ? "Toggle foreign alphabet": null}</Dropdown.Item>
-                    </DropdownButton>                    
+                    </DropdownButton>                
                 </Container>
             </NavbarBs>
                 <p></p>
