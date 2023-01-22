@@ -23,7 +23,7 @@ const StudyElement = (props: any) => {
       if(isVerb){
         return (
           <Navbar>
-            <label style= {{width: "200px", textAlign: "left"}}>{BaseLanguageWord.infinitive} </label>
+            <label style= {{width: "200px", textAlign: "left"}}>{isVerb? BaseLanguageWord.infinitive: BaseLanguageWord} </label>
             <label style= {{width: "40px"}}></label>
             <label onClick={isVerb?display_popup:hide_popup} style= {isVerb?{width: "200px", textAlign: "left", color: "purple", textDecorationLine: "underline"}:{width: "200px", textAlign: "left"}}>{ForeignLanguageWord.infinitive} </label>
             <label style= {{width: "200px", textAlign: "left"}}><audio src={ForeignLanguageWordAudio} controls autoPlay ={false}></audio> </label>
