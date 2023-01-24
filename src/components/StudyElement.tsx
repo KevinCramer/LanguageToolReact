@@ -1,6 +1,5 @@
 import { Key, useState } from "react"
 import {Navbar, Container, Modal, Button} from "react-bootstrap"
-import Purple from '../data/audio/purple.mp3';
 
 
 const StudyElement = (props: any) => {
@@ -27,7 +26,7 @@ const StudyElement = (props: any) => {
             <label style= {{width: "40px"}}></label>
             <label onClick={isVerb?display_popup:hide_popup} style= {isVerb?{width: "200px", textAlign: "left", color: "purple", textDecorationLine: "underline"}:{width: "200px", textAlign: "left"}}>{ForeignLanguageWord.infinitive} </label>
             <label style= {{width: "200px", textAlign: "left"}}><audio src={ForeignLanguageWordAudio} controls autoPlay ={false}></audio> </label>
-            <Modal show ={show_popup} onHide={hide_popup} size="sm">
+            <Modal show ={show_popup} onHide={hide_popup}>
           <Modal.Header closeButton>
             <Modal.Title id="contained-modal-title-vcenter">
               {ForeignLanguageWord.infinitive}
