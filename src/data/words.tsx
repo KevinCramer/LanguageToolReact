@@ -1,6 +1,6 @@
 
 
-const dutch_topics = ["Clothes","Colours","Food","Family","Numbers"]
+const dutch_topics = ["Clothes","Colours","Food","Family","Numbers", "Pronunciation"]
 
 const dutch = [
 {topic: "Food", englishWord: "potato", foreignWord: ["aardappel"], foreignAudio: ""},
@@ -74,7 +74,25 @@ const dutch = [
 {topic: "Family", englishWord: "cousin (m)", foreignWord: ["neef"], foreignAudio: ""},
 {topic: "Family", englishWord: "cousin (f)", foreignWord: ["nicht"], foreignAudio: ""},
 {topic: "Family", englishWord: "niece", foreignWord: ["nicht"], foreignAudio: ""},
-{topic: "Family", englishWord: "nephew", foreignWord: ["neef"], foreignAudio: ""}
+{topic: "Family", englishWord: "nephew", foreignWord: ["neef"], foreignAudio: ""},
+{topic: "Pronunciation", englishWord: "ei", foreignWord: ["aardbei"], foreignAudio: ""},
+{topic: "Pronunciation", englishWord: "ij", foreignWord: ["krijt"], foreignAudio: ""},
+{topic: "Pronunciation", englishWord: "sch", foreignWord: ["school"], foreignAudio: ""},
+{topic: "Pronunciation", englishWord: "oe", foreignWord: ["stoer"], foreignAudio: ""},
+{topic: "Pronunciation", englishWord: "ui", foreignWord: ["sluit"], foreignAudio: ""},
+{topic: "Pronunciation", englishWord: "eu", foreignWord: ["breuk"], foreignAudio: ""},
+{topic: "Pronunciation", englishWord: "g", foreignWord: ["morgen"], foreignAudio: ""},
+{topic: "Pronunciation", englishWord: "oo", foreignWord: ["stoom"], foreignAudio: ""},
+{topic: "Pronunciation", englishWord: "o", foreignWord: ["stom"], foreignAudio: ""},
+{topic: "Pronunciation", englishWord: "ee", foreignWord: ["geen"], foreignAudio: ""},
+{topic: "Pronunciation", englishWord: "e", foreignWord: ["ren"], foreignAudio: ""},
+{topic: "Pronunciation", englishWord: "uu", foreignWord: ["muur"], foreignAudio: ""},
+{topic: "Pronunciation", englishWord: "u", foreignWord: ["stuk"], foreignAudio: ""},
+{topic: "Pronunciation", englishWord: "aa", foreignWord: ["zaal"], foreignAudio: ""},
+{topic: "Pronunciation", englishWord: "a", foreignWord: ["zal"], foreignAudio: ""},
+{topic: "Pronunciation", englishWord: "sj", foreignWord: ["sjaal"], foreignAudio: ""}
+
+
 ]
 
 const arabic_topics = ["Clothes and Jewelery","Colours","Food","Numbers"]
