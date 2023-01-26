@@ -44,7 +44,7 @@ const QuizElement = (props: any) => {
     }
     else {
       return (
-        <CloseButton/>
+        null
       )
     }
   }

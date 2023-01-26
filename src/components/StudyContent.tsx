@@ -51,6 +51,8 @@ const StudyContent = (props: any) => {
     const audioBool = useSelector((state:any) => state.audio.audioBool);
     const dispatch = useDispatch();
 
+    const doNothing = () => { return null}
+
 
     
     function ToggleQuiz(){
@@ -106,7 +108,7 @@ const StudyContent = (props: any) => {
                         <Dropdown.Item onClick = {() => dispatch(flip())}>Show/Hide Audio</Dropdown.Item>
                         <Dropdown.Item onClick = {changeOrder}>{showTrueOrder? "random ordering":"default ordering"}</Dropdown.Item>
                         <Dropdown.Item onClick = {changeCurrentAlphabet}>{currentNumForeignAlphabets>1 ? "Toggle foreign alphabet": null}</Dropdown.Item>
-                        <Dropdown.Item onClick = {changeBaseLanguage}>Show/Hide Selected Entries</Dropdown.Item>
+                        <Dropdown.Item onClick = {changeOrder}>Show/Hide Selected Entries</Dropdown.Item>
                     </DropdownButton>                
                 </Container>
             </NavbarBs>
