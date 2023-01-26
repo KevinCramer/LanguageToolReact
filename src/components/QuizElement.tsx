@@ -26,20 +26,27 @@ const QuizElement = (props: any) => {
     var [hideStudyElement,setHideStudyElement] = useState(hideStudyElement)
     const hide_studyElement = () => { return setHideStudyElement(true)}
 
+    if(!hideStudyElement){
+      return (
+        <Navbar>
+        <form  onSubmit={e => onSubmit(e, formValues.answer, AnswerWord)}>
+            <div className="ui form">
+                    <CloseButton onClick={hide_studyElement}/>
+                    <label style= {{width: "200px"}}>{QuestionWord} </label>
+                    <input type="text" name="answer" placeholder="" value={formValues.answer} onChange = {handleChange} autoComplete="off" spellCheck ="false"/>
+                    <label style= {{width: "40px"}}></label>
+            </div>
+        </form>
+        <div> {response}</div>
+        </Navbar>
+      )
 
-    return (
-      <Navbar>
-      <form  onSubmit={e => onSubmit(e, formValues.answer, AnswerWord)}>
-          <div className="ui form">
-                  <CloseButton/>
-                  <label style= {{width: "200px"}}>{QuestionWord} </label>
-                  <input type="text" name="answer" placeholder="" value={formValues.answer} onChange = {handleChange} autoComplete="off" spellCheck ="false"/>
-                  <label style= {{width: "40px"}}></label>
-          </div>
-      </form>
-      <div> {response}</div>
-      </Navbar>
-      );
-}
+    }
+    else {
+      return (
+        <CloseButton/>
+      )
+    }
+  }
  
 export default QuizElement;
