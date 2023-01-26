@@ -21,15 +21,20 @@ const QuizElement = (props: any) => {
         const does_it_match = (submitted_answer === correct_answer) ? "✔" : " ✘ the correct answer is " + "'" + correct_answer +  "'" + " not " +  "'" + submitted_answer +  "'" 
         setResponse(does_it_match)
       };
+    
+    var hideStudyElement = false;
+    var [hideStudyElement,setHideStudyElement] = useState(hideStudyElement)
+    const hide_studyElement = () => { return setHideStudyElement(true)}
+
 
     return (
       <Navbar>
       <form  onSubmit={e => onSubmit(e, formValues.answer, AnswerWord)}>
           <div className="ui form">
+                  <CloseButton/>
                   <label style= {{width: "200px"}}>{QuestionWord} </label>
                   <input type="text" name="answer" placeholder="" value={formValues.answer} onChange = {handleChange} autoComplete="off" spellCheck ="false"/>
                   <label style= {{width: "40px"}}></label>
-                  <CloseButton/>
           </div>
       </form>
       <div> {response}</div>

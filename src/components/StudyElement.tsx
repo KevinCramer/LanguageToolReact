@@ -17,18 +17,16 @@ const StudyElement = (props: any) => {
   const hide_popup = () => { return setshow_popup(false)}
   const display_popup = () => { return setshow_popup(true)}
 
-
-
   if(showAudio){
     if(showBaseLanguageFirst){
       if(isVerb){
         return (
           <Navbar>
+            <CloseButton/>
             <label style= {{width: "200px", textAlign: "left"}}>{isVerb? BaseLanguageWord.infinitive: BaseLanguageWord} </label>
             <label style= {{width: "40px"}}></label>
             <label onClick={isVerb?display_popup:hide_popup} style= {isVerb?{width: "200px", textAlign: "left", color: "purple", textDecorationLine: "underline"}:{width: "200px", textAlign: "left"}}>{ForeignLanguageWord.infinitive} </label>
             <label style= {{width: "350px", textAlign: "left"}}><audio src={ForeignLanguageWordAudio} controls autoPlay ={false}></audio> </label>
-            <CloseButton/>
             <Modal show ={show_popup} onHide={hide_popup}>
           <Modal.Header closeButton>
             <Modal.Title id="contained-modal-title-vcenter">
@@ -76,10 +74,10 @@ const StudyElement = (props: any) => {
     else{
       return (
         <Navbar>
+        <CloseButton/>
         <label style= {{width: "200px", textAlign: "left"}}>{BaseLanguageWord} </label>
         <label style= {{width: "200px", textAlign: "left"}}>{ForeignLanguageWord} </label>
         <label style= {{width: "350px", textAlign: "left"}}><audio src={ForeignLanguageWordAudio} controls autoPlay ={false}></audio> </label>
-        <CloseButton/>
         </Navbar>
       )
     }
@@ -89,10 +87,10 @@ const StudyElement = (props: any) => {
     else{
       return (
         <Navbar>
+        <CloseButton/>
         <label style= {{width: "200px", textAlign: "left"}}>{BaseLanguageWord} </label>
         <label style= {{width: "200px", textAlign: "left"}}>{ForeignLanguageWord} </label>
         <label style= {{width: "350px", textAlign: "left"}}><audio src={ForeignLanguageWordAudio} controls autoPlay ={false}></audio> </label>
-        <CloseButton/>
         </Navbar>
       )
     }
@@ -100,10 +98,10 @@ const StudyElement = (props: any) => {
   else {
     return (
       <Navbar>
+      <CloseButton/>
       <label style= {{width: "200px", textAlign: "left"}}>{BaseLanguageWord} </label>
       <label style= {{width: "40px"}}></label>
       <label style= {{width: "350px", textAlign: "left"}}>{ForeignLanguageWord} </label>
-      <CloseButton/>
       </Navbar>
       )
   }

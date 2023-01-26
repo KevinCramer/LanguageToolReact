@@ -95,22 +95,22 @@ const dutch = [
 
 ]
 
-const arabic_topics = ["Clothes and Jewelery","Colours","Food","Numbers"]
+const arabic_topics = ["Clothes","Colours","Food","Numbers"]
 
 const arabic = [
-{topic: "Clothes and Jewelery", englishWord: "belt", foreignWord: ["ḥizām", "حِزَام"], foreignAudio: ""},
-{topic: "Clothes and Jewelery", englishWord: "cap", foreignWord: ["qubba'ah", "قُبَّعَة"], foreignAudio: ""},
-{topic: "Clothes and Jewelery", englishWord: "clothes", foreignWord: ["malābis", "مَلَابِس"], foreignAudio: ""},
-{topic: "Clothes and Jewelery", englishWord: "coat", foreignWord: ["mi'ṭaf", "مِعْطَف"], foreignAudio: ""},
-{topic: "Clothes and Jewelery", englishWord: "dress", foreignWord: ["fustān", "فُسْتَان"], foreignAudio: ""},
-{topic: "Clothes and Jewelery", englishWord: "glasses", foreignWord: ["naḍhḍhārah", "نَظَّارَة"], foreignAudio: ""},
-{topic: "Clothes and Jewelery", englishWord: "robe", foreignWord: ["thawb", "ثَوْب"], foreignAudio: ""},
-{topic: "Clothes and Jewelery", englishWord: "shirt", foreignWord: ["qamīṣ", "قَمِيص"], foreignAudio: ""},
-{topic: "Clothes and Jewelery", englishWord: "shoes", foreignWord: ["ḥidhā`", "حِذَاء"], foreignAudio: ""},
-{topic: "Clothes and Jewelery", englishWord: "sock", foreignWord: ["jārib", "حِذَاء"], foreignAudio: ""},
-{topic: "Clothes and Jewelery", englishWord: "suit", foreignWord: ["badhlah", "بَذْلَة"], foreignAudio: ""},
-{topic: "Clothes and Jewelery", englishWord: "trousers", foreignWord: ["banṭalūn", "بَنْطَلُون"], foreignAudio: ""},
-{topic: "Clothes and Jewelery", englishWord: "wallet", foreignWord: ["maḥfaḍhah", "مَحْفَظَة"], foreignAudio: ""},
+{topic: "Clothes", englishWord: "belt", foreignWord: ["ḥizām", "حِزَام"], foreignAudio: ""},
+{topic: "Clothes", englishWord: "cap", foreignWord: ["qubba'ah", "قُبَّعَة"], foreignAudio: ""},
+{topic: "Clothes", englishWord: "clothes", foreignWord: ["malābis", "مَلَابِس"], foreignAudio: ""},
+{topic: "Clothes", englishWord: "coat", foreignWord: ["mi'ṭaf", "مِعْطَف"], foreignAudio: ""},
+{topic: "Clothes", englishWord: "dress", foreignWord: ["fustān", "فُسْتَان"], foreignAudio: ""},
+{topic: "Clothes", englishWord: "glasses", foreignWord: ["naḍhḍhārah", "نَظَّارَة"], foreignAudio: ""},
+{topic: "Clothes", englishWord: "robe", foreignWord: ["thawb", "ثَوْب"], foreignAudio: ""},
+{topic: "Clothes", englishWord: "shirt", foreignWord: ["qamīṣ", "قَمِيص"], foreignAudio: ""},
+{topic: "Clothes", englishWord: "shoes", foreignWord: ["ḥidhā`", "حِذَاء"], foreignAudio: ""},
+{topic: "Clothes", englishWord: "sock", foreignWord: ["jārib", "حِذَاء"], foreignAudio: ""},
+{topic: "Clothes", englishWord: "suit", foreignWord: ["badhlah", "بَذْلَة"], foreignAudio: ""},
+{topic: "Clothes", englishWord: "trousers", foreignWord: ["banṭalūn", "بَنْطَلُون"], foreignAudio: ""},
+{topic: "Clothes", englishWord: "wallet", foreignWord: ["maḥfaḍhah", "مَحْفَظَة"], foreignAudio: ""},
 {topic: "Food", englishWord: "apple", foreignWord: ["tuffāḥah", "تُفَّاحَة"], foreignAudio: ""},
 {topic: "Food", englishWord: "apricot", foreignWord: ["mishmish", "مِشْمِش"], foreignAudio: ""},
 {topic: "Food", englishWord: "banana", foreignWord: ["mawz", "مَوْز"], foreignAudio: ""},
