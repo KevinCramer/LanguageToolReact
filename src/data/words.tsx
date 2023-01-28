@@ -95,7 +95,7 @@ const dutch = [
 
 ]
 
-const arabic_topics = ["Clothes","Colours","Food","Numbers"]
+const arabic_topics = ["Clothes","Colours","Food","Numbers", "Body"]
 
 const arabic = [
 {topic: "Clothes", englishWord: "belt", foreignWord: ["ḥizām", "حِزَام"], foreignAudio: ""},
@@ -210,6 +210,30 @@ const arabic = [
 {topic: "Adjectives", englishWord: "small", foreignWord: ["ṣaghīr", "صَغِير"], foreignAudio: ""},
 {topic: "Adjectives", englishWord: "smart", foreignWord: ["dhakiyy", "ذَكِيّ"], foreignAudio: ""},
 {topic: "Adjectives", englishWord: "tall", foreignWord: ["ṭawīl", "طَوِيل"], foreignAudio: ""},
+{topic: "Body", englishWord: "hand", foreignWord: ["yad", "يَد"], foreignAudio: ""},
+{topic: "Body", englishWord: "head", foreignWord: ["ra's", "رَأْس"], foreignAudio: ""},
+{topic: "Body", englishWord: "heart", foreignWord: ["qalb", "قَلْب"], foreignAudio: ""},
+{topic: "Body", englishWord: "eye", foreignWord: ["'ayn", "عَيْن"], foreignAudio: ""},
+{topic: "Body", englishWord: "knee", foreignWord: ["rukbah", "رُكْبَة"], foreignAudio: ""},
+{topic: "Body", englishWord: "palm", foreignWord: ["kaf", "كَف"], foreignAudio: ""},
+{topic: "Body", englishWord: "hungry", foreignWord: ["jaw'ān", "جَوْعَان"], foreignAudio: ""},
+{topic: "Body", englishWord: "ear", foreignWord: ["udhun", "أُذُن"], foreignAudio: ""},
+{topic: "Body", englishWord: "sad", foreignWord: ["ḥazīn", "حَزِين"], foreignAudio: ""},
+{topic: "Body", englishWord: "joyful", foreignWord: ["farḥān", "فَرْحَان"], foreignAudio: ""},
+{topic: "Body", englishWord: "thirsty", foreignWord: ["'aṭshān", "عَطْشَان"], foreignAudio: ""},
+{topic: "Body", englishWord: "angry", foreignWord: ["ghaḍbān", "غَضْبَان"], foreignAudio: ""},
+{topic: "Body", englishWord: "chin", foreignWord: ["dhaqn", "ذَقْن"], foreignAudio: ""},
+{topic: "Body", englishWord: "chest", foreignWord: ["ṣadr", "صَدْر"], foreignAudio: ""},
+{topic: "Body", englishWord: "nose", foreignWord: ["anf", "أَنْف"], foreignAudio: ""},
+{topic: "Body", englishWord: "leg", foreignWord: ["rijl", "رِجْل"], foreignAudio: ""},
+{topic: "Body", englishWord: "one hair", foreignWord: ["sha'rah", "شَعْرَة"], foreignAudio: ""},
+{topic: "Body", englishWord: "finger", foreignWord: ["iṣba'", "إِصْبَع"], foreignAudio: ""},
+{topic: "Body", englishWord: "lip", foreignWord: ["shafah", "شَفَة"], foreignAudio: ""},
+{topic: "Body", englishWord: "arm", foreignWord: ["dhirā'", "ذِرَاع"], foreignAudio: ""},
+{topic: "Body", englishWord: "foot", foreignWord: ["qadam", "قَدَم"], foreignAudio: ""},
+{topic: "Body", englishWord: "tooth", foreignWord: ["sinn", "سِنّ"], foreignAudio: ""},
+{topic: "Body", englishWord: "blood", foreignWord: ["dam", "دَم"], foreignAudio: ""}
+
 
 
 
