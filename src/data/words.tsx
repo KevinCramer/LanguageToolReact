@@ -1,6 +1,6 @@
 
 
-const dutch_topics = ["Clothes","Colours","Food","Family","Numbers", "Pronunciation"]
+const dutch_topics = ["Clothes","Colours","Food","Family","Numbers", "Pronunciation", "Pronouns", "Question Words"]
 
 const dutch = [
 {topic: "Food", englishWord: "potato", foreignWord: ["aardappel"], foreignAudio: ""},
@@ -90,12 +90,23 @@ const dutch = [
 {topic: "Pronunciation", englishWord: "u", foreignWord: ["stuk"], foreignAudio: ""},
 {topic: "Pronunciation", englishWord: "aa", foreignWord: ["zaal"], foreignAudio: ""},
 {topic: "Pronunciation", englishWord: "a", foreignWord: ["zal"], foreignAudio: ""},
-{topic: "Pronunciation", englishWord: "sj", foreignWord: ["sjaal"], foreignAudio: ""}
-
+{topic: "Pronunciation", englishWord: "sj", foreignWord: ["sjaal"], foreignAudio: ""},
+{topic: "Pronouns", englishWord: "I", foreignWord: ["ik"], foreignAudio: ""},
+{topic: "Pronouns", englishWord: "you ", foreignWord: ["jij"], foreignAudio: ""},
+{topic: "Pronouns", englishWord: "he", foreignWord: ["hij"], foreignAudio: ""},
+{topic: "Pronouns", englishWord: "she", foreignWord: ["zij"], foreignAudio: ""},
+{topic: "Pronouns", englishWord: "we", foreignWord: ["wij"], foreignAudio: ""},
+{topic: "Pronouns", englishWord: "you (p)", foreignWord: ["julie"], foreignAudio: ""},
+{topic: "Pronouns", englishWord: "They", foreignWord: ["zij"], foreignAudio: ""},
+{topic: "Question Words", englishWord: "Why", foreignWord: ["waarom"], foreignAudio: ""},
+{topic: "Question Words", englishWord: "Where", foreignWord: ["waar"], foreignAudio: ""},
+{topic: "Question Words", englishWord: "When", foreignWord: ["wanneer"], foreignAudio: ""},
+{topic: "Question Words", englishWord: "What", foreignWord: ["wat"], foreignAudio: ""},
+{topic: "Question Words", englishWord: "How", foreignWord: ["hoe"], foreignAudio: ""}
 
 ]
 
-const arabic_topics = ["Clothes","Colours","Food","Numbers", "Body"]
+const arabic_topics = ["Clothes","Colours","Food","Numbers", "Body", "Pronouns", "Adjectives", "Pronouns","Shayma root verbs", "Question Words"]
 
 const arabic = [
 {topic: "Clothes", englishWord: "belt", foreignWord: ["ḥizām", "حِزَام"], foreignAudio: ""},
@@ -232,7 +243,27 @@ const arabic = [
 {topic: "Body", englishWord: "arm", foreignWord: ["dhirā'", "ذِرَاع"], foreignAudio: ""},
 {topic: "Body", englishWord: "foot", foreignWord: ["qadam", "قَدَم"], foreignAudio: ""},
 {topic: "Body", englishWord: "tooth", foreignWord: ["sinn", "سِنّ"], foreignAudio: ""},
-{topic: "Body", englishWord: "blood", foreignWord: ["dam", "دَم"], foreignAudio: ""}
+{topic: "Body", englishWord: "blood", foreignWord: ["dam", "دَم"], foreignAudio: ""},
+{topic: "Pronouns", englishWord: "I", foreignWord: ["ana A"], foreignAudio: ""},
+{topic: "Pronouns", englishWord: "You m/f", foreignWord: ["anta/anti te/te - in"], foreignAudio: ""},
+{topic: "Pronouns", englishWord: "He", foreignWord: ["huwa"], foreignAudio: ""},
+{topic: "Pronouns", englishWord: "She", foreignWord: ["hiya"], foreignAudio: ""},
+{topic: "Pronouns", englishWord: "We", foreignWord: ["nahnou  N-"], foreignAudio: ""},
+{topic: "Pronouns", englishWord: "You(p)", foreignWord: ["antum/ antunna"], foreignAudio: ""},
+{topic: "Pronouns", englishWord: "They", foreignWord: ["hum"], foreignAudio: ""},
+{topic: "Question Words", englishWord: "what", foreignWord: ["shenou"], foreignAudio: ""},
+{topic: "Question Words", englishWord: "where", foreignWord: ["wain'"], foreignAudio: ""},
+{topic: "Question Words", englishWord: "when", foreignWord: ["miten"], foreignAudio: ""},
+{topic: "Question Words", englishWord: "how", foreignWord: ["kef"], foreignAudio: ""},
+{topic: "Question Words", englishWord: "why", foreignWord: ["lay"], foreignAudio: ""},
+{topic: "Shayma root verbs", englishWord: "eat", foreignWord: ["kul"], foreignAudio: ""},
+{topic: "Shayma root verbs", englishWord: "drink", foreignWord: ["sharb"], foreignAudio: ""},
+{topic: "Shayma root verbs", englishWord: "sleep", foreignWord: ["nam"], foreignAudio: ""},
+{topic: "Shayma root verbs", englishWord: "love", foreignWord: ["hub"], foreignAudio: ""},
+{topic: "Shayma root verbs", englishWord: "go", foreignWord: ["thehab"], foreignAudio: ""},
+
+
+
 
 
 
