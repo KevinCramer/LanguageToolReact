@@ -1,6 +1,5 @@
 import { Key, useState } from "react"
 import {Navbar, Container, Modal, Button} from "react-bootstrap"
-import CloseButton from 'react-bootstrap/CloseButton';
 
 
 
@@ -22,7 +21,6 @@ const StudyElement = (props: any) => {
       if(isVerb){
         return (
           <Navbar>
-            <CloseButton/>
             <label style= {{width: "200px", textAlign: "left"}}>{isVerb? BaseLanguageWord.infinitive: BaseLanguageWord} </label>
             <label style= {{width: "40px"}}></label>
             <label onClick={isVerb?display_popup:hide_popup} style= {isVerb?{width: "200px", textAlign: "left", color: "purple", textDecorationLine: "underline"}:{width: "200px", textAlign: "left"}}>{ForeignLanguageWord.infinitive} </label>
@@ -74,7 +72,6 @@ const StudyElement = (props: any) => {
     else{
       return (
         <Navbar>
-        <CloseButton/>
         <label style= {{width: "200px", textAlign: "left"}}>{BaseLanguageWord} </label>
         <label style= {{width: "200px", textAlign: "left"}}>{ForeignLanguageWord} </label>
         <label style= {{width: "350px", textAlign: "left"}}><audio src={ForeignLanguageWordAudio} controls autoPlay ={false}></audio> </label>
@@ -87,7 +84,6 @@ const StudyElement = (props: any) => {
     else{
       return (
         <Navbar>
-        <CloseButton/>
         <label style= {{width: "200px", textAlign: "left"}}>{BaseLanguageWord} </label>
         <label style= {{width: "200px", textAlign: "left"}}>{ForeignLanguageWord} </label>
         <label style= {{width: "350px", textAlign: "left"}}><audio src={ForeignLanguageWordAudio} controls autoPlay ={false}></audio> </label>
@@ -98,7 +94,6 @@ const StudyElement = (props: any) => {
   else {
     return (
       <Navbar>
-      <CloseButton/>
       <label style= {{width: "200px", textAlign: "left"}}>{BaseLanguageWord} </label>
       <label style= {{width: "40px"}}></label>
       <label style= {{width: "350px", textAlign: "left"}}>{ForeignLanguageWord} </label>

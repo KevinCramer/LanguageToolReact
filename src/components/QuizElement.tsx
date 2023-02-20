@@ -1,6 +1,5 @@
 import { Key, useState } from "react"
 import {Navbar, Container} from "react-bootstrap"
-import CloseButton from 'react-bootstrap/CloseButton';
 
 const QuizElement = (props: any) => {
     const isVerb = props.isVerb
@@ -31,7 +30,6 @@ const QuizElement = (props: any) => {
         <Navbar>
         <form  onSubmit={e => onSubmit(e, formValues.answer, AnswerWord)}>
             <div className="ui form">
-                    <CloseButton onClick={hide_studyElement}/>
                     <label style= {{width: "200px"}}>{QuestionWord} </label>
                     <input type="text" name="answer" placeholder="" value={formValues.answer} onChange = {handleChange} autoComplete="off" spellCheck ="false"/>
                     <label style= {{width: "40px"}}></label>
