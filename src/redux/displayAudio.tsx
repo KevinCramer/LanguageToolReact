@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-  audioBool : true
+  audioBool : false
 }
 
 export const audioSlice = createSlice({

@@ -14,10 +14,11 @@ const QuizElement = (props: any) => {
         setFormValues({...formValues, [name]: value})
     }
 
+    const roughlyEqual = (a: any,b:any ) => {return (a.toLowerCase() ===b)};
     const onSubmit = (e:any, submitted_answer:string, correct_answer:string) => {
         e.preventDefault();
         console.log(e)
-        const does_it_match = (submitted_answer === correct_answer) ? "✔" : " ✘ the correct answer is " + "'" + correct_answer +  "'" + " not " +  "'" + submitted_answer +  "'" 
+        const does_it_match = (roughlyEqual(submitted_answer,correct_answer)) ? "✔" : " ✘ the correct answer is " + "'" + correct_answer +  "'" + " not " +  "'" + submitted_answer +  "'" 
         setResponse(does_it_match)
       };
     

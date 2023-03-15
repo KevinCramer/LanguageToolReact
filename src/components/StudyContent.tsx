@@ -94,15 +94,15 @@ const StudyContent = (props: any) => {
         <Container>    
             <NavbarBs className = "bg-white shadow-sm mb-3">
                 <Container>
-                    <DropdownButton id="Languages" title={"Language: " + String(currentLanguageName)}> 
+                    <DropdownButton id="Languages" title={String(currentLanguageName)} size = "sm"> 
                         {languages.map((languageItem: any) =>
                         <Dropdown.Item onClick = {() => [changeCurrentLanguage(languageItem.languageName, languageItem.Content,languageItem.topics, languageItem.num_foreign_alphabets), setCurrentAlphabet(0),changeCurrentTopic(currentLanguageTopics[0]) ]}>{languageItem.languageName}</Dropdown.Item>)}
                     </DropdownButton>
-                    <DropdownButton id="Topics" title={"Topic: " + current_topic}>
+                    <DropdownButton id="Topics" title={"Topic: " + current_topic} size = "sm">
                         {currentLanguageTopics.map((topic: string) =>
                         <Dropdown.Item onClick = {() => changeCurrentTopic(topic)}>{topic}</Dropdown.Item>)}
                     </DropdownButton>
-                    <DropdownButton id="Settings" title="Learning Parameters">
+                    <DropdownButton id="Parameters" title="Parameters" size = "sm">
                         <Dropdown.Item onClick = {changeBaseLanguage}>Toggle base language</Dropdown.Item>
                         <Dropdown.Item onClick = {changeQuizState}>Revise/Quiz</Dropdown.Item>
                         <Dropdown.Item onClick = {() => dispatch(flip())}>Show/Hide Audio</Dropdown.Item>

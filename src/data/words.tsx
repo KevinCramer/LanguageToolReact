@@ -317,7 +317,10 @@ const spanish = [
     {topic: "Verbs", englishWord: {infinitive: "to study",englishWordConjugation: {past_tense: ["studied","studied", "studied","studied","studied", "studied"],present_tense: ["study","study", "studies","study","study", "study"], future_tense: ["will study","will study", "will study","will study","will study", "will study"]}}, foreignWord: [{infinitive: "estudiar",foreignWordConjugation: {past_tense: ["estudié","estudiaste","estudió","estudiamos","estudiasteis","estudiaron"],present_tense: ["estudio","estudias", "estudia","estudiamos","estudiáis", "estudian"], future_tense: ["estudiaré","estudiarás", "estudiará","estudiaremos","estudiareis", "estudiarán"]}}], foreignAudio: ""}
     ]
 
-    export const languages = [{languageName: "Arabic", Content: arabic, topics: arabic_topics, num_foreign_alphabets: 2},{languageName: "Dutch", Content: dutch, topics: dutch_topics, num_foreign_alphabets: 1},{languageName: "Spanish", Content: spanish, topics: spanish_topics, num_foreign_alphabets: 1} ]
+
+
+
+
 
 
 import arabic_black from '../data/audio/black.mp3';
@@ -331,3 +334,190 @@ import arabic_purple from '../data/audio/purple.mp3';
 import arabic_red from '../data/audio/red.mp3';
 import arabic_white from '../data/audio/white.mp3';
 import arabic_yellow from '../data/audio/yellow.mp3';
+
+
+const french_topics = ["Clothes","Colours","Food","Numbers", "Verbs"]
+
+const french = [
+    {topic: "Food", englishWord: "potato", foreignWord: ["papa"], foreignAudio: ""},
+    {topic: "Food", englishWord: "bread", foreignWord: ["pan"], foreignAudio: ""},
+    {topic: "Food", englishWord: "meat", foreignWord: ["carne"], foreignAudio: ""},
+    {topic: "Food", englishWord: "egg", foreignWord: ["huevo"], foreignAudio: ""},
+    {topic: "Food", englishWord: "strawberry", foreignWord: ["fresa"], foreignAudio: ""},
+    {topic: "Food", englishWord: "garlic", foreignWord: ["ajo"], foreignAudio: ""},
+    {topic: "Food", englishWord: "butter", foreignWord: ["manteca"], foreignAudio: ""},
+    {topic: "Food", englishWord: "fish", foreignWord: ["pez"], foreignAudio: ""},
+    {topic: "Food", englishWord: "chicken", foreignWord: ["pollo"], foreignAudio: ""},
+    {topic: "Food", englishWord: "cheese", foreignWord: ["queso"], foreignAudio: ""}, 
+    {topic: "Clothes", englishWord: "trousers", foreignWord: ["pantalones"], foreignAudio: ""},
+    {topic: "Clothes", englishWord: "sweater", foreignWord: ["suéter"], foreignAudio: ""},
+    {topic: "Clothes", englishWord: "underwear", foreignWord: ["ropa interior"], foreignAudio: ""},
+    {topic: "Clothes", englishWord: "tie", foreignWord: ["corbata"], foreignAudio: ""},
+    {topic: "Clothes", englishWord: "socks", foreignWord: ["medias"], foreignAudio: ""},
+    {topic: "Clothes", englishWord: "shoes", foreignWord: ["zapatos"], foreignAudio: ""},
+    {topic: "Clothes", englishWord: "skirt", foreignWord: ["falda"], foreignAudio: ""},
+    {topic: "Clothes", englishWord: "jacket", foreignWord: ["chaqueta"], foreignAudio: ""},
+    {topic: "Clothes", englishWord: "hat", foreignWord: ["sombrero"], foreignAudio: ""},
+    {topic: "Clothes", englishWord: "scarf", foreignWord: ["bufanda"], foreignAudio: ""},
+    {topic: "Colours", englishWord: "red", foreignWord: ["rojo"], foreignAudio: ""},
+    {topic: "Colours", englishWord: "blue", foreignWord: ["azul"], foreignAudio: ""},
+    {topic: "Colours", englishWord: "green", foreignWord: ["verde"], foreignAudio: ""},
+    {topic: "Colours", englishWord: "orange", foreignWord: ["naranja"], foreignAudio: ""},
+    {topic: "Colours", englishWord: "brown", foreignWord: ["marron"], foreignAudio: ""},
+    {topic: "Colours", englishWord: "grey", foreignWord: ["gris"], foreignAudio: ""},
+    {topic: "Colours", englishWord: "white", foreignWord: ["blanco"], foreignAudio: ""},
+    {topic: "Colours", englishWord: "black", foreignWord: ["negro"], foreignAudio: ""},
+    {topic: "Colours", englishWord: "purple", foreignWord: ["morado"], foreignAudio: ""},
+    {topic: "Colours", englishWord: "pink", foreignWord: ["rosado"], foreignAudio: ""},
+    {topic: "Numbers", englishWord: "one", foreignWord: ["uno"], foreignAudio: ""},
+    {topic: "Numbers", englishWord: "two ", foreignWord: ["dos"], foreignAudio: ""},
+    {topic: "Numbers", englishWord: "three", foreignWord: ["tres"], foreignAudio: ""},
+    {topic: "Numbers", englishWord: "four", foreignWord: ["cuatro"], foreignAudio: ""},
+    {topic: "Numbers", englishWord: "five", foreignWord: ["cinco"], foreignAudio: ""},
+    {topic: "Numbers", englishWord: "six", foreignWord: ["seis"], foreignAudio: ""},
+    {topic: "Numbers", englishWord: "seven", foreignWord: ["siete"], foreignAudio: ""},
+    {topic: "Numbers", englishWord: "eight", foreignWord: ["ocho"], foreignAudio: ""},
+    {topic: "Numbers", englishWord: "nine", foreignWord: ["nueve"], foreignAudio: ""},
+    {topic: "Numbers", englishWord: "ten", foreignWord: ["diez"], foreignAudio: ""}
+    ]
+
+
+    const italian_topics = ["Clothes","Colours","Food","Numbers", "Verbs"]
+
+const italian = [
+    {topic: "Food", englishWord: "potato", foreignWord: ["papa"], foreignAudio: ""},
+    {topic: "Food", englishWord: "bread", foreignWord: ["pan"], foreignAudio: ""},
+    {topic: "Food", englishWord: "meat", foreignWord: ["carne"], foreignAudio: ""},
+    {topic: "Food", englishWord: "egg", foreignWord: ["huevo"], foreignAudio: ""},
+    {topic: "Food", englishWord: "strawberry", foreignWord: ["fresa"], foreignAudio: ""},
+    {topic: "Food", englishWord: "garlic", foreignWord: ["ajo"], foreignAudio: ""},
+    {topic: "Food", englishWord: "butter", foreignWord: ["manteca"], foreignAudio: ""},
+    {topic: "Food", englishWord: "fish", foreignWord: ["pez"], foreignAudio: ""},
+    {topic: "Food", englishWord: "chicken", foreignWord: ["pollo"], foreignAudio: ""},
+    {topic: "Food", englishWord: "cheese", foreignWord: ["queso"], foreignAudio: ""}, 
+    {topic: "Clothes", englishWord: "trousers", foreignWord: ["pantalones"], foreignAudio: ""},
+    {topic: "Clothes", englishWord: "sweater", foreignWord: ["suéter"], foreignAudio: ""},
+    {topic: "Clothes", englishWord: "underwear", foreignWord: ["ropa interior"], foreignAudio: ""},
+    {topic: "Clothes", englishWord: "tie", foreignWord: ["corbata"], foreignAudio: ""},
+    {topic: "Clothes", englishWord: "socks", foreignWord: ["medias"], foreignAudio: ""},
+    {topic: "Clothes", englishWord: "shoes", foreignWord: ["zapatos"], foreignAudio: ""},
+    {topic: "Clothes", englishWord: "skirt", foreignWord: ["falda"], foreignAudio: ""},
+    {topic: "Clothes", englishWord: "jacket", foreignWord: ["chaqueta"], foreignAudio: ""},
+    {topic: "Clothes", englishWord: "hat", foreignWord: ["sombrero"], foreignAudio: ""},
+    {topic: "Clothes", englishWord: "scarf", foreignWord: ["bufanda"], foreignAudio: ""},
+    {topic: "Colours", englishWord: "red", foreignWord: ["rojo"], foreignAudio: ""},
+    {topic: "Colours", englishWord: "blue", foreignWord: ["azul"], foreignAudio: ""},
+    {topic: "Colours", englishWord: "green", foreignWord: ["verde"], foreignAudio: ""},
+    {topic: "Colours", englishWord: "orange", foreignWord: ["naranja"], foreignAudio: ""},
+    {topic: "Colours", englishWord: "brown", foreignWord: ["marron"], foreignAudio: ""},
+    {topic: "Colours", englishWord: "grey", foreignWord: ["gris"], foreignAudio: ""},
+    {topic: "Colours", englishWord: "white", foreignWord: ["blanco"], foreignAudio: ""},
+    {topic: "Colours", englishWord: "black", foreignWord: ["negro"], foreignAudio: ""},
+    {topic: "Colours", englishWord: "purple", foreignWord: ["morado"], foreignAudio: ""},
+    {topic: "Colours", englishWord: "pink", foreignWord: ["rosado"], foreignAudio: ""},
+    {topic: "Numbers", englishWord: "one", foreignWord: ["uno"], foreignAudio: ""},
+    {topic: "Numbers", englishWord: "two ", foreignWord: ["dos"], foreignAudio: ""},
+    {topic: "Numbers", englishWord: "three", foreignWord: ["tres"], foreignAudio: ""},
+    {topic: "Numbers", englishWord: "four", foreignWord: ["cuatro"], foreignAudio: ""},
+    {topic: "Numbers", englishWord: "five", foreignWord: ["cinco"], foreignAudio: ""},
+    {topic: "Numbers", englishWord: "six", foreignWord: ["seis"], foreignAudio: ""},
+    {topic: "Numbers", englishWord: "seven", foreignWord: ["siete"], foreignAudio: ""},
+    {topic: "Numbers", englishWord: "eight", foreignWord: ["ocho"], foreignAudio: ""},
+    {topic: "Numbers", englishWord: "nine", foreignWord: ["nueve"], foreignAudio: ""},
+    {topic: "Numbers", englishWord: "ten", foreignWord: ["diez"], foreignAudio: ""}
+    ]
+
+    const german_topics = ["Clothes","Colours","Food","Numbers", "Verbs"]
+
+    const german = [
+        {topic: "Food", englishWord: "potato", foreignWord: ["papa"], foreignAudio: ""},
+        {topic: "Food", englishWord: "bread", foreignWord: ["pan"], foreignAudio: ""},
+        {topic: "Food", englishWord: "meat", foreignWord: ["carne"], foreignAudio: ""},
+        {topic: "Food", englishWord: "egg", foreignWord: ["huevo"], foreignAudio: ""},
+        {topic: "Food", englishWord: "strawberry", foreignWord: ["fresa"], foreignAudio: ""},
+        {topic: "Food", englishWord: "garlic", foreignWord: ["ajo"], foreignAudio: ""},
+        {topic: "Food", englishWord: "butter", foreignWord: ["manteca"], foreignAudio: ""},
+        {topic: "Food", englishWord: "fish", foreignWord: ["pez"], foreignAudio: ""},
+        {topic: "Food", englishWord: "chicken", foreignWord: ["pollo"], foreignAudio: ""},
+        {topic: "Food", englishWord: "cheese", foreignWord: ["queso"], foreignAudio: ""}, 
+        {topic: "Clothes", englishWord: "trousers", foreignWord: ["pantalones"], foreignAudio: ""},
+        {topic: "Clothes", englishWord: "sweater", foreignWord: ["suéter"], foreignAudio: ""},
+        {topic: "Clothes", englishWord: "underwear", foreignWord: ["ropa interior"], foreignAudio: ""},
+        {topic: "Clothes", englishWord: "tie", foreignWord: ["corbata"], foreignAudio: ""},
+        {topic: "Clothes", englishWord: "socks", foreignWord: ["medias"], foreignAudio: ""},
+        {topic: "Clothes", englishWord: "shoes", foreignWord: ["zapatos"], foreignAudio: ""},
+        {topic: "Clothes", englishWord: "skirt", foreignWord: ["falda"], foreignAudio: ""},
+        {topic: "Clothes", englishWord: "jacket", foreignWord: ["chaqueta"], foreignAudio: ""},
+        {topic: "Clothes", englishWord: "hat", foreignWord: ["sombrero"], foreignAudio: ""},
+        {topic: "Clothes", englishWord: "scarf", foreignWord: ["bufanda"], foreignAudio: ""},
+        {topic: "Colours", englishWord: "red", foreignWord: ["rojo"], foreignAudio: ""},
+        {topic: "Colours", englishWord: "blue", foreignWord: ["azul"], foreignAudio: ""},
+        {topic: "Colours", englishWord: "green", foreignWord: ["verde"], foreignAudio: ""},
+        {topic: "Colours", englishWord: "orange", foreignWord: ["naranja"], foreignAudio: ""},
+        {topic: "Colours", englishWord: "brown", foreignWord: ["marron"], foreignAudio: ""},
+        {topic: "Colours", englishWord: "grey", foreignWord: ["gris"], foreignAudio: ""},
+        {topic: "Colours", englishWord: "white", foreignWord: ["blanco"], foreignAudio: ""},
+        {topic: "Colours", englishWord: "black", foreignWord: ["negro"], foreignAudio: ""},
+        {topic: "Colours", englishWord: "purple", foreignWord: ["morado"], foreignAudio: ""},
+        {topic: "Colours", englishWord: "pink", foreignWord: ["rosado"], foreignAudio: ""},
+        {topic: "Numbers", englishWord: "one", foreignWord: ["uno"], foreignAudio: ""},
+        {topic: "Numbers", englishWord: "two ", foreignWord: ["dos"], foreignAudio: ""},
+        {topic: "Numbers", englishWord: "three", foreignWord: ["tres"], foreignAudio: ""},
+        {topic: "Numbers", englishWord: "four", foreignWord: ["cuatro"], foreignAudio: ""},
+        {topic: "Numbers", englishWord: "five", foreignWord: ["cinco"], foreignAudio: ""},
+        {topic: "Numbers", englishWord: "six", foreignWord: ["seis"], foreignAudio: ""},
+        {topic: "Numbers", englishWord: "seven", foreignWord: ["siete"], foreignAudio: ""},
+        {topic: "Numbers", englishWord: "eight", foreignWord: ["ocho"], foreignAudio: ""},
+        {topic: "Numbers", englishWord: "nine", foreignWord: ["nueve"], foreignAudio: ""},
+        {topic: "Numbers", englishWord: "ten", foreignWord: ["diez"], foreignAudio: ""}
+        ]
+
+
+    const japanese_topics = ["Clothes","Colours","Food","Numbers", "Verbs"]
+
+    const japanese = [
+        {topic: "Food", englishWord: "potato", foreignWord: ["papa"], foreignAudio: ""},
+        {topic: "Food", englishWord: "bread", foreignWord: ["pan"], foreignAudio: ""},
+        {topic: "Food", englishWord: "meat", foreignWord: ["carne"], foreignAudio: ""},
+        {topic: "Food", englishWord: "egg", foreignWord: ["huevo"], foreignAudio: ""},
+        {topic: "Food", englishWord: "strawberry", foreignWord: ["fresa"], foreignAudio: ""},
+        {topic: "Food", englishWord: "garlic", foreignWord: ["ajo"], foreignAudio: ""},
+        {topic: "Food", englishWord: "butter", foreignWord: ["manteca"], foreignAudio: ""},
+        {topic: "Food", englishWord: "fish", foreignWord: ["pez"], foreignAudio: ""},
+        {topic: "Food", englishWord: "chicken", foreignWord: ["pollo"], foreignAudio: ""},
+        {topic: "Food", englishWord: "cheese", foreignWord: ["queso"], foreignAudio: ""}, 
+        {topic: "Clothes", englishWord: "trousers", foreignWord: ["pantalones"], foreignAudio: ""},
+        {topic: "Clothes", englishWord: "sweater", foreignWord: ["suéter"], foreignAudio: ""},
+        {topic: "Clothes", englishWord: "underwear", foreignWord: ["ropa interior"], foreignAudio: ""},
+        {topic: "Clothes", englishWord: "tie", foreignWord: ["corbata"], foreignAudio: ""},
+        {topic: "Clothes", englishWord: "socks", foreignWord: ["medias"], foreignAudio: ""},
+        {topic: "Clothes", englishWord: "shoes", foreignWord: ["zapatos"], foreignAudio: ""},
+        {topic: "Clothes", englishWord: "skirt", foreignWord: ["falda"], foreignAudio: ""},
+        {topic: "Clothes", englishWord: "jacket", foreignWord: ["chaqueta"], foreignAudio: ""},
+        {topic: "Clothes", englishWord: "hat", foreignWord: ["sombrero"], foreignAudio: ""},
+        {topic: "Clothes", englishWord: "scarf", foreignWord: ["bufanda"], foreignAudio: ""},
+        {topic: "Colours", englishWord: "red", foreignWord: ["rojo"], foreignAudio: ""},
+        {topic: "Colours", englishWord: "blue", foreignWord: ["azul"], foreignAudio: ""},
+        {topic: "Colours", englishWord: "green", foreignWord: ["verde"], foreignAudio: ""},
+        {topic: "Colours", englishWord: "orange", foreignWord: ["naranja"], foreignAudio: ""},
+        {topic: "Colours", englishWord: "brown", foreignWord: ["marron"], foreignAudio: ""},
+        {topic: "Colours", englishWord: "grey", foreignWord: ["gris"], foreignAudio: ""},
+        {topic: "Colours", englishWord: "white", foreignWord: ["blanco"], foreignAudio: ""},
+        {topic: "Colours", englishWord: "black", foreignWord: ["negro"], foreignAudio: ""},
+        {topic: "Colours", englishWord: "purple", foreignWord: ["morado"], foreignAudio: ""},
+        {topic: "Colours", englishWord: "pink", foreignWord: ["rosado"], foreignAudio: ""},
+        {topic: "Numbers", englishWord: "one", foreignWord: ["uno"], foreignAudio: ""},
+        {topic: "Numbers", englishWord: "two ", foreignWord: ["dos"], foreignAudio: ""},
+        {topic: "Numbers", englishWord: "three", foreignWord: ["tres"], foreignAudio: ""},
+        {topic: "Numbers", englishWord: "four", foreignWord: ["cuatro"], foreignAudio: ""},
+        {topic: "Numbers", englishWord: "five", foreignWord: ["cinco"], foreignAudio: ""},
+        {topic: "Numbers", englishWord: "six", foreignWord: ["seis"], foreignAudio: ""},
+        {topic: "Numbers", englishWord: "seven", foreignWord: ["siete"], foreignAudio: ""},
+        {topic: "Numbers", englishWord: "eight", foreignWord: ["ocho"], foreignAudio: ""},
+        {topic: "Numbers", englishWord: "nine", foreignWord: ["nueve"], foreignAudio: ""},
+        {topic: "Numbers", englishWord: "ten", foreignWord: ["diez"], foreignAudio: ""}
+        ]
+        
+
+
+        export const languages = [{languageName: "Arabic", Content: arabic, topics: arabic_topics, num_foreign_alphabets: 2},{languageName: "Dutch", Content: dutch, topics: dutch_topics, num_foreign_alphabets: 1},{languageName: "Spanish", Content: spanish, topics: spanish_topics, num_foreign_alphabets: 1},{languageName: "French", Content: french, topics: french_topics, num_foreign_alphabets: 1},{languageName: "German", Content: german, topics: german_topics, num_foreign_alphabets: 1},{languageName: "Italian", Content: italian, topics: italian_topics, num_foreign_alphabets: 1}, {languageName: "Japan", Content: japanese, topics: japanese_topics, num_foreign_alphabets: 1} ]
