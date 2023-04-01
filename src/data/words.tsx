@@ -435,7 +435,7 @@ import arabic_white from '../data/audio/white.mp3';
 import arabic_yellow from '../data/audio/yellow.mp3';
 
 
-const french_topics = ["Clothes","Colours","Food","Numbers", "Verbs"]
+const french_topics = ["Clothes","Colours","Food","Numbers"]
 
 const french = [
     {topic: "Food", englishWord: "potato", foreignWord: ["papa"], foreignAudio: ""},
@@ -481,7 +481,7 @@ const french = [
     ]
 
 
-    const italian_topics = ["Clothes","Colours","Food","Numbers", "Verbs"]
+    const italian_topics = ["Clothes","Colours","Food","Numbers"]
 
 const italian = [
     {topic: "Food", englishWord: "potato", foreignWord: ["papa"], foreignAudio: ""},
@@ -526,7 +526,7 @@ const italian = [
     {topic: "Numbers", englishWord: "ten", foreignWord: ["diez"], foreignAudio: ""}
     ]
 
-    const german_topics = ["Clothes","Colours","Food","Numbers", "Verbs"]
+    const german_topics = ["Clothes","Colours","Food","Numbers"]
 
     const german = [
         {topic: "Food", englishWord: "potato", foreignWord: ["papa"], foreignAudio: ""},
@@ -572,7 +572,7 @@ const italian = [
         ]
 
 
-    const japanese_topics = ["Clothes","Colours","Food","Numbers", "Verbs"]
+    const japanese_topics = ["Clothes","Colours","Food","Numbers"]
 
     const japanese = [
         {topic: "Food", englishWord: "potato", foreignWord: ["papa"], foreignAudio: ""},
