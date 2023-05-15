@@ -106,7 +106,7 @@ const dutch = [
 
 ]
 
-const arabic_topics = ["Clothes","Colours","Food","Numbers", "Body", "Pronouns", "Adjectives", "Pronouns","Shayma root verbs", "Question Words","Home","Buildings","Professions"]
+const arabic_topics = ["Clothes","Colours","Food","Numbers", "Body", "Pronouns", "Adjectives", "Pronouns","Shayma root verbs", "Question Words","Home","Buildings","Professions","Hard to Read"]
 
 const arabic = [
 {topic: "Clothes", englishWord: "belt", foreignWord: ["ḥizām", "حِزَام"], foreignAudio: ""},
@@ -360,7 +360,49 @@ const arabic = [
 {topic: "Home", englishWord: "broom", foreignWord: ["miknasah", "مِكْنَسَة"], foreignAudio: ""},{topic: "Home", englishWord: "hospital", foreignWord: ["mustـshfā", "مُسْتـشفَى"], foreignAudio: ""},
 {topic: "Home", englishWord: "curtains", foreignWord: ["sitārah", "سِتَارَة"], foreignAudio: ""},
 {topic: "Home", englishWord: "furniture", foreignWord: ["athāth", "أَثَاث"], foreignAudio: ""},
-{topic: "Home", englishWord: "alarm clock", foreignWord: ["munabbih", "مُنَبِّه"], foreignAudio: ""}
+{topic: "Home", englishWord: "alarm clock", foreignWord: ["munabbih", "مُنَبِّه"], foreignAudio: ""},
+{topic: "Hard to Read", englishWord: "as-sā'atu l-waḥidah", foreignWord: ["السَّاعَةُ الوَحِدَة",""], foreignAudio: ""},
+{topic: "Hard to Read", englishWord: "as-sā'atu th-thāniyah", foreignWord: ["السَّاعَةُ الثَّانِيَة",""], foreignAudio: ""},
+{topic: "Hard to Read", englishWord: "as-sā'atu th-thālithah", foreignWord: ["السَّاعَةُ الثَّالِثَة",""], foreignAudio: ""},
+{topic: "Hard to Read", englishWord: "as-sā'atu r-rābi'ah", foreignWord: ["السَّاعَةُ الرَّابِعَة",""], foreignAudio: ""},
+{topic: "Hard to Read", englishWord: "as-sā'atu s-sādisah", foreignWord: ["السَّاعَةُ السَّادِسَة",""], foreignAudio: ""},
+{topic: "Hard to Read", englishWord: "as-sā'atu s-sābi'ah", foreignWord: ["السَّاعَةُ السَّابِعَة",""], foreignAudio: ""},
+{topic: "Hard to Read", englishWord: "as-sā'atu th-thāminah", foreignWord: ["السَّاعَةُ الثَّامِنَة",""], foreignAudio: ""},
+{topic: "Hard to Read", englishWord: "as-sā'atu t-tāsi'ah", foreignWord: ["السَّاعَةُ التَّاسِعَة",""], foreignAudio: ""},
+{topic: "Hard to Read", englishWord: "as-sā'atu l-'āshirah", foreignWord: ["السَّاعَةُ العَاشِرَة",""], foreignAudio: ""},
+{topic: "Hard to Read", englishWord: "as-sā'atu l-ḥādiyata 'ashar", foreignWord: ["السَّاعَةُ الحَادِيَةَ عَشَر",""], foreignAudio: ""},
+{topic: "Hard to Read", englishWord: "as-sā'atu th-thāniyata 'ashar", foreignWord: ["السَّاعَةُ الثَّانِيَةَ عَشَر",""], foreignAudio: ""},
+{topic: "Hard to Read", englishWord: "yawmu l-ithnayn", foreignWord: ["يَوْمُ الاِثْنَيْن",""], foreignAudio: ""},
+{topic: "Hard to Read", englishWord: "yawmu l-ththulāthā`", foreignWord: ["يَوْمُ الثُّلاثَاْء",""], foreignAudio: ""},
+{topic: "Hard to Read", englishWord: "yawmu l-arbi'ā`", foreignWord: ["يَوْمُ الأَرْبِعاْء",""], foreignAudio: ""},
+{topic: "Hard to Read", englishWord: "yawmu l-khamīs", foreignWord: ["يَوْمُ الخَمِيْس",""], foreignAudio: ""},
+{topic: "Hard to Read", englishWord: "yawmu l-jum'ah", foreignWord: ["يَوْمُ الجُمْعَة",""], foreignAudio: ""},
+{topic: "Hard to Read", englishWord: "yawmu s-sabt", foreignWord: ["يَوْمُ السَّبْت",""], foreignAudio: ""},
+{topic: "Hard to Read", englishWord: "yawmu l-aḥad", foreignWord: ["يَوْمُ الأَحَد",""], foreignAudio: ""},
+{topic: "Hard to Read", englishWord: "rabī'u l-awwal", foreignWord: ["رَبيعُ الأَوَّل",""], foreignAudio: ""},
+{topic: "Hard to Read", englishWord: "rabī'u l-ththānī", foreignWord: ["رَبيعُ الثّاني",""], foreignAudio: ""},
+{topic: "Hard to Read", englishWord: "jumāda l-ūla", foreignWord: ["جُمادى الأولى",""], foreignAudio: ""},
+{topic: "Hard to Read", englishWord: "jumāda l-thānī", foreignWord: ["جُمادى الثاني",""], foreignAudio: ""},
+{topic: "Hard to Read", englishWord: "dhū l-qa'dah", foreignWord: ["ذُو القَعْدَة",""], foreignAudio: ""},
+{topic: "Hard to Read", englishWord: "dhū l-ḥiijjah", foreignWord: ["ذُو الحِِجَّة",""], foreignAudio: ""},
+{topic: "Hard to Read", englishWord: "", foreignWord: ["",""], foreignAudio: ""},
+{topic: "Hard to Read", englishWord: "", foreignWord: ["",""], foreignAudio: ""},
+{topic: "Hard to Read", englishWord: "", foreignWord: ["",""], foreignAudio: ""},
+{topic: "Hard to Read", englishWord: "", foreignWord: ["",""], foreignAudio: ""},
+{topic: "Hard to Read", englishWord: "", foreignWord: ["",""], foreignAudio: ""},
+{topic: "Hard to Read", englishWord: "", foreignWord: ["",""], foreignAudio: ""},
+{topic: "Hard to Read", englishWord: "", foreignWord: ["",""], foreignAudio: ""},
+{topic: "Hard to Read", englishWord: "", foreignWord: ["",""], foreignAudio: ""},
+{topic: "Hard to Read", englishWord: "", foreignWord: ["",""], foreignAudio: ""},
+{topic: "Hard to Read", englishWord: "", foreignWord: ["",""], foreignAudio: ""},
+{topic: "Hard to Read", englishWord: "", foreignWord: ["",""], foreignAudio: ""},
+{topic: "Hard to Read", englishWord: "", foreignWord: ["",""], foreignAudio: ""},
+{topic: "Hard to Read", englishWord: "", foreignWord: ["",""], foreignAudio: ""},
+{topic: "Hard to Read", englishWord: "", foreignWord: ["",""], foreignAudio: ""},
+
+
+
+
 
 
 
