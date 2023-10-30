@@ -1,5 +1,16 @@
 
 
+import arabic_black from '../data/audio/black.mp3';
+import arabic_blue from '../data/audio/blue.mp3';
+import arabic_brown from '../data/audio/brown.mp3';
+import arabic_green from '../data/audio/green.mp3';
+import arabic_grey from '../data/audio/grey.mp3';
+import arabic_orange from '../data/audio/orange.mp3';
+import arabic_pink from '../data/audio/pink.mp3';
+import arabic_purple from '../data/audio/purple.mp3';
+import arabic_red from '../data/audio/red.mp3';
+import arabic_white from '../data/audio/white.mp3';
+import arabic_yellow from '../data/audio/yellow.mp3';
 const dutch_topics = ["Clothes","Colours","Food","Family","Numbers", "Pronunciation", "Pronouns", "Question Words"]
 
 const dutch = [
@@ -464,17 +475,6 @@ const spanish = [
 
 
 
-import arabic_black from '../data/audio/black.mp3';
-import arabic_blue from '../data/audio/blue.mp3';
-import arabic_brown from '../data/audio/brown.mp3';
-import arabic_green from '../data/audio/green.mp3';
-import arabic_grey from '../data/audio/grey.mp3';
-import arabic_orange from '../data/audio/orange.mp3';
-import arabic_pink from '../data/audio/pink.mp3';
-import arabic_purple from '../data/audio/purple.mp3';
-import arabic_red from '../data/audio/red.mp3';
-import arabic_white from '../data/audio/white.mp3';
-import arabic_yellow from '../data/audio/yellow.mp3';
 
 
 const french_topics = ["Clothes","Colours","Food","Numbers"]
