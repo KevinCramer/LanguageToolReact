@@ -106,7 +106,7 @@ const dutch = [
 
 ]
 
-const arabic_topics = ["Clothes","Colours","Food","Numbers", "Body", "Pronouns", "Adjectives", "Pronouns","Shayma root verbs", "Question Words","Home","Buildings","Professions","Hard to Read"]
+const arabic_topics = ["Clothes","Colours","Food","Numbers", "Body", "Pronouns", "Adjectives", "Pronouns","Root verbs ", "Question Words","Home","Buildings","Professions","Hard to Read"]
 
 const arabic = [
 {topic: "Clothes", englishWord: "belt", foreignWord: ["ḥizām", "حِزَام"], foreignAudio: ""},
@@ -256,11 +256,11 @@ const arabic = [
 {topic: "Question Words", englishWord: "when", foreignWord: ["miten"], foreignAudio: ""},
 {topic: "Question Words", englishWord: "how", foreignWord: ["kef"], foreignAudio: ""},
 {topic: "Question Words", englishWord: "why", foreignWord: ["lay"], foreignAudio: ""},
-{topic: "Shayma root verbs", englishWord: "eat", foreignWord: ["kul"], foreignAudio: ""},
-{topic: "Shayma root verbs", englishWord: "drink", foreignWord: ["sharb"], foreignAudio: ""},
-{topic: "Shayma root verbs", englishWord: "sleep", foreignWord: ["nam"], foreignAudio: ""},
-{topic: "Shayma root verbs", englishWord: "love", foreignWord: ["hub"], foreignAudio: ""},
-{topic: "Shayma root verbs", englishWord: "go", foreignWord: ["thehab"], foreignAudio: ""},
+{topic: "Root verbs ", englishWord: "eat", foreignWord: ["kul"], foreignAudio: ""},
+{topic: "Root verbs ", englishWord: "drink", foreignWord: ["sharb"], foreignAudio: ""},
+{topic: "Root verbs ", englishWord: "sleep", foreignWord: ["nam"], foreignAudio: ""},
+{topic: "Root verbs ", englishWord: "love", foreignWord: ["hub"], foreignAudio: ""},
+{topic: "Root verbs ", englishWord: "go", foreignWord: ["thehab"], foreignAudio: ""},
 {topic: "Professions", englishWord: "butcher", foreignWord: ["jazzār", "جَزَّار"], foreignAudio: ""},
 {topic: "Professions", englishWord: "fireman", foreignWord: ["rajulu l-iṭfā`", "رَجُلُ الإِطْفاء"], foreignAudio: ""},
 {topic: "Professions", englishWord: "barber", foreignWord: ["ḥanllāq", "حًلَّاق"], foreignAudio: ""},
