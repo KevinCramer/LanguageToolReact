@@ -86,27 +86,27 @@ const StudyElement = (props: any) =>
   
       
         }
-          else
-            {
-              return (
-                      <Navbar>
-                        <label style= {{width: "20%", textAlign: "left"}}>{BaseLanguageWord} </label>
-                        <label style= {{width: "20%", textAlign: "left"}}>{ForeignLanguageWord} </label>
-                        <label style= {{width: "20%", textAlign: "left"}}><audio src={ForeignLanguageWordAudio} controls controlsList="nodownloads" autoPlay ={false}></audio> </label>
-                      </Navbar>
-                    )
-            }
-    }
-      else 
+      else
         {
           return (
-                   <Navbar>
+                  <Navbar>
                     <label style= {{width: "20%", textAlign: "left"}}>{BaseLanguageWord} </label>
-                    <label style= {{width: "5%"}}></label>
                     <label style= {{width: "20%", textAlign: "left"}}>{ForeignLanguageWord} </label>
-                   </Navbar>
-                 )
+                    <label style= {{width: "20%", textAlign: "left"}}><audio src={ForeignLanguageWordAudio} controls controlsList="nodownloads" autoPlay ={false}></audio> </label>
+                  </Navbar>
+                )
         }
+    }
+  else 
+    {
+      return (
+                <Navbar>
+                <label style= {{width: "20%", textAlign: "left"}}>{BaseLanguageWord} </label>
+                <label style= {{width: "5%"}}></label>
+                <label style= {{width: "20%", textAlign: "left"}}>{ForeignLanguageWord} </label>
+                </Navbar>
+              )
+    }
 }
  
 export default StudyElement;
