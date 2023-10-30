@@ -661,4 +661,13 @@ const italian = [
         
 
 
-        export const languages = [{languageName: "Arabic", Content: arabic, topics: arabic_topics, num_foreign_alphabets: 2},{languageName: "Dutch", Content: dutch, topics: dutch_topics, num_foreign_alphabets: 1},{languageName: "Spanish", Content: spanish, topics: spanish_topics, num_foreign_alphabets: 1},{languageName: "French", Content: french, topics: french_topics, num_foreign_alphabets: 1},{languageName: "German", Content: german, topics: german_topics, num_foreign_alphabets: 1},{languageName: "Italian", Content: italian, topics: italian_topics, num_foreign_alphabets: 1}, {languageName: "Japan", Content: japanese, topics: japanese_topics, num_foreign_alphabets: 1} ]
+        export const languages = 
+        [
+            {languageName: "Arabic", Content: arabic, topics: arabic_topics, num_foreign_alphabets: 2},
+            {languageName: "Dutch", Content: dutch, topics: dutch_topics, num_foreign_alphabets: 1},
+            {languageName: "Spanish", Content: spanish, topics: spanish_topics, num_foreign_alphabets: 1},
+            {languageName: "French", Content: french, topics: french_topics, num_foreign_alphabets: 1},
+            {languageName: "German", Content: german, topics: german_topics, num_foreign_alphabets: 1},
+            {languageName: "Italian", Content: italian, topics: italian_topics, num_foreign_alphabets: 1},
+            {languageName: "Japan", Content: japanese, topics: japanese_topics, num_foreign_alphabets: 1} 
+        ]
