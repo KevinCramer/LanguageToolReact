@@ -1,13 +1,13 @@
 import { Key, useState } from "react";
-import QuizElement from "./QuizElement";
-import StudyElement from "./StudyElement";
+import QuizElement from "../atoms/QuizElement";
+import StudyElement from "../atoms/StudyElement";
 import {Container, Navbar as NavbarBs} from "react-bootstrap";
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
-import {languages} from "../data/words";
+import {languages} from "../../data/words";
 import ReactGA from 'react-ga';
 import {useSelector,useDispatch} from "react-redux"
-import {flip} from "../redux/displayAudio";
+import {flip} from "../../redux/displayAudio";
 
 const StudyContent = (props: any) => {
     var currentLanguageName = languages[0].languageName

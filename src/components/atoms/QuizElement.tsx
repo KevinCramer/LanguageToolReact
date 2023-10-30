@@ -2,8 +2,7 @@ import { Key, useState } from "react"
 import {Navbar, Container} from "react-bootstrap"
 
 const QuizElement = (props: any) => {
-    const initialAnswer = {answer: ""}
-    const [formValues, setFormValues] = useState(initialAnswer)
+    const [formValues, setFormValues] = useState({answer: ""})
     const [response, setResponse] = useState("")
     const handleChange = (e:any) => {
         const {name,value} = e.target;
@@ -14,13 +13,13 @@ const QuizElement = (props: any) => {
     const onSubmit = (e:any, submitted_answer:string, correct_answer:string) => {
         e.preventDefault();
         console.log(e)
-        const does_it_match = (roughlyEqual(submitted_answer,correct_answer)) ? "✔" : " ✘ the correct answer is " + "'" + correct_answer +  "'" + " not " +  "'" + submitted_answer +  "'" 
+        const does_it_match = (roughlyEqual(submitted_answer,correct_answer)) ? "✔" : 
+        " ✘ the correct answer is " + "'" + correct_answer +  "'" + " not " +  "'" + submitted_answer +  "'" 
         setResponse(does_it_match)
       };
     
     var hideStudyElement = false;
     var [hideStudyElement,setHideStudyElement] = useState(hideStudyElement)
-    const hide_studyElement = () => { return setHideStudyElement(true)}
 
     if(!hideStudyElement){
       return (
