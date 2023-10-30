@@ -14,7 +14,6 @@ function App() {
   return(
     <div className = "Main">
       <div className= "overlay"></div>
-{/*       <img src={image}></img>*/}
      <video src={video} autoPlay loop muted></video> 
 
     <div className = "content">

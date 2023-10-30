@@ -2,13 +2,9 @@ import { Key, useState } from "react"
 import {Navbar, Container} from "react-bootstrap"
 
 const QuizElement = (props: any) => {
-    const isVerb = props.isVerb
-    const QuestionWord = isVerb? props.QuestionWord.infinitive: props.QuestionWord
-    const AnswerWord = isVerb? props.AnswerWord.infinitive: props.AnswerWord
     const initialAnswer = {answer: ""}
     const [formValues, setFormValues] = useState(initialAnswer)
-    var initialResponse = ""
-    const [response, setResponse] = useState(initialResponse)
+    const [response, setResponse] = useState("")
     const handleChange = (e:any) => {
         const {name,value} = e.target;
         setFormValues({...formValues, [name]: value})
@@ -29,9 +25,9 @@ const QuizElement = (props: any) => {
     if(!hideStudyElement){
       return (
         <Navbar>
-        <form  onSubmit={e => onSubmit(e, formValues.answer, AnswerWord)}>
+        <form  onSubmit={e => onSubmit(e, formValues.answer, props.isVerb? props.AnswerWord.infinitive: props.AnswerWord)}>
             <div className="ui form">
-                    <label style= {{width: "200px"}}>{QuestionWord} </label>
+                    <label style= {{width: "200px"}}>{props.isVerb? props.QuestionWord.infinitive: props.QuestionWord} </label>
                     <input type="text" name="answer" placeholder="" value={formValues.answer} onChange = {handleChange} autoComplete="off" spellCheck ="false"/>
                     <label style= {{width: "40px"}}></label>
             </div>
