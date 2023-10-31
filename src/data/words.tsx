@@ -669,5 +669,5 @@ const italian = [
             {languageName: "French", Content: french, topics: french_topics, num_foreign_alphabets: 1},
             {languageName: "German", Content: german, topics: german_topics, num_foreign_alphabets: 1},
             {languageName: "Italian", Content: italian, topics: italian_topics, num_foreign_alphabets: 1},
-            {languageName: "Japan", Content: japanese, topics: japanese_topics, num_foreign_alphabets: 1} 
+            {languageName: "Japanese", Content: japanese, topics: japanese_topics, num_foreign_alphabets: 1} 
         ]
