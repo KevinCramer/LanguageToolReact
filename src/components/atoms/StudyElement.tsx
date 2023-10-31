@@ -65,7 +65,7 @@ const StudyElement = (props: any) =>
 
     )
   }
-  if(showAudio && showBaseLanguageFirst && !isVerb){
+  else if(showAudio && showBaseLanguageFirst && !isVerb){
     return  (
       <Navbar>
         <label style= {{width: "20%", textAlign: "left"}}>{BaseLanguageWord} </label>
@@ -74,7 +74,7 @@ const StudyElement = (props: any) =>
       </Navbar>
     )
   }
-  if(showAudio && !showBaseLanguageFirst && isVerb){
+  else if(showAudio && !showBaseLanguageFirst && isVerb){
 
     return  (
       <Navbar>
@@ -127,7 +127,7 @@ const StudyElement = (props: any) =>
     )
 
   }
-  if(showAudio && !showBaseLanguageFirst && !isVerb){
+  else if(showAudio && !showBaseLanguageFirst && !isVerb){
     return (
       <Navbar>
         <label style= {{width: "20%", textAlign: "left"}}>{BaseLanguageWord} </label>
@@ -137,7 +137,7 @@ const StudyElement = (props: any) =>
     )
   }
 
-  if(!showAudio && showBaseLanguageFirst && isVerb){
+  else if(!showAudio && showBaseLanguageFirst && isVerb){
     return  (
       <Navbar>
         <label style= {{width: "20%", textAlign: "left"}}>{isVerb? BaseLanguageWord.infinitive: BaseLanguageWord} </label>
@@ -187,7 +187,7 @@ const StudyElement = (props: any) =>
 
     )
   }
-  if(!showAudio && showBaseLanguageFirst && !isVerb){
+  else if(!showAudio && showBaseLanguageFirst && !isVerb){
     return  (
       <Navbar>
         <label style= {{width: "20%", textAlign: "left"}}>{BaseLanguageWord} </label>
@@ -196,7 +196,7 @@ const StudyElement = (props: any) =>
     )
 
   }
-  if(!showAudio && !showBaseLanguageFirst && isVerb){
+  else if(!showAudio && !showBaseLanguageFirst && isVerb){
     return  (
       <Navbar>
         <label style= {{width: "20%", textAlign: "left"}}>{isVerb? BaseLanguageWord.infinitive: BaseLanguageWord} </label>
@@ -246,7 +246,7 @@ const StudyElement = (props: any) =>
 
     )
   }
-  if(!showAudio && !showBaseLanguageFirst && !isVerb){
+  else { // (!showAudio && !showBaseLanguageFirst && !isVerb)
     return (
       <Navbar>
         <label style= {{width: "20%", textAlign: "left"}}>{BaseLanguageWord} </label>
