@@ -125,8 +125,8 @@ const StudyElement = (props: any) =>
       </Navbar>
 
     )
-
   }
+
   else if(showAudio && !showBaseLanguageFirst && !isVerb){
     return (
       <Navbar>
@@ -187,6 +187,7 @@ const StudyElement = (props: any) =>
 
     )
   }
+
   else if(!showAudio && showBaseLanguageFirst && !isVerb){
     return  (
       <Navbar>
@@ -194,8 +195,8 @@ const StudyElement = (props: any) =>
         <label style= {{width: "20%", textAlign: "left"}}>{ForeignLanguageWord} </label>
       </Navbar>
     )
-
   }
+
   else if(!showAudio && !showBaseLanguageFirst && isVerb){
     return  (
       <Navbar>
@@ -246,6 +247,7 @@ const StudyElement = (props: any) =>
 
     )
   }
+
   else { // (!showAudio && !showBaseLanguageFirst && !isVerb)
     return (
       <Navbar>
