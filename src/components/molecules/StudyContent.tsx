@@ -96,7 +96,7 @@ const StudyContent = (props: any) => {
                 <Container>
                     <DropdownButton id="Languages" title={String(currentLanguageName)} size = "sm"> 
                         {languages.map((languageItem: any) =>
-                        <Dropdown.Item onClick = {() => [changeCurrentLanguage(languageItem.languageName, languageItem.Content,languageItem.topics, languageItem.num_foreign_alphabets), setCurrentAlphabet(0),changeCurrentTopic(currentLanguageTopics[0]) ]}>{languageItem.languageName}</Dropdown.Item>)}
+                        <Dropdown.Item onClick = {() => [changeCurrentLanguage(languageItem.languageName, languageItem.Content,languageItem.topics, languageItem.num_foreign_alphabets), setCurrentAlphabet(0),changeCurrentTopic(languageItem.topics[0]) ]}>{languageItem.languageName}</Dropdown.Item>)}
                     </DropdownButton>
                     <DropdownButton id="Topics" title={"Topic: " + current_topic} size = "sm">
                         {currentLanguageTopics.map((topic: string) =>
