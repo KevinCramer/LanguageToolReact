@@ -75,12 +75,11 @@ const StudyElement = (props: any) =>
     )
   }
   else if(showAudio && !showBaseLanguageFirst && isVerb){
-
     return  (
       <Navbar>
-        <label style= {{width: "20%", textAlign: "left"}}>{isVerb? BaseLanguageWord.infinitive: BaseLanguageWord} </label>
+        <label onClick={isVerb?display_popup:hide_popup} style= {isVerb?{width: "20%", textAlign: "left", color: "purple", textDecorationLine: "underline"}:{width: "20%", textAlign: "left"}}>{BaseLanguageWord.infinitive} </label>
         <label style= {{width: "5%"}}></label>
-        <label onClick={isVerb?display_popup:hide_popup} style= {isVerb?{width: "20%", textAlign: "left", color: "purple", textDecorationLine: "underline"}:{width: "20%", textAlign: "left"}}>{ForeignLanguageWord.infinitive} </label>
+        <label style= {{width: "20%", textAlign: "left"}}>{isVerb? ForeignLanguageWord.infinitive: ForeignLanguageWord} </label>
         <label style= {{width: "20%", textAlign: "left"}}><audio src={ForeignLanguageWordAudio} controls controlsList="nodownloads" autoPlay ={false}></audio> </label>
         <Modal show ={show_popup} onHide={hide_popup}>
           <Modal.Header closeButton>
@@ -200,9 +199,9 @@ const StudyElement = (props: any) =>
   else if(!showAudio && !showBaseLanguageFirst && isVerb){
     return  (
       <Navbar>
-        <label style= {{width: "20%", textAlign: "left"}}>{isVerb? BaseLanguageWord.infinitive: BaseLanguageWord} </label>
+        <label onClick={isVerb?display_popup:hide_popup} style= {isVerb?{width: "20%", textAlign: "left", color: "purple", textDecorationLine: "underline"}:{width: "20%", textAlign: "left"}}>{BaseLanguageWord.infinitive} </label>
         <label style= {{width: "5%"}}></label>
-        <label onClick={isVerb?display_popup:hide_popup} style= {isVerb?{width: "20%", textAlign: "left", color: "purple", textDecorationLine: "underline"}:{width: "20%", textAlign: "left"}}>{ForeignLanguageWord.infinitive} </label>
+        <label style= {{width: "20%", textAlign: "left"}}>{isVerb? ForeignLanguageWord.infinitive: ForeignLanguageWord} </label>
         <Modal show ={show_popup} onHide={hide_popup}>
           <Modal.Header closeButton>
             <Modal.Title id="contained-modal-title-vcenter">
