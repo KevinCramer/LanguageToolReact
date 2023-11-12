@@ -104,9 +104,6 @@ const StudyElement = (props: any) =>
             <td style={{ width: 200 }} >Ellos/Ellas  {ForeignLanguageWord.foreignWordConjugation.future_tense[5]}</td>
           </tr>
           </Modal.Body>
-          <Modal.Footer>
-            <Button onClick={hide_popup}>Close</Button>
-          </Modal.Footer>
         </Modal>  
       </Navbar>
 
@@ -210,10 +207,7 @@ const StudyElement = (props: any) =>
             <td style={{ width: 200 }} >They {BaseLanguageWord.englishWordConjugation.future_tense[5]}</td>
             <td style={{ width: 200 }} >Ellos/Ellas  {ForeignLanguageWord.englishWordConjugation.future_tense[5]}</td>
           </tr>
-          </Modal.Body>
-          <Modal.Footer>
-            <Button onClick={hide_popup}>Close</Button>
-          </Modal.Footer>
+          </Modal.Body> 
         </Modal>  
       </Navbar>
 
@@ -319,9 +313,6 @@ const StudyElement = (props: any) =>
             <td style={{ width: 200 }} >Ellos/Ellas  {ForeignLanguageWord.foreignWordConjugation.future_tense[5]}</td>
           </tr>
           </Modal.Body>
-          <Modal.Footer>
-            <Button onClick={hide_popup}>Close</Button>
-          </Modal.Footer>
         </Modal>  
       </Navbar>
 
@@ -426,9 +417,6 @@ const StudyElement = (props: any) =>
             <td style={{ width: 200 }} >Ellos/Ellas  {ForeignLanguageWord.englishWordConjugation.future_tense[5]}</td>
           </tr>
           </Modal.Body>
-          <Modal.Footer>
-            <Button onClick={hide_popup}>Close</Button>
-          </Modal.Footer>
         </Modal>  
       </Navbar>
 
