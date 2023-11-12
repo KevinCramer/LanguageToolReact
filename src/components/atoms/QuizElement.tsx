@@ -33,7 +33,6 @@ const QuizElement = (props: any) => {
         <div> {response}</div>
         </Navbar>
       )
-
     }
     else {
       return (
