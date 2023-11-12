@@ -26,7 +26,7 @@ const QuizElement = (props: any) => {
         <form  onSubmit={e => onSubmit(e, formValues.answer, props.isVerb? props.AnswerWord.infinitive: props.AnswerWord)}>
             <div className="ui form">
                     <label style= {{width: "200px"}}>{props.isVerb? props.QuestionWord.infinitive: props.QuestionWord} </label>
-                    <input type="text" name="answer" placeholder="" value={formValues.answer} onChange = {handleChange} autoComplete="off" spellCheck ="false"/>
+                    <input type="text" name="answer" placeholder="" value={formValues.answer} onChange = {handleChange} autoComplete="new-password" spellCheck ="false"/>
                     <label style= {{width: "40px"}}></label>
             </div>
         </form>
