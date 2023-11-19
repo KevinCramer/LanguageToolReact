@@ -8,18 +8,19 @@ import {languages} from "../../data/words";
 import ReactGA from 'react-ga';
 import {useSelector,useDispatch} from "react-redux"
 import {flip} from "../../redux/displayAudio";
+import { Word } from "../../types";
 
-const StudyContent = (props: any) => {
-    var currentLanguageName = languages[0].languageName
+const StudyContent = () => {
+    var currentLanguageName: string = languages[0].languageName
     var [currentLanguageName,setLanguageName] = useState(currentLanguageName)
 
-    var currentLanguage = languages[0].content
+    var currentLanguage: Word[] = languages[0].content
     var [currentLanguage,setLanguage] = useState(currentLanguage)
 
-    var currentLanguageTopics = languages[0].topics
+    var currentLanguageTopics: string[] = languages[0].topics
     var [currentLanguageTopics,setCurrentLanguageTopics] = useState(currentLanguageTopics)
 
-    var currentNumForeignAlphabets = languages[0].numForeignAlphabets
+    var currentNumForeignAlphabets: number = languages[0].numForeignAlphabets
     var [currentNumForeignAlphabets,setCurrentNumForeignAlphabets] = useState(currentNumForeignAlphabets)
 
     var currentTopic = currentLanguageTopics[0]
@@ -41,9 +42,9 @@ const StudyContent = (props: any) => {
     
     const changeCurrentLanguage = 
     (   languageName: string,
-        languageContent: any, 
-        topics: any, 
-        numForeignAlphabets: any
+        languageContent: Word[], 
+        topics: string[], 
+        numForeignAlphabets: number
     ) => 
     { 
         setLanguage(languageContent);
@@ -69,7 +70,7 @@ const StudyContent = (props: any) => {
                 <div>
                     {topicWords.map((pair: any) =>
                     <div key ={showTrueOrder+ (isVerb?pair.englishWord.infinitive: pair.englishWord) + pair.foreignWord[currentAlphabet] + showBaseLanguage}>
-                                            <QuizElement QuestionWord = { showBaseLanguage? pair.englishWord: pair.foreignWord[currentAlphabet] } AnswerWord = {showBaseLanguage? pair.foreignWord[currentAlphabet]: pair.englishWord} isVerb = {currentTopic=== "Verbs"}/>
+                                            <QuizElement questionWord = { showBaseLanguage? pair.englishWord: pair.foreignWord[currentAlphabet] } answerWord = {showBaseLanguage? pair.foreignWord[currentAlphabet]: pair.englishWord} isVerb = {currentTopic=== "Verbs"}/>
                     </div>                    
                     )}
                 </div>
