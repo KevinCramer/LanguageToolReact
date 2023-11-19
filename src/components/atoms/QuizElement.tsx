@@ -1,7 +1,8 @@
 import { useState } from "react"
 import {Navbar} from "react-bootstrap"
+import { VerbConjugationEnglish, VerbConjugationForeign } from "../../types"
 
-const QuizElement = (props: {questionWord: any, answerWord: any, isVerb: boolean}) => {
+const QuizElement = (props: {questionWord: string | VerbConjugationEnglish | VerbConjugationForeign, answerWord:  string | VerbConjugationEnglish | VerbConjugationForeign, isVerb: boolean}) => {
     const [formValues, setFormValues] = useState({answer: ""})
     const [response, setResponse] = useState("")
     const handleChange = (e:any) => {
@@ -22,11 +23,23 @@ const QuizElement = (props: {questionWord: any, answerWord: any, isVerb: boolean
     var [hideStudyElement] = useState(hideStudyElement)
 
     if(!hideStudyElement){
+      let propsQuestionWord: string;
+      let propsAnswerWord: string;
+      if(props.isVerb){
+        propsQuestionWord= (props.questionWord as VerbConjugationEnglish | VerbConjugationForeign).infinitive
+        propsAnswerWord= (props.answerWord as VerbConjugationEnglish | VerbConjugationForeign).infinitive
+
+      }
+      else{
+        propsQuestionWord = (props.questionWord as string)
+        propsAnswerWord = (props.answerWord as string)
+      }
+
       return (
         <Navbar>
-        <form  onSubmit={e => onSubmit(e, formValues.answer, props.isVerb? props.answerWord.infinitive: props.answerWord)}>
+        <form  onSubmit={e => onSubmit(e, formValues.answer, propsAnswerWord)}>
             <div className="ui form">
-                    <label style= {{width: "200px"}}>{props.isVerb? props.questionWord.infinitive: props.questionWord} </label>
+                    <label style= {{width: "200px"}}>{propsQuestionWord} </label>
                     <input type="text" name="answer" placeholder="" value={formValues.answer} onChange = {handleChange} autoComplete="off" autoCorrect="off" spellCheck ="false" autoCapitalize="off"/>
                     <label style= {{width: "40px"}}></label>
             </div>

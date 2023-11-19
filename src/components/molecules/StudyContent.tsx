@@ -8,7 +8,7 @@ import {languages} from "../../data/words";
 import ReactGA from 'react-ga';
 import {useSelector,useDispatch} from "react-redux"
 import {flip} from "../../redux/displayAudio";
-import { Word } from "../../types";
+import { VerbConjugationEnglish, Word } from "../../types";
 
 const StudyContent = () => {
     var currentLanguageName: string = languages[0].languageName
@@ -68,8 +68,8 @@ const StudyContent = () => {
             const isVerb  = currentTopic=== "Verbs"
             return ( 
                 <div>
-                    {topicWords.map((pair: any) =>
-                    <div key ={showTrueOrder+ (isVerb?pair.englishWord.infinitive: pair.englishWord) + pair.foreignWord[currentAlphabet] + showBaseLanguage}>
+                    {topicWords.map((pair: Word) =>
+                    <div key ={showTrueOrder.toString() + (isVerb?(pair.englishWord as VerbConjugationEnglish).infinitive: pair.englishWord) + pair.foreignWord[currentAlphabet] + showBaseLanguage}>
                                             <QuizElement questionWord = { showBaseLanguage? pair.englishWord: pair.foreignWord[currentAlphabet] } answerWord = {showBaseLanguage? pair.foreignWord[currentAlphabet]: pair.englishWord} isVerb = {currentTopic=== "Verbs"}/>
                     </div>                    
                     )}
@@ -79,7 +79,7 @@ const StudyContent = () => {
         else {
             return (
                 <div>
-                    {topicWords.map((pair: any) =>
+                    {topicWords.map((pair: Word) =>
                     <div>
                                             <StudyElement BaseLanguageWord = { showBaseLanguage? pair.englishWord: pair.foreignWord[currentAlphabet]} ForeignLanguageWord = {showBaseLanguage? pair.foreignWord[currentAlphabet]: pair.englishWord}  ForeignLanguageWordAudio = {pair.foreignAudio} showAudio = {audioBool} showBaseLanguageFirst = {showBaseLanguage} isVerb = {currentTopic=== "Verbs"}/>
                     </div>                    
