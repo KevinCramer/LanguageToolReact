@@ -87,15 +87,15 @@ const StudyContent = () => {
                 <div>
                     {topicWords.map((pair: Word) =>
                     <div>
-                                            <StudyElement 
-                                            BaseLanguageWord = { showBaseLanguage? pair.englishWord: pair.foreignWord[currentAlphabet]} 
-                                            ForeignLanguageWord = {showBaseLanguage? pair.foreignWord[currentAlphabet]: pair.englishWord}  
-                                            ForeignLanguageWordAudio = {pair.foreignAudio} 
-                                            showAudio = {audioBool} 
-                                            showBaseLanguageFirst = {showBaseLanguage} 
-                                            isVerb = {currentTopic=== "Verbs"}
-                                            pronouns = {currentPronouns}
-                                            />
+                        <StudyElement 
+                        BaseLanguageWord = { showBaseLanguage? pair.englishWord: pair.foreignWord[currentAlphabet]} 
+                        ForeignLanguageWord = {showBaseLanguage? pair.foreignWord[currentAlphabet]: pair.englishWord}  
+                        ForeignLanguageWordAudio = {pair.foreignAudio} 
+                        showAudio = {audioBool} 
+                        showBaseLanguageFirst = {showBaseLanguage} 
+                        isVerb = {currentTopic=== "Verbs"}
+                        pronouns = {currentPronouns}
+                        />
                     </div>                    
                     )}
                 </div>
