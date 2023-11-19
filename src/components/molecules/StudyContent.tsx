@@ -101,7 +101,6 @@ const StudyContent = () => {
                 </div>
             )
         }
-
     }
     if(showTrueOrder)
     {
