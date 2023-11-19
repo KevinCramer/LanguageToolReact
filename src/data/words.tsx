@@ -426,7 +426,7 @@ const arabic: Word[] = [
 ]
 
 const spanishTopics: string[] = ["Clothes","Colours","Food","Numbers", "Verbs"]
-
+const spanishPronouns: string[] = ["Yo","Tu","El/Ella","Nosotros", "Vosotros", "Ellos/Ellas"]
 const spanish: Word[] = [
     {topic: "Food", englishWord: "potato", foreignWord: ["papa"], foreignAudio: ""},
     {topic: "Food", englishWord: "bread", foreignWord: ["pan"], foreignAudio: ""},
@@ -589,7 +589,7 @@ const italian: Word[] = [
         [
             {languageName: "Arabic", content: arabic, topics: arabicTopics, numForeignAlphabets: 2},
             {languageName: "Dutch", content: dutch, topics: dutchTopics, numForeignAlphabets: 1},
-            {languageName: "Spanish", content: spanish, topics: spanishTopics, numForeignAlphabets: 1},
+            {languageName: "Spanish", content: spanish, topics: spanishTopics, pronouns: spanishPronouns, numForeignAlphabets: 1},
             {languageName: "French", content: french, topics: frenchTopics, numForeignAlphabets: 1},
             {languageName: "German", content: german, topics: germanTopics, numForeignAlphabets: 1},
             {languageName: "Italian", content: italian, topics: italianTopics, numForeignAlphabets: 1},

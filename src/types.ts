@@ -26,5 +26,6 @@ export type Language = {
     languageName: string;
     content: Word[];
     topics: string[];
+    pronouns?: string[];
     numForeignAlphabets: number;
 }
