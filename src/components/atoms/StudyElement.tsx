@@ -41,8 +41,8 @@ const StudyElement = (props: {BaseLanguageWord: any, ForeignLanguageWord: any, F
                   <h5>{obj.title}</h5>
                   {Array.from({ length: 6 }).map((_, j) => (
                     <tr key={i}>
-                        {showBaseLanguageFirst? <td style={{ width: tableRowWidth }}>{englishPronouns[j]} {BaseLanguageWord.englishWordConjugation[obj.tense][j]}</td> : <td style={{ width: tableRowWidth }}>{pronouns[j]} {ForeignLanguageWord.foreignWordConjugation[obj.tense][j]}</td>}
-                        {showBaseLanguageFirst? <td style={{ width: tableRowWidth }}>{pronouns[j]} {ForeignLanguageWord.foreignWordConjugation[obj.tense][j]}</td>: <td style={{ width: tableRowWidth }}>{englishPronouns[j]} {BaseLanguageWord.englishWordConjugation[obj.tense][j]}</td> }
+                        {showBaseLanguageFirst? <td style={{ width: tableRowWidth }}>{englishPronouns[j]} {BaseLanguageWord.englishWordConjugation[obj.tense][j]}</td> : <td style={{ width: tableRowWidth }}>{pronouns[j]} {ForeignLanguageWord.englishWordConjugation[obj.tense][j]}</td>}
+                        {showBaseLanguageFirst? <td style={{ width: tableRowWidth }}>{pronouns[j]} {ForeignLanguageWord.foreignWordConjugation[obj.tense][j]}</td>: <td style={{ width: tableRowWidth }}>{englishPronouns[j]} {BaseLanguageWord.foreignWordConjugation[obj.tense][j]}</td> }
                       </tr>
                     ))
                   }
@@ -55,12 +55,14 @@ const StudyElement = (props: {BaseLanguageWord: any, ForeignLanguageWord: any, F
 
       )
     }
-    else if(!showAudio && !showBaseLanguageFirst){
+    else{
+      const x = <label style= {{width: "20%", textAlign: "left"}}>{BaseLanguageWord.infinitive} </label>
+      const y = <label onClick={displayPopUp} style= {{width: "20%", textAlign: "left", color: "purple", textDecorationLine: "underline"}}>{ForeignLanguageWord.infinitive} </label>
       return  (
         <Navbar>
-          <label onClick={displayPopUp} style= {{width: "20%", textAlign: "left", color: "purple", textDecorationLine: "underline"}}>{BaseLanguageWord.infinitive} </label>
+          {showBaseLanguageFirst? x: y}
           <label style= {{width: "5%"}}></label>
-          <label style= {{width: "20%", textAlign: "left"}}>{ForeignLanguageWord.infinitive} </label>
+          {showBaseLanguageFirst? y: x}
           <Modal show ={showPopUp} onHide={hidePopUp}>
             <Modal.Header closeButton>
               <Modal.Title id="contained-modal-title-vcenter">
@@ -73,8 +75,8 @@ const StudyElement = (props: {BaseLanguageWord: any, ForeignLanguageWord: any, F
                   <h5>{obj.title}</h5>
                   {Array.from({ length: 6 }).map((_, j) => (
                     <tr key={i}>
-                        <td style={{ width: tableRowWidth }}>{pronouns[j]} {BaseLanguageWord.foreignWordConjugation[obj.tense][j]}</td>
-                        <td style={{ width: tableRowWidth }}>{englishPronouns[j]} {ForeignLanguageWord.englishWordConjugation[obj.tense][j]}</td>
+                        {showBaseLanguageFirst? <td style={{ width: tableRowWidth }}>{englishPronouns[j]} {BaseLanguageWord.englishWordConjugation[obj.tense][j]}</td> : <td style={{ width: tableRowWidth }}>{pronouns[j]} {ForeignLanguageWord.englishWordConjugation[obj.tense][j]}</td>}
+                        {showBaseLanguageFirst? <td style={{ width: tableRowWidth }}>{pronouns[j]} {ForeignLanguageWord.foreignWordConjugation[obj.tense][j]}</td>: <td style={{ width: tableRowWidth }}>{englishPronouns[j]} {BaseLanguageWord.foreignWordConjugation[obj.tense][j]}</td> }
                       </tr>
                     ))
                   }
@@ -87,39 +89,7 @@ const StudyElement = (props: {BaseLanguageWord: any, ForeignLanguageWord: any, F
 
       )
     }
-    else {  
-      return  (
-        <Navbar>
-          <label style= {{width: "20%", textAlign: "left"}}>{BaseLanguageWord.infinitive} </label>
-          <label style= {{width: "5%"}}></label>
-          <label onClick={displayPopUp} style= {{width: "20%", textAlign: "left", color: "purple", textDecorationLine: "underline"}}>{ForeignLanguageWord.infinitive} </label>
-          <Modal show ={showPopUp} onHide={hidePopUp}>
-            <Modal.Header closeButton>
-              <Modal.Title id="contained-modal-title-vcenter">
-                {ForeignLanguageWord.infinitive}
-              </Modal.Title>
-            </Modal.Header>
-          <Modal.Body>
-          {modalTenses.map((obj, i) => (
-                <tr key={i}>
-                  <h5>{obj.title}</h5>
-                  {Array.from({ length: 6 }).map((_, j) => (
-                    <tr key={i}>
-                        <td style={{ width: tableRowWidth }}>{englishPronouns[j]} {BaseLanguageWord.englishWordConjugation[obj.tense][j]}</td>
-                        <td style={{ width: tableRowWidth }}>{pronouns[j]} {ForeignLanguageWord.foreignWordConjugation[obj.tense][j]}</td>
-                      </tr>
-                    ))
-                  }
-                </tr>
-              ))
-          }
-            </Modal.Body>
-          </Modal>  
-        </Navbar>
-
-      )
     }
-  }
   else {
     return  (
       <Navbar>
