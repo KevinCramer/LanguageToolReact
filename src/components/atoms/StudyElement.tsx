@@ -17,8 +17,8 @@ const StudyElement = (props: {BaseLanguageWord: any, ForeignLanguageWord: any, F
   var [showPopUp,setShowPopUp] = useState(showPopUp)
   const hidePopUp = () => { return setShowPopUp(false)}
   const displayPopUp = () => { return setShowPopUp(true)}
-      const baseLanguageLabel = <label style= {{width: "20%", textAlign: "left"}}>{isVerb? BaseLanguageWord.infinitive: BaseLanguageWord} </label>
-      const foreignLanguageLabelVerb= <label onClick={displayPopUp} style= {{width: "20%", textAlign: "left", color: "purple", textDecorationLine: "underline"}}>{ForeignLanguageWord.infinitive} </label>
+      const baseLanguageLabel = <label style= {{width: "20%", textAlign: "left"}}>{isVerb? (showBaseLanguageFirst ? BaseLanguageWord.infinitive: ForeignLanguageWord.infinitive): BaseLanguageWord} </label>
+      const foreignLanguageLabelVerb= <label onClick={displayPopUp} style= {{width: "20%", textAlign: "left", color: "purple", textDecorationLine: "underline"}}>{ showBaseLanguageFirst? ForeignLanguageWord.infinitive: BaseLanguageWord.infinitive} </label>
       const foreignLanguageLabelNoVerb  = <label style= {{width: "20%", textAlign: "left"}}>{ForeignLanguageWord} </label>
       const foreignLanguageLabel = isVerb ? foreignLanguageLabelVerb: foreignLanguageLabelNoVerb
       console.log('baseLanguageLabel: ',baseLanguageLabel )
@@ -26,9 +26,9 @@ const StudyElement = (props: {BaseLanguageWord: any, ForeignLanguageWord: any, F
 
       return  (
         <Navbar>
-          {baseLanguageLabel}
+          {isVerb? (showBaseLanguageFirst ? baseLanguageLabel: foreignLanguageLabel): baseLanguageLabel}
           {isVerb && <label style= {{width: "5%"}}></label>}
-          {foreignLanguageLabel}
+          {isVerb? (showBaseLanguageFirst ? foreignLanguageLabel: baseLanguageLabel): foreignLanguageLabel}
           {showAudio && <label style= {{width: "20%", textAlign: "left"}}><audio src={ForeignLanguageWordAudio} controls controlsList="nodownloads" autoPlay ={false}></audio> </label>}
           {isVerb && <Modal show ={showPopUp} onHide={hidePopUp}>
             <Modal.Header closeButton>
