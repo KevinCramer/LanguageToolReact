@@ -1,4 +1,3 @@
-import { Key, useState } from "react"
 import "./button.css"
 
 const Button = (props: any) => {

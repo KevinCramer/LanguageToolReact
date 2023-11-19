@@ -1,7 +1,5 @@
 import {Nav, Container, Navbar as NavbarBs} from "react-bootstrap"
 import {NavLink} from "react-router-dom"
-import Dropdown from 'react-bootstrap/Dropdown';
-import DropdownButton from 'react-bootstrap/DropdownButton';
 
 export function Navbar(){
     return(

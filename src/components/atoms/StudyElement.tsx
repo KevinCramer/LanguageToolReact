@@ -1,5 +1,5 @@
 import { useState } from "react"
-import {Navbar, Modal, Button} from "react-bootstrap"
+import {Navbar, Modal} from "react-bootstrap"
 
 const StudyElement = (props: any) => 
 {

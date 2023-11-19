@@ -1,4 +1,4 @@
-import { Key, useState } from "react";
+import {useState } from "react";
 import QuizElement from "../atoms/QuizElement";
 import StudyElement from "../atoms/StudyElement";
 import {Container, Navbar as NavbarBs} from "react-bootstrap";
@@ -39,8 +39,19 @@ const StudyContent = (props: any) => {
     const changeOrder = () => { return setShowTrueOrder(!showTrueOrder)}
 
     
-    const changeCurrentLanguage= (languageName:string, languageContent:any, topics: any, num_foreign_alphabets:any) => { return setLanguage(languageContent),setLanguageName(languageName), setCurrentLanguageTopics(topics), setCurrentNumForeignAlphabets(num_foreign_alphabets)}
-    const changeCurrentTopic = (topic:string) => { return setCurrentTopic(topic)}
+    const changeCurrentLanguage = 
+    (   languageName: string,
+        languageContent: any, 
+        topics: any, 
+        num_foreign_alphabets: any
+    ) => 
+    { 
+        setLanguage(languageContent);
+        setLanguageName(languageName);
+        setCurrentLanguageTopics(topics);
+        setCurrentNumForeignAlphabets(num_foreign_alphabets);
+    }
+    const changeCurrentTopic = (topic: string) => { return setCurrentTopic(topic)}
 
     var quiz = false
     var [quiz,setQuiz] = useState(quiz)
@@ -51,10 +62,6 @@ const StudyContent = (props: any) => {
     const audioBool = useSelector((state:any) => state.audio.audioBool);
     const dispatch = useDispatch();
 
-    const doNothing = () => { return null}
-
-
-    
     function ToggleQuiz(){
         if (quiz) {
             const isVerb  = current_topic=== "Verbs"

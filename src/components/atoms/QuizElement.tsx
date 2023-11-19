@@ -1,5 +1,5 @@
-import { Key, useState } from "react"
-import {Navbar, Container} from "react-bootstrap"
+import { useState } from "react"
+import {Navbar} from "react-bootstrap"
 
 const QuizElement = (props: any) => {
     const [formValues, setFormValues] = useState({answer: ""})
@@ -13,12 +13,13 @@ const QuizElement = (props: any) => {
     const onSubmit = (e:any, submitted_answer:string, correct_answer:string) => {
         e.preventDefault();
         const does_it_match = (roughlyEqual(submitted_answer,correct_answer)) ? "✔" : 
-        " ✘ the correct answer is " + "'" + correct_answer +  "'" + " not " +  "'" + submitted_answer +  "'" 
+        ` ✘ the correct answer is  '${correct_answer}' not '${submitted_answer}'`
+
         setResponse(does_it_match)
       };
     
     var hideStudyElement = false;
-    var [hideStudyElement,setHideStudyElement] = useState(hideStudyElement)
+    var [hideStudyElement] = useState(hideStudyElement)
 
     if(!hideStudyElement){
       return (
