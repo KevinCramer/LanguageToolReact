@@ -1,7 +1,7 @@
 import { useState } from "react"
 import {Navbar, Modal} from "react-bootstrap"
 
-const StudyElement = (props: any) => 
+const StudyElement = (props: {BaseLanguageWord: any, ForeignLanguageWord: any, ForeignLanguageWordAudio: string, showAudio: boolean, showBaseLanguageFirst: boolean, isVerb: boolean}) => 
 {
   const BaseLanguageWord = props.BaseLanguageWord
   const ForeignLanguageWord = props.ForeignLanguageWord

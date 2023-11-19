@@ -8,7 +8,7 @@ import {languages} from "../../data/words";
 import ReactGA from 'react-ga';
 import {useSelector,useDispatch} from "react-redux"
 import {flip} from "../../redux/displayAudio";
-import { VerbConjugationEnglish, Word } from "../../types";
+import { Language, VerbConjugationEnglish, Word } from "../../types";
 
 const StudyContent = () => {
     var currentLanguageName: string = languages[0].languageName
@@ -81,7 +81,13 @@ const StudyContent = () => {
                 <div>
                     {topicWords.map((pair: Word) =>
                     <div>
-                                            <StudyElement BaseLanguageWord = { showBaseLanguage? pair.englishWord: pair.foreignWord[currentAlphabet]} ForeignLanguageWord = {showBaseLanguage? pair.foreignWord[currentAlphabet]: pair.englishWord}  ForeignLanguageWordAudio = {pair.foreignAudio} showAudio = {audioBool} showBaseLanguageFirst = {showBaseLanguage} isVerb = {currentTopic=== "Verbs"}/>
+                                            <StudyElement 
+                                            BaseLanguageWord = { showBaseLanguage? pair.englishWord: pair.foreignWord[currentAlphabet]} 
+                                            ForeignLanguageWord = {showBaseLanguage? pair.foreignWord[currentAlphabet]: pair.englishWord}  
+                                            ForeignLanguageWordAudio = {pair.foreignAudio} 
+                                            showAudio = {audioBool} 
+                                            showBaseLanguageFirst = {showBaseLanguage} 
+                                            isVerb = {currentTopic=== "Verbs"}/>
                     </div>                    
                     )}
                 </div>
@@ -103,7 +109,7 @@ const StudyContent = () => {
             <NavbarBs className = "bg-white shadow-sm mb-3">
                 <Container>
                     <DropdownButton id="Languages" title={String(currentLanguageName)} size = "sm"> 
-                        {languages.map((languageItem: any) =>
+                        {languages.map((languageItem: Language) =>
                         <Dropdown.Item onClick = {() => [changeCurrentLanguage(languageItem.languageName, languageItem.content,languageItem.topics, languageItem.numForeignAlphabets), setCurrentAlphabet(0),changeCurrentTopic(languageItem.topics[0]) ]}>{languageItem.languageName}</Dropdown.Item>)}
                     </DropdownButton>
                     <DropdownButton id="Topics" title={"Topic: " + currentTopic} size = "sm">
