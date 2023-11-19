@@ -10,12 +10,12 @@ const QuizElement = (props: any) => {
     }
 
     const roughlyEqual = (a: any,b:any ) => {return (a.toLowerCase() ===b)};
-    const onSubmit = (e:any, submitted_answer:string, correct_answer:string) => {
+    const onSubmit = (e:any, submittedAnswer:string, correctAnswer:string) => {
         e.preventDefault();
-        const does_it_match = (roughlyEqual(submitted_answer,correct_answer)) ? "✔" : 
-        ` ✘ the correct answer is  '${correct_answer}' not '${submitted_answer}'`
+        const doesItMatch = (roughlyEqual(submittedAnswer,correctAnswer)) ? "✔" : 
+        ` ✘ the correct answer is  '${correctAnswer}' not '${submittedAnswer}'`
 
-        setResponse(does_it_match)
+        setResponse(doesItMatch)
       };
     
     var hideStudyElement = false;

@@ -22,8 +22,8 @@ const StudyContent = (props: any) => {
     var currentNumForeignAlphabets = languages[0].numForeignAlphabets
     var [currentNumForeignAlphabets,setCurrentNumForeignAlphabets] = useState(currentNumForeignAlphabets)
 
-    var current_topic = currentLanguageTopics[0]
-    var [current_topic,setCurrentTopic] = useState(current_topic)
+    var currentTopic = currentLanguageTopics[0]
+    var [currentTopic,setCurrentTopic] = useState(currentTopic)
 
 
     var showBaseLanguage = true;
@@ -64,12 +64,12 @@ const StudyContent = (props: any) => {
 
     function ToggleQuiz(){
         if (quiz) {
-            const isVerb  = current_topic=== "Verbs"
+            const isVerb  = currentTopic=== "Verbs"
             return ( 
                 <div>
-                    {topic_words.map((pair: any) =>
+                    {topicWords.map((pair: any) =>
                     <div key ={showTrueOrder+ (isVerb?pair.englishWord.infinitive: pair.englishWord) + pair.foreignWord[currentAlphabet] + showBaseLanguage}>
-                                            <QuizElement QuestionWord = { showBaseLanguage? pair.englishWord: pair.foreignWord[currentAlphabet] } AnswerWord = {showBaseLanguage? pair.foreignWord[currentAlphabet]: pair.englishWord} isVerb = {current_topic=== "Verbs"}/>
+                                            <QuizElement QuestionWord = { showBaseLanguage? pair.englishWord: pair.foreignWord[currentAlphabet] } AnswerWord = {showBaseLanguage? pair.foreignWord[currentAlphabet]: pair.englishWord} isVerb = {currentTopic=== "Verbs"}/>
                     </div>                    
                     )}
                 </div>
@@ -78,9 +78,9 @@ const StudyContent = (props: any) => {
         else {
             return (
                 <div>
-                    {topic_words.map((pair: any) =>
+                    {topicWords.map((pair: any) =>
                     <div>
-                                            <StudyElement BaseLanguageWord = { showBaseLanguage? pair.englishWord: pair.foreignWord[currentAlphabet]} ForeignLanguageWord = {showBaseLanguage? pair.foreignWord[currentAlphabet]: pair.englishWord}  ForeignLanguageWordAudio = {pair.foreignAudio} showAudio = {audioBool} showBaseLanguageFirst = {showBaseLanguage} isVerb = {current_topic=== "Verbs"}/>
+                                            <StudyElement BaseLanguageWord = { showBaseLanguage? pair.englishWord: pair.foreignWord[currentAlphabet]} ForeignLanguageWord = {showBaseLanguage? pair.foreignWord[currentAlphabet]: pair.englishWord}  ForeignLanguageWordAudio = {pair.foreignAudio} showAudio = {audioBool} showBaseLanguageFirst = {showBaseLanguage} isVerb = {currentTopic=== "Verbs"}/>
                     </div>                    
                     )}
                 </div>
@@ -90,11 +90,11 @@ const StudyContent = (props: any) => {
     }
     if(showTrueOrder)
     {
-        var topic_words = currentLanguage.filter((word: { topic: string; }) => {return word.topic === current_topic} )
+        var topicWords = currentLanguage.filter((word: { topic: string; }) => {return word.topic === currentTopic} )
     }
     else
     {
-        var topic_words = currentLanguage.filter((word: { topic: string; }) => {return word.topic === current_topic}).sort((a, b) => 0.5 - Math.random());
+        var topicWords = currentLanguage.filter((word: { topic: string; }) => {return word.topic === currentTopic}).sort((a, b) => 0.5 - Math.random());
     }
     return (
         <div style = {{backgroundColor: "white", height: "100vh"}}>
@@ -105,7 +105,7 @@ const StudyContent = (props: any) => {
                         {languages.map((languageItem: any) =>
                         <Dropdown.Item onClick = {() => [changeCurrentLanguage(languageItem.languageName, languageItem.content,languageItem.topics, languageItem.numForeignAlphabets), setCurrentAlphabet(0),changeCurrentTopic(languageItem.topics[0]) ]}>{languageItem.languageName}</Dropdown.Item>)}
                     </DropdownButton>
-                    <DropdownButton id="Topics" title={"Topic: " + current_topic} size = "sm">
+                    <DropdownButton id="Topics" title={"Topic: " + currentTopic} size = "sm">
                         {currentLanguageTopics.map((topic: string) =>
                         <Dropdown.Item onClick = {() => changeCurrentTopic(topic)}>{topic}</Dropdown.Item>)}
                     </DropdownButton>

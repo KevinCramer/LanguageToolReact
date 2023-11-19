@@ -10,18 +10,18 @@ const StudyElement = (props: any) =>
   const showBaseLanguageFirst= props.showBaseLanguageFirst
   const isVerb = props.isVerb
 
-  var show_popup = false;
-  var [show_popup,setshow_popup] = useState(show_popup)
-  const hide_popup = () => { return setshow_popup(false)}
-  const display_popup = () => { return setshow_popup(true)}
+  var showPopUp = false;
+  var [showPopUp,setShowPopUp] = useState(showPopUp)
+  const hidePopUp = () => { return setShowPopUp(false)}
+  const displayPopUp = () => { return setShowPopUp(true)}
   if(showAudio && showBaseLanguageFirst && isVerb){
     return  (
       <Navbar>
         <label style= {{width: "20%", textAlign: "left"}}>{isVerb? BaseLanguageWord.infinitive: BaseLanguageWord} </label>
         <label style= {{width: "5%"}}></label>
-        <label onClick={isVerb?display_popup:hide_popup} style= {isVerb?{width: "20%", textAlign: "left", color: "purple", textDecorationLine: "underline"}:{width: "20%", textAlign: "left"}}>{ForeignLanguageWord.infinitive} </label>
+        <label onClick={isVerb?displayPopUp:hidePopUp} style= {isVerb?{width: "20%", textAlign: "left", color: "purple", textDecorationLine: "underline"}:{width: "20%", textAlign: "left"}}>{ForeignLanguageWord.infinitive} </label>
         <label style= {{width: "20%", textAlign: "left"}}><audio src={ForeignLanguageWordAudio} controls controlsList="nodownloads" autoPlay ={false}></audio> </label>
-        <Modal show ={show_popup} onHide={hide_popup}>
+        <Modal show ={showPopUp} onHide={hidePopUp}>
           <Modal.Header closeButton>
             <Modal.Title id="contained-modal-title-vcenter">
               {ForeignLanguageWord.infinitive}
@@ -121,11 +121,11 @@ const StudyElement = (props: any) =>
   else if(showAudio && !showBaseLanguageFirst && isVerb){
     return  (
       <Navbar>
-        <label onClick={isVerb?display_popup:hide_popup} style= {isVerb?{width: "20%", textAlign: "left", color: "purple", textDecorationLine: "underline"}:{width: "20%", textAlign: "left"}}>{BaseLanguageWord.infinitive} </label>
+        <label onClick={isVerb?displayPopUp:hidePopUp} style= {isVerb?{width: "20%", textAlign: "left", color: "purple", textDecorationLine: "underline"}:{width: "20%", textAlign: "left"}}>{BaseLanguageWord.infinitive} </label>
         <label style= {{width: "5%"}}></label>
         <label style= {{width: "20%", textAlign: "left"}}>{isVerb? ForeignLanguageWord.infinitive: ForeignLanguageWord} </label>
         <label style= {{width: "20%", textAlign: "left"}}><audio src={ForeignLanguageWordAudio} controls controlsList="nodownloads" autoPlay ={false}></audio> </label>
-        <Modal show ={show_popup} onHide={hide_popup}>
+        <Modal show ={showPopUp} onHide={hidePopUp}>
           <Modal.Header closeButton>
             <Modal.Title id="contained-modal-title-vcenter">
               {ForeignLanguageWord.infinitive}
@@ -229,8 +229,8 @@ const StudyElement = (props: any) =>
       <Navbar>
         <label style= {{width: "20%", textAlign: "left"}}>{isVerb? BaseLanguageWord.infinitive: BaseLanguageWord} </label>
         <label style= {{width: "5%"}}></label>
-        <label onClick={isVerb?display_popup:hide_popup} style= {isVerb?{width: "20%", textAlign: "left", color: "purple", textDecorationLine: "underline"}:{width: "20%", textAlign: "left"}}>{ForeignLanguageWord.infinitive} </label>
-        <Modal show ={show_popup} onHide={hide_popup}>
+        <label onClick={isVerb?displayPopUp:hidePopUp} style= {isVerb?{width: "20%", textAlign: "left", color: "purple", textDecorationLine: "underline"}:{width: "20%", textAlign: "left"}}>{ForeignLanguageWord.infinitive} </label>
+        <Modal show ={showPopUp} onHide={hidePopUp}>
           <Modal.Header closeButton>
             <Modal.Title id="contained-modal-title-vcenter">
               {ForeignLanguageWord.infinitive}
@@ -331,10 +331,10 @@ const StudyElement = (props: any) =>
   else if(!showAudio && !showBaseLanguageFirst && isVerb){
     return  (
       <Navbar>
-        <label onClick={isVerb?display_popup:hide_popup} style= {isVerb?{width: "20%", textAlign: "left", color: "purple", textDecorationLine: "underline"}:{width: "20%", textAlign: "left"}}>{BaseLanguageWord.infinitive} </label>
+        <label onClick={isVerb?displayPopUp:hidePopUp} style= {isVerb?{width: "20%", textAlign: "left", color: "purple", textDecorationLine: "underline"}:{width: "20%", textAlign: "left"}}>{BaseLanguageWord.infinitive} </label>
         <label style= {{width: "5%"}}></label>
         <label style= {{width: "20%", textAlign: "left"}}>{isVerb? ForeignLanguageWord.infinitive: ForeignLanguageWord} </label>
-        <Modal show ={show_popup} onHide={hide_popup}>
+        <Modal show ={showPopUp} onHide={hidePopUp}>
           <Modal.Header closeButton>
             <Modal.Title id="contained-modal-title-vcenter">
               {ForeignLanguageWord.infinitive}

@@ -1,16 +1,16 @@
 
 
-import arabic_black from '../data/audio/black.mp3';
-import arabic_blue from '../data/audio/blue.mp3';
-import arabic_brown from '../data/audio/brown.mp3';
-import arabic_green from '../data/audio/green.mp3';
-import arabic_grey from '../data/audio/grey.mp3';
-import arabic_orange from '../data/audio/orange.mp3';
-import arabic_pink from '../data/audio/pink.mp3';
-import arabic_purple from '../data/audio/purple.mp3';
-import arabic_red from '../data/audio/red.mp3';
-import arabic_white from '../data/audio/white.mp3';
-import arabic_yellow from '../data/audio/yellow.mp3';
+import arabicAudioBlack from '../data/audio/black.mp3';
+import arabicAudioBlue from '../data/audio/blue.mp3';
+import arabicAudioBrown from '../data/audio/brown.mp3';
+import arabicAudioGreen from '../data/audio/green.mp3';
+import arabicAudioGrey from '../data/audio/grey.mp3';
+import arabicAudioOrange from '../data/audio/orange.mp3';
+import arabicAudioPink from '../data/audio/pink.mp3';
+import arabicAudioPurple from '../data/audio/purple.mp3';
+import arabicAudioRed from '../data/audio/red.mp3';
+import arabicAudioWhite from '../data/audio/white.mp3';
+import arabicAudioYellow from '../data/audio/yellow.mp3';
 import { Word, Language, } from '../types';
 
 
@@ -190,17 +190,17 @@ const arabic: Word[] = [
 {topic: "Food", englishWord: "walnuts", foreignWord: ["jawz", "جَوْز"], foreignAudio: ""},
 {topic: "Food", englishWord: "yogurt", foreignWord: ["zabādī", "زَبادي"], foreignAudio: ""},
 {topic: "Food", englishWord: "zucchini", foreignWord: ["kūsah", "كوسَة"], foreignAudio: ""},
-{topic: "Colours", englishWord: "black", foreignWord: ["aswad", "أَسْوَد"], foreignAudio: arabic_black},
-{topic: "Colours", englishWord: "blue", foreignWord: ["azraq", "أَزْرَق"], foreignAudio: arabic_blue},
-{topic: "Colours", englishWord: "brown", foreignWord: ["bunniyy", "بُنِّيّ"], foreignAudio: arabic_brown},
-{topic: "Colours", englishWord: "green", foreignWord: ["akhḍar", "أَخْضَر"], foreignAudio: arabic_green},
-{topic: "Colours", englishWord: "grey", foreignWord: ["ramādiyy", "رَمَادِيّ"], foreignAudio: arabic_grey},
-{topic: "Colours", englishWord: "orange", foreignWord: ["burtuqāliyy", "بُرْتُقَاْلِيّ"], foreignAudio: arabic_orange},
-{topic: "Colours", englishWord: "pink", foreignWord: ["wardiyy", "وَرْدِيّ"], foreignAudio: arabic_pink},
-{topic: "Colours", englishWord: "purple", foreignWord: ["banafsajiyy", "بَنَفْسَجِيّ"], foreignAudio: arabic_purple},
-{topic: "Colours", englishWord: "red", foreignWord: ["aḥmar", "أَحْمَر"], foreignAudio: arabic_red},
-{topic: "Colours", englishWord: "yellow", foreignWord: ["asfar", "أَصْفَر"], foreignAudio: arabic_yellow},
-{topic: "Colours", englishWord: "white", foreignWord: ["abyaḍ", "أَبْيَض"], foreignAudio: arabic_white},
+{topic: "Colours", englishWord: "black", foreignWord: ["aswad", "أَسْوَد"], foreignAudio: arabicAudioBlack},
+{topic: "Colours", englishWord: "blue", foreignWord: ["azraq", "أَزْرَق"], foreignAudio: arabicAudioBlue},
+{topic: "Colours", englishWord: "brown", foreignWord: ["bunniyy", "بُنِّيّ"], foreignAudio: arabicAudioBrown},
+{topic: "Colours", englishWord: "green", foreignWord: ["akhḍar", "أَخْضَر"], foreignAudio: arabicAudioGreen},
+{topic: "Colours", englishWord: "grey", foreignWord: ["ramādiyy", "رَمَادِيّ"], foreignAudio: arabicAudioGrey},
+{topic: "Colours", englishWord: "orange", foreignWord: ["burtuqāliyy", "بُرْتُقَاْلِيّ"], foreignAudio: arabicAudioOrange},
+{topic: "Colours", englishWord: "pink", foreignWord: ["wardiyy", "وَرْدِيّ"], foreignAudio: arabicAudioPink},
+{topic: "Colours", englishWord: "purple", foreignWord: ["banafsajiyy", "بَنَفْسَجِيّ"], foreignAudio: arabicAudioPurple},
+{topic: "Colours", englishWord: "red", foreignWord: ["aḥmar", "أَحْمَر"], foreignAudio: arabicAudioRed},
+{topic: "Colours", englishWord: "yellow", foreignWord: ["asfar", "أَصْفَر"], foreignAudio: arabicAudioYellow},
+{topic: "Colours", englishWord: "white", foreignWord: ["abyaḍ", "أَبْيَض"], foreignAudio: arabicAudioWhite},
 {topic: "Numbers", englishWord: "one", foreignWord: ["waheed", "وَاحِد"], foreignAudio: ""},
 {topic: "Numbers", englishWord: "two", foreignWord: ["ithnain", "اِثْنَان"], foreignAudio: ""},
 {topic: "Numbers", englishWord: "three", foreignWord: ["thalāthah", "ثَلَاثَة"], foreignAudio: ""},
