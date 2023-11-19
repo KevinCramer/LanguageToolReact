@@ -440,16 +440,6 @@ const arabic: Word[] = [
 {topic: "Hard to Read", englishWord: "", foreignWord: ["",""], foreignAudio: ""},
 {topic: "Hard to Read", englishWord: "", foreignWord: ["",""], foreignAudio: ""},
 {topic: "Hard to Read", englishWord: "", foreignWord: ["",""], foreignAudio: ""},
-
-
-
-
-
-
-
-
-
-
 ]
 
 const spanishTopics: string[] = ["Clothes","Colours","Food","Numbers", "Verbs"]
