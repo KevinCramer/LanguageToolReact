@@ -1,5 +1,6 @@
 import { useState } from "react"
 import {Navbar, Modal} from "react-bootstrap"
+import { modalTenses } from "../../constants"
 import { englishPronouns } from "../../data/words"
 
 const StudyElement = (props: {BaseLanguageWord: any, ForeignLanguageWord: any, ForeignLanguageWordAudio: string, showAudio: boolean, showBaseLanguageFirst: boolean, isVerb: boolean, pronouns: string[]}) => 
@@ -32,7 +33,7 @@ const StudyElement = (props: {BaseLanguageWord: any, ForeignLanguageWord: any, F
             </Modal.Title>
           </Modal.Header>
         <Modal.Body>
-        {[{title: 'Present Tense', tense: 'presentTense'}, {title: 'Past Preterite Tense', tense: 'pastTense'}, {title: 'Future Tense', tense: 'futureTense'}].map((obj, i) => (
+        {modalTenses.map((obj, i) => (
               <tr key={i}>
                 <h5>{obj.title}</h5>
                 {Array.from({ length: 6 }).map((_, j) => (
@@ -74,7 +75,7 @@ const StudyElement = (props: {BaseLanguageWord: any, ForeignLanguageWord: any, F
             </Modal.Title>
           </Modal.Header>
         <Modal.Body>
-        {[{title: 'Present Tense', tense: 'presentTense'}, {title: 'Past Preterite Tense', tense: 'pastTense'}, {title: 'Future Tense', tense: 'futureTense'}].map((obj, i) => (
+        {modalTenses.map((obj, i) => (
               <tr key={i}>
                 <h5>{obj.title}</h5>
                 {Array.from({ length: 6 }).map((_, j) => (
@@ -117,7 +118,7 @@ const StudyElement = (props: {BaseLanguageWord: any, ForeignLanguageWord: any, F
             </Modal.Title>
           </Modal.Header>
         <Modal.Body>
-        {[{title: 'Present Tense', tense: 'presentTense'}, {title: 'Past Preterite Tense', tense: 'pastTense'}, {title: 'Future Tense', tense: 'futureTense'}].map((obj, i) => (
+        {modalTenses.map((obj, i) => (
               <tr key={i}>
                 <h5>{obj.title}</h5>
                 {Array.from({ length: 6 }).map((_, j) => (
@@ -159,7 +160,7 @@ const StudyElement = (props: {BaseLanguageWord: any, ForeignLanguageWord: any, F
             </Modal.Title>
           </Modal.Header>
         <Modal.Body>
-        {[{title: 'Present Tense', tense: 'presentTense'}, {title: 'Past Preterite Tense', tense: 'pastTense'}, {title: 'Future Tense', tense: 'futureTense'}].map((obj, i) => (
+        {modalTenses.map((obj, i) => (
               <tr key={i}>
                 <h5>{obj.title}</h5>
                 {Array.from({ length: 6 }).map((_, j) => (
