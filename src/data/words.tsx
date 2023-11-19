@@ -587,11 +587,13 @@ const italian: Word[] = [
 
         export const languages: Language[] = 
         [
-            {languageName: "Arabic", content: arabic, topics: arabicTopics, numForeignAlphabets: 2},
-            {languageName: "Dutch", content: dutch, topics: dutchTopics, numForeignAlphabets: 1},
+            {languageName: "Arabic", content: arabic, topics: arabicTopics, pronouns: [], numForeignAlphabets: 2},
+            {languageName: "Dutch", content: dutch, topics: dutchTopics, pronouns: [], numForeignAlphabets: 1},
             {languageName: "Spanish", content: spanish, topics: spanishTopics, pronouns: spanishPronouns, numForeignAlphabets: 1},
-            {languageName: "French", content: french, topics: frenchTopics, numForeignAlphabets: 1},
-            {languageName: "German", content: german, topics: germanTopics, numForeignAlphabets: 1},
-            {languageName: "Italian", content: italian, topics: italianTopics, numForeignAlphabets: 1},
-            {languageName: "Japanese", content: japanese, topics: japaneseTopics, numForeignAlphabets: 3} 
+            {languageName: "French", content: french, topics: frenchTopics, pronouns: [], numForeignAlphabets: 1},
+            {languageName: "German", content: german, topics: germanTopics, pronouns: [], numForeignAlphabets: 1},
+            {languageName: "Italian", content: italian, topics: italianTopics, pronouns: [], numForeignAlphabets: 1},
+            {languageName: "Japanese", content: japanese, topics: japaneseTopics, pronouns: [],  numForeignAlphabets: 3} 
         ]
+
+        export const englishPronouns: string[]= ['I','You','He/She','We','You (p)','They']

@@ -23,6 +23,9 @@ const StudyContent = () => {
     var currentNumForeignAlphabets: number = languages[0].numForeignAlphabets
     var [currentNumForeignAlphabets,setCurrentNumForeignAlphabets] = useState(currentNumForeignAlphabets)
 
+    var currentPronouns: string[] = languages[0].pronouns
+    var [currentPronouns,setCurrentPronouns] = useState(currentPronouns)
+
     var currentTopic = currentLanguageTopics[0]
     var [currentTopic,setCurrentTopic] = useState(currentTopic)
 
@@ -44,13 +47,16 @@ const StudyContent = () => {
     (   languageName: string,
         languageContent: Word[], 
         topics: string[], 
-        numForeignAlphabets: number
+        numForeignAlphabets: number,
+        currentPronouns: string[]
     ) => 
     { 
         setLanguage(languageContent);
         setLanguageName(languageName);
         setCurrentLanguageTopics(topics);
         setCurrentNumForeignAlphabets(numForeignAlphabets);
+        setCurrentPronouns(currentPronouns);
+
     }
     const changeCurrentTopic = (topic: string) => { return setCurrentTopic(topic)}
 
@@ -87,7 +93,9 @@ const StudyContent = () => {
                                             ForeignLanguageWordAudio = {pair.foreignAudio} 
                                             showAudio = {audioBool} 
                                             showBaseLanguageFirst = {showBaseLanguage} 
-                                            isVerb = {currentTopic=== "Verbs"}/>
+                                            isVerb = {currentTopic=== "Verbs"}
+                                            pronouns = {currentPronouns}
+                                            />
                     </div>                    
                     )}
                 </div>
@@ -110,7 +118,7 @@ const StudyContent = () => {
                 <Container>
                     <DropdownButton id="Languages" title={String(currentLanguageName)} size = "sm"> 
                         {languages.map((languageItem: Language) =>
-                        <Dropdown.Item onClick = {() => [changeCurrentLanguage(languageItem.languageName, languageItem.content,languageItem.topics, languageItem.numForeignAlphabets), setCurrentAlphabet(0),changeCurrentTopic(languageItem.topics[0]) ]}>{languageItem.languageName}</Dropdown.Item>)}
+                        <Dropdown.Item onClick = {() => [changeCurrentLanguage(languageItem.languageName, languageItem.content,languageItem.topics, languageItem.numForeignAlphabets, languageItem.pronouns), setCurrentAlphabet(0),changeCurrentTopic(languageItem.topics[0]) ]}>{languageItem.languageName}</Dropdown.Item>)}
                     </DropdownButton>
                     <DropdownButton id="Topics" title={"Topic: " + currentTopic} size = "sm">
                         {currentLanguageTopics.map((topic: string) =>
