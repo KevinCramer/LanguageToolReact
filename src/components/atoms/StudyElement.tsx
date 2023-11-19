@@ -32,27 +32,16 @@ const StudyElement = (props: {BaseLanguageWord: any, ForeignLanguageWord: any, F
             </Modal.Title>
           </Modal.Header>
         <Modal.Body>
-          <h5>Present Tense</h5>
-          {Array.from({ length: 6 }).map((_, i) => (
+        {[{title: 'Present Tense', tense: 'presentTense'}, {title: 'Past Preterite Tense', tense: 'pastTense'}, {title: 'Future Tense', tense: 'futureTense'}].map((obj, i) => (
               <tr key={i}>
-                <td style={{ width: tableRowWidth }}>{englishPronouns[i]} {BaseLanguageWord.englishWordConjugation.presentTense[i]}</td>
-                <td style={{ width: tableRowWidth }}>{pronouns[i]} {ForeignLanguageWord.foreignWordConjugation.presentTense[i]}</td>
-              </tr>
-            ))
-          }
-          <h5>Past Preterite Tense</h5>
-          {Array.from({ length: 6 }).map((_, i) => (
-              <tr key={i}>
-                <td style={{ width: tableRowWidth }}>{englishPronouns[i]} {BaseLanguageWord.englishWordConjugation.pastTense[i]}</td>
-                <td style={{ width: tableRowWidth }}>{pronouns[i]} {ForeignLanguageWord.foreignWordConjugation.pastTense[i]}</td>
-              </tr>
-            ))
-          }
-          <h5>Future Tense</h5>
-          {Array.from({ length: 6 }).map((_, i) => (
-              <tr key={i}>
-                <td style={{ width: tableRowWidth }}>{englishPronouns[i]} {BaseLanguageWord.englishWordConjugation.futureTense[i]}</td>
-                <td style={{ width: tableRowWidth }}>{pronouns[i]} {ForeignLanguageWord.foreignWordConjugation.futureTense[i]}</td>
+                <h5>{obj.title}</h5>
+                {Array.from({ length: 6 }).map((_, j) => (
+                  <tr key={i}>
+                      <td style={{ width: tableRowWidth }}>{englishPronouns[j]} {BaseLanguageWord.englishWordConjugation[obj.tense][j]}</td>
+                      <td style={{ width: tableRowWidth }}>{pronouns[j]} {ForeignLanguageWord.foreignWordConjugation[obj.tense][j]}</td>
+                    </tr>
+                  ))
+                }
               </tr>
             ))
           }
@@ -85,30 +74,19 @@ const StudyElement = (props: {BaseLanguageWord: any, ForeignLanguageWord: any, F
             </Modal.Title>
           </Modal.Header>
         <Modal.Body>
-        <h5>Present Tense</h5>
-        {Array.from({ length: 6 }).map((_, i) => (
+        {[{title: 'Present Tense', tense: 'presentTense'}, {title: 'Past Preterite Tense', tense: 'pastTense'}, {title: 'Future Tense', tense: 'futureTense'}].map((obj, i) => (
               <tr key={i}>
-                <td style={{ width: tableRowWidth }}>{pronouns[i]} {BaseLanguageWord.foreignWordConjugation.presentTense[i]}</td>
-                <td style={{ width: tableRowWidth }}>{englishPronouns[i]} {ForeignLanguageWord.englishWordConjugation.presentTense[i]}</td>
+                <h5>{obj.title}</h5>
+                {Array.from({ length: 6 }).map((_, j) => (
+                  <tr key={i}>
+                      <td style={{ width: tableRowWidth }}>{pronouns[j]} {BaseLanguageWord.foreignWordConjugation[obj.tense][j]}</td>
+                      <td style={{ width: tableRowWidth }}>{englishPronouns[j]} {ForeignLanguageWord.englishWordConjugation[obj.tense][j]}</td>
+                    </tr>
+                  ))
+                }
               </tr>
             ))
-          }
-          <h5>Past Preterite Tense</h5>
-          {Array.from({ length: 6 }).map((_, i) => (
-              <tr key={i}>
-                <td style={{ width: tableRowWidth }}>{pronouns[i]} {BaseLanguageWord.foreignWordConjugation.pastTense[i]}</td>
-                <td style={{ width: tableRowWidth }}>{englishPronouns[i]} {ForeignLanguageWord.englishWordConjugation.pastTense[i]}</td>
-              </tr>
-            ))
-          }
-          <h5>Future Tense</h5>
-          {Array.from({ length: 6 }).map((_, i) => (
-              <tr key={i}>
-                <td style={{ width: tableRowWidth }}>{pronouns[i]} {BaseLanguageWord.foreignWordConjugation.futureTense[i]}</td>
-                <td style={{ width: tableRowWidth }}>{englishPronouns[i]} {ForeignLanguageWord.englishWordConjugation.futureTense[i]}</td>
-              </tr>
-            ))
-          }
+        }
           </Modal.Body> 
         </Modal>  
       </Navbar>
@@ -139,30 +117,19 @@ const StudyElement = (props: {BaseLanguageWord: any, ForeignLanguageWord: any, F
             </Modal.Title>
           </Modal.Header>
         <Modal.Body>
-        <h5>Present Tense</h5>
-        {Array.from({ length: 6 }).map((_, i) => (
+        {[{title: 'Present Tense', tense: 'presentTense'}, {title: 'Past Preterite Tense', tense: 'pastTense'}, {title: 'Future Tense', tense: 'futureTense'}].map((obj, i) => (
               <tr key={i}>
-                <td style={{ width: tableRowWidth }}>{englishPronouns[i]} {BaseLanguageWord.englishWordConjugation.presentTense[i]}</td>
-                <td style={{ width: tableRowWidth }}>{pronouns[i]} {ForeignLanguageWord.foreignWordConjugation.presentTense[i]}</td>
+                <h5>{obj.title}</h5>
+                {Array.from({ length: 6 }).map((_, j) => (
+                  <tr key={i}>
+                      <td style={{ width: tableRowWidth }}>{englishPronouns[j]} {BaseLanguageWord.englishWordConjugation[obj.tense][j]}</td>
+                      <td style={{ width: tableRowWidth }}>{pronouns[j]} {ForeignLanguageWord.foreignWordConjugation[obj.tense][j]}</td>
+                    </tr>
+                  ))
+                }
               </tr>
             ))
-          }
-          <h5>Past Preterite Tense</h5>
-          {Array.from({ length: 6 }).map((_, i) => (
-              <tr key={i}>
-                <td style={{ width: tableRowWidth }}>{englishPronouns[i]} {BaseLanguageWord.englishWordConjugation.pastTense[i]}</td>
-                <td style={{ width: tableRowWidth }}>{pronouns[i]} {ForeignLanguageWord.foreignWordConjugation.pastTense[i]}</td>
-              </tr>
-            ))
-          }
-          <h5>Future Tense</h5>
-          {Array.from({ length: 6 }).map((_, i) => (
-              <tr key={i}>
-                <td style={{ width: tableRowWidth }}>{englishPronouns[i]} {BaseLanguageWord.englishWordConjugation.futureTense[i]}</td>
-                <td style={{ width: tableRowWidth }}>{pronouns[i]} {ForeignLanguageWord.foreignWordConjugation.futureTense[i]}</td>
-              </tr>
-            ))
-          }
+        }
           </Modal.Body>
         </Modal>  
       </Navbar>
@@ -192,30 +159,19 @@ const StudyElement = (props: {BaseLanguageWord: any, ForeignLanguageWord: any, F
             </Modal.Title>
           </Modal.Header>
         <Modal.Body>
-        <h5>Present Tense</h5>
-        {Array.from({ length: 6 }).map((_, i) => (
+        {[{title: 'Present Tense', tense: 'presentTense'}, {title: 'Past Preterite Tense', tense: 'pastTense'}, {title: 'Future Tense', tense: 'futureTense'}].map((obj, i) => (
               <tr key={i}>
-                <td style={{ width: tableRowWidth }}>{pronouns[i]} {BaseLanguageWord.foreignWordConjugation.presentTense[i]}</td>
-                <td style={{ width: tableRowWidth }}>{englishPronouns[i]} {ForeignLanguageWord.englishWordConjugation.presentTense[i]}</td>
+                <h5>{obj.title}</h5>
+                {Array.from({ length: 6 }).map((_, j) => (
+                  <tr key={i}>
+                      <td style={{ width: tableRowWidth }}>{pronouns[j]} {BaseLanguageWord.foreignWordConjugation[obj.tense][j]}</td>
+                      <td style={{ width: tableRowWidth }}>{englishPronouns[j]} {ForeignLanguageWord.englishWordConjugation[obj.tense][j]}</td>
+                    </tr>
+                  ))
+                }
               </tr>
             ))
-          }
-          <h5>Past Preterite Tense</h5>
-          {Array.from({ length: 6 }).map((_, i) => (
-              <tr key={i}>
-                <td style={{ width: tableRowWidth }}>{pronouns[i]} {BaseLanguageWord.foreignWordConjugation.pastTense[i]}</td>
-                <td style={{ width: tableRowWidth }}>{englishPronouns[i]} {ForeignLanguageWord.englishWordConjugation.pastTense[i]}</td>
-              </tr>
-            ))
-          }
-          <h5>Future Tense</h5>
-          {Array.from({ length: 6 }).map((_, i) => (
-              <tr key={i}>
-                <td style={{ width: tableRowWidth }}>{pronouns[i]} {BaseLanguageWord.foreignWordConjugation.futureTense[i]}</td>
-                <td style={{ width: tableRowWidth }}>{englishPronouns[i]} {ForeignLanguageWord.englishWordConjugation.futureTense[i]}</td>
-              </tr>
-            ))
-          }
+        }
           </Modal.Body>
         </Modal>  
       </Navbar>
