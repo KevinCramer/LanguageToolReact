@@ -11,7 +11,34 @@ import arabicAudioPurple from '../data/audio/purple.mp3';
 import arabicAudioRed from '../data/audio/red.mp3';
 import arabicAudioWhite from '../data/audio/white.mp3';
 import arabicAudioYellow from '../data/audio/yellow.mp3';
-import { Word, Language, } from '../types';
+import { Word, Language, VerbConjugationEnglish, } from '../types';
+
+
+export const englishVerbs: { [key: string]: VerbConjugationEnglish } = {
+    'to call': {
+        infinitive: "to call",
+        englishWordConjugation:
+        {
+            pastTense: ["called","called", "called","called","called", "called"],
+            presentTense: ["call","call", "calls","call","call", "call"], 
+            futureTense: ["will call","will call", "will call","will call","will call", "will call"]
+        }
+    }, 
+    'to study':
+{
+    infinitive: "to study",
+    englishWordConjugation: 
+    {
+        pastTense: ["studied","studied", "studied","studied","studied", "studied"],
+        presentTense: ["study","study", "studies","study","study", "study"],
+        futureTense: ["will study","will study", "will study","will study","will study", "will study"]
+    }
+},
+
+}
+
+export const englishPronouns: string[]= ['I','You','He/She','We','You (p)','They']
+
 
 
 const dutchTopics: string[] = ["Clothes","Colours","Food","Family","Numbers", "Pronunciation", "Pronouns", "Question Words"]
@@ -470,16 +497,7 @@ const spanish: Word[] = [
     {topic: "Numbers", englishWord: "ten", foreignWord: ["diez"], foreignAudio: ""},
     {
         topic: "Verbs", 
-        englishWord: 
-            {
-                infinitive: "to call",
-                englishWordConjugation:
-                {
-                    pastTense: ["called","called", "called","called","called", "called"],
-                    presentTense: ["call","call", "calls","call","call", "call"], 
-                    futureTense: ["will call","will call", "will call","will call","will call", "will call"]
-                }
-            }, 
+        englishWord: englishVerbs['to call'],
         foreignWord: 
             [
                 {
@@ -495,16 +513,7 @@ const spanish: Word[] = [
         foreignAudio: ""},
     {
         topic: "Verbs", 
-        englishWord: 
-        {
-            infinitive: "to study",
-            englishWordConjugation: 
-            {
-                pastTense: ["studied","studied", "studied","studied","studied", "studied"],
-                presentTense: ["study","study", "studies","study","study", "study"],
-                futureTense: ["will study","will study", "will study","will study","will study", "will study"]
-            }
-        },
+        englishWord: englishVerbs['to study'],
         foreignWord: 
         [
             {
@@ -596,4 +605,5 @@ const italian: Word[] = [
             {languageName: "Japanese", content: japanese, topics: japaneseTopics, pronouns: [],  numForeignAlphabets: 3} 
         ]
 
-        export const englishPronouns: string[]= ['I','You','He/She','We','You (p)','They']
+
+      
