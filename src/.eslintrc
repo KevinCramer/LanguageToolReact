@@ -2,10 +2,21 @@
     "extends": [
       "react-app"
     ],
+    "plugins": [
+      "@stylistic/js" 
+    ],
     "rules": {
       // disable rules from base configurations
+      "linebreak-style": 0,
        "no-redeclare": "off",
-       "@typescript-eslint/no-redeclare": "off"
+       "no-console": "warn",
+       "@typescript-eslint/no-redeclare": "off",
+       "@stylistic/js/indent": ["warn", 2],
+       "@stylistic/js/max-len": ["warn", 100],
+       "@stylistic/js/no-multiple-empty-lines": ["warn",{ "max": 1 }],
+       "@stylistic/js/no-multi-spaces": "warn"
 
+
+       
   }
   }
