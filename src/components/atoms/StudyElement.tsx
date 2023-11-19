@@ -18,16 +18,18 @@ const StudyElement = (props: {BaseLanguageWord: any, ForeignLanguageWord: any, F
   var [showPopUp,setShowPopUp] = useState(showPopUp)
   const hidePopUp = () => { return setShowPopUp(false)}
   const displayPopUp = () => { return setShowPopUp(true)}
-  if(isVerb){
-      const baseLanguageLabel = <label style= {{width: "20%", textAlign: "left"}}>{BaseLanguageWord.infinitive} </label>
+      const baseLanguageLabel = <label style= {{width: "20%", textAlign: "left"}}>{isVerb? BaseLanguageWord.infinitive: BaseLanguageWord} </label>
       const foreignLanguageLabelVerb= <label onClick={displayPopUp} style= {{width: "20%", textAlign: "left", color: "purple", textDecorationLine: "underline"}}>{ForeignLanguageWord.infinitive} </label>
-      const foreignLanguageLabelNoVerb  = showAudio ?<label style= {{width: "20%", textAlign: "left"}}><audio src={ForeignLanguageWordAudio} controls controlsList="nodownloads" autoPlay ={false}></audio> </label>: null
+      const foreignLanguageLabelNoVerb  = <label style= {{width: "20%", textAlign: "left"}}>{ForeignLanguageWord} </label>
       const foreignLanguageLabel = isVerb ? foreignLanguageLabelVerb: foreignLanguageLabelNoVerb
+      console.log('baseLanguageLabel: ',baseLanguageLabel )
+      console.log('foreignLanguageLabel: ',foreignLanguageLabel )
+
       return  (
         <Navbar>
-          {showBaseLanguageFirst? baseLanguageLabel: foreignLanguageLabel}
+          {baseLanguageLabel}
           {isVerb && <label style= {{width: "5%"}}></label>}
-          {showBaseLanguageFirst? foreignLanguageLabel: baseLanguageLabel}
+          {foreignLanguageLabel}
           {showAudio && <label style= {{width: "20%", textAlign: "left"}}><audio src={ForeignLanguageWordAudio} controls controlsList="nodownloads" autoPlay ={false}></audio> </label>}
           {isVerb && <Modal show ={showPopUp} onHide={hidePopUp}>
             <Modal.Header closeButton>
@@ -54,16 +56,6 @@ const StudyElement = (props: {BaseLanguageWord: any, ForeignLanguageWord: any, F
         </Navbar>
 
       )
-    }
-  else {
-    return  (
-      <Navbar>
-      <label style= {{width: "20%", textAlign: "left"}}>{BaseLanguageWord} </label>
-      <label style= {{width: "20%", textAlign: "left"}}>{ForeignLanguageWord} </label>
-      {showAudio && <label style= {{width: "20%", textAlign: "left"}}><audio src={ForeignLanguageWordAudio} controls controlsList="nodownloads" autoPlay ={false}></audio> </label>}
-    </Navbar>
-    )
-  }
 }
  
 export default StudyElement;
