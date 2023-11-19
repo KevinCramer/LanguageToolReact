@@ -18,41 +18,141 @@ const StudyElement = (props: {BaseLanguageWord: any, ForeignLanguageWord: any, F
   var [showPopUp,setShowPopUp] = useState(showPopUp)
   const hidePopUp = () => { return setShowPopUp(false)}
   const displayPopUp = () => { return setShowPopUp(true)}
-  if(showAudio && showBaseLanguageFirst && isVerb){
-    console.log('I am here!!')
-    return  (
-      <Navbar>
-        <label style= {{width: "20%", textAlign: "left"}}>{isVerb? BaseLanguageWord.infinitive: BaseLanguageWord} </label>
-        <label style= {{width: "5%"}}></label>
-        <label onClick={isVerb?displayPopUp:hidePopUp} style= {isVerb?{width: "20%", textAlign: "left", color: "purple", textDecorationLine: "underline"}:{width: "20%", textAlign: "left"}}>{ForeignLanguageWord.infinitive} </label>
-        <label style= {{width: "20%", textAlign: "left"}}><audio src={ForeignLanguageWordAudio} controls controlsList="nodownloads" autoPlay ={false}></audio> </label>
-        <Modal show ={showPopUp} onHide={hidePopUp}>
-          <Modal.Header closeButton>
-            <Modal.Title id="contained-modal-title-vcenter">
-              {ForeignLanguageWord.infinitive}
-            </Modal.Title>
-          </Modal.Header>
-        <Modal.Body>
-        {modalTenses.map((obj, i) => (
-              <tr key={i}>
-                <h5>{obj.title}</h5>
-                {Array.from({ length: 6 }).map((_, j) => (
-                  <tr key={i}>
-                      <td style={{ width: tableRowWidth }}>{englishPronouns[j]} {BaseLanguageWord.englishWordConjugation[obj.tense][j]}</td>
-                      <td style={{ width: tableRowWidth }}>{pronouns[j]} {ForeignLanguageWord.foreignWordConjugation[obj.tense][j]}</td>
-                    </tr>
-                  ))
-                }
-              </tr>
-            ))
+  if(isVerb){
+    if(showAudio && showBaseLanguageFirst){
+      return  (
+        <Navbar>
+          <label style= {{width: "20%", textAlign: "left"}}>{BaseLanguageWord.infinitive} </label>
+          <label style= {{width: "5%"}}></label>
+          <label onClick={displayPopUp} style= {{width: "20%", textAlign: "left", color: "purple", textDecorationLine: "underline"}}>{ForeignLanguageWord.infinitive} </label>
+          <label style= {{width: "20%", textAlign: "left"}}><audio src={ForeignLanguageWordAudio} controls controlsList="nodownloads" autoPlay ={false}></audio> </label>
+          <Modal show ={showPopUp} onHide={hidePopUp}>
+            <Modal.Header closeButton>
+              <Modal.Title id="contained-modal-title-vcenter">
+                {ForeignLanguageWord.infinitive}
+              </Modal.Title>
+            </Modal.Header>
+          <Modal.Body>
+          {modalTenses.map((obj, i) => (
+                <tr key={i}>
+                  <h5>{obj.title}</h5>
+                  {Array.from({ length: 6 }).map((_, j) => (
+                    <tr key={i}>
+                        <td style={{ width: tableRowWidth }}>{englishPronouns[j]} {BaseLanguageWord.englishWordConjugation[obj.tense][j]}</td>
+                        <td style={{ width: tableRowWidth }}>{pronouns[j]} {ForeignLanguageWord.foreignWordConjugation[obj.tense][j]}</td>
+                      </tr>
+                    ))
+                  }
+                </tr>
+              ))
+            }
+            </Modal.Body>
+          </Modal>  
+        </Navbar>
+
+      )
+    }
+    else if(showAudio && !showBaseLanguageFirst){
+      return  (
+        <Navbar>
+          <label onClick={displayPopUp} style= {{width: "20%", textAlign: "left", color: "purple", textDecorationLine: "underline"}}>{BaseLanguageWord.infinitive} </label>
+          <label style= {{width: "5%"}}></label>
+          <label style= {{width: "20%", textAlign: "left"}}>{ForeignLanguageWord.infinitive} </label>
+          <label style= {{width: "20%", textAlign: "left"}}><audio src={ForeignLanguageWordAudio} controls controlsList="nodownloads" autoPlay ={false}></audio> </label>
+          <Modal show ={showPopUp} onHide={hidePopUp}>
+            <Modal.Header closeButton>
+              <Modal.Title id="contained-modal-title-vcenter">
+                {ForeignLanguageWord.infinitive}
+              </Modal.Title>
+            </Modal.Header>
+          <Modal.Body>
+          {modalTenses.map((obj, i) => (
+                <tr key={i}>
+                  <h5>{obj.title}</h5>
+                  {Array.from({ length: 6 }).map((_, j) => (
+                    <tr key={i}>
+                        <td style={{ width: tableRowWidth }}>{pronouns[j]} {BaseLanguageWord.foreignWordConjugation[obj.tense][j]}</td>
+                        <td style={{ width: tableRowWidth }}>{englishPronouns[j]} {ForeignLanguageWord.englishWordConjugation[obj.tense][j]}</td>
+                      </tr>
+                    ))
+                  }
+                </tr>
+              ))
           }
-          </Modal.Body>
-        </Modal>  
-      </Navbar>
+            </Modal.Body> 
+          </Modal>  
+        </Navbar>
 
-    )
+      )
+    }
+    else if(!showAudio && !showBaseLanguageFirst){
+      return  (
+        <Navbar>
+          <label onClick={displayPopUp} style= {{width: "20%", textAlign: "left", color: "purple", textDecorationLine: "underline"}}>{BaseLanguageWord.infinitive} </label>
+          <label style= {{width: "5%"}}></label>
+          <label style= {{width: "20%", textAlign: "left"}}>{ForeignLanguageWord.infinitive} </label>
+          <Modal show ={showPopUp} onHide={hidePopUp}>
+            <Modal.Header closeButton>
+              <Modal.Title id="contained-modal-title-vcenter">
+                {ForeignLanguageWord.infinitive}
+              </Modal.Title>
+            </Modal.Header>
+          <Modal.Body>
+          {modalTenses.map((obj, i) => (
+                <tr key={i}>
+                  <h5>{obj.title}</h5>
+                  {Array.from({ length: 6 }).map((_, j) => (
+                    <tr key={i}>
+                        <td style={{ width: tableRowWidth }}>{pronouns[j]} {BaseLanguageWord.foreignWordConjugation[obj.tense][j]}</td>
+                        <td style={{ width: tableRowWidth }}>{englishPronouns[j]} {ForeignLanguageWord.englishWordConjugation[obj.tense][j]}</td>
+                      </tr>
+                    ))
+                  }
+                </tr>
+              ))
+          }
+            </Modal.Body>
+          </Modal>  
+        </Navbar>
+
+      )
+    }
+    else {  
+      return  (
+        <Navbar>
+          <label style= {{width: "20%", textAlign: "left"}}>{BaseLanguageWord.infinitive} </label>
+          <label style= {{width: "5%"}}></label>
+          <label onClick={displayPopUp} style= {{width: "20%", textAlign: "left", color: "purple", textDecorationLine: "underline"}}>{ForeignLanguageWord.infinitive} </label>
+          <Modal show ={showPopUp} onHide={hidePopUp}>
+            <Modal.Header closeButton>
+              <Modal.Title id="contained-modal-title-vcenter">
+                {ForeignLanguageWord.infinitive}
+              </Modal.Title>
+            </Modal.Header>
+          <Modal.Body>
+          {modalTenses.map((obj, i) => (
+                <tr key={i}>
+                  <h5>{obj.title}</h5>
+                  {Array.from({ length: 6 }).map((_, j) => (
+                    <tr key={i}>
+                        <td style={{ width: tableRowWidth }}>{englishPronouns[j]} {BaseLanguageWord.englishWordConjugation[obj.tense][j]}</td>
+                        <td style={{ width: tableRowWidth }}>{pronouns[j]} {ForeignLanguageWord.foreignWordConjugation[obj.tense][j]}</td>
+                      </tr>
+                    ))
+                  }
+                </tr>
+              ))
+          }
+            </Modal.Body>
+          </Modal>  
+        </Navbar>
+
+      )
+    }
   }
-  else if(showAudio && showBaseLanguageFirst && !isVerb){
+  else {
+
+  if(showAudio && showBaseLanguageFirst){
     return  (
       <Navbar>
         <label style= {{width: "20%", textAlign: "left"}}>{BaseLanguageWord} </label>
@@ -61,41 +161,7 @@ const StudyElement = (props: {BaseLanguageWord: any, ForeignLanguageWord: any, F
       </Navbar>
     )
   }
-  else if(showAudio && !showBaseLanguageFirst && isVerb){
-    return  (
-      <Navbar>
-        <label onClick={isVerb?displayPopUp:hidePopUp} style= {isVerb?{width: "20%", textAlign: "left", color: "purple", textDecorationLine: "underline"}:{width: "20%", textAlign: "left"}}>{BaseLanguageWord.infinitive} </label>
-        <label style= {{width: "5%"}}></label>
-        <label style= {{width: "20%", textAlign: "left"}}>{isVerb? ForeignLanguageWord.infinitive: ForeignLanguageWord} </label>
-        <label style= {{width: "20%", textAlign: "left"}}><audio src={ForeignLanguageWordAudio} controls controlsList="nodownloads" autoPlay ={false}></audio> </label>
-        <Modal show ={showPopUp} onHide={hidePopUp}>
-          <Modal.Header closeButton>
-            <Modal.Title id="contained-modal-title-vcenter">
-              {ForeignLanguageWord.infinitive}
-            </Modal.Title>
-          </Modal.Header>
-        <Modal.Body>
-        {modalTenses.map((obj, i) => (
-              <tr key={i}>
-                <h5>{obj.title}</h5>
-                {Array.from({ length: 6 }).map((_, j) => (
-                  <tr key={i}>
-                      <td style={{ width: tableRowWidth }}>{pronouns[j]} {BaseLanguageWord.foreignWordConjugation[obj.tense][j]}</td>
-                      <td style={{ width: tableRowWidth }}>{englishPronouns[j]} {ForeignLanguageWord.englishWordConjugation[obj.tense][j]}</td>
-                    </tr>
-                  ))
-                }
-              </tr>
-            ))
-        }
-          </Modal.Body> 
-        </Modal>  
-      </Navbar>
-
-    )
-  }
-
-  else if(showAudio && !showBaseLanguageFirst && !isVerb){
+  else if(showAudio && !showBaseLanguageFirst){
     return (
       <Navbar>
         <label style= {{width: "20%", textAlign: "left"}}>{BaseLanguageWord} </label>
@@ -104,41 +170,7 @@ const StudyElement = (props: {BaseLanguageWord: any, ForeignLanguageWord: any, F
       </Navbar>
     )
   }
-
-  else if(!showAudio && showBaseLanguageFirst && isVerb){
-    return  (
-      <Navbar>
-        <label style= {{width: "20%", textAlign: "left"}}>{isVerb? BaseLanguageWord.infinitive: BaseLanguageWord} </label>
-        <label style= {{width: "5%"}}></label>
-        <label onClick={isVerb?displayPopUp:hidePopUp} style= {isVerb?{width: "20%", textAlign: "left", color: "purple", textDecorationLine: "underline"}:{width: "20%", textAlign: "left"}}>{ForeignLanguageWord.infinitive} </label>
-        <Modal show ={showPopUp} onHide={hidePopUp}>
-          <Modal.Header closeButton>
-            <Modal.Title id="contained-modal-title-vcenter">
-              {ForeignLanguageWord.infinitive}
-            </Modal.Title>
-          </Modal.Header>
-        <Modal.Body>
-        {modalTenses.map((obj, i) => (
-              <tr key={i}>
-                <h5>{obj.title}</h5>
-                {Array.from({ length: 6 }).map((_, j) => (
-                  <tr key={i}>
-                      <td style={{ width: tableRowWidth }}>{englishPronouns[j]} {BaseLanguageWord.englishWordConjugation[obj.tense][j]}</td>
-                      <td style={{ width: tableRowWidth }}>{pronouns[j]} {ForeignLanguageWord.foreignWordConjugation[obj.tense][j]}</td>
-                    </tr>
-                  ))
-                }
-              </tr>
-            ))
-        }
-          </Modal.Body>
-        </Modal>  
-      </Navbar>
-
-    )
-  }
-
-  else if(!showAudio && showBaseLanguageFirst && !isVerb){
+  else if(!showAudio && showBaseLanguageFirst){
     return  (
       <Navbar>
         <label style= {{width: "20%", textAlign: "left"}}>{BaseLanguageWord} </label>
@@ -146,41 +178,7 @@ const StudyElement = (props: {BaseLanguageWord: any, ForeignLanguageWord: any, F
       </Navbar>
     )
   }
-
-  else if(!showAudio && !showBaseLanguageFirst && isVerb){
-    return  (
-      <Navbar>
-        <label onClick={isVerb?displayPopUp:hidePopUp} style= {isVerb?{width: "20%", textAlign: "left", color: "purple", textDecorationLine: "underline"}:{width: "20%", textAlign: "left"}}>{BaseLanguageWord.infinitive} </label>
-        <label style= {{width: "5%"}}></label>
-        <label style= {{width: "20%", textAlign: "left"}}>{isVerb? ForeignLanguageWord.infinitive: ForeignLanguageWord} </label>
-        <Modal show ={showPopUp} onHide={hidePopUp}>
-          <Modal.Header closeButton>
-            <Modal.Title id="contained-modal-title-vcenter">
-              {ForeignLanguageWord.infinitive}
-            </Modal.Title>
-          </Modal.Header>
-        <Modal.Body>
-        {modalTenses.map((obj, i) => (
-              <tr key={i}>
-                <h5>{obj.title}</h5>
-                {Array.from({ length: 6 }).map((_, j) => (
-                  <tr key={i}>
-                      <td style={{ width: tableRowWidth }}>{pronouns[j]} {BaseLanguageWord.foreignWordConjugation[obj.tense][j]}</td>
-                      <td style={{ width: tableRowWidth }}>{englishPronouns[j]} {ForeignLanguageWord.englishWordConjugation[obj.tense][j]}</td>
-                    </tr>
-                  ))
-                }
-              </tr>
-            ))
-        }
-          </Modal.Body>
-        </Modal>  
-      </Navbar>
-
-    )
-  }
-
-  else { // (!showAudio && !showBaseLanguageFirst && !isVerb)
+  else { // (!showAudio && !showBaseLanguageFirst)
     return (
       <Navbar>
         <label style= {{width: "20%", textAlign: "left"}}>{BaseLanguageWord} </label>
@@ -188,7 +186,7 @@ const StudyElement = (props: {BaseLanguageWord: any, ForeignLanguageWord: any, F
       </Navbar>
     )
   }
-
+  }
 }
  
 export default StudyElement;
