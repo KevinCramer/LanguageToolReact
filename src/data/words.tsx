@@ -11,9 +11,12 @@ import arabic_purple from '../data/audio/purple.mp3';
 import arabic_red from '../data/audio/red.mp3';
 import arabic_white from '../data/audio/white.mp3';
 import arabic_yellow from '../data/audio/yellow.mp3';
-const dutch_topics = ["Clothes","Colours","Food","Family","Numbers", "Pronunciation", "Pronouns", "Question Words"]
+import { Word, Language, } from '../types';
 
-const dutch = [
+
+const dutchTopics: string[] = ["Clothes","Colours","Food","Family","Numbers", "Pronunciation", "Pronouns", "Question Words"]
+
+const dutch: Word[] = [
 {topic: "Food", englishWord: "potato", foreignWord: ["aardappel"], foreignAudio: ""},
 {topic: "Food", englishWord: "bread", foreignWord: ["brood"], foreignAudio: ""},
 {topic: "Food", englishWord: "meat", foreignWord: ["vlees"], foreignAudio: ""},
@@ -117,9 +120,9 @@ const dutch = [
 
 ]
 
-const arabic_topics = ["Clothes","Colours","Food","Numbers", "Body", "Pronouns", "Adjectives", "Pronouns","Root verbs ", "Question Words","Home","Buildings","Professions","Hard to Read"]
+const arabicTopics: string[] = ["Clothes","Colours","Food","Numbers", "Body", "Pronouns", "Adjectives", "Pronouns","Root verbs ", "Question Words","Home","Buildings","Professions","Hard to Read"]
 
-const arabic = [
+const arabic: Word[] = [
 {topic: "Clothes", englishWord: "belt", foreignWord: ["ḥizām", "حِزَام"], foreignAudio: ""},
 {topic: "Clothes", englishWord: "cap", foreignWord: ["qubba'ah", "قُبَّعَة"], foreignAudio: ""},
 {topic: "Clothes", englishWord: "clothes", foreignWord: ["malābis", "مَلَابِس"], foreignAudio: ""},
@@ -422,9 +425,9 @@ const arabic = [
 
 ]
 
-const spanish_topics = ["Clothes","Colours","Food","Numbers", "Verbs"]
+const spanishTopics: string[] = ["Clothes","Colours","Food","Numbers", "Verbs"]
 
-const spanish = [
+const spanish: Word[] = [
     {topic: "Food", englishWord: "potato", foreignWord: ["papa"], foreignAudio: ""},
     {topic: "Food", englishWord: "bread", foreignWord: ["pan"], foreignAudio: ""},
     {topic: "Food", englishWord: "meat", foreignWord: ["carne"], foreignAudio: ""},
@@ -465,21 +468,61 @@ const spanish = [
     {topic: "Numbers", englishWord: "eight", foreignWord: ["ocho"], foreignAudio: ""},
     {topic: "Numbers", englishWord: "nine", foreignWord: ["nueve"], foreignAudio: ""},
     {topic: "Numbers", englishWord: "ten", foreignWord: ["diez"], foreignAudio: ""},
-    {topic: "Verbs", englishWord: {infinitive: "to call",englishWordConjugation: {past_tense: ["called","called", "called","called","called", "called"],present_tense: ["call","call", "calls","call","call", "call"], future_tense: ["will call","will call", "will call","will call","will call", "will call"]}}, foreignWord: [{infinitive: "llamar",foreignWordConjugation: {past_tense: ["llamé","llamaste","llamó","llamamos","llamasteis","llamaron"],present_tense: ["llamo","llamas", "llama","llamamos","llamáis", "llaman"], future_tense: ["llamaré","llamarás", "llamará","llamaremos","llamaréis", "llamarán"]}}], foreignAudio: ""},
-    {topic: "Verbs", englishWord: {infinitive: "to study",englishWordConjugation: {past_tense: ["studied","studied", "studied","studied","studied", "studied"],present_tense: ["study","study", "studies","study","study", "study"], future_tense: ["will study","will study", "will study","will study","will study", "will study"]}}, foreignWord: [{infinitive: "estudiar",foreignWordConjugation: {past_tense: ["estudié","estudiaste","estudió","estudiamos","estudiasteis","estudiaron"],present_tense: ["estudio","estudias", "estudia","estudiamos","estudiáis", "estudian"], future_tense: ["estudiaré","estudiarás", "estudiará","estudiaremos","estudiareis", "estudiarán"]}}], foreignAudio: ""}
+    {
+        topic: "Verbs", 
+        englishWord: 
+            {
+                infinitive: "to call",
+                englishWordConjugation:
+                {
+                    pastTense: ["called","called", "called","called","called", "called"],
+                    presentTense: ["call","call", "calls","call","call", "call"], 
+                    futureTense: ["will call","will call", "will call","will call","will call", "will call"]
+                }
+            }, 
+        foreignWord: 
+            [
+                {
+                    infinitive: "llamar",
+                    foreignWordConjugation: 
+                    {
+                        pastTense:["llamé","llamaste","llamó","llamamos","llamasteis","llamaron"],
+                        presentTense: ["llamo","llamas", "llama","llamamos","llamáis", "llaman"], 
+                        futureTense: ["llamaré","llamarás", "llamará","llamaremos","llamaréis", "llamarán"]
+                    }
+                }
+            ], 
+        foreignAudio: ""},
+    {
+        topic: "Verbs", 
+        englishWord: 
+        {
+            infinitive: "to study",
+            englishWordConjugation: 
+            {
+                pastTense: ["studied","studied", "studied","studied","studied", "studied"],
+                presentTense: ["study","study", "studies","study","study", "study"],
+                futureTense: ["will study","will study", "will study","will study","will study", "will study"]
+            }
+        },
+        foreignWord: 
+        [
+            {
+                infinitive: "estudiar",
+                foreignWordConjugation: 
+                {
+                    pastTense: ["estudié","estudiaste","estudió","estudiamos","estudiasteis","estudiaron"],
+                    presentTense: ["estudio","estudias", "estudia","estudiamos","estudiáis", "estudian"],
+                    futureTense: ["estudiaré","estudiarás", "estudiará","estudiaremos","estudiareis", "estudiarán"]
+                    }
+                }
+            ],
+            foreignAudio: ""}
     ]
 
+const frenchTopics: string[] = ["Numbers"]
 
-
-
-
-
-
-
-
-const french_topics = ["Numbers"]
-
-const french = [
+const french: Word[] = [
     {topic: "Numbers", englishWord: "one", foreignWord: ["un"], foreignAudio: ""},
     {topic: "Numbers", englishWord: "two ", foreignWord: ["deux"], foreignAudio: ""},
     {topic: "Numbers", englishWord: "three", foreignWord: ["trois"], foreignAudio: ""},
@@ -493,9 +536,9 @@ const french = [
     ]
 
 
-    const italian_topics = ["Numbers"]
+const italianTopics: string[] = ["Numbers"]
 
-const italian = [
+const italian: Word[] = [
     {topic: "Numbers", englishWord: "one", foreignWord: ["uno"], foreignAudio: ""},
     {topic: "Numbers", englishWord: "two ", foreignWord: ["due"], foreignAudio: ""},
     {topic: "Numbers", englishWord: "three", foreignWord: ["tre"], foreignAudio: ""},
@@ -508,9 +551,9 @@ const italian = [
     {topic: "Numbers", englishWord: "ten", foreignWord: ["dieci"], foreignAudio: ""}
     ]
 
-    const german_topics = ["Food"]
+    const germanTopics: string[] = ["Food"]
 
-    const german = [
+    const german: Word[] = [
         {topic: "Food", englishWord: "potato", foreignWord: ["kartoffel"], foreignAudio: ""},
         {topic: "Food", englishWord: "bread", foreignWord: ["brot"], foreignAudio: ""},
         {topic: "Food", englishWord: "meat", foreignWord: ["fleisch"], foreignAudio: ""},
@@ -524,9 +567,9 @@ const italian = [
         ]
 
 
-    const japanese_topics = ["Numbers"]
+    const japaneseTopics: string[] = ["Numbers"]
 
-    const japanese = [
+    const japanese: Word[] = [
         {topic: "Numbers", englishWord: "one", foreignWord: ["ichi", "いち","一"], foreignAudio: ""},
         {topic: "Numbers", englishWord: "two ", foreignWord: ["ni", "に","二"], foreignAudio: ""},
         {topic: "Numbers", englishWord: "three",foreignWord: ["san", "さん","三"], foreignAudio: ""},
@@ -541,13 +584,14 @@ const italian = [
         
 
 
-        export const languages = 
+
+        export const languages: Language[] = 
         [
-            {languageName: "Arabic", Content: arabic, topics: arabic_topics, num_foreign_alphabets: 2},
-            {languageName: "Dutch", Content: dutch, topics: dutch_topics, num_foreign_alphabets: 1},
-            {languageName: "Spanish", Content: spanish, topics: spanish_topics, num_foreign_alphabets: 1},
-            {languageName: "French", Content: french, topics: french_topics, num_foreign_alphabets: 1},
-            {languageName: "German", Content: german, topics: german_topics, num_foreign_alphabets: 1},
-            {languageName: "Italian", Content: italian, topics: italian_topics, num_foreign_alphabets: 1},
-            {languageName: "Japanese", Content: japanese, topics: japanese_topics, num_foreign_alphabets: 3} 
+            {languageName: "Arabic", content: arabic, topics: arabicTopics, numForeignAlphabets: 2},
+            {languageName: "Dutch", content: dutch, topics: dutchTopics, numForeignAlphabets: 1},
+            {languageName: "Spanish", content: spanish, topics: spanishTopics, numForeignAlphabets: 1},
+            {languageName: "French", content: french, topics: frenchTopics, numForeignAlphabets: 1},
+            {languageName: "German", content: german, topics: germanTopics, numForeignAlphabets: 1},
+            {languageName: "Italian", content: italian, topics: italianTopics, numForeignAlphabets: 1},
+            {languageName: "Japanese", content: japanese, topics: japaneseTopics, numForeignAlphabets: 3} 
         ]

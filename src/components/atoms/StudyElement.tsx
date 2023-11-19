@@ -30,78 +30,78 @@ const StudyElement = (props: any) =>
         <Modal.Body>
           <h5>Present Tense</h5>
           <tr>
-            <td style={{ width: 200 }} >I {BaseLanguageWord.englishWordConjugation.present_tense[0]}</td>
-            <td style={{ width: 200 }} >Yo {ForeignLanguageWord.foreignWordConjugation.present_tense[0]}</td>
+            <td style={{ width: 200 }} >I {BaseLanguageWord.englishWordConjugation.presentTense[0]}</td>
+            <td style={{ width: 200 }} >Yo {ForeignLanguageWord.foreignWordConjugation.presentTense[0]}</td>
           </tr>
           <tr>
-            <td style={{ width: 200 }} >You {BaseLanguageWord.englishWordConjugation.present_tense[1]}</td>
-            <td style={{ width: 200 }} >Tu {ForeignLanguageWord.foreignWordConjugation.present_tense[1]}</td>
+            <td style={{ width: 200 }} >You {BaseLanguageWord.englishWordConjugation.presentTense[1]}</td>
+            <td style={{ width: 200 }} >Tu {ForeignLanguageWord.foreignWordConjugation.presentTense[1]}</td>
           </tr>
           <tr>
-            <td style={{ width: 200 }} >He/She {BaseLanguageWord.englishWordConjugation.present_tense[2]}</td>
-            <td style={{ width: 200 }} >El/Ella {ForeignLanguageWord.foreignWordConjugation.present_tense[2]}</td>
+            <td style={{ width: 200 }} >He/She {BaseLanguageWord.englishWordConjugation.presentTense[2]}</td>
+            <td style={{ width: 200 }} >El/Ella {ForeignLanguageWord.foreignWordConjugation.presentTense[2]}</td>
           </tr>
           <tr>
-            <td style={{ width: 200 }} >We {BaseLanguageWord.englishWordConjugation.present_tense[3]}</td>
-            <td style={{ width: 200 }} >Nosotros {ForeignLanguageWord.foreignWordConjugation.present_tense[3]}</td>
+            <td style={{ width: 200 }} >We {BaseLanguageWord.englishWordConjugation.presentTense[3]}</td>
+            <td style={{ width: 200 }} >Nosotros {ForeignLanguageWord.foreignWordConjugation.presentTense[3]}</td>
           </tr>
           <tr>
-            <td style={{ width: 200 }} >You (p) {BaseLanguageWord.englishWordConjugation.present_tense[4]}</td>
-            <td style={{ width: 200 }} >Vosotros {ForeignLanguageWord.foreignWordConjugation.present_tense[4]}</td>
+            <td style={{ width: 200 }} >You (p) {BaseLanguageWord.englishWordConjugation.presentTense[4]}</td>
+            <td style={{ width: 200 }} >Vosotros {ForeignLanguageWord.foreignWordConjugation.presentTense[4]}</td>
           </tr>
           <tr>
-            <td style={{ width: 200 }} >They {BaseLanguageWord.englishWordConjugation.present_tense[5]}</td>
-            <td style={{ width: 200 }} >Ellos/Ellas {ForeignLanguageWord.foreignWordConjugation.present_tense[5]}</td>
+            <td style={{ width: 200 }} >They {BaseLanguageWord.englishWordConjugation.presentTense[5]}</td>
+            <td style={{ width: 200 }} >Ellos/Ellas {ForeignLanguageWord.foreignWordConjugation.presentTense[5]}</td>
           </tr>
           <h5>Past Preterite Tense</h5>
           <tr>
-            <td style={{ width: 200 }} >I {BaseLanguageWord.englishWordConjugation.past_tense[0]}</td>
-            <td style={{ width: 200 }} >Yo {ForeignLanguageWord.foreignWordConjugation.past_tense[0]}</td>
+            <td style={{ width: 200 }} >I {BaseLanguageWord.englishWordConjugation.pastTense[0]}</td>
+            <td style={{ width: 200 }} >Yo {ForeignLanguageWord.foreignWordConjugation.pastTense[0]}</td>
           </tr>
           <tr>
-            <td style={{ width: 200 }} >You {BaseLanguageWord.englishWordConjugation.past_tense[1]}</td>
-            <td style={{ width: 200 }} >Tu {ForeignLanguageWord.foreignWordConjugation.past_tense[1]}</td>
+            <td style={{ width: 200 }} >You {BaseLanguageWord.englishWordConjugation.pastTense[1]}</td>
+            <td style={{ width: 200 }} >Tu {ForeignLanguageWord.foreignWordConjugation.pastTense[1]}</td>
           </tr>
           <tr>
-            <td style={{ width: 200 }} >He/She {BaseLanguageWord.englishWordConjugation.past_tense[2]}</td>
-            <td style={{ width: 200 }} >El/Ella {ForeignLanguageWord.foreignWordConjugation.past_tense[2]}</td>
+            <td style={{ width: 200 }} >He/She {BaseLanguageWord.englishWordConjugation.pastTense[2]}</td>
+            <td style={{ width: 200 }} >El/Ella {ForeignLanguageWord.foreignWordConjugation.pastTense[2]}</td>
           </tr>
           <tr>
-            <td style={{ width: 200 }} >We {BaseLanguageWord.englishWordConjugation.past_tense[3]}</td>
-            <td style={{ width: 200 }} >Nosotros {ForeignLanguageWord.foreignWordConjugation.past_tense[3]}</td>
+            <td style={{ width: 200 }} >We {BaseLanguageWord.englishWordConjugation.pastTense[3]}</td>
+            <td style={{ width: 200 }} >Nosotros {ForeignLanguageWord.foreignWordConjugation.pastTense[3]}</td>
           </tr>
           <tr>
-            <td style={{ width: 200 }} >You (p) {BaseLanguageWord.englishWordConjugation.past_tense[4]}</td>
-            <td style={{ width: 200 }} >Vosotros {ForeignLanguageWord.foreignWordConjugation.past_tense[4]}</td>
+            <td style={{ width: 200 }} >You (p) {BaseLanguageWord.englishWordConjugation.pastTense[4]}</td>
+            <td style={{ width: 200 }} >Vosotros {ForeignLanguageWord.foreignWordConjugation.pastTense[4]}</td>
           </tr>
           <tr>
-            <td style={{ width: 200 }} >They {BaseLanguageWord.englishWordConjugation.past_tense[5]}</td>
-            <td style={{ width: 200 }} >Ellos/Ellas {ForeignLanguageWord.foreignWordConjugation.past_tense[5]}</td>
+            <td style={{ width: 200 }} >They {BaseLanguageWord.englishWordConjugation.pastTense[5]}</td>
+            <td style={{ width: 200 }} >Ellos/Ellas {ForeignLanguageWord.foreignWordConjugation.pastTense[5]}</td>
           </tr>
           <h5>Future Tense</h5>
           <tr>
-            <td style={{ width: 200 }} >I {BaseLanguageWord.englishWordConjugation.future_tense[0]}</td>
-            <td style={{ width: 200 }} >Yo {ForeignLanguageWord.foreignWordConjugation.future_tense[0]}</td>
+            <td style={{ width: 200 }} >I {BaseLanguageWord.englishWordConjugation.futureTense[0]}</td>
+            <td style={{ width: 200 }} >Yo {ForeignLanguageWord.foreignWordConjugation.futureTense[0]}</td>
           </tr>
           <tr>
-            <td style={{ width: 200 }} >You {BaseLanguageWord.englishWordConjugation.future_tense[1]}</td>
-            <td style={{ width: 200 }} >Tu {ForeignLanguageWord.foreignWordConjugation.future_tense[1]}</td>
+            <td style={{ width: 200 }} >You {BaseLanguageWord.englishWordConjugation.futureTense[1]}</td>
+            <td style={{ width: 200 }} >Tu {ForeignLanguageWord.foreignWordConjugation.futureTense[1]}</td>
           </tr>
           <tr>
-            <td style={{ width: 200 }} >He/She {BaseLanguageWord.englishWordConjugation.future_tense[2]}</td>
-            <td style={{ width: 200 }} >El/Ella {ForeignLanguageWord.foreignWordConjugation.future_tense[2]}</td>
+            <td style={{ width: 200 }} >He/She {BaseLanguageWord.englishWordConjugation.futureTense[2]}</td>
+            <td style={{ width: 200 }} >El/Ella {ForeignLanguageWord.foreignWordConjugation.futureTense[2]}</td>
           </tr>
           <tr>
-            <td style={{ width: 200 }} >We {BaseLanguageWord.englishWordConjugation.future_tense[3]}</td>
-            <td style={{ width: 200 }} >Nosotros {ForeignLanguageWord.foreignWordConjugation.future_tense[3]}</td>
+            <td style={{ width: 200 }} >We {BaseLanguageWord.englishWordConjugation.futureTense[3]}</td>
+            <td style={{ width: 200 }} >Nosotros {ForeignLanguageWord.foreignWordConjugation.futureTense[3]}</td>
           </tr>
           <tr>
-            <td style={{ width: 200 }} >You (p) {BaseLanguageWord.englishWordConjugation.future_tense[4]}</td>
-            <td style={{ width: 200 }} >Vosotros {ForeignLanguageWord.foreignWordConjugation.future_tense[4]}</td>
+            <td style={{ width: 200 }} >You (p) {BaseLanguageWord.englishWordConjugation.futureTense[4]}</td>
+            <td style={{ width: 200 }} >Vosotros {ForeignLanguageWord.foreignWordConjugation.futureTense[4]}</td>
           </tr>
           <tr>
-            <td style={{ width: 200 }} >They {BaseLanguageWord.englishWordConjugation.future_tense[5]}</td>
-            <td style={{ width: 200 }} >Ellos/Ellas  {ForeignLanguageWord.foreignWordConjugation.future_tense[5]}</td>
+            <td style={{ width: 200 }} >They {BaseLanguageWord.englishWordConjugation.futureTense[5]}</td>
+            <td style={{ width: 200 }} >Ellos/Ellas  {ForeignLanguageWord.foreignWordConjugation.futureTense[5]}</td>
           </tr>
           </Modal.Body>
         </Modal>  
@@ -134,78 +134,78 @@ const StudyElement = (props: any) =>
         <Modal.Body>
         <h5>Present Tense</h5>
           <tr>
-            <td style={{ width: 200 }} >I {BaseLanguageWord.foreignWordConjugation.present_tense[0]}</td>
-            <td style={{ width: 200 }} >Yo {ForeignLanguageWord.englishWordConjugation.present_tense[0]}</td>
+            <td style={{ width: 200 }} >I {BaseLanguageWord.foreignWordConjugation.presentTense[0]}</td>
+            <td style={{ width: 200 }} >Yo {ForeignLanguageWord.englishWordConjugation.presentTense[0]}</td>
           </tr>
           <tr>
-            <td style={{ width: 200 }} >You {BaseLanguageWord.foreignWordConjugation.present_tense[1]}</td>
-            <td style={{ width: 200 }} >Tu {ForeignLanguageWord.englishWordConjugation.present_tense[1]}</td>
+            <td style={{ width: 200 }} >You {BaseLanguageWord.foreignWordConjugation.presentTense[1]}</td>
+            <td style={{ width: 200 }} >Tu {ForeignLanguageWord.englishWordConjugation.presentTense[1]}</td>
           </tr>
           <tr>
-            <td style={{ width: 200 }} >He/She {BaseLanguageWord.foreignWordConjugation.present_tense[2]}</td>
-            <td style={{ width: 200 }} >El/Ella {ForeignLanguageWord.englishWordConjugation.present_tense[2]}</td>
+            <td style={{ width: 200 }} >He/She {BaseLanguageWord.foreignWordConjugation.presentTense[2]}</td>
+            <td style={{ width: 200 }} >El/Ella {ForeignLanguageWord.englishWordConjugation.presentTense[2]}</td>
           </tr>
           <tr>
-            <td style={{ width: 200 }} >We {BaseLanguageWord.foreignWordConjugation.present_tense[3]}</td>
-            <td style={{ width: 200 }} >Nosotros {ForeignLanguageWord.englishWordConjugation.present_tense[3]}</td>
+            <td style={{ width: 200 }} >We {BaseLanguageWord.foreignWordConjugation.presentTense[3]}</td>
+            <td style={{ width: 200 }} >Nosotros {ForeignLanguageWord.englishWordConjugation.presentTense[3]}</td>
           </tr>
           <tr>
-            <td style={{ width: 200 }} >You (p) {BaseLanguageWord.foreignWordConjugation.present_tense[4]}</td>
-            <td style={{ width: 200 }} >Vosotros {ForeignLanguageWord.englishWordConjugation.present_tense[4]}</td>
+            <td style={{ width: 200 }} >You (p) {BaseLanguageWord.foreignWordConjugation.presentTense[4]}</td>
+            <td style={{ width: 200 }} >Vosotros {ForeignLanguageWord.englishWordConjugation.presentTense[4]}</td>
           </tr>
           <tr>
-            <td style={{ width: 200 }} >They {BaseLanguageWord.foreignWordConjugation.present_tense[5]}</td>
-            <td style={{ width: 200 }} >Ellos/Ellas {ForeignLanguageWord.englishWordConjugation.present_tense[5]}</td>
+            <td style={{ width: 200 }} >They {BaseLanguageWord.foreignWordConjugation.presentTense[5]}</td>
+            <td style={{ width: 200 }} >Ellos/Ellas {ForeignLanguageWord.englishWordConjugation.presentTense[5]}</td>
           </tr>
           <h5>Past Preterite Tense</h5>
           <tr>
-            <td style={{ width: 200 }} >I {BaseLanguageWord.foreignWordConjugation.past_tense[0]}</td>
-            <td style={{ width: 200 }} >Yo {ForeignLanguageWord.englishWordConjugation.past_tense[0]}</td>
+            <td style={{ width: 200 }} >I {BaseLanguageWord.foreignWordConjugation.pastTense[0]}</td>
+            <td style={{ width: 200 }} >Yo {ForeignLanguageWord.englishWordConjugation.pastTense[0]}</td>
           </tr>
           <tr>
-            <td style={{ width: 200 }} >You {BaseLanguageWord.foreignWordConjugation.past_tense[1]}</td>
-            <td style={{ width: 200 }} >Tu {ForeignLanguageWord.englishWordConjugation.past_tense[1]}</td>
+            <td style={{ width: 200 }} >You {BaseLanguageWord.foreignWordConjugation.pastTense[1]}</td>
+            <td style={{ width: 200 }} >Tu {ForeignLanguageWord.englishWordConjugation.pastTense[1]}</td>
           </tr>
           <tr>
-            <td style={{ width: 200 }} >He/She {BaseLanguageWord.foreignWordConjugation.past_tense[2]}</td>
-            <td style={{ width: 200 }} >El/Ella {ForeignLanguageWord.englishWordConjugation.past_tense[2]}</td>
+            <td style={{ width: 200 }} >He/She {BaseLanguageWord.foreignWordConjugation.pastTense[2]}</td>
+            <td style={{ width: 200 }} >El/Ella {ForeignLanguageWord.englishWordConjugation.pastTense[2]}</td>
           </tr>
           <tr>
-            <td style={{ width: 200 }} >We {BaseLanguageWord.foreignWordConjugation.past_tense[3]}</td>
-            <td style={{ width: 200 }} >Nosotros {ForeignLanguageWord.englishWordConjugation.past_tense[3]}</td>
+            <td style={{ width: 200 }} >We {BaseLanguageWord.foreignWordConjugation.pastTense[3]}</td>
+            <td style={{ width: 200 }} >Nosotros {ForeignLanguageWord.englishWordConjugation.pastTense[3]}</td>
           </tr>
           <tr>
-            <td style={{ width: 200 }} >You (p) {BaseLanguageWord.foreignWordConjugation.past_tense[4]}</td>
-            <td style={{ width: 200 }} >Vosotros {ForeignLanguageWord.englishWordConjugation.past_tense[4]}</td>
+            <td style={{ width: 200 }} >You (p) {BaseLanguageWord.foreignWordConjugation.pastTense[4]}</td>
+            <td style={{ width: 200 }} >Vosotros {ForeignLanguageWord.englishWordConjugation.pastTense[4]}</td>
           </tr>
           <tr>
-            <td style={{ width: 200 }} >They {BaseLanguageWord.foreignWordConjugation.past_tense[5]}</td>
-            <td style={{ width: 200 }} >Ellos/Ellas {ForeignLanguageWord.englishWordConjugation.past_tense[5]}</td>
+            <td style={{ width: 200 }} >They {BaseLanguageWord.foreignWordConjugation.pastTense[5]}</td>
+            <td style={{ width: 200 }} >Ellos/Ellas {ForeignLanguageWord.englishWordConjugation.pastTense[5]}</td>
           </tr>
           <h5>Future Tense</h5>
           <tr>
-            <td style={{ width: 200 }} >I {BaseLanguageWord.foreignWordConjugation.future_tense[0]}</td>
-            <td style={{ width: 200 }} >Yo {ForeignLanguageWord.englishWordConjugation.future_tense[0]}</td>
+            <td style={{ width: 200 }} >I {BaseLanguageWord.foreignWordConjugation.futureTense[0]}</td>
+            <td style={{ width: 200 }} >Yo {ForeignLanguageWord.englishWordConjugation.futureTense[0]}</td>
           </tr>
           <tr>
-            <td style={{ width: 200 }} >You {BaseLanguageWord.foreignWordConjugation.future_tense[1]}</td>
-            <td style={{ width: 200 }} >Tu {ForeignLanguageWord.englishWordConjugation.future_tense[1]}</td>
+            <td style={{ width: 200 }} >You {BaseLanguageWord.foreignWordConjugation.futureTense[1]}</td>
+            <td style={{ width: 200 }} >Tu {ForeignLanguageWord.englishWordConjugation.futureTense[1]}</td>
           </tr>
           <tr>
-            <td style={{ width: 200 }} >He/She {BaseLanguageWord.foreignWordConjugation.future_tense[2]}</td>
-            <td style={{ width: 200 }} >El/Ella {ForeignLanguageWord.englishWordConjugation.future_tense[2]}</td>
+            <td style={{ width: 200 }} >He/She {BaseLanguageWord.foreignWordConjugation.futureTense[2]}</td>
+            <td style={{ width: 200 }} >El/Ella {ForeignLanguageWord.englishWordConjugation.futureTense[2]}</td>
           </tr>
           <tr>
-            <td style={{ width: 200 }} >We {BaseLanguageWord.foreignWordConjugation.future_tense[3]}</td>
-            <td style={{ width: 200 }} >Nosotros {ForeignLanguageWord.englishWordConjugation.future_tense[3]}</td>
+            <td style={{ width: 200 }} >We {BaseLanguageWord.foreignWordConjugation.futureTense[3]}</td>
+            <td style={{ width: 200 }} >Nosotros {ForeignLanguageWord.englishWordConjugation.futureTense[3]}</td>
           </tr>
           <tr>
-            <td style={{ width: 200 }} >You (p) {BaseLanguageWord.englishWordConjugation.future_tense[4]}</td>
-            <td style={{ width: 200 }} >Vosotros {ForeignLanguageWord.englishWordConjugation.future_tense[4]}</td>
+            <td style={{ width: 200 }} >You (p) {BaseLanguageWord.englishWordConjugation.futureTense[4]}</td>
+            <td style={{ width: 200 }} >Vosotros {ForeignLanguageWord.englishWordConjugation.futureTense[4]}</td>
           </tr>
           <tr>
-            <td style={{ width: 200 }} >They {BaseLanguageWord.englishWordConjugation.future_tense[5]}</td>
-            <td style={{ width: 200 }} >Ellos/Ellas  {ForeignLanguageWord.englishWordConjugation.future_tense[5]}</td>
+            <td style={{ width: 200 }} >They {BaseLanguageWord.englishWordConjugation.futureTense[5]}</td>
+            <td style={{ width: 200 }} >Ellos/Ellas  {ForeignLanguageWord.englishWordConjugation.futureTense[5]}</td>
           </tr>
           </Modal.Body> 
         </Modal>  
@@ -239,78 +239,78 @@ const StudyElement = (props: any) =>
         <Modal.Body>
         <h5>Present Tense</h5>
           <tr>
-            <td style={{ width: 200 }} >I {BaseLanguageWord.englishWordConjugation.present_tense[0]}</td>
-            <td style={{ width: 200 }} >Yo {ForeignLanguageWord.foreignWordConjugation.present_tense[0]}</td>
+            <td style={{ width: 200 }} >I {BaseLanguageWord.englishWordConjugation.presentTense[0]}</td>
+            <td style={{ width: 200 }} >Yo {ForeignLanguageWord.foreignWordConjugation.presentTense[0]}</td>
           </tr>
           <tr>
-            <td style={{ width: 200 }} >You {BaseLanguageWord.englishWordConjugation.present_tense[1]}</td>
-            <td style={{ width: 200 }} >Tu {ForeignLanguageWord.foreignWordConjugation.present_tense[1]}</td>
+            <td style={{ width: 200 }} >You {BaseLanguageWord.englishWordConjugation.presentTense[1]}</td>
+            <td style={{ width: 200 }} >Tu {ForeignLanguageWord.foreignWordConjugation.presentTense[1]}</td>
           </tr>
           <tr>
-            <td style={{ width: 200 }} >He/She {BaseLanguageWord.englishWordConjugation.present_tense[2]}</td>
-            <td style={{ width: 200 }} >El/Ella {ForeignLanguageWord.foreignWordConjugation.present_tense[2]}</td>
+            <td style={{ width: 200 }} >He/She {BaseLanguageWord.englishWordConjugation.presentTense[2]}</td>
+            <td style={{ width: 200 }} >El/Ella {ForeignLanguageWord.foreignWordConjugation.presentTense[2]}</td>
           </tr>
           <tr>
-            <td style={{ width: 200 }} >We {BaseLanguageWord.englishWordConjugation.present_tense[3]}</td>
-            <td style={{ width: 200 }} >Nosotros {ForeignLanguageWord.foreignWordConjugation.present_tense[3]}</td>
+            <td style={{ width: 200 }} >We {BaseLanguageWord.englishWordConjugation.presentTense[3]}</td>
+            <td style={{ width: 200 }} >Nosotros {ForeignLanguageWord.foreignWordConjugation.presentTense[3]}</td>
           </tr>
           <tr>
-            <td style={{ width: 200 }} >You (p) {BaseLanguageWord.englishWordConjugation.present_tense[4]}</td>
-            <td style={{ width: 200 }} >Vosotros {ForeignLanguageWord.foreignWordConjugation.present_tense[4]}</td>
+            <td style={{ width: 200 }} >You (p) {BaseLanguageWord.englishWordConjugation.presentTense[4]}</td>
+            <td style={{ width: 200 }} >Vosotros {ForeignLanguageWord.foreignWordConjugation.presentTense[4]}</td>
           </tr>
           <tr>
-            <td style={{ width: 200 }} >They {BaseLanguageWord.englishWordConjugation.present_tense[5]}</td>
-            <td style={{ width: 200 }} >Ellos/Ellas {ForeignLanguageWord.foreignWordConjugation.present_tense[5]}</td>
+            <td style={{ width: 200 }} >They {BaseLanguageWord.englishWordConjugation.presentTense[5]}</td>
+            <td style={{ width: 200 }} >Ellos/Ellas {ForeignLanguageWord.foreignWordConjugation.presentTense[5]}</td>
           </tr>
           <h5>Past Preterite Tense</h5>
           <tr>
-            <td style={{ width: 200 }} >I {BaseLanguageWord.englishWordConjugation.past_tense[0]}</td>
-            <td style={{ width: 200 }} >Yo {ForeignLanguageWord.foreignWordConjugation.past_tense[0]}</td>
+            <td style={{ width: 200 }} >I {BaseLanguageWord.englishWordConjugation.pastTense[0]}</td>
+            <td style={{ width: 200 }} >Yo {ForeignLanguageWord.foreignWordConjugation.pastTense[0]}</td>
           </tr>
           <tr>
-            <td style={{ width: 200 }} >You {BaseLanguageWord.englishWordConjugation.past_tense[1]}</td>
-            <td style={{ width: 200 }} >Tu {ForeignLanguageWord.foreignWordConjugation.past_tense[1]}</td>
+            <td style={{ width: 200 }} >You {BaseLanguageWord.englishWordConjugation.pastTense[1]}</td>
+            <td style={{ width: 200 }} >Tu {ForeignLanguageWord.foreignWordConjugation.pastTense[1]}</td>
           </tr>
           <tr>
-            <td style={{ width: 200 }} >He/She {BaseLanguageWord.englishWordConjugation.past_tense[2]}</td>
-            <td style={{ width: 200 }} >El/Ella {ForeignLanguageWord.foreignWordConjugation.past_tense[2]}</td>
+            <td style={{ width: 200 }} >He/She {BaseLanguageWord.englishWordConjugation.pastTense[2]}</td>
+            <td style={{ width: 200 }} >El/Ella {ForeignLanguageWord.foreignWordConjugation.pastTense[2]}</td>
           </tr>
           <tr>
-            <td style={{ width: 200 }} >We {BaseLanguageWord.englishWordConjugation.past_tense[3]}</td>
-            <td style={{ width: 200 }} >Nosotros {ForeignLanguageWord.foreignWordConjugation.past_tense[3]}</td>
+            <td style={{ width: 200 }} >We {BaseLanguageWord.englishWordConjugation.pastTense[3]}</td>
+            <td style={{ width: 200 }} >Nosotros {ForeignLanguageWord.foreignWordConjugation.pastTense[3]}</td>
           </tr>
           <tr>
-            <td style={{ width: 200 }} >You (p) {BaseLanguageWord.englishWordConjugation.past_tense[4]}</td>
-            <td style={{ width: 200 }} >Vosotros {ForeignLanguageWord.foreignWordConjugation.past_tense[4]}</td>
+            <td style={{ width: 200 }} >You (p) {BaseLanguageWord.englishWordConjugation.pastTense[4]}</td>
+            <td style={{ width: 200 }} >Vosotros {ForeignLanguageWord.foreignWordConjugation.pastTense[4]}</td>
           </tr>
           <tr>
-            <td style={{ width: 200 }} >They {BaseLanguageWord.englishWordConjugation.past_tense[5]}</td>
-            <td style={{ width: 200 }} >Ellos/Ellas {ForeignLanguageWord.foreignWordConjugation.past_tense[5]}</td>
+            <td style={{ width: 200 }} >They {BaseLanguageWord.englishWordConjugation.pastTense[5]}</td>
+            <td style={{ width: 200 }} >Ellos/Ellas {ForeignLanguageWord.foreignWordConjugation.pastTense[5]}</td>
           </tr>
           <h5>Future Tense</h5>
           <tr>
-            <td style={{ width: 200 }} >I {BaseLanguageWord.englishWordConjugation.future_tense[0]}</td>
-            <td style={{ width: 200 }} >Yo {ForeignLanguageWord.foreignWordConjugation.future_tense[0]}</td>
+            <td style={{ width: 200 }} >I {BaseLanguageWord.englishWordConjugation.futureTense[0]}</td>
+            <td style={{ width: 200 }} >Yo {ForeignLanguageWord.foreignWordConjugation.futureTense[0]}</td>
           </tr>
           <tr>
-            <td style={{ width: 200 }} >You {BaseLanguageWord.englishWordConjugation.future_tense[1]}</td>
-            <td style={{ width: 200 }} >Tu {ForeignLanguageWord.foreignWordConjugation.future_tense[1]}</td>
+            <td style={{ width: 200 }} >You {BaseLanguageWord.englishWordConjugation.futureTense[1]}</td>
+            <td style={{ width: 200 }} >Tu {ForeignLanguageWord.foreignWordConjugation.futureTense[1]}</td>
           </tr>
           <tr>
-            <td style={{ width: 200 }} >He/She {BaseLanguageWord.englishWordConjugation.future_tense[2]}</td>
-            <td style={{ width: 200 }} >El/Ella {ForeignLanguageWord.foreignWordConjugation.future_tense[2]}</td>
+            <td style={{ width: 200 }} >He/She {BaseLanguageWord.englishWordConjugation.futureTense[2]}</td>
+            <td style={{ width: 200 }} >El/Ella {ForeignLanguageWord.foreignWordConjugation.futureTense[2]}</td>
           </tr>
           <tr>
-            <td style={{ width: 200 }} >We {BaseLanguageWord.englishWordConjugation.future_tense[3]}</td>
-            <td style={{ width: 200 }} >Nosotros {ForeignLanguageWord.foreignWordConjugation.future_tense[3]}</td>
+            <td style={{ width: 200 }} >We {BaseLanguageWord.englishWordConjugation.futureTense[3]}</td>
+            <td style={{ width: 200 }} >Nosotros {ForeignLanguageWord.foreignWordConjugation.futureTense[3]}</td>
           </tr>
           <tr>
-            <td style={{ width: 200 }} >You (p) {BaseLanguageWord.englishWordConjugation.future_tense[4]}</td>
-            <td style={{ width: 200 }} >Vosotros {ForeignLanguageWord.foreignWordConjugation.future_tense[4]}</td>
+            <td style={{ width: 200 }} >You (p) {BaseLanguageWord.englishWordConjugation.futureTense[4]}</td>
+            <td style={{ width: 200 }} >Vosotros {ForeignLanguageWord.foreignWordConjugation.futureTense[4]}</td>
           </tr>
           <tr>
-            <td style={{ width: 200 }} >They {BaseLanguageWord.englishWordConjugation.future_tense[5]}</td>
-            <td style={{ width: 200 }} >Ellos/Ellas  {ForeignLanguageWord.foreignWordConjugation.future_tense[5]}</td>
+            <td style={{ width: 200 }} >They {BaseLanguageWord.englishWordConjugation.futureTense[5]}</td>
+            <td style={{ width: 200 }} >Ellos/Ellas  {ForeignLanguageWord.foreignWordConjugation.futureTense[5]}</td>
           </tr>
           </Modal.Body>
         </Modal>  
@@ -343,78 +343,78 @@ const StudyElement = (props: any) =>
         <Modal.Body>
         <h5>Present Tense</h5>
           <tr>
-            <td style={{ width: 200 }} >I {BaseLanguageWord.foreignWordConjugation.present_tense[0]}</td>
-            <td style={{ width: 200 }} >Yo {ForeignLanguageWord.englishWordConjugation.present_tense[0]}</td>
+            <td style={{ width: 200 }} >I {BaseLanguageWord.foreignWordConjugation.presentTense[0]}</td>
+            <td style={{ width: 200 }} >Yo {ForeignLanguageWord.englishWordConjugation.presentTense[0]}</td>
           </tr>
           <tr>
-            <td style={{ width: 200 }} >You {BaseLanguageWord.foreignWordConjugation.present_tense[1]}</td>
-            <td style={{ width: 200 }} >Tu {ForeignLanguageWord.englishWordConjugation.present_tense[1]}</td>
+            <td style={{ width: 200 }} >You {BaseLanguageWord.foreignWordConjugation.presentTense[1]}</td>
+            <td style={{ width: 200 }} >Tu {ForeignLanguageWord.englishWordConjugation.presentTense[1]}</td>
           </tr>
           <tr>
-            <td style={{ width: 200 }} >He/She {BaseLanguageWord.foreignWordConjugation.present_tense[2]}</td>
-            <td style={{ width: 200 }} >El/Ella {ForeignLanguageWord.englishWordConjugation.present_tense[2]}</td>
+            <td style={{ width: 200 }} >He/She {BaseLanguageWord.foreignWordConjugation.presentTense[2]}</td>
+            <td style={{ width: 200 }} >El/Ella {ForeignLanguageWord.englishWordConjugation.presentTense[2]}</td>
           </tr>
           <tr>
-            <td style={{ width: 200 }} >We {BaseLanguageWord.foreignWordConjugation.present_tense[3]}</td>
-            <td style={{ width: 200 }} >Nosotros {ForeignLanguageWord.englishWordConjugation.present_tense[3]}</td>
+            <td style={{ width: 200 }} >We {BaseLanguageWord.foreignWordConjugation.presentTense[3]}</td>
+            <td style={{ width: 200 }} >Nosotros {ForeignLanguageWord.englishWordConjugation.presentTense[3]}</td>
           </tr>
           <tr>
-            <td style={{ width: 200 }} >You (p) {BaseLanguageWord.foreignWordConjugation.present_tense[4]}</td>
-            <td style={{ width: 200 }} >Vosotros {ForeignLanguageWord.englishWordConjugation.present_tense[4]}</td>
+            <td style={{ width: 200 }} >You (p) {BaseLanguageWord.foreignWordConjugation.presentTense[4]}</td>
+            <td style={{ width: 200 }} >Vosotros {ForeignLanguageWord.englishWordConjugation.presentTense[4]}</td>
           </tr>
           <tr>
-            <td style={{ width: 200 }} >They {BaseLanguageWord.foreignWordConjugation.present_tense[5]}</td>
-            <td style={{ width: 200 }} >Ellos/Ellas {ForeignLanguageWord.englishWordConjugation.present_tense[5]}</td>
+            <td style={{ width: 200 }} >They {BaseLanguageWord.foreignWordConjugation.presentTense[5]}</td>
+            <td style={{ width: 200 }} >Ellos/Ellas {ForeignLanguageWord.englishWordConjugation.presentTense[5]}</td>
           </tr>
           <h5>Past Preterite Tense</h5>
           <tr>
-            <td style={{ width: 200 }} >I {BaseLanguageWord.foreignWordConjugation.past_tense[0]}</td>
-            <td style={{ width: 200 }} >Yo {ForeignLanguageWord.englishWordConjugation.past_tense[0]}</td>
+            <td style={{ width: 200 }} >I {BaseLanguageWord.foreignWordConjugation.pastTense[0]}</td>
+            <td style={{ width: 200 }} >Yo {ForeignLanguageWord.englishWordConjugation.pastTense[0]}</td>
           </tr>
           <tr>
-            <td style={{ width: 200 }} >You {BaseLanguageWord.foreignWordConjugation.past_tense[1]}</td>
-            <td style={{ width: 200 }} >Tu {ForeignLanguageWord.englishWordConjugation.past_tense[1]}</td>
+            <td style={{ width: 200 }} >You {BaseLanguageWord.foreignWordConjugation.pastTense[1]}</td>
+            <td style={{ width: 200 }} >Tu {ForeignLanguageWord.englishWordConjugation.pastTense[1]}</td>
           </tr>
           <tr>
-            <td style={{ width: 200 }} >He/She {BaseLanguageWord.foreignWordConjugation.past_tense[2]}</td>
-            <td style={{ width: 200 }} >El/Ella {ForeignLanguageWord.englishWordConjugation.past_tense[2]}</td>
+            <td style={{ width: 200 }} >He/She {BaseLanguageWord.foreignWordConjugation.pastTense[2]}</td>
+            <td style={{ width: 200 }} >El/Ella {ForeignLanguageWord.englishWordConjugation.pastTense[2]}</td>
           </tr>
           <tr>
-            <td style={{ width: 200 }} >We {BaseLanguageWord.foreignWordConjugation.past_tense[3]}</td>
-            <td style={{ width: 200 }} >Nosotros {ForeignLanguageWord.englishWordConjugation.past_tense[3]}</td>
+            <td style={{ width: 200 }} >We {BaseLanguageWord.foreignWordConjugation.pastTense[3]}</td>
+            <td style={{ width: 200 }} >Nosotros {ForeignLanguageWord.englishWordConjugation.pastTense[3]}</td>
           </tr>
           <tr>
-            <td style={{ width: 200 }} >You (p) {BaseLanguageWord.foreignWordConjugation.past_tense[4]}</td>
-            <td style={{ width: 200 }} >Vosotros {ForeignLanguageWord.englishWordConjugation.past_tense[4]}</td>
+            <td style={{ width: 200 }} >You (p) {BaseLanguageWord.foreignWordConjugation.pastTense[4]}</td>
+            <td style={{ width: 200 }} >Vosotros {ForeignLanguageWord.englishWordConjugation.pastTense[4]}</td>
           </tr>
           <tr>
-            <td style={{ width: 200 }} >They {BaseLanguageWord.foreignWordConjugation.past_tense[5]}</td>
-            <td style={{ width: 200 }} >Ellos/Ellas {ForeignLanguageWord.englishWordConjugation.past_tense[5]}</td>
+            <td style={{ width: 200 }} >They {BaseLanguageWord.foreignWordConjugation.pastTense[5]}</td>
+            <td style={{ width: 200 }} >Ellos/Ellas {ForeignLanguageWord.englishWordConjugation.pastTense[5]}</td>
           </tr>
           <h5>Future Tense</h5>
           <tr>
-            <td style={{ width: 200 }} >I {BaseLanguageWord.foreignWordConjugation.future_tense[0]}</td>
-            <td style={{ width: 200 }} >Yo {ForeignLanguageWord.englishWordConjugation.future_tense[0]}</td>
+            <td style={{ width: 200 }} >I {BaseLanguageWord.foreignWordConjugation.futureTense[0]}</td>
+            <td style={{ width: 200 }} >Yo {ForeignLanguageWord.englishWordConjugation.futureTense[0]}</td>
           </tr>
           <tr>
-            <td style={{ width: 200 }} >You {BaseLanguageWord.foreignWordConjugation.future_tense[1]}</td>
-            <td style={{ width: 200 }} >Tu {ForeignLanguageWord.englishWordConjugation.future_tense[1]}</td>
+            <td style={{ width: 200 }} >You {BaseLanguageWord.foreignWordConjugation.futureTense[1]}</td>
+            <td style={{ width: 200 }} >Tu {ForeignLanguageWord.englishWordConjugation.futureTense[1]}</td>
           </tr>
           <tr>
-            <td style={{ width: 200 }} >He/She {BaseLanguageWord.foreignWordConjugation.future_tense[2]}</td>
-            <td style={{ width: 200 }} >El/Ella {ForeignLanguageWord.englishWordConjugation.future_tense[2]}</td>
+            <td style={{ width: 200 }} >He/She {BaseLanguageWord.foreignWordConjugation.futureTense[2]}</td>
+            <td style={{ width: 200 }} >El/Ella {ForeignLanguageWord.englishWordConjugation.futureTense[2]}</td>
           </tr>
           <tr>
-            <td style={{ width: 200 }} >We {BaseLanguageWord.foreignWordConjugation.future_tense[3]}</td>
-            <td style={{ width: 200 }} >Nosotros {ForeignLanguageWord.englishWordConjugation.future_tense[3]}</td>
+            <td style={{ width: 200 }} >We {BaseLanguageWord.foreignWordConjugation.futureTense[3]}</td>
+            <td style={{ width: 200 }} >Nosotros {ForeignLanguageWord.englishWordConjugation.futureTense[3]}</td>
           </tr>
           <tr>
-            <td style={{ width: 200 }} >You (p) {BaseLanguageWord.englishWordConjugation.future_tense[4]}</td>
-            <td style={{ width: 200 }} >Vosotros {ForeignLanguageWord.englishWordConjugation.future_tense[4]}</td>
+            <td style={{ width: 200 }} >You (p) {BaseLanguageWord.englishWordConjugation.futureTense[4]}</td>
+            <td style={{ width: 200 }} >Vosotros {ForeignLanguageWord.englishWordConjugation.futureTense[4]}</td>
           </tr>
           <tr>
-            <td style={{ width: 200 }} >They {BaseLanguageWord.englishWordConjugation.future_tense[5]}</td>
-            <td style={{ width: 200 }} >Ellos/Ellas  {ForeignLanguageWord.englishWordConjugation.future_tense[5]}</td>
+            <td style={{ width: 200 }} >They {BaseLanguageWord.englishWordConjugation.futureTense[5]}</td>
+            <td style={{ width: 200 }} >Ellos/Ellas  {ForeignLanguageWord.englishWordConjugation.futureTense[5]}</td>
           </tr>
           </Modal.Body>
         </Modal>  
