@@ -13,7 +13,6 @@ const StudyElement = (props: {BaseLanguageWord: any, ForeignLanguageWord: any, F
   const isVerb = props.isVerb
   const pronouns = props.pronouns;
   const tableRowWidth = 200
-
   var showPopUp = false;
   var [showPopUp,setShowPopUp] = useState(showPopUp)
   const hidePopUp = () => { return setShowPopUp(false)}
