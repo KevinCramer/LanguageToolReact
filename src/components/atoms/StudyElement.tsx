@@ -151,41 +151,13 @@ const StudyElement = (props: {BaseLanguageWord: any, ForeignLanguageWord: any, F
     }
   }
   else {
-
-  if(showAudio && showBaseLanguageFirst){
     return  (
       <Navbar>
-        <label style= {{width: "20%", textAlign: "left"}}>{BaseLanguageWord} </label>
-        <label style= {{width: "20%", textAlign: "left"}}>{ForeignLanguageWord} </label>
-        <label style= {{width: "20%", textAlign: "left"}}><audio src={ForeignLanguageWordAudio} controls controlsList="nodownloads" autoPlay ={false}></audio> </label>
-      </Navbar>
+      <label style= {{width: "20%", textAlign: "left"}}>{BaseLanguageWord} </label>
+      <label style= {{width: "20%", textAlign: "left"}}>{ForeignLanguageWord} </label>
+      {showAudio && <label style= {{width: "20%", textAlign: "left"}}><audio src={ForeignLanguageWordAudio} controls controlsList="nodownloads" autoPlay ={false}></audio> </label>}
+    </Navbar>
     )
-  }
-  else if(showAudio && !showBaseLanguageFirst){
-    return (
-      <Navbar>
-        <label style= {{width: "20%", textAlign: "left"}}>{BaseLanguageWord} </label>
-        <label style= {{width: "20%", textAlign: "left"}}>{ForeignLanguageWord} </label>
-        <label style= {{width: "20%", textAlign: "left"}}><audio src={ForeignLanguageWordAudio} controls controlsList="nodownloads" autoPlay ={false}></audio> </label>
-      </Navbar>
-    )
-  }
-  else if(!showAudio && showBaseLanguageFirst){
-    return  (
-      <Navbar>
-        <label style= {{width: "20%", textAlign: "left"}}>{BaseLanguageWord} </label>
-        <label style= {{width: "20%", textAlign: "left"}}>{ForeignLanguageWord} </label>
-      </Navbar>
-    )
-  }
-  else { // (!showAudio && !showBaseLanguageFirst)
-    return (
-      <Navbar>
-        <label style= {{width: "20%", textAlign: "left"}}>{BaseLanguageWord} </label>
-        <label style= {{width: "20%", textAlign: "left"}}>{ForeignLanguageWord} </label>
-      </Navbar>
-    )
-  }
   }
 }
  
