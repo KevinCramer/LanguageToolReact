@@ -15,14 +15,18 @@ const StudyElement = (
     pronouns: string[]
   }) => 
 {
-  
-  const BaseLanguageWord = props.BaseLanguageWord
-  const ForeignLanguageWord = props.ForeignLanguageWord
-  const ForeignLanguageWordAudio = props.ForeignLanguageWordAudio
-  const showAudio = props.showAudio
-  const showBaseLanguageFirst= props.showBaseLanguageFirst
-  const isVerb = props.isVerb
-  const pronouns = props.pronouns;
+
+  const 
+    {
+      BaseLanguageWord,
+      ForeignLanguageWord,
+      ForeignLanguageWordAudio,
+      showAudio,
+      showBaseLanguageFirst,
+      isVerb,
+      pronouns 
+    } = props
+
   const tableRowWidth = 200
   var showPopUp = false;
   var [showPopUp,setShowPopUp] = useState(showPopUp)

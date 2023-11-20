@@ -1,11 +1,11 @@
 import { useState } from "react"
 import {Navbar} from "react-bootstrap"
-import { VerbConjugationEnglish, VerbConjugationForeign } from "../../types"
+import { VerbConjugation} from "../../types"
 
 const QuizElement = (
   props: {
-    questionWord: string | VerbConjugationEnglish | VerbConjugationForeign,
-    answerWord: string | VerbConjugationEnglish | VerbConjugationForeign,
+    questionWord: string | VerbConjugation,
+    answerWord: string | VerbConjugation,
     isVerb: boolean
     }) => {
   const [formValues, setFormValues] = useState({answer: ""})
@@ -31,9 +31,9 @@ const QuizElement = (
     let propsQuestionWord: string;
     let propsAnswerWord: string;
     if(props.isVerb){
-      propsQuestionWord= (props.questionWord as VerbConjugationEnglish | VerbConjugationForeign)
+      propsQuestionWord= (props.questionWord as VerbConjugation)
         .infinitive
-      propsAnswerWord= (props.answerWord as VerbConjugationEnglish | VerbConjugationForeign)
+      propsAnswerWord= (props.answerWord as VerbConjugation)
         .infinitive
 
     }

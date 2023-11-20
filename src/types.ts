@@ -5,17 +5,17 @@ export type WordConjugation = {
 
 }
 
-export type VerbConjugation = {
+export type VerbConjugationEnglish = {
     infinitive: string;
-}
-
-export type VerbConjugationEnglish = VerbConjugation & {
     englishWordConjugation: WordConjugation;
 }
 
-export type VerbConjugationForeign = VerbConjugation & {
+export type VerbConjugationForeign = {
+    infinitive: string;
     foreignWordConjugation: WordConjugation;
 }
+
+export type VerbConjugation = VerbConjugationEnglish | VerbConjugationForeign;
 
 export type Word = {
     topic: string;

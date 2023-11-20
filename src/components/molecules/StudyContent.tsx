@@ -9,25 +9,13 @@ import ReactGA from 'react-ga';
 import {useSelector,useDispatch} from "react-redux"
 import {flip} from "../../redux/displayAudio";
 import { Language, VerbConjugationEnglish, Word } from "../../types";
+import { scramble } from "../../helpers";
 
 const StudyContent = () => {
-  var currentLanguageName: string = languages[0].languageName
-  var [currentLanguageName,setLanguageName] = useState(currentLanguageName)
+  var currentLanguage: Language = languages[0]
+  var [currentLanguage,setLanguage] = useState(currentLanguage);
 
-  var currentLanguage: Word[] = languages[0].content
-  var [currentLanguage,setLanguage] = useState(currentLanguage)
-
-  var currentLanguageTopics: string[] = languages[0].topics
-  var [currentLanguageTopics,setCurrentLanguageTopics] = useState(currentLanguageTopics)
-
-  var currentNumForeignAlphabets: number = languages[0].numForeignAlphabets
-  var [currentNumForeignAlphabets,
-    setCurrentNumForeignAlphabets] = useState(currentNumForeignAlphabets)
-
-  var currentPronouns: string[] = languages[0].pronouns
-  var [currentPronouns,setCurrentPronouns] = useState(currentPronouns)
-
-  var currentTopic = currentLanguageTopics[0]
+  var currentTopic = currentLanguage.topics[0]
   var [currentTopic,setCurrentTopic] = useState(currentTopic)
 
   var showBaseLanguage = true;
@@ -37,27 +25,14 @@ const StudyContent = () => {
   var currentAlphabet: number = 0;
   var [currentAlphabet,setCurrentAlphabet] = useState(currentAlphabet)
   const changeCurrentAlphabet = () => { return setCurrentAlphabet(
-    currentAlphabet = (currentAlphabet +1)% currentNumForeignAlphabets)}
+    currentAlphabet = (currentAlphabet +1)% currentLanguage.numForeignAlphabets)}
 
   var showTrueOrder = true;
   var [showTrueOrder,setShowTrueOrder] = useState(showTrueOrder)
   const changeOrder = () => { return setShowTrueOrder(!showTrueOrder)}
     
   const changeCurrentLanguage = 
-    ( languageName: string,
-      languageContent: Word[], 
-      topics: string[], 
-      numForeignAlphabets: number,
-      currentPronouns: string[]
-    ) => 
-    { 
-      setLanguage(languageContent);
-      setLanguageName(languageName);
-      setCurrentLanguageTopics(topics);
-      setCurrentNumForeignAlphabets(numForeignAlphabets);
-      setCurrentPronouns(currentPronouns);
-
-    }
+    ( language: Language) => setLanguage(language);
   const changeCurrentTopic = (topic: string) => { return setCurrentTopic(topic)}
 
   var quiz = false
@@ -101,7 +76,7 @@ const StudyContent = () => {
                 showAudio = {audioBool} 
                 showBaseLanguageFirst = {showBaseLanguage} 
                 isVerb = {currentTopic=== "Verbs"}
-                pronouns = {currentPronouns}
+                pronouns = {currentLanguage.pronouns}
               />
             </div>                    
           )}
@@ -111,33 +86,30 @@ const StudyContent = () => {
   }
   if(showTrueOrder)
   {
-    var topicWords = currentLanguage
+    var topicWords = currentLanguage.content
       .filter((word: { topic: string; }) => {return word.topic === currentTopic} )
   }
   else
   {
-    var topicWords = currentLanguage
-      .filter((word: { topic: string; }) => {return word.topic === currentTopic})
-      .sort((a, b) => 0.5 - Math.random());
+    var topicWords = scramble(currentLanguage.content
+      .filter((word: { topic: string; }) => {return word.topic === currentTopic}))
+      
   }
   return (
     <div style = {{backgroundColor: "white", height: "100vh"}}>
       <Container>    
         <NavbarBs className = "bg-white shadow-sm mb-3">
           <Container>
-            <DropdownButton id="Languages" title={String(currentLanguageName)} size = "sm"> 
+            <DropdownButton id="Languages" title=
+              {String(currentLanguage.languageName)} size = "sm"> 
               {languages.map((languageItem: Language) =>
                 <Dropdown.Item onClick = {() => [changeCurrentLanguage(
-                  languageItem.languageName,
-                  languageItem.content,
-                  languageItem.topics,
-                  languageItem.numForeignAlphabets,
-                  languageItem.pronouns),
+                  languageItem),
                 setCurrentAlphabet(0),changeCurrentTopic(languageItem.topics[0]) ]}>
                   {languageItem.languageName}</Dropdown.Item>)}
             </DropdownButton>
             <DropdownButton id="Topics" title={"Topic: " + currentTopic} size = "sm">
-              {currentLanguageTopics.map((topic: string) =>
+              {currentLanguage.topics.map((topic: string) =>
                 <Dropdown.Item onClick = {() => changeCurrentTopic(topic)}>{topic}</Dropdown.Item>)}
             </DropdownButton>
             <DropdownButton id="Parameters" title="Parameters" size = "sm">
@@ -146,8 +118,9 @@ const StudyContent = () => {
               <Dropdown.Item onClick = {() => dispatch(flip())}>Show/Hide Audio</Dropdown.Item>
               <Dropdown.Item onClick = {changeOrder}>
                 {showTrueOrder? "random ordering":"default ordering"}</Dropdown.Item>
+              {currentLanguage.numForeignAlphabets > 1 && 
               <Dropdown.Item onClick = {changeCurrentAlphabet}>
-                {currentNumForeignAlphabets>1 ? "Toggle foreign alphabet": null}</Dropdown.Item>
+                Toggle foreign alphabet</Dropdown.Item>}
             </DropdownButton>                
           </Container>
         </NavbarBs>
