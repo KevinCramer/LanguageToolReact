@@ -11,7 +11,7 @@ import arabicAudioPurple from '../data/audio/purple.mp3';
 import arabicAudioRed from '../data/audio/red.mp3';
 import arabicAudioWhite from '../data/audio/white.mp3';
 import arabicAudioYellow from '../data/audio/yellow.mp3';
-import { Word, Language, VerbConjugationEnglish, } from '../types';
+import {Word1, Word2, Word3, Language, VerbConjugationEnglish, } from '../types';
 
 export const englishVerbs: { [key: string]: VerbConjugationEnglish } = {
   'to call': {
@@ -41,7 +41,7 @@ export const englishPronouns: string[]= ['I','You','He/She','We','You (p)','They
 const dutchTopics: string[] = [
   "Clothes","Colours","Food","Family","Numbers", "Pronunciation", "Pronouns", "Question Words"]
 
-const dutch: Word[] = [
+const dutch: Word1[] = [
   {topic: "Food", englishWord: "potato", foreignWord: ["aardappel"], foreignAudio: ""},
   {topic: "Food", englishWord: "bread", foreignWord: ["brood"], foreignAudio: ""},
   {topic: "Food", englishWord: "meat", foreignWord: ["vlees"], foreignAudio: ""},
@@ -149,7 +149,7 @@ const arabicTopics: string[] = [
   "Clothes","Colours","Food","Numbers", "Body", "Pronouns", "Adjectives",
   "Pronouns","Root verbs ", "Question Words","Home","Buildings","Professions","Hard to Read"]
 
-const arabic: Word[] = [
+const arabic: Word2[] = [
   {topic: "Clothes", englishWord: "belt", foreignWord: ["ḥizām", "حِزَام"], foreignAudio: ""},
   {topic: "Clothes", englishWord: "cap", foreignWord: ["qubba'ah", "قُبَّعَة"], foreignAudio: ""},
   {topic: "Clothes", englishWord: "clothes", foreignWord: ["malābis", "مَلَابِس"], foreignAudio: ""},
@@ -444,7 +444,7 @@ const arabic: Word[] = [
 
 const spanishTopics: string[] = ["Clothes","Colours","Food","Numbers", "Verbs"]
 const spanishPronouns: string[] = ["Yo","Tu","El/Ella","Nosotros", "Vosotros", "Ellos/Ellas"]
-const spanish: Word[] = [
+const spanish: Word1[] = [
   {topic: "Food", englishWord: "potato", foreignWord: ["papa"], foreignAudio: ""},
   {topic: "Food", englishWord: "bread", foreignWord: ["pan"], foreignAudio: ""},
   {topic: "Food", englishWord: "meat", foreignWord: ["carne"], foreignAudio: ""},
@@ -521,7 +521,7 @@ const spanish: Word[] = [
 
 const frenchTopics: string[] = ["Numbers"]
 
-const french: Word[] = [
+const french: Word1[] = [
   {topic: "Numbers", englishWord: "one", foreignWord: ["un"], foreignAudio: ""},
   {topic: "Numbers", englishWord: "two ", foreignWord: ["deux"], foreignAudio: ""},
   {topic: "Numbers", englishWord: "three", foreignWord: ["trois"], foreignAudio: ""},
@@ -536,7 +536,7 @@ const french: Word[] = [
 
 const italianTopics: string[] = ["Numbers"]
 
-const italian: Word[] = [
+const italian: Word1[] = [
   {topic: "Numbers", englishWord: "one", foreignWord: ["uno"], foreignAudio: ""},
   {topic: "Numbers", englishWord: "two ", foreignWord: ["due"], foreignAudio: ""},
   {topic: "Numbers", englishWord: "three", foreignWord: ["tre"], foreignAudio: ""},
@@ -551,7 +551,7 @@ const italian: Word[] = [
 
 const germanTopics: string[] = ["Food"]
 
-const german: Word[] = [
+const german: Word1[] = [
   {topic: "Food", englishWord: "potato", foreignWord: ["kartoffel"], foreignAudio: ""},
   {topic: "Food", englishWord: "bread", foreignWord: ["brot"], foreignAudio: ""},
   {topic: "Food", englishWord: "meat", foreignWord: ["fleisch"], foreignAudio: ""},
@@ -566,7 +566,7 @@ const german: Word[] = [
 
 const japaneseTopics: string[] = ["Numbers"]
 
-const japanese: Word[] = [
+const japanese: Word3[] = [
   {topic: "Numbers", englishWord: "one", foreignWord: ["ichi", "いち","一"], foreignAudio: ""},
   {topic: "Numbers", englishWord: "two ", foreignWord: ["ni", "に","二"], foreignAudio: ""},
   {topic: "Numbers", englishWord: "three",foreignWord: ["san", "さん","三"], foreignAudio: ""},

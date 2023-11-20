@@ -1,3 +1,5 @@
+import { FixedSizeArray } from "fixed-size-array";
+
 export type WordConjugation = {
     pastTense: string[];
     presentTense: string[];
@@ -17,12 +19,28 @@ export type VerbConjugationForeign = {
 
 export type VerbConjugation = VerbConjugationEnglish | VerbConjugationForeign;
 
-export type Word = {
+export type Word1 = {
     topic: string;
     englishWord:string | VerbConjugationEnglish;
-    foreignWord: (string | VerbConjugationForeign)[];
+    foreignWord: FixedSizeArray<1, string | VerbConjugationForeign>;
     foreignAudio: string;
 }
+
+export type Word2 = {
+    topic: string;
+    englishWord:string | VerbConjugationEnglish;
+    foreignWord: FixedSizeArray<2, string | VerbConjugationForeign>;
+    foreignAudio: string;
+}
+
+export type Word3 = {
+    topic: string;
+    englishWord:string | VerbConjugationEnglish;
+    foreignWord: FixedSizeArray<3, string | VerbConjugationForeign>;
+    foreignAudio: string;
+}
+
+export type Word = Word1 | Word2 | Word3;
 
 export type Language = {
     languageName: string;
