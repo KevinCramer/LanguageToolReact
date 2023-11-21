@@ -442,7 +442,7 @@ const arabic: Word2[] = [
   {topic: "Hard to Read", englishWord: "", foreignWord: ["",""], foreignAudio: ""},
 ]
 
-const spanishTopics: string[] = ["Clothes","Colours","Food","Numbers", "Verbs"]
+const spanishTopics: string[] = ["Clothes","Colours","Food","Numbers", "Verbs", "Pronouns", "Body", "Buildings", "Professions", "Home", "Question words", "Adjectives"]
 const spanishPronouns: string[] = ["Yo","Tu","El/Ella","Nosotros", "Vosotros", "Ellos/Ellas"]
 const spanish: Word1[] = [
   {topic: "Food", englishWord: "potato", foreignWord: ["papa"], foreignAudio: ""},
@@ -485,6 +485,24 @@ const spanish: Word1[] = [
   {topic: "Numbers", englishWord: "eight", foreignWord: ["ocho"], foreignAudio: ""},
   {topic: "Numbers", englishWord: "nine", foreignWord: ["nueve"], foreignAudio: ""},
   {topic: "Numbers", englishWord: "ten", foreignWord: ["diez"], foreignAudio: ""},
+  {topic: "Pronouns", englishWord: "I", foreignWord: ["yo"], foreignAudio: ""},
+  {topic: "Pronouns", englishWord: "you", foreignWord: ["tu"], foreignAudio: ""},
+  {topic: "Pronouns", englishWord: "he", foreignWord: ["el"], foreignAudio: ""},
+  {topic: "Pronouns", englishWord: "she", foreignWord: ["ella"], foreignAudio: ""},
+  {topic: "Pronouns", englishWord: "we", foreignWord: ["nosotros"], foreignAudio: ""},
+  {topic: "Pronouns", englishWord: "you (p)", foreignWord: ["vosotros"], foreignAudio: ""},
+  {topic: "Pronouns", englishWord: "they", foreignWord: ["ellos/ellas"], foreignAudio: ""},
+  {topic: "Question words", englishWord: "why", foreignWord: ["por qué"], foreignAudio: ""},
+  {topic: "Question words", englishWord: "what", foreignWord: ["qué"], foreignAudio: ""},
+  {topic: "Question words", englishWord: "where", foreignWord: ["dónde"], foreignAudio: ""},
+  {topic: "Question words", englishWord: "how", foreignWord: ["cómo"], foreignAudio: ""},
+  {topic: "Question words", englishWord: "when", foreignWord: ["cuando"], foreignAudio: ""},
+  {topic: "Adjectives", englishWord: "intelligent", foreignWord: ["inteligente"], foreignAudio: ""},
+  {topic: "Buildings", englishWord: "airport", foreignWord: ["aeropuerto"], foreignAudio: ""},
+  {topic: "Professions", englishWord: "lawyer", foreignWord: ["abogado/abogada"], foreignAudio: ""},
+  {topic: "Body", englishWord: "hand", foreignWord: ["mano"], foreignAudio: ""},
+  {topic: "Home", englishWord: "window", foreignWord: ["ventana"], foreignAudio: ""},
+
   {
     topic: "Verbs", 
     englishWord: englishVerbs['to call'],
@@ -581,12 +599,12 @@ const japanese: Word3[] = [
 
 export const languages: Language[] = 
         [
-          {languageName: "Arabic", content: arabic, topics: arabicTopics, pronouns: [], numForeignAlphabets: 2},
-          {languageName: "Dutch", content: dutch, topics: dutchTopics, pronouns: [], numForeignAlphabets: 1},
-          {languageName: "Spanish", content: spanish, topics: spanishTopics, pronouns: spanishPronouns, numForeignAlphabets: 1},
-          {languageName: "French", content: french, topics: frenchTopics, pronouns: [], numForeignAlphabets: 1},
-          {languageName: "German", content: german, topics: germanTopics, pronouns: [], numForeignAlphabets: 1},
-          {languageName: "Italian", content: italian, topics: italianTopics, pronouns: [], numForeignAlphabets: 1},
-          {languageName: "Japanese", content: japanese, topics: japaneseTopics, pronouns: [], numForeignAlphabets: 3} 
+          {languageName: "Arabic", content: arabic, topics: arabicTopics.sort(), pronouns: [], numForeignAlphabets: 2},
+          {languageName: "Dutch", content: dutch, topics: dutchTopics.sort(), pronouns: [], numForeignAlphabets: 1},
+          {languageName: "Spanish", content: spanish, topics: spanishTopics.sort(), pronouns: spanishPronouns, numForeignAlphabets: 1},
+          {languageName: "French", content: french, topics: frenchTopics.sort(), pronouns: [], numForeignAlphabets: 1},
+          {languageName: "German", content: german, topics: germanTopics.sort(), pronouns: [], numForeignAlphabets: 1},
+          {languageName: "Italian", content: italian, topics: italianTopics.sort(), pronouns: [], numForeignAlphabets: 1},
+          {languageName: "Japanese", content: japanese, topics: japaneseTopics.sort(), pronouns: [], numForeignAlphabets: 3} 
         ]
       

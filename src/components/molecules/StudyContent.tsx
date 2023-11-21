@@ -113,9 +113,10 @@ const StudyContent = () => {
                 <Dropdown.Item onClick = {() => changeCurrentTopic(topic)}>{topic}</Dropdown.Item>)}
             </DropdownButton>
             <DropdownButton id="Parameters" title="Parameters" size = "sm">
-              <Dropdown.Item onClick = {changeBaseLanguage}>Toggle base language</Dropdown.Item>
-              <Dropdown.Item onClick = {changeQuizState}>Revise/Quiz</Dropdown.Item>
-              <Dropdown.Item onClick = {() => dispatch(flip())}>Show/Hide Audio</Dropdown.Item>
+              <Dropdown.Item onClick = {changeBaseLanguage}>toggle base language</Dropdown.Item>
+              <Dropdown.Item onClick = {changeQuizState}>{quiz? 'revise': 'quiz'}</Dropdown.Item>
+              <Dropdown.Item onClick = {() => dispatch(flip())}>
+                {audioBool? 'hide audio':'show audio'}</Dropdown.Item>
               <Dropdown.Item onClick = {changeOrder}>
                 {showTrueOrder? "random ordering":"default ordering"}</Dropdown.Item>
               {currentLanguage.numForeignAlphabets > 1 && 
