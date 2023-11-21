@@ -42,10 +42,14 @@ export type Word3 = {
 
 export type Word = Word1 | Word2 | Word3;
 
+export type Topic = {
+    name: string;
+    hasOrdering: boolean;
+}
 export type Language = {
     languageName: string;
     content: Word[];
-    topics: string[];
+    topics: Topic[];
     pronouns: string[];
     numForeignAlphabets: number;
 }

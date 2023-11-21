@@ -8,7 +8,7 @@ import {languages} from "../../data/words";
 import ReactGA from 'react-ga';
 import {useSelector,useDispatch} from "react-redux"
 import {flip} from "../../redux/displayAudio";
-import { Language, VerbConjugationEnglish, Word } from "../../types";
+import { Language, Topic, VerbConjugationEnglish, Word } from "../../types";
 import { scramble } from "../../helpers";
 
 const StudyContent = () => {
@@ -33,7 +33,7 @@ const StudyContent = () => {
     
   const changeCurrentLanguage = 
     ( language: Language) => setLanguage(language);
-  const changeCurrentTopic = (topic: string) => { return setCurrentTopic(topic)}
+  const changeCurrentTopic = (topic: Topic) => { return setCurrentTopic(topic);}
 
   var quiz = false
   var [quiz,setQuiz] = useState(quiz)
@@ -46,7 +46,7 @@ const StudyContent = () => {
 
   function ToggleQuiz(){
     if (quiz) {
-      const isVerb = currentTopic=== "Verbs"
+      const isVerb = currentTopic.name=== "Verbs"
       return ( 
         <div>
           {topicWords.map((pair: Word) =>
@@ -56,7 +56,7 @@ const StudyContent = () => {
               <QuizElement questionWord = { showBaseLanguage? 
                 pair.englishWord: pair.foreignWord[currentAlphabet] }
               answerWord = {showBaseLanguage? pair.foreignWord[currentAlphabet]:
-                pair.englishWord} isVerb = {currentTopic=== "Verbs"}/>
+                pair.englishWord} isVerb = {currentTopic.name=== "Verbs"}/>
             </div>                    
           )}
         </div>
@@ -75,7 +75,7 @@ const StudyContent = () => {
                 ForeignLanguageWordAudio = {pair.foreignAudio} 
                 showAudio = {audioBool} 
                 showBaseLanguageFirst = {showBaseLanguage} 
-                isVerb = {currentTopic=== "Verbs"}
+                isVerb = {currentTopic.name=== "Verbs"}
                 pronouns = {currentLanguage.pronouns}
               />
             </div>                    
@@ -87,12 +87,15 @@ const StudyContent = () => {
   if(showTrueOrder)
   {
     var topicWords = currentLanguage.content
-      .filter((word: { topic: string; }) => {return word.topic === currentTopic} )
+      .filter((word: { topic: string; }) => {return word.topic === currentTopic.name} )
+    if(!currentTopic.hasOrdering){
+      topicWords.sort((a: Word, b: Word) => a.englishWord < b.englishWord ? -1: 1)
+    }
   }
   else
   {
     var topicWords = scramble(currentLanguage.content
-      .filter((word: { topic: string; }) => {return word.topic === currentTopic}))
+      .filter((word: { topic: string; }) => {return word.topic === currentTopic.name}))
       
   }
   return (
@@ -108,9 +111,10 @@ const StudyContent = () => {
                 setCurrentAlphabet(0),changeCurrentTopic(languageItem.topics[0]) ]}>
                   {languageItem.languageName}</Dropdown.Item>)}
             </DropdownButton>
-            <DropdownButton id="Topics" title={"Topic: " + currentTopic} size = "sm">
-              {currentLanguage.topics.map((topic: string) =>
-                <Dropdown.Item onClick = {() => changeCurrentTopic(topic)}>{topic}</Dropdown.Item>)}
+            <DropdownButton id="Topics" title={"Topic: " + currentTopic.name} size = "sm">
+              {currentLanguage.topics.map((topic: Topic) =>
+                <Dropdown.Item onClick = {() => 
+                  changeCurrentTopic(topic)}>{topic.name}</Dropdown.Item>)}
             </DropdownButton>
             <DropdownButton id="Parameters" title="Parameters" size = "sm">
               <Dropdown.Item onClick = {changeBaseLanguage}>toggle base language</Dropdown.Item>

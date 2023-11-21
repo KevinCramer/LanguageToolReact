@@ -11,7 +11,7 @@ import arabicAudioPurple from '../data/audio/purple.mp3';
 import arabicAudioRed from '../data/audio/red.mp3';
 import arabicAudioWhite from '../data/audio/white.mp3';
 import arabicAudioYellow from '../data/audio/yellow.mp3';
-import {Word1, Word2, Word3, Language, VerbConjugationEnglish, } from '../types';
+import {Word1, Word2, Word3, Language, VerbConjugationEnglish, Topic, } from '../types';
 
 export const englishVerbs: { [key: string]: VerbConjugationEnglish } = {
   'to call': {
@@ -38,8 +38,16 @@ export const englishVerbs: { [key: string]: VerbConjugationEnglish } = {
 
 export const englishPronouns: string[]= ['I','You','He/She','We','You (p)','They']
 
-const dutchTopics: string[] = [
-  "Clothes","Colours","Food","Family","Numbers", "Pronunciation", "Pronouns", "Question Words"]
+const dutchTopics: Topic[] = [
+  {name:"Clothes", hasOrdering:false},
+  {name:"Colours", hasOrdering:false},
+  {name:"Food", hasOrdering:false},
+  {name:"Family", hasOrdering:false},
+  {name:"Numbers", hasOrdering:true},
+  {name:"Pronunciation", hasOrdering:false},
+  {name:"Pronouns", hasOrdering:true},
+  {name:"Question Words", hasOrdering:false}
+]
 
 const dutch: Word1[] = [
   {topic: "Food", englishWord: "potato", foreignWord: ["aardappel"], foreignAudio: ""},
@@ -145,9 +153,22 @@ const dutch: Word1[] = [
 
 ]
 
-const arabicTopics: string[] = [
-  "Clothes","Colours","Food","Numbers", "Body", "Pronouns", "Adjectives",
-  "Pronouns","Root verbs ", "Question Words","Home","Buildings","Professions","Hard to Read"]
+const arabicTopics: Topic[] = [
+  {name:"Clothes", hasOrdering:false},
+  {name:"Colours", hasOrdering:false},
+  {name:"Food", hasOrdering:false},
+  {name:"Numbers", hasOrdering:true},
+  {name:"Body", hasOrdering:false},
+  {name:"Adjectives", hasOrdering:false},
+  {name:"Pronouns", hasOrdering:true},
+  {name:"Root verbs", hasOrdering:false},
+  {name:"Question Words", hasOrdering:false},
+  {name:"Home", hasOrdering:false},
+  {name:"Buildings", hasOrdering:false},
+  {name:"Professions", hasOrdering:false},
+  {name:"Hard to Read", hasOrdering:false},
+
+]
 
 const arabic: Word2[] = [
   {topic: "Clothes", englishWord: "belt", foreignWord: ["ḥizām", "حِزَام"], foreignAudio: ""},
@@ -297,11 +318,11 @@ const arabic: Word2[] = [
   {topic: "Question Words", englishWord: "when", foreignWord: ["miten"], foreignAudio: ""},
   {topic: "Question Words", englishWord: "how", foreignWord: ["kef"], foreignAudio: ""},
   {topic: "Question Words", englishWord: "why", foreignWord: ["lay"], foreignAudio: ""},
-  {topic: "Root verbs ", englishWord: "eat", foreignWord: ["kul"], foreignAudio: ""},
-  {topic: "Root verbs ", englishWord: "drink", foreignWord: ["sharb"], foreignAudio: ""},
-  {topic: "Root verbs ", englishWord: "sleep", foreignWord: ["nam"], foreignAudio: ""},
-  {topic: "Root verbs ", englishWord: "love", foreignWord: ["hub"], foreignAudio: ""},
-  {topic: "Root verbs ", englishWord: "go", foreignWord: ["thehab"], foreignAudio: ""},
+  {topic: "Root verbs", englishWord: "eat", foreignWord: ["kul"], foreignAudio: ""},
+  {topic: "Root verbs", englishWord: "drink", foreignWord: ["sharb"], foreignAudio: ""},
+  {topic: "Root verbs", englishWord: "sleep", foreignWord: ["nam"], foreignAudio: ""},
+  {topic: "Root verbs", englishWord: "love", foreignWord: ["hub"], foreignAudio: ""},
+  {topic: "Root verbs", englishWord: "go", foreignWord: ["thehab"], foreignAudio: ""},
   {topic: "Professions", englishWord: "butcher", foreignWord: ["jazzār", "جَزَّار"], foreignAudio: ""},
   {topic: "Professions", englishWord: "fireman", foreignWord: ["rajulu l-iṭfā`", "رَجُلُ الإِطْفاء"], foreignAudio: ""},
   {topic: "Professions", englishWord: "barber", foreignWord: ["ḥanllāq", "حًلَّاق"], foreignAudio: ""},
@@ -391,7 +412,7 @@ const arabic: Word2[] = [
   {topic: "Home", englishWord: "bottle", foreignWord: ["qārūrah", "قارورَة"], foreignAudio: ""},
   {topic: "Home", englishWord: "soap", foreignWord: ["ṣābūn", "صَابُون"], foreignAudio: ""},
   {topic: "Home", englishWord: "toothpaste", foreignWord: ["ma'jūnu l-asnān", "مَعْجُونُ الأَسْنَان"], foreignAudio: ""},
-  {topic: "Home", englishWord: "Iron", foreignWord: ["mikwāh", "مِكْوَاة"], foreignAudio: ""},
+  {topic: "Home", englishWord: "iron", foreignWord: ["mikwāh", "مِكْوَاة"], foreignAudio: ""},
   {topic: "Home", englishWord: "bucket", foreignWord: ["dalw", "دَلْو"], foreignAudio: ""},
   {topic: "Home", englishWord: "doll", foreignWord: ["dumyah", "دُمْيَة"], foreignAudio: ""},
   {topic: "Home", englishWord: "aquarium", foreignWord: ["ḥawḍ asmak lilzzaīnah", "حَوْض أَسمَك لِلزَّينَة"], foreignAudio: ""},
@@ -442,7 +463,22 @@ const arabic: Word2[] = [
   {topic: "Hard to Read", englishWord: "", foreignWord: ["",""], foreignAudio: ""},
 ]
 
-const spanishTopics: string[] = ["Clothes","Colours","Food","Numbers", "Verbs", "Pronouns", "Body", "Buildings", "Professions", "Home", "Question words", "Adjectives"]
+const spanishTopics: Topic[] = [
+  {name:"Clothes", hasOrdering:false},
+  {name:"Colours", hasOrdering:false},
+  {name:"Food", hasOrdering:false},
+  {name:"Numbers", hasOrdering:true},
+  {name:"Verbs", hasOrdering:false},
+  {name:"Pronouns", hasOrdering:true},
+  {name:"Body", hasOrdering:false},
+  {name:"Buildings", hasOrdering:false},
+  {name:"Professions", hasOrdering:false},
+  {name:"Home", hasOrdering:false},
+  {name:"Question words", hasOrdering:false},
+  {name:"Adjectives", hasOrdering:false},
+
+]
+
 const spanishPronouns: string[] = ["Yo","Tu","El/Ella","Nosotros", "Vosotros", "Ellos/Ellas"]
 const spanish: Word1[] = [
   {topic: "Food", englishWord: "potato", foreignWord: ["papa"], foreignAudio: ""},
@@ -536,8 +572,9 @@ const spanish: Word1[] = [
         ],
     foreignAudio: ""}
 ]
-
-const frenchTopics: string[] = ["Numbers"]
+const frenchTopics: Topic[] = [
+  {name:"Numbers", hasOrdering:true},
+]
 
 const french: Word1[] = [
   {topic: "Numbers", englishWord: "one", foreignWord: ["un"], foreignAudio: ""},
@@ -551,8 +588,9 @@ const french: Word1[] = [
   {topic: "Numbers", englishWord: "nine", foreignWord: ["neuf"], foreignAudio: ""},
   {topic: "Numbers", englishWord: "ten", foreignWord: ["dix"], foreignAudio: ""}
 ]
-
-const italianTopics: string[] = ["Numbers"]
+const italianTopics: Topic[] = [
+  {name:"Numbers", hasOrdering:true},
+]
 
 const italian: Word1[] = [
   {topic: "Numbers", englishWord: "one", foreignWord: ["uno"], foreignAudio: ""},
@@ -567,7 +605,9 @@ const italian: Word1[] = [
   {topic: "Numbers", englishWord: "ten", foreignWord: ["dieci"], foreignAudio: ""}
 ]
 
-const germanTopics: string[] = ["Food"]
+const germanTopics: Topic[] = [
+  {name:"Numbers", hasOrdering:true},
+]
 
 const german: Word1[] = [
   {topic: "Food", englishWord: "potato", foreignWord: ["kartoffel"], foreignAudio: ""},
@@ -582,7 +622,9 @@ const german: Word1[] = [
   {topic: "Food", englishWord: "cheese", foreignWord: ["käse"], foreignAudio: ""}, 
 ]
 
-const japaneseTopics: string[] = ["Numbers"]
+const japaneseTopics: Topic[] = [
+  {name:"Numbers", hasOrdering:true},
+]
 
 const japanese: Word3[] = [
   {topic: "Numbers", englishWord: "one", foreignWord: ["ichi", "いち","一"], foreignAudio: ""},
