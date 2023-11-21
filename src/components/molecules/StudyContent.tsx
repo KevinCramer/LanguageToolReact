@@ -86,7 +86,7 @@ const StudyContent = () => {
   }
   if(showTrueOrder)
   {
-    var topicWords = currentLanguage.content
+    var topicWords = currentTopic.words
       .filter((word: { topic: string; }) => {return word.topic === currentTopic.name} )
     if(!currentTopic.hasOrdering){
       topicWords.sort((a: Word, b: Word) => a.englishWord < b.englishWord ? -1: 1)
@@ -94,7 +94,7 @@ const StudyContent = () => {
   }
   else
   {
-    var topicWords = scramble(currentLanguage.content
+    var topicWords = scramble(currentTopic.words
       .filter((word: { topic: string; }) => {return word.topic === currentTopic.name}))
       
   }

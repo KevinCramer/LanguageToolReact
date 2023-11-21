@@ -45,10 +45,10 @@ export type Word = Word1 | Word2 | Word3;
 export type Topic = {
     name: string;
     hasOrdering: boolean;
+    words: Word[];
 }
 export type Language = {
     languageName: string;
-    content: Word[];
     topics: Topic[];
     pronouns: string[];
     numForeignAlphabets: number;
