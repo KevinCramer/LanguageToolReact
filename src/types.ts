@@ -1,4 +1,4 @@
-import { FixedSizeArray } from "fixed-size-array";
+import { FixedSizeArray } from 'fixed-size-array';
 
 export type WordConjugation = {
     pastTense: string[];

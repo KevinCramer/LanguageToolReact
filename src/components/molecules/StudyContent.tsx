@@ -1,16 +1,16 @@
-import {useState } from "react";
-import QuizElement from "../atoms/QuizElement";
-import StudyElement from "../atoms/StudyElement";
-import {Container, Navbar as NavbarBs} from "react-bootstrap";
+import {useState } from 'react';
+import QuizElement from '../atoms/QuizElement';
+import StudyElement from '../atoms/StudyElement';
+import {Container, Navbar as NavbarBs} from 'react-bootstrap';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
-import {languages} from "../../data/words";
+import {languages} from '../../data/words';
 import ReactGA from 'react-ga';
-import {useSelector,useDispatch} from "react-redux"
-import {flip} from "../../redux/displayAudio";
+import {useSelector,useDispatch} from 'react-redux'
+import {flip} from '../../redux/displayAudio';
 import { Language, Topic, VerbConjugationEnglish, 
-  Word, Word1, Word2, Word3 } from "../../types";
-import { scramble } from "../../helpers";
+  Word, Word1, Word2, Word3 } from '../../types';
+import { scramble } from '../../helpers';
 
 const StudyContent = () => {
   var currentLanguage: Language = languages[0]
@@ -39,7 +39,7 @@ const StudyContent = () => {
   var quiz = false
   var [quiz,setQuiz] = useState(quiz)
   const changeQuizState = () => {
-    ReactGA.event({category: "quizStateWasChanged", action: "hdfg",label: "dasfg",value: 4});
+    ReactGA.event({category: 'quizStateWasChanged', action: 'hdfg',label: 'dasfg',value: 4});
     return setQuiz((!quiz))}
     
   const audioBool = useSelector((state:any) => state.audio.audioBool);
@@ -47,7 +47,7 @@ const StudyContent = () => {
 
   function ToggleQuiz(){
     if (quiz) {
-      const isVerb = currentTopic.name=== "Verbs"
+      const isVerb = currentTopic.name=== 'Verbs'
       return ( 
         <div>
           {topicWords.map((pair: Word) =>
@@ -57,7 +57,7 @@ const StudyContent = () => {
               <QuizElement questionWord = { showBaseLanguage? 
                 pair.englishWord: pair.foreignWord[currentAlphabet] }
               answerWord = {showBaseLanguage? pair.foreignWord[currentAlphabet]:
-                pair.englishWord} isVerb = {currentTopic.name=== "Verbs"}/>
+                pair.englishWord} isVerb = {currentTopic.name=== 'Verbs'}/>
             </div>                    
           )}
         </div>
@@ -76,7 +76,7 @@ const StudyContent = () => {
                 ForeignLanguageWordAudio = {pair.foreignAudio} 
                 showAudio = {audioBool} 
                 showBaseLanguageFirst = {showBaseLanguage} 
-                isVerb = {currentTopic.name=== "Verbs"}
+                isVerb = {currentTopic.name=== 'Verbs'}
                 pronouns = {currentLanguage.pronouns}
               />
             </div>                    
@@ -100,7 +100,7 @@ const StudyContent = () => {
       
   }
   return (
-    <div style = {{backgroundColor: "white", height: "100vh"}}>
+    <div style = {{backgroundColor: 'white', height: '100vh'}}>
       <Container>    
         <NavbarBs className = "bg-white shadow-sm mb-3">
           <Container>
@@ -112,7 +112,7 @@ const StudyContent = () => {
                 setCurrentAlphabet(0),changeCurrentTopic(languageItem.topics[0]) ]}>
                   {languageItem.languageName}</Dropdown.Item>)}
             </DropdownButton>
-            <DropdownButton id="Topics" title={"Topic: " + currentTopic.name} size = "sm">
+            <DropdownButton id="Topics" title={'Topic: ' + currentTopic.name} size = "sm">
               {currentLanguage.topics.map((topic: Topic) =>
                 <Dropdown.Item onClick = {() => 
                   changeCurrentTopic(topic)}>{topic.name}</Dropdown.Item>)}
@@ -123,7 +123,7 @@ const StudyContent = () => {
               <Dropdown.Item onClick = {() => dispatch(flip())}>
                 {audioBool? 'hide audio':'show audio'}</Dropdown.Item>
               <Dropdown.Item onClick = {changeOrder}>
-                {showTrueOrder? "random ordering":"default ordering"}</Dropdown.Item>
+                {showTrueOrder? 'random ordering':'default ordering'}</Dropdown.Item>
               {currentLanguage.numForeignAlphabets > 1 && 
               <Dropdown.Item onClick = {changeCurrentAlphabet}>
                 toggle foreign alphabet</Dropdown.Item>}

@@ -1,6 +1,6 @@
-import { useState } from "react"
-import {Navbar} from "react-bootstrap"
-import { VerbConjugation} from "../../types"
+import { useState } from 'react'
+import {Navbar} from 'react-bootstrap'
+import { VerbConjugation} from '../../types'
 
 const QuizElement = (
   props: {
@@ -8,8 +8,8 @@ const QuizElement = (
     answerWord: string | VerbConjugation,
     isVerb: boolean
     }) => {
-  const [formValues, setFormValues] = useState({answer: ""})
-  const [response, setResponse] = useState("")
+  const [formValues, setFormValues] = useState({answer: ''})
+  const [response, setResponse] = useState('')
   const handleChange = (e:any) => {
     const {name,value} = e.target;
     setFormValues({...formValues, [name]: value})
@@ -18,7 +18,7 @@ const QuizElement = (
   const roughlyEqual = (a: string, b: string ) => {return (a.toLowerCase() ===b)};
   const onSubmit = (e:any, submittedAnswer:string, correctAnswer:string) => {
     e.preventDefault();
-    const doesItMatch = (roughlyEqual(submittedAnswer,correctAnswer)) ? "✔" : 
+    const doesItMatch = (roughlyEqual(submittedAnswer,correctAnswer)) ? '✔' : 
       ` ✘ the correct answer is  '${correctAnswer}' not '${submittedAnswer}'`
 
     setResponse(doesItMatch)
@@ -46,11 +46,11 @@ const QuizElement = (
       <Navbar>
         <form onSubmit={e => onSubmit(e, formValues.answer, propsAnswerWord)}>
           <div className="ui form">
-            <label style= {{width: "200px"}}>{propsQuestionWord} </label>
+            <label style= {{width: '200px'}}>{propsQuestionWord} </label>
             <input type="text" name="answer" placeholder="" value={formValues.answer} 
               onChange = {handleChange} autoComplete="off" autoCorrect="off" 
               spellCheck ="false" autoCapitalize="off"/>
-            <label style= {{width: "40px"}}></label>
+            <label style= {{width: '40px'}}></label>
           </div>
         </form>
         <div> {response}</div>

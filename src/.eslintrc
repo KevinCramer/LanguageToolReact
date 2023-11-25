@@ -11,6 +11,13 @@
        "no-redeclare": "off",
        "no-console": "warn",
        "@typescript-eslint/no-redeclare": "off",
+       "@typescript-eslint/quotes": [
+        "error",
+        "single",
+        {
+          "allowTemplateLiterals": true
+        }
+      ],
        "@typescript-eslint/no-explicit-any": "warn",
        "@stylistic/js/indent": ["warn", 2],
        "@stylistic/js/max-len": ["warn", 100],
