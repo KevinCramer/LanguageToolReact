@@ -20,21 +20,18 @@ export type VerbConjugationForeign = {
 export type VerbConjugation = VerbConjugationEnglish | VerbConjugationForeign;
 
 export type Word1 = {
-    topic: string;
     englishWord:string | VerbConjugationEnglish;
     foreignWord: FixedSizeArray<1, string | VerbConjugationForeign>;
     foreignAudio: string;
 }
 
 export type Word2 = {
-    topic: string;
     englishWord:string | VerbConjugationEnglish;
     foreignWord: FixedSizeArray<2, string | VerbConjugationForeign>;
     foreignAudio: string;
 }
 
 export type Word3 = {
-    topic: string;
     englishWord:string | VerbConjugationEnglish;
     foreignWord: FixedSizeArray<3, string | VerbConjugationForeign>;
     foreignAudio: string;
@@ -42,14 +39,26 @@ export type Word3 = {
 
 export type Word = Word1 | Word2 | Word3;
 
-export type Topic = {
+export type Topic1 = {
     name: string;
     hasOrdering: boolean;
-    words: Word[];
+    words: Word1[];
 }
+export type Topic2 = {
+    name: string;
+    hasOrdering: boolean;
+    words: Word2[];
+}
+export type Topic3 = {
+    name: string;
+    hasOrdering: boolean;
+    words: Word3[];
+}
+
+export type Topic = Topic1 | Topic2 | Topic3;
 export type Language = {
     languageName: string;
-    topics: Topic[];
+    topics: Topic1[] | Topic2[] | Topic3[];
     pronouns: string[];
     numForeignAlphabets: number;
 }

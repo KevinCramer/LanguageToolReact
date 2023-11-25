@@ -8,7 +8,8 @@ import {languages} from "../../data/words";
 import ReactGA from 'react-ga';
 import {useSelector,useDispatch} from "react-redux"
 import {flip} from "../../redux/displayAudio";
-import { Language, Topic, VerbConjugationEnglish, Word } from "../../types";
+import { Language, Topic, VerbConjugationEnglish, 
+  Word, Word1, Word2, Word3 } from "../../types";
 import { scramble } from "../../helpers";
 
 const StudyContent = () => {
@@ -87,15 +88,15 @@ const StudyContent = () => {
   if(showTrueOrder)
   {
     var topicWords = currentTopic.words
-      .filter((word: { topic: string; }) => {return word.topic === currentTopic.name} )
     if(!currentTopic.hasOrdering){
-      topicWords.sort((a: Word, b: Word) => a.englishWord < b.englishWord ? -1: 1)
+      topicWords.sort((a: Word,
+        b: Word) => a.englishWord < b.englishWord ? -1: 1)
     }
   }
   else
   {
-    var topicWords = scramble(currentTopic.words
-      .filter((word: { topic: string; }) => {return word.topic === currentTopic.name}))
+    var topicWords = scramble(
+      currentTopic.words as (Word)[]) as Word1[] | Word2[] | Word3[]
       
   }
   return (
@@ -125,7 +126,7 @@ const StudyContent = () => {
                 {showTrueOrder? "random ordering":"default ordering"}</Dropdown.Item>
               {currentLanguage.numForeignAlphabets > 1 && 
               <Dropdown.Item onClick = {changeCurrentAlphabet}>
-                Toggle foreign alphabet</Dropdown.Item>}
+                toggle foreign alphabet</Dropdown.Item>}
             </DropdownButton>                
           </Container>
         </NavbarBs>
