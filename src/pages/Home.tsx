@@ -1,4 +1,4 @@
-import "./text.css"
+import './text.css'
 
 export function Home(){
   return <div>

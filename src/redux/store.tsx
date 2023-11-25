@@ -1,4 +1,4 @@
-import { configureStore } from "@reduxjs/toolkit";
+import { configureStore } from '@reduxjs/toolkit';
 import audioReducer from './displayAudio'
 export const store = configureStore({
   reducer: {
