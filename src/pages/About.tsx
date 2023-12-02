@@ -5,7 +5,7 @@ export function About(){
   return (
     <div style={{fontSize: '2vh'}} className = "content2">
       <p > 
-            LingoTool gives you what you need to create your own tailor made language learning experiences.
+            LingoCommand gives you what you need to create your own tailor made language learning experiences.
 
       </p>
       <p>
