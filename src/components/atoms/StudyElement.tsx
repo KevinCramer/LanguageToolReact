@@ -32,22 +32,22 @@ const StudyElement = (
   var [showPopUp,setShowPopUp] = useState(showPopUp)
   const hidePopUp = () => { return setShowPopUp(false)}
   const displayPopUp = () => { return setShowPopUp(true)}
-  const baseLanguageLabel = <label style= {{width: '20%', textAlign: 'left'}}>
+  const baseLanguageLabel = <label style= {{width: '20%', textAlign: 'center'}}>
     {isVerb? (showBaseLanguageFirst ? BaseLanguageWord.infinitive:
       ForeignLanguageWord.infinitive): BaseLanguageWord} </label>
   const foreignLanguageLabelVerb= <label onClick={displayPopUp} 
-    style= {{width: '20%', textAlign: 'left', color: 'purple', textDecorationLine: 'underline'}}>
+    style= {{width: '20%', textAlign: 'center', color: 'purple', textDecorationLine: 'underline'}}>
     { showBaseLanguageFirst? ForeignLanguageWord.infinitive: BaseLanguageWord.infinitive} </label>
-  const foreignLanguageLabelNoVerb = <label style= {{width: '20%', textAlign: 'left'}}>
+  const foreignLanguageLabelNoVerb = <label style= {{width: '20%', textAlign: 'center'}}>
     {ForeignLanguageWord} </label>
   const foreignLanguageLabel = isVerb ? foreignLanguageLabelVerb: foreignLanguageLabelNoVerb
   return (
-    <Navbar>
+    <Navbar style={{justifyContent:'center'}}>
       {isVerb? (showBaseLanguageFirst ? baseLanguageLabel: foreignLanguageLabel): baseLanguageLabel}
       {isVerb && <label style= {{width: '5%'}}></label>}
       {isVerb? (showBaseLanguageFirst ? foreignLanguageLabel: baseLanguageLabel):
         foreignLanguageLabel}
-      {showAudio && <label style= {{width: '20%', textAlign: 'left'}}>
+      {showAudio && <label style= {{width: '20%', textAlign: 'center'}}>
         <audio src={ForeignLanguageWordAudio} controls controlsList="nodownloads"
           autoPlay ={false}></audio> </label>}
       {isVerb && <Modal show ={showPopUp} onHide={hidePopUp}>

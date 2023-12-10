@@ -4,11 +4,11 @@ export function Home(){
   return <div>
     <div className = "content2">
       <h1> 
-                        Welcome to LingoCommand
+                        LINGO
       </h1>
-      <p>
-                        Built to help you learn foreign languages faster and more efficiently.
-      </p>
+      <h5> 
+                        COMMAND
+      </h5>
     </div>    
   </div> 
 }

@@ -43,7 +43,7 @@ const QuizElement = (
     }
 
     return (
-      <Navbar>
+      <Navbar style={{justifyContent:'center'}}>
         <form onSubmit={e => onSubmit(e, formValues.answer, propsAnswerWord)}>
           <div className="ui form">
             <label style= {{width: '200px'}}>{propsQuestionWord} </label>

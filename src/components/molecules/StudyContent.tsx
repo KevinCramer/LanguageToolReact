@@ -100,24 +100,27 @@ const StudyContent = () => {
       
   }
   return (
-    <div style = {{backgroundColor: 'white', height: '100vh'}}>
+    <div>
       <Container>    
-        <NavbarBs className = "bg-white shadow-sm mb-3">
-          <Container>
-            <DropdownButton id="Languages" title=
-              {String(currentLanguage.languageName)} size = "sm"> 
+        <NavbarBs>
+          <Container style={{justifyContent:'center'}}>
+            <DropdownButton style={{margin: '0px 20px 0px 20px'}} variant= 'secondary'
+              id="Languages" title=
+                {String(currentLanguage.languageName)} size = "sm"> 
               {languages.map((languageItem: Language) =>
                 <Dropdown.Item onClick = {() => [changeCurrentLanguage(
                   languageItem),
                 setCurrentAlphabet(0),changeCurrentTopic(languageItem.topics[0]) ]}>
                   {languageItem.languageName}</Dropdown.Item>)}
             </DropdownButton>
-            <DropdownButton id="Topics" title={'Topic: ' + currentTopic.name} size = "sm">
+            <DropdownButton style={{margin: '0px 20px 0px 20px'}} variant= 'secondary'
+              id="Topics" title={'Topic: ' + currentTopic.name} size = "sm">
               {currentLanguage.topics.map((topic: Topic) =>
                 <Dropdown.Item onClick = {() => 
                   changeCurrentTopic(topic)}>{topic.name}</Dropdown.Item>)}
             </DropdownButton>
-            <DropdownButton id="Parameters" title="Parameters" size = "sm">
+            <DropdownButton style={{margin: '0px 20px 0px 20px'}} variant= 'secondary'
+              id="Parameters" title="Parameters" size = "sm">
               <Dropdown.Item onClick = {changeBaseLanguage}>toggle base language</Dropdown.Item>
               <Dropdown.Item onClick = {changeQuizState}>{quiz? 'revise': 'quiz'}</Dropdown.Item>
               <Dropdown.Item onClick = {() => dispatch(flip())}>
