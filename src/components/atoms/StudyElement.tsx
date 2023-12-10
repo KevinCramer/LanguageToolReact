@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import {Navbar, Modal} from 'react-bootstrap'
+import {Navbar, Modal, Button} from 'react-bootstrap'
 import { modalTenses } from '../../constants'
 import { englishPronouns } from '../../data/words'
 
@@ -47,7 +47,16 @@ const StudyElement = (
       {isVerb? (showBaseLanguageFirst ? foreignLanguageLabel: baseLanguageLabel):
         foreignLanguageLabel}
       {showAudio && <div >
-        <audio src={ForeignLanguageWordAudio} controls style={{height:'30px', verticalAlign:'bottom'}}></audio> </div>}
+        <audio src={ForeignLanguageWordAudio} id={ForeignLanguageWordAudio}></audio>
+        <Button size="sm" variant="secondary" aria-disabled={!ForeignLanguageWord} onClick={() => { 
+          var audio = document.getElementById(ForeignLanguageWordAudio) as any;
+          if (audio.paused) {
+            audio.play();
+          } else {
+            audio.pause();
+            audio.currentTime = 0; // Reset to the beginning of the audio
+          }}} > {ForeignLanguageWordAudio? 'audio' : 'no audio'}</Button>
+      </div>}
       {isVerb && <Modal show ={showPopUp} onHide={hidePopUp}>
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vleft">
