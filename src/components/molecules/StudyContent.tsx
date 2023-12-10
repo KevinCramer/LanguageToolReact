@@ -119,7 +119,7 @@ const StudyContent = () => {
                 <Dropdown.Item onClick = {() => 
                   changeCurrentTopic(topic)}>{topic.name}</Dropdown.Item>)}
             </DropdownButton>
-            <DropdownButton style={{margin: '0px 20px 0px 20px'}} variant= 'secondary'
+            <DropdownButton style={{margin: '0px 20px 0px 20px'}} variant= 'secondary' align="end"
               id="Parameters" title="Parameters" size = "sm">
               <Dropdown.Item onClick = {changeBaseLanguage}>toggle base language</Dropdown.Item>
               <Dropdown.Item onClick = {changeQuizState}>{quiz? 'revise': 'quiz'}</Dropdown.Item>
