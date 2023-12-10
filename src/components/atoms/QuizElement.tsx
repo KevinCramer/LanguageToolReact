@@ -46,11 +46,10 @@ const QuizElement = (
       <Navbar style={{justifyContent:'center'}}>
         <form onSubmit={e => onSubmit(e, formValues.answer, propsAnswerWord)}>
           <div className="ui form">
-            <label style= {{width: '200px'}}>{propsQuestionWord} </label>
+            <label style= {{width: '200px', textAlign:'center'}}>{propsQuestionWord} </label>
             <input type="text" name="answer" placeholder="" value={formValues.answer} 
               onChange = {handleChange} autoComplete="off" autoCorrect="off" 
               spellCheck ="false" autoCapitalize="off"/>
-            <label style= {{width: '40px'}}></label>
           </div>
         </form>
         <div> {response}</div>

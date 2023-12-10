@@ -44,7 +44,6 @@ const StudyElement = (
   return (
     <Navbar style={{justifyContent:'center'}}>
       {isVerb? (showBaseLanguageFirst ? baseLanguageLabel: foreignLanguageLabel): baseLanguageLabel}
-      {isVerb && <label style= {{width: '5%'}}></label>}
       {isVerb? (showBaseLanguageFirst ? foreignLanguageLabel: baseLanguageLabel):
         foreignLanguageLabel}
       {showAudio && <label style= {{width: '20%', textAlign: 'center'}}>
@@ -52,7 +51,7 @@ const StudyElement = (
           autoPlay ={false}></audio> </label>}
       {isVerb && <Modal show ={showPopUp} onHide={hidePopUp}>
         <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-vcenter">
+          <Modal.Title id="contained-modal-title-vleft">
             {ForeignLanguageWord.infinitive}
           </Modal.Title>
         </Modal.Header>

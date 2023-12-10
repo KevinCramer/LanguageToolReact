@@ -2,3 +2,21 @@
   color: rgb(74, 74, 74);
 
 }
+
+label {
+  border: 1px solid gray  !important;
+  border-radius: 6px !important;
+  margin-top: 10px!important;
+  margin-right: 10px!important;
+  padding-top: 2px!important;
+  padding-bottom: 2px!important;
+}
+
+input {
+  border: 1px solid gray  !important;
+  border-radius: 6px !important;
+  margin-top: 10px!important;
+  margin-right: 10px!important;
+  padding-top: 2px!important;
+  padding-bottom: 2px!important;
+}
