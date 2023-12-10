@@ -10,21 +10,26 @@ const TRACKING_ID = 'UA-253414467-1'
 ReactGA.initialize(TRACKING_ID)
 
 function App() {
-  return(
-    <div className = "Main">
-      <div className= "overlay"></div>
-      <div className = "content">
-        <Navbar/>
-        <Routes>
-          <Route path ="/" element = {<Home/>}/>
-          <Route path ="/about" element = {<About/>}/>
-          <Route path ="/study" element = {<StudyContent/>}/>
-        </Routes>  
-      </div>
-    </div> 
-    
-  )
+  return (
+    <div >
+      <Navbar />
+      <Routes>
+        <Route path="/" element={ <div style= {styles.container}> <Home /></div>} />
+        <Route path="/about" element={ <div style= {styles.container}> <About /></div>} />
+        <Route path="/study" element={<StudyContent />} />
+      </Routes>
+    </div>
+  );
 }
+
+const styles = {
+  container: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    minHeight: '70vh', // 100% of the viewport height
+  },
+};
 
 export default App
 
