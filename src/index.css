@@ -21,3 +21,19 @@ input {
   padding-top: 2px!important;
   padding-bottom: 2px!important;
 }
+
+audio {
+  width: 100px;
+}
+
+audio::-webkit-media-controls-volume-slider, 
+audio::-webkit-media-controls-timeline-container, 
+audio::-webkit-media-controls-time-remaining-display,  
+audio::-webkit-media-controls-timeline {
+  display: none !important;
+}
+
+audio::-webkit-media-controls-panel {
+  padding: 0 0 0 1px;
+  justify-content: center; /*control panel elements are flex positioned*/
+}

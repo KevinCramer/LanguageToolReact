@@ -46,9 +46,8 @@ const StudyElement = (
       {isVerb? (showBaseLanguageFirst ? baseLanguageLabel: foreignLanguageLabel): baseLanguageLabel}
       {isVerb? (showBaseLanguageFirst ? foreignLanguageLabel: baseLanguageLabel):
         foreignLanguageLabel}
-      {showAudio && <label style= {{width: '20%', textAlign: 'center'}}>
-        <audio src={ForeignLanguageWordAudio} controls controlsList="nodownloads"
-          autoPlay ={false}></audio> </label>}
+      {showAudio && <div >
+        <audio src={ForeignLanguageWordAudio} controls style={{height:'30px', verticalAlign:'bottom'}}></audio> </div>}
       {isVerb && <Modal show ={showPopUp} onHide={hidePopUp}>
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vleft">
