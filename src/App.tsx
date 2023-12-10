@@ -15,7 +15,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={ <div style= {
-          {display:'flex', flexDirection: 'column', justifyContent:'center', minHeight: '70vh'}
+          {display:'flex', flexDirection: 'column', justifyContent:'center', minHeight: '50vh'}
         }> <Home /></div>} />
         <Route path="/about" element={ <div style= {
           {display:'flex', flexDirection: 'column', justifyContent:'center', minHeight: '70vh'}
