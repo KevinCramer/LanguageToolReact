@@ -14,22 +14,17 @@ function App() {
     <div >
       <Navbar />
       <Routes>
-        <Route path="/" element={ <div style= {styles.container}> <Home /></div>} />
-        <Route path="/about" element={ <div style= {styles.container}> <About /></div>} />
+        <Route path="/" element={ <div style= {
+          {display:'flex', flexDirection: 'column', justifyContent:'center', minHeight: '70vh'}
+        }> <Home /></div>} />
+        <Route path="/about" element={ <div style= {
+          {display:'flex', flexDirection: 'column', justifyContent:'center', minHeight: '70vh'}
+        }> <About /></div>} />
         <Route path="/study" element={<StudyContent />} />
       </Routes>
     </div>
   );
 }
-
-const styles = {
-  container: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    minHeight: '70vh', // 100% of the viewport height
-  },
-};
 
 export default App
 
