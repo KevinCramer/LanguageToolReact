@@ -23,18 +23,22 @@ export type Word1 = {
     englishWord:string | VerbConjugationEnglish;
     foreignWord: FixedSizeArray<1, string | VerbConjugationForeign>;
     foreignAudio: string;
+    order?: number
+
 }
 
 export type Word2 = {
     englishWord:string | VerbConjugationEnglish;
     foreignWord: FixedSizeArray<2, string | VerbConjugationForeign>;
     foreignAudio: string;
+    order?: number
 }
 
 export type Word3 = {
     englishWord:string | VerbConjugationEnglish;
     foreignWord: FixedSizeArray<3, string | VerbConjugationForeign>;
     foreignAudio: string;
+    order?: number
 }
 
 export type Word = Word1 | Word2 | Word3;

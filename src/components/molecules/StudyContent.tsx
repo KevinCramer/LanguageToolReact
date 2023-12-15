@@ -88,7 +88,11 @@ const StudyContent = () => {
   if(showTrueOrder)
   {
     var topicWords = currentTopic.words
-    if(!currentTopic.hasOrdering){
+    if(currentTopic.hasOrdering){
+      topicWords.sort((a: Word,
+        b: Word) => (a.order || 0) < (b.order || 0) ? -1: 1)
+    }
+    else {
       topicWords.sort((a: Word,
         b: Word) => a.englishWord < b.englishWord ? -1: 1)
     }
