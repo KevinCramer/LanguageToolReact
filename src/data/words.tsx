@@ -646,12 +646,12 @@ const japaneseTopics: Topic3[] = [
 
 export const languages: Language[] = 
         [
-          {languageName: 'Arabic', topics: sortTopics(arabicTopics), pronouns: [], numForeignAlphabets: 2},
-          {languageName: 'Dutch', topics: sortTopics(dutchTopics), pronouns: [], numForeignAlphabets: 1},
           {languageName: 'Spanish', topics: sortTopics(spanishTopics), pronouns: spanishPronouns, numForeignAlphabets: 1},
           {languageName: 'French', topics: sortTopics(frenchTopics), pronouns: [], numForeignAlphabets: 1},
           {languageName: 'German', topics: sortTopics(germanTopics), pronouns: [], numForeignAlphabets: 1},
+          {languageName: 'Japanese', topics: sortTopics(japaneseTopics), pronouns: [], numForeignAlphabets: 3},
           {languageName: 'Italian', topics: sortTopics(italianTopics), pronouns: [], numForeignAlphabets: 1},
-          {languageName: 'Japanese', topics: sortTopics(japaneseTopics), pronouns: [], numForeignAlphabets: 3} 
+          {languageName: 'Arabic', topics: sortTopics(arabicTopics), pronouns: [], numForeignAlphabets: 2},
+          {languageName: 'Dutch', topics: sortTopics(dutchTopics), pronouns: [], numForeignAlphabets: 1},
         ]
       
