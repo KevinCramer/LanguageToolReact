@@ -1,16 +1,68 @@
 /* eslint-disable @stylistic/js/max-len */
 
-import arabicAudioBlack from '../data/audio/black.mp3';
-import arabicAudioBlue from '../data/audio/blue.mp3';
-import arabicAudioBrown from '../data/audio/brown.mp3';
-import arabicAudioGreen from '../data/audio/green.mp3';
-import arabicAudioGrey from '../data/audio/grey.mp3';
-import arabicAudioOrange from '../data/audio/orange.mp3';
-import arabicAudioPink from '../data/audio/pink.mp3';
-import arabicAudioPurple from '../data/audio/purple.mp3';
-import arabicAudioRed from '../data/audio/red.mp3';
-import arabicAudioWhite from '../data/audio/white.mp3';
-import arabicAudioYellow from '../data/audio/yellow.mp3';
+import arabicAudioBlack from '../data/audio/arabic/arabic_colours/black.mp3';
+import arabicAudioBlue from '../data/audio/arabic/arabic_colours/blue.mp3';
+import arabicAudioBrown from '../data/audio/arabic/arabic_colours/brown.mp3';
+import arabicAudioGreen from '../data/audio/arabic/arabic_colours/green.mp3';
+import arabicAudioGrey from '../data/audio/arabic/arabic_colours/grey.mp3';
+import arabicAudioOrange from '../data/audio/arabic/arabic_colours/orange.mp3';
+import arabicAudioPink from '../data/audio/arabic/arabic_colours/pink.mp3';
+import arabicAudioPurple from '../data/audio/arabic/arabic_colours/purple.mp3';
+import arabicAudioRed from '../data/audio/arabic/arabic_colours/red.mp3';
+import arabicAudioWhite from '../data/audio/arabic/arabic_colours/white.mp3';
+import arabicAudioYellow from '../data/audio/arabic/arabic_colours/yellow.mp3';
+
+import spanishAudioAwake from '../data/audio/spanish/spanish_adjectives/awake.mp3';
+import spanishAudioBad from '../data/audio/spanish/spanish_adjectives/bad.mp3';
+import spanishAudioBig from '../data/audio/spanish/spanish_adjectives/big.mp3';
+import spanishAudioBoring from '../data/audio/spanish/spanish_adjectives/boring.mp3';
+import spanishAudioCalm from '../data/audio/spanish/spanish_adjectives/calm.mp3';
+import spanishAudioCheap from '../data/audio/spanish/spanish_adjectives/cheap.mp3';
+import spanishAudioClean from '../data/audio/spanish/spanish_adjectives/clean.mp3';
+import spanishAudioClosed from '../data/audio/spanish/spanish_adjectives/closed.mp3';
+import spanishAudioCold from '../data/audio/spanish/spanish_adjectives/cold.mp3';
+import spanishAudioComplicated from '../data/audio/spanish/spanish_adjectives/complicated.mp3';
+import spanishAudioCrazy from '../data/audio/spanish/spanish_adjectives/crazy.mp3';
+import spanishAudioDelicious from '../data/audio/spanish/spanish_adjectives/delicious.mp3';
+import spanishAudioDirty from '../data/audio/spanish/spanish_adjectives/dirty.mp3';
+import spanishAudioDisgusting from '../data/audio/spanish/spanish_adjectives/disgusting.mp3';
+import spanishAudioDry from '../data/audio/spanish/spanish_adjectives/dry.mp3';
+import spanishAudioEmpty from '../data/audio/spanish/spanish_adjectives/empty.mp3';
+import spanishAudioExpensive from '../data/audio/spanish/spanish_adjectives/expensive.mp3';
+import spanishAudioFair from '../data/audio/spanish/spanish_adjectives/fair.mp3';
+import spanishAudioFast from '../data/audio/spanish/spanish_adjectives/fast.mp3';
+import spanishAudioFat from '../data/audio/spanish/spanish_adjectives/fat.mp3';
+import spanishAudioFull from '../data/audio/spanish/spanish_adjectives/full.mp3';
+import spanishAudioFun from '../data/audio/spanish/spanish_adjectives/fun.mp3';
+import spanishAudioGood from '../data/audio/spanish/spanish_adjectives/good.mp3';
+import spanishAudioHappy from '../data/audio/spanish/spanish_adjectives/happy.mp3';
+import spanishAudioHealthy from '../data/audio/spanish/spanish_adjectives/healthy.mp3';
+import spanishAudioHot from '../data/audio/spanish/spanish_adjectives/hot.mp3';
+import spanishAudioIntelligent from '../data/audio/spanish/spanish_adjectives/intelligent.mp3';
+import spanishAudioNew from '../data/audio/spanish/spanish_adjectives/new.mp3';
+import spanishAudioOld from '../data/audio/spanish/spanish_adjectives/old.mp3';
+import spanishAudioOpen from '../data/audio/spanish/spanish_adjectives/open.mp3';
+import spanishAudioPoor from '../data/audio/spanish/spanish_adjectives/poor.mp3';
+import spanishAudioPretty from '../data/audio/spanish/spanish_adjectives/pretty.mp3';
+import spanishAudioRich from '../data/audio/spanish/spanish_adjectives/rich.mp3';
+import spanishAudioSad from '../data/audio/spanish/spanish_adjectives/sad.mp3';
+import spanishAudioSalty from '../data/audio/spanish/spanish_adjectives/savory-salty.mp3';
+import spanishAudioShort from '../data/audio/spanish/spanish_adjectives/short.mp3';
+import spanishAudioSick from '../data/audio/spanish/spanish_adjectives/sick.mp3';
+import spanishAudioSimple from '../data/audio/spanish/spanish_adjectives/simple.mp3';
+import spanishAudioSlow from '../data/audio/spanish/spanish_adjectives/slow.mp3';
+import spanishAudioSmall from '../data/audio/spanish/spanish_adjectives/small.mp3';
+import spanishAudioStrong from '../data/audio/spanish/spanish_adjectives/strong.mp3';
+import spanishAudioStupid from '../data/audio/spanish/spanish_adjectives/stupid.mp3';
+import spanishAudioSweet from '../data/audio/spanish/spanish_adjectives/sweet.mp3';
+import spanishAudioTall from '../data/audio/spanish/spanish_adjectives/tall.mp3';
+import spanishAudioThin from '../data/audio/spanish/spanish_adjectives/thin.mp3';
+import spanishAudioTired from '../data/audio/spanish/spanish_adjectives/tired.mp3';
+import spanishAudioUgly from '../data/audio/spanish/spanish_adjectives/ugly.mp3';
+import spanishAudioUnfair from '../data/audio/spanish/spanish_adjectives/unfair.mp3';
+import spanishAudioWeak from '../data/audio/spanish/spanish_adjectives/weak.mp3';
+import spanishAudioWet from '../data/audio/spanish/spanish_adjectives/wet.mp3';
+
 import { sortTopics } from '../helpers';
 import {Language, VerbConjugationEnglish, Topic1, Topic2, Topic3 } from '../types';
 
@@ -578,56 +630,57 @@ const spanishTopics: Topic1[] = [
     { englishWord: 'when', foreignWord: ['cuando'], foreignAudio: ''},
   ]},
   {name:'Adjectives', hasOrdering:false, words: [
-    { englishWord: 'open', foreignWord: ['abierto'], foreignAudio: ''},
-    { englishWord: 'boring', foreignWord: ['aburrido'], foreignAudio: ''},
-    { englishWord: 'tall', foreignWord: ['alto'], foreignAudio: ''},
-    { englishWord: 'short', foreignWord: ['bajo'], foreignAudio: ''},
-    { englishWord: 'cheap', foreignWord: ['barato'], foreignAudio: ''},
-    { englishWord: 'good', foreignWord: ['bueno'], foreignAudio: ''},
-    { englishWord: 'hot', foreignWord: ['caluroso'], foreignAudio: ''},
-    { englishWord: 'tired', foreignWord: ['cansado'], foreignAudio: ''},
-    { englishWord: 'expensive', foreignWord: ['caro'], foreignAudio: ''},
-    { englishWord: 'closed', foreignWord: ['cerrado'], foreignAudio: ''},
-    { englishWord: 'complicated', foreignWord: ['complicado'], foreignAudio: ''},
-    { englishWord: 'weak', foreignWord: ['débil'], foreignAudio: ''},
-    { englishWord: 'thin', foreignWord: ['delgado'], foreignAudio: ''},
-    { englishWord: 'delicious', foreignWord: ['delicioso'], foreignAudio: ''},
-    { englishWord: 'awake', foreignWord: ['despierto'], foreignAudio: ''},
-    { englishWord: 'fun', foreignWord: ['divertido'], foreignAudio: ''},
-    { englishWord: 'sweet', foreignWord: ['dulce'], foreignAudio: ''},
-    { englishWord: 'sick', foreignWord: ['enfermo'], foreignAudio: ''},
-    { englishWord: 'happy', foreignWord: ['feliz'], foreignAudio: ''},
-    { englishWord: 'ugly', foreignWord: ['feo'], foreignAudio: ''},
-    { englishWord: 'cold', foreignWord: ['frío'], foreignAudio: ''},
-    { englishWord: 'strong', foreignWord: ['fuerte'], foreignAudio: ''},
-    { englishWord: 'fat', foreignWord: ['gordo'], foreignAudio: ''},
-    { englishWord: 'big', foreignWord: ['grande'], foreignAudio: ''},
-    { englishWord: 'unfair', foreignWord: ['injusto'], foreignAudio: ''},
-    { englishWord: 'intelligent', foreignWord: ['inteligente'], foreignAudio: ''},
-    { englishWord: 'fair', foreignWord: ['justo'], foreignAudio: ''},
-    { englishWord: 'slow', foreignWord: ['lento'], foreignAudio: ''},
-    { englishWord: 'clean', foreignWord: ['limpio'], foreignAudio: ''},
-    { englishWord: 'pretty', foreignWord: ['lindo'], foreignAudio: ''},
-    { englishWord: 'full', foreignWord: ['lleno'], foreignAudio: ''},
-    { englishWord: 'crazy', foreignWord: ['loco'], foreignAudio: ''},
-    { englishWord: 'bad', foreignWord: ['malo'], foreignAudio: ''},
-    { englishWord: 'wet', foreignWord: ['mojado'], foreignAudio: ''},
-    { englishWord: 'new', foreignWord: ['nuevo'], foreignAudio: ''},
-    { englishWord: 'small', foreignWord: ['pequeño'], foreignAudio: ''},
-    { englishWord: 'poor', foreignWord: ['pobre'], foreignAudio: ''},
-    { englishWord: 'fast', foreignWord: ['rápido'], foreignAudio: ''},
-    { englishWord: 'disgusting', foreignWord: ['repugnante'], foreignAudio: ''},
-    { englishWord: 'rich', foreignWord: ['rico'], foreignAudio: ''},
-    { englishWord: 'savory/salty', foreignWord: ['salado'], foreignAudio: ''},
-    { englishWord: 'healthy', foreignWord: ['sano'], foreignAudio: ''},
-    { englishWord: 'dry', foreignWord: ['seco'], foreignAudio: ''},
-    { englishWord: 'simple', foreignWord: ['simple'], foreignAudio: ''},
-    { englishWord: 'dirty', foreignWord: ['sucio'], foreignAudio: ''},
-    { englishWord: 'stupid', foreignWord: ['tonto'], foreignAudio: ''},
-    { englishWord: 'calm/tranquil', foreignWord: ['tranquilo'], foreignAudio: ''},
-    { englishWord: 'sad', foreignWord: ['triste'], foreignAudio: ''},
-    { englishWord: 'empty', foreignWord: ['vacío'], foreignAudio: ''},
-    { englishWord: 'old', foreignWord: ['viejo'], foreignAudio: ''},
+    // https://www.fluentu.com/blog/spanish/common-spanish-adjectives/#toc_2
+    { englishWord: 'open', foreignWord: ['abierto'], foreignAudio: spanishAudioOpen},
+    { englishWord: 'boring', foreignWord: ['aburrido'], foreignAudio: spanishAudioBoring},
+    { englishWord: 'tall', foreignWord: ['alto'], foreignAudio: spanishAudioTall},
+    { englishWord: 'short', foreignWord: ['bajo'], foreignAudio: spanishAudioShort},
+    { englishWord: 'cheap', foreignWord: ['barato'], foreignAudio: spanishAudioCheap},
+    { englishWord: 'good', foreignWord: ['bueno'], foreignAudio: spanishAudioGood},
+    { englishWord: 'hot', foreignWord: ['caluroso'], foreignAudio: spanishAudioHot},
+    { englishWord: 'tired', foreignWord: ['cansado'], foreignAudio: spanishAudioTired},
+    { englishWord: 'expensive', foreignWord: ['caro'], foreignAudio: spanishAudioExpensive},
+    { englishWord: 'closed', foreignWord: ['cerrado'], foreignAudio: spanishAudioClosed},
+    { englishWord: 'complicated', foreignWord: ['complicado'], foreignAudio: spanishAudioComplicated},
+    { englishWord: 'weak', foreignWord: ['débil'], foreignAudio: spanishAudioWeak},
+    { englishWord: 'thin', foreignWord: ['delgado'], foreignAudio: spanishAudioThin},
+    { englishWord: 'delicious', foreignWord: ['delicioso'], foreignAudio: spanishAudioDelicious},
+    { englishWord: 'awake', foreignWord: ['despierto'], foreignAudio: spanishAudioAwake},
+    { englishWord: 'fun', foreignWord: ['divertido'], foreignAudio: spanishAudioFun},
+    { englishWord: 'sweet', foreignWord: ['dulce'], foreignAudio: spanishAudioSweet},
+    { englishWord: 'sick', foreignWord: ['enfermo'], foreignAudio: spanishAudioSick},
+    { englishWord: 'happy', foreignWord: ['feliz'], foreignAudio: spanishAudioHappy},
+    { englishWord: 'ugly', foreignWord: ['feo'], foreignAudio: spanishAudioUgly},
+    { englishWord: 'cold', foreignWord: ['frío'], foreignAudio: spanishAudioCold},
+    { englishWord: 'strong', foreignWord: ['fuerte'], foreignAudio: spanishAudioStrong},
+    { englishWord: 'fat', foreignWord: ['gordo'], foreignAudio: spanishAudioFat},
+    { englishWord: 'big', foreignWord: ['grande'], foreignAudio: spanishAudioBig},
+    { englishWord: 'unfair', foreignWord: ['injusto'], foreignAudio: spanishAudioUnfair},
+    { englishWord: 'intelligent', foreignWord: ['inteligente'], foreignAudio: spanishAudioIntelligent},
+    { englishWord: 'fair', foreignWord: ['justo'], foreignAudio: spanishAudioFair},
+    { englishWord: 'slow', foreignWord: ['lento'], foreignAudio: spanishAudioSlow},
+    { englishWord: 'clean', foreignWord: ['limpio'], foreignAudio: spanishAudioClean},
+    { englishWord: 'pretty', foreignWord: ['lindo'], foreignAudio: spanishAudioPretty},
+    { englishWord: 'full', foreignWord: ['lleno'], foreignAudio: spanishAudioFull},
+    { englishWord: 'crazy', foreignWord: ['loco'], foreignAudio: spanishAudioCrazy},
+    { englishWord: 'bad', foreignWord: ['malo'], foreignAudio: spanishAudioBad},
+    { englishWord: 'wet', foreignWord: ['mojado'], foreignAudio: spanishAudioWet},
+    { englishWord: 'new', foreignWord: ['nuevo'], foreignAudio: spanishAudioNew},
+    { englishWord: 'small', foreignWord: ['pequeño'], foreignAudio: spanishAudioSmall},
+    { englishWord: 'poor', foreignWord: ['pobre'], foreignAudio: spanishAudioPoor},
+    { englishWord: 'fast', foreignWord: ['rápido'], foreignAudio: spanishAudioFast},
+    { englishWord: 'disgusting', foreignWord: ['repugnante'], foreignAudio: spanishAudioDisgusting},
+    { englishWord: 'rich', foreignWord: ['rico'], foreignAudio: spanishAudioRich},
+    { englishWord: 'savory/salty', foreignWord: ['salado'], foreignAudio: spanishAudioSalty},
+    { englishWord: 'healthy', foreignWord: ['sano'], foreignAudio: spanishAudioHealthy},
+    { englishWord: 'dry', foreignWord: ['seco'], foreignAudio: spanishAudioDry},
+    { englishWord: 'simple', foreignWord: ['simple'], foreignAudio: spanishAudioSimple},
+    { englishWord: 'dirty', foreignWord: ['sucio'], foreignAudio: spanishAudioDirty},
+    { englishWord: 'stupid', foreignWord: ['tonto'], foreignAudio: spanishAudioStupid},
+    { englishWord: 'calm/tranquil', foreignWord: ['tranquilo'], foreignAudio: spanishAudioCalm},
+    { englishWord: 'sad', foreignWord: ['triste'], foreignAudio: spanishAudioSad},
+    { englishWord: 'empty', foreignWord: ['vacío'], foreignAudio: spanishAudioEmpty},
+    { englishWord: 'old', foreignWord: ['viejo'], foreignAudio: spanishAudioOld},
   ]},
 
 ]
