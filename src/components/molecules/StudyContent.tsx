@@ -31,7 +31,6 @@ const StudyContent = () => {
   var showTrueOrder = true;
   var [showTrueOrder,setShowTrueOrder] = useState(showTrueOrder)
   const changeOrder = () => { return setShowTrueOrder(!showTrueOrder)}
-    
   const changeCurrentLanguage = 
     ( language: Language) => setLanguage(language);
   const changeCurrentTopic = (topic: Topic) => { return setCurrentTopic(topic);}

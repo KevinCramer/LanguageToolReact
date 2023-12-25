@@ -86,7 +86,166 @@ export const englishVerbs: { [key: string]: VerbConjugationEnglish } = {
       futureTense: ['will study','will study', 'will study','will study','will study', 'will study']
     }
 },
-
+  'to be':
+{
+  infinitive: 'to be',
+  englishWordConjugation: 
+    {
+      pastTense: ['was','were', 'was','were','were', 'were'],
+      presentTense: ['am','are', 'is','are','are', 'are'],
+      futureTense: ['will be','will be', 'will be','will be','will be', 'will be']
+    }
+},
+  'to have':
+{
+  infinitive: 'to have',
+  englishWordConjugation: 
+    {
+      pastTense: ['had','had', 'had','had','had', 'had'],
+      presentTense: ['have','have', 'has','have','have', 'have'],
+      futureTense: ['will have','will have', 'will have','will have','will have', 'will have']
+    }
+},
+  'to do':
+{
+  infinitive: 'to do',
+  englishWordConjugation: 
+    {
+      pastTense: ['did','did', 'did','did','did', 'did'],
+      presentTense: ['do','do', 'do','do','do', 'do'],
+      futureTense: ['will do','will do', 'will do','will do','will do', 'will do']
+    }
+},
+  'to go':
+{
+  infinitive: 'to go',
+  englishWordConjugation: 
+    {
+      pastTense: ['went','went', 'went','went','went', 'went'],
+      presentTense: ['go','go', 'go','go','go', 'go'],
+      futureTense: ['will go','will go', 'will go','will go','will go', 'will go']
+    }
+},
+  'to be able to':
+{
+  infinitive: 'to be able to',
+  englishWordConjugation: 
+    {
+      pastTense: ['was able to','were able to', 'was able to','were able to','were able to', 'were able to'],
+      presentTense: ['am able to','are able to', 'is able to','are able to','are able to', 'are able to'],
+      futureTense: ['will be able to','will be able to', 'will be able to','will be able to','will be able to', 'will be able to']
+    }
+},
+  'to know':
+{
+  infinitive: 'to know',
+  englishWordConjugation: 
+    {
+      pastTense: ['knew','knew', 'knew','knew','knew', 'knew'],
+      presentTense: ['know','know', 'know','know','know', 'know'],
+      futureTense: ['will know','will know', 'will know','will know','will know', 'will know'],
+    }
+},
+  'to put':
+{
+  infinitive: 'to put',
+  englishWordConjugation: 
+    {
+      pastTense: ['put','put', 'put','put','put', 'put'],
+      presentTense: ['put','put', 'put','put','put', 'put'],
+      futureTense: ['will put','will put', 'will put','will put','will put', 'will put'],
+    }
+},
+  'to say':
+{
+  infinitive: 'to say',
+  englishWordConjugation: 
+    {
+      pastTense: ['said','said', 'said','said','said', 'said'],
+      presentTense: ['say','say', 'says','say','say', 'say'],
+      futureTense: ['will say','will say', 'will say','will say','will say', 'will say'],
+    }
+},
+  'to want':
+{
+  infinitive: 'to want',
+  englishWordConjugation: 
+    {
+      pastTense: ['wanted','wanted', 'wanted','wanted','wanted', 'wanted'],
+      presentTense: ['want','want', 'want','want','want', 'want'],
+      futureTense: ['will want','will want', 'will want','will want','will want', 'will want'],
+    }
+},
+  'to speak':
+{
+  infinitive: 'to speak',
+  englishWordConjugation: 
+    {
+      pastTense: ['spoke','spoke', 'spoke','spoke','spoke', 'spoke'],
+      presentTense: ['speak','speak', 'speaks','speak','speak', 'speak'],
+      futureTense: ['will speak','will speak', 'will speak','will speak','will speak', 'will speak'],
+    }
+},
+  'to give':
+{
+  infinitive: 'to give',
+  englishWordConjugation: 
+    {
+      pastTense: ['gave','gave', 'gave','gave','gave', 'gave'],
+      presentTense: ['give','give', 'gives','give','give', 'give'],
+      futureTense: ['will give','will give', 'will give','will give','will give', 'will give'],
+    }
+},
+  'to see':
+{
+  infinitive: 'to see',
+  englishWordConjugation: 
+    {
+      pastTense: ['saw','saw', 'saw','saw','saw', 'saw'],
+      presentTense: ['see','see', 'sees','see','see', 'see'],
+      futureTense: ['will see','will see', 'will see','will see','will see', 'will see'],
+    }
+},
+  'to drink':
+{
+  infinitive: 'to drink',
+  englishWordConjugation: 
+    {
+      pastTense: ['drank','drank', 'drank','drank','drank', 'drank'],
+      presentTense: ['drink','drink', 'drinks','drink','drink', 'drink'],
+      futureTense: ['will drink','will drink', 'will drink','will drink','will drink', 'will drink'],
+    }
+},
+  'to eat':
+{
+  infinitive: 'to eat',
+  englishWordConjugation: 
+    {
+      pastTense: ['ate','ate', 'ate','ate','ate', 'ate'],
+      presentTense: ['eat','eat', 'eats','eat','eat', 'eat'],
+      futureTense: ['will eat','will eat', 'will eat','will eat','will eat', 'will eat'],
+    }
+},
+  'to live':
+{
+  infinitive: 'to live',
+  englishWordConjugation: 
+    {
+      pastTense: ['lived','lived', 'lived','lived','lived', 'lived'],
+      presentTense: ['live','live', 'lives','live','live', 'live'],
+      futureTense: ['will live','will live', 'will live','will live','will live', 'will live'],
+    }
+},
+  'to need':
+{
+  infinitive: 'to need',
+  englishWordConjugation: 
+    {
+      pastTense: ['needed','needed', 'needed','needed','needed', 'needed'],
+      presentTense: ['need','need', 'needs','need','need', 'need'],
+      futureTense: ['will need','will need', 'will need','will need','will need', 'will need'],
+    }
+},
 }
 
 export const englishPronouns: string[]= ['I','You','He/She','We','You (p)','They']
@@ -570,36 +729,307 @@ const spanishTopics: Topic1[] = [
     { englishWord: 'ten', foreignWord: ['diez'], foreignAudio: '', order:10},
   ]},
   {name:'Verbs', hasOrdering:false, words: [
+    // Source of spanish verbs: https://ellaverbs.com/spanish-verbs/
     {
       englishWord: englishVerbs['to call'],
       foreignWord: 
-              [
+        [
+          {
+            infinitive: 'llamar',
+            foreignWordConjugation: 
                 {
-                  infinitive: 'llamar',
-                  foreignWordConjugation: 
-                      {
-                        pastTense:['llamé','llamaste','llamó','llamamos','llamasteis','llamaron'],
-                        presentTense: ['llamo','llamas', 'llama','llamamos','llamáis', 'llaman'], 
-                        futureTense: ['llamaré','llamarás', 'llamará','llamaremos','llamaréis', 'llamarán']
-                      }
+                  pastTense:['llamé','llamaste','llamó','llamamos','llamasteis','llamaron'],
+                  presentTense: ['llamo','llamas', 'llama','llamamos','llamáis', 'llaman'], 
+                  futureTense: ['llamaré','llamarás', 'llamará','llamaremos','llamaréis', 'llamarán']
                 }
-              ], 
+          }
+        ], 
       foreignAudio: ''},
     {
       englishWord: englishVerbs['to study'],
       foreignWord: 
+        [
+          {
+            infinitive: 'estudiar',
+            foreignWordConjugation: 
+                {
+                  pastTense: ['estudié','estudiaste','estudió','estudiamos','estudiasteis','estudiaron'],
+                  presentTense: ['estudio','estudias', 'estudia','estudiamos','estudiáis', 'estudian'],
+                  futureTense: ['estudiaré','estudiarás', 'estudiará','estudiaremos','estudiareis', 'estudiarán']
+                }
+          }
+        ],
+      foreignAudio: ''},
+    {
+      englishWord: englishVerbs['to be'],
+      foreignWord: 
+        [
+          {
+            infinitive: 'ser',
+            foreignWordConjugation: 
+                {
+                  pastTense: ['fui','fueste','fue','fuimos','fuisteis','fueron'],
+                  presentTense: ['soy','eres', 'es','somos','sois', 'son'],
+                  futureTense: ['seré','serás', 'será','seremos','seréis', 'serán']
+                }
+          }
+        ],
+      foreignAudio: ''},
+    {
+      englishWord: englishVerbs['to be'],
+      foreignWord: 
+        [
+          {
+            infinitive: 'estar',
+            foreignWordConjugation: 
+                {
+                  pastTense: ['estuve','estuviste','estuvo','estuvimos','estuvisteis','estuvieron'],
+                  presentTense: ['estoy','estás', 'está','estamos','estáis', 'están'],
+                  futureTense: ['estaré','estarás', 'estará','estaremos','estaréis', 'estarán']
+                }
+          }
+        ],
+      foreignAudio: ''},
+    {
+      englishWord: englishVerbs['to have'],
+      foreignWord: 
+        [
+          {
+            infinitive: 'tener',
+            foreignWordConjugation: 
+                {
+                  pastTense: ['tuve','tuviste','tuvo','tuvimos','tuvisteis','tuvieron'],
+                  presentTense: ['tengo','tienes', 'tiene','tenemos','tenéis', 'tienen'],
+                  futureTense: ['tendré','tendrás','tendrá','tendremos','tendréis', 'tendrán']
+                }
+          }
+        ],
+      foreignAudio: ''},
+    {
+      englishWord: englishVerbs['to do'],
+      foreignWord: 
+        [
+          {
+            infinitive: 'hacer',
+            foreignWordConjugation: 
+                {
+                  pastTense: ['hice','hiciste','hizo','hicimos','hicisteis','hicieron'],
+                  presentTense: ['hago','haces', 'hace','hacemos','hacéis', 'hacen'],
+                  futureTense: ['haré','harás','hará','haremos','haréis', 'harán']
+                }
+          }
+        ],
+      foreignAudio: ''},
+    {
+      englishWord: englishVerbs['to go'],
+      foreignWord: 
+        [
+          {
+            infinitive: 'ir',
+            foreignWordConjugation: 
+                {
+                  pastTense: ['fui','fuiste','fue','fuimos','fuisteis','fueron'],
+                  presentTense: ['voy','vas', 'va','vamos','vais', 'van'],
+                  futureTense: ['iré','irás','irá','iremos','iréis', 'irán']
+                }
+          }
+        ],
+      foreignAudio: ''},
+    {
+      englishWord: englishVerbs['to be able to'],
+      foreignWord: 
+        [
+          {
+            infinitive: 'poder',
+            foreignWordConjugation: 
+                {
+                  pastTense: ['pude','pudiste','pudo','pudimos','pudisteis','pudieron'],
+                  presentTense: ['puedo','puedes', 'puede','podemos','podéis', 'pueden'],
+                  futureTense: ['podré','podrás','podrá','podremos','podréis', 'podrán']
+                }
+          }
+        ],
+      foreignAudio: ''},
+    {
+      englishWord: englishVerbs['to know'],
+      foreignWord: 
+        [
+          {
+            infinitive: 'saber',
+            foreignWordConjugation: 
+                {
+                  pastTense: ['supe','supiste','supo','supimos','supisteis','supieron'],
+                  presentTense: ['sé','sabes', 'sabe','sabemos','sabéis', 'saben'],
+                  futureTense: ['sabré','sabrás','sabrá','sabremos','sabréis', 'sabrán']
+                }
+          }
+        ],
+      foreignAudio: ''},
+    {
+      englishWord: englishVerbs['to put'],
+      foreignWord: 
+        [
+          {
+            infinitive: 'poner',
+            foreignWordConjugation: 
+                {
+                  pastTense: ['puse','pusiste','puso','pusimos','pusisteis','pusieron'],
+                  presentTense: ['pongo','pones', 'pone','ponemos','ponéis', 'ponen'],
+                  futureTense: ['pondré','pondrás','pondrá','pondremos','pondréis', 'sabrán']
+                }
+          }
+        ],
+      foreignAudio: ''},
+    {
+      englishWord: englishVerbs['to have'],
+      foreignWord: 
+        [
+          {
+            infinitive: 'haber',
+            foreignWordConjugation: 
+                {
+                  pastTense: ['hube','hubiste','hubo','hubimos','hubisteis','hubieron'],
+                  presentTense: ['he','has', 'ha','hemos','habéis', 'han'],
+                  futureTense: ['habré','habrás','habrá','habremos','habréis', 'habrán']
+                }
+          }
+        ],
+      foreignAudio: ''},
+    {
+      englishWord: englishVerbs['to say'],
+      foreignWord: 
+        [
+          {
+            infinitive: 'decir',
+            foreignWordConjugation: 
+                {
+                  pastTense: ['dije','dijiste','dijo','dijimos','dijisteis','dijeron'],
+                  presentTense: ['digo','dices', 'dice','decimos','decís', 'dicen'],
+                  futureTense: ['diré','dirás','dirá','diremos','diréis', 'dirán']
+                }
+          }
+        ],
+      foreignAudio: ''},
+    {
+      englishWord: englishVerbs['to want'],
+      foreignWord: 
+        [
+          {
+            infinitive: 'querer',
+            foreignWordConjugation: 
+                {
+                  pastTense: ['dije','dijiste','dijo','dijimos','dijisteis','dijeron'],
+                  presentTense: ['quiero','quieres', 'quiere','queremos','queréis', 'quieren'],
+                  futureTense: ['querré','querrás','querrá','querremos','querréis', 'querrán']
+                }
+          }
+        ],
+      foreignAudio: ''},
+    {
+      englishWord: englishVerbs['to speak'],
+      foreignWord: 
+        [
+          {
+            infinitive: 'hablar',
+            foreignWordConjugation: 
+                {
+                  pastTense: ['hablé','hablaste','habló','hablamos','hablasteis','hablaron'],
+                  presentTense: ['hablo','hablas', 'habla','hablamos','habláis', 'hablan'],
+                  futureTense: ['hablaré','hablarás','hablará','hablaremos','hablaréis', 'hablarán']
+                }
+          }
+        ],
+      foreignAudio: ''},
+    {
+      englishWord: englishVerbs['to give'],
+      foreignWord: 
+        [
+          {
+            infinitive: 'dar',
+            foreignWordConjugation: 
+                {
+                  pastTense: ['di','diste','dio','dimos','disteis','dieron'],
+                  presentTense: ['doy','das', 'da','damos','dais', 'dan'],
+                  futureTense: ['daré','darás','dará','daremos','daréis', 'darán']
+                }
+          }
+        ],
+      foreignAudio: ''},
+    {
+      englishWord: englishVerbs['to see'],
+      foreignWord: 
+        [
+          {
+            infinitive: 'ver',
+            foreignWordConjugation: 
+                {
+                  pastTense: ['vi','viste','vio','vimos','visteis','vieron'],
+                  presentTense: ['veo','ves', 've','vemos','veis', 'ven'],
+                  futureTense: ['veré','verás','verá','veremos','veréis', 'verán']
+                }
+          }
+        ],
+      foreignAudio: ''},
+    {
+      englishWord: englishVerbs['to eat'],
+      foreignWord: 
+        [
+          {
+            infinitive: 'comer',
+            foreignWordConjugation: 
+                {
+                  pastTense: ['comí','comiste','comió','comimos','comisteis','comieron'],
+                  presentTense: ['como','comes', 'come','comemos','coméis', 'comen'],
+                  futureTense: ['comeré','comerás','comerá','comeremos','comeréis', 'comerán']
+                }
+          }
+        ],
+      foreignAudio: ''},
+    {
+      englishWord: englishVerbs['to drink'],
+      foreignWord: 
           [
             {
-              infinitive: 'estudiar',
+              infinitive: 'tomar',
               foreignWordConjugation: 
                   {
-                    pastTense: ['estudié','estudiaste','estudió','estudiamos','estudiasteis','estudiaron'],
-                    presentTense: ['estudio','estudias', 'estudia','estudiamos','estudiáis', 'estudian'],
-                    futureTense: ['estudiaré','estudiarás', 'estudiará','estudiaremos','estudiareis', 'estudiarán']
+                    pastTense: ['tomé','tomaste','tomó','tomamos','tomasteis','tomaron'],
+                    presentTense: ['tomo','tomas', 'toma','tomamos','tomáis', 'toman'],
+                    futureTense: ['tomaré','tomarás','tomará','tomaremos','tomaréis', 'tomarán']
                   }
             }
           ],
-      foreignAudio: ''}
+      foreignAudio: ''},
+    {
+      englishWord: englishVerbs['to live'],
+      foreignWord: 
+            [
+              {
+                infinitive: 'vivir',
+                foreignWordConjugation: 
+                    {
+                      pastTense: ['viví','viviste','vivió','vivimos','vivisteis','vivieron'],
+                      presentTense: ['vivo','vives', 'vive','vivimos','vivís', 'viven'],
+                      futureTense: ['viviré','vivirás','vivirá','viviremos','viviréis', 'vivirán']
+                    }
+              }
+            ],
+      foreignAudio: ''},
+    {
+      englishWord: englishVerbs['to need'],
+      foreignWord: 
+              [
+                {
+                  infinitive: 'necesitar',
+                  foreignWordConjugation: 
+                      {
+                        pastTense: ['necesité','necesitaste','necesitó','necesitamos','necesitasteis','necesitaron'],
+                        presentTense: ['necesito','necesitas', 'necesita','necesitamos','necesitáis', 'necesitan'],
+                        futureTense: ['necesitaré','necesitarás','necesitará','necesitaremos','necesitaréis', 'necesitarán']
+                      }
+                }
+              ],
+      foreignAudio: ''},
   ]},
   {name:'Pronouns', hasOrdering:true, words: [
     { englishWord: 'I', foreignWord: ['yo'], foreignAudio: '', order:1},
