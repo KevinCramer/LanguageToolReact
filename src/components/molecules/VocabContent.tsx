@@ -12,7 +12,7 @@ import { Language, Topic, VerbConjugationEnglish,
   Word, Word1, Word2, Word3 } from '../../types';
 import { scramble } from '../../helpers';
 
-const StudyContent = () => {
+const VocabContent = () => {
   var currentLanguage: Language = languages[0]
   var [currentLanguage,setLanguage] = useState(currentLanguage);
 
@@ -143,4 +143,4 @@ const StudyContent = () => {
   );
 }
  
-export default StudyContent;
+export default VocabContent;

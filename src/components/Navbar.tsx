@@ -7,7 +7,9 @@ export function Navbar(){
         <Nav>
           <Nav.Link style={{margin: '0px 20px 0px 20px'}} to ="/" as= {NavLink}>Home</Nav.Link>
           <Nav.Link style={{margin: '0px 20px 0px 20px'}} 
-            to ="/study" as= {NavLink}>Study</Nav.Link>
+            to ="/vocabulary" as= {NavLink}>Vocabulary</Nav.Link>
+          <Nav.Link style={{margin: '0px 20px 0px 20px'}} 
+            to ="/grammar" as= {NavLink}>Grammar</Nav.Link>
           <Nav.Link style={{margin: '0px 20px 0px 20px'}} 
             to ="/about" as= {NavLink}>About</Nav.Link>
         </Nav>

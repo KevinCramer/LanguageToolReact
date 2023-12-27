@@ -4,7 +4,9 @@ import {About} from './pages/About'
 import {Navbar} from './components/Navbar'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './index.css'
-import StudyContent from './components/molecules/StudyContent'
+import VocabContent from './components/molecules/VocabContent'
+import GrammarContent from './components/molecules/GrammarContent'
+
 import ReactGA from 'react-ga' 
 const TRACKING_ID = 'UA-253414467-1'
 ReactGA.initialize(TRACKING_ID)
@@ -20,7 +22,8 @@ function App() {
         <Route path="/about" element={ <div style= {
           {display:'flex', flexDirection: 'column', justifyContent:'center', minHeight: '70vh'}
         }> <About /></div>} />
-        <Route path="/study" element={<StudyContent />} />
+        <Route path="/vocabulary" element={<VocabContent />} />
+        <Route path="/grammar" element={<GrammarContent />} />
       </Routes>
     </div>
   );
