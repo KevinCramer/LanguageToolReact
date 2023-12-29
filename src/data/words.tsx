@@ -63,6 +63,17 @@ import spanishAudioUnfair from '../data/audio/spanish/spanish_adjectives/unfair.
 import spanishAudioWeak from '../data/audio/spanish/spanish_adjectives/weak.mp3';
 import spanishAudioWet from '../data/audio/spanish/spanish_adjectives/wet.mp3';
 
+import spanishAudioOne from '../data/audio/spanish/spanish_numbers/one.mp3';
+import spanishAudioTwo from '../data/audio/spanish/spanish_numbers/two.mp3';
+import spanishAudioThree from '../data/audio/spanish/spanish_numbers/three.mp3';
+import spanishAudioFour from '../data/audio/spanish/spanish_numbers/four.mp3';
+import spanishAudioFive from '../data/audio/spanish/spanish_numbers/five.mp3';
+import spanishAudioSix from '../data/audio/spanish/spanish_numbers/six.mp3';
+import spanishAudioSeven from '../data/audio/spanish/spanish_numbers/seven.mp3';
+import spanishAudioEight from '../data/audio/spanish/spanish_numbers/eight.mp3';
+import spanishAudioNine from '../data/audio/spanish/spanish_numbers/nine.mp3';
+import spanishAudioTen from '../data/audio/spanish/spanish_numbers/ten.mp3';
+
 import { sortTopics } from '../helpers';
 import {Language, VerbConjugationEnglish, Topic1, Topic2, Topic3 } from '../types';
 
@@ -715,17 +726,19 @@ const spanishTopics: Topic1[] = [
     { englishWord: '(the) chicken', foreignWord: ['(el) pollo'], foreignAudio: ''},
     { englishWord: '(the) cheese', foreignWord: ['(el) queso'], foreignAudio: ''}, 
   ]},
+  // https://l-lingo.com/free-lessons/en/learn-spanish/numbers-1-10.html go to devtools console, and press audio to get the url 
+  // to download the audio.
   {name:'Numbers', hasOrdering:true, words: [
-    { englishWord: 'one', foreignWord: ['uno'], foreignAudio: '', order:1},
-    { englishWord: 'two', foreignWord: ['dos'], foreignAudio: '', order:2},
-    { englishWord: 'three', foreignWord: ['tres'], foreignAudio: '', order:3},
-    { englishWord: 'four', foreignWord: ['cuatro'], foreignAudio: '', order:4},
-    { englishWord: 'five', foreignWord: ['cinco'], foreignAudio: '', order:5},
-    { englishWord: 'six', foreignWord: ['seis'], foreignAudio: '', order:6},
-    { englishWord: 'seven', foreignWord: ['siete'], foreignAudio: '', order:7},
-    { englishWord: 'eight', foreignWord: ['ocho'], foreignAudio: '', order:8},
-    { englishWord: 'nine', foreignWord: ['nueve'], foreignAudio: '', order:9},
-    { englishWord: 'ten', foreignWord: ['diez'], foreignAudio: '', order:10},
+    { englishWord: 'one', foreignWord: ['uno'], foreignAudio: spanishAudioOne, order:1},
+    { englishWord: 'two', foreignWord: ['dos'], foreignAudio: spanishAudioTwo, order:2},
+    { englishWord: 'three', foreignWord: ['tres'], foreignAudio: spanishAudioThree, order:3},
+    { englishWord: 'four', foreignWord: ['cuatro'], foreignAudio: spanishAudioFour, order:4},
+    { englishWord: 'five', foreignWord: ['cinco'], foreignAudio: spanishAudioFive, order:5},
+    { englishWord: 'six', foreignWord: ['seis'], foreignAudio: spanishAudioSix, order:6},
+    { englishWord: 'seven', foreignWord: ['siete'], foreignAudio: spanishAudioSeven, order:7},
+    { englishWord: 'eight', foreignWord: ['ocho'], foreignAudio: spanishAudioEight, order:8},
+    { englishWord: 'nine', foreignWord: ['nueve'], foreignAudio: spanishAudioNine, order:9},
+    { englishWord: 'ten', foreignWord: ['diez'], foreignAudio: spanishAudioTen, order:10},
   ]},
   {name:'Verbs', hasOrdering:false, words: [
     // Source of spanish verbs: https://ellaverbs.com/spanish-verbs/
