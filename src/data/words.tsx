@@ -717,7 +717,7 @@ const spanishTopics: Topic1[] = [
   ]},
   {name:'Numbers', hasOrdering:true, words: [
     { englishWord: 'one', foreignWord: ['uno'], foreignAudio: '', order:1},
-    { englishWord: 'two ', foreignWord: ['dos'], foreignAudio: '', order:2},
+    { englishWord: 'two', foreignWord: ['dos'], foreignAudio: '', order:2},
     { englishWord: 'three', foreignWord: ['tres'], foreignAudio: '', order:3},
     { englishWord: 'four', foreignWord: ['cuatro'], foreignAudio: '', order:4},
     { englishWord: 'five', foreignWord: ['cinco'], foreignAudio: '', order:5},
