@@ -17,8 +17,14 @@ const VocabContent = () => {
 
   function ShowGrammarExplanation(){
     return (
-      <div style={{textAlign:'center'}}>
-        {currentTopic.content}
+      <div style={{ width: '400px'}}>
+        <div style={{display:'flex',flexDirection: 'column'}}>
+          {currentTopic.contents.map((content: any) =>
+            <div>
+              {content}
+            </div>                    
+          )}
+        </div>
       </div>
     )
   }
@@ -45,7 +51,9 @@ const VocabContent = () => {
           </Container>
         </NavbarBs>
         <p></p>
-        {ShowGrammarExplanation()}
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          {ShowGrammarExplanation()}
+        </div>
       </Container>
     </div>
   );
