@@ -1108,7 +1108,7 @@ const spanishTopics: Topic1[] = [
     { englishWord: 'how', foreignWord: ['cómo'], foreignAudio: ''},
     { englishWord: 'when', foreignWord: ['cuando'], foreignAudio: ''},
   ]},
-  {name:'Connectors', hasOrdering:false, words: [
+  {name:'Conjuctions', hasOrdering:false, words: [
     { englishWord: 'and', foreignWord: ['y'], foreignAudio: ''},
     { englishWord: 'but', foreignWord: ['pero'], foreignAudio: ''},
     { englishWord: 'or', foreignWord: ['o'], foreignAudio: ''},
