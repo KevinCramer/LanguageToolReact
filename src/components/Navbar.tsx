@@ -10,8 +10,6 @@ export function Navbar(){
             to ="/vocabulary" as= {NavLink}>Vocabulary</Nav.Link>
           <Nav.Link style={{margin: '0px 10px 0px 10px'}} 
             to ="/grammar" as= {NavLink}>Grammar</Nav.Link>
-          <Nav.Link style={{margin: '0px 10px 0px 10px'}} 
-            to ="/about" as= {NavLink}>About</Nav.Link>
         </Nav>
       </Container>
     </NavbarBs>

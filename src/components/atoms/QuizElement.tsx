@@ -7,6 +7,7 @@ const QuizElement = (
     questionWord: string | VerbConjugation,
     answerWord: string | VerbConjugation,
     isVerb: boolean
+    myCounter: number
     }) => {
   const [formValues, setFormValues] = useState({answer: ''})
   const [response, setResponse] = useState('')
@@ -41,13 +42,14 @@ const QuizElement = (
       propsQuestionWord = (props.questionWord as string)
       propsAnswerWord = (props.answerWord as string)
     }
-
+    const myPlaceHolder= props.myCounter === 1 ? 'enter your answer here': '';
     return (
       <Navbar style={{justifyContent:'center'}}>
         <form onSubmit={e => onSubmit(e, formValues.answer, propsAnswerWord)}>
           <div className="ui form">
             <label style= {{width: '200px', textAlign:'center'}}>{propsQuestionWord} </label>
-            <input type="text" name="answer" placeholder="" value={formValues.answer} 
+            <input type="text" name="answer" placeholder={myPlaceHolder}
+              value={formValues.answer} 
               onChange = {handleChange} autoComplete="off" autoCorrect="off" 
               spellCheck ="false" autoCapitalize="off"/>
           </div>

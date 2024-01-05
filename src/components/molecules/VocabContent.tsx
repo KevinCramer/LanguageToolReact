@@ -4,6 +4,7 @@ import StudyElement from '../atoms/StudyElement';
 import {Container, Navbar as NavbarBs} from 'react-bootstrap';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
+import ReactSwitch from 'react-switch';
 import {languages} from '../../data/words';
 import ReactGA from 'react-ga';
 import {useSelector,useDispatch} from 'react-redux'
@@ -47,13 +48,14 @@ const VocabContent = () => {
   function ToggleQuiz(){
     if (quiz) {
       const isVerb = currentTopic.name=== 'Verbs'
+      var count = 0;
       return ( 
         <div>
           {topicWords.map((pair: Word) =>
             <div key ={showTrueOrder.toString() + (isVerb?
               (pair.englishWord as VerbConjugationEnglish).infinitive: pair.englishWord)
                + pair.foreignWord[currentAlphabet] + showBaseLanguage}>
-              <QuizElement questionWord = { showBaseLanguage? 
+              <QuizElement myCounter = {count +=1} questionWord = { showBaseLanguage? 
                 pair.englishWord: pair.foreignWord[currentAlphabet] }
               answerWord = {showBaseLanguage? pair.foreignWord[currentAlphabet]:
                 pair.englishWord} isVerb = {currentTopic.name=== 'Verbs'}/>
@@ -123,9 +125,8 @@ const VocabContent = () => {
                   changeCurrentTopic(topic)}>{topic.name}</Dropdown.Item>)}
             </DropdownButton>
             <DropdownButton style={{margin: '0px 20px 0px 20px'}} variant= 'secondary' align="end"
-              id="Parameters" title="Parameters" size = "sm">
+              id="Settings" title="Settings" size = "sm">
               <Dropdown.Item onClick = {changeBaseLanguage}>toggle base language</Dropdown.Item>
-              <Dropdown.Item onClick = {changeQuizState}>{quiz? 'revise': 'quiz'}</Dropdown.Item>
               <Dropdown.Item onClick = {() => dispatch(flip())}>
                 {audioBool? 'hide audio':'show audio'}</Dropdown.Item>
               <Dropdown.Item onClick = {changeOrder}>
@@ -135,6 +136,16 @@ const VocabContent = () => {
                 toggle foreign alphabet</Dropdown.Item>}
             </DropdownButton>                
           </Container>
+        </NavbarBs>
+        <NavbarBs>
+          <Container style={{justifyContent:'center'}}>
+            <div>
+              <ReactSwitch onChange = {changeQuizState} checked= {quiz} 
+                uncheckedIcon = {false} checkedIcon = {false} /> 
+              <div>{quiz? 'Quiz Mode': 'Study Mode'}</div>        
+            </div>
+          </Container>
+          
         </NavbarBs>
         <p></p>
         {ToggleQuiz()}

@@ -1,6 +1,5 @@
 import {Routes, Route} from 'react-router-dom'
 import {Home} from './pages/Home'
-import {About} from './pages/About'
 import {Navbar} from './components/Navbar'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './index.css'
@@ -19,9 +18,6 @@ function App() {
         <Route path="/" element={ <div style= {
           {display:'flex', flexDirection: 'column', justifyContent:'center', minHeight: '50vh'}
         }> <Home /></div>} />
-        <Route path="/about" element={ <div style= {
-          {display:'flex', flexDirection: 'column', justifyContent:'center', minHeight: '70vh'}
-        }> <About /></div>} />
         <Route path="/vocabulary" element={<VocabContent />} />
         <Route path="/grammar" element={<GrammarContent />} />
       </Routes>
