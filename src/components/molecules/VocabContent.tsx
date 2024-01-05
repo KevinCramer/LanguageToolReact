@@ -141,7 +141,7 @@ const VocabContent = () => {
           <Container style={{justifyContent:'center'}}>
             <div>
               <ReactSwitch onChange = {changeQuizState} checked= {quiz} 
-                uncheckedIcon = {false} checkedIcon = {false} /> 
+                uncheckedIcon = {false} checkedIcon = {false} onColor = {'#0038FF'}/> 
               <div>{quiz? 'Quiz Mode': 'Study Mode'}</div>        
             </div>
           </Container>

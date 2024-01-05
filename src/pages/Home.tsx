@@ -1,5 +1,6 @@
 import './text.css'
 import logo from '../assets/logo.png';
+import blackBar from '../assets/blackBar.png';
 
 export function Home(){
   return <div>
@@ -7,12 +8,21 @@ export function Home(){
       <img src ={logo} width={160} height={130} alt="logo"/>
     </div>
     <div className = "content2">
-      <h1> 
+      <h1 style ={{marginBottom: '0.1rem'}}> 
                         LINGO
       </h1>
-      <h5> 
+      <div className = "imageContent">
+        <img src ={blackBar} width={130} height={1} alt="logo"/>
+      </div>
+      <h4> 
                         COMMAND
-      </h5>
+      </h4>
+      <>
+        <hr/>
+      </>
+      <div> 
+        Built to help you learn foreign languages faster.
+      </div>
     </div>    
   </div> 
 }
