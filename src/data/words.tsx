@@ -1183,7 +1183,7 @@ const spanishPronouns: string[] = ['Yo','Tu','El/Ella','Nosotros', 'Vosotros', '
 const frenchTopics: Topic1[] = [
   {name:'Numbers', hasOrdering:true, words: [
     { englishWord: 'one', foreignWord: ['un'], foreignAudio: '', order:1},
-    { englishWord: 'two ', foreignWord: ['deux'], foreignAudio: '', order:2},
+    { englishWord: 'two', foreignWord: ['deux'], foreignAudio: '', order:2},
     { englishWord: 'three', foreignWord: ['trois'], foreignAudio: '', order:3},
     { englishWord: 'four', foreignWord: ['quatre'], foreignAudio: '', order:4},
     { englishWord: 'five', foreignWord: ['cinq'], foreignAudio: '', order:5},
@@ -1198,7 +1198,7 @@ const frenchTopics: Topic1[] = [
 const italianTopics: Topic1[] = [
   {name:'Numbers', hasOrdering:true, words: [
     { englishWord: 'one', foreignWord: ['uno'], foreignAudio: '', order:1},
-    { englishWord: 'two ', foreignWord: ['due'], foreignAudio: '', order:2},
+    { englishWord: 'two', foreignWord: ['due'], foreignAudio: '', order:2},
     { englishWord: 'three', foreignWord: ['tre'], foreignAudio: '', order:3},
     { englishWord: 'four', foreignWord: ['quattro'], foreignAudio: '', order:4},
     { englishWord: 'five', foreignWord: ['cinque'], foreignAudio: '', order:5},
@@ -1212,7 +1212,7 @@ const italianTopics: Topic1[] = [
 const germanTopics: Topic1[] = [
   {name:'Numbers', hasOrdering:true, words: [
     { englishWord: 'one', foreignWord: ['eins'], foreignAudio: '', order:1},
-    { englishWord: 'two ', foreignWord: ['zwei'], foreignAudio: '', order:2},
+    { englishWord: 'two', foreignWord: ['zwei'], foreignAudio: '', order:2},
     { englishWord: 'three', foreignWord: ['drei'], foreignAudio: '', order:3},
     { englishWord: 'four', foreignWord: ['vier'], foreignAudio: '', order:4},
     { englishWord: 'five', foreignWord: ['fünf'], foreignAudio: '', order:5},
@@ -1227,7 +1227,7 @@ const germanTopics: Topic1[] = [
 const japaneseTopics: Topic3[] = [
   {name:'Numbers', hasOrdering:true, words: [
     { englishWord: 'one', foreignWord: ['ichi', 'いち','一'], foreignAudio: '', order:1},
-    { englishWord: 'two ', foreignWord: ['ni', 'に','二'], foreignAudio: '', order:2},
+    { englishWord: 'two', foreignWord: ['ni', 'に','二'], foreignAudio: '', order:2},
     { englishWord: 'three',foreignWord: ['san', 'さん','三'], foreignAudio: '', order:3},
     { englishWord: 'four', foreignWord: ['shi/yon', 'し、よん','四'], foreignAudio: '', order:4},
     { englishWord: 'five', foreignWord: ['go', 'ご','五'], foreignAudio: '', order:5},
@@ -1239,14 +1239,78 @@ const japaneseTopics: Topic3[] = [
   ]},
 ]
 
+const mandarinTopics: Topic2[] = [
+  {name:'Numbers', hasOrdering:true, words: [
+    { englishWord: 'one', foreignWord: ['yī','一'], foreignAudio: '', order:1},
+    { englishWord: 'two', foreignWord: ['èr','二'], foreignAudio: '', order:2},
+    { englishWord: 'three',foreignWord: ['sān','三'], foreignAudio: '', order:3},
+    { englishWord: 'four', foreignWord: ['sì','四'], foreignAudio: '', order:4},
+    { englishWord: 'five', foreignWord: ['wŭ','五'], foreignAudio: '', order:5},
+    { englishWord: 'six', foreignWord: ['liù','六'], foreignAudio: '', order:6},
+    { englishWord: 'seven', foreignWord: ['qī', '七'], foreignAudio: '', order:7},
+    { englishWord: 'eight', foreignWord: ['bā', '八'], foreignAudio: '', order:8},
+    { englishWord: 'nine', foreignWord: ['jiŭ', '九'], foreignAudio: '', order:9},
+    { englishWord: 'ten', foreignWord: ['shí','十'], foreignAudio: '', order:10},
+  ]},
+]
+
+const koreanTopics: Topic2[] = [
+  {name:'Numbers', hasOrdering:true, words: [
+    { englishWord: 'one', foreignWord: ['ha-na','하나'], foreignAudio: '', order:1},
+    { englishWord: 'two', foreignWord: ['dool','둘'], foreignAudio: '', order:2},
+    { englishWord: 'three', foreignWord: ['seht','셋'], foreignAudio: '', order:3},
+    { englishWord: 'four', foreignWord: ['neht','넷'], foreignAudio: '', order:4},
+    { englishWord: 'five', foreignWord: ['da-sut','다섯'], foreignAudio: '', order:5},
+    { englishWord: 'six', foreignWord: ['yuh-suht','여섯'], foreignAudio: '', order:6},
+    { englishWord: 'seven', foreignWord: ['il-gohp','일곱'], foreignAudio: '', order:7},
+    { englishWord: 'eight', foreignWord: ['yuh-dul','여덟'], foreignAudio: '', order:8},
+    { englishWord: 'nine', foreignWord: ['ah-hope','아홉'], foreignAudio: '', order:9},
+    { englishWord: 'ten', foreignWord: ['yul','열'], foreignAudio: '', order:10},
+  ]},
+]
+
+const portugueseTopics: Topic1[] = [
+  {name:'Numbers', hasOrdering:true, words: [
+    { englishWord: 'one', foreignWord: ['um'], foreignAudio: '', order:1},
+    { englishWord: 'two', foreignWord: ['dois'], foreignAudio: '', order:2},
+    { englishWord: 'three', foreignWord: ['três'], foreignAudio: '', order:3},
+    { englishWord: 'four', foreignWord: ['quatro'], foreignAudio: '', order:4},
+    { englishWord: 'five', foreignWord: ['cinco'], foreignAudio: '', order:5},
+    { englishWord: 'six', foreignWord: ['seis'], foreignAudio: '', order:6},
+    { englishWord: 'seven', foreignWord: ['sete'], foreignAudio: '', order:7},
+    { englishWord: 'eight', foreignWord: ['oito'], foreignAudio: '', order:8},
+    { englishWord: 'nine', foreignWord: ['nove'], foreignAudio: '', order:9},
+    { englishWord: 'ten', foreignWord: ['dez'], foreignAudio: '', order:10},
+  ]},
+]
+
+const russianTopics: Topic2[] = [
+  {name:'Numbers', hasOrdering:true, words: [
+    { englishWord: 'one', foreignWord: ['a-deen', 'один'], foreignAudio: '', order:1},
+    { englishWord: 'two', foreignWord: ['dva', 'два'], foreignAudio: '', order:2},
+    { englishWord: 'three', foreignWord: ['tree', 'три'], foreignAudio: '', order:3},
+    { englishWord: 'four', foreignWord: ['chye-tir-ye', 'четыре'], foreignAudio: '', order:4},
+    { englishWord: 'five', foreignWord: ['pyat', 'пять'], foreignAudio: '', order:5},
+    { englishWord: 'six', foreignWord: ['shest', 'шесть'], foreignAudio: '', order:6},
+    { englishWord: 'seven', foreignWord: ['syem', 'семь'], foreignAudio: '', order:7},
+    { englishWord: 'eight', foreignWord: ['vo-syem', 'восемь'], foreignAudio: '', order:8},
+    { englishWord: 'nine', foreignWord: ['dyev-yat', 'девять'], foreignAudio: '', order:9},
+    { englishWord: 'ten', foreignWord: ['dyes-yat', 'десять'], foreignAudio: '', order:10},
+  ]},
+]
+
 export const languages: Language[] = 
         [
           {languageName: 'Spanish', topics: sortTopics(spanishTopics), pronouns: spanishPronouns, numForeignAlphabets: 1},
           {languageName: 'French', topics: sortTopics(frenchTopics), pronouns: [], numForeignAlphabets: 1},
           {languageName: 'German', topics: sortTopics(germanTopics), pronouns: [], numForeignAlphabets: 1},
-          {languageName: 'Japanese', topics: sortTopics(japaneseTopics), pronouns: [], numForeignAlphabets: 3},
           {languageName: 'Italian', topics: sortTopics(italianTopics), pronouns: [], numForeignAlphabets: 1},
+          {languageName: 'Japanese', topics: sortTopics(japaneseTopics), pronouns: [], numForeignAlphabets: 3},
+          {languageName: 'Mandarin', topics: sortTopics(mandarinTopics), pronouns: [], numForeignAlphabets: 2},
+          {languageName: 'Korean', topics: sortTopics(koreanTopics), pronouns: [], numForeignAlphabets: 2},
           {languageName: 'Arabic', topics: sortTopics(arabicTopics), pronouns: [], numForeignAlphabets: 2},
+          {languageName: 'Portuguese', topics: sortTopics(portugueseTopics), pronouns: [], numForeignAlphabets: 1},
+          {languageName: 'Russian', topics: sortTopics(russianTopics), pronouns: [], numForeignAlphabets: 2},
           {languageName: 'Dutch', topics: sortTopics(dutchTopics), pronouns: [], numForeignAlphabets: 1},
         ]
       
