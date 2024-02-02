@@ -131,7 +131,7 @@ const VocabContent = () => {
                 {audioBool? 'hide audio':'show audio'}</Dropdown.Item>
               <Dropdown.Item onClick = {changeOrder}>
                 {showTrueOrder? 'random ordering':'default ordering'}</Dropdown.Item>
-              {currentLanguage.numForeignAlphabets > 1 && 
+              {currentLanguage.numForeignAlphabets > 1 && !currentTopic.isAlphabet &&
               <Dropdown.Item onClick = {changeCurrentAlphabet}>
                 toggle foreign alphabet</Dropdown.Item>}
             </DropdownButton>                

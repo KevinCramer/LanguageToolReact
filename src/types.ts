@@ -47,19 +47,25 @@ export type Topic1 = {
     name: string;
     hasOrdering: boolean;
     words: Word1[];
+    isAlphabet?: boolean;
+
 }
 export type Topic2 = {
     name: string;
     hasOrdering: boolean;
     words: Word2[];
+    isAlphabet?: boolean;
+
 }
 export type Topic3 = {
     name: string;
     hasOrdering: boolean;
     words: Word3[];
+    isAlphabet?: boolean;
 }
 
-export type Topic = Topic1 | Topic2 | Topic3;
+export type Topic = Topic1 | Topic2 | Topic3
+
 export type Language = {
     languageName: string;
     topics: Topic1[] | Topic2[] | Topic3[];
