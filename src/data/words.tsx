@@ -380,7 +380,7 @@ const dutchTopics: Topic1[] = [
 ]
 
 const arabicTopics: Topic2[] = [
-  {name:'arabic alphabet', hasOrdering:true, isAlphabet: true, words: [
+  {name:'Arabic alphabet', hasOrdering:true, isAlphabet: true, words: [
     { englishWord: 'alef', foreignWord: ['ا',''], foreignAudio: '', order: 1 },
     { englishWord: 'baa', foreignWord: ['ب',''], foreignAudio: '', order: 2 },
     { englishWord: 'taa', foreignWord: ['ت',''], foreignAudio: '', order: 3 },
@@ -1255,7 +1255,7 @@ const germanTopics: Topic1[] = [
 ]
 
 const japaneseTopics: Topic3[] = [
-  {name:'hiragana alphabet', hasOrdering:true, isAlphabet: true, words: [
+  {name:'Hiragana alphabet', hasOrdering:true, isAlphabet: true, words: [
     { englishWord: 'a', foreignWord: ['あ','',''], foreignAudio: '', order: 1 },
     { englishWord: 'i', foreignWord: ['い','',''], foreignAudio: '', order: 2 },
     { englishWord: 'u', foreignWord: ['う','',''], foreignAudio: '', order: 3 },
@@ -1303,7 +1303,7 @@ const japaneseTopics: Topic3[] = [
     { englishWord: 'wo', foreignWord: ['を','',''], foreignAudio: '', order: 45 },
     { englishWord: 'n', foreignWord: ['ん','',''], foreignAudio: '', order: 46 },
   ]},
-  {name:'katakana alphabet', hasOrdering:true, isAlphabet: true, words: [
+  {name:'Katakana alphabet', hasOrdering:true, isAlphabet: true, words: [
     { englishWord: 'a', foreignWord: ['ア','',''], foreignAudio: '', order: 1 },
     { englishWord: 'u', foreignWord: ['ウ','',''], foreignAudio: '', order: 2 },
     { englishWord: 'e', foreignWord: ['エ','',''], foreignAudio: '', order: 3 },
@@ -1436,7 +1436,7 @@ const portugueseTopics: Topic1[] = [
 ]
 
 const russianTopics: Topic2[] = [
-  {name:'russian alphabet', hasOrdering:true, isAlphabet: true, words: [
+  {name:'Russian alphabet', hasOrdering:true, isAlphabet: true, words: [
     { englishWord: 'a', foreignWord: ['а',''], foreignAudio: '', order:1 },
     { englishWord: 'b', foreignWord: ['б',''], foreignAudio: '', order:2 },
     { englishWord: 'v', foreignWord: ['в',''], foreignAudio: '', order:3 },
