@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import './index.css'
 import VocabContent from './components/molecules/VocabContent'
 import GrammarContent from './components/molecules/GrammarContent'
+import Immersion from './components/molecules/Immersion'
 
 import ReactGA from 'react-ga' 
 const TRACKING_ID = 'UA-253414467-1'
@@ -20,6 +21,8 @@ function App() {
         }> <Home /></div>} />
         <Route path="/vocabulary" element={<VocabContent />} />
         <Route path="/grammar" element={<GrammarContent />} />
+        <Route path="/immersion" element={<Immersion />} />
+
       </Routes>
     </div>
   );
