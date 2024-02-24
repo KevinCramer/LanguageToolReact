@@ -155,3 +155,7 @@ const VocabContent = () => {
 }
  
 export default VocabContent;
+
+// exampe of ideal URL with filters
+
+// lingocommand.com/vocabulary/spanish/numbers?quiz=false&audio=false&random-order=false&toggle-base-lang=false&num-alphabet=0
