@@ -95,7 +95,21 @@ const VocabContent = () => {
     }
     else {
       topicWords.sort((a: Word,
-        b: Word) => a.englishWord < b.englishWord ? -1: 1)
+        b: Word) => 
+      {
+        const aInfinitive = (a.englishWord as unknown as VerbConjugationEnglish).infinitive
+        const bInfinitive = (b.englishWord as unknown as VerbConjugationEnglish).infinitive
+        // aInfinitive is only truthy when a (and thus b) are verbs,
+        if(aInfinitive) {
+          // sort by infinitive property
+          return aInfinitive < bInfinitive? -1: 1
+        }
+        else {
+          return a.englishWord < b.englishWord ? -1: 1
+        }
+         
+      }
+      )
     }
   }
   else
