@@ -803,7 +803,7 @@ const spanishTopics: Topic1[] = [
         ],
       foreignAudio: ''},
     {
-      englishWord: {...englishVerbs['to be'], infinitive: 'to be 1'} ,
+      englishWord: {...englishVerbs['to be'], infinitive: 'to be (1)'} ,
       foreignWord: 
         [
           {
@@ -818,7 +818,7 @@ const spanishTopics: Topic1[] = [
         ],
       foreignAudio: ''},
     {
-      englishWord: {...englishVerbs['to be'], infinitive: 'to be 2'} ,
+      englishWord: {...englishVerbs['to be'], infinitive: 'to be (2)'} ,
       foreignWord: 
         [
           {
@@ -833,7 +833,7 @@ const spanishTopics: Topic1[] = [
         ],
       foreignAudio: ''},
     {
-      englishWord: {...englishVerbs['to have'], infinitive: 'to have 1'} ,
+      englishWord: {...englishVerbs['to have'], infinitive: 'to have (1)'} ,
       foreignWord: 
         [
           {
@@ -923,7 +923,7 @@ const spanishTopics: Topic1[] = [
         ],
       foreignAudio: ''},
     {
-      englishWord: {...englishVerbs['to have'], infinitive: 'to have 2'} ,
+      englishWord: {...englishVerbs['to have'], infinitive: 'to have (2)'} ,
       foreignWord: 
         [
           {
