@@ -1,4 +1,4 @@
-import {useState } from 'react';
+import {useState, useEffect } from 'react';
 import QuizElement from '../atoms/QuizElement';
 import StudyElement from '../atoms/StudyElement';
 import {Container, Navbar as NavbarBs} from 'react-bootstrap';
@@ -21,6 +21,13 @@ const VocabContent = () => {
   var currentLanguage: Language = languages
     .find(l => languageToSlugs[l.languageName] === urlLanguage) || languages[0]
   var [currentLanguage,setLanguage] = useState(currentLanguage);
+
+  // Ensure default language is reflected in the URL if not already present
+  useEffect(() => {
+    if (!urlLanguage) {
+      navigate(`?lang=${languageToSlugs[currentLanguage.languageName]}`);
+    }
+  }, []); // Empty dependency array to run only on component mount
 
   var currentTopic = currentLanguage.topics[0]
   var [currentTopic,setCurrentTopic] = useState(currentTopic)
