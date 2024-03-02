@@ -1099,7 +1099,7 @@ const spanishTopics: Topic1[] = [
     { englishWord: '(the) knee', foreignWord: ['(la) rodilla'], foreignAudio: ''},
 
   ]},
-  {name:'Buildings/ Locations', hasOrdering:false, words: [
+  {name:'Locations', hasOrdering:false, words: [
     { englishWord: '(the) airport', foreignWord: ['(el) aeropuerto'], foreignAudio: ''},
     { englishWord: '(the) bakery', foreignWord: ['(la) panadería'], foreignAudio: ''},
     { englishWord: '(the) bank', foreignWord: ['(el) banco'], foreignAudio: ''},

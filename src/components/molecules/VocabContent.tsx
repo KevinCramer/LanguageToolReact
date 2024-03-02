@@ -9,8 +9,8 @@ import {languages} from '../../data/words';
 import ReactGA from 'react-ga';
 import {useSelector,useDispatch} from 'react-redux'
 import {flip} from '../../redux/displayAudio';
-import { Language, Topic, VerbConjugationEnglish, 
-  Word, Word1, Word2, Word3 } from '../../types';
+import { Language, VerbConjugationEnglish, 
+  Word, Word1, Word2, Word3, Topic } from '../../types';
 import { scramble } from '../../helpers';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { languageToSlugs} from '../../constants'
@@ -21,17 +21,23 @@ const VocabContent = () => {
   var currentLanguage: Language = languages
     .find(l => languageToSlugs[l.languageName] === urlLanguage) || languages[0]
   var [currentLanguage,setLanguage] = useState(currentLanguage);
+ 
+  const urlTopic = urlSearchParams.get('topic')
+  console.log('urlTopic: ', urlTopic)
+  console.log('currentLanguage.topics: ', (currentLanguage.topics as Topic[]))
+
+  var currentTopic: Topic = (currentLanguage.topics as Topic[])
+    .find(t => t.name.toLowerCase() === urlTopic) || currentLanguage.topics[0]
+  var [currentTopic,setCurrentTopic] = useState(currentTopic)
 
   // Ensure default language is reflected in the URL if not already present
   useEffect(() => {
-    if (!urlLanguage) {
-      navigate(`?lang=${languageToSlugs[currentLanguage.languageName]}`);
+    const urlLanguageParamExists = urlSearchParams.has('lang');
+    const urlTopicParamExists = urlSearchParams.has('topic');
+    if (!urlLanguageParamExists || urlTopicParamExists) {
+      navigate(`?lang=${languageToSlugs[currentLanguage.languageName]}&topic=${currentTopic.name.toLowerCase()}`);
     }
   }, []); // Empty dependency array to run only on component mount
-
-  var currentTopic = currentLanguage.topics[0]
-  var [currentTopic,setCurrentTopic] = useState(currentTopic)
-
   var showBaseLanguage = true;
   var [showBaseLanguage,setShowBaseLanguage] = useState(showBaseLanguage)
   const changeBaseLanguage = () => { return setShowBaseLanguage(!showBaseLanguage)}
@@ -50,6 +56,7 @@ const VocabContent = () => {
       navigate(`?lang=${language.languageName.toLocaleLowerCase()}`)
     };
   const changeCurrentTopic = (topic: Topic) => {
+    navigate(`?lang=${languageToSlugs[currentLanguage.languageName]}&topic=${topic.name.toLowerCase()}`);
     return setCurrentTopic(topic);
   }
 
