@@ -23,9 +23,6 @@ const VocabContent = () => {
   var [currentLanguage,setLanguage] = useState(currentLanguage);
  
   const urlTopic = urlSearchParams.get('topic')
-  console.log('urlTopic: ', urlTopic)
-  console.log('currentLanguage.topics: ', (currentLanguage.topics as Topic[]))
-
   var currentTopic: Topic = (currentLanguage.topics as Topic[])
     .find(t => t.name.toLowerCase() === urlTopic) || currentLanguage.topics[0]
   var [currentTopic,setCurrentTopic] = useState(currentTopic)
@@ -193,7 +190,3 @@ const VocabContent = () => {
 }
  
 export default VocabContent;
-
-// exampe of ideal URL with filters
-
-// lingocommand.com/vocabulary/spanish/numbers?quiz=false&audio=false&random-order=false&toggle-base-lang=false&num-alphabet=0
