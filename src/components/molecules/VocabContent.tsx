@@ -29,12 +29,9 @@ const VocabContent = () => {
 
   // Ensure default language is reflected in the URL if not already present
   useEffect(() => {
-    const urlLanguageParamExists = urlSearchParams.has('lang');
-    const urlTopicParamExists = urlSearchParams.has('topic');
-    if (!urlLanguageParamExists || urlTopicParamExists) {
-      navigate(`?lang=${languageToSlugs[currentLanguage.languageName]}&topic=${currentTopic.name.toLowerCase()}`);
-    }
-  }, []); // Empty dependency array to run only on component mount
+    navigate(`?lang=${languageToSlugs[currentLanguage.languageName]}&topic=${currentTopic.name.toLowerCase()}`);
+
+  }, [currentLanguage.languageName, currentTopic.name]);
   var showBaseLanguage = true;
   var [showBaseLanguage,setShowBaseLanguage] = useState(showBaseLanguage)
   const changeBaseLanguage = () => { return setShowBaseLanguage(!showBaseLanguage)}
@@ -49,11 +46,10 @@ const VocabContent = () => {
   const changeOrder = () => { return setShowTrueOrder(!showTrueOrder)}
   const changeCurrentLanguage = 
     ( language: Language) => {
-      setLanguage(language)
-      navigate(`?lang=${language.languageName.toLocaleLowerCase()}`)
+      return setLanguage(language)
+      ;
     };
   const changeCurrentTopic = (topic: Topic) => {
-    navigate(`?lang=${languageToSlugs[currentLanguage.languageName]}&topic=${topic.name.toLowerCase()}`);
     return setCurrentTopic(topic);
   }
 
