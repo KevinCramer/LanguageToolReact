@@ -46,7 +46,7 @@ const VocabContent = () => {
   };
 
   var urlSearchParams = new URLSearchParams(useLocation().search);
-  const urlSettings = JSON.parse(kevinSettingsDecompress(urlSearchParams.get('settings') as string) as string) || []
+  const urlSettings = JSON.parse(kevinSettingsDecompress(urlSearchParams.get('s') as string) as string) || []
   const urlLanguage = urlSettings[0]
   var currentLanguage: Language = languages
     .find(l => languageToSlugs[l.languageName] === urlLanguage) || languages[0]
@@ -104,7 +104,7 @@ const VocabContent = () => {
       quiz,
       audioBool
     ]
-    navigate(`?settings=${kevinSettingsCompress(JSON.stringify(settings))}`);
+    navigate(`?s=${kevinSettingsCompress(JSON.stringify(settings))}`);
 
   }, [
     currentLanguage.languageName, currentTopic.slugName, showBaseLanguage,
