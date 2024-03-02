@@ -262,7 +262,7 @@ export const englishVerbs: { [key: string]: VerbConjugationEnglish } = {
 export const englishPronouns: string[]= ['I','You','He/She','We','You (p)','They']
 
 const dutchTopics: Topic1[] = [
-  {name:'Clothes', hasOrdering:false, words: [
+  {name:'Clothes', slugName: 'clo', hasOrdering:false, words: [
     { englishWord: 'trousers', foreignWord: ['broek'], foreignAudio: ''},
     { englishWord: 'sweater', foreignWord: ['trui'], foreignAudio: ''},
     { englishWord: 'underwear', foreignWord: ['onderbroek'], foreignAudio: ''},
@@ -274,7 +274,7 @@ const dutchTopics: Topic1[] = [
     { englishWord: 'hat', foreignWord: ['pet'], foreignAudio: ''},
     { englishWord: 'scarf', foreignWord: ['sjaal'], foreignAudio: ''},
   ]},
-  {name:'Colours', hasOrdering:false, words: [
+  {name:'Colours', slugName: 'col', hasOrdering:false, words: [
     { englishWord: 'red', foreignWord: ['rood'], foreignAudio: ''},
     { englishWord: 'blue', foreignWord: ['blauw'], foreignAudio: ''},
     { englishWord: 'green', foreignWord: ['groen'], foreignAudio: ''},
@@ -286,7 +286,7 @@ const dutchTopics: Topic1[] = [
     { englishWord: 'purple', foreignWord: ['paars'], foreignAudio: ''},
     { englishWord: 'pink', foreignWord: ['rose'], foreignAudio: ''},
   ]},
-  {name:'Food', hasOrdering:false, words: [
+  {name:'Food', slugName: 'foo', hasOrdering:false, words: [
     { englishWord: 'potato', foreignWord: ['aardappel'], foreignAudio: ''},
     { englishWord: 'bread', foreignWord: ['brood'], foreignAudio: ''},
     { englishWord: 'meat', foreignWord: ['vlees'], foreignAudio: ''},
@@ -316,7 +316,7 @@ const dutchTopics: Topic1[] = [
     { englishWord: 'pancakes', foreignWord: ['pannekoeken'], foreignAudio: ''},
     { englishWord: 'spinach', foreignWord: ['spinazie'], foreignAudio: ''},
   ]},
-  {name:'Family', hasOrdering:false, words: [
+  {name:'Family', slugName: 'fam', hasOrdering:false, words: [
     { englishWord: 'brother', foreignWord: ['broer'], foreignAudio: ''},
     { englishWord: 'sister ', foreignWord: ['zus'], foreignAudio: ''},
     { englishWord: 'mother', foreignWord: ['moeder'], foreignAudio: ''},
@@ -332,7 +332,7 @@ const dutchTopics: Topic1[] = [
     { englishWord: 'niece', foreignWord: ['nicht'], foreignAudio: ''},
     { englishWord: 'nephew', foreignWord: ['neef'], foreignAudio: ''},
   ]},
-  {name:'Numbers', hasOrdering:true, words: [
+  {name:'Numbers', slugName: 'num', hasOrdering:true, words: [
     { englishWord: 'one', foreignWord: ['een'], foreignAudio: '', order:1},
     { englishWord: 'three', foreignWord: ['drie'], foreignAudio: '', order:2},
     { englishWord: 'four', foreignWord: ['vier'], foreignAudio: '', order:3},
@@ -343,7 +343,7 @@ const dutchTopics: Topic1[] = [
     { englishWord: 'nine', foreignWord: ['negen'], foreignAudio: '', order:8},
     { englishWord: 'ten', foreignWord: ['tien'], foreignAudio: '', order:9},
   ]},
-  {name:'Pronunciation', hasOrdering:false, words: [
+  {name:'Pronunciation', slugName: 'pnu', hasOrdering:false, words: [
     { englishWord: 'ei', foreignWord: ['aardbei'], foreignAudio: ''},
     { englishWord: 'ij', foreignWord: ['krijt'], foreignAudio: ''},
     { englishWord: 'sch', foreignWord: ['school'], foreignAudio: ''},
@@ -361,7 +361,7 @@ const dutchTopics: Topic1[] = [
     { englishWord: 'a', foreignWord: ['zal'], foreignAudio: ''},
     { englishWord: 'sj', foreignWord: ['sjaal'], foreignAudio: ''},
   ]},
-  {name:'Pronouns', hasOrdering:true, words: [
+  {name:'Pronouns', slugName: 'pno', hasOrdering:true, words: [
     { englishWord: 'I', foreignWord: ['ik'], foreignAudio: '', order:1},
     { englishWord: 'you ', foreignWord: ['jij'], foreignAudio: '', order:2},
     { englishWord: 'he', foreignWord: ['hij'], foreignAudio: '', order:3},
@@ -370,7 +370,7 @@ const dutchTopics: Topic1[] = [
     { englishWord: 'you (p)', foreignWord: ['julie'], foreignAudio: '', order:6},
     { englishWord: 'They', foreignWord: ['zij'], foreignAudio: '', order:7},
   ]},
-  {name:'Question Words', hasOrdering:false, words: [
+  {name:'Question Words', slugName: 'que', hasOrdering:false, words: [
     { englishWord: 'Why', foreignWord: ['waarom'], foreignAudio: ''},
     { englishWord: 'Where', foreignWord: ['waar'], foreignAudio: ''},
     { englishWord: 'When', foreignWord: ['wanneer'], foreignAudio: ''},
@@ -380,7 +380,7 @@ const dutchTopics: Topic1[] = [
 ]
 
 const arabicTopics: Topic2[] = [
-  {name:'Arabic alphabet', hasOrdering:true, isAlphabet: true, words: [
+  {name:'Arabic alphabet', slugName: 'alp', hasOrdering:true, isAlphabet: true, words: [
     { englishWord: 'alef', foreignWord: ['ا',''], foreignAudio: '', order: 1 },
     { englishWord: 'baa', foreignWord: ['ب',''], foreignAudio: '', order: 2 },
     { englishWord: 'taa', foreignWord: ['ت',''], foreignAudio: '', order: 3 },
@@ -410,7 +410,7 @@ const arabicTopics: Topic2[] = [
     { englishWord: 'yaa', foreignWord: ['ي',''], foreignAudio: '', order: 27 },
   ]},
   
-  {name:'Clothes', hasOrdering:false, words: [
+  {name:'Clothes', slugName: 'clo', hasOrdering:false, words: [
     { englishWord: 'belt', foreignWord: ['ḥizām', 'حِزَام'], foreignAudio: ''},
     { englishWord: 'cap', foreignWord: ['qubba\'ah', 'قُبَّعَة'], foreignAudio: ''},
     { englishWord: 'clothes', foreignWord: ['malābis', 'مَلَابِس'], foreignAudio: ''},
@@ -425,7 +425,7 @@ const arabicTopics: Topic2[] = [
     { englishWord: 'trousers', foreignWord: ['banṭalūn', 'بَنْطَلُون'], foreignAudio: ''},
     { englishWord: 'wallet', foreignWord: ['maḥfaḍhah', 'مَحْفَظَة'], foreignAudio: ''},
   ]},
-  {name:'Food', hasOrdering:false, words: [
+  {name:'Food', slugName: 'foo', hasOrdering:false, words: [
     { englishWord: 'apple', foreignWord: ['tuffāḥah', 'تُفَّاحَة'], foreignAudio: ''},
     { englishWord: 'apricot', foreignWord: ['mishmish', 'مِشْمِش'], foreignAudio: ''},
     { englishWord: 'banana', foreignWord: ['mawz', 'مَوْز'], foreignAudio: ''},
@@ -481,7 +481,7 @@ const arabicTopics: Topic2[] = [
     { englishWord: 'yogurt', foreignWord: ['zabādī', 'زَبادي'], foreignAudio: ''},
     { englishWord: 'zucchini', foreignWord: ['kūsah', 'كوسَة'], foreignAudio: ''},
   ]},
-  {name:'Colours', hasOrdering:false, words: [
+  {name:'Colours', slugName: 'col', hasOrdering:false, words: [
     { englishWord: 'black', foreignWord: ['aswad', 'أَسْوَد'], foreignAudio: arabicAudioBlack},
     { englishWord: 'blue', foreignWord: ['azraq', 'أَزْرَق'], foreignAudio: arabicAudioBlue},
     { englishWord: 'brown', foreignWord: ['bunniyy', 'بُنِّيّ'], foreignAudio: arabicAudioBrown},
@@ -494,7 +494,7 @@ const arabicTopics: Topic2[] = [
     { englishWord: 'yellow', foreignWord: ['asfar', 'أَصْفَر'], foreignAudio: arabicAudioYellow},
     { englishWord: 'white', foreignWord: ['abyaḍ', 'أَبْيَض'], foreignAudio: arabicAudioWhite},
   ]},
-  {name:'Numbers', hasOrdering:true, words: [
+  {name:'Numbers', slugName: 'num', hasOrdering:true, words: [
     { englishWord: 'one', foreignWord: ['waheed', 'وَاحِد'], foreignAudio: '', order:1},
     { englishWord: 'two', foreignWord: ['ithnain', 'اِثْنَان'], foreignAudio: '', order:2},
     { englishWord: 'three', foreignWord: ['thalāthah', 'ثَلَاثَة'], foreignAudio: '', order:3},
@@ -506,7 +506,7 @@ const arabicTopics: Topic2[] = [
     { englishWord: 'nine', foreignWord: ['tis\'ah', 'تِسْعَة'], foreignAudio: '', order:9},
     { englishWord: 'ten', foreignWord: ['\'asharah', 'عَشَرَة'], foreignAudio: '', order:10},
   ]},
-  {name:'Body', hasOrdering:false, words: [
+  {name:'Body', slugName: 'bod', hasOrdering:false, words: [
     { englishWord: 'hand', foreignWord: ['yad', 'يَد'], foreignAudio: ''},
     { englishWord: 'head', foreignWord: ['ra\'s', 'رَأْس'], foreignAudio: ''},
     { englishWord: 'heart', foreignWord: ['qalb', 'قَلْب'], foreignAudio: ''},
@@ -531,7 +531,7 @@ const arabicTopics: Topic2[] = [
     { englishWord: 'tooth', foreignWord: ['sinn', 'سِنّ'], foreignAudio: ''},
     { englishWord: 'blood', foreignWord: ['dam', 'دَم'], foreignAudio: ''},
   ]},
-  {name:'Adjectives', hasOrdering:false, words: [
+  {name:'Adjectives', slugName: 'adj', hasOrdering:false, words: [
     { englishWord: 'a few', foreignWord: ['qalīl', 'قَلِيل'], foreignAudio: ''},
     { englishWord: 'a lot', foreignWord: ['kathīr', 'كَثِير'], foreignAudio: ''},
     { englishWord: 'beautiful', foreignWord: ['jamīl', 'جَمِيل'], foreignAudio: ''},
@@ -557,7 +557,7 @@ const arabicTopics: Topic2[] = [
     { englishWord: 'smart', foreignWord: ['dhakiyy', 'ذَكِيّ'], foreignAudio: ''},
     { englishWord: 'tall', foreignWord: ['ṭawīl', 'طَوِيل'], foreignAudio: ''},
   ]},
-  {name:'Pronouns', hasOrdering:true, words: [
+  {name:'Pronouns', slugName: 'pnn', hasOrdering:true, words: [
     { englishWord: 'I', foreignWord: ['ana', 'أنا'], foreignAudio: '', order:1},
     { englishWord: 'You (masculine)', foreignWord: ['anta', 'انتَ'], foreignAudio: '', order:2},
     { englishWord: 'You (feminine)', foreignWord: ['anti', 'انتِ'], foreignAudio: '', order:3},
@@ -585,7 +585,7 @@ const arabicTopics: Topic2[] = [
   //   { englishWord: "how", foreignWord: ["kef"], foreignAudio: ""},
   //   { englishWord: "why", foreignWord: ["lay"], foreignAudio: ""},
   // ]},
-  {name:'Home', hasOrdering:false, words: [
+  {name:'Home', slugName: 'hom', hasOrdering:false, words: [
     { englishWord: 'bedroom', foreignWord: ['ghurfatu n-nawm', 'غُرْفَةُ النَّوْم'], foreignAudio: ''},
     { englishWord: 'sofa', foreignWord: ['arīkah', 'أَرِيكَة'], foreignAudio: ''},
     { englishWord: 'toilet', foreignWord: ['mirḥāḍ', 'مِرْحَاض'], foreignAudio: ''},
@@ -652,7 +652,7 @@ const arabicTopics: Topic2[] = [
     { englishWord: 'furniture', foreignWord: ['athāth', 'أَثَاث'], foreignAudio: ''},
     { englishWord: 'alarm clock', foreignWord: ['munabbih', 'مُنَبِّه'], foreignAudio: ''},
   ]},
-  {name:'Buildings', hasOrdering:false, words: [
+  {name:'Buildings', slugName: 'bui', hasOrdering:false, words: [
     { englishWord: 'hospital', foreignWord: ['mustـshfā', 'مُسْتـشفَى'], foreignAudio: ''},
     { englishWord: 'airport', foreignWord: ['maṭār', 'مَطَار'], foreignAudio: ''},
     { englishWord: 'library', foreignWord: ['maktabah', 'مَكْتَبَة'], foreignAudio: ''},
@@ -670,7 +670,7 @@ const arabicTopics: Topic2[] = [
     { englishWord: 'building', foreignWord: ['\'imārah', 'عِمارَة'], foreignAudio: ''},
     { englishWord: 'farm', foreignWord: ['mazra\'ah', 'مَزْرَعَة'], foreignAudio: ''},
   ]},
-  {name:'Professions', hasOrdering:false, words: [
+  {name:'Professions',slugName: 'prf', hasOrdering:false, words: [
     { englishWord: 'butcher', foreignWord: ['jazzār', 'جَزَّار'], foreignAudio: ''},
     { englishWord: 'fireman', foreignWord: ['rajulu l-iṭfā`', 'رَجُلُ الإِطْفاء'], foreignAudio: ''},
     { englishWord: 'barber', foreignWord: ['ḥanllāq', 'حًلَّاق'], foreignAudio: ''},
@@ -691,7 +691,7 @@ const arabicTopics: Topic2[] = [
     { englishWord: 'orthopedist', foreignWord: ['ṭabību l-\'iḍhām', 'طَبيبُ العِظام'], foreignAudio: ''},
     { englishWord: 'nurse', foreignWord: ['mumarriḍ', 'مُمَرِّض'], foreignAudio: ''},
   ]},
-  {name:'Hard to Read', hasOrdering:false, words: [
+  {name:'Hard to Read', slugName: 'htd', hasOrdering:false, words: [
     { englishWord: 'as-sā\'atu l-waḥidah', foreignWord: ['السَّاعَةُ الوَحِدَة',''], foreignAudio: ''},
     { englishWord: 'as-sā\'atu th-thāniyah', foreignWord: ['السَّاعَةُ الثَّانِيَة',''], foreignAudio: ''},
     { englishWord: 'as-sā\'atu th-thālithah', foreignWord: ['السَّاعَةُ الثَّالِثَة',''], foreignAudio: ''},
@@ -721,7 +721,7 @@ const arabicTopics: Topic2[] = [
 ]
 
 const spanishTopics: Topic1[] = [
-  {name:'Clothes', hasOrdering:false, words: [
+  {name:'Clothes',slugName: 'clo', hasOrdering:false, words: [
     { englishWord: '(the) trousers', foreignWord: ['(los) pantalones'], foreignAudio: ''},
     { englishWord: '(the) sweater', foreignWord: ['(el) suéter'], foreignAudio: ''},
     { englishWord: '(the) underwear', foreignWord: ['(la) ropa interior'], foreignAudio: ''},
@@ -732,7 +732,7 @@ const spanishTopics: Topic1[] = [
     { englishWord: '(the) hat', foreignWord: ['(el) sombrero'], foreignAudio: ''},
     { englishWord: '(the) scarf', foreignWord: ['(la) bufanda'], foreignAudio: ''},
   ]},
-  {name:'Colours', hasOrdering:false, words: [
+  {name:'Colours', slugName: 'col', hasOrdering:false, words: [
     { englishWord: 'red', foreignWord: ['rojo'], foreignAudio: ''},
     { englishWord: 'blue', foreignWord: ['azul'], foreignAudio: ''},
     { englishWord: 'green', foreignWord: ['verde'], foreignAudio: ''},
@@ -744,7 +744,7 @@ const spanishTopics: Topic1[] = [
     { englishWord: 'purple', foreignWord: ['morado'], foreignAudio: ''},
     { englishWord: 'pink', foreignWord: ['rosado'], foreignAudio: ''},
   ]},
-  {name:'Food', hasOrdering:false, words: [
+  {name:'Food', slugName: 'foo', hasOrdering:false, words: [
     { englishWord: '(the) potato', foreignWord: ['(la) papa'], foreignAudio: ''},
     { englishWord: '(the) bread', foreignWord: ['(el) pan'], foreignAudio: ''},
     { englishWord: '(the) meat', foreignWord: ['(la) carne'], foreignAudio: ''},
@@ -758,7 +758,7 @@ const spanishTopics: Topic1[] = [
   ]},
   // https://l-lingo.com/free-lessons/en/learn-spanish/numbers-1-10.html go to devtools console, and press audio to get the url 
   // to download the audio.
-  {name:'Numbers', hasOrdering:true, words: [
+  {name:'Numbers', slugName: 'num', hasOrdering:true, words: [
     { englishWord: 'one', foreignWord: ['uno'], foreignAudio: spanishAudioOne, order:1},
     { englishWord: 'two', foreignWord: ['dos'], foreignAudio: spanishAudioTwo, order:2},
     { englishWord: 'three', foreignWord: ['tres'], foreignAudio: spanishAudioThree, order:3},
@@ -770,7 +770,7 @@ const spanishTopics: Topic1[] = [
     { englishWord: 'nine', foreignWord: ['nueve'], foreignAudio: spanishAudioNine, order:9},
     { englishWord: 'ten', foreignWord: ['diez'], foreignAudio: spanishAudioTen, order:10},
   ]},
-  {name:'Verbs', hasOrdering:false, words: [
+  {name:'Verbs', slugName: 'ver', hasOrdering:false, words: [
     // Source of spanish verbs: https://ellaverbs.com/spanish-verbs/
     {
       englishWord: englishVerbs['to call'],
@@ -1073,7 +1073,7 @@ const spanishTopics: Topic1[] = [
               ],
       foreignAudio: ''},
   ]},
-  {name:'Pronouns', hasOrdering:true, words: [
+  {name:'Pronouns', slugName: 'pro', hasOrdering:true, words: [
     { englishWord: 'I', foreignWord: ['yo'], foreignAudio: '', order:1},
     { englishWord: 'you', foreignWord: ['tu'], foreignAudio: '', order:2},
     { englishWord: 'he', foreignWord: ['el'], foreignAudio: '', order:3},
@@ -1082,7 +1082,7 @@ const spanishTopics: Topic1[] = [
     { englishWord: 'you (p)', foreignWord: ['vosotros'], foreignAudio: '', order:6},
     { englishWord: 'they', foreignWord: ['ellos/ellas'], foreignAudio: '', order:7},
   ]},
-  {name:'Body', hasOrdering:false, words: [
+  {name:'Body', slugName: 'bod', hasOrdering:false, words: [
     { englishWord: '(the) hand', foreignWord: ['(la) mano'], foreignAudio: ''},
     { englishWord: '(the) head', foreignWord: ['(la) cabeza'], foreignAudio: ''},
     { englishWord: '(the) hair', foreignWord: ['(el) pelo'], foreignAudio: ''},
@@ -1099,7 +1099,7 @@ const spanishTopics: Topic1[] = [
     { englishWord: '(the) knee', foreignWord: ['(la) rodilla'], foreignAudio: ''},
 
   ]},
-  {name:'Locations', hasOrdering:false, words: [
+  {name:'Locations', slugName: 'loc', hasOrdering:false, words: [
     { englishWord: '(the) airport', foreignWord: ['(el) aeropuerto'], foreignAudio: ''},
     { englishWord: '(the) bakery', foreignWord: ['(la) panadería'], foreignAudio: ''},
     { englishWord: '(the) bank', foreignWord: ['(el) banco'], foreignAudio: ''},
@@ -1120,7 +1120,7 @@ const spanishTopics: Topic1[] = [
     { englishWord: '(the) university', foreignWord: ['(la) universidad'], foreignAudio: ''},
 
   ]},
-  {name:'Home', hasOrdering:false, words: [
+  {name:'Home', slugName: 'hom', hasOrdering:false, words: [
     { englishWord: '(the) window', foreignWord: ['(la) ventana'], foreignAudio: ''},
     { englishWord: '(the) bedroom', foreignWord: ['(el) dormitorio'], foreignAudio: ''},
     { englishWord: '(the) kitchen', foreignWord: ['(la) cocina'], foreignAudio: ''},
@@ -1131,14 +1131,14 @@ const spanishTopics: Topic1[] = [
     { englishWord: '(the) garden', foreignWord: ['(el) jardín'], foreignAudio: ''},
     { englishWord: '(the) living room', foreignWord: ['(el) salón'], foreignAudio: ''},
   ]},
-  {name:'Question words', hasOrdering:false, words: [
+  {name:'Question words', slugName: 'que', hasOrdering:false, words: [
     { englishWord: 'why', foreignWord: ['por qué'], foreignAudio: ''},
     { englishWord: 'what', foreignWord: ['qué'], foreignAudio: ''},
     { englishWord: 'where', foreignWord: ['dónde'], foreignAudio: ''},
     { englishWord: 'how', foreignWord: ['cómo'], foreignAudio: ''},
     { englishWord: 'when', foreignWord: ['cuando'], foreignAudio: ''},
   ]},
-  {name:'Conjuctions', hasOrdering:false, words: [
+  {name:'Conjuctions', slugName: 'con', hasOrdering:false, words: [
     { englishWord: 'and', foreignWord: ['y'], foreignAudio: ''},
     { englishWord: 'but', foreignWord: ['pero'], foreignAudio: ''},
     { englishWord: 'or', foreignWord: ['o'], foreignAudio: ''},
@@ -1152,7 +1152,7 @@ const spanishTopics: Topic1[] = [
     { englishWord: 'nevertheless', foreignWord: ['sin embargo'], foreignAudio: ''},
 
   ]},
-  {name:'Adjectives', hasOrdering:false, words: [
+  {name:'Adjectives', slugName: 'adj', hasOrdering:false, words: [
     // https://www.fluentu.com/blog/spanish/common-spanish-adjectives/#toc_2
     { englishWord: 'open', foreignWord: ['abierto'], foreignAudio: spanishAudioOpen},
     { englishWord: 'boring', foreignWord: ['aburrido'], foreignAudio: spanishAudioBoring},
@@ -1211,7 +1211,7 @@ const spanishTopics: Topic1[] = [
 const spanishPronouns: string[] = ['Yo','Tu','El/Ella','Nosotros', 'Vosotros', 'Ellos/Ellas']
 
 const frenchTopics: Topic1[] = [
-  {name:'Numbers', hasOrdering:true, words: [
+  {name:'Numbers', slugName: 'num', hasOrdering:true, words: [
     { englishWord: 'one', foreignWord: ['un'], foreignAudio: '', order:1},
     { englishWord: 'two', foreignWord: ['deux'], foreignAudio: '', order:2},
     { englishWord: 'three', foreignWord: ['trois'], foreignAudio: '', order:3},
@@ -1226,7 +1226,7 @@ const frenchTopics: Topic1[] = [
 ]
 
 const italianTopics: Topic1[] = [
-  {name:'Numbers', hasOrdering:true, words: [
+  {name:'Numbers', slugName: 'num', hasOrdering:true, words: [
     { englishWord: 'one', foreignWord: ['uno'], foreignAudio: '', order:1},
     { englishWord: 'two', foreignWord: ['due'], foreignAudio: '', order:2},
     { englishWord: 'three', foreignWord: ['tre'], foreignAudio: '', order:3},
@@ -1240,7 +1240,7 @@ const italianTopics: Topic1[] = [
   ]},
 ]
 const germanTopics: Topic1[] = [
-  {name:'Numbers', hasOrdering:true, words: [
+  {name:'Numbers', slugName: 'num', hasOrdering:true, words: [
     { englishWord: 'one', foreignWord: ['eins'], foreignAudio: '', order:1},
     { englishWord: 'two', foreignWord: ['zwei'], foreignAudio: '', order:2},
     { englishWord: 'three', foreignWord: ['drei'], foreignAudio: '', order:3},
@@ -1255,7 +1255,7 @@ const germanTopics: Topic1[] = [
 ]
 
 const japaneseTopics: Topic3[] = [
-  {name:'Hiragana alphabet', hasOrdering:true, isAlphabet: true, words: [
+  {name:'Hiragana alphabet', slugName: 'hir', hasOrdering:true, isAlphabet: true, words: [
     { englishWord: 'a', foreignWord: ['あ','',''], foreignAudio: '', order: 1 },
     { englishWord: 'i', foreignWord: ['い','',''], foreignAudio: '', order: 2 },
     { englishWord: 'u', foreignWord: ['う','',''], foreignAudio: '', order: 3 },
@@ -1303,7 +1303,7 @@ const japaneseTopics: Topic3[] = [
     { englishWord: 'wo', foreignWord: ['を','',''], foreignAudio: '', order: 45 },
     { englishWord: 'n', foreignWord: ['ん','',''], foreignAudio: '', order: 46 },
   ]},
-  {name:'Katakana alphabet', hasOrdering:true, isAlphabet: true, words: [
+  {name:'Katakana alphabet', slugName: 'kat', hasOrdering:true, isAlphabet: true, words: [
     { englishWord: 'a', foreignWord: ['ア','',''], foreignAudio: '', order: 1 },
     { englishWord: 'u', foreignWord: ['ウ','',''], foreignAudio: '', order: 2 },
     { englishWord: 'e', foreignWord: ['エ','',''], foreignAudio: '', order: 3 },
@@ -1350,7 +1350,7 @@ const japaneseTopics: Topic3[] = [
     { englishWord: 'wo', foreignWord: ['ヲ','',''], foreignAudio: '', order: 44 },
     { englishWord: 'n', foreignWord: ['ン','',''], foreignAudio: '', order: 45 },
   ]},
-  {name:'Numbers', hasOrdering:true, words: [
+  {name:'Numbers',slugName: 'num', hasOrdering:true, words: [
     { englishWord: 'one', foreignWord: ['ichi', 'いち','一'], foreignAudio: '', order:1},
     { englishWord: 'two', foreignWord: ['ni', 'に','二'], foreignAudio: '', order:2},
     { englishWord: 'three',foreignWord: ['san', 'さん','三'], foreignAudio: '', order:3},
@@ -1365,7 +1365,7 @@ const japaneseTopics: Topic3[] = [
 ]
 
 const mandarinTopics: Topic2[] = [
-  {name:'Numbers', hasOrdering:true, words: [
+  {name:'Numbers', slugName: 'num', hasOrdering:true, words: [
     { englishWord: 'one', foreignWord: ['yī','一'], foreignAudio: '', order:1},
     { englishWord: 'two', foreignWord: ['èr','二'], foreignAudio: '', order:2},
     { englishWord: 'three',foreignWord: ['sān','三'], foreignAudio: '', order:3},
@@ -1380,7 +1380,7 @@ const mandarinTopics: Topic2[] = [
 ]
 
 const koreanTopics: Topic2[] = [
-  {name:'Numbers', hasOrdering:true, words: [
+  {name:'Numbers', slugName: 'num', hasOrdering:true, words: [
     { englishWord: 'one', foreignWord: ['ha-na','하나'], foreignAudio: '', order:1},
     { englishWord: 'two', foreignWord: ['dool','둘'], foreignAudio: '', order:2},
     { englishWord: 'three', foreignWord: ['seht','셋'], foreignAudio: '', order:3},
@@ -1392,7 +1392,7 @@ const koreanTopics: Topic2[] = [
     { englishWord: 'nine', foreignWord: ['ah-hope','아홉'], foreignAudio: '', order:9},
     { englishWord: 'ten', foreignWord: ['yul','열'], foreignAudio: '', order:10},
   ]},
-  {name:'Hangul (Alphabet)', hasOrdering:true, isAlphabet: true, words: [
+  {name:'Hangul (Alphabet)', slugName: 'han', hasOrdering:true, isAlphabet: true, words: [
     { englishWord: 'g', foreignWord: ['ㄱ',''],foreignAudio: '', order:1 },
     { englishWord: 'n', foreignWord: ['ㄴ',''], foreignAudio: ''},
     { englishWord: 'd', foreignWord: ['ㄷ',''], foreignAudio: ''},
@@ -1421,7 +1421,7 @@ const koreanTopics: Topic2[] = [
 ]
 
 const portugueseTopics: Topic1[] = [
-  {name:'Numbers', hasOrdering:true, words: [
+  {name:'Numbers', slugName: 'num', hasOrdering:true, words: [
     { englishWord: 'one', foreignWord: ['um'], foreignAudio: '', order:1},
     { englishWord: 'two', foreignWord: ['dois'], foreignAudio: '', order:2},
     { englishWord: 'three', foreignWord: ['três'], foreignAudio: '', order:3},
@@ -1436,7 +1436,7 @@ const portugueseTopics: Topic1[] = [
 ]
 
 const russianTopics: Topic2[] = [
-  {name:'Russian alphabet', hasOrdering:true, isAlphabet: true, words: [
+  {name:'Russian alphabet', slugName: 'alp', hasOrdering:true, isAlphabet: true, words: [
     { englishWord: 'a', foreignWord: ['а',''], foreignAudio: '', order:1 },
     { englishWord: 'b', foreignWord: ['б',''], foreignAudio: '', order:2 },
     { englishWord: 'v', foreignWord: ['в',''], foreignAudio: '', order:3 },
@@ -1471,7 +1471,7 @@ const russianTopics: Topic2[] = [
     { englishWord: 'yu', foreignWord: ['ю',''], foreignAudio: '', order:32 },
     { englishWord: 'ya', foreignWord: ['я',''], foreignAudio: '', order:33 },
   ]},
-  {name:'Numbers', hasOrdering:true, words: [
+  {name:'Numbers', slugName: 'num', hasOrdering:true, words: [
     { englishWord: 'one', foreignWord: ['a-deen', 'один'], foreignAudio: '', order:1},
     { englishWord: 'two', foreignWord: ['dva', 'два'], foreignAudio: '', order:2},
     { englishWord: 'three', foreignWord: ['tree', 'три'], foreignAudio: '', order:3},

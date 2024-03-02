@@ -45,6 +45,7 @@ export type Word = Word1 | Word2 | Word3;
 
 export type Topic1 = {
     name: string;
+    slugName: string;
     hasOrdering: boolean;
     words: Word1[];
     isAlphabet?: boolean;
@@ -52,6 +53,7 @@ export type Topic1 = {
 }
 export type Topic2 = {
     name: string;
+    slugName: string;
     hasOrdering: boolean;
     words: Word2[];
     isAlphabet?: boolean;
@@ -59,6 +61,7 @@ export type Topic2 = {
 }
 export type Topic3 = {
     name: string;
+    slugName: string;
     hasOrdering: boolean;
     words: Word3[];
     isAlphabet?: boolean;

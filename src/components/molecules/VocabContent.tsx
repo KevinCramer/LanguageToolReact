@@ -14,10 +14,39 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { languageToSlugs} from '../../constants'
 
 const VocabContent = () => {
-  const notNullOrUndefined = (value: any) => value !== null && value !== undefined
   const navigate = useNavigate();
+  const notNullOrUndefined = (value: any) => value !== null && value !== undefined
+  const kevinSettingsCompress = (settings: string)=> {
+    let output = ''
+    const settingsArray = JSON.parse(settings)
+    output += settingsArray[0] + '-'
+    output += settingsArray[1] + '-'
+    output += settingsArray[2] ? 'T': 'F'
+    output += settingsArray[3].toString();
+    output += settingsArray[4] ? 'T': 'F'
+    output += settingsArray[5] ? 'T': 'F'
+    output += settingsArray[6] ? 'T': 'F'
+    return output
+  };
+  const kevinSettingsDecompress = (compressedSettings: string)=> {
+    if(compressedSettings === null){
+      return null
+    }
+    let output = '['
+    const a = compressedSettings.split('-')
+    output += '"' + a[0] + '",'
+    output += '"' + a[1] + '",'
+    output += a[2][0] === 'T' ? 'true,' : 'false,'
+    output += a[2][1] + ','
+    output += a[2][2] === 'T' ? 'true,' : 'false,'
+    output += a[2][3] === 'T' ? 'true,' : 'false,'
+    output += a[2][4] === 'T' ? 'true' : 'false'
+    output += ']'
+    return output
+  };
+
   var urlSearchParams = new URLSearchParams(useLocation().search);
-  const urlSettings = JSON.parse(urlSearchParams.get('settings') as string) || []
+  const urlSettings = JSON.parse(kevinSettingsDecompress(urlSearchParams.get('settings') as string) as string) || []
   const urlLanguage = urlSettings[0]
   var currentLanguage: Language = languages
     .find(l => languageToSlugs[l.languageName] === urlLanguage) || languages[0]
@@ -25,7 +54,7 @@ const VocabContent = () => {
  
   const urlTopic = urlSettings[1]
   var currentTopic: Topic = (currentLanguage.topics as Topic[])
-    .find(t => t.name.toLowerCase() === urlTopic) || currentLanguage.topics[0]
+    .find(t => t.slugName === urlTopic) || currentLanguage.topics[0]
   var [currentTopic,setCurrentTopic] = useState(currentTopic)
  
   const urlShowBaseLanguage = urlSettings[2]
@@ -68,17 +97,17 @@ const VocabContent = () => {
   useEffect(() => {
     const settings = [
       languageToSlugs[currentLanguage.languageName],
-      currentTopic.name.toLowerCase(), 
+      currentTopic.slugName, 
       showBaseLanguage,
       currentAlphabet, 
       showTrueOrder,
       quiz,
       audioBool
     ]
-    navigate(`?settings=${JSON.stringify(settings)}`);
+    navigate(`?settings=${kevinSettingsCompress(JSON.stringify(settings))}`);
 
   }, [
-    currentLanguage.languageName, currentTopic.name, showBaseLanguage,
+    currentLanguage.languageName, currentTopic.slugName, showBaseLanguage,
     currentAlphabet,showTrueOrder,quiz,audioBool, navigate ]);
   
   function ToggleQuiz(){

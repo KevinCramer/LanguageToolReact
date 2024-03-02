@@ -5,16 +5,16 @@ export const modalTenses = [
 ]
 
 export const languageToSlugs: Record<string,string> = {
-  'Spanish': 'spanish',
-  'French': 'french',
-  'German': 'german',
-  'Italian': 'italian',
-  'Japanese': 'japanese',
-  'Mandarin': 'mandarin',
-  'Korean': 'korean',
-  'Arabic': 'arabic',
-  'Portuguese': 'portuguese',
-  'Russian': 'russian',
-  'Dutch': 'dutch',
+  'Spanish': 'spa',
+  'French': 'fre',
+  'German': 'ger',
+  'Italian': 'ita',
+  'Japanese': 'jap',
+  'Mandarin': 'man',
+  'Korean': 'kor',
+  'Arabic': 'ara',
+  'Portuguese': 'por',
+  'Russian': 'rus',
+  'Dutch': 'dut',
 
 }
