@@ -19,8 +19,8 @@ const GrammarContent = () => {
     return (
       <div style={{ width: '400px'}}>
         <div style={{display:'flex',flexDirection: 'column'}}>
-          {currentTopic.contents.map((content: any) =>
-            <div>
+          {currentTopic.contents.map((content: any, index: number) =>
+            <div key = {index}>
               {content}
             </div>                    
           )}
@@ -37,15 +37,15 @@ const GrammarContent = () => {
             <DropdownButton style={{margin: '0px 20px 0px 20px'}} variant= 'secondary'
               id="Languages" title=
                 {String(currentLanguage.languageName)} size = "sm"> 
-              {languages.map((languageItem: any) =>
-                <Dropdown.Item onClick = {() => [changeCurrentLanguage(
+              {languages.map((languageItem: any, index: number) =>
+                <Dropdown.Item key = {index} onClick = {() => [changeCurrentLanguage(
                   languageItem)]}>
                   {languageItem.languageName}</Dropdown.Item>)}
             </DropdownButton>
             <DropdownButton style={{margin: '0px 20px 0px 20px'}} variant= 'secondary'
               id="Topics" title={'Topic: ' + currentTopic.name} size = "sm">
-              {currentLanguage.topics.map((topic: any) =>
-                <Dropdown.Item onClick = {() => 
+              {currentLanguage.topics.map((topic: any, index: number) =>
+                <Dropdown.Item key = {index} onClick = {() => 
                   changeCurrentTopic(topic)}>{topic.name}</Dropdown.Item>)}
             </DropdownButton>
           </Container>

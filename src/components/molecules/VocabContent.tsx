@@ -67,8 +67,8 @@ const VocabContent = () => {
     else {
       return (
         <div>
-          {topicWords.map((pair: Word) =>
-            <div>
+          {topicWords.map((pair: Word, index: number) =>
+            <div key = {index}>
               <StudyElement 
                 BaseLanguageWord = { showBaseLanguage? pair.englishWord:
                   pair.foreignWord[currentAlphabet]} 
@@ -126,16 +126,16 @@ const VocabContent = () => {
             <DropdownButton style={{margin: '0px 20px 0px 20px'}} variant= 'secondary'
               id="Languages" title=
                 {String(currentLanguage.languageName)} size = "sm"> 
-              {languages.map((languageItem: Language) =>
-                <Dropdown.Item onClick = {() => [changeCurrentLanguage(
+              {languages.map((languageItem: Language, index: number) =>
+                <Dropdown.Item key = {index} onClick = {() => [changeCurrentLanguage(
                   languageItem),
                 setCurrentAlphabet(0),changeCurrentTopic(languageItem.topics[0]) ]}>
                   {languageItem.languageName}</Dropdown.Item>)}
             </DropdownButton>
             <DropdownButton style={{margin: '0px 20px 0px 20px'}} variant= 'secondary'
               id="Topics" title={'Topic: ' + currentTopic.name} size = "sm">
-              {currentLanguage.topics.map((topic: Topic) =>
-                <Dropdown.Item onClick = {() => 
+              {currentLanguage.topics.map((topic: Topic, index: number) =>
+                <Dropdown.Item key = {index} onClick = {() => 
                   changeCurrentTopic(topic)}>{topic.name}</Dropdown.Item>)}
             </DropdownButton>
             <DropdownButton style={{margin: '0px 20px 0px 20px'}} variant= 'secondary' align="end"
