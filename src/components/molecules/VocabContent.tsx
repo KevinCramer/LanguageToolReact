@@ -12,41 +12,14 @@ import { Language, VerbConjugationEnglish,
 import { scramble } from '../../helpers';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { languageToSlugs} from '../../constants'
+import {notNullOrUndefined} from '../../helpers/helperFunctions'
+import {queryParamCompress, queryParamDecompress} from '../../helpers/queryParamHelpers'
 
 const VocabContent = () => {
   const navigate = useNavigate();
-  const notNullOrUndefined = (value: any) => value !== null && value !== undefined
-  const kevinSettingsCompress = (settings: string)=> {
-    let output = ''
-    const settingsArray = JSON.parse(settings)
-    output += settingsArray[0] + '-'
-    output += settingsArray[1] + '-'
-    output += settingsArray[2] ? 'T': 'F'
-    output += settingsArray[3].toString();
-    output += settingsArray[4] ? 'T': 'F'
-    output += settingsArray[5] ? 'T': 'F'
-    output += settingsArray[6] ? 'T': 'F'
-    return output
-  };
-  const kevinSettingsDecompress = (compressedSettings: string)=> {
-    if(compressedSettings === null){
-      return null
-    }
-    let output = '['
-    const a = compressedSettings.split('-')
-    output += '"' + a[0] + '",'
-    output += '"' + a[1] + '",'
-    output += a[2][0] === 'T' ? 'true,' : 'false,'
-    output += a[2][1] + ','
-    output += a[2][2] === 'T' ? 'true,' : 'false,'
-    output += a[2][3] === 'T' ? 'true,' : 'false,'
-    output += a[2][4] === 'T' ? 'true' : 'false'
-    output += ']'
-    return output
-  };
 
   var urlSearchParams = new URLSearchParams(useLocation().search);
-  const urlSettings = JSON.parse(kevinSettingsDecompress(urlSearchParams.get('s') as string) as string) || []
+  const urlSettings = JSON.parse(queryParamDecompress(urlSearchParams.get('s') as string) as string) || []
   const urlLanguage = urlSettings[0]
   var currentLanguage: Language = languages
     .find(l => languageToSlugs[l.languageName] === urlLanguage) || languages[0]
@@ -104,7 +77,7 @@ const VocabContent = () => {
       quiz,
       audioBool
     ]
-    navigate(`?s=${kevinSettingsCompress(JSON.stringify(settings))}`);
+    navigate(`?s=${queryParamCompress(JSON.stringify(settings))}`);
 
   }, [
     currentLanguage.languageName, currentTopic.slugName, showBaseLanguage,
