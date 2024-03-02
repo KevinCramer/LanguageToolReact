@@ -7,8 +7,6 @@ import DropdownButton from 'react-bootstrap/DropdownButton';
 import ReactSwitch from 'react-switch';
 import {languages} from '../../data/words';
 import ReactGA from 'react-ga';
-import {useSelector,useDispatch} from 'react-redux'
-import {flip} from '../../redux/displayAudio';
 import { Language, VerbConjugationEnglish, 
   Word, Word1, Word2, Word3, Topic } from '../../types';
 import { scramble } from '../../helpers';
@@ -57,9 +55,11 @@ const VocabContent = () => {
   const changeQuizState = () => {
     ReactGA.event({category: 'quizStateWasChanged', action: 'hdfg',label: 'dasfg',value: 4});
     return setQuiz((!quiz))}
-    
-  const audioBool = useSelector((state:any) => state.audio.audioBool);
-  const dispatch = useDispatch();
+
+  const urlAudio = urlSearchParams.get('audio')
+  var audioBool = JSON.parse(urlAudio as string);
+  var [audioBool,setAudioBool] = useState(audioBool)
+  const changeAudioBool = () => { return setAudioBool(!audioBool)}
 
   // Ensure default language is reflected in the URL if not already present
   useEffect(() => {
@@ -163,7 +163,7 @@ const VocabContent = () => {
             <DropdownButton style={{margin: '0px 20px 0px 20px'}} variant= 'secondary' align="end"
               id="Settings" title="Settings" size = "sm">
               <Dropdown.Item onClick = {changeBaseLanguage}>toggle base language</Dropdown.Item>
-              <Dropdown.Item onClick = {() => dispatch(flip())}>
+              <Dropdown.Item onClick = {() => changeAudioBool()}>
                 {audioBool? 'hide audio':'show audio'}</Dropdown.Item>
               <Dropdown.Item onClick = {changeOrder}>
                 {showTrueOrder? 'random ordering':'default ordering'}</Dropdown.Item>
