@@ -17,29 +17,29 @@ const VocabContent = () => {
   const notNullOrUndefined = (value: any) => value !== null && value !== undefined
   const navigate = useNavigate();
   var urlSearchParams = new URLSearchParams(useLocation().search);
-  const urlSettings = JSON.parse(urlSearchParams.get('settings') as string)
-  const urlLanguage = urlSettings?.lang
+  const urlSettings = JSON.parse(urlSearchParams.get('settings') as string) || []
+  const urlLanguage = urlSettings[0]
   var currentLanguage: Language = languages
     .find(l => languageToSlugs[l.languageName] === urlLanguage) || languages[0]
   var [currentLanguage,setLanguage] = useState(currentLanguage);
  
-  const urlTopic = urlSettings?.topic
+  const urlTopic = urlSettings[1]
   var currentTopic: Topic = (currentLanguage.topics as Topic[])
     .find(t => t.name.toLowerCase() === urlTopic) || currentLanguage.topics[0]
   var [currentTopic,setCurrentTopic] = useState(currentTopic)
  
-  const urlShowBaseLanguage = urlSettings?.baseLanguage
+  const urlShowBaseLanguage = urlSettings[2]
   var showBaseLanguage = notNullOrUndefined(urlShowBaseLanguage) ? urlShowBaseLanguage : true
   var [showBaseLanguage,setShowBaseLanguage] = useState(showBaseLanguage)
   const changeBaseLanguage = () => { return setShowBaseLanguage(!showBaseLanguage)}
 
-  const urlCurrentAlphabet = urlSettings?.currentAlphabet
+  const urlCurrentAlphabet = urlSettings[3]
   var currentAlphabet: number = parseInt(urlCurrentAlphabet as string) || 0;
   var [currentAlphabet,setCurrentAlphabet] = useState(currentAlphabet)
   const changeCurrentAlphabet = () => { return setCurrentAlphabet(
     currentAlphabet = (currentAlphabet +1)% currentLanguage.numForeignAlphabets)}
 
-  const urlShowTrueOrder = urlSettings?.order
+  const urlShowTrueOrder = urlSettings[4]
   var showTrueOrder = notNullOrUndefined(urlShowTrueOrder) ? urlShowTrueOrder : true
   var [showTrueOrder,setShowTrueOrder] = useState(showTrueOrder)
   const changeOrder = () => { return setShowTrueOrder(!showTrueOrder)}
@@ -52,30 +52,29 @@ const VocabContent = () => {
     return setCurrentTopic(topic);
   }
 
-  const urlQuiz = urlSettings?.quiz
+  const urlQuiz = urlSettings[5]
   var quiz = notNullOrUndefined(urlQuiz) ? urlQuiz : false
   var [quiz,setQuiz] = useState(quiz)
   const changeQuizState = () => {
     ReactGA.event({category: 'quizStateWasChanged', action: 'hdfg',label: 'dasfg',value: 4});
     return setQuiz((!quiz))}
 
-  const urlAudio = urlSettings?.audio
+  const urlAudio = urlSettings[6]
   var audioBool = notNullOrUndefined(urlAudio) ? urlAudio: false 
   var [audioBool,setAudioBool] = useState(audioBool)
   const changeAudioBool = () => { return setAudioBool(!audioBool)}
 
   // Ensure default language is reflected in the URL if not already present
   useEffect(() => {
-    const settings = {
-      lang: languageToSlugs[currentLanguage.languageName],
-      topic: currentTopic.name.toLowerCase(), 
-      baseLanguage: showBaseLanguage,
+    const settings = [
+      languageToSlugs[currentLanguage.languageName],
+      currentTopic.name.toLowerCase(), 
+      showBaseLanguage,
       currentAlphabet, 
-      order: showTrueOrder,
-      quiz: quiz,
-      audio: audioBool
-
-    }
+      showTrueOrder,
+      quiz,
+      audioBool
+    ]
     navigate(`?settings=${JSON.stringify(settings)}`);
 
   }, [
