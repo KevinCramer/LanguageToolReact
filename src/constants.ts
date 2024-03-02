@@ -11,7 +11,7 @@ export const languageToSlugs: Record<string,string> = {
   'Italian': 'italian',
   'Japanese': 'japanese',
   'Mandarin': 'mandarin',
-  'Korean': 'Korean',
+  'Korean': 'korean',
   'Arabic': 'arabic',
   'Portuguese': 'portuguese',
   'Russian': 'russian',
