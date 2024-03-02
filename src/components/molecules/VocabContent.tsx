@@ -25,8 +25,8 @@ const VocabContent = () => {
     .find(t => t.name.toLowerCase() === urlTopic) || currentLanguage.topics[0]
   var [currentTopic,setCurrentTopic] = useState(currentTopic)
  
-  const urlShowBaseLanguage = urlSearchParams.get('base-language')
-  var showBaseLanguage = JSON.parse(urlShowBaseLanguage as string);
+  const urlShowBaseLanguage = JSON.parse( urlSearchParams.get('base-language') as string);
+  var showBaseLanguage = urlShowBaseLanguage !== null ? urlShowBaseLanguage : true
   var [showBaseLanguage,setShowBaseLanguage] = useState(showBaseLanguage)
   const changeBaseLanguage = () => { return setShowBaseLanguage(!showBaseLanguage)}
 
@@ -36,8 +36,8 @@ const VocabContent = () => {
   const changeCurrentAlphabet = () => { return setCurrentAlphabet(
     currentAlphabet = (currentAlphabet +1)% currentLanguage.numForeignAlphabets)}
 
-  const urlShowTrueOrder = urlSearchParams.get('order')
-  var showTrueOrder = JSON.parse(urlShowTrueOrder as string);
+  const urlShowTrueOrder =JSON.parse(urlSearchParams.get('order') as string);
+  var showTrueOrder = urlShowTrueOrder !== null ? urlShowTrueOrder : true
   var [showTrueOrder,setShowTrueOrder] = useState(showTrueOrder)
   const changeOrder = () => { return setShowTrueOrder(!showTrueOrder)}
   const changeCurrentLanguage = 
@@ -49,15 +49,15 @@ const VocabContent = () => {
     return setCurrentTopic(topic);
   }
 
-  const urlQuiz = urlSearchParams.get('quiz')
-  var quiz = JSON.parse(urlQuiz as string);
+  const urlQuiz =JSON.parse(urlSearchParams.get('quiz') as string);
+  var quiz = urlQuiz !== null ? urlQuiz : false
   var [quiz,setQuiz] = useState(quiz)
   const changeQuizState = () => {
     ReactGA.event({category: 'quizStateWasChanged', action: 'hdfg',label: 'dasfg',value: 4});
     return setQuiz((!quiz))}
 
-  const urlAudio = urlSearchParams.get('audio')
-  var audioBool = JSON.parse(urlAudio as string);
+  const urlAudio = JSON.parse(urlSearchParams.get('audio') as string);
+  var audioBool = urlAudio !== null ? urlAudio: false 
   var [audioBool,setAudioBool] = useState(audioBool)
   const changeAudioBool = () => { return setAudioBool(!audioBool)}
 
