@@ -12,9 +12,14 @@ import {flip} from '../../redux/displayAudio';
 import { Language, Topic, VerbConjugationEnglish, 
   Word, Word1, Word2, Word3 } from '../../types';
 import { scramble } from '../../helpers';
-
+import { useNavigate, useLocation } from 'react-router-dom';
+import { languageToSlugs} from '../../constants'
 const VocabContent = () => {
-  var currentLanguage: Language = languages[0]
+  const navigate = useNavigate();
+  var urlSearchParams = new URLSearchParams(useLocation().search);
+  const urlLanguage = urlSearchParams.get('lang')
+  var currentLanguage: Language = languages
+    .find(l => languageToSlugs[l.languageName] === urlLanguage) || languages[0]
   var [currentLanguage,setLanguage] = useState(currentLanguage);
 
   var currentTopic = currentLanguage.topics[0]
@@ -33,8 +38,13 @@ const VocabContent = () => {
   var [showTrueOrder,setShowTrueOrder] = useState(showTrueOrder)
   const changeOrder = () => { return setShowTrueOrder(!showTrueOrder)}
   const changeCurrentLanguage = 
-    ( language: Language) => setLanguage(language);
-  const changeCurrentTopic = (topic: Topic) => { return setCurrentTopic(topic);}
+    ( language: Language) => {
+      setLanguage(language)
+      navigate(`?lang=${language.languageName.toLocaleLowerCase()}`)
+    };
+  const changeCurrentTopic = (topic: Topic) => {
+    return setCurrentTopic(topic);
+  }
 
   var quiz = false
   var [quiz,setQuiz] = useState(quiz)
