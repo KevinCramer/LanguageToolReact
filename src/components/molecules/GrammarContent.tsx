@@ -4,7 +4,7 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import {languages} from '../../data/grammar';
 
-const VocabContent = () => {
+const GrammarContent = () => {
   var currentLanguage: any = languages[0]
   var [currentLanguage,setLanguage] = useState(currentLanguage);
 
@@ -59,4 +59,4 @@ const VocabContent = () => {
   );
 }
  
-export default VocabContent;
+export default GrammarContent;

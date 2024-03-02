@@ -9,17 +9,18 @@ const openai = new OpenAI({apiKey: process.env.OPENAI_API_KEY});
 const speechFile = path.resolve("./speech.mp3");
 
 const inputWords = [
-    'uno',
-    'dos',
-    'tres',
-    'cuatro',
-    'cinco',
-    'seis',
-    'siete',
-    'ocho',
-    'nueve',
-    'diez',
-]
+    "أَسْوَد",
+    "أَزْرَق",
+    "بُنِّيّ",
+    "أَخْضَر",
+    "رَمَادِيّ",
+    "بُرْتُقَاْلِيّ",
+    "وَرْدِيّ",
+    "بَنَفْسَجِيّ",
+    "أَحْمَر",
+    "أَبْيَض",
+    "أَصْفَر"
+  ]
 
 
 async function main() {
