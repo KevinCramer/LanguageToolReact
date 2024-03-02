@@ -26,22 +26,20 @@ const VocabContent = () => {
   var currentTopic: Topic = (currentLanguage.topics as Topic[])
     .find(t => t.name.toLowerCase() === urlTopic) || currentLanguage.topics[0]
   var [currentTopic,setCurrentTopic] = useState(currentTopic)
-
-  // Ensure default language is reflected in the URL if not already present
-  useEffect(() => {
-    navigate(`?lang=${languageToSlugs[currentLanguage.languageName]}&topic=${currentTopic.name.toLowerCase()}`);
-
-  }, [currentLanguage.languageName, currentTopic.name]);
-  var showBaseLanguage = true;
+ 
+  const urlShowBaseLanguage = urlSearchParams.get('base-language')
+  var showBaseLanguage = JSON.parse(urlShowBaseLanguage as string);
   var [showBaseLanguage,setShowBaseLanguage] = useState(showBaseLanguage)
   const changeBaseLanguage = () => { return setShowBaseLanguage(!showBaseLanguage)}
 
-  var currentAlphabet: number = 0;
+  const urlCurrentAlphabet = urlSearchParams.get('current-alphabet')
+  var currentAlphabet: number = parseInt(urlCurrentAlphabet as string) || 0;
   var [currentAlphabet,setCurrentAlphabet] = useState(currentAlphabet)
   const changeCurrentAlphabet = () => { return setCurrentAlphabet(
     currentAlphabet = (currentAlphabet +1)% currentLanguage.numForeignAlphabets)}
 
-  var showTrueOrder = true;
+  const urlShowTrueOrder = urlSearchParams.get('order')
+  var showTrueOrder = JSON.parse(urlShowTrueOrder as string);
   var [showTrueOrder,setShowTrueOrder] = useState(showTrueOrder)
   const changeOrder = () => { return setShowTrueOrder(!showTrueOrder)}
   const changeCurrentLanguage = 
@@ -53,7 +51,8 @@ const VocabContent = () => {
     return setCurrentTopic(topic);
   }
 
-  var quiz = false
+  const urlQuiz = urlSearchParams.get('quiz')
+  var quiz = JSON.parse(urlQuiz as string);
   var [quiz,setQuiz] = useState(quiz)
   const changeQuizState = () => {
     ReactGA.event({category: 'quizStateWasChanged', action: 'hdfg',label: 'dasfg',value: 4});
@@ -62,6 +61,12 @@ const VocabContent = () => {
   const audioBool = useSelector((state:any) => state.audio.audioBool);
   const dispatch = useDispatch();
 
+  // Ensure default language is reflected in the URL if not already present
+  useEffect(() => {
+    navigate(`?lang=${languageToSlugs[currentLanguage.languageName]}&topic=${currentTopic.name.toLowerCase()}&base-language=${showBaseLanguage}&current-alphabet=${currentAlphabet}&order=${showTrueOrder}&quiz=${quiz}&audio=${audioBool}`);
+
+  }, [currentLanguage.languageName, currentTopic.name, showBaseLanguage,currentAlphabet,showTrueOrder,quiz,audioBool ]);
+  
   function ToggleQuiz(){
     if (quiz) {
       const isVerb = currentTopic.name=== 'Verbs'
