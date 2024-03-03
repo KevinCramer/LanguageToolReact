@@ -1,7 +1,7 @@
 /* eslint-disable @stylistic/js/max-len */
 const japaneseTopics: any[] = [
   // source: http://tomray.me/stories/momotarou.html
-  {name:'Momotarou, the Peach Boy', contents: [
+  {name:'Momotarou, the Peach Boy', slugName: 'mpb', contents: [
     'むかし、 むかし、 ある ところ に', 'おじいさん と おばあさん が いました。',
     'おじいさん が 山（やま） へ 木（き） を きり に いけば、',
     'おばあさん は 川（かわ） へ せんたく に でかけます。',
@@ -13,7 +13,7 @@ const japaneseTopics: any[] = [
 
 const spanishTopics: any[] = [
   // https://snappyspanish.com/beginner-spanish-story-the-feeling-of-winning/
-  {name:'El Sentimiento De Ganar', contents: [
+  {name:'El Sentimiento De Ganar', slugName: 'sdg', contents: [
     'Contesto el teléfono. Es mi madre. Ella suena emocionada.',
     'Ella dice que van a tener una fiesta esta noche.',
     'Pregunto, “¿Qué estan celebrando?”',
