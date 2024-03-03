@@ -1,6 +1,6 @@
 import './text.css'
-import logo from '../assets/logo.png';
 import blackBar from '../assets/blackBar.png';
+import logo from '../assets/logo.png';
 
 export function Home(){
   return <div>

@@ -1,7 +1,7 @@
-import { useState } from 'react'
 import { Button, Modal, Navbar } from 'react-bootstrap'
-import { modalTenses } from '../../constants'
 import { englishPronouns } from '../../data/words'
+import { modalTenses } from '../../constants'
+import { useState } from 'react'
 
 const StudyElement = (
   props: 
@@ -36,14 +36,16 @@ const StudyElement = (
     {isVerb ? (showBaseLanguageFirst ? BaseLanguageWord.infinitive :
       ForeignLanguageWord.infinitive) : BaseLanguageWord} </label>
   const foreignLanguageLabelVerb = <label onClick={displayPopUp} 
-    style= {{ width: '20%', textAlign: 'center', color: 'purple', textDecorationLine: 'underline' }}>
+    style= {{ width: '20%', textAlign: 'center', color: 'purple',
+      textDecorationLine: 'underline' }}>
     { showBaseLanguageFirst ? ForeignLanguageWord.infinitive : BaseLanguageWord.infinitive} </label>
   const foreignLanguageLabelNoVerb = <label style= {{ width: '20%', textAlign: 'center' }}>
     {ForeignLanguageWord} </label>
   const foreignLanguageLabel = isVerb ? foreignLanguageLabelVerb : foreignLanguageLabelNoVerb
   return (
     <Navbar style={{ justifyContent:'center' }}>
-      {isVerb ? (showBaseLanguageFirst ? baseLanguageLabel : foreignLanguageLabel) : baseLanguageLabel}
+      {isVerb ? (showBaseLanguageFirst ? baseLanguageLabel : foreignLanguageLabel) :
+        baseLanguageLabel}
       {isVerb ? (showBaseLanguageFirst ? foreignLanguageLabel : baseLanguageLabel) :
         foreignLanguageLabel}
       {showAudio && <div >
