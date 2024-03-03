@@ -1,16 +1,18 @@
-import {useState, useEffect } from 'react';
 import {Container, Navbar as NavbarBs} from 'react-bootstrap';
+import {queryParamCompress, queryParamDecompress} from '../../helpers/queryParamHelpers'
+import {useEffect, useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import {languages} from '../../data/immersion';
-import { useNavigate, useLocation } from 'react-router-dom';
 import { languageToSlugs} from '../../constants'
-import {queryParamCompress, queryParamDecompress} from '../../helpers/queryParamHelpers'
 
 const ImmersionContent = () => {
   const navigate = useNavigate();
   var urlSearchParams = new URLSearchParams(useLocation().search);
-  const urlSettings = JSON.parse(queryParamDecompress(urlSearchParams.get('s') as string) as string) || []
+  const urlSettings = JSON.parse(
+    queryParamDecompress(urlSearchParams.get('s') as string) as string
+  ) || []
   const urlLanguage = urlSettings[0]
   var currentLanguage: any = languages
     .find(l => languageToSlugs[l.languageName] === urlLanguage) || languages[0]

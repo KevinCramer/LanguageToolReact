@@ -10,6 +10,9 @@
       "linebreak-style": 0,
        "no-redeclare": "off",
        "no-console": "warn",
+       "sort-imports": ["warn",{
+        "ignoreCase": true
+       }],
        "@typescript-eslint/no-redeclare": "off",
        "@typescript-eslint/quotes": [
         "error",
@@ -22,9 +25,6 @@
        "@stylistic/js/indent": ["warn", 2],
        "@stylistic/js/max-len": ["warn", 100],
        "@stylistic/js/no-multiple-empty-lines": ["warn",{ "max": 1 }],
-       "@stylistic/js/no-multi-spaces": "warn"
-
-
-       
+       "@stylistic/js/no-multi-spaces": "warn"      
   }
   }

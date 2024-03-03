@@ -1,5 +1,5 @@
-import { useState } from 'react'
 import {Navbar} from 'react-bootstrap'
+import { useState } from 'react'
 import { VerbConjugation} from '../../types'
 
 const QuizElement = (

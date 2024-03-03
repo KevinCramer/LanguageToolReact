@@ -1,25 +1,26 @@
-import {useState, useEffect } from 'react';
-import QuizElement from '../atoms/QuizElement';
-import StudyElement from '../atoms/StudyElement';
 import {Container, Navbar as NavbarBs} from 'react-bootstrap';
+import { Language, Topic, VerbConjugationEnglish, Word, Word1, Word2, Word3 } from '../../types'
+import {queryParamCompress, queryParamDecompress} from '../../helpers/queryParamHelpers'
+import {useEffect, useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
-import ReactSwitch from 'react-switch';
 import {languages} from '../../data/words';
-import ReactGA from 'react-ga';
-import { Language, VerbConjugationEnglish, 
-  Word, Word1, Word2, Word3, Topic } from '../../types';
-import { scramble } from '../../helpers';
-import { useNavigate, useLocation } from 'react-router-dom';
-import { languageToSlugs} from '../../constants'
+import {languageToSlugs} from '../../constants'
 import {notNullOrUndefined} from '../../helpers/helperFunctions'
-import {queryParamCompress, queryParamDecompress} from '../../helpers/queryParamHelpers'
+import QuizElement from '../atoms/QuizElement';
+import ReactGA from 'react-ga';
+import ReactSwitch from 'react-switch';
+import { scramble } from '../../helpers';
+import StudyElement from '../atoms/StudyElement';
 
 const VocabContent = () => {
   const navigate = useNavigate();
 
   var urlSearchParams = new URLSearchParams(useLocation().search);
-  const urlSettings = JSON.parse(queryParamDecompress(urlSearchParams.get('s') as string) as string) || []
+  const urlSettings = JSON.parse(
+    queryParamDecompress(urlSearchParams.get('s') as string) as string
+  ) || []
   const urlLanguage = urlSettings[0]
   var currentLanguage: Language = languages
     .find(l => languageToSlugs[l.languageName] === urlLanguage) || languages[0]

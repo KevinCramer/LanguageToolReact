@@ -1,3 +1,4 @@
+/* eslint-disable sort-imports */
 /* eslint-disable @stylistic/js/max-len */
 
 import arabicAudioBlack from '../data/audio/arabic/arabic_colours/black.mp3';
