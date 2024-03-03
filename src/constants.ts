@@ -1,7 +1,7 @@
 export const modalTenses = [
-  {title: 'Present Tense', tense: 'presentTense'},
-  {title: 'Past Preterite Tense', tense: 'pastTense'},
-  {title: 'Future Tense', tense: 'futureTense'}
+  { title: 'Present Tense', tense: 'presentTense' },
+  { title: 'Past Preterite Tense', tense: 'pastTense' },
+  { title: 'Future Tense', tense: 'futureTense' }
 ]
 
 export const languageToSlugs: Record<string,string> = {

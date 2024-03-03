@@ -8,7 +8,7 @@ export function Home(){
       <img src ={logo} width={160} height={130} alt="logo"/>
     </div>
     <div className = "content2">
-      <h1 style ={{marginBottom: '0.1rem'}}> 
+      <h1 style ={{ marginBottom: '0.1rem' }}> 
                         LINGO
       </h1>
       <div className = "imageContent">

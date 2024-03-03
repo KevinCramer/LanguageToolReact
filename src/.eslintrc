@@ -10,9 +10,11 @@
       "linebreak-style": 0,
        "no-redeclare": "off",
        "no-console": "warn",
+       "object-curly-spacing": ["error", "always"],
        "sort-imports": ["warn",{
         "ignoreCase": true
        }],
+       "space-infix-ops": ["error", { "int32Hint": false }],
        "@typescript-eslint/no-redeclare": "off",
        "@typescript-eslint/quotes": [
         "error",

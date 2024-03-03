@@ -1,11 +1,11 @@
-import {Container, Navbar as NavbarBs} from 'react-bootstrap';
-import {queryParamCompress, queryParamDecompress} from '../../helpers/queryParamHelpers'
-import {useEffect, useState } from 'react';
+import { Container, Navbar as NavbarBs } from 'react-bootstrap';
+import { queryParamCompress, queryParamDecompress } from '../../helpers/queryParamHelpers'
+import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
-import {languages} from '../../data/immersion';
-import { languageToSlugs} from '../../constants'
+import { languages } from '../../data/immersion';
+import { languageToSlugs } from '../../constants'
 
 const ImmersionContent = () => {
   const navigate = useNavigate();
@@ -44,8 +44,8 @@ const ImmersionContent = () => {
 
   function ShowGrammarExplanation(){
     return (
-      <div style={{ width: '400px'}}>
-        <div style={{display:'flex',flexDirection: 'column'}}>
+      <div style={{ width: '400px' }}>
+        <div style={{ display:'flex',flexDirection: 'column' }}>
           {currentTopic.contents.map((content: any, index: number) =>
             <div key = {index}>
               {content}
@@ -60,8 +60,8 @@ const ImmersionContent = () => {
     <div>
       <Container>    
         <NavbarBs>
-          <Container style={{justifyContent:'center'}}>
-            <DropdownButton style={{margin: '0px 20px 0px 20px'}} variant= 'secondary'
+          <Container style={{ justifyContent:'center' }}>
+            <DropdownButton style={{ margin: '0px 20px 0px 20px' }} variant= 'secondary'
               id="Languages" title=
                 {String(currentLanguage.languageName)} size = "sm"> 
               {languages.map((languageItem: any, index: number) =>
@@ -69,7 +69,7 @@ const ImmersionContent = () => {
                   languageItem),changeCurrentTopic(languageItem.topics[0]) ]}>
                   {languageItem.languageName}</Dropdown.Item>)}
             </DropdownButton>
-            <DropdownButton style={{margin: '0px 20px 0px 20px'}} variant= 'secondary'
+            <DropdownButton style={{ margin: '0px 20px 0px 20px' }} variant= 'secondary'
               id="Topics" title={'Topic: ' + currentTopic.name} size = "sm">
               {currentLanguage.topics.map((topic: any, index: number) =>
                 <Dropdown.Item key = {index} onClick = {() => 

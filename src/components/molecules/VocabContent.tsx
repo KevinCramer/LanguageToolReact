@@ -1,13 +1,13 @@
-import {Container, Navbar as NavbarBs} from 'react-bootstrap';
+import { Container, Navbar as NavbarBs } from 'react-bootstrap';
 import { Language, Topic, VerbConjugationEnglish, Word, Word1, Word2, Word3 } from '../../types'
-import {queryParamCompress, queryParamDecompress} from '../../helpers/queryParamHelpers'
-import {useEffect, useState } from 'react';
+import { queryParamCompress, queryParamDecompress } from '../../helpers/queryParamHelpers'
+import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
-import {languages} from '../../data/words';
-import {languageToSlugs} from '../../constants'
-import {notNullOrUndefined} from '../../helpers/helperFunctions'
+import { languages } from '../../data/words';
+import { languageToSlugs } from '../../constants'
+import { nullOrUndefined } from '../../helpers/helperFunctions'
 import QuizElement from '../atoms/QuizElement';
 import ReactGA from 'react-ga';
 import ReactSwitch from 'react-switch';
@@ -32,7 +32,7 @@ const VocabContent = () => {
   var [currentTopic,setCurrentTopic] = useState(currentTopic)
  
   const urlShowBaseLanguage = urlSettings[2]
-  var showBaseLanguage = notNullOrUndefined(urlShowBaseLanguage) ? urlShowBaseLanguage : true
+  var showBaseLanguage = !nullOrUndefined(urlShowBaseLanguage) ? urlShowBaseLanguage : true
   var [showBaseLanguage,setShowBaseLanguage] = useState(showBaseLanguage)
   const changeBaseLanguage = () => { return setShowBaseLanguage(!showBaseLanguage)}
 
@@ -40,10 +40,10 @@ const VocabContent = () => {
   var currentAlphabet: number = parseInt(urlCurrentAlphabet as string) || 0;
   var [currentAlphabet,setCurrentAlphabet] = useState(currentAlphabet)
   const changeCurrentAlphabet = () => { return setCurrentAlphabet(
-    currentAlphabet = (currentAlphabet +1)% currentLanguage.numForeignAlphabets)}
+    currentAlphabet = (currentAlphabet + 1) % currentLanguage.numForeignAlphabets)}
 
   const urlShowTrueOrder = urlSettings[4]
-  var showTrueOrder = notNullOrUndefined(urlShowTrueOrder) ? urlShowTrueOrder : true
+  var showTrueOrder = !nullOrUndefined(urlShowTrueOrder) ? urlShowTrueOrder : true
   var [showTrueOrder,setShowTrueOrder] = useState(showTrueOrder)
   const changeOrder = () => { return setShowTrueOrder(!showTrueOrder)}
   const changeCurrentLanguage = 
@@ -56,14 +56,14 @@ const VocabContent = () => {
   }
 
   const urlQuiz = urlSettings[5]
-  var quiz = notNullOrUndefined(urlQuiz) ? urlQuiz : false
+  var quiz = !nullOrUndefined(urlQuiz) ? urlQuiz : false
   var [quiz,setQuiz] = useState(quiz)
   const changeQuizState = () => {
-    ReactGA.event({category: 'quizStateWasChanged', action: 'hdfg',label: 'dasfg',value: 4});
+    ReactGA.event({ category: 'quizStateWasChanged', action: 'hdfg',label: 'dasfg',value: 4 });
     return setQuiz((!quiz))}
 
   const urlAudio = urlSettings[6]
-  var audioBool = notNullOrUndefined(urlAudio) ? urlAudio: false 
+  var audioBool = !nullOrUndefined(urlAudio) ? urlAudio : false 
   var [audioBool,setAudioBool] = useState(audioBool)
   const changeAudioBool = () => { return setAudioBool(!audioBool)}
 
@@ -86,18 +86,18 @@ const VocabContent = () => {
   
   function ToggleQuiz(){
     if (quiz) {
-      const isVerb = currentTopic.name=== 'Verbs'
+      const isVerb = currentTopic.name === 'Verbs'
       var count = 0;
       return ( 
         <div>
           {topicWords.map((pair: Word) =>
-            <div key ={showTrueOrder.toString() + (isVerb?
-              (pair.englishWord as VerbConjugationEnglish).infinitive: pair.englishWord)
+            <div key ={showTrueOrder.toString() + (isVerb ?
+              (pair.englishWord as VerbConjugationEnglish).infinitive : pair.englishWord)
                + pair.foreignWord[currentAlphabet] + showBaseLanguage}>
-              <QuizElement myCounter = {count +=1} questionWord = { showBaseLanguage? 
-                pair.englishWord: pair.foreignWord[currentAlphabet] }
-              answerWord = {showBaseLanguage? pair.foreignWord[currentAlphabet]:
-                pair.englishWord} isVerb = {currentTopic.name=== 'Verbs'}/>
+              <QuizElement myCounter = {count += 1} questionWord = { showBaseLanguage ? 
+                pair.englishWord : pair.foreignWord[currentAlphabet] }
+              answerWord = {showBaseLanguage ? pair.foreignWord[currentAlphabet] :
+                pair.englishWord} isVerb = {currentTopic.name === 'Verbs'}/>
             </div>                    
           )}
         </div>
@@ -109,14 +109,14 @@ const VocabContent = () => {
           {topicWords.map((pair: Word, index: number) =>
             <div key = {index}>
               <StudyElement 
-                BaseLanguageWord = { showBaseLanguage? pair.englishWord:
+                BaseLanguageWord = { showBaseLanguage ? pair.englishWord :
                   pair.foreignWord[currentAlphabet]} 
-                ForeignLanguageWord = {showBaseLanguage? 
-                  pair.foreignWord[currentAlphabet]: pair.englishWord}  
+                ForeignLanguageWord = {showBaseLanguage ? 
+                  pair.foreignWord[currentAlphabet] : pair.englishWord}  
                 ForeignLanguageWordAudio = {pair.foreignAudio} 
                 showAudio = {audioBool} 
                 showBaseLanguageFirst = {showBaseLanguage} 
-                isVerb = {currentTopic.name=== 'Verbs'}
+                isVerb = {currentTopic.name === 'Verbs'}
                 pronouns = {currentLanguage.pronouns}
               />
             </div>                    
@@ -130,7 +130,7 @@ const VocabContent = () => {
     var topicWords = currentTopic.words
     if(currentTopic.hasOrdering){
       topicWords.sort((a: Word,
-        b: Word) => (a.order || 0) < (b.order || 0) ? -1: 1)
+        b: Word) => (a.order || 0) < (b.order || 0) ? -1 : 1)
     }
     else {
       topicWords.sort((a: Word,
@@ -141,10 +141,10 @@ const VocabContent = () => {
         // aInfinitive is only truthy when a (and thus b) are verbs,
         if(aInfinitive) {
           // sort by infinitive property
-          return aInfinitive < bInfinitive? -1: 1
+          return aInfinitive < bInfinitive ? -1 : 1
         }
         else {
-          return a.englishWord < b.englishWord ? -1: 1
+          return a.englishWord < b.englishWord ? -1 : 1
         }
          
       }
@@ -161,8 +161,8 @@ const VocabContent = () => {
     <div>
       <Container>    
         <NavbarBs>
-          <Container style={{justifyContent:'center'}}>
-            <DropdownButton style={{margin: '0px 20px 0px 20px'}} variant= 'secondary'
+          <Container style={{ justifyContent:'center' }}>
+            <DropdownButton style={{ margin: '0px 20px 0px 20px' }} variant= 'secondary'
               id="Languages" title=
                 {String(currentLanguage.languageName)} size = "sm"> 
               {languages.map((languageItem: Language, index: number) =>
@@ -171,19 +171,19 @@ const VocabContent = () => {
                 setCurrentAlphabet(0),changeCurrentTopic(languageItem.topics[0]) ]}>
                   {languageItem.languageName}</Dropdown.Item>)}
             </DropdownButton>
-            <DropdownButton style={{margin: '0px 20px 0px 20px'}} variant= 'secondary'
+            <DropdownButton style={{ margin: '0px 20px 0px 20px' }} variant= 'secondary'
               id="Topics" title={'Topic: ' + currentTopic.name} size = "sm">
               {currentLanguage.topics.map((topic: Topic, index: number) =>
                 <Dropdown.Item key = {index} onClick = {() => 
                   changeCurrentTopic(topic)}>{topic.name}</Dropdown.Item>)}
             </DropdownButton>
-            <DropdownButton style={{margin: '0px 20px 0px 20px'}} variant= 'secondary' align="end"
+            <DropdownButton style={{ margin: '0px 20px 0px 20px' }} variant= 'secondary' align="end"
               id="Settings" title="Settings" size = "sm">
               <Dropdown.Item onClick = {changeBaseLanguage}>toggle base language</Dropdown.Item>
               <Dropdown.Item onClick = {() => changeAudioBool()}>
-                {audioBool? 'hide audio':'show audio'}</Dropdown.Item>
+                {audioBool ? 'hide audio' : 'show audio'}</Dropdown.Item>
               <Dropdown.Item onClick = {changeOrder}>
-                {showTrueOrder? 'random ordering':'default ordering'}</Dropdown.Item>
+                {showTrueOrder ? 'random ordering' : 'default ordering'}</Dropdown.Item>
               {currentLanguage.numForeignAlphabets > 1 && !currentTopic.isAlphabet &&
               <Dropdown.Item onClick = {changeCurrentAlphabet}>
                 toggle foreign alphabet</Dropdown.Item>}
@@ -191,11 +191,11 @@ const VocabContent = () => {
           </Container>
         </NavbarBs>
         <NavbarBs>
-          <Container style={{justifyContent:'center'}}>
+          <Container style={{ justifyContent:'center' }}>
             <div>
               <ReactSwitch onChange = {changeQuizState} checked= {quiz} 
                 uncheckedIcon = {false} checkedIcon = {false} onColor = {'#0038FF'}/> 
-              <div>{quiz? 'Quiz Mode': 'Study Mode'}</div>        
+              <div>{quiz ? 'Quiz Mode' : 'Study Mode'}</div>        
             </div>
           </Container>
           

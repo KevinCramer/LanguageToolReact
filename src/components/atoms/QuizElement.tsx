@@ -1,6 +1,6 @@
-import {Navbar} from 'react-bootstrap'
+import { Navbar } from 'react-bootstrap'
 import { useState } from 'react'
-import { VerbConjugation} from '../../types'
+import { VerbConjugation } from '../../types'
 
 const QuizElement = (
   props: {
@@ -9,14 +9,14 @@ const QuizElement = (
     isVerb: boolean
     myCounter: number
     }) => {
-  const [formValues, setFormValues] = useState({answer: ''})
+  const [formValues, setFormValues] = useState({ answer: '' })
   const [response, setResponse] = useState('')
   const handleChange = (e:any) => {
-    const {name,value} = e.target;
-    setFormValues({...formValues, [name]: value})
+    const { name,value } = e.target;
+    setFormValues({ ...formValues, [name]: value })
   }
 
-  const roughlyEqual = (a: string, b: string ) => {return (a.toLowerCase() ===b)};
+  const roughlyEqual = (a: string, b: string ) => {return (a.toLowerCase() === b)};
   const onSubmit = (e:any, submittedAnswer:string, correctAnswer:string) => {
     e.preventDefault();
     const doesItMatch = (roughlyEqual(submittedAnswer,correctAnswer)) ? '✔' : 
@@ -32,9 +32,9 @@ const QuizElement = (
     let propsQuestionWord: string;
     let propsAnswerWord: string;
     if(props.isVerb){
-      propsQuestionWord= (props.questionWord as VerbConjugation)
+      propsQuestionWord = (props.questionWord as VerbConjugation)
         .infinitive
-      propsAnswerWord= (props.answerWord as VerbConjugation)
+      propsAnswerWord = (props.answerWord as VerbConjugation)
         .infinitive
 
     }
@@ -42,12 +42,12 @@ const QuizElement = (
       propsQuestionWord = (props.questionWord as string)
       propsAnswerWord = (props.answerWord as string)
     }
-    const myPlaceHolder= props.myCounter === 1 ? 'enter your answer here': '';
+    const myPlaceHolder = props.myCounter === 1 ? 'enter your answer here' : '';
     return (
-      <Navbar style={{justifyContent:'center'}}>
+      <Navbar style={{ justifyContent:'center' }}>
         <form onSubmit={e => onSubmit(e, formValues.answer, propsAnswerWord)}>
           <div className="ui form">
-            <label style= {{width: '200px', textAlign:'center'}}>{propsQuestionWord} </label>
+            <label style= {{ width: '200px', textAlign:'center' }}>{propsQuestionWord} </label>
             <input type="text" name="answer" placeholder={myPlaceHolder}
               value={formValues.answer} 
               onChange = {handleChange} autoComplete="off" autoCorrect="off" 

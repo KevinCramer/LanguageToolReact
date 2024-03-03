@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import {Navbar, Modal, Button} from 'react-bootstrap'
+import { Button, Modal, Navbar } from 'react-bootstrap'
 import { modalTenses } from '../../constants'
 import { englishPronouns } from '../../data/words'
 
@@ -32,19 +32,19 @@ const StudyElement = (
   var [showPopUp,setShowPopUp] = useState(showPopUp)
   const hidePopUp = () => { return setShowPopUp(false)}
   const displayPopUp = () => { return setShowPopUp(true)}
-  const baseLanguageLabel = <label style= {{width: '20%', textAlign: 'center'}}>
-    {isVerb? (showBaseLanguageFirst ? BaseLanguageWord.infinitive:
-      ForeignLanguageWord.infinitive): BaseLanguageWord} </label>
-  const foreignLanguageLabelVerb= <label onClick={displayPopUp} 
-    style= {{width: '20%', textAlign: 'center', color: 'purple', textDecorationLine: 'underline'}}>
-    { showBaseLanguageFirst? ForeignLanguageWord.infinitive: BaseLanguageWord.infinitive} </label>
-  const foreignLanguageLabelNoVerb = <label style= {{width: '20%', textAlign: 'center'}}>
+  const baseLanguageLabel = <label style= {{ width: '20%', textAlign: 'center' }}>
+    {isVerb ? (showBaseLanguageFirst ? BaseLanguageWord.infinitive :
+      ForeignLanguageWord.infinitive) : BaseLanguageWord} </label>
+  const foreignLanguageLabelVerb = <label onClick={displayPopUp} 
+    style= {{ width: '20%', textAlign: 'center', color: 'purple', textDecorationLine: 'underline' }}>
+    { showBaseLanguageFirst ? ForeignLanguageWord.infinitive : BaseLanguageWord.infinitive} </label>
+  const foreignLanguageLabelNoVerb = <label style= {{ width: '20%', textAlign: 'center' }}>
     {ForeignLanguageWord} </label>
-  const foreignLanguageLabel = isVerb ? foreignLanguageLabelVerb: foreignLanguageLabelNoVerb
+  const foreignLanguageLabel = isVerb ? foreignLanguageLabelVerb : foreignLanguageLabelNoVerb
   return (
-    <Navbar style={{justifyContent:'center'}}>
-      {isVerb? (showBaseLanguageFirst ? baseLanguageLabel: foreignLanguageLabel): baseLanguageLabel}
-      {isVerb? (showBaseLanguageFirst ? foreignLanguageLabel: baseLanguageLabel):
+    <Navbar style={{ justifyContent:'center' }}>
+      {isVerb ? (showBaseLanguageFirst ? baseLanguageLabel : foreignLanguageLabel) : baseLanguageLabel}
+      {isVerb ? (showBaseLanguageFirst ? foreignLanguageLabel : baseLanguageLabel) :
         foreignLanguageLabel}
       {showAudio && <div >
         <audio src={ForeignLanguageWordAudio} id={ForeignLanguageWordAudio}></audio>
@@ -55,7 +55,7 @@ const StudyElement = (
           } else {
             audio.pause();
             audio.currentTime = 0; // Reset to the beginning of the audio
-          }}} > {ForeignLanguageWordAudio? 'audio' : 'no audio'}</Button>
+          }}} > {ForeignLanguageWordAudio ? 'audio' : 'no audio'}</Button>
       </div>}
       {isVerb && <Modal show ={showPopUp} onHide={hidePopUp}>
         <Modal.Header closeButton>
@@ -69,14 +69,14 @@ const StudyElement = (
               <h5>{obj.title}</h5>
               {Array.from({ length: 6 }).map((_, j) => (
                 <tr key={i}>
-                  {showBaseLanguageFirst? <td style={{ width: tableRowWidth }}>
+                  {showBaseLanguageFirst ? <td style={{ width: tableRowWidth }}>
                     {englishPronouns[j] + ' '}
                     {BaseLanguageWord.englishWordConjugation[obj.tense][j]}</td> : <td style={
                     { width: tableRowWidth }}>{pronouns[j] + ' '} 
                     {BaseLanguageWord.foreignWordConjugation[obj.tense][j] }</td>}
-                  {showBaseLanguageFirst? <td style={{ width: tableRowWidth }}>
+                  {showBaseLanguageFirst ? <td style={{ width: tableRowWidth }}>
                     {pronouns[j] + ' '} {ForeignLanguageWord.foreignWordConjugation[obj.tense][j]}
-                  </td>: <td style={{ width: tableRowWidth }}>{englishPronouns[j]+ ' '} 
+                  </td> : <td style={{ width: tableRowWidth }}>{englishPronouns[j] + ' '} 
                     {ForeignLanguageWord.englishWordConjugation[obj.tense][j]}</td> }
                 </tr>
               ))

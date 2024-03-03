@@ -1,8 +1,8 @@
-import {Route, Routes } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 import GrammarContent from './components/molecules/GrammarContent'
-import {Home} from './pages/Home'
+import { Home } from './pages/Home'
 import Immersion from './components/molecules/Immersion'
-import {Navbar} from './components/Navbar'
+import { Navbar } from './components/Navbar'
 import ReactGA from 'react-ga' 
 import VocabContent from './components/molecules/VocabContent'
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -16,7 +16,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={ <div style= {
-          {display:'flex', flexDirection: 'column', justifyContent:'center', minHeight: '50vh'}
+          { display:'flex', flexDirection: 'column', justifyContent:'center', minHeight: '50vh' }
         }> <Home /></div>} />
         <Route path="/vocabulary" element={<VocabContent />} />
         <Route path="/grammar" element={<GrammarContent />} />
