@@ -45,10 +45,10 @@ const StudyElement = (
   return (
     <Navbar style={{ justifyContent:'center' }}>
       {isVerb ? (showBaseLanguageFirst ? baseLanguageLabel : foreignLanguageLabel) :
-        baseLanguageLabel}
+        baseLanguageLabel} <div style={{ paddingTop: '10px' }}>=</div>
       {isVerb ? (showBaseLanguageFirst ? foreignLanguageLabel : baseLanguageLabel) :
         foreignLanguageLabel}
-      {showAudio && <div >
+      {showAudio && <div style={{ paddingTop: '10px' }}>
         <audio src={ForeignLanguageWordAudio} id={ForeignLanguageWordAudio}></audio>
         <Button size="sm" variant="secondary" aria-disabled={!ForeignLanguageWord} onClick={() => { 
           var audio = document.getElementById(ForeignLanguageWordAudio) as any;
