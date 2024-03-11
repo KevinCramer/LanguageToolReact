@@ -1226,6 +1226,19 @@ const frenchTopics: Topic1[] = [
     { englishWord: 'nine', foreignWord: ['neuf'], foreignAudio: '', order:9 },
     { englishWord: 'ten', foreignWord: ['dix'], foreignAudio: '', order:10 },
   ] },
+  { name: 'Colours', slugName: 'col', hasOrdering: false, words: [
+    { englishWord: 'red', foreignWord: ['rouge'], foreignAudio: '' },
+    { englishWord: 'blue', foreignWord: ['bleu'], foreignAudio: '' },
+    { englishWord: 'green', foreignWord: ['vert'], foreignAudio: '' },
+    { englishWord: 'orange', foreignWord: ['orange'], foreignAudio: '' },
+    { englishWord: 'brown', foreignWord: ['marron'], foreignAudio: '' },
+    { englishWord: 'grey', foreignWord: ['gris'], foreignAudio: '' },
+    { englishWord: 'white', foreignWord: ['blanc'], foreignAudio: '' },
+    { englishWord: 'black', foreignWord: ['noir'], foreignAudio: '' },
+    { englishWord: 'purple', foreignWord: ['violet'], foreignAudio: '' },
+    { englishWord: 'pink', foreignWord: ['rose'], foreignAudio: '' }
+  ]
+  }
 ]
 
 const italianTopics: Topic1[] = [
@@ -1241,6 +1254,18 @@ const italianTopics: Topic1[] = [
     { englishWord: 'nine', foreignWord: ['nove'], foreignAudio: '', order:9 },
     { englishWord: 'ten', foreignWord: ['dieci'], foreignAudio: '', order:10 },
   ] },
+  { name:'Colours', slugName: 'col', hasOrdering:false, words: [
+    { englishWord: 'red', foreignWord: ['rosso'], foreignAudio: '' },
+    { englishWord: 'blue', foreignWord: ['blu'], foreignAudio: '' },
+    { englishWord: 'green', foreignWord: ['verde'], foreignAudio: '' },
+    { englishWord: 'orange', foreignWord: ['arancione'], foreignAudio: '' },
+    { englishWord: 'brown', foreignWord: ['marrone'], foreignAudio: '' },
+    { englishWord: 'grey', foreignWord: ['grigio'], foreignAudio: '' },
+    { englishWord: 'white', foreignWord: ['bianco'], foreignAudio: '' },
+    { englishWord: 'black', foreignWord: ['nero'], foreignAudio: '' },
+    { englishWord: 'purple', foreignWord: ['viola'], foreignAudio: '' },
+    { englishWord: 'pink', foreignWord: ['rosa'], foreignAudio: '' }
+  ] }
 ]
 const germanTopics: Topic1[] = [
   { name:'Numbers', slugName: 'num', hasOrdering:true, words: [
@@ -1255,6 +1280,18 @@ const germanTopics: Topic1[] = [
     { englishWord: 'nine', foreignWord: ['neun'], foreignAudio: '', order:9 },
     { englishWord: 'ten', foreignWord: ['zehn'], foreignAudio: '', order:10 },
   ] },
+  { name:'Colours', slugName: 'col', hasOrdering:false, words: [
+    { englishWord: 'red', foreignWord: ['rot'], foreignAudio: '' },
+    { englishWord: 'blue', foreignWord: ['blau'], foreignAudio: '' },
+    { englishWord: 'green', foreignWord: ['grün'], foreignAudio: '' },
+    { englishWord: 'orange', foreignWord: ['orange'], foreignAudio: '' },
+    { englishWord: 'brown', foreignWord: ['braun'], foreignAudio: '' },
+    { englishWord: 'grey', foreignWord: ['grau'], foreignAudio: '' },
+    { englishWord: 'white', foreignWord: ['weiß'], foreignAudio: '' },
+    { englishWord: 'black', foreignWord: ['schwarz'], foreignAudio: '' },
+    { englishWord: 'purple', foreignWord: ['lila'], foreignAudio: '' },
+    { englishWord: 'pink', foreignWord: ['rosa'], foreignAudio: '' }
+  ] }
 ]
 
 const japaneseTopics: Topic3[] = [
@@ -1365,6 +1402,18 @@ const japaneseTopics: Topic3[] = [
     { englishWord: 'nine', foreignWord: ['ku,kyuu', 'く、きゅう','九'], foreignAudio: '', order:9 },
     { englishWord: 'ten', foreignWord: ['juu', 'じゅう','十'], foreignAudio: '', order:10 },
   ] },
+  { name:'Colours', slugName: 'col', hasOrdering:false, words: [
+    { englishWord: 'red', foreignWord: ['aka', 'あか', '赤'], foreignAudio: '' },
+    { englishWord: 'blue', foreignWord: ['ao', 'あお', '青'], foreignAudio: '' },
+    { englishWord: 'green', foreignWord: ['midori', 'みどり', '緑'], foreignAudio: '' },
+    { englishWord: 'orange', foreignWord: ['orenji', 'オレンジ', 'unknown'], foreignAudio: '' },
+    { englishWord: 'brown', foreignWord: ['chairo', 'ちゃいろ', '茶色'], foreignAudio: '' },
+    { englishWord: 'grey', foreignWord: ['haiiro', 'はいいろ', '灰色'], foreignAudio: '' },
+    { englishWord: 'white', foreignWord: ['shiro', 'しろ', '白'], foreignAudio: '' },
+    { englishWord: 'black', foreignWord: ['kuro', 'くろ', '黒'], foreignAudio: '' },
+    { englishWord: 'purple', foreignWord: ['murasaki', 'むらさき', '紫'], foreignAudio: '' },
+    { englishWord: 'pink', foreignWord: ['pinku', 'ピンク', 'unknown'], foreignAudio: '' }
+  ] }
 ]
 
 const mandarinTopics: Topic2[] = [
@@ -1380,6 +1429,18 @@ const mandarinTopics: Topic2[] = [
     { englishWord: 'nine', foreignWord: ['jiŭ', '九'], foreignAudio: '', order:9 },
     { englishWord: 'ten', foreignWord: ['shí','十'], foreignAudio: '', order:10 },
   ] },
+  { name:'Colours', slugName: 'col', hasOrdering:false, words: [
+    { englishWord: 'red', foreignWord: ['hóngsè', '红色'], foreignAudio: '' },
+    { englishWord: 'blue', foreignWord: ['lánsè', '蓝色'], foreignAudio: '' },
+    { englishWord: 'green', foreignWord: ['lǜsè', '绿色'], foreignAudio: '' },
+    { englishWord: 'orange', foreignWord: ['chéngsè', '橙色'], foreignAudio: '' },
+    { englishWord: 'brown', foreignWord: ['zōngsè', '棕色'], foreignAudio: '' },
+    { englishWord: 'grey', foreignWord: ['huīsè', '灰色'], foreignAudio: '' },
+    { englishWord: 'white', foreignWord: ['báisè', '白色'], foreignAudio: '' },
+    { englishWord: 'black', foreignWord: ['hēisè', '黑色'], foreignAudio: '' },
+    { englishWord: 'purple', foreignWord: ['zǐsè', '紫色'], foreignAudio: '' },
+    { englishWord: 'pink', foreignWord: ['fěnhóngsè', '粉红色'], foreignAudio: '' }
+  ] }
 ]
 
 const koreanTopics: Topic2[] = [
@@ -1394,6 +1455,18 @@ const koreanTopics: Topic2[] = [
     { englishWord: 'eight', foreignWord: ['yuh-dul','여덟'], foreignAudio: '', order:8 },
     { englishWord: 'nine', foreignWord: ['ah-hope','아홉'], foreignAudio: '', order:9 },
     { englishWord: 'ten', foreignWord: ['yul','열'], foreignAudio: '', order:10 },
+  ] },
+  { name:'Colours', slugName: 'col', hasOrdering:false, words: [
+    { englishWord: 'red', foreignWord: ['ppalgansaek', '빨간색'], foreignAudio: '' },
+    { englishWord: 'blue', foreignWord: ['paransaek', '파란색'], foreignAudio: '' },
+    { englishWord: 'green', foreignWord: ['choroksaek', '초록색'], foreignAudio: '' },
+    { englishWord: 'orange', foreignWord: ['juhwangsaek', '주황색'], foreignAudio: '' },
+    { englishWord: 'brown', foreignWord: ['galsaek', '갈색'], foreignAudio: '' },
+    { englishWord: 'grey', foreignWord: ['hoesaek', '회색'], foreignAudio: '' },
+    { englishWord: 'white', foreignWord: ['hayansaek', '하얀색'], foreignAudio: '' },
+    { englishWord: 'black', foreignWord: ['geomeunsaek', '검은색'], foreignAudio: '' },
+    { englishWord: 'purple', foreignWord: ['borasaek', '보라색'], foreignAudio: '' },
+    { englishWord: 'pink', foreignWord: ['bunhongsaek', '분홍색'], foreignAudio: '' }
   ] },
   { name:'Hangul (Alphabet)', slugName: 'han', hasOrdering:true, isAlphabet: true, words: [
     { englishWord: 'g', foreignWord: ['ㄱ','ㄱ'], foreignAudio: '', order: 1 },
@@ -1436,6 +1509,18 @@ const portugueseTopics: Topic1[] = [
     { englishWord: 'nine', foreignWord: ['nove'], foreignAudio: '', order:9 },
     { englishWord: 'ten', foreignWord: ['dez'], foreignAudio: '', order:10 },
   ] },
+  { name:'Colours', slugName: 'col', hasOrdering:false, words: [
+    { englishWord: 'red', foreignWord: ['vermelho'], foreignAudio: '' },
+    { englishWord: 'blue', foreignWord: ['azul'], foreignAudio: '' },
+    { englishWord: 'green', foreignWord: ['verde'], foreignAudio: '' },
+    { englishWord: 'orange', foreignWord: ['laranja'], foreignAudio: '' },
+    { englishWord: 'brown', foreignWord: ['marrom'], foreignAudio: '' },
+    { englishWord: 'grey', foreignWord: ['cinza'], foreignAudio: '' },
+    { englishWord: 'white', foreignWord: ['branco'], foreignAudio: '' },
+    { englishWord: 'black', foreignWord: ['preto'], foreignAudio: '' },
+    { englishWord: 'purple', foreignWord: ['roxo'], foreignAudio: '' },
+    { englishWord: 'pink', foreignWord: ['rosa'], foreignAudio: '' }
+  ] }
 ]
 
 const russianTopics: Topic2[] = [
@@ -1485,7 +1570,20 @@ const russianTopics: Topic2[] = [
     { englishWord: 'eight', foreignWord: ['vo-syem', 'восемь'], foreignAudio: '', order:8 },
     { englishWord: 'nine', foreignWord: ['dyev-yat', 'девять'], foreignAudio: '', order:9 },
     { englishWord: 'ten', foreignWord: ['dyes-yat', 'десять'], foreignAudio: '', order:10 },
+    
   ] },
+  { name:'Colours', slugName: 'col', hasOrdering:false, words: [
+    { englishWord: 'red', foreignWord: ['krasnyy', 'красный'], foreignAudio: '' },
+    { englishWord: 'blue', foreignWord: ['siniy', 'синий'], foreignAudio: '' },
+    { englishWord: 'green', foreignWord: ['zelenyy', 'зеленый'], foreignAudio: '' },
+    { englishWord: 'orange', foreignWord: ['oranzhevyy', 'оранжевый'], foreignAudio: '' },
+    { englishWord: 'brown', foreignWord: ['korichnevyy', 'коричневый'], foreignAudio: '' },
+    { englishWord: 'grey', foreignWord: ['seryy', 'серый'], foreignAudio: '' },
+    { englishWord: 'white', foreignWord: ['belyy', 'белый'], foreignAudio: '' },
+    { englishWord: 'black', foreignWord: ['chernyy', 'черный'], foreignAudio: '' },
+    { englishWord: 'purple', foreignWord: ['fioletovyy', 'фиолетовый'], foreignAudio: '' },
+    { englishWord: 'pink', foreignWord: ['rozovyy', 'розовый'], foreignAudio: '' }
+  ] }
 ]
 
 export const languages: Language[] = 
