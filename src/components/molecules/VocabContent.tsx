@@ -109,8 +109,8 @@ const VocabContent = () => {
           <Table striped bordered hover size="sm" style={{ width: '300px' }}>
             <thead>
               <tr>
-                <th style={{ textAlign: 'center', }}>{showBaseLanguage ? 'English' : currentLanguage.languageName }</th>
-                <th style={{ textAlign: 'center', }}>{showBaseLanguage ? currentLanguage.languageName : 'English' }</th>
+                <th style={{ textAlign: 'center', width: '50%' }}>{showBaseLanguage ? 'English' : currentLanguage.languageName }</th>
+                <th style={{ textAlign: 'center', width: '50%' }}>{showBaseLanguage ? currentLanguage.languageName : 'English' }</th>
               </tr>
             </thead>
             <tbody>
