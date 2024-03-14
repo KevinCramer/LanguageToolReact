@@ -109,8 +109,8 @@ const VocabContent = () => {
           <Table striped bordered hover size="sm" style={{ width: '300px' }}>
             <thead>
               <tr>
-                <th style={{ textAlign: 'center', }}>{showBaseLanguage ? 'English' : currentLanguage.languageName }</th>
-                <th style={{ textAlign: 'center', }}>{showBaseLanguage ? currentLanguage.languageName : 'English' }</th>
+                <th style={{ textAlign: 'center', }}>{showBaseLanguage ? 'English2' : currentLanguage.languageName }</th>
+                <th style={{ textAlign: 'center', }}>{showBaseLanguage ? currentLanguage.languageName : 'English2' }</th>
               </tr>
             </thead>
             <tbody>
@@ -229,7 +229,9 @@ const VocabContent = () => {
           
         </NavbarBs>
         <p></p>
-        {ToggleQuiz()}
+        <div style={{ justifyContent:'center' }}>
+          {ToggleQuiz()}
+        </div>
       </Container>
     </div>
   );
