@@ -105,8 +105,8 @@ const VocabContent = () => {
     }
     else {
       return (
-        <div style={{ display: 'flex', justifyContent: 'center', }}>
-          <Table striped bordered hover size="sm" style={{ width: '300px', margin: '0' }}>
+        <div>
+          <Table striped bordered hover size="sm" style={{ width: '300px' }}>
             <thead>
               <tr>
                 <th style={{ textAlign: 'center', }}>{showBaseLanguage ? 'English' : currentLanguage.languageName }</th>
@@ -187,9 +187,9 @@ const VocabContent = () => {
   }
   return (
     <div>
-      <Container>    
+      <Container style={{ justifyContent:'center' }}>    
         <NavbarBs>
-          <Container style={{ justifyContent:'center' }}>
+          <Container >
             <DropdownButton style={{ margin: '0px 20px 0px 20px' }} variant= 'secondary'
               id="Languages" title=
                 {String(currentLanguage.languageName)} size = "sm"> 
