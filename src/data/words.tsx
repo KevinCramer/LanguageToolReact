@@ -1238,6 +1238,23 @@ const frenchTopics: Topic1[] = [
     { englishWord: 'purple', foreignWord: ['violet'], foreignAudio: '' },
     { englishWord: 'pink', foreignWord: ['rose'], foreignAudio: '' }
   ]
+  },
+  {
+    name: 'Clothes',
+    slugName: 'clo',
+    hasOrdering: false,
+    words: [
+      { englishWord: 'trousers', foreignWord: ['pantalon'], foreignAudio: '' },
+      { englishWord: 'sweater', foreignWord: ['pull'], foreignAudio: '' },
+      { englishWord: 'underwear', foreignWord: ['sous-vêtements'], foreignAudio: '' },
+      { englishWord: 'tie', foreignWord: ['cravate'], foreignAudio: '' },
+      { englishWord: 'socks', foreignWord: ['chaussettes'], foreignAudio: '' },
+      { englishWord: 'shoes', foreignWord: ['chaussures'], foreignAudio: '' },
+      { englishWord: 'skirt', foreignWord: ['jupe'], foreignAudio: '' },
+      { englishWord: 'jacket', foreignWord: ['veste'], foreignAudio: '' },
+      { englishWord: 'hat', foreignWord: ['chapeau'], foreignAudio: '' },
+      { englishWord: 'scarf', foreignWord: ['écharpe'], foreignAudio: '' }
+    ]
   }
 ]
 
@@ -1265,7 +1282,24 @@ const italianTopics: Topic1[] = [
     { englishWord: 'black', foreignWord: ['nero'], foreignAudio: '' },
     { englishWord: 'purple', foreignWord: ['viola'], foreignAudio: '' },
     { englishWord: 'pink', foreignWord: ['rosa'], foreignAudio: '' }
-  ] }
+  ] },
+  {
+    name: 'Clothes',
+    slugName: 'clo',
+    hasOrdering: false,
+    words: [
+      { englishWord: 'trousers', foreignWord: ['pantaloni'], foreignAudio: '' },
+      { englishWord: 'sweater', foreignWord: ['maglione'], foreignAudio: '' },
+      { englishWord: 'underwear', foreignWord: ['biancheria intima'], foreignAudio: '' },
+      { englishWord: 'tie', foreignWord: ['cravatta'], foreignAudio: '' },
+      { englishWord: 'socks', foreignWord: ['calzini'], foreignAudio: '' },
+      { englishWord: 'shoes', foreignWord: ['scarpe'], foreignAudio: '' },
+      { englishWord: 'skirt', foreignWord: ['gonna'], foreignAudio: '' },
+      { englishWord: 'jacket', foreignWord: ['giacca'], foreignAudio: '' },
+      { englishWord: 'hat', foreignWord: ['cappello'], foreignAudio: '' },
+      { englishWord: 'scarf', foreignWord: ['sciarpa'], foreignAudio: '' }
+    ]
+  }
 ]
 const germanTopics: Topic1[] = [
   { name:'Numbers', slugName: 'num', hasOrdering:true, words: [
@@ -1291,7 +1325,24 @@ const germanTopics: Topic1[] = [
     { englishWord: 'black', foreignWord: ['schwarz'], foreignAudio: '' },
     { englishWord: 'purple', foreignWord: ['lila'], foreignAudio: '' },
     { englishWord: 'pink', foreignWord: ['rosa'], foreignAudio: '' }
-  ] }
+  ] },
+  {
+    name: 'Clothes',
+    slugName: 'clo',
+    hasOrdering: false,
+    words: [
+      { englishWord: 'trousers', foreignWord: ['Hose'], foreignAudio: '' },
+      { englishWord: 'sweater', foreignWord: ['Pullover'], foreignAudio: '' },
+      { englishWord: 'underwear', foreignWord: ['Unterwäsche'], foreignAudio: '' },
+      { englishWord: 'tie', foreignWord: ['Krawatte'], foreignAudio: '' },
+      { englishWord: 'socks', foreignWord: ['Socken'], foreignAudio: '' },
+      { englishWord: 'shoes', foreignWord: ['Schuhe'], foreignAudio: '' },
+      { englishWord: 'skirt', foreignWord: ['Rock'], foreignAudio: '' },
+      { englishWord: 'jacket', foreignWord: ['Jacke'], foreignAudio: '' },
+      { englishWord: 'hat', foreignWord: ['Hut'], foreignAudio: '' },
+      { englishWord: 'scarf', foreignWord: ['Schal'], foreignAudio: '' }
+    ]
+  }
 ]
 
 const japaneseTopics: Topic3[] = [
@@ -1413,7 +1464,24 @@ const japaneseTopics: Topic3[] = [
     { englishWord: 'black', foreignWord: ['kuro', 'くろ', '黒'], foreignAudio: '' },
     { englishWord: 'purple', foreignWord: ['murasaki', 'むらさき', '紫'], foreignAudio: '' },
     { englishWord: 'pink', foreignWord: ['pinku', 'ピンク', 'unknown'], foreignAudio: '' }
-  ] }
+  ] },
+  {
+    name: 'Clothes',
+    slugName: 'clo',
+    hasOrdering: false,
+    words: [
+      { englishWord: 'trousers', foreignWord: ['zubon', 'ズボン', 'ズボン'], foreignAudio: '' },
+      { englishWord: 'sweater', foreignWord: ['se-ta-', 'セーター', 'セーター'], foreignAudio: '' },
+      { englishWord: 'underwear', foreignWord: ['shitagi', 'したぎ', '下着'], foreignAudio: '' },
+      { englishWord: 'tie', foreignWord: ['nekutai', 'ネクタイ', 'ネクタイ'], foreignAudio: '' },
+      { englishWord: 'socks', foreignWord: ['kutsushita', 'くつした', '靴下'], foreignAudio: '' },
+      { englishWord: 'shoes', foreignWord: ['kutsu', 'くつ', '靴'], foreignAudio: '' },
+      { englishWord: 'skirt', foreignWord: ['suka-to', 'スカート', 'スカート'], foreignAudio: '' },
+      { englishWord: 'jacket', foreignWord: ['jyaketto', 'ジャケット', 'ジャケット'], foreignAudio: '' },
+      { englishWord: 'hat', foreignWord: ['boushi', 'ぼうし', '帽子'], foreignAudio: '' },
+      { englishWord: 'scarf', foreignWord: ['suka-fu', 'スカーフ', 'スカーフ'], foreignAudio: '' }
+    ]
+  }
 ]
 
 const mandarinTopics: Topic2[] = [
@@ -1441,6 +1509,23 @@ const mandarinTopics: Topic2[] = [
     { englishWord: 'purple', foreignWord: ['zǐsè', '紫色'], foreignAudio: '' },
     { englishWord: 'pink', foreignWord: ['fěnhóngsè', '粉红色'], foreignAudio: '' }
   ] }
+  ,{
+    name: 'Clothes',
+    slugName: 'clo',
+    hasOrdering: false,
+    words: [
+      { englishWord: 'trousers', foreignWord: ['kùzǐ', '裤子'], foreignAudio: '' },
+      { englishWord: 'sweater', foreignWord: ['máoyī', '毛衣'], foreignAudio: '' },
+      { englishWord: 'underwear', foreignWord: ['yīnxiāng', '内衣'], foreignAudio: '' },
+      { englishWord: 'tie', foreignWord: ['língdài', '领带'], foreignAudio: '' },
+      { englishWord: 'socks', foreignWord: ['wàzi', '袜子'], foreignAudio: '' },
+      { englishWord: 'shoes', foreignWord: ['xiézi', '鞋子'], foreignAudio: '' },
+      { englishWord: 'skirt', foreignWord: ['qúnzi', '裙子'], foreignAudio: '' },
+      { englishWord: 'jacket', foreignWord: ['jiákè', '夹克'], foreignAudio: '' },
+      { englishWord: 'hat', foreignWord: ['màozi', '帽子'], foreignAudio: '' },
+      { englishWord: 'scarf', foreignWord: ['wéijīn', '围巾'], foreignAudio: '' }
+    ]
+  }
 ]
 
 const koreanTopics: Topic2[] = [
@@ -1468,6 +1553,23 @@ const koreanTopics: Topic2[] = [
     { englishWord: 'purple', foreignWord: ['borasaek', '보라색'], foreignAudio: '' },
     { englishWord: 'pink', foreignWord: ['bunhongsaek', '분홍색'], foreignAudio: '' }
   ] },
+  {
+    name: 'Clothes',
+    slugName: 'clo',
+    hasOrdering: false,
+    words: [
+      { englishWord: 'trousers', foreignWord: ['baji', '바지'], foreignAudio: '' },
+      { englishWord: 'sweater', foreignWord: ['seuweteo', '스웨터'], foreignAudio: '' },
+      { englishWord: 'underwear', foreignWord: ['sangtae', '속옷'], foreignAudio: '' },
+      { englishWord: 'tie', foreignWord: ['maen', '넥타이'], foreignAudio: '' },
+      { englishWord: 'socks', foreignWord: ['yangmal', '양말'], foreignAudio: '' },
+      { englishWord: 'shoes', foreignWord: ['shinbal', '신발'], foreignAudio: '' },
+      { englishWord: 'skirt', foreignWord: ['chima', '치마'], foreignAudio: '' },
+      { englishWord: 'jacket', foreignWord: ['jaeket', '재킷'], foreignAudio: '' },
+      { englishWord: 'hat', foreignWord: ['moja', '모자'], foreignAudio: '' },
+      { englishWord: 'scarf', foreignWord: ['muffler', '머플러'], foreignAudio: '' }
+    ]
+  },
   { name:'Hangul (Alphabet)', slugName: 'han', hasOrdering:true, isAlphabet: true, words: [
     { englishWord: 'g', foreignWord: ['ㄱ','ㄱ'], foreignAudio: '', order: 1 },
     { englishWord: 'n', foreignWord: ['ㄴ','ㄴ'], foreignAudio: '', order: 2 },
@@ -1520,7 +1622,25 @@ const portugueseTopics: Topic1[] = [
     { englishWord: 'black', foreignWord: ['preto'], foreignAudio: '' },
     { englishWord: 'purple', foreignWord: ['roxo'], foreignAudio: '' },
     { englishWord: 'pink', foreignWord: ['rosa'], foreignAudio: '' }
-  ] }
+  ] },
+  {
+    name: 'Clothes',
+    slugName: 'clo',
+    hasOrdering: false,
+    words: [
+      { englishWord: 'trousers', foreignWord: ['calças'], foreignAudio: '' },
+      { englishWord: 'sweater', foreignWord: ['suéter'], foreignAudio: '' },
+      { englishWord: 'underwear', foreignWord: ['roupa íntima'], foreignAudio: '' },
+      { englishWord: 'tie', foreignWord: ['gravata'], foreignAudio: '' },
+      { englishWord: 'socks', foreignWord: ['meias'], foreignAudio: '' },
+      { englishWord: 'shoes', foreignWord: ['sapatos'], foreignAudio: '' },
+      { englishWord: 'skirt', foreignWord: ['saia'], foreignAudio: '' },
+      { englishWord: 'jacket', foreignWord: ['jaqueta'], foreignAudio: '' },
+      { englishWord: 'hat', foreignWord: ['chapéu'], foreignAudio: '' },
+      { englishWord: 'scarf', foreignWord: ['cachecol'], foreignAudio: '' }
+    ]
+  }
+  
 ]
 
 const russianTopics: Topic2[] = [
@@ -1583,7 +1703,24 @@ const russianTopics: Topic2[] = [
     { englishWord: 'black', foreignWord: ['chernyy', 'черный'], foreignAudio: '' },
     { englishWord: 'purple', foreignWord: ['fioletovyy', 'фиолетовый'], foreignAudio: '' },
     { englishWord: 'pink', foreignWord: ['rozovyy', 'розовый'], foreignAudio: '' }
-  ] }
+  ] },
+  {
+    name: 'Clothes',
+    slugName: 'clo',
+    hasOrdering: false,
+    words: [
+      { englishWord: 'trousers', foreignWord: [ 'bryuki','брюки'], foreignAudio: '' },
+      { englishWord: 'sweater', foreignWord: [ 'sviter', 'свитер'], foreignAudio: '' },
+      { englishWord: 'underwear', foreignWord: [ 'nizhneye bel\'ye', 'нижнее белье'], foreignAudio: '' },
+      { englishWord: 'tie', foreignWord: [ 'galstuk', 'галстук',], foreignAudio: '' },
+      { englishWord: 'socks', foreignWord: [ 'noski', 'носки',], foreignAudio: '' },
+      { englishWord: 'shoes', foreignWord: ['obuv\'', 'обувь'], foreignAudio: '' },
+      { englishWord: 'skirt', foreignWord: [ 'yubka', 'юбка',], foreignAudio: '' },
+      { englishWord: 'jacket', foreignWord: [ 'kurtka', 'куртка'], foreignAudio: '' },
+      { englishWord: 'hat', foreignWord: ['shapka', 'шапка',], foreignAudio: '' },
+      { englishWord: 'scarf', foreignWord: [ 'sharf', 'шарф',], foreignAudio: '' }
+    ]
+  }
 ]
 
 export const languages: Language[] = 
