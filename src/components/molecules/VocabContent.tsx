@@ -106,7 +106,7 @@ const VocabContent = () => {
     else {
       return (
         <div style={{ display: 'flex', justifyContent: 'center', }}>
-          <Table striped bordered hover size="sm" style={{ width: '300px' }}>
+          <Table striped bordered hover size="sm" style={{ width: '300px', margin: '0' }}>
             <thead>
               <tr>
                 <th style={{ textAlign: 'center', }}>{showBaseLanguage ? 'English' : currentLanguage.languageName }</th>
