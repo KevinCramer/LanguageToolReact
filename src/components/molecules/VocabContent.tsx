@@ -222,7 +222,7 @@ const VocabContent = () => {
             <div style={{ display: 'flex', flexDirection:'row' , }}>
               <div style={{ marginRight: '10px', fontWeight: quiz ? 'normal' : '600' }}>Study</div>
               <ReactSwitch onChange = {changeQuizState} checked= {quiz} 
-                uncheckedIcon = {false} checkedIcon = {false} onColor = {'#0038FF'}/> 
+                uncheckedIcon = {false} checkedIcon = {false} onColor = {'#888888'}/> 
               <div style = {{ marginLeft: '10px', fontWeight: quiz ? '600' : 'normal' }}> Quiz</div>               
             </div>
           </Container>
