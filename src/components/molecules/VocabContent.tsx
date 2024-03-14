@@ -105,12 +105,12 @@ const VocabContent = () => {
     }
     else {
       return (
-        <div>
+        <div style={{ display: 'flex', justifyContent: 'center', }}>
           <Table striped bordered hover size="sm" style={{ width: '300px' }}>
             <thead>
               <tr>
-                <th style={{ textAlign: 'center', }}>{showBaseLanguage ? 'English2' : currentLanguage.languageName }</th>
-                <th style={{ textAlign: 'center', }}>{showBaseLanguage ? currentLanguage.languageName : 'English2' }</th>
+                <th style={{ textAlign: 'center', }}>{showBaseLanguage ? 'English' : currentLanguage.languageName }</th>
+                <th style={{ textAlign: 'center', }}>{showBaseLanguage ? currentLanguage.languageName : 'English' }</th>
               </tr>
             </thead>
             <tbody>
@@ -187,9 +187,9 @@ const VocabContent = () => {
   }
   return (
     <div>
-      <Container style={{ justifyContent:'center' }}>    
+      <Container>    
         <NavbarBs>
-          <Container >
+          <Container style={{ justifyContent:'center' }}>
             <DropdownButton style={{ margin: '0px 20px 0px 20px' }} variant= 'secondary'
               id="Languages" title=
                 {String(currentLanguage.languageName)} size = "sm"> 
@@ -229,9 +229,7 @@ const VocabContent = () => {
           
         </NavbarBs>
         <p></p>
-        <div style={{ justifyContent:'center' }}>
-          {ToggleQuiz()}
-        </div>
+        {ToggleQuiz()}
       </Container>
     </div>
   );
