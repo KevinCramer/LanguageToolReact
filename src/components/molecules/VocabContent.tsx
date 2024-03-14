@@ -218,11 +218,12 @@ const VocabContent = () => {
           </Container>
         </NavbarBs>
         <NavbarBs>
-          <Container style={{ display: 'flex', justifyContent:'center' }}>
-            <div>
+          <Container style={{ display: 'flex', justifyContent:'center' , }}>
+            <div style={{ display: 'flex', flexDirection:'row' , }}>
+              <div style={{ marginRight: '10px', fontWeight: quiz ? 'normal' : '600' }}>Study</div>
               <ReactSwitch onChange = {changeQuizState} checked= {quiz} 
                 uncheckedIcon = {false} checkedIcon = {false} onColor = {'#0038FF'}/> 
-              <div>{quiz ? 'Quiz Mode' : 'Study Mode'}</div>        
+              <div style = {{ marginLeft: '10px', fontWeight: quiz ? '600' : 'normal' }}> Quiz</div>               
             </div>
           </Container>
           
