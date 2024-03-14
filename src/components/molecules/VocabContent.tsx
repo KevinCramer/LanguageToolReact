@@ -89,7 +89,7 @@ const VocabContent = () => {
       const isVerb = currentTopic.name === 'Verbs'
       var count = 0;
       return ( 
-        <div style = {{ display: 'flex', justifyContent: 'center', flexDirection: 'column' }}>
+        <div>
           {topicWords.map((pair: Word) =>
             <div key ={showTrueOrder.toString() + (isVerb ?
               (pair.englishWord as VerbConjugationEnglish).infinitive : pair.englishWord)
@@ -106,7 +106,7 @@ const VocabContent = () => {
     else {
       return (
         <div style={{ display: 'flex', justifyContent: 'center', }}>
-          <Table striped bordered hover size="sm" style={{ width: '400px', border: '1px black' }}>
+          <Table striped bordered hover size="sm" style={{ width: '400px', border: '1px #AAAAAA' }}>
             <thead>
               <tr>
                 <th style={{ textAlign: 'center', width: '50%' }}>{showBaseLanguage ? 'English' : currentLanguage.languageName }</th>
@@ -186,7 +186,7 @@ const VocabContent = () => {
   }
   return (
     <div>
-      <Container>    
+      <Container >    
         <NavbarBs>
           <Container style={{ display: 'flex', justifyContent:'center' }}>
             <DropdownButton style={{ margin: '0px 20px 0px 20px' }} variant= 'secondary'
