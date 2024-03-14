@@ -34,14 +34,14 @@ const StudyElement = (
   var [showPopUp,setShowPopUp] = useState(showPopUp)
   const hidePopUp = () => { return setShowPopUp(false)}
   const displayPopUp = () => { return setShowPopUp(true)}
-  const baseLanguageLabel = <label style= {{ width: '20%', textAlign: 'center' }}>
+  const baseLanguageLabel = <label style= {{ textAlign: 'center', width: '100%' }}>
     {isVerb ? (showBaseLanguageFirst ? BaseLanguageWord.infinitive :
       ForeignLanguageWord.infinitive) : BaseLanguageWord} </label>
   const foreignLanguageLabelVerb = <label onClick={displayPopUp} 
-    style= {{ width: '20%', textAlign: 'center', color: 'purple',
-      textDecorationLine: 'underline' }}>
+    style= {{ textAlign: 'center', color: 'purple',
+      textDecorationLine: 'underline' , width: '100%' }}>
     { showBaseLanguageFirst ? ForeignLanguageWord.infinitive : BaseLanguageWord.infinitive} </label>
-  const foreignLanguageLabelNoVerb = <label style= {{ width: '20%', textAlign: 'center' }}>
+  const foreignLanguageLabelNoVerb = <label style= {{ textAlign: 'center', width: '100%' }}>
     {ForeignLanguageWord} </label>
   const foreignLanguageLabel = isVerb ? foreignLanguageLabelVerb : foreignLanguageLabelNoVerb
   return (

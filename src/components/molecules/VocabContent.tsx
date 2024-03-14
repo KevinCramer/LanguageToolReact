@@ -106,7 +106,7 @@ const VocabContent = () => {
     else {
       return (
         <div style={{ display: 'flex', justifyContent: 'center', }}>
-          <Table striped bordered hover size="sm" style={{ width: '300px' }}>
+          <Table striped bordered hover size="sm" style={{ width: '400px' }}>
             <thead>
               <tr>
                 <th style={{ textAlign: 'center', width: '50%' }}>{showBaseLanguage ? 'English' : currentLanguage.languageName }</th>
@@ -144,7 +144,6 @@ const VocabContent = () => {
                       showLeftLabel = {false}
                     />
                   </td>
-             
                 </tr>
               ))}
             </tbody>
@@ -189,7 +188,7 @@ const VocabContent = () => {
     <div>
       <Container>    
         <NavbarBs>
-          <Container style={{ justifyContent:'center' }}>
+          <Container style={{ display: 'flex', justifyContent:'center' }}>
             <DropdownButton style={{ margin: '0px 20px 0px 20px' }} variant= 'secondary'
               id="Languages" title=
                 {String(currentLanguage.languageName)} size = "sm"> 
@@ -219,7 +218,7 @@ const VocabContent = () => {
           </Container>
         </NavbarBs>
         <NavbarBs>
-          <Container style={{ justifyContent:'center' }}>
+          <Container style={{ display: 'flex', justifyContent:'center' }}>
             <div>
               <ReactSwitch onChange = {changeQuizState} checked= {quiz} 
                 uncheckedIcon = {false} checkedIcon = {false} onColor = {'#0038FF'}/> 
