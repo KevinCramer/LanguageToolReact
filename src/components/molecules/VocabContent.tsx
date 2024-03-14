@@ -1,4 +1,4 @@
-import { Container, Navbar as NavbarBs } from 'react-bootstrap';
+import { Container, Navbar as NavbarBs, Table } from 'react-bootstrap';
 import { Language, Topic, VerbConjugationEnglish, Word, Word1, Word2, Word3 } from '../../types'
 import { queryParamCompress, queryParamDecompress } from '../../helpers/queryParamHelpers'
 import { useEffect, useState } from 'react';
@@ -105,22 +105,50 @@ const VocabContent = () => {
     }
     else {
       return (
-        <div>
-          {topicWords.map((pair: Word, index: number) =>
-            <div key = {index}>
-              <StudyElement 
-                BaseLanguageWord = { showBaseLanguage ? pair.englishWord :
-                  pair.foreignWord[currentAlphabet]} 
-                ForeignLanguageWord = {showBaseLanguage ? 
-                  pair.foreignWord[currentAlphabet] : pair.englishWord}  
-                ForeignLanguageWordAudio = {pair.foreignAudio} 
-                showAudio = {audioBool} 
-                showBaseLanguageFirst = {showBaseLanguage} 
-                isVerb = {currentTopic.name === 'Verbs'}
-                pronouns = {currentLanguage.pronouns}
-              />
-            </div>                    
-          )}
+        <div style={{ display: 'flex', justifyContent: 'center', }}>
+          <Table striped bordered hover size="sm" style={{ width: '400px' }}>
+            <thead>
+              <tr>
+                <th style={{ textAlign: 'center', }}>{showBaseLanguage ? 'English' : currentLanguage.languageName }</th>
+                <th style={{ textAlign: 'center', }}>{showBaseLanguage ? currentLanguage.languageName : 'English' }</th>
+              </tr>
+            </thead>
+            <tbody>
+              {topicWords.map((pair: Word, index: number) => (
+                <tr key={index}>
+                  <td>     
+                    <StudyElement 
+                      BaseLanguageWord = { showBaseLanguage ? pair.englishWord :
+                        pair.foreignWord[currentAlphabet]} 
+                      ForeignLanguageWord = {showBaseLanguage ? 
+                        pair.foreignWord[currentAlphabet] : pair.englishWord}  
+                      ForeignLanguageWordAudio = {pair.foreignAudio} 
+                      showAudio = {audioBool} 
+                      showBaseLanguageFirst = {showBaseLanguage} 
+                      isVerb = {currentTopic.name === 'Verbs'}
+                      pronouns = {currentLanguage.pronouns}
+                      showLeftLabel = {true}
+                    />
+                  </td>
+                  <td>     
+                    <StudyElement 
+                      BaseLanguageWord = { showBaseLanguage ? pair.englishWord :
+                        pair.foreignWord[currentAlphabet]} 
+                      ForeignLanguageWord = {showBaseLanguage ? 
+                        pair.foreignWord[currentAlphabet] : pair.englishWord}  
+                      ForeignLanguageWordAudio = {pair.foreignAudio} 
+                      showAudio = {audioBool} 
+                      showBaseLanguageFirst = {showBaseLanguage} 
+                      isVerb = {currentTopic.name === 'Verbs'}
+                      pronouns = {currentLanguage.pronouns}
+                      showLeftLabel = {false}
+                    />
+                  </td>
+             
+                </tr>
+              ))}
+            </tbody>
+          </Table>
         </div>
       )
     }

@@ -13,6 +13,7 @@ const StudyElement = (
     showBaseLanguageFirst: boolean,
     isVerb: boolean,
     pronouns: string[]
+    showLeftLabel: boolean, 
   }) => 
 {
 
@@ -24,7 +25,8 @@ const StudyElement = (
       showAudio,
       showBaseLanguageFirst,
       isVerb,
-      pronouns 
+      pronouns,
+      showLeftLabel
     } = props
 
   const tableRowWidth = 200
@@ -43,12 +45,12 @@ const StudyElement = (
     {ForeignLanguageWord} </label>
   const foreignLanguageLabel = isVerb ? foreignLanguageLabelVerb : foreignLanguageLabelNoVerb
   return (
-    <Navbar style={{ justifyContent:'center' }}>
-      {isVerb ? (showBaseLanguageFirst ? baseLanguageLabel : foreignLanguageLabel) :
-        baseLanguageLabel} <div style={{ paddingTop: '10px' }}>=</div>
-      {isVerb ? (showBaseLanguageFirst ? foreignLanguageLabel : baseLanguageLabel) :
-        foreignLanguageLabel}
-      {showAudio && <div style={{ paddingTop: '10px' }}>
+    <Navbar>
+      { showLeftLabel ? (isVerb ? (showBaseLanguageFirst ? baseLanguageLabel : foreignLanguageLabel) :
+        baseLanguageLabel) :
+        isVerb ? (showBaseLanguageFirst ? foreignLanguageLabel : baseLanguageLabel) :
+          foreignLanguageLabel}
+      {showAudio && !showLeftLabel && <div>
         <audio src={ForeignLanguageWordAudio} id={ForeignLanguageWordAudio}></audio>
         <Button size="sm" variant="secondary" aria-disabled={!ForeignLanguageWord} onClick={() => { 
           var audio = document.getElementById(ForeignLanguageWordAudio) as any;
