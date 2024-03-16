@@ -17,16 +17,17 @@ const QuizElement = (
   }
 
   const roughlyEqual = (a: string, b: string ) => {return (a.toLowerCase() === b)};
-  const onSubmit = (
+  const checkAnswer = (
     e:React.ChangeEvent<HTMLInputElement>, 
     submittedAnswer:string, 
     correctAnswer:string
   ) => {
     e.preventDefault();
-    const doesItMatch = (roughlyEqual(submittedAnswer,correctAnswer)) ? '✔' : 
-      ` ✘ the correct answer is  '${correctAnswer}' not '${submittedAnswer}'`
-
-    setResponse(doesItMatch)
+    if(submittedAnswer !== ''){
+      const doesItMatch = (roughlyEqual(submittedAnswer,correctAnswer)) ? '✔' : 
+        ` ✘ the correct answer is  '${correctAnswer}' not '${submittedAnswer}'` 
+      setResponse(doesItMatch)
+    }
   };
     
   var hideStudyElement = false;
@@ -49,9 +50,12 @@ const QuizElement = (
     const myPlaceHolder = props.myCounter === 1 ? 'enter your answer here' : '';
     return (
       <Navbar style={{ justifyContent:'center' }}>
-        <form onSubmit={e => onSubmit(
+        <form onBlur={e => checkAnswer(
           e as unknown as React.ChangeEvent<HTMLInputElement> ,
-          formValues.answer, propsAnswerWord)}>
+          formValues.answer, propsAnswerWord)}
+        onSubmit={e => checkAnswer(
+            e as unknown as React.ChangeEvent<HTMLInputElement> ,
+            formValues.answer, propsAnswerWord)}>
           <div className="ui form">
             <label style= {{ width: '200px', textAlign:'center' }}>{propsQuestionWord} </label>
             <input type="text" name="answer" placeholder={myPlaceHolder}
