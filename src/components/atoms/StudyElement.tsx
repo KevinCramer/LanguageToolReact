@@ -46,8 +46,10 @@ const StudyElement = (
   const foreignLanguageLabel = isVerb ? foreignLanguageLabelVerb : foreignLanguageLabelNoVerb
   return (
     <Navbar>
-      { showLeftLabel ? (isVerb ? (showBaseLanguageFirst ? baseLanguageLabel : foreignLanguageLabel) :
-        baseLanguageLabel) :
+      { showLeftLabel ? (
+        isVerb ? (showBaseLanguageFirst ? baseLanguageLabel : foreignLanguageLabel
+        ) :
+          baseLanguageLabel) :
         isVerb ? (showBaseLanguageFirst ? foreignLanguageLabel : baseLanguageLabel) :
           foreignLanguageLabel}
       {showAudio && !showLeftLabel && <div>
