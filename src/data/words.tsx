@@ -76,7 +76,7 @@ import spanishAudioNine from '../data/audio/spanish/spanish_numbers/nine.mp3';
 import spanishAudioTen from '../data/audio/spanish/spanish_numbers/ten.mp3';
 
 import { sortTopics } from '../helpers';
-import { Language, VerbConjugationEnglish, Topic1, Topic2, Topic3 } from '../types';
+import { Language, VerbConjugationEnglish, Topic1, Topic2, Topic3 } from '../../types/vocabTypes';
 
 export const englishVerbs: { [key: string]: VerbConjugationEnglish } = {
   'to call': {

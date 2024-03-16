@@ -1,4 +1,10 @@
 import { Button, Modal, Navbar } from 'react-bootstrap'
+import { 
+  Tenses, 
+  VerbConjugation, 
+  VerbConjugationEnglish,
+  VerbConjugationForeign
+} from '../../../types/vocabTypes'
 import { englishPronouns } from '../../data/words'
 import { modalTenses } from '../../constants'
 import { useState } from 'react'
@@ -6,8 +12,8 @@ import { useState } from 'react'
 const StudyElement = (
   props: 
   {
-    BaseLanguageWord: any,
-    ForeignLanguageWord: any,
+    BaseLanguageWord: string | VerbConjugation,
+    ForeignLanguageWord: string | VerbConjugation,
     ForeignLanguageWordAudio: string,
     showAudio: boolean,
     showBaseLanguageFirst: boolean,
@@ -35,14 +41,15 @@ const StudyElement = (
   const hidePopUp = () => { return setShowPopUp(false)}
   const displayPopUp = () => { return setShowPopUp(true)}
   const baseLanguageLabel = <label style= {{ textAlign: 'center', width: '100%' }}>
-    {isVerb ? (showBaseLanguageFirst ? BaseLanguageWord.infinitive :
-      ForeignLanguageWord.infinitive) : BaseLanguageWord} </label>
+    <>{isVerb ? (showBaseLanguageFirst ? (BaseLanguageWord as VerbConjugation).infinitive :
+      (ForeignLanguageWord as VerbConjugation).infinitive) : BaseLanguageWord}</> </label>
   const foreignLanguageLabelVerb = <label onClick={displayPopUp} 
     style= {{ textAlign: 'center', color: 'purple',
       textDecorationLine: 'underline' , width: '100%' }}>
-    { showBaseLanguageFirst ? ForeignLanguageWord.infinitive : BaseLanguageWord.infinitive} </label>
+    { showBaseLanguageFirst ? (ForeignLanguageWord as VerbConjugation).infinitive : 
+      (BaseLanguageWord as VerbConjugation).infinitive} </label>
   const foreignLanguageLabelNoVerb = <label style= {{ textAlign: 'center', width: '100%' }}>
-    {ForeignLanguageWord} </label>
+    <> {ForeignLanguageWord}</></label>
   const foreignLanguageLabel = isVerb ? foreignLanguageLabelVerb : foreignLanguageLabelNoVerb
   return (
     <Navbar>
@@ -55,7 +62,7 @@ const StudyElement = (
       {showAudio && !showLeftLabel && <div>
         <audio src={ForeignLanguageWordAudio} id={ForeignLanguageWordAudio}></audio>
         <Button size="sm" variant="secondary" aria-disabled={!ForeignLanguageWord} onClick={() => { 
-          var audio = document.getElementById(ForeignLanguageWordAudio) as any;
+          var audio = document.getElementById(ForeignLanguageWordAudio) as HTMLAudioElement;
           if (audio.paused) {
             audio.play();
           } else {
@@ -66,7 +73,7 @@ const StudyElement = (
       {isVerb && <Modal show ={showPopUp} onHide={hidePopUp}>
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vleft">
-            {ForeignLanguageWord.infinitive}
+            {(ForeignLanguageWord as VerbConjugation).infinitive}
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
@@ -77,13 +84,17 @@ const StudyElement = (
                 <tr key={i}>
                   {showBaseLanguageFirst ? <td style={{ width: tableRowWidth }}>
                     {englishPronouns[j] + ' '}
-                    {BaseLanguageWord.englishWordConjugation[obj.tense][j]}</td> : <td style={
+                    {(BaseLanguageWord as VerbConjugationEnglish)
+                      .englishWordConjugation[obj.tense as keyof Tenses][j]}</td> : <td style={
                     { width: tableRowWidth }}>{pronouns[j] + ' '} 
-                    {BaseLanguageWord.foreignWordConjugation[obj.tense][j] }</td>}
+                    {(BaseLanguageWord as VerbConjugationForeign)
+                      .foreignWordConjugation[obj.tense as keyof Tenses][j] }</td>}
                   {showBaseLanguageFirst ? <td style={{ width: tableRowWidth }}>
-                    {pronouns[j] + ' '} {ForeignLanguageWord.foreignWordConjugation[obj.tense][j]}
+                    {pronouns[j] + ' '} {(ForeignLanguageWord as VerbConjugationForeign)
+                      .foreignWordConjugation[obj.tense as keyof Tenses][j]}
                   </td> : <td style={{ width: tableRowWidth }}>{englishPronouns[j] + ' '} 
-                    {ForeignLanguageWord.englishWordConjugation[obj.tense][j]}</td> }
+                    {(ForeignLanguageWord as VerbConjugationEnglish)
+                      .englishWordConjugation[obj.tense as keyof Tenses][j]}</td> }
                 </tr>
               ))
               }

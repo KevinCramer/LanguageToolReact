@@ -1,5 +1,13 @@
 import { Container, Navbar as NavbarBs, Table } from 'react-bootstrap';
-import { Language, Topic, VerbConjugationEnglish, Word, Word1, Word2, Word3 } from '../../types'
+import {
+  Language,
+  Topic, 
+  VerbConjugationEnglish,
+  Word,
+  Word1, 
+  Word2, 
+  Word3 
+} from '../../../types/vocabTypes'
 import { queryParamCompress, queryParamDecompress } from '../../helpers/queryParamHelpers'
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';

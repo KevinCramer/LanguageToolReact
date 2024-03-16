@@ -1,4 +1,4 @@
-import { Topic, Topic1, Topic2, Topic3 } from './types';
+import { Topic, Topic1, Topic2, Topic3 } from '../types/vocabTypes';
 
 export const scramble = <T>(array: T[]) => array.sort((a, b) => 0.5 - Math.random());
 

@@ -1,5 +1,7 @@
+import { Language, Topic } from '../../types/immersionTypes'
+
 /* eslint-disable @stylistic/js/max-len */
-const japaneseTopics: any[] = [
+const japaneseTopics: Topic[] = [
   // source: http://tomray.me/stories/momotarou.html
   { name:'Momotarou, the Peach Boy', slugName: 'mpb', contents: [
     'むかし、 むかし、 ある ところ に', 'おじいさん と おばあさん が いました。',
@@ -11,7 +13,7 @@ const japaneseTopics: any[] = [
   ] }, 
 ]
 
-const spanishTopics: any[] = [
+const spanishTopics: Topic[] = [
   // https://snappyspanish.com/beginner-spanish-story-the-feeling-of-winning/
   { name:'El Sentimiento De Ganar', slugName: 'sdg', contents: [
     'Contesto el teléfono. Es mi madre. Ella suena emocionada.',
@@ -48,7 +50,7 @@ const spanishTopics: any[] = [
   ] }, 
 ]
 
-export const languages: any[] = 
+export const languages: Language[] = 
         [
           { languageName: 'Japanese', topics: (japaneseTopics) },
           { languageName: 'Spanish', topics: (spanishTopics) },

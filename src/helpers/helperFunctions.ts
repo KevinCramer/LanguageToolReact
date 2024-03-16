@@ -1,1 +1,2 @@
-export const nullOrUndefined = (value: any) => value === null || value === undefined
+export const nullOrUndefined = (value: string | boolean | number) =>
+  value === null || value === undefined

@@ -16,6 +16,6 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": ["src"],
+  "include": ["src", "types/vocabTypes.ts", "types/immersionTypes.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

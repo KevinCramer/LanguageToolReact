@@ -1,5 +1,11 @@
 import { FixedSizeArray } from 'fixed-size-array';
 
+export interface Tenses {
+    pastTense: string;
+    presentTense: string;
+    futureTense: string;
+  }
+
 export type WordConjugation = {
     pastTense: string[];
     presentTense: string[];

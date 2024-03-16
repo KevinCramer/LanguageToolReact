@@ -1,6 +1,6 @@
 import { Navbar } from 'react-bootstrap'
 import { useState } from 'react'
-import { VerbConjugation } from '../../types'
+import { VerbConjugation } from '../../../types/vocabTypes'
 
 const QuizElement = (
   props: {
@@ -11,13 +11,17 @@ const QuizElement = (
     }) => {
   const [formValues, setFormValues] = useState({ answer: '' })
   const [response, setResponse] = useState('')
-  const handleChange = (e:any) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name,value } = e.target;
     setFormValues({ ...formValues, [name]: value })
   }
 
   const roughlyEqual = (a: string, b: string ) => {return (a.toLowerCase() === b)};
-  const onSubmit = (e:any, submittedAnswer:string, correctAnswer:string) => {
+  const onSubmit = (
+    e:React.ChangeEvent<HTMLInputElement>, 
+    submittedAnswer:string, 
+    correctAnswer:string
+  ) => {
     e.preventDefault();
     const doesItMatch = (roughlyEqual(submittedAnswer,correctAnswer)) ? '✔' : 
       ` ✘ the correct answer is  '${correctAnswer}' not '${submittedAnswer}'`
@@ -45,7 +49,9 @@ const QuizElement = (
     const myPlaceHolder = props.myCounter === 1 ? 'enter your answer here' : '';
     return (
       <Navbar style={{ justifyContent:'center' }}>
-        <form onSubmit={e => onSubmit(e, formValues.answer, propsAnswerWord)}>
+        <form onSubmit={e => onSubmit(
+          e as unknown as React.ChangeEvent<HTMLInputElement> ,
+          formValues.answer, propsAnswerWord)}>
           <div className="ui form">
             <label style= {{ width: '200px', textAlign:'center' }}>{propsQuestionWord} </label>
             <input type="text" name="answer" placeholder={myPlaceHolder}
