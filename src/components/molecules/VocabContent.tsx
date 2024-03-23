@@ -1,6 +1,7 @@
 import { Container, Navbar as NavbarBs, Table } from 'react-bootstrap';
 import {
   Language,
+  reduxStore,
   Topic, 
   VerbConjugationEnglish,
   Word,
@@ -23,7 +24,6 @@ import { scramble } from '../../helpers';
 import StudyElement from '../atoms/StudyElement';
 import { useSelector } from 'react-redux';
 
-const showInProgressFeatures = false
 const VocabContent = () => {
   const navigate = useNavigate();
 
@@ -198,7 +198,7 @@ const VocabContent = () => {
       currentTopic.words as (Word)[]) as Word1[] | Word2[] | Word3[]
       
   }
-  const showInProgressFeatures = useSelector((state: any) => state.featureToggle.x);
+  const showInProgressFeatures = useSelector((state: reduxStore) => state.featureToggle.x);
   return (
     <div>
       <Container >    
@@ -215,9 +215,11 @@ const VocabContent = () => {
             </DropdownButton>
             <DropdownButton style={{ margin: '0px 20px 0px 20px' }} variant= 'secondary'
               id="Topics" title={'Topic: ' + currentTopic.name} size = "sm">
-              {currentLanguage.topics.map((topic: Topic, index: number) =>
-                <Dropdown.Item key = {index} onClick = {() => 
-                  changeCurrentTopic(topic)}>{topic.name}</Dropdown.Item>)}
+              {(currentLanguage.topics as Topic[])
+                .filter((t) => !t.isExperimentalTopic || showInProgressFeatures)
+                .map((topic: Topic, index: number) =>
+                  <Dropdown.Item key = {index} onClick = {() => 
+                    changeCurrentTopic(topic)}>{topic.name}</Dropdown.Item>)}
             </DropdownButton>
             <DropdownButton style={{ margin: '0px 20px 0px 20px' }} variant= 'secondary' align="end"
               id="Settings" title="Settings" size = "sm">

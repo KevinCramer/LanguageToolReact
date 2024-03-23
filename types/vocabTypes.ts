@@ -55,6 +55,7 @@ export type Topic1 = {
     hasOrdering: boolean;
     words: Word1[];
     isAlphabet?: boolean;
+    isExperimentalTopic?: boolean;
 
 }
 export type Topic2 = {
@@ -63,6 +64,7 @@ export type Topic2 = {
     hasOrdering: boolean;
     words: Word2[];
     isAlphabet?: boolean;
+    isExperimentalTopic?: boolean;
 
 }
 export type Topic3 = {
@@ -71,6 +73,7 @@ export type Topic3 = {
     hasOrdering: boolean;
     words: Word3[];
     isAlphabet?: boolean;
+    isExperimentalTopic?: boolean;
 }
 
 export type Topic = Topic1 | Topic2 | Topic3
@@ -80,4 +83,11 @@ export type Language = {
     topics: Topic1[] | Topic2[] | Topic3[];
     pronouns: string[];
     numForeignAlphabets: number;
+}
+
+export type featureToggle = {
+    x: boolean;
+}
+export type reduxStore = {
+    featureToggle: featureToggle
 }
