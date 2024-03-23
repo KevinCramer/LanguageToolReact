@@ -1,9 +1,10 @@
 import { Container, Nav , Navbar as NavbarBs } from 'react-bootstrap'
 import { NavLink } from 'react-router-dom'
+import { reduxStore } from '../../types/vocabTypes'
 import { useSelector } from 'react-redux';
 
 export function Navbar(){
-  const showInProgressFeatures = useSelector((state: any) => state.featureToggle.x);
+  const showInProgressFeatures = useSelector((state: reduxStore) => state.featureToggle.x);
   return(
     <NavbarBs className="bg-body-tertiary" >
       <Container style={{ justifyContent: 'center' }}>

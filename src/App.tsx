@@ -36,7 +36,8 @@ ReactGA.initialize(TRACKING_ID)
 function App() {
   return (
     <div >
-      <ToggleButton /> {/* Use the ToggleButton component */}      <Navbar />
+      <ToggleButton />
+      <Navbar />
       <Routes>
         <Route path="/" element={ <div style= {
           { display:'flex', flexDirection: 'column', justifyContent:'center', minHeight: '50vh' }
