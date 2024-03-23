@@ -16,7 +16,7 @@ const QuizElement = (
     setFormValues({ ...formValues, [name]: value })
   }
 
-  const roughlyEqual = (a: string, b: string ) => {return (a.toLowerCase() === b)};
+  const roughlyEqual = (a: string, b: string ) => {return (a.toLowerCase().trim() === b)};
   const checkAnswer = (
     e:React.ChangeEvent<HTMLInputElement>, 
     submittedAnswer:string, 
@@ -58,10 +58,17 @@ const QuizElement = (
             formValues.answer, propsAnswerWord)}>
           <div className="ui form">
             <label style= {{ width: '150px', textAlign:'center' }}>{propsQuestionWord} </label>
-            <input style= {{ width: '175px' }} type="text" name="answer" placeholder={myPlaceHolder}
+            <input 
+              style= {{ width: '175px' }} 
+              type="text"
+              name="answer" 
+              placeholder={myPlaceHolder}
               value={formValues.answer} 
-              onChange = {handleChange} autoComplete="off" autoCorrect="off" 
-              spellCheck ="false" autoCapitalize="off"/>
+              onChange = {handleChange}
+              autoComplete="off" 
+              autoCorrect="off" 
+              spellCheck ="false" 
+              autoCapitalize="off"/>
           </div>
         </form>
         <div> {response}</div>
