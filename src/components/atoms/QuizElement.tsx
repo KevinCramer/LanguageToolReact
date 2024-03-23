@@ -57,7 +57,7 @@ const QuizElement = (
             e as unknown as React.ChangeEvent<HTMLInputElement> ,
             formValues.answer, propsAnswerWord)}>
           <div className="ui form">
-            <label style= {{ width: '200px', textAlign:'center' }}>{propsQuestionWord} </label>
+            <label style= {{ width: '160px', textAlign:'center' }}>{propsQuestionWord} </label>
             <input type="text" name="answer" placeholder={myPlaceHolder}
               value={formValues.answer} 
               onChange = {handleChange} autoComplete="off" autoCorrect="off" 
