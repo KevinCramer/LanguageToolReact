@@ -21,7 +21,9 @@ import ReactGA from 'react-ga';
 import ReactSwitch from 'react-switch';
 import { scramble } from '../../helpers';
 import StudyElement from '../atoms/StudyElement';
+import { useSelector } from 'react-redux';
 
+const showInProgressFeatures = false
 const VocabContent = () => {
   const navigate = useNavigate();
 
@@ -196,6 +198,7 @@ const VocabContent = () => {
       currentTopic.words as (Word)[]) as Word1[] | Word2[] | Word3[]
       
   }
+  const showInProgressFeatures = useSelector((state: any) => state.featureToggle.x);
   return (
     <div>
       <Container >    
@@ -219,8 +222,8 @@ const VocabContent = () => {
             <DropdownButton style={{ margin: '0px 20px 0px 20px' }} variant= 'secondary' align="end"
               id="Settings" title="Settings" size = "sm">
               <Dropdown.Item onClick = {changeBaseLanguage}>toggle base language</Dropdown.Item>
-              <Dropdown.Item onClick = {() => changeAudioBool()}>
-                {audioBool ? 'hide audio' : 'show audio'}</Dropdown.Item>
+              {showInProgressFeatures && (<Dropdown.Item onClick = {() => changeAudioBool()}>
+                {audioBool ? 'hide audio' : 'show audio'}</Dropdown.Item>)}
               <Dropdown.Item onClick = {changeOrder}>
                 {showTrueOrder ? 'random ordering' : 'default ordering'}</Dropdown.Item>
               {currentLanguage.numForeignAlphabets > 1 && !currentTopic.isAlphabet &&
