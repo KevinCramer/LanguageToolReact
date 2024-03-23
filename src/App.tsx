@@ -25,6 +25,7 @@ const ToggleButton = () => {
         backgroundColor: 'transparent',
         border: 'none', 
         color: '#F5F5F5', // Set the text color (example: Bootstrap primary blue)
+        width: '100%'
       }}
     
     >Show experimental features</button>
@@ -36,7 +37,6 @@ ReactGA.initialize(TRACKING_ID)
 function App() {
   return (
     <div >
-      <ToggleButton />
       <Navbar />
       <Routes>
         <Route path="/" element={ <div style= {
@@ -47,6 +47,7 @@ function App() {
         <Route path="/immersion" element={<Immersion />} />
 
       </Routes>
+      <ToggleButton />
     </div>
   );
 }
