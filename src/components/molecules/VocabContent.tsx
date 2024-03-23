@@ -204,7 +204,7 @@ const VocabContent = () => {
       <Container >    
         <NavbarBs>
           <Container style={{ display: 'flex', justifyContent:'center' }}>
-            <DropdownButton style={{ margin: '0px 20px 0px 20px' }} variant= 'secondary'
+            <DropdownButton style={{ margin: '0px 10px 0px 10px' }} variant= 'secondary'
               id="Languages" title=
                 {String(currentLanguage.languageName)} size = "sm"> 
               {languages.map((languageItem: Language, index: number) =>
@@ -213,7 +213,7 @@ const VocabContent = () => {
                 setCurrentAlphabet(0),changeCurrentTopic(languageItem.topics[0]) ]}>
                   {languageItem.languageName}</Dropdown.Item>)}
             </DropdownButton>
-            <DropdownButton style={{ margin: '0px 20px 0px 20px' }} variant= 'secondary'
+            <DropdownButton style={{ margin: '0px 10px 0px 10px' }} variant= 'secondary'
               id="Topics" title={'Topic: ' + currentTopic.name} size = "sm">
               {(currentLanguage.topics as Topic[])
                 .filter((t) => !t.isExperimentalTopic || showInProgressFeatures)
@@ -221,7 +221,7 @@ const VocabContent = () => {
                   <Dropdown.Item key = {index} onClick = {() => 
                     changeCurrentTopic(topic)}>{topic.name}</Dropdown.Item>)}
             </DropdownButton>
-            <DropdownButton style={{ margin: '0px 20px 0px 20px' }} variant= 'secondary' align="end"
+            <DropdownButton style={{ margin: '0px 10px 0px 10px' }} variant= 'secondary' align="end"
               id="Settings" title="Settings" size = "sm">
               <Dropdown.Item onClick = {changeBaseLanguage}>toggle base language</Dropdown.Item>
               {showInProgressFeatures && (<Dropdown.Item onClick = {() => changeAudioBool()}>
