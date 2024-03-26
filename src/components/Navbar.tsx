@@ -12,16 +12,11 @@ export function Navbar(){
           <Nav.Link style={{ margin: '0px 10px 0px 10px' }} to ="/" as= {NavLink}>Home</Nav.Link>
           <Nav.Link style={{ margin: '0px 10px 0px 10px' }} 
             to ="/vocabulary" as= {NavLink}>Vocabulary</Nav.Link>
-          { showInProgressFeatures && (
-            <Nav.Link style={{ margin: '0px 10px 0px 10px' }} to="/grammar" as={NavLink}>
-    Grammar
-            </Nav.Link>
-          )}
-          { showInProgressFeatures && (
-            <Nav.Link style={{ margin: '0px 10px 0px 10px' }} to="/immersion" as={NavLink}>
-    Immersion
-            </Nav.Link>
-          )}
+          <Nav.Link style={{ margin: '0px 10px 0px 10px' }} to="/grammar" as={NavLink}>
+            Grammar</Nav.Link>
+          <Nav.Link style={{ margin: '0px 10px 0px 10px' }} to="/immersion" as={NavLink}>
+            Immersion</Nav.Link>
+
         </Nav>
       </Container>
     </NavbarBs>

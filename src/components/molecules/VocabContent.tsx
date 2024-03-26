@@ -12,9 +12,9 @@ import {
 import { queryParamCompress, queryParamDecompress } from '../../helpers/queryParamHelpers'
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { languages as allLanguages } from '../../data/words';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
-import { languages } from '../../data/words';
 import { languageToSlugs } from '../../constants'
 import { nullOrUndefined } from '../../helpers/helperFunctions'
 import QuizElement from '../atoms/QuizElement';
@@ -25,6 +25,12 @@ import StudyElement from '../atoms/StudyElement';
 import { useSelector } from 'react-redux';
 
 const VocabContent = () => {
+  const showInProgressFeatures = useSelector((state: reduxStore) => state.featureToggle.x);
+  let languages = allLanguages
+  if(!showInProgressFeatures){
+    languages = languages.filter(l => l.languageName === 'Spanish')
+  }
+
   const navigate = useNavigate();
 
   var urlSearchParams = new URLSearchParams(useLocation().search);
@@ -198,7 +204,6 @@ const VocabContent = () => {
       currentTopic.words as (Word)[]) as Word1[] | Word2[] | Word3[]
       
   }
-  const showInProgressFeatures = useSelector((state: reduxStore) => state.featureToggle.x);
   return (
     <div>
       <Container >    
