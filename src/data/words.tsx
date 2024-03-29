@@ -1,67 +1,82 @@
 /* eslint-disable sort-imports */
 /* eslint-disable @stylistic/js/max-len */
 
-import spanishAudioAwake from '../data/audio/spanish/spanish_adjectives/awake.mp3';
-import spanishAudioBad from '../data/audio/spanish/spanish_adjectives/bad.mp3';
-import spanishAudioBig from '../data/audio/spanish/spanish_adjectives/big.mp3';
-import spanishAudioBoring from '../data/audio/spanish/spanish_adjectives/boring.mp3';
-import spanishAudioCalm from '../data/audio/spanish/spanish_adjectives/calm.mp3';
-import spanishAudioCheap from '../data/audio/spanish/spanish_adjectives/cheap.mp3';
-import spanishAudioClean from '../data/audio/spanish/spanish_adjectives/clean.mp3';
-import spanishAudioClosed from '../data/audio/spanish/spanish_adjectives/closed.mp3';
-import spanishAudioCold from '../data/audio/spanish/spanish_adjectives/cold.mp3';
-import spanishAudioComplicated from '../data/audio/spanish/spanish_adjectives/complicated.mp3';
-import spanishAudioCrazy from '../data/audio/spanish/spanish_adjectives/crazy.mp3';
-import spanishAudioDelicious from '../data/audio/spanish/spanish_adjectives/delicious.mp3';
-import spanishAudioDirty from '../data/audio/spanish/spanish_adjectives/dirty.mp3';
-import spanishAudioDisgusting from '../data/audio/spanish/spanish_adjectives/disgusting.mp3';
-import spanishAudioDry from '../data/audio/spanish/spanish_adjectives/dry.mp3';
-import spanishAudioEmpty from '../data/audio/spanish/spanish_adjectives/empty.mp3';
-import spanishAudioExpensive from '../data/audio/spanish/spanish_adjectives/expensive.mp3';
-import spanishAudioFair from '../data/audio/spanish/spanish_adjectives/fair.mp3';
-import spanishAudioFast from '../data/audio/spanish/spanish_adjectives/fast.mp3';
-import spanishAudioFat from '../data/audio/spanish/spanish_adjectives/fat.mp3';
-import spanishAudioFull from '../data/audio/spanish/spanish_adjectives/full.mp3';
-import spanishAudioFun from '../data/audio/spanish/spanish_adjectives/fun.mp3';
-import spanishAudioGood from '../data/audio/spanish/spanish_adjectives/good.mp3';
-import spanishAudioHappy from '../data/audio/spanish/spanish_adjectives/happy.mp3';
-import spanishAudioHealthy from '../data/audio/spanish/spanish_adjectives/healthy.mp3';
-import spanishAudioHot from '../data/audio/spanish/spanish_adjectives/hot.mp3';
-import spanishAudioIntelligent from '../data/audio/spanish/spanish_adjectives/intelligent.mp3';
-import spanishAudioNew from '../data/audio/spanish/spanish_adjectives/new.mp3';
-import spanishAudioOld from '../data/audio/spanish/spanish_adjectives/old.mp3';
-import spanishAudioOpen from '../data/audio/spanish/spanish_adjectives/open.mp3';
-import spanishAudioPoor from '../data/audio/spanish/spanish_adjectives/poor.mp3';
-import spanishAudioPretty from '../data/audio/spanish/spanish_adjectives/pretty.mp3';
-import spanishAudioRich from '../data/audio/spanish/spanish_adjectives/rich.mp3';
-import spanishAudioSad from '../data/audio/spanish/spanish_adjectives/sad.mp3';
-import spanishAudioSalty from '../data/audio/spanish/spanish_adjectives/savory-salty.mp3';
-import spanishAudioShort from '../data/audio/spanish/spanish_adjectives/short.mp3';
-import spanishAudioSick from '../data/audio/spanish/spanish_adjectives/sick.mp3';
-import spanishAudioSimple from '../data/audio/spanish/spanish_adjectives/simple.mp3';
-import spanishAudioSlow from '../data/audio/spanish/spanish_adjectives/slow.mp3';
-import spanishAudioSmall from '../data/audio/spanish/spanish_adjectives/small.mp3';
-import spanishAudioStrong from '../data/audio/spanish/spanish_adjectives/strong.mp3';
-import spanishAudioStupid from '../data/audio/spanish/spanish_adjectives/stupid.mp3';
-import spanishAudioSweet from '../data/audio/spanish/spanish_adjectives/sweet.mp3';
-import spanishAudioTall from '../data/audio/spanish/spanish_adjectives/tall.mp3';
-import spanishAudioThin from '../data/audio/spanish/spanish_adjectives/thin.mp3';
-import spanishAudioTired from '../data/audio/spanish/spanish_adjectives/tired.mp3';
-import spanishAudioUgly from '../data/audio/spanish/spanish_adjectives/ugly.mp3';
-import spanishAudioUnfair from '../data/audio/spanish/spanish_adjectives/unfair.mp3';
-import spanishAudioWeak from '../data/audio/spanish/spanish_adjectives/weak.mp3';
-import spanishAudioWet from '../data/audio/spanish/spanish_adjectives/wet.mp3';
+import spanishAudioAwake from '../data/audio/spanish/adjectives/awake.mp3';
+import spanishAudioBad from '../data/audio/spanish/adjectives/bad.mp3';
+import spanishAudioBig from '../data/audio/spanish/adjectives/big.mp3';
+import spanishAudioBoring from '../data/audio/spanish/adjectives/boring.mp3';
+import spanishAudioCalm from '../data/audio/spanish/adjectives/calm.mp3';
+import spanishAudioCheap from '../data/audio/spanish/adjectives/cheap.mp3';
+import spanishAudioClean from '../data/audio/spanish/adjectives/clean.mp3';
+import spanishAudioClosed from '../data/audio/spanish/adjectives/closed.mp3';
+import spanishAudioCold from '../data/audio/spanish/adjectives/cold.mp3';
+import spanishAudioComplicated from '../data/audio/spanish/adjectives/complicated.mp3';
+import spanishAudioCrazy from '../data/audio/spanish/adjectives/crazy.mp3';
+import spanishAudioDelicious from '../data/audio/spanish/adjectives/delicious.mp3';
+import spanishAudioDirty from '../data/audio/spanish/adjectives/dirty.mp3';
+import spanishAudioDisgusting from '../data/audio/spanish/adjectives/disgusting.mp3';
+import spanishAudioDry from '../data/audio/spanish/adjectives/dry.mp3';
+import spanishAudioEmpty from '../data/audio/spanish/adjectives/empty.mp3';
+import spanishAudioExpensive from '../data/audio/spanish/adjectives/expensive.mp3';
+import spanishAudioFair from '../data/audio/spanish/adjectives/fair.mp3';
+import spanishAudioFast from '../data/audio/spanish/adjectives/fast.mp3';
+import spanishAudioFat from '../data/audio/spanish/adjectives/fat.mp3';
+import spanishAudioFull from '../data/audio/spanish/adjectives/full.mp3';
+import spanishAudioFun from '../data/audio/spanish/adjectives/fun.mp3';
+import spanishAudioGood from '../data/audio/spanish/adjectives/good.mp3';
+import spanishAudioHappy from '../data/audio/spanish/adjectives/happy.mp3';
+import spanishAudioHealthy from '../data/audio/spanish/adjectives/healthy.mp3';
+import spanishAudioHot from '../data/audio/spanish/adjectives/hot.mp3';
+import spanishAudioIntelligent from '../data/audio/spanish/adjectives/intelligent.mp3';
+import spanishAudioNew from '../data/audio/spanish/adjectives/new.mp3';
+import spanishAudioOld from '../data/audio/spanish/adjectives/old.mp3';
+import spanishAudioOpen from '../data/audio/spanish/adjectives/open.mp3';
+import spanishAudioPoor from '../data/audio/spanish/adjectives/poor.mp3';
+import spanishAudioPretty from '../data/audio/spanish/adjectives/pretty.mp3';
+import spanishAudioRich from '../data/audio/spanish/adjectives/rich.mp3';
+import spanishAudioSad from '../data/audio/spanish/adjectives/sad.mp3';
+import spanishAudioSalty from '../data/audio/spanish/adjectives/savory-salty.mp3';
+import spanishAudioShort from '../data/audio/spanish/adjectives/short.mp3';
+import spanishAudioSick from '../data/audio/spanish/adjectives/sick.mp3';
+import spanishAudioSimple from '../data/audio/spanish/adjectives/simple.mp3';
+import spanishAudioSlow from '../data/audio/spanish/adjectives/slow.mp3';
+import spanishAudioSmall from '../data/audio/spanish/adjectives/small.mp3';
+import spanishAudioStrong from '../data/audio/spanish/adjectives/strong.mp3';
+import spanishAudioStupid from '../data/audio/spanish/adjectives/stupid.mp3';
+import spanishAudioSweet from '../data/audio/spanish/adjectives/sweet.mp3';
+import spanishAudioTall from '../data/audio/spanish/adjectives/tall.mp3';
+import spanishAudioThin from '../data/audio/spanish/adjectives/thin.mp3';
+import spanishAudioTired from '../data/audio/spanish/adjectives/tired.mp3';
+import spanishAudioUgly from '../data/audio/spanish/adjectives/ugly.mp3';
+import spanishAudioUnfair from '../data/audio/spanish/adjectives/unfair.mp3';
+import spanishAudioWeak from '../data/audio/spanish/adjectives/weak.mp3';
+import spanishAudioWet from '../data/audio/spanish/adjectives/wet.mp3';
 
-import spanishAudioOne from '../data/audio/spanish/spanish_numbers/one.mp3';
-import spanishAudioTwo from '../data/audio/spanish/spanish_numbers/two.mp3';
-import spanishAudioThree from '../data/audio/spanish/spanish_numbers/three.mp3';
-import spanishAudioFour from '../data/audio/spanish/spanish_numbers/four.mp3';
-import spanishAudioFive from '../data/audio/spanish/spanish_numbers/five.mp3';
-import spanishAudioSix from '../data/audio/spanish/spanish_numbers/six.mp3';
-import spanishAudioSeven from '../data/audio/spanish/spanish_numbers/seven.mp3';
-import spanishAudioEight from '../data/audio/spanish/spanish_numbers/eight.mp3';
-import spanishAudioNine from '../data/audio/spanish/spanish_numbers/nine.mp3';
-import spanishAudioTen from '../data/audio/spanish/spanish_numbers/ten.mp3';
+import spanishAudioOne from '../data/audio/spanish/numbers/one.mp3';
+import spanishAudioTwo from '../data/audio/spanish/numbers/two.mp3';
+import spanishAudioThree from '../data/audio/spanish/numbers/three.mp3';
+import spanishAudioFour from '../data/audio/spanish/numbers/four.mp3';
+import spanishAudioFive from '../data/audio/spanish/numbers/five.mp3';
+import spanishAudioSix from '../data/audio/spanish/numbers/six.mp3';
+import spanishAudioSeven from '../data/audio/spanish/numbers/seven.mp3';
+import spanishAudioEight from '../data/audio/spanish/numbers/eight.mp3';
+import spanishAudioNine from '../data/audio/spanish/numbers/nine.mp3';
+import spanishAudioTen from '../data/audio/spanish/numbers/ten.mp3';
+
+import spanishAudioArm from '../data/audio/spanish/body/arm.mp3'
+import spanishAudioChest from '../data/audio/spanish/body/chest.mp3'
+import spanishAudioEye from '../data/audio/spanish/body/eye.mp3'
+import spanishAudioFace from '../data/audio/spanish/body/face.mp3'
+import spanishAudioFinger from '../data/audio/spanish/body/finger.mp3'
+import spanishAudioFoot from '../data/audio/spanish/body/foot.mp3'
+import spanishAudioHair from '../data/audio/spanish/body/hair.mp3'
+import spanishAudioHand from '../data/audio/spanish/body/hand.mp3'
+import spanishAudioHead from '../data/audio/spanish/body/head.mp3'
+import spanishAudioKnee from '../data/audio/spanish/body/knee.mp3'
+import spanishAudioLeg from '../data/audio/spanish/body/leg.mp3'
+import spanishAudioMouth from '../data/audio/spanish/body/mouth.mp3'
+import spanishAudioNeck from '../data/audio/spanish/body/neck.mp3'
+import spanishAudioNose from '../data/audio/spanish/body/nose.mp3'
 
 import { sortTopics } from '../helpers';
 import { Language, VerbConjugationEnglish, Topic1, Topic2, Topic3 } from '../../types/vocabTypes';
@@ -1074,20 +1089,20 @@ const spanishTopics: Topic1[] = [
     { englishWord: 'they', foreignWord: ['ellos/ellas'], foreignAudio: '', order:7 },
   ] },
   { name:'Body', slugName: 'bod', hasOrdering:false, words: [
-    { englishWord: '(the) hand', foreignWord: ['(la) mano'], foreignAudio: '' },
-    { englishWord: '(the) head', foreignWord: ['(la) cabeza'], foreignAudio: '' },
-    { englishWord: '(the) hair', foreignWord: ['(el) pelo'], foreignAudio: '' },
-    { englishWord: '(the) neck', foreignWord: ['(el) cuello'], foreignAudio: '' },
-    { englishWord: '(the) chest', foreignWord: ['(el) pecho'], foreignAudio: '' },
-    { englishWord: '(the) arm', foreignWord: ['(el) brazo'], foreignAudio: '' },
-    { englishWord: '(the) finger', foreignWord: ['(el) dedo'], foreignAudio: '' },
-    { englishWord: '(the) foot', foreignWord: ['(el) pie'], foreignAudio: '' },
-    { englishWord: '(the) eye', foreignWord: ['(el) ojo'], foreignAudio: '' },
-    { englishWord: '(the) face', foreignWord: ['(la) cara'], foreignAudio: '' },
-    { englishWord: '(the) nose', foreignWord: ['(la) nariz'], foreignAudio: '' },
-    { englishWord: '(the) mouth', foreignWord: ['(la) boca'], foreignAudio: '' },
-    { englishWord: '(the) leg', foreignWord: ['(la) pierna'], foreignAudio: '' },
-    { englishWord: '(the) knee', foreignWord: ['(la) rodilla'], foreignAudio: '' },
+    { englishWord: '(the) hand', foreignWord: ['(la) mano'], foreignAudio: spanishAudioHand },
+    { englishWord: '(the) head', foreignWord: ['(la) cabeza'], foreignAudio: spanishAudioHead },
+    { englishWord: '(the) hair', foreignWord: ['(el) pelo'], foreignAudio: spanishAudioHair },
+    { englishWord: '(the) neck', foreignWord: ['(el) cuello'], foreignAudio: spanishAudioNeck },
+    { englishWord: '(the) chest', foreignWord: ['(el) pecho'], foreignAudio: spanishAudioChest },
+    { englishWord: '(the) arm', foreignWord: ['(el) brazo'], foreignAudio: spanishAudioArm },
+    { englishWord: '(the) finger', foreignWord: ['(el) dedo'], foreignAudio: spanishAudioFinger },
+    { englishWord: '(the) foot', foreignWord: ['(el) pie'], foreignAudio: spanishAudioFoot },
+    { englishWord: '(the) eye', foreignWord: ['(el) ojo'], foreignAudio: spanishAudioEye },
+    { englishWord: '(the) face', foreignWord: ['(la) cara'], foreignAudio: spanishAudioFace },
+    { englishWord: '(the) nose', foreignWord: ['(la) nariz'], foreignAudio: spanishAudioNose },
+    { englishWord: '(the) mouth', foreignWord: ['(la) boca'], foreignAudio: spanishAudioMouth },
+    { englishWord: '(the) leg', foreignWord: ['(la) pierna'], foreignAudio: spanishAudioLeg },
+    { englishWord: '(the) knee', foreignWord: ['(la) rodilla'], foreignAudio: spanishAudioKnee },
 
   ] },
   { name:'Locations', slugName: 'loc', hasOrdering:false, words: [
