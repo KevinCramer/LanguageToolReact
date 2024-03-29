@@ -1,18 +1,6 @@
 /* eslint-disable sort-imports */
 /* eslint-disable @stylistic/js/max-len */
 
-import arabicAudioBlack from '../data/audio/arabic/arabic_colours/black.mp3';
-import arabicAudioBlue from '../data/audio/arabic/arabic_colours/blue.mp3';
-import arabicAudioBrown from '../data/audio/arabic/arabic_colours/brown.mp3';
-import arabicAudioGreen from '../data/audio/arabic/arabic_colours/green.mp3';
-import arabicAudioGrey from '../data/audio/arabic/arabic_colours/grey.mp3';
-import arabicAudioOrange from '../data/audio/arabic/arabic_colours/orange.mp3';
-import arabicAudioPink from '../data/audio/arabic/arabic_colours/pink.mp3';
-import arabicAudioPurple from '../data/audio/arabic/arabic_colours/purple.mp3';
-import arabicAudioRed from '../data/audio/arabic/arabic_colours/red.mp3';
-import arabicAudioWhite from '../data/audio/arabic/arabic_colours/white.mp3';
-import arabicAudioYellow from '../data/audio/arabic/arabic_colours/yellow.mp3';
-
 import spanishAudioAwake from '../data/audio/spanish/spanish_adjectives/awake.mp3';
 import spanishAudioBad from '../data/audio/spanish/spanish_adjectives/bad.mp3';
 import spanishAudioBig from '../data/audio/spanish/spanish_adjectives/big.mp3';
@@ -483,17 +471,17 @@ const arabicTopics: Topic2[] = [
     { englishWord: 'zucchini', foreignWord: ['kūsah', 'كوسَة'], foreignAudio: '' },
   ] },
   { name:'Colours', slugName: 'col', hasOrdering:false, words: [
-    { englishWord: 'black', foreignWord: ['aswad', 'أَسْوَد'], foreignAudio: arabicAudioBlack },
-    { englishWord: 'blue', foreignWord: ['azraq', 'أَزْرَق'], foreignAudio: arabicAudioBlue },
-    { englishWord: 'brown', foreignWord: ['bunniyy', 'بُنِّيّ'], foreignAudio: arabicAudioBrown },
-    { englishWord: 'green', foreignWord: ['akhḍar', 'أَخْضَر'], foreignAudio: arabicAudioGreen },
-    { englishWord: 'grey', foreignWord: ['ramādiyy', 'رَمَادِيّ'], foreignAudio: arabicAudioGrey },
-    { englishWord: 'orange', foreignWord: ['burtuqāliyy', 'بُرْتُقَاْلِيّ'], foreignAudio: arabicAudioOrange },
-    { englishWord: 'pink', foreignWord: ['wardiyy', 'وَرْدِيّ'], foreignAudio: arabicAudioPink },
-    { englishWord: 'purple', foreignWord: ['banafsajiyy', 'بَنَفْسَجِيّ'], foreignAudio: arabicAudioPurple },
-    { englishWord: 'red', foreignWord: ['aḥmar', 'أَحْمَر'], foreignAudio: arabicAudioRed },
-    { englishWord: 'yellow', foreignWord: ['asfar', 'أَصْفَر'], foreignAudio: arabicAudioYellow },
-    { englishWord: 'white', foreignWord: ['abyaḍ', 'أَبْيَض'], foreignAudio: arabicAudioWhite },
+    { englishWord: 'black', foreignWord: ['aswad', 'أَسْوَد'], foreignAudio: '' },
+    { englishWord: 'blue', foreignWord: ['azraq', 'أَزْرَق'], foreignAudio: '' },
+    { englishWord: 'brown', foreignWord: ['bunniyy', 'بُنِّيّ'], foreignAudio: '' },
+    { englishWord: 'green', foreignWord: ['akhḍar', 'أَخْضَر'], foreignAudio: '' },
+    { englishWord: 'grey', foreignWord: ['ramādiyy', 'رَمَادِيّ'], foreignAudio: '' },
+    { englishWord: 'orange', foreignWord: ['burtuqāliyy', 'بُرْتُقَاْلِيّ'], foreignAudio: '' },
+    { englishWord: 'pink', foreignWord: ['wardiyy', 'وَرْدِيّ'], foreignAudio: '' },
+    { englishWord: 'purple', foreignWord: ['banafsajiyy', 'بَنَفْسَجِيّ'], foreignAudio: '' },
+    { englishWord: 'red', foreignWord: ['aḥmar', 'أَحْمَر'], foreignAudio: '' },
+    { englishWord: 'yellow', foreignWord: ['asfar', 'أَصْفَر'], foreignAudio: '' },
+    { englishWord: 'white', foreignWord: ['abyaḍ', 'أَبْيَض'], foreignAudio: '' },
   ] },
   { name:'Numbers', slugName: 'num', hasOrdering:true, words: [
     { englishWord: 'one', foreignWord: ['waheed', 'وَاحِد'], foreignAudio: '', order:1 },
