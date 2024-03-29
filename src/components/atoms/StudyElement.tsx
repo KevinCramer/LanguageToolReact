@@ -40,7 +40,7 @@ const StudyElement = (
   var [showPopUp,setShowPopUp] = useState(showPopUp)
   const hidePopUp = () => { return setShowPopUp(false)}
   const displayPopUp = () => { return setShowPopUp(true)}
-  const baseLanguageLabel = <label style= {{ textAlign: 'center', width: '100%' }}>
+  const baseLanguageLabel = <label style= {{ textAlign: 'center',width: '100%' }}>
     <>{isVerb ? (showBaseLanguageFirst ? (BaseLanguageWord as VerbConjugation).infinitive :
       (ForeignLanguageWord as VerbConjugation).infinitive) : BaseLanguageWord}</> </label>
   const foreignLanguageLabelVerb = <label onClick={displayPopUp} 
@@ -81,7 +81,7 @@ const StudyElement = (
             <tr key={i}>
               <h5>{obj.title}</h5>
               {Array.from({ length: 6 }).map((_, j) => (
-                <tr key={i}>
+                <tr key={i}> 
                   {showBaseLanguageFirst ? <td style={{ width: tableRowWidth }}>
                     {englishPronouns[j] + ' '}
                     {(BaseLanguageWord as VerbConjugationEnglish)

@@ -136,7 +136,7 @@ const VocabContent = () => {
             <tbody>
               {topicWords.map((pair: Word, index: number) => (
                 <tr key={index}>
-                  <td>     
+                  <td style={{ verticalAlign: 'middle' }} >     
                     <StudyElement 
                       BaseLanguageWord = { showBaseLanguage ? pair.englishWord :
                         pair.foreignWord[currentAlphabet]} 
@@ -150,7 +150,7 @@ const VocabContent = () => {
                       showLeftLabel = {true}
                     />
                   </td>
-                  <td>     
+                  <td style={{ verticalAlign: 'middle' }}>     
                     <StudyElement 
                       BaseLanguageWord = { showBaseLanguage ? pair.englishWord :
                         pair.foreignWord[currentAlphabet]} 
