@@ -229,8 +229,8 @@ const VocabContent = () => {
             <DropdownButton style={{ margin: '0px 10px 0px 10px' }} variant= 'secondary' align="end"
               id="Settings" title="Settings" size = "sm">
               <Dropdown.Item onClick = {changeBaseLanguage}>toggle base language</Dropdown.Item>
-              {showInProgressFeatures && (<Dropdown.Item onClick = {() => changeAudioBool()}>
-                {audioBool ? 'hide audio' : 'show audio'}</Dropdown.Item>)}
+              <Dropdown.Item onClick = {() => changeAudioBool()}>
+                {audioBool ? 'hide audio' : 'show audio'}</Dropdown.Item>
               <Dropdown.Item onClick = {changeOrder}>
                 {showTrueOrder ? 'random ordering' : 'default ordering'}</Dropdown.Item>
               {currentLanguage.numForeignAlphabets > 1 && !currentTopic.isAlphabet &&
