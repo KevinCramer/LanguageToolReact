@@ -5,7 +5,6 @@ import GrammarContent from './components/molecules/GrammarContent'
 import { Home } from './pages/Home'
 import Immersion from './components/molecules/Immersion'
 import { Navbar } from './components/Navbar'
-import ReactGA from 'react-ga' 
 import { toggleX } from './redux-store/featureToggleSlice';
 import { useDispatch } from 'react-redux';
 import VocabContent from './components/molecules/VocabContent'
@@ -31,8 +30,6 @@ const ToggleButton = () => {
     >Show experimental features</button>
   );
 };
-const TRACKING_ID = 'UA-253414467-1'
-ReactGA.initialize(TRACKING_ID)
 
 function App() {
   return (
