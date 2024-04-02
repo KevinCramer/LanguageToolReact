@@ -18,7 +18,6 @@ import DropdownButton from 'react-bootstrap/DropdownButton';
 import { languageToSlugs } from '../../constants'
 import { nullOrUndefined } from '../../helpers/helperFunctions'
 import QuizElement from '../atoms/QuizElement';
-import ReactGA from 'react-ga';
 import ReactSwitch from 'react-switch';
 import { scramble } from '../../helpers';
 import StudyElement from '../atoms/StudyElement';
@@ -75,7 +74,6 @@ const VocabContent = () => {
   var quiz = !nullOrUndefined(urlQuiz) ? urlQuiz : false
   var [quiz,setQuiz] = useState(quiz)
   const changeQuizState = () => {
-    ReactGA.event({ category: 'quizStateWasChanged', action: 'hdfg',label: 'dasfg',value: 4 });
     return setQuiz((!quiz))}
 
   const urlAudio = urlSettings[6]
