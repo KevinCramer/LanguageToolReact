@@ -78,6 +78,115 @@ import spanishAudioMouth from '../data/audio/spanish/body/mouth.mp3'
 import spanishAudioNeck from '../data/audio/spanish/body/neck.mp3'
 import spanishAudioNose from '../data/audio/spanish/body/nose.mp3'
 
+import spanishAudioBathRoom from '../data/audio/spanish/home/bathroom.mp3'
+import spanishAudioBedRoom from '../data/audio/spanish/home/bedroom.mp3'
+import spanishAudioDiningRoom from '../data/audio/spanish/home/dining-room.mp3'
+import spanishAudioGarage from '../data/audio/spanish/home/garage.mp3'
+import spanishAudioGarden from '../data/audio/spanish/home/garden.mp3'
+import spanishAudioKitchen from '../data/audio/spanish/home/kitchen.mp3'
+import spanishAudioLivingRoom from '../data/audio/spanish/home/living-room.mp3'
+import spanishAudioRoom from '../data/audio/spanish/home/room.mp3'
+import spanishAudioWindow from '../data/audio/spanish/home/window.mp3'
+
+import spanishAudioAirport from '../data/audio/spanish/locations/airport.mp3'
+import spanishAudioBakery from '../data/audio/spanish/locations/bakery.mp3'
+import spanishAudioBank from '../data/audio/spanish/locations/bank.mp3'
+import spanishAudioBridge from '../data/audio/spanish/locations/bridge.mp3'
+import spanishAudioCity from '../data/audio/spanish/locations/city.mp3'
+import spanishAudioFactory from '../data/audio/spanish/locations/factory.mp3'
+import spanishAudioFarm from '../data/audio/spanish/locations/farm.mp3'
+import spanishAudioGym from '../data/audio/spanish/locations/gym.mp3'
+import spanishAudioHospital from '../data/audio/spanish/locations/hospital.mp3'
+import spanishAudioLibrary from '../data/audio/spanish/locations/library.mp3'
+import spanishAudioMuseum from '../data/audio/spanish/locations/museum.mp3'
+import spanishAudioOffice from '../data/audio/spanish/locations/office.mp3'
+import spanishAudioPark from '../data/audio/spanish/locations/park.mp3'
+import spanishAudioRestaurant from '../data/audio/spanish/locations/restaurant.mp3'
+import spanishAudioSchool from '../data/audio/spanish/locations/school.mp3'
+import spanishAudioStreet from '../data/audio/spanish/locations/street.mp3'
+import spanishAudioSwimmingPool from '../data/audio/spanish/locations/swimming-pool.mp3'
+import spanishAudioUniversity from '../data/audio/spanish/locations/university.mp3'
+
+import spanishAudioI from '../data/audio/spanish/pronouns/I.mp3'
+import spanishAudioYou from '../data/audio/spanish/pronouns/you.mp3'
+import spanishAudioHe from '../data/audio/spanish/pronouns/he.mp3'
+import spanishAudioShe from '../data/audio/spanish/pronouns/she.mp3'
+import spanishAudioWe from '../data/audio/spanish/pronouns/we.mp3'
+import spanishAudioYouPlural from '../data/audio/spanish/pronouns/you(plural).mp3'
+import spanishAudioTheyMasculine from '../data/audio/spanish/pronouns/they(masculine).mp3'
+import spanishAudioTheyFeminine from '../data/audio/spanish/pronouns/they(feminine).mp3'
+
+import spanishAudioWhy from '../data/audio/spanish/question-words/why.mp3'
+import spanishAudioWhere from '../data/audio/spanish/question-words/where.mp3'
+import spanishAudioWhen from '../data/audio/spanish/question-words/when.mp3'
+import spanishAudioWhat from '../data/audio/spanish/question-words/what.mp3'
+import spanishAudioHow from '../data/audio/spanish/question-words/how.mp3'
+
+import spanishAudioToBe1 from '../data/audio/spanish/verbs/to-be-1.mp3'
+import spanishAudioToBe2 from '../data/audio/spanish/verbs/to-be-2.mp3'
+import spanishAudioToBeAbleTo from '../data/audio/spanish/verbs/to-be-able-to.mp3'
+import spanishAudioToCall from '../data/audio/spanish/verbs/to-call.mp3'
+import spanishAudioToDo from '../data/audio/spanish/verbs/to-do.mp3'
+import spanishAudioToDrink from '../data/audio/spanish/verbs/to-drink.mp3'
+import spanishAudioToEat from '../data/audio/spanish/verbs/to-eat.mp3'
+import spanishAudioToGive from '../data/audio/spanish/verbs/to-give.mp3'
+import spanishAudioToGo from '../data/audio/spanish/verbs/to-go.mp3'
+import spanishAudioToHave1 from '../data/audio/spanish/verbs/to-have-1.mp3'
+import spanishAudioToHave2 from '../data/audio/spanish/verbs/to-have-2.mp3'
+import spanishAudioToKnow from '../data/audio/spanish/verbs/to-know.mp3'
+import spanishAudioToLive from '../data/audio/spanish/verbs/to-live.mp3'
+import spanishAudioToNeed from '../data/audio/spanish/verbs/to-need.mp3'
+import spanishAudioToPut from '../data/audio/spanish/verbs/to-put.mp3'
+import spanishAudioToSay from '../data/audio/spanish/verbs/to-say.mp3'
+import spanishAudioToSee from '../data/audio/spanish/verbs/to-see.mp3'
+import spanishAudioToSpeak from '../data/audio/spanish/verbs/to-speak.mp3'
+import spanishAudioToStudy from '../data/audio/spanish/verbs/to-study.mp3'
+import spanishAudioToWant from '../data/audio/spanish/verbs/to-want.mp3'
+
+import spanishAudioBread from '../data/audio/spanish/food/bread.mp3'
+import spanishAudioButter from '../data/audio/spanish/food/butter.mp3'
+import spanishAudioCheese from '../data/audio/spanish/food/cheese.mp3'
+import spanishAudioChicken from '../data/audio/spanish/food/chicken.mp3'
+import spanishAudioEgg from '../data/audio/spanish/food/egg.mp3'
+import spanishAudioFish from '../data/audio/spanish/food/fish.mp3'
+import spanishAudioGarlic from '../data/audio/spanish/food/garlic.mp3'
+import spanishAudioMeat from '../data/audio/spanish/food/meat.mp3'
+import spanishAudioPotato from '../data/audio/spanish/food/potato.mp3'
+import spanishAudioStrawberry from '../data/audio/spanish/food/strawberry.mp3'
+
+import spanishAudioHat from '../data/audio/spanish/clothes/hat.mp3'
+import spanishAudioJacket from '../data/audio/spanish/clothes/jacket.mp3'
+import spanishAudioScarf from '../data/audio/spanish/clothes/scarf.mp3'
+import spanishAudioShoes from '../data/audio/spanish/clothes/shoes.mp3'
+import spanishAudioSkirt from '../data/audio/spanish/clothes/skirt.mp3'
+import spanishAudioSweater from '../data/audio/spanish/clothes/sweater.mp3'
+import spanishAudioTie from '../data/audio/spanish/clothes/tie.mp3'
+import spanishAudioTrousers from '../data/audio/spanish/clothes/trousers.mp3'
+import spanishAudioUnderwear from '../data/audio/spanish/clothes/underwear.mp3'
+
+import spanishAudioBlue from '../data/audio/spanish/colours/blue.mp3'
+import spanishAudioBrown from '../data/audio/spanish/colours/brown.mp3'
+import spanishAudioGreen from '../data/audio/spanish/colours/green.mp3'
+import spanishAudioGrey from '../data/audio/spanish/colours/grey.mp3'
+import spanishAudioOrange from '../data/audio/spanish/colours/orange.mp3'
+import spanishAudioPink from '../data/audio/spanish/colours/pink.mp3'
+import spanishAudioPurple from '../data/audio/spanish/colours/purple.mp3'
+import spanishAudioRed from '../data/audio/spanish/colours/red.mp3'
+import spanishAudioWhite from '../data/audio/spanish/colours/white.mp3'
+import spanishAudioBlack from '../data/audio/spanish/colours/black.mp3'
+
+import spanishAudioAnd from '../data/audio/spanish/conjunctions/and.mp3'
+import spanishAudioBut from '../data/audio/spanish/conjunctions/but.mp3'
+import spanishAudioEvenThough from '../data/audio/spanish/conjunctions/even-though.mp3'
+import spanishAudioFor from '../data/audio/spanish/conjunctions/for.mp3'
+import spanishAudioMoreover from '../data/audio/spanish/conjunctions/moreover.mp3'
+import spanishAudioNevertheless from '../data/audio/spanish/conjunctions/nevertheless.mp3'
+import spanishAudioNor from '../data/audio/spanish/conjunctions/nor.mp3'
+import spanishAudioNotYet from '../data/audio/spanish/conjunctions/not-yet.mp3'
+import spanishAudioOr from '../data/audio/spanish/conjunctions/or.mp3'
+import spanishAudioSo from '../data/audio/spanish/conjunctions/so.mp3'
+import spanishAudioYet from '../data/audio/spanish/conjunctions/yet.mp3'
+
 import { sortTopics } from '../helpers';
 import { Language, VerbConjugationEnglish, Topic1, Topic2, Topic3 } from '../../types/vocabTypes';
 
@@ -728,39 +837,39 @@ const arabicTopics: Topic2[] = [
 
 const spanishTopics: Topic1[] = [
   { name:'Clothes',slugName: 'clo', hasOrdering:false, words: [
-    { englishWord: '(the) trousers', foreignWord: ['(los) pantalones'], foreignAudio: '' },
-    { englishWord: '(the) sweater', foreignWord: ['(el) suéter'], foreignAudio: '' },
-    { englishWord: '(the) underwear', foreignWord: ['(la) ropa interior'], foreignAudio: '' },
-    { englishWord: '(the) tie', foreignWord: ['(la) corbata'], foreignAudio: '' },
-    { englishWord: '(the) shoes', foreignWord: ['(los) zapatos'], foreignAudio: '' },
-    { englishWord: '(the) skirt', foreignWord: ['(la) falda'], foreignAudio: '' },
-    { englishWord: '(the) jacket', foreignWord: ['(la) chaqueta'], foreignAudio: '' },
-    { englishWord: '(the) hat', foreignWord: ['(el) sombrero'], foreignAudio: '' },
-    { englishWord: '(the) scarf', foreignWord: ['(la) bufanda'], foreignAudio: '' },
+    { englishWord: '(the) trousers', foreignWord: ['(los) pantalones'], foreignAudio: spanishAudioTrousers },
+    { englishWord: '(the) sweater', foreignWord: ['(el) suéter'], foreignAudio: spanishAudioSweater },
+    { englishWord: '(the) underwear', foreignWord: ['(la) ropa interior'], foreignAudio: spanishAudioUnderwear },
+    { englishWord: '(the) tie', foreignWord: ['(la) corbata'], foreignAudio: spanishAudioTie },
+    { englishWord: '(the) shoes', foreignWord: ['(los) zapatos'], foreignAudio: spanishAudioShoes },
+    { englishWord: '(the) skirt', foreignWord: ['(la) falda'], foreignAudio: spanishAudioSkirt },
+    { englishWord: '(the) jacket', foreignWord: ['(la) chaqueta'], foreignAudio: spanishAudioJacket },
+    { englishWord: '(the) hat', foreignWord: ['(el) sombrero'], foreignAudio: spanishAudioHat },
+    { englishWord: '(the) scarf', foreignWord: ['(la) bufanda'], foreignAudio: spanishAudioScarf },
   ] },
   { name:'Colours', slugName: 'col', hasOrdering:false, words: [
-    { englishWord: 'red', foreignWord: ['rojo'], foreignAudio: '' },
-    { englishWord: 'blue', foreignWord: ['azul'], foreignAudio: '' },
-    { englishWord: 'green', foreignWord: ['verde'], foreignAudio: '' },
-    { englishWord: 'orange', foreignWord: ['naranja'], foreignAudio: '' },
-    { englishWord: 'brown', foreignWord: ['marron'], foreignAudio: '' },
-    { englishWord: 'grey', foreignWord: ['gris'], foreignAudio: '' },
-    { englishWord: 'white', foreignWord: ['blanco'], foreignAudio: '' },
-    { englishWord: 'black', foreignWord: ['negro'], foreignAudio: '' },
-    { englishWord: 'purple', foreignWord: ['morado'], foreignAudio: '' },
-    { englishWord: 'pink', foreignWord: ['rosado'], foreignAudio: '' },
+    { englishWord: 'red', foreignWord: ['rojo'], foreignAudio: spanishAudioRed },
+    { englishWord: 'blue', foreignWord: ['azul'], foreignAudio: spanishAudioBlue },
+    { englishWord: 'green', foreignWord: ['verde'], foreignAudio: spanishAudioGreen },
+    { englishWord: 'orange', foreignWord: ['naranja'], foreignAudio: spanishAudioOrange },
+    { englishWord: 'brown', foreignWord: ['marron'], foreignAudio: spanishAudioBrown },
+    { englishWord: 'grey', foreignWord: ['gris'], foreignAudio: spanishAudioGrey },
+    { englishWord: 'white', foreignWord: ['blanco'], foreignAudio: spanishAudioWhite },
+    { englishWord: 'black', foreignWord: ['negro'], foreignAudio: spanishAudioBlack },
+    { englishWord: 'purple', foreignWord: ['morado'], foreignAudio: spanishAudioPurple },
+    { englishWord: 'pink', foreignWord: ['oyhr'], foreignAudio: spanishAudioPink },
   ] },
   { name:'Food', slugName: 'foo', hasOrdering:false, words: [
-    { englishWord: '(the) potato', foreignWord: ['(la) papa'], foreignAudio: '' },
-    { englishWord: '(the) bread', foreignWord: ['(el) pan'], foreignAudio: '' },
-    { englishWord: '(the) meat', foreignWord: ['(la) carne'], foreignAudio: '' },
-    { englishWord: '(the) egg', foreignWord: ['(el) huevo'], foreignAudio: '' },
-    { englishWord: '(the) strawberry', foreignWord: ['(la) fresa'], foreignAudio: '' },
-    { englishWord: '(the) garlic', foreignWord: ['(el) ajo'], foreignAudio: '' },
-    { englishWord: '(the) butter', foreignWord: ['(la) manteca'], foreignAudio: '' },
-    { englishWord: '(the) fish', foreignWord: ['(el) pescado'], foreignAudio: '' },
-    { englishWord: '(the) chicken', foreignWord: ['(el) pollo'], foreignAudio: '' },
-    { englishWord: '(the) cheese', foreignWord: ['(el) queso'], foreignAudio: '' }, 
+    { englishWord: '(the) potato', foreignWord: ['(la) papa'], foreignAudio: spanishAudioPotato },
+    { englishWord: '(the) bread', foreignWord: ['(el) pan'], foreignAudio: spanishAudioBread },
+    { englishWord: '(the) meat', foreignWord: ['(la) carne'], foreignAudio: spanishAudioMeat },
+    { englishWord: '(the) egg', foreignWord: ['(el) huevo'], foreignAudio: spanishAudioEgg },
+    { englishWord: '(the) strawberry', foreignWord: ['(la) fresa'], foreignAudio: spanishAudioStrawberry },
+    { englishWord: '(the) garlic', foreignWord: ['(el) ajo'], foreignAudio: spanishAudioGarlic },
+    { englishWord: '(the) butter', foreignWord: ['(la) manteca'], foreignAudio: spanishAudioButter },
+    { englishWord: '(the) fish', foreignWord: ['(el) pescado'], foreignAudio: spanishAudioFish },
+    { englishWord: '(the) chicken', foreignWord: ['(el) pollo'], foreignAudio: spanishAudioChicken },
+    { englishWord: '(the) cheese', foreignWord: ['(el) queso'], foreignAudio: spanishAudioCheese }, 
   ] },
   // https://l-lingo.com/free-lessons/en/learn-spanish/numbers-1-10.html go to devtools console, and press audio to get the url 
   // to download the audio.
@@ -792,7 +901,7 @@ const spanishTopics: Topic1[] = [
                 }
           }
         ], 
-      foreignAudio: '' },
+      foreignAudio: spanishAudioToCall },
     {
       englishWord: englishVerbs['to study'],
       foreignWord: 
@@ -807,7 +916,7 @@ const spanishTopics: Topic1[] = [
                 }
           }
         ],
-      foreignAudio: '' },
+      foreignAudio: spanishAudioToStudy },
     {
       englishWord: { ...englishVerbs['to be'], infinitive: 'to be (1)' } ,
       foreignWord: 
@@ -822,7 +931,7 @@ const spanishTopics: Topic1[] = [
                 }
           }
         ],
-      foreignAudio: '' },
+      foreignAudio: spanishAudioToBe1 },
     {
       englishWord: { ...englishVerbs['to be'], infinitive: 'to be (2)' } ,
       foreignWord: 
@@ -837,7 +946,7 @@ const spanishTopics: Topic1[] = [
                 }
           }
         ],
-      foreignAudio: '' },
+      foreignAudio: spanishAudioToBe2 },
     {
       englishWord: { ...englishVerbs['to have'], infinitive: 'to have (1)' } ,
       foreignWord: 
@@ -852,7 +961,7 @@ const spanishTopics: Topic1[] = [
                 }
           }
         ],
-      foreignAudio: '' },
+      foreignAudio: spanishAudioToHave1 },
     {
       englishWord: englishVerbs['to do'],
       foreignWord: 
@@ -867,7 +976,7 @@ const spanishTopics: Topic1[] = [
                 }
           }
         ],
-      foreignAudio: '' },
+      foreignAudio: spanishAudioToDo },
     {
       englishWord: englishVerbs['to go'],
       foreignWord: 
@@ -882,7 +991,7 @@ const spanishTopics: Topic1[] = [
                 }
           }
         ],
-      foreignAudio: '' },
+      foreignAudio: spanishAudioToGo },
     {
       englishWord: englishVerbs['to be able to'],
       foreignWord: 
@@ -897,7 +1006,7 @@ const spanishTopics: Topic1[] = [
                 }
           }
         ],
-      foreignAudio: '' },
+      foreignAudio: spanishAudioToBeAbleTo },
     {
       englishWord: englishVerbs['to know'],
       foreignWord: 
@@ -912,7 +1021,7 @@ const spanishTopics: Topic1[] = [
                 }
           }
         ],
-      foreignAudio: '' },
+      foreignAudio: spanishAudioToKnow },
     {
       englishWord: englishVerbs['to put'],
       foreignWord: 
@@ -927,7 +1036,7 @@ const spanishTopics: Topic1[] = [
                 }
           }
         ],
-      foreignAudio: '' },
+      foreignAudio: spanishAudioToPut },
     {
       englishWord: { ...englishVerbs['to have'], infinitive: 'to have (2)' } ,
       foreignWord: 
@@ -942,7 +1051,7 @@ const spanishTopics: Topic1[] = [
                 }
           }
         ],
-      foreignAudio: '' },
+      foreignAudio: spanishAudioToHave2 },
     {
       englishWord: englishVerbs['to say'],
       foreignWord: 
@@ -957,7 +1066,7 @@ const spanishTopics: Topic1[] = [
                 }
           }
         ],
-      foreignAudio: '' },
+      foreignAudio: spanishAudioToSay },
     {
       englishWord: englishVerbs['to want'],
       foreignWord: 
@@ -972,7 +1081,7 @@ const spanishTopics: Topic1[] = [
                 }
           }
         ],
-      foreignAudio: '' },
+      foreignAudio: spanishAudioToWant },
     {
       englishWord: englishVerbs['to speak'],
       foreignWord: 
@@ -987,7 +1096,7 @@ const spanishTopics: Topic1[] = [
                 }
           }
         ],
-      foreignAudio: '' },
+      foreignAudio: spanishAudioToSpeak },
     {
       englishWord: englishVerbs['to give'],
       foreignWord: 
@@ -1002,7 +1111,7 @@ const spanishTopics: Topic1[] = [
                 }
           }
         ],
-      foreignAudio: '' },
+      foreignAudio: spanishAudioToGive },
     {
       englishWord: englishVerbs['to see'],
       foreignWord: 
@@ -1017,7 +1126,7 @@ const spanishTopics: Topic1[] = [
                 }
           }
         ],
-      foreignAudio: '' },
+      foreignAudio: spanishAudioToSee },
     {
       englishWord: englishVerbs['to eat'],
       foreignWord: 
@@ -1032,7 +1141,7 @@ const spanishTopics: Topic1[] = [
                 }
           }
         ],
-      foreignAudio: '' },
+      foreignAudio: spanishAudioToEat },
     {
       englishWord: englishVerbs['to drink'],
       foreignWord: 
@@ -1047,7 +1156,7 @@ const spanishTopics: Topic1[] = [
                   }
             }
           ],
-      foreignAudio: '' },
+      foreignAudio: spanishAudioToDrink },
     {
       englishWord: englishVerbs['to live'],
       foreignWord: 
@@ -1062,7 +1171,7 @@ const spanishTopics: Topic1[] = [
                     }
               }
             ],
-      foreignAudio: '' },
+      foreignAudio: spanishAudioToLive },
     {
       englishWord: englishVerbs['to need'],
       foreignWord: 
@@ -1077,16 +1186,18 @@ const spanishTopics: Topic1[] = [
                       }
                 }
               ],
-      foreignAudio: '' },
+      foreignAudio: spanishAudioToNeed },
   ] },
   { name:'Pronouns', slugName: 'pro', hasOrdering:true, words: [
-    { englishWord: 'I', foreignWord: ['yo'], foreignAudio: '', order:1 },
-    { englishWord: 'you', foreignWord: ['tu'], foreignAudio: '', order:2 },
-    { englishWord: 'he', foreignWord: ['el'], foreignAudio: '', order:3 },
-    { englishWord: 'she', foreignWord: ['ella'], foreignAudio: '', order:4 },
-    { englishWord: 'we', foreignWord: ['nosotros'], foreignAudio: '', order:5 },
-    { englishWord: 'you (p)', foreignWord: ['vosotros'], foreignAudio: '', order:6 },
-    { englishWord: 'they', foreignWord: ['ellos/ellas'], foreignAudio: '', order:7 },
+    { englishWord: 'I', foreignWord: ['yo'], foreignAudio: spanishAudioI, order:1 },
+    { englishWord: 'you', foreignWord: ['tu'], foreignAudio: spanishAudioYou, order:2 },
+    { englishWord: 'he', foreignWord: ['el'], foreignAudio: spanishAudioHe, order:3 },
+    { englishWord: 'she', foreignWord: ['ella'], foreignAudio: spanishAudioShe, order:4 },
+    { englishWord: 'we', foreignWord: ['nosotros'], foreignAudio: spanishAudioWe, order:5 },
+    { englishWord: 'you (p)', foreignWord: ['vosotros'], foreignAudio: spanishAudioYouPlural, order:6 },
+    { englishWord: 'they (masc)', foreignWord: ['ellos'], foreignAudio: spanishAudioTheyMasculine, order:7 },
+    { englishWord: 'they (fem)', foreignWord: ['ellos'], foreignAudio: spanishAudioTheyFeminine, order:8 },
+
   ] },
   { name:'Body', slugName: 'bod', hasOrdering:false, words: [
     { englishWord: '(the) hand', foreignWord: ['(la) mano'], foreignAudio: spanishAudioHand },
@@ -1106,56 +1217,56 @@ const spanishTopics: Topic1[] = [
 
   ] },
   { name:'Locations', slugName: 'loc', hasOrdering:false, words: [
-    { englishWord: '(the) airport', foreignWord: ['(el) aeropuerto'], foreignAudio: '' },
-    { englishWord: '(the) bakery', foreignWord: ['(la) panadería'], foreignAudio: '' },
-    { englishWord: '(the) bank', foreignWord: ['(el) banco'], foreignAudio: '' },
-    { englishWord: '(the) bridge', foreignWord: ['(el) puente'], foreignAudio: '' },
-    { englishWord: '(the) city', foreignWord: ['(la) ciudad'], foreignAudio: '' },
-    { englishWord: '(the) factory', foreignWord: ['(la) fábrica'], foreignAudio: '' },
-    { englishWord: '(the) farm', foreignWord: ['(la) granja'], foreignAudio: '' },
-    { englishWord: '(the) gym', foreignWord: ['(el) gimnasio'], foreignAudio: '' },
-    { englishWord: '(the) hospital', foreignWord: ['(el) hospital'], foreignAudio: '' },
-    { englishWord: '(the) library', foreignWord: ['(la) biblioteca'], foreignAudio: '' },
-    { englishWord: '(the) museum', foreignWord: ['(el) museo'], foreignAudio: '' },
-    { englishWord: '(the) office', foreignWord: ['(la) oficina'], foreignAudio: '' },
-    { englishWord: '(the) park', foreignWord: ['(el) parque'], foreignAudio: '' },
-    { englishWord: '(the) swimming pool', foreignWord: ['(la) piscina'], foreignAudio: '' },
-    { englishWord: '(the) restaurant', foreignWord: ['(el) restaurante'], foreignAudio: '' },
-    { englishWord: '(the) school', foreignWord: ['(la) escuela'], foreignAudio: '' },
-    { englishWord: '(the) street', foreignWord: ['(la) calle'], foreignAudio: '' },
-    { englishWord: '(the) university', foreignWord: ['(la) universidad'], foreignAudio: '' },
+    { englishWord: '(the) airport', foreignWord: ['(el) aeropuerto'], foreignAudio: spanishAudioAirport },
+    { englishWord: '(the) bakery', foreignWord: ['(la) panadería'], foreignAudio: spanishAudioBakery },
+    { englishWord: '(the) bank', foreignWord: ['(el) banco'], foreignAudio: spanishAudioBank },
+    { englishWord: '(the) bridge', foreignWord: ['(el) puente'], foreignAudio: spanishAudioBridge },
+    { englishWord: '(the) city', foreignWord: ['(la) ciudad'], foreignAudio: spanishAudioCity },
+    { englishWord: '(the) factory', foreignWord: ['(la) fábrica'], foreignAudio: spanishAudioFactory },
+    { englishWord: '(the) farm', foreignWord: ['(la) granja'], foreignAudio: spanishAudioFarm },
+    { englishWord: '(the) gym', foreignWord: ['(el) gimnasio'], foreignAudio: spanishAudioGym },
+    { englishWord: '(the) hospital', foreignWord: ['(el) hospital'], foreignAudio: spanishAudioHospital },
+    { englishWord: '(the) library', foreignWord: ['(la) biblioteca'], foreignAudio: spanishAudioLibrary },
+    { englishWord: '(the) museum', foreignWord: ['(el) museo'], foreignAudio: spanishAudioMuseum },
+    { englishWord: '(the) office', foreignWord: ['(la) oficina'], foreignAudio: spanishAudioOffice },
+    { englishWord: '(the) park', foreignWord: ['(el) parque'], foreignAudio: spanishAudioPark },
+    { englishWord: '(the) swimming pool', foreignWord: ['(la) piscina'], foreignAudio: spanishAudioSwimmingPool },
+    { englishWord: '(the) restaurant', foreignWord: ['(el) restaurante'], foreignAudio: spanishAudioRestaurant },
+    { englishWord: '(the) school', foreignWord: ['(la) escuela'], foreignAudio: spanishAudioSchool },
+    { englishWord: '(the) street', foreignWord: ['(la) calle'], foreignAudio: spanishAudioStreet },
+    { englishWord: '(the) university', foreignWord: ['(la) universidad'], foreignAudio: spanishAudioUniversity },
 
   ] },
   { name:'Home', slugName: 'hom', hasOrdering:false, words: [
-    { englishWord: '(the) window', foreignWord: ['(la) ventana'], foreignAudio: '' },
-    { englishWord: '(the) bedroom', foreignWord: ['(el) dormitorio'], foreignAudio: '' },
-    { englishWord: '(the) kitchen', foreignWord: ['(la) cocina'], foreignAudio: '' },
-    { englishWord: '(the) dining room', foreignWord: ['(el) comedor'], foreignAudio: '' },
-    { englishWord: '(the) bathroom', foreignWord: ['(el) cuarto de baño'], foreignAudio: '' },
-    { englishWord: '(the) garage', foreignWord: ['(el) garaje'], foreignAudio: '' },
-    { englishWord: '(the) room', foreignWord: ['(el) habitación'], foreignAudio: '' },
-    { englishWord: '(the) garden', foreignWord: ['(el) jardín'], foreignAudio: '' },
-    { englishWord: '(the) living room', foreignWord: ['(el) salón'], foreignAudio: '' },
+    { englishWord: '(the) window', foreignWord: ['(la) ventana'], foreignAudio: spanishAudioWindow },
+    { englishWord: '(the) bedroom', foreignWord: ['(el) dormitorio'], foreignAudio: spanishAudioBedRoom },
+    { englishWord: '(the) kitchen', foreignWord: ['(la) cocina'], foreignAudio: spanishAudioKitchen },
+    { englishWord: '(the) dining room', foreignWord: ['(el) comedor'], foreignAudio: spanishAudioDiningRoom },
+    { englishWord: '(the) bathroom', foreignWord: ['(el) cuarto de baño'], foreignAudio: spanishAudioBathRoom },
+    { englishWord: '(the) garage', foreignWord: ['(el) garaje'], foreignAudio: spanishAudioGarage },
+    { englishWord: '(the) room', foreignWord: ['(el) habitación'], foreignAudio: spanishAudioRoom },
+    { englishWord: '(the) garden', foreignWord: ['(el) jardín'], foreignAudio: spanishAudioGarden },
+    { englishWord: '(the) living room', foreignWord: ['(el) salón'], foreignAudio: spanishAudioLivingRoom },
   ] },
   { name:'Question words', slugName: 'que', hasOrdering:false, words: [
-    { englishWord: 'why', foreignWord: ['por qué'], foreignAudio: '' },
-    { englishWord: 'what', foreignWord: ['qué'], foreignAudio: '' },
-    { englishWord: 'where', foreignWord: ['dónde'], foreignAudio: '' },
-    { englishWord: 'how', foreignWord: ['cómo'], foreignAudio: '' },
-    { englishWord: 'when', foreignWord: ['cuando'], foreignAudio: '' },
+    { englishWord: 'why', foreignWord: ['por qué'], foreignAudio: spanishAudioWhy },
+    { englishWord: 'what', foreignWord: ['qué'], foreignAudio: spanishAudioWhat },
+    { englishWord: 'where', foreignWord: ['dónde'], foreignAudio: spanishAudioWhere },
+    { englishWord: 'how', foreignWord: ['cómo'], foreignAudio: spanishAudioHow },
+    { englishWord: 'when', foreignWord: ['cuando'], foreignAudio: spanishAudioWhen },
   ] },
   { name:'Conjuctions', slugName: 'con', hasOrdering:false, words: [
-    { englishWord: 'and', foreignWord: ['y'], foreignAudio: '' },
-    { englishWord: 'but', foreignWord: ['pero'], foreignAudio: '' },
-    { englishWord: 'or', foreignWord: ['o'], foreignAudio: '' },
-    { englishWord: 'nor', foreignWord: ['ni'], foreignAudio: '' },
-    { englishWord: 'for', foreignWord: ['por/para'], foreignAudio: '' },
-    { englishWord: 'so', foreignWord: ['así que'], foreignAudio: '' },
-    { englishWord: 'yet', foreignWord: ['todavía'], foreignAudio: '' },
-    { englishWord: 'not yet', foreignWord: ['aún'], foreignAudio: '' },
-    { englishWord: 'moreover', foreignWord: ['además'], foreignAudio: '' },
-    { englishWord: 'even though', foreignWord: ['aunque'], foreignAudio: '' },
-    { englishWord: 'nevertheless', foreignWord: ['sin embargo'], foreignAudio: '' },
+    { englishWord: 'and', foreignWord: ['y'], foreignAudio: spanishAudioAnd },
+    { englishWord: 'but', foreignWord: ['pero'], foreignAudio: spanishAudioBut },
+    { englishWord: 'or', foreignWord: ['o'], foreignAudio: spanishAudioOr },
+    { englishWord: 'nor', foreignWord: ['ni'], foreignAudio: spanishAudioNor },
+    { englishWord: 'for', foreignWord: ['por/para'], foreignAudio: spanishAudioFor },
+    { englishWord: 'so', foreignWord: ['así que'], foreignAudio: spanishAudioSo },
+    { englishWord: 'yet', foreignWord: ['todavía'], foreignAudio: spanishAudioYet },
+    { englishWord: 'not yet', foreignWord: ['aún'], foreignAudio: spanishAudioNotYet },
+    { englishWord: 'moreover', foreignWord: ['además'], foreignAudio: spanishAudioMoreover },
+    { englishWord: 'even though', foreignWord: ['aunque'], foreignAudio: spanishAudioEvenThough },
+    { englishWord: 'nevertheless', foreignWord: ['sin embargo'], foreignAudio: spanishAudioNevertheless },
 
   ] },
   { name:'Adjectives', slugName: 'adj', hasOrdering:false, words: [
