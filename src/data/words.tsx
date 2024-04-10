@@ -187,6 +187,39 @@ import spanishAudioOr from '../data/audio/spanish/conjunctions/or.mp3'
 import spanishAudioSo from '../data/audio/spanish/conjunctions/so.mp3'
 import spanishAudioYet from '../data/audio/spanish/conjunctions/yet.mp3'
 
+import germanAudioOne from '../data/audio/german/numbers/one.mp3';
+import germanAudioTwo from '../data/audio/german/numbers/two.mp3';
+import germanAudioThree from '../data/audio/german/numbers/three.mp3';
+import germanAudioFour from '../data/audio/german/numbers/four.mp3';
+import germanAudioFive from '../data/audio/german/numbers/five.mp3';
+import germanAudioSix from '../data/audio/german/numbers/six.mp3';
+import germanAudioSeven from '../data/audio/german/numbers/seven.mp3';
+import germanAudioEight from '../data/audio/german/numbers/eight.mp3';
+import germanAudioNine from '../data/audio/german/numbers/nine.mp3';
+import germanAudioTen from '../data/audio/german/numbers/ten.mp3';
+
+import germanAudioHat from '../data/audio/german/clothes/hat.mp3'
+import germanAudioJacket from '../data/audio/german/clothes/jacket.mp3'
+import germanAudioScarf from '../data/audio/german/clothes/scarf.mp3'
+import germanAudioShoes from '../data/audio/german/clothes/shoes.mp3'
+import germanAudioSocks from '../data/audio/german/clothes/socks.mp3'
+import germanAudioSkirt from '../data/audio/german/clothes/skirt.mp3'
+import germanAudioSweater from '../data/audio/german/clothes/sweater.mp3'
+import germanAudioTie from '../data/audio/german/clothes/tie.mp3'
+import germanAudioTrousers from '../data/audio/german/clothes/trousers.mp3'
+import germanAudioUnderwear from '../data/audio/german/clothes/underwear.mp3'
+
+import germanAudioBlue from '../data/audio/german/colours/blue.mp3'
+import germanAudioBrown from '../data/audio/german/colours/brown.mp3'
+import germanAudioGreen from '../data/audio/german/colours/green.mp3'
+import germanAudioGrey from '../data/audio/german/colours/grey.mp3'
+import germanAudioOrange from '../data/audio/german/colours/orange.mp3'
+import germanAudioPink from '../data/audio/german/colours/pink.mp3'
+import germanAudioPurple from '../data/audio/german/colours/purple.mp3'
+import germanAudioRed from '../data/audio/german/colours/red.mp3'
+import germanAudioWhite from '../data/audio/german/colours/white.mp3'
+import germanAudioBlack from '../data/audio/german/colours/black.mp3'
+
 import { sortTopics } from '../helpers';
 import { Language, VerbConjugationEnglish, Topic1, Topic2, Topic3 } from '../../types/vocabTypes';
 
@@ -1417,44 +1450,44 @@ const italianTopics: Topic1[] = [
 ]
 const germanTopics: Topic1[] = [
   { name:'Numbers', slugName: 'num', hasOrdering:true, words: [
-    { englishWord: 'one', foreignWord: ['eins'], foreignAudio: '', order:1 },
-    { englishWord: 'two', foreignWord: ['zwei'], foreignAudio: '', order:2 },
-    { englishWord: 'three', foreignWord: ['drei'], foreignAudio: '', order:3 },
-    { englishWord: 'four', foreignWord: ['vier'], foreignAudio: '', order:4 },
-    { englishWord: 'five', foreignWord: ['fünf'], foreignAudio: '', order:5 },
-    { englishWord: 'six', foreignWord: ['sechs'], foreignAudio: '', order:6 },
-    { englishWord: 'seven', foreignWord: ['sieben'], foreignAudio: '', order:7 },
-    { englishWord: 'eight', foreignWord: ['acht'], foreignAudio: '', order:8 },
-    { englishWord: 'nine', foreignWord: ['neun'], foreignAudio: '', order:9 },
-    { englishWord: 'ten', foreignWord: ['zehn'], foreignAudio: '', order:10 },
+    { englishWord: 'one', foreignWord: ['eins'], foreignAudio: germanAudioOne, order:1 },
+    { englishWord: 'two', foreignWord: ['zwei'], foreignAudio: germanAudioTwo, order:2 },
+    { englishWord: 'three', foreignWord: ['drei'], foreignAudio: germanAudioThree, order:3 },
+    { englishWord: 'four', foreignWord: ['vier'], foreignAudio: germanAudioFour, order:4 },
+    { englishWord: 'five', foreignWord: ['fünf'], foreignAudio: germanAudioFive, order:5 },
+    { englishWord: 'six', foreignWord: ['sechs'], foreignAudio: germanAudioSix, order:6 },
+    { englishWord: 'seven', foreignWord: ['sieben'], foreignAudio: germanAudioSeven, order:7 },
+    { englishWord: 'eight', foreignWord: ['acht'], foreignAudio: germanAudioEight, order:8 },
+    { englishWord: 'nine', foreignWord: ['neun'], foreignAudio: germanAudioNine, order:9 },
+    { englishWord: 'ten', foreignWord: ['zehn'], foreignAudio: germanAudioTen, order:10 },
   ] },
   { name:'Colours', slugName: 'col', hasOrdering:false, words: [
-    { englishWord: 'red', foreignWord: ['rot'], foreignAudio: '' },
-    { englishWord: 'blue', foreignWord: ['blau'], foreignAudio: '' },
-    { englishWord: 'green', foreignWord: ['grün'], foreignAudio: '' },
-    { englishWord: 'orange', foreignWord: ['orange'], foreignAudio: '' },
-    { englishWord: 'brown', foreignWord: ['braun'], foreignAudio: '' },
-    { englishWord: 'grey', foreignWord: ['grau'], foreignAudio: '' },
-    { englishWord: 'white', foreignWord: ['weiß'], foreignAudio: '' },
-    { englishWord: 'black', foreignWord: ['schwarz'], foreignAudio: '' },
-    { englishWord: 'purple', foreignWord: ['lila'], foreignAudio: '' },
-    { englishWord: 'pink', foreignWord: ['rosa'], foreignAudio: '' }
+    { englishWord: 'red', foreignWord: ['rot'], foreignAudio: germanAudioRed },
+    { englishWord: 'blue', foreignWord: ['blau'], foreignAudio: germanAudioBlue },
+    { englishWord: 'green', foreignWord: ['grün'], foreignAudio: germanAudioGreen },
+    { englishWord: 'orange', foreignWord: ['orange'], foreignAudio: germanAudioOrange },
+    { englishWord: 'brown', foreignWord: ['braun'], foreignAudio: germanAudioBrown },
+    { englishWord: 'grey', foreignWord: ['grau'], foreignAudio: germanAudioGrey },
+    { englishWord: 'white', foreignWord: ['weiß'], foreignAudio: germanAudioWhite },
+    { englishWord: 'black', foreignWord: ['schwarz'], foreignAudio: germanAudioBlack },
+    { englishWord: 'purple', foreignWord: ['lila'], foreignAudio: germanAudioPurple },
+    { englishWord: 'pink', foreignWord: ['rosa'], foreignAudio: germanAudioPink }
   ] },
   {
     name: 'Clothes',
     slugName: 'clo',
     hasOrdering: false,
     words: [
-      { englishWord: 'trousers', foreignWord: ['hose'], foreignAudio: '' },
-      { englishWord: 'sweater', foreignWord: ['pullover'], foreignAudio: '' },
-      { englishWord: 'underwear', foreignWord: ['unterwäsche'], foreignAudio: '' },
-      { englishWord: 'tie', foreignWord: ['krawatte'], foreignAudio: '' },
-      { englishWord: 'socks', foreignWord: ['socken'], foreignAudio: '' },
-      { englishWord: 'shoes', foreignWord: ['schuhe'], foreignAudio: '' },
-      { englishWord: 'skirt', foreignWord: ['rock'], foreignAudio: '' },
-      { englishWord: 'jacket', foreignWord: ['jacke'], foreignAudio: '' },
-      { englishWord: 'hat', foreignWord: ['hut'], foreignAudio: '' },
-      { englishWord: 'scarf', foreignWord: ['schal'], foreignAudio: '' }
+      { englishWord: 'trousers', foreignWord: ['hose'], foreignAudio: germanAudioTrousers },
+      { englishWord: 'sweater', foreignWord: ['pullover'], foreignAudio: germanAudioSweater },
+      { englishWord: 'underwear', foreignWord: ['unterwäsche'], foreignAudio: germanAudioUnderwear },
+      { englishWord: 'tie', foreignWord: ['krawatte'], foreignAudio: germanAudioTie },
+      { englishWord: 'socks', foreignWord: ['socken'], foreignAudio: germanAudioSocks },
+      { englishWord: 'shoes', foreignWord: ['schuhe'], foreignAudio: germanAudioShoes },
+      { englishWord: 'skirt', foreignWord: ['rock'], foreignAudio: germanAudioSkirt },
+      { englishWord: 'jacket', foreignWord: ['jacke'], foreignAudio: germanAudioJacket },
+      { englishWord: 'hat', foreignWord: ['hut'], foreignAudio: germanAudioHat },
+      { englishWord: 'scarf', foreignWord: ['schal'], foreignAudio: germanAudioScarf }
     ]
   }
 ]
