@@ -27,7 +27,7 @@ const VocabContent = () => {
   const showInProgressFeatures = useSelector((state: reduxStore) => state.featureToggle.x);
   let languages = allLanguages
   // if(!showInProgressFeatures){
-  //   languages = languages.filter(l => l.languageName === 'Spanish' || l.languageName === 'German')
+  //   languages = languages.filter(l => l.languageName === 'Spanish')
   // }
 
   const navigate = useNavigate();
