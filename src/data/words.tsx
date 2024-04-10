@@ -1445,16 +1445,16 @@ const germanTopics: Topic1[] = [
     slugName: 'clo',
     hasOrdering: false,
     words: [
-      { englishWord: 'trousers', foreignWord: ['Hose'], foreignAudio: '' },
-      { englishWord: 'sweater', foreignWord: ['Pullover'], foreignAudio: '' },
-      { englishWord: 'underwear', foreignWord: ['Unterwäsche'], foreignAudio: '' },
-      { englishWord: 'tie', foreignWord: ['Krawatte'], foreignAudio: '' },
-      { englishWord: 'socks', foreignWord: ['Socken'], foreignAudio: '' },
-      { englishWord: 'shoes', foreignWord: ['Schuhe'], foreignAudio: '' },
-      { englishWord: 'skirt', foreignWord: ['Rock'], foreignAudio: '' },
-      { englishWord: 'jacket', foreignWord: ['Jacke'], foreignAudio: '' },
-      { englishWord: 'hat', foreignWord: ['Hut'], foreignAudio: '' },
-      { englishWord: 'scarf', foreignWord: ['Schal'], foreignAudio: '' }
+      { englishWord: 'trousers', foreignWord: ['hose'], foreignAudio: '' },
+      { englishWord: 'sweater', foreignWord: ['pullover'], foreignAudio: '' },
+      { englishWord: 'underwear', foreignWord: ['unterwäsche'], foreignAudio: '' },
+      { englishWord: 'tie', foreignWord: ['krawatte'], foreignAudio: '' },
+      { englishWord: 'socks', foreignWord: ['socken'], foreignAudio: '' },
+      { englishWord: 'shoes', foreignWord: ['schuhe'], foreignAudio: '' },
+      { englishWord: 'skirt', foreignWord: ['rock'], foreignAudio: '' },
+      { englishWord: 'jacket', foreignWord: ['jacke'], foreignAudio: '' },
+      { englishWord: 'hat', foreignWord: ['hut'], foreignAudio: '' },
+      { englishWord: 'scarf', foreignWord: ['schal'], foreignAudio: '' }
     ]
   }
 ]
