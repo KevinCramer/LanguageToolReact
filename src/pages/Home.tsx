@@ -1,8 +1,7 @@
 import './text.css'
 import blackBar from '../assets/blackBar.png';
-// import Icon from '@mdi/react';
 import logo from '../assets/logo.png';
-// import { mdiEmailOutline } from '@mdi/js';
+import { MdOutlineMail } from 'react-icons/md';
 
 export function Home(){
   return <div>
@@ -27,7 +26,7 @@ export function Home(){
       </div>
       <div style ={{ height: '10vh' }}></div>
       <div style={{ display: 'flex', alignItems: 'center' }}>
-        {/* <Icon path={mdiEmailOutline} size={1} /> */}
+        <MdOutlineMail size='1.5em'/>
         <a style={{ color: '#4A4A4A', marginLeft: '5px' }} href="mailto:contact@lingocommand.com">
     contact@lingocommand.com
         </a>
