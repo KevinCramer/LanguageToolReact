@@ -28,9 +28,6 @@ export function Home(){
       <div style ={{ height: '10vh' }}></div>
       <div style={{ display: 'flex', alignItems: 'center' }}>
         <Icon path={mdiEmailOutline} size={1} />
-        <a style={{ color: '#4A4A4A', marginLeft: '5px' }} href="mailto:contact@lingocommand.com">
-    contact@lingocommand.com
-        </a>
       </div>
     </div>    
   </div> 
