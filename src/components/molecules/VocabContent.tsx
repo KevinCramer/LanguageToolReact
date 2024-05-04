@@ -209,7 +209,7 @@ const VocabContent = () => {
           <Container style={{ display: 'flex', justifyContent:'center' }}>
             <DropdownButton style={{ margin: '0px 10px 0px 10px' }} variant= 'secondary'
               id="Languages" title=
-                {String(currentLanguage.languageName)} size = "sm"> 
+                {'Language'} size = "sm"> 
               {languages.map((languageItem: Language, index: number) =>
                 <Dropdown.Item key = {index} onClick = {() => [changeCurrentLanguage(
                   languageItem),
