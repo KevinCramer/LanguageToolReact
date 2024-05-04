@@ -58,7 +58,7 @@ const ImmersionContent = () => {
           style ={{ width: '300px', height: '50px' }}></video>
         <div style ={{ width: '300px', height: '20px' }}></div>
         <div style={{ display: 'flex', justifyContent: 'center', }}>
-          <Table striped bordered hover size="sm" style={{ width: '400px', border: '1px #AAAAAA' }}>
+          <Table striped bordered hover size="sm" style={{ width: '375', border: '1px #AAAAAA' }}>
             <thead>
               <tr>
                 <th style={{ textAlign: 'center', width: '50%' }}>
