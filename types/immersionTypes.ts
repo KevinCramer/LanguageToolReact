@@ -1,10 +1,18 @@
-export type Topic  = {
+export type Paragraph = {
+    englishText: string;
+    foreignText: string;
+
+}
+
+
+export type AudioTranscription  = {
     name: string;
     slugName: string;
-    contents: string[]
+    contents: Paragraph[];
+    audioFile: string;
 }
 
 export type Language  = {
     languageName: string;
-    topics: Topic[];
+    audioTranscriptions: AudioTranscription[];
 }

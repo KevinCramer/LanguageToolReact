@@ -1,5 +1,5 @@
-import { Container, Navbar as NavbarBs } from 'react-bootstrap';
-import { Language, Topic } from '../../../types/immersionTypes';
+import { Button, Container, Navbar as NavbarBs, Table } from 'react-bootstrap';
+import { AudioTranscription, Language, Paragraph } from '../../../types/immersionTypes';
 import { queryParamCompress, queryParamDecompress } from '../../helpers/queryParamHelpers'
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -28,18 +28,18 @@ const ImmersionContent = () => {
   var [currentLanguage,setLanguage] = useState(currentLanguage);
 
   const urlTopic = urlSettings[1]
-  var currentTopic = (currentLanguage.topics as Topic[])
-    .find(t => t.slugName === urlTopic) || currentLanguage.topics[0]
-  var [currentTopic,setCurrentTopic] = useState(currentTopic)
+  var currentAudioTranscription = (currentLanguage.audioTranscriptions as AudioTranscription[])
+    .find(t => t.slugName === urlTopic) || currentLanguage.audioTranscriptions[0]
+  var [currentAudioTranscription,setCurrentAudioTranscription] = useState( currentAudioTranscription)
 
   const changeCurrentLanguage = 
     ( language: Language) => setLanguage(language);
-  const changeCurrentTopic = (topic: Topic) => { return setCurrentTopic(topic);}
+  const changeCurrentAudioTranscription = (topic: AudioTranscription) => { return setCurrentAudioTranscription(topic);}
 
   useEffect(() => {
     const settings = [
       languageToSlugs[currentLanguage.languageName],
-      currentTopic.slugName, 
+      currentAudioTranscription.slugName, 
       true,
       0, 
       true,
@@ -49,17 +49,45 @@ const ImmersionContent = () => {
     navigate(`?s=${queryParamCompress(JSON.stringify(settings))}`);
 
   }, [
-    currentLanguage.languageName, currentTopic.slugName, navigate ]);
+    currentLanguage.languageName, currentAudioTranscription.slugName, navigate ]);
 
-  function ShowGrammarExplanation(){
+  function showImmersionTopic(){
     return (
-      <div style={{ width: '400px' }}>
-        <div style={{ display:'flex',flexDirection: 'column' }}>
-          {currentTopic.contents.map((content: string, index: number) =>
-            <div key = {index}>
-              {content}
-            </div>                    
-          )}
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <video controls src={currentAudioTranscription.audioFile} 
+          style ={{ width: '300px', height: '50px' }}></video>
+        <div style ={{ width: '300px', height: '20px' }}></div>
+        <div style={{ display: 'flex', justifyContent: 'center', }}>
+          <Table striped bordered hover size="sm" style={{ width: '400px', border: '1px #AAAAAA' }}>
+            <thead>
+              <tr>
+                <th style={{ textAlign: 'center', width: '50%' }}>
+                  {currentLanguage.languageName }
+                </th>
+                <th style={{ textAlign: 'center', width: '50%' }}>
+                  {'English' }
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {currentAudioTranscription.contents.map((content: Paragraph, index: number) => (
+                <>
+                  { index !== 0 && (<tr key={-index}>
+                    <td></td>
+                    <td></td>
+                  </tr> )}
+                  <tr key={index}>
+                    <td style={{ verticalAlign: 'middle' }} >
+                      { content.foreignText}
+                    </td>
+                    <td style={{ verticalAlign: 'middle' }}>     
+                      {content.englishText}
+                    </td>
+                  </tr>
+                </>      
+              ))}
+            </tbody>
+          </Table>
         </div>
       </div>
     )
@@ -75,20 +103,20 @@ const ImmersionContent = () => {
                 {String(currentLanguage.languageName)} size = "sm"> 
               {languages.map((language: Language, index: number) =>
                 <Dropdown.Item key = {index} onClick = {() => [changeCurrentLanguage(
-                  language),changeCurrentTopic(language.topics[0]) ]}>
+                  language),changeCurrentAudioTranscription(language.audioTranscriptions[0]) ]}>
                   {language.languageName}</Dropdown.Item>)}
             </DropdownButton>
             <DropdownButton style={{ margin: '0px 20px 0px 20px' }} variant= 'secondary'
-              id="Topics" title={'Topic: ' + currentTopic.name} size = "sm">
-              {currentLanguage.topics.map((topic: Topic, index: number) =>
+              id="Topics" title={'Topic: ' + currentAudioTranscription.name} size = "sm">
+              {currentLanguage.audioTranscriptions.map((topic: AudioTranscription, index: number) =>
                 <Dropdown.Item key = {index} onClick = {() => 
-                  changeCurrentTopic(topic)}>{topic.name}</Dropdown.Item>)}
+                  changeCurrentAudioTranscription(topic)}>{topic.name}</Dropdown.Item>)}
             </DropdownButton>
           </Container>
         </NavbarBs>
         <p></p>
         <div style={{ display: 'flex', justifyContent: 'center' }}>
-          {ShowGrammarExplanation()}
+          {showImmersionTopic()}
         </div>
       </Container>
     </div>
