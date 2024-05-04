@@ -55,7 +55,7 @@ const ImmersionContent = () => {
     return (
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
         <video controls src={currentAudioTranscription.audioFile} 
-          style ={{ width: '300px', height: '50px' }}></video>
+        ></video>
         <div style ={{ width: '300px', height: '20px' }}></div>
         <div style={{ display: 'flex', justifyContent: 'center', }}>
           <Table striped bordered hover size="sm" style={{ width: '350px', border: '1px #AAAAAA' }}>
