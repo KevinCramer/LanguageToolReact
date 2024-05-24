@@ -1,5 +1,5 @@
-import React, { useRef, useState } from 'react';
 import './AudioPlayer.css'; // For custom styles
+import React, { useRef, useState } from 'react';
 
 const AudioPlayer = ({ audioFile }: any) => {
   const [isPlaying, setIsPlaying] = useState(false);

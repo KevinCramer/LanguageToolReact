@@ -1,15 +1,16 @@
-import { Button, Container, Navbar as NavbarBs, Table } from 'react-bootstrap';
 import { AudioTranscription, Language, Paragraph } from '../../../types/immersionTypes';
+import { Container, Navbar as NavbarBs, Table } from 'react-bootstrap';
 import { queryParamCompress, queryParamDecompress } from '../../helpers/queryParamHelpers'
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { languages as allLanguages } from '../../data/immersion';
+import AudioPlayer from '../atoms/AudioPlayer';
+
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import { languageToSlugs } from '../../constants'
 import { reduxStore } from '../../../types/vocabTypes';
 import { useSelector } from 'react-redux';
-import AudioPlayer from '../atoms/audioPlayer';
 
 const ImmersionContent = () => {
   const showInProgressFeatures = useSelector((state: reduxStore) => state.featureToggle.x);
@@ -31,11 +32,13 @@ const ImmersionContent = () => {
   const urlTopic = urlSettings[1]
   var currentAudioTranscription = (currentLanguage.audioTranscriptions as AudioTranscription[])
     .find(t => t.slugName === urlTopic) || currentLanguage.audioTranscriptions[0]
-  var [currentAudioTranscription,setCurrentAudioTranscription] = useState( currentAudioTranscription)
+  var [currentAudioTranscription,setCurrentAudioTranscription] = useState(
+    currentAudioTranscription)
 
   const changeCurrentLanguage = 
     ( language: Language) => setLanguage(language);
-  const changeCurrentAudioTranscription = (topic: AudioTranscription) => { return setCurrentAudioTranscription(topic);}
+  const changeCurrentAudioTranscription = (topic: AudioTranscription) => { 
+    return setCurrentAudioTranscription(topic);}
 
   useEffect(() => {
     const settings = [
