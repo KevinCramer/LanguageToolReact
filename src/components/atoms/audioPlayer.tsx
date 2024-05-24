@@ -1,4 +1,4 @@
-import './AudioPlayer.css'; // For custom styles
+import './AudioPlayer.css'; 
 import React, { useRef, useState } from 'react';
 
 const AudioPlayer = ({ audioFile }: any) => {
