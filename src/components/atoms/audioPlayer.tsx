@@ -1,11 +1,11 @@
 import React, { useRef, useState } from 'react';
 import './AudioPlayer.css'; // For custom styles
 
-const AudioPlayer = ({ audioFile }) => {
+const AudioPlayer = ({ audioFile }: any) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
-  const audioRef = useRef(null);
+  const audioRef = useRef<any>(null);
 
   const handlePlayPause = () => {
     if (isPlaying) {
@@ -24,7 +24,7 @@ const AudioPlayer = ({ audioFile }) => {
     setDuration(audioRef.current.duration);
   };
 
-  const handleSeek = (event) => {
+  const handleSeek = (event: any) => {
     const newTime = (event.target.value / 100) * duration;
     audioRef.current.currentTime = newTime;
     setCurrentTime(newTime);
