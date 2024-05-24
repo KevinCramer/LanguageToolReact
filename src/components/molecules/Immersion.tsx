@@ -9,6 +9,7 @@ import DropdownButton from 'react-bootstrap/DropdownButton';
 import { languageToSlugs } from '../../constants'
 import { reduxStore } from '../../../types/vocabTypes';
 import { useSelector } from 'react-redux';
+import AudioPlayer from '../atoms/audioPlayer';
 
 const ImmersionContent = () => {
   const showInProgressFeatures = useSelector((state: reduxStore) => state.featureToggle.x);
@@ -54,8 +55,7 @@ const ImmersionContent = () => {
   function showImmersionTopic(){
     return (
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-        <video controls src={currentAudioTranscription.audioFile} 
-        ></video>
+        <AudioPlayer audioFile={currentAudioTranscription.audioFile} />
         <div style ={{ width: '300px', height: '20px' }}></div>
         <div style={{ display: 'flex', justifyContent: 'center', }}>
           <Table striped bordered hover size="sm" style={{ width: '350px', border: '1px #AAAAAA' }}>
