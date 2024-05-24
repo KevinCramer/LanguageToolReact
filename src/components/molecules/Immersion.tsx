@@ -4,7 +4,7 @@ import { queryParamCompress, queryParamDecompress } from '../../helpers/queryPar
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { languages as allLanguages } from '../../data/immersion';
-import AudioPlayer from '../atoms/AudioPlayer';
+import AudioPlayer from '../atoms/CustomAudioPlayer';
 
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
