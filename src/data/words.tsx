@@ -1871,6 +1871,38 @@ const russianTopics: Topic2[] = [
 ]
 
 const greekTopics: Topic2[] = [
+  {
+    name: 'Greek Alphabet',
+    slugName: 'alp',
+    hasOrdering: true,
+    isAlphabet: true,
+    words: [
+      { englishWord: 'a', foreignWord: ['α', 'α'], foreignAudio: '', order: 1 },
+      { englishWord: 'v', foreignWord: ['β', 'β'], foreignAudio: '', order: 2 },
+      { englishWord: 'g', foreignWord: ['γ', 'γ'], foreignAudio: '', order: 3 },
+      { englishWord: 'd', foreignWord: ['δ', 'δ'], foreignAudio: '', order: 4 },
+      { englishWord: 'e', foreignWord: ['ε', 'ε'], foreignAudio: '', order: 5 },
+      { englishWord: 'z', foreignWord: ['ζ', 'ζ'], foreignAudio: '', order: 6 },
+      { englishWord: 'i', foreignWord: ['η', 'η'], foreignAudio: '', order: 7 },
+      { englishWord: 'th', foreignWord: ['θ', 'θ'], foreignAudio: '', order: 8 },
+      { englishWord: 'i', foreignWord: ['ι', 'ι'], foreignAudio: '', order: 9 },
+      { englishWord: 'k', foreignWord: ['κ', 'κ'], foreignAudio: '', order: 10 },
+      { englishWord: 'l', foreignWord: ['λ', 'λ'], foreignAudio: '', order: 11 },
+      { englishWord: 'm', foreignWord: ['μ', 'μ'], foreignAudio: '', order: 12 },
+      { englishWord: 'n', foreignWord: ['ν', 'ν'], foreignAudio: '', order: 13 },
+      { englishWord: 'x', foreignWord: ['ξ', 'ξ'], foreignAudio: '', order: 14 },
+      { englishWord: 'o', foreignWord: ['ο', 'ο'], foreignAudio: '', order: 15 },
+      { englishWord: 'p', foreignWord: ['π', 'π'], foreignAudio: '', order: 16 },
+      { englishWord: 'r', foreignWord: ['ρ', 'ρ'], foreignAudio: '', order: 17 },
+      { englishWord: 's', foreignWord: ['σ', 'σ'], foreignAudio: '', order: 18 },
+      { englishWord: 't', foreignWord: ['τ', 'τ'], foreignAudio: '', order: 19 },
+      { englishWord: 'y', foreignWord: ['υ', 'υ'], foreignAudio: '', order: 20 },
+      { englishWord: 'f', foreignWord: ['φ', 'φ'], foreignAudio: '', order: 21 },
+      { englishWord: 'ch', foreignWord: ['χ', 'χ'], foreignAudio: '', order: 22 },
+      { englishWord: 'ps', foreignWord: ['ψ', 'ψ'], foreignAudio: '', order: 23 },
+      { englishWord: 'o', foreignWord: ['ω', 'ω'], foreignAudio: '', order: 24 }
+    ]
+  },
   { name: 'Numbers', slugName: 'num', hasOrdering: true, words: [
     { englishWord: 'one', foreignWord: ['ena', 'ένα'], foreignAudio: '', order: 1 },
     { englishWord: 'two', foreignWord: ['dyo', 'δύο'], foreignAudio: '', order: 2 },
