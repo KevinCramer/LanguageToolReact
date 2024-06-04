@@ -1870,6 +1870,49 @@ const russianTopics: Topic2[] = [
   }
 ]
 
+const greekTopics: Topic2[] = [
+  { name: 'Numbers', slugName: 'num', hasOrdering: true, words: [
+    { englishWord: 'one', foreignWord: ['ena', 'ένα'], foreignAudio: '', order: 1 },
+    { englishWord: 'two', foreignWord: ['dyo', 'δύο'], foreignAudio: '', order: 2 },
+    { englishWord: 'three', foreignWord: ['tria', 'τρία'], foreignAudio: '', order: 3 },
+    { englishWord: 'four', foreignWord: ['tessera', 'τέσσερα'], foreignAudio: '', order: 4 },
+    { englishWord: 'five', foreignWord: ['pente', 'πέντε'], foreignAudio: '', order: 5 },
+    { englishWord: 'six', foreignWord: ['eksi', 'έξι'], foreignAudio: '', order: 6 },
+    { englishWord: 'seven', foreignWord: ['epta', 'επτά'], foreignAudio: '', order: 7 },
+    { englishWord: 'eight', foreignWord: ['okto', 'οκτώ'], foreignAudio: '', order: 8 },
+    { englishWord: 'nine', foreignWord: ['ennea', 'εννέα'], foreignAudio: '', order: 9 },
+    { englishWord: 'ten', foreignWord: ['deka', 'δέκα'], foreignAudio: '', order: 10 },
+  ] },
+  { name: 'Colours', slugName: 'col', hasOrdering: false, words: [
+    { englishWord: 'red', foreignWord: ['kokkino', 'κόκκινο'], foreignAudio: '' },
+    { englishWord: 'blue', foreignWord: ['ble', 'μπλε'], foreignAudio: '' },
+    { englishWord: 'green', foreignWord: ['prasino', 'πράσινο'], foreignAudio: '' },
+    { englishWord: 'orange', foreignWord: ['portokali', 'πορτοκαλί'], foreignAudio: '' },
+    { englishWord: 'brown', foreignWord: ['kafe', 'καφέ'], foreignAudio: '' },
+    { englishWord: 'grey', foreignWord: ['gkri', 'γκρι'], foreignAudio: '' },
+    { englishWord: 'white', foreignWord: ['lefko', 'λευκό'], foreignAudio: '' },
+    { englishWord: 'black', foreignWord: ['mavro', 'μαύρο'], foreignAudio: '' },
+    { englishWord: 'purple', foreignWord: ['mov', 'μοβ'], foreignAudio: '' },
+    { englishWord: 'pink', foreignWord: ['roz', 'ροζ'], foreignAudio: '' }
+  ] },
+  {
+    name: 'Clothes',
+    slugName: 'clo',
+    hasOrdering: false,
+    words: [
+      { englishWord: 'trousers', foreignWord: ['panteloni', 'παντελόνι'], foreignAudio: '' },
+      { englishWord: 'sweater', foreignWord: ['poulover', 'πουλόβερ'], foreignAudio: '' },
+      { englishWord: 'underwear', foreignWord: ['esorouxa', 'εσώρουχα'], foreignAudio: '' },
+      { englishWord: 'tie', foreignWord: ['gravata', 'γραβάτα'], foreignAudio: '' },
+      { englishWord: 'socks', foreignWord: ['kaltses', 'κάλτσες'], foreignAudio: '' },
+      { englishWord: 'shoes', foreignWord: ['papoutsia', 'παπούτσια'], foreignAudio: '' },
+      { englishWord: 'skirt', foreignWord: ['fousta', 'φούστα'], foreignAudio: '' },
+      { englishWord: 'jacket', foreignWord: ['mpoufan', 'μπουφάν'], foreignAudio: '' },
+      { englishWord: 'hat', foreignWord: ['kapelo', 'καπέλο'], foreignAudio: '' },
+      { englishWord: 'scarf', foreignWord: ['kaskol', 'κασκόλ'], foreignAudio: '' }
+    ]
+  }
+];
 export const languages: Language[] = 
         [
           { languageName: 'Spanish', topics: sortTopics(spanishTopics), pronouns: spanishPronouns, numForeignAlphabets: 1 },
@@ -1882,6 +1925,7 @@ export const languages: Language[] =
           { languageName: 'Arabic', topics: sortTopics(arabicTopics), pronouns: [], numForeignAlphabets: 2 },
           { languageName: 'Portuguese', topics: sortTopics(portugueseTopics), pronouns: [], numForeignAlphabets: 1 },
           { languageName: 'Russian', topics: sortTopics(russianTopics), pronouns: [], numForeignAlphabets: 2 },
+          { languageName: 'Greek', topics: sortTopics(greekTopics), pronouns: [], numForeignAlphabets: 2 },
           { languageName: 'Dutch', topics: sortTopics(dutchTopics), pronouns: [], numForeignAlphabets: 1 },
         ]
       
