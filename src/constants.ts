@@ -16,5 +16,6 @@ export const languageToSlugs: Record<string,string> = {
   'Portuguese': 'por',
   'Russian': 'rus',
   'Dutch': 'dut',
+  'Greek': 'grk'
 
 }
