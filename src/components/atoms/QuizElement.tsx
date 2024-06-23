@@ -79,7 +79,12 @@ const QuizElement = (
              mark is rendered which is about 20px wide
               */}
             <div style={{ width: response !== '✔' ? '20px' : '0px' }}></div>
-            <div> {response === '✔' ? response : null}</div>
+            <div>
+              {/* This is hack to ensure the tick mark is vertically aligned with input form
+              */}
+              <div style={{ height:'10px' }}></div>
+              <div> {response === '✔' ? response : null}</div>
+            </div>
           </div>
           <div> {response !== '✔' ? response : null}</div>
         </div>
