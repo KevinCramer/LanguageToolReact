@@ -1,7 +1,7 @@
 import './CustomAudioPlayer.css'; 
 import { useRef, useState } from 'react';
-import Icon from '@mdi/react';
-import { mdiPause, mdiPlay } from '@mdi/js';
+import { IonIcon } from '@ionic/react';
+import { pause, play } from 'ionicons/icons';
 
 const AudioPlayer = ({ audioFile }: any) => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -44,7 +44,7 @@ const AudioPlayer = ({ audioFile }: any) => {
       </audio>
       <button
         onClick={handlePlayPause}>
-        <Icon path={isPlaying ? mdiPause : mdiPlay} size={2} />
+        <IonIcon icon={isPlaying ? pause : play } size="large"/>
       </button>
       <input
         type="range"

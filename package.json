@@ -11,12 +11,14 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
+    "@ionic/react": "^8.2.2",
     "@mdi/js": "^7.4.47",
     "@mdi/react": "^1.6.1",
     "@reduxjs/toolkit": "^1.9.1",
     "@vanilla-extract/css": "^1.9.2",
     "bootstrap": "^5.2.3",
     "fixed-size-array": "^0.1.1",
+    "ionicons": "^7.4.0",
     "react": "^18.2.0",
     "react-bootstrap": "^2.6.0",
     "react-dom": "^18.2.0",
