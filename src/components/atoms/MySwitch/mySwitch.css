@@ -3,8 +3,6 @@
   display: inline-block;
   width: 60px;
   height: 30px;
-  border: 1px solid #4A4A4A; /* Add border around the entire switch */
-  border-radius: 30px; /* Rounded corners */
 }
 
 .custom-switch input {
@@ -18,7 +16,7 @@
   cursor: pointer;
   top: 0;
   left: 0;
-  right: 0;
+  right:0;
   bottom: 0;
   background-color: #4A4A4A;
   transition: .4s;
@@ -28,11 +26,11 @@
 .slider:before {
   position: absolute;
   content: "";
-  height: 29px;
-  width: 29px;
+  height: 30px;
+  width: 30px;
   background-color: white;
   transition: .4s;
-  border-radius: 50%;
+  border-radius: 30px;
 }
 
 input:checked + .slider {
@@ -40,5 +38,5 @@ input:checked + .slider {
 }
 
 input:checked + .slider:before {
-  transform: translateX(30px);
+  transform: translateX(31px);
 }
