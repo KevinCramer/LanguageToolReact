@@ -1,20 +1,38 @@
 import { Container, Nav , Navbar as NavbarBs } from 'react-bootstrap'
 import { NavLink } from 'react-router-dom'
-
+import './navbar.css'
 export function Navbar(){
   return(
-    <NavbarBs className="bg-body-tertiary" >
+    <NavbarBs style={{ backgroundColor: '#4A4A4A' }} >
       <Container style={{ justifyContent: 'center' }}>
         <Nav>
-          <Nav.Link style={{ margin: '0px 10px 0px 10px' }} to ="/" as= {NavLink}>Home</Nav.Link>
-          <Nav.Link style={{ margin: '0px 10px 0px 10px' }} 
-            to ="/vocabulary" as= {NavLink}>Vocabulary</Nav.Link>
           <Nav.Link 
-            style={{ margin: '0px 10px 0px 10px' }} to="/grammar" as={NavLink}>
-    Grammar
+            className="nav-link-custom" 
+            style={{ color: '#f8f9fa' }}
+            to ="/" 
+            as= {NavLink}>
+              Home
           </Nav.Link>
-          <Nav.Link style={{ margin: '0px 10px 0px 10px' }} to="/immersion" as={NavLink}>
-    Immersion
+          <Nav.Link 
+            className="nav-link-custom"  
+            style={{ color: '#f8f9fa' }}
+            to ="/vocabulary" 
+            as= {NavLink}>
+              Vocabulary
+          </Nav.Link>
+          <Nav.Link 
+            style={{ color: '#f8f9fa' }}
+            className="nav-link-custom" 
+            to="/grammar"
+            as={NavLink}>
+              Grammar
+          </Nav.Link>
+          <Nav.Link 
+            style={{ color: '#f8f9fa' }}
+            className="nav-link-custom"
+            to="/immersion"
+            as={NavLink}>
+            Immersion
           </Nav.Link>
         </Nav>
       </Container>

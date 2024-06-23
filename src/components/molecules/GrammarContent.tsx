@@ -8,6 +8,7 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import { languages } from '../../data/grammar';
 import { languageToSlugs } from '../../constants'
+import MyButton from '../atoms/MyButton/myButton';
 
 const GrammarContent = () => {
   const navigate = useNavigate();
@@ -60,23 +61,24 @@ const GrammarContent = () => {
 
   return (
     <div>
+      <div style={{ height:'50px' }}></div>
       <Container>    
         <NavbarBs>
           <Container style={{ justifyContent:'center' }}>
-            <DropdownButton style={{ margin: '0px 20px 0px 20px' }} variant= 'secondary'
-              id="Languages" title=
-                {String(currentLanguage.languageName)} size = "sm"> 
-              {languages.map((language: Language, index: number) =>
-                <Dropdown.Item key = {index} onClick = {() => [changeCurrentLanguage(
-                  language)]}>
-                  {language.languageName}</Dropdown.Item>)}
-            </DropdownButton>
-            <DropdownButton style={{ margin: '0px 20px 0px 20px' }} variant= 'secondary'
-              id="Topics" title={'Topic: ' + currentTopic.name} size = "sm">
-              {currentLanguage.topics.map((topic: Topic, index: number) =>
-                <Dropdown.Item key = {index} onClick = {() => 
-                  changeCurrentTopic(topic)}>{topic.name}</Dropdown.Item>)}
-            </DropdownButton>
+            <div style={{ width: '400px', display:'flex', flexDirection: 'row' }}>
+              <MyButton title=
+                {String(currentLanguage.languageName)}> 
+                {languages.map((language: Language, index: number) =>
+                  <Dropdown.Item key = {index} onClick = {() => [changeCurrentLanguage(
+                    language)]}>
+                    {language.languageName}</Dropdown.Item>)}
+              </MyButton>
+              <MyButton title={'Topic: ' + currentTopic.name}>
+                {currentLanguage.topics.map((topic: Topic, index: number) =>
+                  <Dropdown.Item key = {index} onClick = {() => 
+                    changeCurrentTopic(topic)}>{topic.name}</Dropdown.Item>)}
+              </MyButton>
+            </div>
           </Container>
         </NavbarBs>
         <p></p>

@@ -4,7 +4,8 @@ import { queryParamCompress, queryParamDecompress } from '../../helpers/queryPar
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { languages as allLanguages } from '../../data/immersion';
-import AudioPlayer from '../atoms/CustomAudioPlayer';
+import AudioPlayer from '../atoms/CustomAudioPlayer/CustomAudioPlayer';
+import MyButton from '../atoms/MyButton/myButton';
 
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
@@ -93,23 +94,24 @@ const ImmersionContent = () => {
 
   return (
     <div>
+      <div style={{ height:'50px' }}></div>
       <Container>    
         <NavbarBs>
           <Container style={{ justifyContent:'center' }}>
-            <DropdownButton style={{ margin: '0px 20px 0px 20px' }} variant= 'secondary'
-              id="Languages" title=
-                {String(currentLanguage.languageName)} size = "sm"> 
-              {languages.map((language: Language, index: number) =>
-                <Dropdown.Item key = {index} onClick = {() => [changeCurrentLanguage(
-                  language),changeCurrentAudioTranscription(language.audioTranscriptions[0]) ]}>
-                  {language.languageName}</Dropdown.Item>)}
-            </DropdownButton>
-            <DropdownButton style={{ margin: '0px 20px 0px 20px' }} variant= 'secondary'
-              id="Topics" title={'Topic: ' + currentAudioTranscription.name} size = "sm">
-              {currentLanguage.audioTranscriptions.map((topic: AudioTranscription, index: number) =>
-                <Dropdown.Item key = {index} onClick = {() => 
-                  changeCurrentAudioTranscription(topic)}>{topic.name}</Dropdown.Item>)}
-            </DropdownButton>
+            <div style={{ width: '400px', display:'flex', flexDirection: 'row', justifyContent: 'center' }}>
+              <MyButton title=
+                {String(currentLanguage.languageName)}> 
+                {languages.map((language: Language, index: number) =>
+                  <Dropdown.Item key = {index} onClick = {() => [changeCurrentLanguage(
+                    language),changeCurrentAudioTranscription(language.audioTranscriptions[0]) ]}>
+                    {language.languageName}</Dropdown.Item>)}
+              </MyButton>
+              <MyButton title={'Topic: ' + currentAudioTranscription.name}>
+                {currentLanguage.audioTranscriptions.map((topic: AudioTranscription, index: number) =>
+                  <Dropdown.Item key = {index} onClick = {() => 
+                    changeCurrentAudioTranscription(topic)}>{topic.name}</Dropdown.Item>)}
+              </MyButton>
+            </div>
           </Container>
         </NavbarBs>
         <p></p>

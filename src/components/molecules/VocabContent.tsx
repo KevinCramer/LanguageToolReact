@@ -13,13 +13,14 @@ import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { languages as allLanguages } from '../../data/words';
 import Dropdown from 'react-bootstrap/Dropdown';
-import DropdownButton from 'react-bootstrap/DropdownButton';
 import { languageToSlugs } from '../../constants'
 import { nullOrUndefined } from '../../helpers/helperFunctions'
 import QuizElement from '../atoms/QuizElement';
 import ReactSwitch from 'react-switch';
 import { scramble } from '../../helpers';
 import StudyElement from '../atoms/StudyElement';
+import '../atoms/MyButton/myDropDown.css'
+import MyButton from '../atoms/MyButton/myButton';
 
 const VocabContent = () => {
   let languages = allLanguages
@@ -117,10 +118,10 @@ const VocabContent = () => {
           <Table striped bordered hover size="sm" style={{ width: '400px', border: '1px #AAAAAA' }}>
             <thead>
               <tr>
-                <th style={{ textAlign: 'center', width: '50%' }}>
+                <th style={{ textAlign: 'center', width: '50%', color: '#4A4A4A' }}>
                   {showBaseLanguage ? 'English' : currentLanguage.languageName }
                 </th>
-                <th style={{ textAlign: 'center', width: '50%' }}>
+                <th style={{ textAlign: 'center', width: '50%', color: '#4A4A4A' }}>
                   {showBaseLanguage ? currentLanguage.languageName : 'English' }
                 </th>
               </tr>
@@ -198,44 +199,49 @@ const VocabContent = () => {
   }
   return (
     <div>
+      <div style={{ height:'50px' }}></div>
       <Container >    
         <NavbarBs>
           <Container style={{ display: 'flex', justifyContent:'center' }}>
-            <DropdownButton style={{ margin: '0px 10px 0px 10px' }} variant= 'secondary'
-              id="Languages" title=
-                {'Language'} size = "sm"> 
-              {languages.map((languageItem: Language, index: number) =>
-                <Dropdown.Item key = {index} onClick = {() => [changeCurrentLanguage(
-                  languageItem),
-                setCurrentAlphabet(0),changeCurrentTopic(languageItem.topics[0]) ]}>
-                  {languageItem.languageName}</Dropdown.Item>)}
-            </DropdownButton>
-            <DropdownButton style={{ margin: '0px 10px 0px 10px' }} variant= 'secondary'
-              id="Topics" title={'Topic: ' + currentTopic.name} size = "sm">
-              {(currentLanguage.topics as Topic[])
-                .map((topic: Topic, index: number) =>
-                  <Dropdown.Item key = {index} onClick = {() => 
-                    changeCurrentTopic(topic)}>{topic.name}</Dropdown.Item>)}
-            </DropdownButton>
-            <DropdownButton style={{ margin: '0px 10px 0px 10px' }} variant= 'secondary' align="end"
-              id="Settings" title="Settings" size = "sm">
-              <Dropdown.Item onClick = {changeBaseLanguage}>toggle base language</Dropdown.Item>
-              <Dropdown.Item onClick = {() => changeAudioBool()}>
-                {audioBool ? 'hide audio' : 'show audio'}</Dropdown.Item>
-              <Dropdown.Item onClick = {changeOrder}>
-                {showTrueOrder ? 'random ordering' : 'default ordering'}</Dropdown.Item>
-              {currentLanguage.numForeignAlphabets > 1 && !currentTopic.isAlphabet &&
+            <div style={{ width: '400px', display:'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
+              <MyButton title="Language">
+                {languages.map((languageItem: Language, index: number) =>
+                  <Dropdown.Item key = {index} onClick = {() => [changeCurrentLanguage(
+                    languageItem),
+                  setCurrentAlphabet(0),changeCurrentTopic(languageItem.topics[0]) ]}>
+                    {languageItem.languageName}</Dropdown.Item>)}
+              </MyButton>
+              <MyButton title={'Topic: ' + currentTopic.name}>
+                {(currentLanguage.topics as Topic[])
+                  .map((topic: Topic, index: number) =>
+                    <Dropdown.Item key = {index} onClick = {() => 
+                      changeCurrentTopic(topic)}>{topic.name}</Dropdown.Item>)}
+              </MyButton>
+              <MyButton title="Settings" align="end">
+                <Dropdown.Item onClick = {changeBaseLanguage}>toggle base language</Dropdown.Item>
+                <Dropdown.Item onClick = {() => changeAudioBool()}>
+                  {audioBool ? 'hide audio' : 'show audio'}</Dropdown.Item>
+                <Dropdown.Item onClick = {changeOrder}>
+                  {showTrueOrder ? 'random ordering' : 'default ordering'}</Dropdown.Item>
+                {currentLanguage.numForeignAlphabets > 1 && !currentTopic.isAlphabet &&
               <Dropdown.Item onClick = {changeCurrentAlphabet}>
                 toggle foreign alphabet</Dropdown.Item>}
-            </DropdownButton>                
+              </MyButton>   
+            </div>             
           </Container>
         </NavbarBs>
         <NavbarBs>
-          <Container style={{ display: 'flex', justifyContent:'center' , }}>
+          <Container style={{ display: 'flex', justifyContent:'center' }}>
             <div style={{ display: 'flex', flexDirection:'row' , }}>
               <div style={{ marginRight: '10px', fontWeight: quiz ? 'normal' : '600' }}>Study</div>
-              <ReactSwitch onChange = {changeQuizState} checked= {quiz} 
-                uncheckedIcon = {false} checkedIcon = {false} onColor = {'#888888'}/> 
+              <ReactSwitch 
+                onChange = {changeQuizState}
+                checked= {quiz} 
+                uncheckedIcon = {false} 
+                checkedIcon = {false} 
+                onColor = {'#4A4A4A'}
+                offColor = {'#4A4A4A'}
+              /> 
               <div style = {{ marginLeft: '10px', fontWeight: quiz ? '600' : 'normal' }}>
                  Quiz
               </div>               

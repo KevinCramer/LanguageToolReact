@@ -1,0 +1,21 @@
+.btn-primary {
+  margin: 0px 10px 0px 0px;
+  background-color: #e8e8e8; /* Use # for hex color codes */
+  border-color: #4A4A4A;
+  color: #4A4A4A;
+  border-radius: 5px;
+  /* Any other custom styles you need */
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary:focus:active {
+  background-color: #e8e8e8; /* Use # for hex color codes */
+  border-color: #e8e8e8;
+  color: #4A4A4A;
+  border-color: #4A4A4A;
+
+
+}
+

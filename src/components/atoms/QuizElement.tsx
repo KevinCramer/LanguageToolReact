@@ -57,7 +57,7 @@ const QuizElement = (
             e as unknown as React.ChangeEvent<HTMLInputElement> ,
             formValues.answer, propsAnswerWord)}>
           <div className="ui form">
-            <label style= {{ width: '150px', textAlign:'center' }}>{propsQuestionWord} </label>
+            <label style= {{ width: '150px', textAlign:'left' }}>{propsQuestionWord} </label>
             <input 
               style= {{ width: '175px' }} 
               type="text"
