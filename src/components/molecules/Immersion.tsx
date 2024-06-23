@@ -9,15 +9,10 @@ import AudioPlayer from '../atoms/CustomAudioPlayer';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import { languageToSlugs } from '../../constants'
-import { reduxStore } from '../../../types/vocabTypes';
-import { useSelector } from 'react-redux';
 
 const ImmersionContent = () => {
-  const showInProgressFeatures = useSelector((state: reduxStore) => state.featureToggle.x);
   let languages = allLanguages
-  if(!showInProgressFeatures){
-    languages = languages.filter(l => l.languageName === 'Spanish')
-  }
+  languages = languages.filter(l => l.languageName === 'Spanish')
 
   const navigate = useNavigate();
   var urlSearchParams = new URLSearchParams(useLocation().search);

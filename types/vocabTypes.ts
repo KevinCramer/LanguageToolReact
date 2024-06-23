@@ -73,10 +73,3 @@ export type Language = {
     pronouns: string[];
     numForeignAlphabets: number;
 }
-
-export type featureToggle = {
-    x: boolean;
-}
-export type reduxStore = {
-    featureToggle: featureToggle
-}

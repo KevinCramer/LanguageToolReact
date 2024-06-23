@@ -1,7 +1,6 @@
 import { Container, Navbar as NavbarBs, Table } from 'react-bootstrap';
 import {
   Language,
-  reduxStore,
   Topic, 
   VerbConjugationEnglish,
   Word,
@@ -21,14 +20,9 @@ import QuizElement from '../atoms/QuizElement';
 import ReactSwitch from 'react-switch';
 import { scramble } from '../../helpers';
 import StudyElement from '../atoms/StudyElement';
-import { useSelector } from 'react-redux';
 
 const VocabContent = () => {
-  const showInProgressFeatures = useSelector((state: reduxStore) => state.featureToggle.x);
   let languages = allLanguages
-  // if(!showInProgressFeatures){
-  //   languages = languages.filter(l => l.languageName === 'Spanish')
-  // }
 
   const navigate = useNavigate();
 
@@ -219,7 +213,6 @@ const VocabContent = () => {
             <DropdownButton style={{ margin: '0px 10px 0px 10px' }} variant= 'secondary'
               id="Topics" title={'Topic: ' + currentTopic.name} size = "sm">
               {(currentLanguage.topics as Topic[])
-                .filter((t) => !t.isExperimentalTopic || showInProgressFeatures)
                 .map((topic: Topic, index: number) =>
                   <Dropdown.Item key = {index} onClick = {() => 
                     changeCurrentTopic(topic)}>{topic.name}</Dropdown.Item>)}

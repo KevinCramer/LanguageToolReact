@@ -5,31 +5,7 @@ import GrammarContent from './components/molecules/GrammarContent'
 import { Home } from './pages/Home'
 import Immersion from './components/molecules/Immersion'
 import { Navbar } from './components/Navbar'
-import { toggleX } from './redux-store/featureToggleSlice';
-import { useDispatch } from 'react-redux';
 import VocabContent from './components/molecules/VocabContent'
-
-const ToggleButton = () => {
-  const dispatch = useDispatch();
-
-  const handleClick = () => {
-    dispatch(toggleX());
-  };
-
-  // Return JSX for the button
-  return (
-    <button 
-      onClick ={handleClick}
-      style={{
-        backgroundColor: 'transparent',
-        border: 'none', 
-        color: '#F5F5F5', // Set the text color (example: Bootstrap primary blue)
-        width: '100%'
-      }}
-    
-    >Show experimental features</button>
-  );
-};
 
 function App() {
   return (
@@ -44,7 +20,6 @@ function App() {
         <Route path="/immersion" element={<Immersion />} />
 
       </Routes>
-      <ToggleButton />
     </div>
   );
 }
