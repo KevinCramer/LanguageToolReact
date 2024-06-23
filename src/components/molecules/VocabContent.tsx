@@ -16,12 +16,11 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import { languageToSlugs } from '../../constants'
 import { nullOrUndefined } from '../../helpers/helperFunctions'
 import QuizElement from '../atoms/QuizElement';
-import ReactSwitch from 'react-switch';
 import { scramble } from '../../helpers';
 import StudyElement from '../atoms/StudyElement';
 import '../atoms/MyDropDownButton/myDropDownButton.css'
 import MyButton from '../atoms/MyDropDownButton/myDropDownButton';
-
+import MySwitch from '../atoms/MySwitch/mySwitch';
 const VocabContent = () => {
   let languages = allLanguages
 
@@ -234,13 +233,9 @@ const VocabContent = () => {
           <Container style={{ display: 'flex', justifyContent:'center' }}>
             <div style={{ display: 'flex', flexDirection:'row' , }}>
               <div style={{ marginRight: '10px', fontWeight: quiz ? 'normal' : '600' }}>Study</div>
-              <ReactSwitch 
+              <MySwitch 
                 onChange = {changeQuizState}
                 checked= {quiz} 
-                uncheckedIcon = {false} 
-                checkedIcon = {false} 
-                onColor = {'#4A4A4A'}
-                offColor = {'#4A4A4A'}
               /> 
               <div style = {{ marginLeft: '10px', fontWeight: quiz ? '600' : 'normal' }}>
                  Quiz
