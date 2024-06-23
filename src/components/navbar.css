@@ -10,3 +10,15 @@
   text-decoration: underline;
   color:#F8F8F8;
 }
+
+/* Normal state */
+.hover-underline {
+  color: #4A4A4A;
+  margin-left: 10px;
+  text-decoration: none; /* No underline by default */
+}
+
+/* Hover state */
+.hover-underline:hover {
+  text-decoration: underline; /* Underline on hover */
+}

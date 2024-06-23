@@ -25,12 +25,6 @@ export function Home(){
         Learn foreign languages faster
       </div>
       <div style ={{ height: '10vh' }}></div>
-      <div style={{ display: 'flex', alignItems: 'center' }}>
-        <MdOutlineMail size='1.5em'/>
-        <a style={{ color: '#4A4A4A', marginLeft: '5px' }} href="mailto:contact@lingocommand.com">
-    contact
-        </a>
-      </div>
     </div>    
   </div> 
 }
