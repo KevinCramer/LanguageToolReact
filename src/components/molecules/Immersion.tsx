@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { languages as allLanguages } from '../../data/immersion';
 import AudioPlayer from '../atoms/CustomAudioPlayer/CustomAudioPlayer';
-import MyButton from '../atoms/MyButton/myButton';
+import MyButton from '../atoms/MyDropDownButton/myDropDownButton';
 
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';

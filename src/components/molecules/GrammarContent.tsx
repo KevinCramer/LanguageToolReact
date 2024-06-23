@@ -8,7 +8,7 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import { languages } from '../../data/grammar';
 import { languageToSlugs } from '../../constants'
-import MyButton from '../atoms/MyButton/myButton';
+import MyButton from '../atoms/MyDropDownButton/myDropDownButton';
 
 const GrammarContent = () => {
   const navigate = useNavigate();

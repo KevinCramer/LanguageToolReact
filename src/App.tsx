@@ -10,6 +10,7 @@ import VocabContent from './components/molecules/VocabContent'
 function App() {
   return (
     <div >
+      <div style={{ height:'0px' }}></div>
       <Navbar />
       <Routes>
         <Route path="/" element={ <div style= {

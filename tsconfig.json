@@ -16,6 +16,6 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": ["src", "types/vocabTypes.ts", "types/immersionTypes.ts"],
+  "include": ["src", "types/vocabTypes.ts", "types/immersionTypes.ts", "src/components/atoms/MyDropDownButton/myDropDownButton.tsx"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

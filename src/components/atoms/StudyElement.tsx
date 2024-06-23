@@ -1,4 +1,4 @@
-import { Button, Modal, Navbar } from 'react-bootstrap'
+import { Modal, Navbar } from 'react-bootstrap'
 import { 
   Tenses, 
   VerbConjugation, 
@@ -8,6 +8,7 @@ import {
 import { englishPronouns } from '../../data/words'
 import { modalTenses } from '../../constants'
 import { useState } from 'react'
+import MyButton from './MyButton/myButton'
 
 const StudyElement = (
   props: 
@@ -61,14 +62,14 @@ const StudyElement = (
           foreignLanguageLabel}
       {showAudio && !showLeftLabel && <div>
         <audio src={ForeignLanguageWordAudio} id={ForeignLanguageWordAudio}></audio>
-        <Button size="sm" variant="secondary" aria-disabled={!ForeignLanguageWord} onClick={() => { 
+        <MyButton disabled={!ForeignLanguageWord} onClick={() => { 
           var audio = document.getElementById(ForeignLanguageWordAudio) as HTMLAudioElement;
           if (audio.paused) {
             audio.play();
           } else {
             audio.pause();
             audio.currentTime = 0; // Reset to the beginning of the audio
-          }}} > {ForeignLanguageWordAudio ? 'audio' : 'no audio'}</Button>
+          }}} > {ForeignLanguageWordAudio ? 'audio' : 'no audio'}</MyButton>
       </div>}
       {isVerb && <Modal show ={showPopUp} onHide={hidePopUp}>
         <Modal.Header closeButton>

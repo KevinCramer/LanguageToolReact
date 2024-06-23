@@ -19,8 +19,8 @@ import QuizElement from '../atoms/QuizElement';
 import ReactSwitch from 'react-switch';
 import { scramble } from '../../helpers';
 import StudyElement from '../atoms/StudyElement';
-import '../atoms/MyButton/myDropDown.css'
-import MyButton from '../atoms/MyButton/myButton';
+import '../atoms/MyDropDownButton/myDropDownButton.css'
+import MyButton from '../atoms/MyDropDownButton/myDropDownButton';
 
 const VocabContent = () => {
   let languages = allLanguages

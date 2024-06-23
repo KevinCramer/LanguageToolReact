@@ -1,23 +1,24 @@
 import React from 'react';
-import DropdownButton from 'react-bootstrap/DropdownButton';
-import './myDropDown.css';
+import { Button } from 'react-bootstrap'
+import './myButton.css';
 
 interface MyButtonProps {
-  title: string;
-  children: React.ReactNode;
-  align?: any
-
+  disabled: boolean;
+  onClick: any
+  children: React.ReactNode
 }
 
-const MyButton: React.FC<MyButtonProps> = ({ title,children, align = 'start' }) => {
+const MyButton: React.FC<MyButtonProps> = ({ disabled, onClick, children }) => {
   return (
-    <DropdownButton
-      title={title}
+    <Button
+      className='my-custom-button'
       size="sm"
-      align={align}
+      variant="secondary"
+      aria-disabled={disabled}
+      onClick={onClick}
     >
       {children}
-    </DropdownButton>
+    </Button>
   );
 }
 
