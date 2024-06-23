@@ -8,6 +8,8 @@
 
 .audio-player button {
   margin: 10px;
+  border-radius: 5px;
+  border-width: 1px
 }
 
 .audio-player input[type="range"] {

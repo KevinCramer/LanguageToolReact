@@ -50,7 +50,18 @@ const AudioPlayer = ({ audioFile }: any) => {
         value={(currentTime / duration) * 100 || 0}
         onChange={handleSeek}
       />
-      <div>{Math.floor(currentTime)} / {Math.floor(duration)} seconds</div>
+      <div style={{ display:'flex', flexDirection:'row', justifyContent:'space-between', width: '300px' }}>
+        <div>
+          {Math.floor(currentTime / 60)}:
+          {(Math.floor(currentTime) - 60 * Math.floor(currentTime / 60)).toString()
+            .padStart(2, '0')} 
+        </div>
+        <div>
+          {Math.floor((duration - currentTime) / 60)}:
+          {(Math.floor(duration - currentTime) - 60 * Math.floor((duration - currentTime) / 60))
+            .toString().padStart(2, '0')}
+        </div>       
+      </div>
     </div>
   );
 };
