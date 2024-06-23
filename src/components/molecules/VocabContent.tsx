@@ -198,6 +198,7 @@ const VocabContent = () => {
   }
   return (
     <div>
+      <div style={{ height:'50px' }}></div>
       <Container >    
         <NavbarBs>
           <Container style={{ display: 'flex', justifyContent:'center' }}>
