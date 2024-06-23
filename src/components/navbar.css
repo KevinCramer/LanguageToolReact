@@ -1,6 +1,6 @@
 .nav-link-custom {
   margin: 0px 10px 0px 10px;
-  color: #f8f9fa;
+  color: #F8F8F8;
   text-decoration: none;
 }
 
@@ -8,5 +8,5 @@
 .nav-link-custom:active,
 .nav-link-custom.active {
   text-decoration: underline;
-  color:#f8f9fa; /* Ensure the text color remains#f8f9fa */
+  color:#F8F8F8;
 }

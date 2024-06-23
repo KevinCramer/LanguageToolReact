@@ -8,27 +8,27 @@ export function Navbar(){
         <Nav>
           <Nav.Link 
             className="nav-link-custom" 
-            style={{ color: '#f8f9fa' }}
+            style={{ color: '#F8F8F8' }}
             to ="/" 
             as= {NavLink}>
               Home
           </Nav.Link>
           <Nav.Link 
             className="nav-link-custom"  
-            style={{ color: '#f8f9fa' }}
+            style={{ color: '#F8F8F8' }}
             to ="/vocabulary" 
             as= {NavLink}>
               Vocabulary
           </Nav.Link>
           <Nav.Link 
-            style={{ color: '#f8f9fa' }}
+            style={{ color: '#F8F8F8' }}
             className="nav-link-custom" 
             to="/grammar"
             as={NavLink}>
               Grammar
           </Nav.Link>
           <Nav.Link 
-            style={{ color: '#f8f9fa' }}
+            style={{ color: '#F8F8F8' }}
             className="nav-link-custom"
             to="/immersion"
             as={NavLink}>
