@@ -8,7 +8,6 @@ import AudioPlayer from '../atoms/CustomAudioPlayer/CustomAudioPlayer';
 import MyButton from '../atoms/MyDropDownButton/myDropDownButton';
 
 import Dropdown from 'react-bootstrap/Dropdown';
-import DropdownButton from 'react-bootstrap/DropdownButton';
 import { languageToSlugs } from '../../constants'
 
 const ImmersionContent = () => {
@@ -76,10 +75,10 @@ const ImmersionContent = () => {
                     <td></td>
                   </tr> )}
                   <tr key={index}>
-                    <td style={{ verticalAlign: 'middle' }} >
+                    <td style={{ verticalAlign: 'middle', color: '#4A4A4A' }} >
                       { content.foreignText}
                     </td>
-                    <td style={{ verticalAlign: 'middle' }}>     
+                    <td style={{ verticalAlign: 'middle', color: '#4A4A4A' }}>     
                       {content.englishText}
                     </td>
                   </tr>
