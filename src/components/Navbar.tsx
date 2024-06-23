@@ -64,7 +64,7 @@ export function Navbar() {
               } href="mailto:contact@lingocommand.com"
               onClick={closeNavbar} // Close navbar on click
             >
-    contact us
+            Contact Us
             </a>
           </Nav>
         
