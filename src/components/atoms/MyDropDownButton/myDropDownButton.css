@@ -1,12 +1,12 @@
 .btn-primary {
   margin: 0px 10px 0px 0px;
-  background-color: #E8E8E8; 
+  background-color: #F8F8F8; 
   border-color: #4A4A4A;
   color: #4A4A4A;
   border-radius: 5px;
 
-  --bs-btn-active-bg: #E8E8E8;  /* Set the active background color */
-  --bs-btn-active-border-color: #E8E8E8;
+  --bs-btn-active-bg: #F8F8F8;  /* Set the active background color */
+  --bs-btn-active-border-color: #F8F8F8;
   --bs-btn-active-color: #4A4A4A; /* Set the active border color */
 }
 
@@ -14,7 +14,7 @@
 .btn-primary:focus,
 .btn-primary:active,
 .btn-primary:focus:active {
-  background-color: #E8E8E8; 
+  background-color: #F8F8F8; 
   border-color: #4A4A4A;
   color: #4A4A4A;
 }

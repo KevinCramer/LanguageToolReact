@@ -1,5 +1,7 @@
 import './CustomAudioPlayer.css'; 
 import React, { useRef, useState } from 'react';
+import Icon from '@mdi/react';
+import { mdiPause, mdiPlay } from '@mdi/js';
 
 const AudioPlayer = ({ audioFile }: any) => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -40,8 +42,9 @@ const AudioPlayer = ({ audioFile }: any) => {
         <source src={audioFile} type="audio/mpeg" />
         Your browser does not support the audio element.
       </audio>
-      <button onClick={handlePlayPause}>
-        {isPlaying ? 'Pause' : 'Play'}
+      <button
+        onClick={handlePlayPause}>
+        <Icon path={isPlaying ? mdiPause : mdiPlay} size={2} />
       </button>
       <input
         type="range"
