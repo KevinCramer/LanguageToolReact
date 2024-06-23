@@ -25,27 +25,16 @@ export type VerbConjugationForeign = {
 
 export type VerbConjugation = VerbConjugationEnglish | VerbConjugationForeign;
 
-export type Word1 = {
-    englishWord:string | VerbConjugationEnglish;
-    foreignWord: FixedSizeArray<1, string | VerbConjugationForeign>;
+export type WordWithForeignAlphabets<N extends number> = {
+    englishWord: string | VerbConjugationEnglish;
+    foreignWord: FixedSizeArray<N, string | VerbConjugationForeign>;
     foreignAudio: string;
-    order?: number
-
+    order?: number;
 }
 
-export type Word2 = {
-    englishWord:string | VerbConjugationEnglish;
-    foreignWord: FixedSizeArray<2, string | VerbConjugationForeign>;
-    foreignAudio: string;
-    order?: number
-}
-
-export type Word3 = {
-    englishWord:string | VerbConjugationEnglish;
-    foreignWord: FixedSizeArray<3, string | VerbConjugationForeign>;
-    foreignAudio: string;
-    order?: number
-}
+export type Word1 = WordWithForeignAlphabets<1>;
+export type Word2 = WordWithForeignAlphabets<2>;
+export type Word3 = WordWithForeignAlphabets<3>;
 
 export type Word = Word1 | Word2 | Word3;
 
