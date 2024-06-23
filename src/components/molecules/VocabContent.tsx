@@ -203,7 +203,7 @@ const VocabContent = () => {
         <NavbarBs>
           <Container style={{ display: 'flex', justifyContent:'center' }}>
             <div style={{ width: '400px', display:'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
-              <MyButton title="Language">
+              <MyButton title={currentLanguage.languageName}>
                 {languages.map((languageItem: Language, index: number) =>
                   <Dropdown.Item key = {index} onClick = {() => [changeCurrentLanguage(
                     languageItem),
