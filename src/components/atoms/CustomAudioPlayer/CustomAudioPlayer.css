@@ -19,8 +19,22 @@ input[type="range"]::-webkit-slider-thumb {
   appearance: none;
   width: 16px; /* Customize size */
   height: 16px; /* Customize size */
-  background: red; /* Customize color */
+  background: #4A4A4A; /* Customize color */
   cursor: pointer;
   border-radius: 50%; /* Make it a circle */
   border: 2px solid #000; /* Optional: add border */
+}
+
+
+
+/* Optional: Additional styles for the track */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 8px; /* Customize track height */
+  background: #ddd; /* Customize track color */
+  border-radius: 4px; /* Customize track border radius */
+  outline: none;
+  cursor: pointer;
 }
