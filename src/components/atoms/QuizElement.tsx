@@ -50,28 +50,39 @@ const QuizElement = (
     const myPlaceHolder = props.myCounter === 1 ? 'enter your answer here' : '';
     return (
       <Navbar style={{ justifyContent:'center' }}>
-        <form onBlur={e => checkAnswer(
-          e as unknown as React.ChangeEvent<HTMLInputElement> ,
-          formValues.answer, propsAnswerWord)}
-        onSubmit={e => checkAnswer(
-            e as unknown as React.ChangeEvent<HTMLInputElement> ,
-            formValues.answer, propsAnswerWord)}>
-          <div className="ui form">
-            <label style= {{ width: '150px', textAlign:'left' }}>{propsQuestionWord} </label>
-            <input 
-              style= {{ width: '175px' }} 
-              type="text"
-              name="answer" 
-              placeholder={myPlaceHolder}
-              value={formValues.answer} 
-              onChange = {handleChange}
-              autoComplete="off" 
-              autoCorrect="off" 
-              spellCheck ="false" 
-              autoCapitalize="off"/>
+        <div>
+          <div style={{ display:'flex', flexDirection:'row' }}>
+            <form 
+              onBlur={e => checkAnswer(
+                e as unknown as React.ChangeEvent<HTMLInputElement> ,
+                formValues.answer, propsAnswerWord)}
+              onSubmit={e => checkAnswer(
+                        e as unknown as React.ChangeEvent<HTMLInputElement> ,
+                        formValues.answer, propsAnswerWord)}
+            >
+              <div className="ui form">
+                <label style= {{ width: '150px', textAlign:'left' }}>{propsQuestionWord} </label>
+                <input 
+                  style= {{ width: '175px' }} 
+                  type="text"
+                  name="answer" 
+                  placeholder={myPlaceHolder}
+                  value={formValues.answer} 
+                  onChange = {handleChange}
+                  autoComplete="off" 
+                  autoCorrect="off" 
+                  spellCheck ="false" 
+                  autoCapitalize="off"/>
+              </div>
+            </form>
+            {/* This is hack to ensure the quiz element doesn't move when tick
+             mark is rendered which is about 20px wide
+              */}
+            <div style={{ width: response !== '✔' ? '20px' : '0px' }}></div>
+            <div> {response === '✔' ? response : null}</div>
           </div>
-        </form>
-        <div> {response}</div>
+          <div> {response !== '✔' ? response : null}</div>
+        </div>
       </Navbar>
     )
 
