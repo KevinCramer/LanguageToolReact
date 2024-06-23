@@ -1,5 +1,5 @@
 import './CustomAudioPlayer.css'; 
-import React, { useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import Icon from '@mdi/react';
 import { mdiPause, mdiPlay } from '@mdi/js';
 
