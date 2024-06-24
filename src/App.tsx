@@ -4,6 +4,7 @@ import { Route, Routes } from 'react-router-dom'
 import GrammarContent from './components/molecules/GrammarContent'
 import { Home } from './pages/Home'
 import Immersion from './components/molecules/Immersion'
+import ContactUs from './components/molecules/ContactUs'
 import { Navbar } from './components/Navbar'
 import VocabContent from './components/molecules/VocabContent'
 
@@ -19,6 +20,7 @@ function App() {
         <Route path="/vocabulary" element={<VocabContent />} />
         <Route path="/grammar" element={<GrammarContent />} />
         <Route path="/immersion" element={<Immersion />} />
+        <Route path="/contactus" element={<ContactUs />} />
 
       </Routes>
     </div>

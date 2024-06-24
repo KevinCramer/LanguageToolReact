@@ -45,7 +45,7 @@ const StudyElement = (
     <>{isVerb ? (showBaseLanguageFirst ? (BaseLanguageWord as VerbConjugation).infinitive :
       (ForeignLanguageWord as VerbConjugation).infinitive) : BaseLanguageWord}</> </label>
   const foreignLanguageLabelVerb = <label onClick={displayPopUp} 
-    style= {{ textAlign: 'center', color: 'purple',
+    style= {{ textAlign: 'center', color: 'rgb(13, 110,253)', /* standard color used for link see contact us which uses same color*/
       textDecorationLine: 'underline' , width: '100%' }}>
     { showBaseLanguageFirst ? (ForeignLanguageWord as VerbConjugation).infinitive : 
       (BaseLanguageWord as VerbConjugation).infinitive} </label>

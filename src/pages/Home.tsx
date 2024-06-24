@@ -1,7 +1,6 @@
 import './text.css'
 import blackBar from '../assets/blackBar.png';
 import logo from '../assets/logo.png';
-import { MdOutlineMail } from 'react-icons/md';
 
 export function Home(){
   return <div>

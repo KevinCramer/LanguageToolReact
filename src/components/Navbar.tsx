@@ -58,14 +58,15 @@ export function Navbar() {
             >
               Immersion
             </Nav.Link>
-            <a 
-              className="hover-underline"
-              style={{ color: '#4A4A4A', marginLeft: '10px' }
-              } href="mailto:contact@lingocommand.com"
+            <Nav.Link
+              className="nav-link-custom"
+              style={{ color: '#4A4A4A' }}
+              to="/contactus"
+              as={NavLink}
               onClick={closeNavbar} // Close navbar on click
             >
             Contact Us
-            </a>
+            </Nav.Link>
           </Nav>
         
         </NavbarBs.Collapse>
