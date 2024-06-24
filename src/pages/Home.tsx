@@ -1,11 +1,11 @@
 import './text.css'
 import blackBar from '../assets/blackBar.png';
-import logo from '../assets/logo.png';
+import logoSvg from '../assets/logoSvg.svg';
 
 export function Home(){
   return <div>
-    <div className = "imageContent">
-      <img src ={logo} width={160} height={130} alt="logo"/>
+    <div className = "imageContent" >
+      <img src ={logoSvg} width={163} height={163} alt="logo"/>
     </div>
     <div className = "content2">
       <h1 style ={{ marginBottom: '0.1rem' }}> 
