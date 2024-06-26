@@ -1870,6 +1870,9 @@ const russianTopics: Topic2[] = [
   }
 ]
 
+// best resource for greek vocab: 
+// https://qualifications.pearson.com/content/dam/pdf/GCSE/Greek/2017/specification-and-sample-assessments/specification-gcse2017-l12-greek-issue5.pdf
+
 const greekTopics: Topic2[] = [
   {
     name: 'Greek Alphabet',
@@ -1915,6 +1918,39 @@ const greekTopics: Topic2[] = [
     { englishWord: 'nine', foreignWord: ['ennea', 'εννέα'], foreignAudio: '', order: 9 },
     { englishWord: 'ten', foreignWord: ['deka', 'δέκα'], foreignAudio: '', order: 10 },
   ] },
+  {
+    name: 'Days of the Week',
+    slugName: 'dow',
+    hasOrdering: true,
+    words: [
+      { englishWord: 'Monday', foreignWord: ['Deftera', 'Δευτέρα'], foreignAudio: '', order: 1 },
+      { englishWord: 'Tuesday', foreignWord: ['Triti', 'Τρίτη'], foreignAudio: '', order: 2 },
+      { englishWord: 'Wednesday', foreignWord: ['Tetarti', 'Τετάρτη'], foreignAudio: '', order: 3 },
+      { englishWord: 'Thursday', foreignWord: ['Pempti', 'Πέμπτη'], foreignAudio: '', order: 4 },
+      { englishWord: 'Friday', foreignWord: ['Paraskevi', 'Παρασκευή'], foreignAudio: '', order: 5 },
+      { englishWord: 'Saturday', foreignWord: ['Savvato', 'Σάββατο'], foreignAudio: '', order: 6 },
+      { englishWord: 'Sunday', foreignWord: ['Kyriaki', 'Κυριακή'], foreignAudio: '', order: 7 }
+    ]
+  },
+  {
+    name: 'Months of the Year',
+    slugName: 'months',
+    hasOrdering: true,
+    words: [
+      { englishWord: 'January', foreignWord: ['Ianuarios', 'Ιανουάριος'], foreignAudio: '', order: 1 },
+      { englishWord: 'February', foreignWord: ['Fevrouarios', 'Φεβρουάριος'], foreignAudio: '', order: 2 },
+      { englishWord: 'March', foreignWord: ['Martios', 'Μάρτιος'], foreignAudio: '', order: 3 },
+      { englishWord: 'April', foreignWord: ['Aprilios', 'Απρίλιος'], foreignAudio: '', order: 4 },
+      { englishWord: 'May', foreignWord: ['Maios', 'Μάιος'], foreignAudio: '', order: 5 },
+      { englishWord: 'June', foreignWord: ['Iounios', 'Ιούνιος'], foreignAudio: '', order: 6 },
+      { englishWord: 'July', foreignWord: ['Ioulios', 'Ιούλιος'], foreignAudio: '', order: 7 },
+      { englishWord: 'August', foreignWord: ['Augoustos', 'Αύγουστος'], foreignAudio: '', order: 8 },
+      { englishWord: 'September', foreignWord: ['Septemvrios', 'Σεπτέμβριος'], foreignAudio: '', order: 9 },
+      { englishWord: 'October', foreignWord: ['Oktovrios', 'Οκτώβριος'], foreignAudio: '', order: 10 },
+      { englishWord: 'November', foreignWord: ['Noemvrios', 'Νοέμβριος'], foreignAudio: '', order: 11 },
+      { englishWord: 'December', foreignWord: ['Dekemvrios', 'Δεκέμβριος'], foreignAudio: '', order: 12 }
+    ]
+  },
   { name: 'Colours', slugName: 'col', hasOrdering: false, words: [
     { englishWord: 'red', foreignWord: ['kokkino', 'κόκκινο'], foreignAudio: '' },
     { englishWord: 'blue', foreignWord: ['ble', 'μπλε'], foreignAudio: '' },
@@ -1927,6 +1963,19 @@ const greekTopics: Topic2[] = [
     { englishWord: 'purple', foreignWord: ['mov', 'μοβ'], foreignAudio: '' },
     { englishWord: 'pink', foreignWord: ['roz', 'ροζ'], foreignAudio: '' }
   ] },
+  {
+    name: 'Question Words',
+    slugName: 'questions',
+    hasOrdering: false,
+    words: [
+      { englishWord: 'What', foreignWord: ['Ti', 'Τι'], foreignAudio: '' },
+      { englishWord: 'Who', foreignWord: ['Poios', 'Ποιος'], foreignAudio: '' },
+      { englishWord: 'Where', foreignWord: ['Pou', 'Πού'], foreignAudio: '' },
+      { englishWord: 'When', foreignWord: ['Pote', 'Πότε'], foreignAudio: '' },
+      { englishWord: 'Why', foreignWord: ['Giati', 'Γιατί'], foreignAudio: '' },
+      { englishWord: 'How', foreignWord: ['Pos', 'Πώς'], foreignAudio: '' }
+    ]
+  },
   {
     name: 'Clothes',
     slugName: 'clo',
