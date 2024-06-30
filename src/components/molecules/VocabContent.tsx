@@ -198,7 +198,7 @@ const VocabContent = () => {
   }
   return (
     <div>
-      <div style={{ textAlign:'center' }}>Vocabulary</div>
+      <h4 style={{ textAlign:'center' }}>Vocabulary</h4>
       <div style={{ height:'50px' }}></div>
       <Container >    
         <NavbarBs>

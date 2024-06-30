@@ -60,7 +60,7 @@ const GrammarContent = () => {
 
   return (
     <div>
-      <div style={{ textAlign:'center' }}>Grammar</div>
+      <h4 style={{ textAlign:'center' }}>Grammar</h4>
       <div style={{ height:'50px' }}></div>
       <Container>    
         <NavbarBs>

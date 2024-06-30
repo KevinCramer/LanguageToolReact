@@ -93,7 +93,7 @@ const ListeningComprehensionContent = () => {
 
   return (
     <div>
-      <div style={{ textAlign:'center' }}>Listening Comprehension</div>
+      <h4 style={{ textAlign:'center' }}>Listening Comprehension</h4>
       <div style={{ height:'50px' }}></div>
       <Container>    
         <NavbarBs>
