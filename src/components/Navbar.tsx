@@ -43,20 +43,20 @@ export function Navbar() {
             <Nav.Link
               className="nav-link-custom"
               style={{ color: '#4A4A4A' }}
+              to="/listening-comprehension"
+              as={NavLink}
+              onClick={closeNavbar} // Close navbar on click
+            >
+              Listening Comprehension
+            </Nav.Link>
+            <Nav.Link
+              className="nav-link-custom"
+              style={{ color: '#4A4A4A' }}
               to="/grammar"
               as={NavLink}
               onClick={closeNavbar} // Close navbar on click
             >
               Grammar
-            </Nav.Link>
-            <Nav.Link
-              className="nav-link-custom"
-              style={{ color: '#4A4A4A' }}
-              to="/immersion"
-              as={NavLink}
-              onClick={closeNavbar} // Close navbar on click
-            >
-              Immersion
             </Nav.Link>
             <Nav.Link
               className="nav-link-custom"

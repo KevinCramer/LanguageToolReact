@@ -3,7 +3,7 @@ import './index.css'
 import { Route, Routes } from 'react-router-dom'
 import GrammarContent from './components/molecules/GrammarContent'
 import { Home } from './pages/Home'
-import Immersion from './components/molecules/Immersion'
+import ListeningComprehension from './components/molecules/ListeningComprehension'
 import ContactUs from './components/molecules/ContactUs'
 import { Navbar } from './components/Navbar'
 import VocabContent from './components/molecules/VocabContent'
@@ -19,7 +19,7 @@ function App() {
         }> <Home /></div>} />
         <Route path="/vocabulary" element={<VocabContent />} />
         <Route path="/grammar" element={<GrammarContent />} />
-        <Route path="/immersion" element={<Immersion />} />
+        <Route path="/listening-comprehension" element={<ListeningComprehension />} />
         <Route path="/contactus" element={<ContactUs />} />
 
       </Routes>

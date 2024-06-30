@@ -198,6 +198,7 @@ const VocabContent = () => {
   }
   return (
     <div>
+      <div style={{ textAlign:'center' }}>Vocabulary</div>
       <div style={{ height:'50px' }}></div>
       <Container >    
         <NavbarBs>

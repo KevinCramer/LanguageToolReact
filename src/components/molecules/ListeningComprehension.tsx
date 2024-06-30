@@ -1,16 +1,16 @@
-import { AudioTranscription, Language, Paragraph } from '../../../types/immersionTypes';
+import { AudioTranscription, Language, Paragraph } from '../../../types/listeningComprehension';
 import { Container, Navbar as NavbarBs, Table } from 'react-bootstrap';
 import { queryParamCompress, queryParamDecompress } from '../../helpers/queryParamHelpers'
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { languages as allLanguages } from '../../data/immersion';
+import { languages as allLanguages } from '../../data/listeningComprehension';
 import AudioPlayer from '../atoms/CustomAudioPlayer/CustomAudioPlayer';
 import MyButton from '../atoms/MyDropDownButton/myDropDownButton';
 
 import Dropdown from 'react-bootstrap/Dropdown';
 import { languageToSlugs } from '../../constants'
 
-const ImmersionContent = () => {
+const ListeningComprehensionContent = () => {
   let languages = allLanguages
   languages = languages.filter(l => l.languageName === 'Spanish')
 
@@ -50,7 +50,7 @@ const ImmersionContent = () => {
   }, [
     currentLanguage.languageName, currentAudioTranscription.slugName, navigate ]);
 
-  function showImmersionTopic(){
+  function showListeningComprehensionTopic(){
     return (
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
         <AudioPlayer audioFile={currentAudioTranscription.audioFile} />
@@ -93,6 +93,7 @@ const ImmersionContent = () => {
 
   return (
     <div>
+      <div style={{ textAlign:'center' }}>Listening Comprehension</div>
       <div style={{ height:'50px' }}></div>
       <Container>    
         <NavbarBs>
@@ -106,20 +107,21 @@ const ImmersionContent = () => {
                     {language.languageName}</Dropdown.Item>)}
               </MyButton>
               <MyButton title={'Topic: ' + currentAudioTranscription.name}>
-                {currentLanguage.audioTranscriptions.map((topic: AudioTranscription, index: number) =>
-                  <Dropdown.Item key = {index} onClick = {() => 
-                    changeCurrentAudioTranscription(topic)}>{topic.name}</Dropdown.Item>)}
+                {currentLanguage.audioTranscriptions
+                  .map((topic: AudioTranscription, index: number) =>
+                    <Dropdown.Item key = {index} onClick = {() => 
+                      changeCurrentAudioTranscription(topic)}>{topic.name}</Dropdown.Item>)}
               </MyButton>
             </div>
           </Container>
         </NavbarBs>
         <p></p>
         <div style={{ display: 'flex', justifyContent: 'center' }}>
-          {showImmersionTopic()}
+          {showListeningComprehensionTopic()}
         </div>
       </Container>
     </div>
   );
 }
  
-export default ImmersionContent;
+export default ListeningComprehensionContent;

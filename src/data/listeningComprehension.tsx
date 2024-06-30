@@ -1,6 +1,6 @@
-import { AudioTranscription, Language } from '../../types/immersionTypes'
+import { AudioTranscription, Language } from '../../types/listeningComprehension'
 
-import iLikeReading from '../data/audio_immersion/i-like-reading.mp3'
+import iLikeReading from '../data/listening-comprehension/i-like-reading.mp3'
 
 /* eslint-disable @stylistic/js/max-len */
 const japaneseAudioTranscriptions: AudioTranscription[] = [
