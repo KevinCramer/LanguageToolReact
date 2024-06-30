@@ -1,5 +1,6 @@
-export const nullOrUndefined = (value: string | boolean | number) =>
-  value === null || value === undefined
+export function nullOrUndefined(value: string | boolean | number): boolean {
+  return value === null || value === undefined
+}
 
 const secondsInMinute = 60;
 export function timeElapsed(currentSeconds: number): string {
