@@ -2,11 +2,12 @@ import './CustomAudioPlayer.css';
 import { useRef, useState } from 'react';
 import { IonIcon } from '@ionic/react';
 import { pause, play } from 'ionicons/icons';
+import { timeElapsed, timeRemaining } from '../../../helpers/helperFunctions';
 
 const AudioPlayer = ({ audioFile }: any) => {
   const [isPlaying, setIsPlaying] = useState(false);
-  const [currentTime, setCurrentTime] = useState(0);
-  const [duration, setDuration] = useState(0);
+  const [currentSeconds, setCurrentSeconds] = useState(0);
+  const [totalSeconds, setTotalSeconds] = useState(0);
   const audioRef = useRef<any>(null);
 
   const handlePlayPause = () => {
@@ -19,17 +20,17 @@ const AudioPlayer = ({ audioFile }: any) => {
   };
 
   const handleTimeUpdate = () => {
-    setCurrentTime(audioRef.current.currentTime);
+    setCurrentSeconds(audioRef.current.currentTime);
   };
 
   const handleLoadedMetadata = () => {
-    setDuration(audioRef.current.duration);
+    setTotalSeconds(audioRef.current.duration);
   };
 
   const handleSeek = (event: any) => {
-    const newTime = (event.target.value / 100) * duration;
-    audioRef.current.currentTime = newTime;
-    setCurrentTime(newTime);
+    const newTime = (event.target.value / 100) * totalSeconds;
+    audioRef.current.currentSeconds = newTime;
+    setCurrentSeconds(newTime);
   };
 
   return (
@@ -50,19 +51,19 @@ const AudioPlayer = ({ audioFile }: any) => {
         type="range"
         min="0"
         max="100"
-        value={(currentTime / duration) * 100 || 0}
+        value={(currentSeconds / totalSeconds) * 100 || 0}
         onChange={handleSeek}
       />
-      <div style={{ display:'flex', flexDirection:'row', justifyContent:'space-between', width: '300px' }}>
+      <div style={{ 
+        display:'flex',
+        flexDirection:'row',
+        justifyContent:'space-between',
+        width: '300px' }}>
         <div>
-          {Math.floor(currentTime / 60)}:
-          {(Math.floor(currentTime) - 60 * Math.floor(currentTime / 60)).toString()
-            .padStart(2, '0')} 
+          {timeElapsed(currentSeconds)}
         </div>
         <div>
-          {Math.floor((duration - currentTime) / 60)}:
-          {(Math.floor(duration - currentTime) - 60 * Math.floor((duration - currentTime) / 60))
-            .toString().padStart(2, '0')}
+          {timeRemaining(currentSeconds,totalSeconds)}
         </div>       
       </div>
     </div>
@@ -70,3 +71,5 @@ const AudioPlayer = ({ audioFile }: any) => {
 };
 
 export default AudioPlayer;
+// time
+// timeLeft
