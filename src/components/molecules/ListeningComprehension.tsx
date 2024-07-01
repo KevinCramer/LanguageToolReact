@@ -93,8 +93,7 @@ const ListeningComprehensionContent = () => {
 
   return (
     <div>
-      <h4 style={{ textAlign:'center' }}>Listening Comprehension</h4>
-      <div style={{ height:'50px' }}></div>
+      <h4 style={{ textAlign:'center', paddingBottom: '50px' }}>Listening Comprehension</h4>
       <Container>    
         <NavbarBs>
           <Container style={{ justifyContent:'center' }}>
