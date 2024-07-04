@@ -1,10 +1,31 @@
-.table-container{ 
-  display: flex;
-  justify-content: center;
+
+h4 {
+  text-align: center;
+  padding-bottom: 50px;
 }
 
-.table-header {
+.table-container, .options-container { 
+  display: flex !important;
+  justify-content: center !important;
+}
+
+.react-bootstrap-table {
+  width: 400px;
+  border-width: 1px;
+  border-color: #4A4A4A;
+  border-style: solid; /* Added border-style */
+}
+
+.react-bootstrap-table th {
   text-align: center;
   width: 50%;
   color: #4A4A4A; 
 }
+
+
+.react-bootstrap-table th {
+  text-align: center;
+  width: 50%;
+  color: #4A4A4A; 
+}
+

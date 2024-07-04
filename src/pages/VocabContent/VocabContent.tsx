@@ -116,13 +116,13 @@ const VocabContent = () => {
       return (
         <div className='table-container'>
           <title>Vocabulary</title>
-          <Table striped bordered hover size="sm" style={{ width: '400px', border: '1px #AAAAAA' }}>
+          <Table striped bordered hover size="sm" className="react-bootstrap-table">
             <thead>
               <tr>
-                <th className='table-header'>
+                <th>
                   {showBaseLanguage ? 'English' : currentLanguage.languageName }
                 </th>
-                <th className='table-header'>
+                <th>
                   {showBaseLanguage ? currentLanguage.languageName : 'English' }
                 </th>
               </tr>
@@ -130,7 +130,7 @@ const VocabContent = () => {
             <tbody>
               {topicWords.map((pair: Word, index: number) => (
                 <tr key={index}>
-                  <td style={{ verticalAlign: 'middle' }} >     
+                  <td>     
                     <StudyElement 
                       BaseLanguageWord = { showBaseLanguage ? pair.englishWord :
                         pair.foreignWord[currentAlphabet]} 
@@ -144,7 +144,7 @@ const VocabContent = () => {
                       showLeftLabel = {true}
                     />
                   </td>
-                  <td style={{ verticalAlign: 'middle' }}>     
+                  <td>     
                     <StudyElement 
                       BaseLanguageWord = { showBaseLanguage ? pair.englishWord :
                         pair.foreignWord[currentAlphabet]} 
@@ -201,10 +201,10 @@ const VocabContent = () => {
   }
   return (
     <div>
-      <h4 style={{ textAlign:'center', paddingBottom: '50px' }}>Vocabulary</h4>
+      <h4>Vocabulary</h4>
       <Container >    
         <NavbarBs>
-          <Container style={{ display: 'flex', justifyContent:'center' }}>
+          <Container className='options-container'>
             <div style={{ 
               width: '400px',
               display:'flex',
