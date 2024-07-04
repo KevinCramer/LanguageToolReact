@@ -1,3 +1,4 @@
+import './QuizElement.css'
 import { Navbar } from 'react-bootstrap'
 import { useState } from 'react'
 import { VerbConjugation } from '../../../../types/vocabTypes'
@@ -63,7 +64,6 @@ const QuizElement = (
               <div className="ui form">
                 <label style= {{ width: '150px', textAlign:'left' }}>{propsQuestionWord} </label>
                 <input 
-                  style= {{ width: '175px' }} 
                   type="text"
                   name="answer" 
                   placeholder={myPlaceHolder}
