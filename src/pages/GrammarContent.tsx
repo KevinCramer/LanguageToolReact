@@ -1,13 +1,13 @@
 
 import { Container, Navbar as NavbarBs } from 'react-bootstrap';
-import { Language, Topic } from '../../../types/grammarTypes';
-import { queryParamCompress, queryParamDecompress } from '../../helpers/queryParamHelpers'
+import { Language, Topic } from '../../types/grammarTypes';
+import { queryParamCompress, queryParamDecompress } from '../helpers/queryParamHelpers'
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Dropdown from 'react-bootstrap/Dropdown';
-import { languages } from '../../data/grammar';
-import { languageToSlugs } from '../../constants'
-import MyButton from '../atoms/MyDropDownButton/myDropDownButton';
+import { languages } from '../data/grammar';
+import { languageToSlugs } from '../constants'
+import MyButton from '../components/atoms/MyDropDownButton/myDropDownButton';
 
 const GrammarContent = () => {
   const navigate = useNavigate();

@@ -1,14 +1,14 @@
-import { AudioTranscription, Language, Paragraph } from '../../../types/listeningComprehension';
+import { AudioTranscription, Language, Paragraph } from '../../types/listeningComprehension';
 import { Container, Navbar as NavbarBs, Table } from 'react-bootstrap';
-import { queryParamCompress, queryParamDecompress } from '../../helpers/queryParamHelpers'
+import { queryParamCompress, queryParamDecompress } from '../helpers/queryParamHelpers'
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { languages as allLanguages } from '../../data/listeningComprehension';
-import AudioPlayer from '../atoms/CustomAudioPlayer/CustomAudioPlayer';
-import MyButton from '../atoms/MyDropDownButton/myDropDownButton';
+import { languages as allLanguages } from '../data/listeningComprehension';
+import AudioPlayer from '../components/atoms/CustomAudioPlayer/CustomAudioPlayer';
+import MyButton from '../components/atoms/MyDropDownButton/myDropDownButton';
 
 import Dropdown from 'react-bootstrap/Dropdown';
-import { languageToSlugs } from '../../constants'
+import { languageToSlugs } from '../constants'
 
 const ListeningComprehensionContent = () => {
   let languages = allLanguages

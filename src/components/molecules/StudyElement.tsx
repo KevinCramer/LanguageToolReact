@@ -8,7 +8,7 @@ import {
 import { englishPronouns } from '../../data/words'
 import { modalTenses } from '../../constants'
 import { useState } from 'react'
-import MyButton from './MyButton/myButton'
+import MyButton from '../atoms/MyButton/myButton'
 
 const StudyElement = (
   props: 

@@ -1,12 +1,12 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './index.css'
 import { Route, Routes } from 'react-router-dom'
-import GrammarContent from './components/molecules/GrammarContent'
+import GrammarContent from './pages/GrammarContent'
 import { Home } from './pages/Home'
-import ListeningComprehension from './components/molecules/ListeningComprehension'
-import ContactUs from './components/molecules/ContactUs'
-import { Navbar } from './components/Navbar'
-import VocabContent from './components/molecules/VocabContent'
+import ListeningComprehension from './pages/ListeningComprehension'
+import ContactUs from './pages/ContactUs'
+import { Navbar } from './components/atoms/navbar/Navbar'
+import VocabContent from './pages/VocabContent'
 
 function App() {
   return (
