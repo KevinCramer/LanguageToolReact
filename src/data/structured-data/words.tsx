@@ -221,7 +221,7 @@ import germanAudioWhite from '../raw-data/audio_vocab/german/colours/white.mp3'
 import germanAudioBlack from '../raw-data/audio_vocab/german/colours/black.mp3'
 
 import { sortTopics } from '../../helpers/words-data-helper';
-import { Language, VerbConjugationEnglish, Topic1, Topic2, Topic3 } from '../../../types/vocabTypes';
+import { Language, VerbConjugationEnglish, TopicWithOneAlphabet, TopicWithTwoAlphabets, TopicWithThreeAlphabets } from '../../../types/vocabTypes';
 
 export const englishVerbs: { [key: string]: VerbConjugationEnglish } = {
   'to call': {
@@ -407,7 +407,7 @@ export const englishVerbs: { [key: string]: VerbConjugationEnglish } = {
 
 export const englishPronouns: string[] = ['I','You','He/She','We','You (p)','They']
 
-const dutchTopics: Topic1[] = [
+const dutchTopics: TopicWithOneAlphabet[] = [
   { name:'Clothes', slugName: 'clo', hasOrdering:false, words: [
     { englishWord: 'trousers', foreignWord: ['broek'], foreignAudio: '' },
     { englishWord: 'sweater', foreignWord: ['trui'], foreignAudio: '' },
@@ -525,7 +525,7 @@ const dutchTopics: Topic1[] = [
   ] },
 ]
 
-const arabicTopics: Topic2[] = [
+const arabicTopics: TopicWithTwoAlphabets[] = [
   { name:'Arabic alphabet', slugName: 'alp', hasOrdering:true, isAlphabet: true, words: [
     { englishWord: 'alef', foreignWord: ['ا','ا'], foreignAudio: '', order: 1 },
     { englishWord: 'baa', foreignWord: ['ب','ب'], foreignAudio: '', order: 2 },
@@ -868,7 +868,7 @@ const arabicTopics: Topic2[] = [
 
 ]
 
-const spanishTopics: Topic1[] = [
+const spanishTopics: TopicWithOneAlphabet[] = [
   { name:'Clothes',slugName: 'clo', hasOrdering:false, words: [
     { englishWord: '(the) trousers', foreignWord: ['(los) pantalones'], foreignAudio: spanishAudioTrousers },
     { englishWord: '(the) sweater', foreignWord: ['(el) suéter'], foreignAudio: spanishAudioSweater },
@@ -1360,7 +1360,7 @@ const spanishTopics: Topic1[] = [
 
 const spanishPronouns: string[] = ['Yo','Tu','El/Ella','Nosotros', 'Vosotros', 'Ellos/Ellas']
 
-const frenchTopics: Topic1[] = [
+const frenchTopics: TopicWithOneAlphabet[] = [
   { name:'Numbers', slugName: 'num', hasOrdering:true, words: [
     { englishWord: 'one', foreignWord: ['un'], foreignAudio: '', order:1 },
     { englishWord: 'two', foreignWord: ['deux'], foreignAudio: '', order:2 },
@@ -1405,7 +1405,7 @@ const frenchTopics: Topic1[] = [
   }
 ]
 
-const italianTopics: Topic1[] = [
+const italianTopics: TopicWithOneAlphabet[] = [
   { name:'Numbers', slugName: 'num', hasOrdering:true, words: [
     { englishWord: 'one', foreignWord: ['uno'], foreignAudio: '', order:1 },
     { englishWord: 'two', foreignWord: ['due'], foreignAudio: '', order:2 },
@@ -1448,7 +1448,7 @@ const italianTopics: Topic1[] = [
     ]
   }
 ]
-const germanTopics: Topic1[] = [
+const germanTopics: TopicWithOneAlphabet[] = [
   { name:'Numbers', slugName: 'num', hasOrdering:true, words: [
     { englishWord: 'one', foreignWord: ['eins'], foreignAudio: germanAudioOne, order:1 },
     { englishWord: 'two', foreignWord: ['zwei'], foreignAudio: germanAudioTwo, order:2 },
@@ -1492,7 +1492,7 @@ const germanTopics: Topic1[] = [
   }
 ]
 
-const japaneseTopics: Topic3[] = [
+const japaneseTopics: TopicWithThreeAlphabets[] = [
   { name:'Hiragana alphabet', slugName: 'hir', hasOrdering:true, isAlphabet: true, words: [
     { englishWord: 'a', foreignWord: ['あ','あ','あ'], foreignAudio: '', order: 1 },
     { englishWord: 'i', foreignWord: ['い','い','い'], foreignAudio: '', order: 2 },
@@ -1631,7 +1631,7 @@ const japaneseTopics: Topic3[] = [
   }
 ]
 
-const mandarinTopics: Topic2[] = [
+const mandarinTopics: TopicWithTwoAlphabets[] = [
   { name:'Numbers', slugName: 'num', hasOrdering:true, words: [
     { englishWord: 'one', foreignWord: ['yī','一'], foreignAudio: '', order:1 },
     { englishWord: 'two', foreignWord: ['èr','二'], foreignAudio: '', order:2 },
@@ -1675,7 +1675,7 @@ const mandarinTopics: Topic2[] = [
   }
 ]
 
-const koreanTopics: Topic2[] = [
+const koreanTopics: TopicWithTwoAlphabets[] = [
   { name:'Numbers', slugName: 'num', hasOrdering:true, words: [
     { englishWord: 'one', foreignWord: ['ha-na','하나'], foreignAudio: '', order:1 },
     { englishWord: 'two', foreignWord: ['dool','둘'], foreignAudio: '', order:2 },
@@ -1745,7 +1745,7 @@ const koreanTopics: Topic2[] = [
   ] },
 ]
 
-const portugueseTopics: Topic1[] = [
+const portugueseTopics: TopicWithOneAlphabet[] = [
   { name:'Numbers', slugName: 'num', hasOrdering:true, words: [
     { englishWord: 'one', foreignWord: ['um'], foreignAudio: '', order:1 },
     { englishWord: 'two', foreignWord: ['dois'], foreignAudio: '', order:2 },
@@ -1790,7 +1790,7 @@ const portugueseTopics: Topic1[] = [
   
 ]
 
-const russianTopics: Topic2[] = [
+const russianTopics: TopicWithTwoAlphabets[] = [
   { name:'Russian alphabet', slugName: 'alp', hasOrdering:true, isAlphabet: true, words: [
     { englishWord: 'a', foreignWord: ['а','а'], foreignAudio: '', order: 1 },
     { englishWord: 'b', foreignWord: ['б','б'], foreignAudio: '', order: 2 },
@@ -1873,7 +1873,7 @@ const russianTopics: Topic2[] = [
 // best resource for greek vocab: 
 // https://qualifications.pearson.com/content/dam/pdf/GCSE/Greek/2017/specification-and-sample-assessments/specification-gcse2017-l12-greek-issue5.pdf
 
-const greekTopics: Topic2[] = [
+const greekTopics: TopicWithTwoAlphabets[] = [
   {
     name: 'Greek Alphabet',
     slugName: 'alp',

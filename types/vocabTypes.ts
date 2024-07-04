@@ -25,51 +25,51 @@ export type VerbConjugationForeign = {
 
 export type VerbConjugation = VerbConjugationEnglish | VerbConjugationForeign;
 
-export type WordWithForeignAlphabets<N extends number> = {
+export type WordWithNumAlphabets<N extends number> = {
     englishWord: string | VerbConjugationEnglish;
     foreignWord: FixedSizeArray<N, string | VerbConjugationForeign>;
     foreignAudio: string;
     order?: number;
 }
 
-export type Word1 = WordWithForeignAlphabets<1>;
-export type Word2 = WordWithForeignAlphabets<2>;
-export type Word3 = WordWithForeignAlphabets<3>;
+export type WordWithOneAlphabet = WordWithNumAlphabets<1>;
+export type WordWithTwoAlphabets = WordWithNumAlphabets<2>;
+export type WordWithThreeAlphabets = WordWithNumAlphabets<3>;
 
-export type Word = Word1 | Word2 | Word3;
+export type Word = WordWithOneAlphabet | WordWithTwoAlphabets | WordWithThreeAlphabets;
 
-export type Topic1 = {
+export type TopicWithOneAlphabet = {
     name: string;
     slugName: string;
     hasOrdering: boolean;
-    words: Word1[];
+    words: WordWithOneAlphabet[];
     isAlphabet?: boolean;
     isExperimentalTopic?: boolean;
 
 }
-export type Topic2 = {
+export type TopicWithTwoAlphabets = {
     name: string;
     slugName: string;
     hasOrdering: boolean;
-    words: Word2[];
+    words: WordWithTwoAlphabets[];
     isAlphabet?: boolean;
     isExperimentalTopic?: boolean;
 
 }
-export type Topic3 = {
+export type TopicWithThreeAlphabets = {
     name: string;
     slugName: string;
     hasOrdering: boolean;
-    words: Word3[];
+    words: WordWithThreeAlphabets[];
     isAlphabet?: boolean;
     isExperimentalTopic?: boolean;
 }
 
-export type Topic = Topic1 | Topic2 | Topic3;
+export type Topic = TopicWithOneAlphabet | TopicWithTwoAlphabets | TopicWithThreeAlphabets;
 
 export type Language = {
     languageName: string;
-    topics: Topic1[] | Topic2[] | Topic3[];
+    topics: TopicWithOneAlphabet[] | TopicWithTwoAlphabets[] | TopicWithThreeAlphabets[];
     pronouns: string[];
     numForeignAlphabets: number;
 }

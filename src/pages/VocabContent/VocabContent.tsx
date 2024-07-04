@@ -5,9 +5,9 @@ import {
   Topic, 
   VerbConjugationEnglish,
   Word,
-  Word1, 
-  Word2, 
-  Word3 
+  WordWithOneAlphabet, 
+  WordWithThreeAlphabets, 
+  WordWithTwoAlphabets 
 } from '../../../types/vocabTypes'
 import { queryParamCompress, queryParamDecompress } from '../../helpers/queryParamHelpers'
 import { useEffect, useState } from 'react';
@@ -194,7 +194,8 @@ const VocabContent = () => {
   else
   {
     var topicWords = scramble(
-      currentTopic.words as (Word)[]) as Word1[] | Word2[] | Word3[]
+      currentTopic.words as (Word)[]) as 
+      WordWithOneAlphabet[] | WordWithTwoAlphabets[] | WordWithThreeAlphabets[]
       
   }
   return (
