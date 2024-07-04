@@ -65,7 +65,7 @@ export type Topic3 = {
     isExperimentalTopic?: boolean;
 }
 
-export type Topic = Topic1 | Topic2 | Topic3
+export type Topic = Topic1 | Topic2 | Topic3;
 
 export type Language = {
     languageName: string;

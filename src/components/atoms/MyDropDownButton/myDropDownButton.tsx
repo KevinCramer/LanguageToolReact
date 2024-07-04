@@ -5,7 +5,7 @@ import './myDropDownButton.css';
 type MyButtonProps = {
   title: string;
   children: React.ReactNode;
-  align?: any
+  align?: any;
 
 }
 

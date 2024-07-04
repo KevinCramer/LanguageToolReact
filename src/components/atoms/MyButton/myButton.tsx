@@ -4,8 +4,8 @@ import React from 'react';
 
 type MyButtonProps = {
   disabled: boolean;
-  onClick: any
-  children: React.ReactNode
+  onClick: any;
+  children: React.ReactNode;
 }
 
 const MyButton = ({ disabled, onClick, children }: MyButtonProps) => {
