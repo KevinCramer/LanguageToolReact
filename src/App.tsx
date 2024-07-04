@@ -2,10 +2,10 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import './index.css'
 import { Route, Routes } from 'react-router-dom'
 import GrammarContent from './pages/GrammarContent'
-import { Home } from './pages/Home'
+import { Home } from './pages/Home/Home'
 import ListeningComprehension from './pages/ListeningComprehension'
 import ContactUs from './pages/ContactUs'
-import { Navbar } from './components/atoms/navbar/Navbar'
+import { Navbar } from './components/atoms/Navbar/Navbar'
 import VocabContent from './pages/VocabContent'
 
 function App() {

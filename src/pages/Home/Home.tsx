@@ -1,6 +1,6 @@
-import './text.css'
-import blackBar from '../assets/blackBar.png';
-import logoSvg from '../assets/logoSvg.svg';
+import './Home.css'
+import blackBar from '../../assets/blackBar.png';
+import logoSvg from '../../assets/logoSvg.svg';
 
 export function Home(){
   return <div>

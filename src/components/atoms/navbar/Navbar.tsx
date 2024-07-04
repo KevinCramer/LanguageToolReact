@@ -1,6 +1,6 @@
 import { Container, Nav, Navbar as NavbarBs } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
-import './navbar.css';
+import './Navbar.css';
 import { useState } from 'react'; // Import useState hook
 
 export function Navbar() {
