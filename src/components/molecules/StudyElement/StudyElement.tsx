@@ -1,3 +1,4 @@
+import './StudyElement.css'
 import { Modal, Navbar } from 'react-bootstrap'
 import { 
   Tenses, 
@@ -44,14 +45,7 @@ const StudyElement = (
   const baseLanguageLabel = <label style= {{ textAlign: 'center',width: '100%' }}>
     <>{isVerb ? (showBaseLanguageFirst ? (BaseLanguageWord as VerbConjugation).infinitive :
       (ForeignLanguageWord as VerbConjugation).infinitive) : BaseLanguageWord}</> </label>
-  const foreignLanguageLabelVerb = <label onClick={displayPopUp} 
-    style= {{ 
-      textAlign: 'center',
-      /* standard color used for link see contact us which uses same color*/
-      color: 'rgb(13, 110,253)', 
-      textDecorationLine: 'underline' ,
-      width: '100%'
-    }}>
+  const foreignLanguageLabelVerb = <label className='verb-label' onClick={displayPopUp}>
     { showBaseLanguageFirst ? (ForeignLanguageWord as VerbConjugation).infinitive : 
       (BaseLanguageWord as VerbConjugation).infinitive} </label>
   const foreignLanguageLabelNoVerb = <label style= {{ textAlign: 'center', width: '100%' }}>
