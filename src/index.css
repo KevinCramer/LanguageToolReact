@@ -20,6 +20,13 @@ audio {
   width: 100px;
 }
 
+.home-container {
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;  
+  min-height: 50vh; 
+}
+
 audio::-webkit-media-controls-volume-slider, 
 audio::-webkit-media-controls-timeline-container, 
 audio::-webkit-media-controls-time-remaining-display,  
