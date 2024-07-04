@@ -1,6 +1,6 @@
 import { Navbar } from 'react-bootstrap'
 import { useState } from 'react'
-import { VerbConjugation } from '../../../types/vocabTypes'
+import { VerbConjugation } from '../../../../types/vocabTypes'
 
 const QuizElement = (
   props: {

@@ -4,11 +4,11 @@ import {
   VerbConjugation, 
   VerbConjugationEnglish,
   VerbConjugationForeign
-} from '../../../types/vocabTypes'
-import { englishPronouns } from '../../data/words'
-import { modalTenses } from '../../constants'
+} from '../../../../types/vocabTypes'
+import { englishPronouns } from '../../../data/words'
+import { modalTenses } from '../../../constants'
 import { useState } from 'react'
-import MyButton from '../atoms/MyButton/myButton'
+import MyButton from '../../atoms/MyButton/myButton'
 
 const StudyElement = (
   props: 

@@ -7,20 +7,20 @@ import {
   Word1, 
   Word2, 
   Word3 
-} from '../../types/vocabTypes'
-import { queryParamCompress, queryParamDecompress } from '../helpers/queryParamHelpers'
+} from '../../../types/vocabTypes'
+import { queryParamCompress, queryParamDecompress } from '../../helpers/queryParamHelpers'
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { languages as allLanguages } from '../data/words';
+import { languages as allLanguages } from '../../data/words';
 import Dropdown from 'react-bootstrap/Dropdown';
-import { languageToSlugs } from '../constants'
-import { nullOrUndefined } from '../helpers/helperFunctions'
-import QuizElement from '../components/atoms/QuizElement';
-import { scramble } from '../helpers';
-import StudyElement from '../components/molecules/StudyElement';
-import '../components/atoms/MyDropDownButton/myDropDownButton.css'
-import MyButton from '../components/atoms/MyDropDownButton/myDropDownButton';
-import MySwitch from '../components/atoms/MySwitch/mySwitch';
+import { languageToSlugs } from '../../constants'
+import { nullOrUndefined } from '../../helpers/helperFunctions'
+import QuizElement from '../../components/atoms/QuizElement/QuizElement';
+import { scramble } from '../../helpers';
+import StudyElement from '../../components/molecules/StudyElement/StudyElement';
+import '../../components/atoms/MyDropDownButton/myDropDownButton.css'
+import MyButton from '../../components/atoms/MyDropDownButton/myDropDownButton';
+import MySwitch from '../../components/atoms/MySwitch/mySwitch';
 const VocabContent = () => {
   let languages = allLanguages
 
