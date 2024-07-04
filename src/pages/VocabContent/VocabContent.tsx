@@ -205,12 +205,7 @@ const VocabContent = () => {
       <Container >    
         <NavbarBs>
           <Container className='options-container'>
-            <div style={{ 
-              width: '400px',
-              display:'flex',
-              flexDirection: 'row',
-              justifyContent: 'space-between' 
-            }}>
+            <div className='div-options-container'>
               <MyButton title={currentLanguage.languageName}>
                 {languages.map((languageItem: Language, index: number) =>
                   <Dropdown.Item key = {index} onClick = {() => [changeCurrentLanguage(
@@ -238,9 +233,11 @@ const VocabContent = () => {
           </Container>
         </NavbarBs>
         <NavbarBs>
-          <Container style={{ display: 'flex', justifyContent:'center' }}>
-            <div style={{ display: 'flex', flexDirection:'row' , }}>
-              <div style={{ marginRight: '10px', fontWeight: quiz ? 'normal' : '600' }}>Study</div>
+          <Container className='switch-container'>
+            <div className='div-switch-container'>
+              <div style={{ marginRight: '10px', fontWeight: quiz ? 'normal' : '600' }}>
+                Study
+              </div>
               <MySwitch 
                 onChange = {changeQuizState}
                 checked= {quiz} 

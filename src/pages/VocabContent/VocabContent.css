@@ -4,7 +4,7 @@ h4 {
   padding-bottom: 50px;
 }
 
-.table-container, .options-container { 
+.table-container, .options-container, .switch-container { 
   display: flex !important;
   justify-content: center !important;
 }
@@ -29,3 +29,14 @@ h4 {
   color: #4A4A4A; 
 }
 
+.div-options-container {
+  width: 400px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; 
+}
+
+.div-switch-container {
+  display: flex;
+  flex-direction: row;
+}
