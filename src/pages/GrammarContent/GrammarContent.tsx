@@ -1,4 +1,5 @@
 
+import './GrammarContent.css'
 import { Container, Navbar as NavbarBs } from 'react-bootstrap';
 import { Language, Topic } from '../../../types/grammarTypes';
 import { queryParamCompress, queryParamDecompress } from '../../helpers/queryParamHelpers'
@@ -60,7 +61,7 @@ const GrammarContent = () => {
 
   return (
     <div>
-      <h4 style={{ textAlign:'center', paddingBottom: '50px' }}>Grammar</h4>
+      <h4>Grammar</h4>
       <Container>    
         <NavbarBs>
           <Container style={{ justifyContent:'center' }}>
