@@ -1,6 +1,6 @@
 import { FixedSizeArray } from 'fixed-size-array';
 
-export interface Tenses {
+export type Tenses = {
     pastTense: string;
     presentTense: string;
     futureTense: string;

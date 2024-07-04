@@ -2,14 +2,14 @@ import React from 'react';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import './myDropDownButton.css';
 
-interface MyButtonProps {
+type MyButtonProps = {
   title: string;
   children: React.ReactNode;
   align?: any
 
 }
 
-const MyButton: React.FC<MyButtonProps> = ({ title,children, align = 'start' }) => {
+const MyButton = ({ title,children, align = 'start' }: MyButtonProps) => {
   return (
     <DropdownButton
       title={title}

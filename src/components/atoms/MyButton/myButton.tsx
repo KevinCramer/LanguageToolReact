@@ -2,13 +2,13 @@ import './myButton.css';
 import { Button } from 'react-bootstrap'
 import React from 'react';
 
-interface MyButtonProps {
+type MyButtonProps = {
   disabled: boolean;
   onClick: any
   children: React.ReactNode
 }
 
-const MyButton: React.FC<MyButtonProps> = ({ disabled, onClick, children }) => {
+const MyButton = ({ disabled, onClick, children }: MyButtonProps) => {
   return (
     <Button
       className='my-custom-button'

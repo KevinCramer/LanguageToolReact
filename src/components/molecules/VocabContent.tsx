@@ -113,7 +113,8 @@ const VocabContent = () => {
     }
     else {
       return (
-        <div style={{ display: 'flex', justifyContent: 'center', }}>
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <title>Vocab</title>
           <Table striped bordered hover size="sm" style={{ width: '400px', border: '1px #AAAAAA' }}>
             <thead>
               <tr>
