@@ -1,0 +1,10 @@
+.table-container{ 
+  display: flex;
+  justify-content: center;
+}
+
+.table-header {
+  text-align: center;
+  width: 50%;
+  color: #4A4A4A; 
+}

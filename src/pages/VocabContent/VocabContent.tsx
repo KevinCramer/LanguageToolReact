@@ -1,4 +1,5 @@
 import '../../components/atoms/MyDropDownButton/myDropDownButton.css'
+import './VocabContent.css'
 import { Container, Navbar as NavbarBs, Table } from 'react-bootstrap';
 import {
   Language,
@@ -113,15 +114,15 @@ const VocabContent = () => {
     }
     else {
       return (
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
-          <title>Vocab</title>
+        <div className='table-container'>
+          <title>Vocabulary</title>
           <Table striped bordered hover size="sm" style={{ width: '400px', border: '1px #AAAAAA' }}>
             <thead>
               <tr>
-                <th style={{ textAlign: 'center', width: '50%', color: '#4A4A4A' }}>
+                <th className='table-header'>
                   {showBaseLanguage ? 'English' : currentLanguage.languageName }
                 </th>
-                <th style={{ textAlign: 'center', width: '50%', color: '#4A4A4A' }}>
+                <th className='table-header'>
                   {showBaseLanguage ? currentLanguage.languageName : 'English' }
                 </th>
               </tr>
