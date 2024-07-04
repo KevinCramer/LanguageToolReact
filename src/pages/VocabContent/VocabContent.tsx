@@ -11,12 +11,12 @@ import {
 import { queryParamCompress, queryParamDecompress } from '../../helpers/queryParamHelpers'
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { languages as allLanguages } from '../../data/words';
+import { languages as allLanguages } from '../../data/structured-data/words';
 import Dropdown from 'react-bootstrap/Dropdown';
 import { languageToSlugs } from '../../constants'
-import { nullOrUndefined } from '../../helpers/helperFunctions'
+import { nullOrUndefined } from '../../helpers/audio-player-helpers'
 import QuizElement from '../../components/atoms/QuizElement/QuizElement';
-import { scramble } from '../../helpers';
+import { scramble } from '../../helpers/vocab-content-helpers';
 import StudyElement from '../../components/molecules/StudyElement/StudyElement';
 import '../../components/atoms/MyDropDownButton/myDropDownButton.css'
 import MyButton from '../../components/atoms/MyDropDownButton/myDropDownButton';

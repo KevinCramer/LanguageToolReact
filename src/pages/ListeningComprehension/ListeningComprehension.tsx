@@ -3,7 +3,7 @@ import { Container, Navbar as NavbarBs, Table } from 'react-bootstrap';
 import { queryParamCompress, queryParamDecompress } from '../../helpers/queryParamHelpers'
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { languages as allLanguages } from '../../data/listeningComprehension';
+import { languages as allLanguages } from '../../data/structured-data/listeningComprehension'
 import AudioPlayer from '../../components/atoms/CustomAudioPlayer/CustomAudioPlayer';
 import MyButton from '../../components/atoms/MyDropDownButton/myDropDownButton';
 

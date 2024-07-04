@@ -1,0 +1,1 @@
+export const scramble = <T>(array: T[]) => array.sort((a, b) => 0.5 - Math.random());

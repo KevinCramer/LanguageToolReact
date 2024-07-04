@@ -5,7 +5,7 @@ import {
   VerbConjugationEnglish,
   VerbConjugationForeign
 } from '../../../../types/vocabTypes'
-import { englishPronouns } from '../../../data/words'
+import { englishPronouns } from '../../../data/structured-data/words'
 import { modalTenses } from '../../../constants'
 import { useState } from 'react'
 import MyButton from '../../atoms/MyButton/myButton'

@@ -1,7 +1,7 @@
 /* eslint-disable @stylistic/js/max-len */
 // source for all these grammar rules: 
 
-import { Language, Topic } from '../../types/grammarTypes'
+import { Language, Topic } from '../../../types/grammarTypes'
 
 // https://www.spanish.academy/blog/spanish-grammar-for-beginners-8-parts-of-speech/
 const spanishTopics: Topic[] = [

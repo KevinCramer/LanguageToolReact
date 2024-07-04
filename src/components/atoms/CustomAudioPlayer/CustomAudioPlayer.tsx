@@ -2,7 +2,7 @@ import './CustomAudioPlayer.css';
 import { useRef, useState } from 'react';
 import { IonIcon } from '@ionic/react';
 import { pause, play } from 'ionicons/icons';
-import { timeElapsed, timeRemaining } from '../../../helpers/helperFunctions';
+import { timeElapsed, timeRemaining } from '../../../helpers/audio-player-helpers';
 
 const AudioPlayer = ({ audioFile }: any) => {
   const [isPlaying, setIsPlaying] = useState(false);
