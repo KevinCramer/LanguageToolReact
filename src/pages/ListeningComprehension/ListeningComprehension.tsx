@@ -5,10 +5,9 @@ import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { languages as allLanguages } from '../../data/structured-data/listeningComprehension'
 import AudioPlayer from '../../components/atoms/CustomAudioPlayer/CustomAudioPlayer';
-import MyButton from '../../components/atoms/MyDropDownButton/myDropDownButton';
-
 import Dropdown from 'react-bootstrap/Dropdown';
 import { languageToSlugs } from '../../constants'
+import MyButton from '../../components/atoms/MyDropDownButton/myDropDownButton';
 
 const ListeningComprehensionContent = () => {
   let languages = allLanguages
@@ -97,7 +96,12 @@ const ListeningComprehensionContent = () => {
       <Container>    
         <NavbarBs>
           <Container style={{ justifyContent:'center' }}>
-            <div style={{ width: '400px', display:'flex', flexDirection: 'row', justifyContent: 'center' }}>
+            <div style={{ 
+              width: '400px',
+              display:'flex',
+              flexDirection: 'row',
+              justifyContent: 'center' 
+            }}>
               <MyButton title=
                 {String(currentLanguage.languageName)}> 
                 {languages.map((language: Language, index: number) =>

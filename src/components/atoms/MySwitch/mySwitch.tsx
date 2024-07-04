@@ -1,5 +1,5 @@
-import React from 'react';
 import './mySwitch.css'; // Import your custom CSS file for styling
+import React from 'react';
 
 type CustomSwitchProps = {
   checked: boolean;

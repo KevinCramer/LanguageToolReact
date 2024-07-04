@@ -1,6 +1,6 @@
-import React from 'react';
-import DropdownButton from 'react-bootstrap/DropdownButton';
 import './myDropDownButton.css';
+import DropdownButton from 'react-bootstrap/DropdownButton';
+import React from 'react';
 
 type MyButtonProps = {
   title: string;

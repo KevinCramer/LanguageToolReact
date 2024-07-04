@@ -2,7 +2,13 @@ const ContactUs = () => {
  
   return (
     <div>
-      <div style={{ display: 'flex', flexDirection: 'column',justifyContent: 'center', alignItems: 'center', height: '60vh', width: '100vw' }}>
+      <div style={{
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center', 
+        alignItems: 'center',
+        height: '60vh',
+        width: '100vw' }}>
         <div>
           You can reach out to us at&nbsp;
         </div>

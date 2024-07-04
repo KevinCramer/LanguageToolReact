@@ -7,8 +7,8 @@ import {
 } from '../../../../types/vocabTypes'
 import { englishPronouns } from '../../../data/structured-data/words'
 import { modalTenses } from '../../../constants'
-import { useState } from 'react'
 import MyButton from '../../atoms/MyButton/myButton'
+import { useState } from 'react'
 
 const StudyElement = (
   props: 
@@ -45,8 +45,13 @@ const StudyElement = (
     <>{isVerb ? (showBaseLanguageFirst ? (BaseLanguageWord as VerbConjugation).infinitive :
       (ForeignLanguageWord as VerbConjugation).infinitive) : BaseLanguageWord}</> </label>
   const foreignLanguageLabelVerb = <label onClick={displayPopUp} 
-    style= {{ textAlign: 'center', color: 'rgb(13, 110,253)', /* standard color used for link see contact us which uses same color*/
-      textDecorationLine: 'underline' , width: '100%' }}>
+    style= {{ 
+      textAlign: 'center',
+      /* standard color used for link see contact us which uses same color*/
+      color: 'rgb(13, 110,253)', 
+      textDecorationLine: 'underline' ,
+      width: '100%'
+    }}>
     { showBaseLanguageFirst ? (ForeignLanguageWord as VerbConjugation).infinitive : 
       (BaseLanguageWord as VerbConjugation).infinitive} </label>
   const foreignLanguageLabelNoVerb = <label style= {{ textAlign: 'center', width: '100%' }}>
