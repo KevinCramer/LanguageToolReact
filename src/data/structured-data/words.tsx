@@ -489,7 +489,7 @@ const dutchTopics: TopicWithOneAlphabet[] = [
     { englishWord: 'nine', foreignWord: ['negen'], foreignAudio: '', order:8 },
     { englishWord: 'ten', foreignWord: ['tien'], foreignAudio: '', order:9 },
   ] },
-  { name:'Pronunciation', slugName: 'pnu', hasOrdering:false, isExperimentalTopic: true, words: [
+  { name:'Pronunciation', slugName: 'pnu', hasOrdering:false, words: [
     { englishWord: 'ei', foreignWord: ['aardbei'], foreignAudio: '' },
     { englishWord: 'ij', foreignWord: ['krijt'], foreignAudio: '' },
     { englishWord: 'sch', foreignWord: ['school'], foreignAudio: '' },
@@ -839,7 +839,7 @@ const arabicTopics: TopicWithTwoAlphabets[] = [
   ] },
   // Hard to Read is not an alphabet topic, however we do want toggleForeignAlphabet to be disabled 
   // so this is a hack to ensure that.
-  { name:'Hard to Read', slugName: 'htd', hasOrdering:false, isExperimentalTopic: true, isAlphabet: true, words: [
+  { name:'Hard to Read', slugName: 'htd', hasOrdering:false, isAlphabet: true, words: [
     { englishWord: 'as-sā\'atu l-waḥidah', foreignWord: ['السَّاعَةُ الوَحِدَة','السَّاعَةُ الوَحِدَة'], foreignAudio: '' },
     { englishWord: 'as-sā\'atu th-thāniyah', foreignWord: ['السَّاعَةُ الثَّانِيَة','السَّاعَةُ الثَّانِيَة'], foreignAudio: '' },
     { englishWord: 'as-sā\'atu th-thālithah', foreignWord: ['السَّاعَةُ الثَّالِثَة','السَّاعَةُ الثَّالِثَة'], foreignAudio: '' },

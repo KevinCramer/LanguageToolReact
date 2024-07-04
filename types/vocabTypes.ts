@@ -10,7 +10,6 @@ export type WordConjugation = {
     pastTense: string[];
     presentTense: string[];
     futureTense: string[];
-
 }
 
 export type VerbConjugationEnglish = {
@@ -44,25 +43,22 @@ export type TopicWithOneAlphabet = {
     hasOrdering: boolean;
     words: WordWithOneAlphabet[];
     isAlphabet?: boolean;
-    isExperimentalTopic?: boolean;
-
 }
+
 export type TopicWithTwoAlphabets = {
     name: string;
     slugName: string;
     hasOrdering: boolean;
     words: WordWithTwoAlphabets[];
     isAlphabet?: boolean;
-    isExperimentalTopic?: boolean;
-
 }
+
 export type TopicWithThreeAlphabets = {
     name: string;
     slugName: string;
     hasOrdering: boolean;
     words: WordWithThreeAlphabets[];
     isAlphabet?: boolean;
-    isExperimentalTopic?: boolean;
 }
 
 export type Topic = TopicWithOneAlphabet | TopicWithTwoAlphabets | TopicWithThreeAlphabets;
