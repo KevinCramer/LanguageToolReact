@@ -1,3 +1,4 @@
+import './ListeningComprehension.css'
 import { AudioTranscription, Language, Paragraph } from '../../../types/listeningComprehension';
 import { Container, Navbar as NavbarBs, Table } from 'react-bootstrap';
 import { queryParamCompress, queryParamDecompress } from '../../helpers/queryParamHelpers'
@@ -51,11 +52,11 @@ const ListeningComprehensionContent = () => {
 
   function showListeningComprehensionTopic(){
     return (
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      <div className='audio-player-and-table-container'>
         <AudioPlayer audioFile={currentAudioTranscription.audioFile} />
         <div style ={{ width: '300px', height: '20px' }}></div>
         <div style={{ display: 'flex', justifyContent: 'center', }}>
-          <Table striped bordered hover size="sm" style={{ width: '350px', border: '1px #AAAAAA' }}>
+          <Table striped bordered hover size="sm" className='transcription-table'>
             <thead>
               <tr>
                 <th style={{ textAlign: 'center', width: '50%' }}>
