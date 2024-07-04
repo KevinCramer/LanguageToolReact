@@ -11,12 +11,9 @@ import VocabContent from './pages/VocabContent/VocabContent'
 function App() {
   return (
     <div className="full-background">
-      <div style={{ height:'0px' }}></div>
       <Navbar />
       <Routes>
-        <Route path="/" element={ <div style= {
-          { display:'flex', flexDirection: 'column', justifyContent:'center', minHeight: '50vh' }
-        }> <Home /></div>} />
+        <Route path="/" element={ <div className='home-container'> <Home /></div>} />
         <Route path="/vocabulary" element={<VocabContent />} />
         <Route path="/grammar" element={<GrammarContent />} />
         <Route path="/listening-comprehension" element={<ListeningComprehension />} />
