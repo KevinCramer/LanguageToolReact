@@ -2,7 +2,7 @@ import './Home.css'
 import blackBar from '../../assets/blackBar.png';
 import logoSvg from '../../assets/logoSvg.svg';
 
-export function Home(){
+export const Home = () =>{
   return <div> {/*  outer div needed here for layout; don't use fragment */}
     <div className = "imageContent" >
       <img src ={logoSvg} width={163} height={163} alt="logo"/>
@@ -19,3 +19,5 @@ export function Home(){
     </div>    
   </div> 
 }
+
+export default Home;
