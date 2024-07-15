@@ -51,42 +51,40 @@ const QuizElement = (
     const myPlaceHolder = props.myCounter === 1 ? 'enter your answer here' : '';
     return (
       <Navbar className='quiz-element-container'>
-        <div>
-          <div className='inner-quiz-element-container'>
-            <form 
-              onBlur={e => checkAnswer(
+        <div className='inner-quiz-element-container'>
+          <form 
+            onBlur={e => checkAnswer(
                 e as unknown as React.ChangeEvent<HTMLInputElement> ,
                 formValues.answer, propsAnswerWord)}
-              onSubmit={e => checkAnswer(
+            onSubmit={e => checkAnswer(
                         e as unknown as React.ChangeEvent<HTMLInputElement> ,
                         formValues.answer, propsAnswerWord)}
-            >
-              <div className="ui form">
-                <label className='question-label'>{propsQuestionWord} </label>
-                <input 
-                  type="text"
-                  name="answer" 
-                  placeholder={myPlaceHolder}
-                  value={formValues.answer} 
-                  onChange = {handleChange}
-                  autoComplete="off" 
-                  autoCorrect="off" 
-                  spellCheck ="false" 
-                  autoCapitalize="off"/>
-              </div>
-            </form>
-            {/* This is hack to ensure the quiz element doesn't move when tick
+          >
+            <div className="ui form">
+              <label className='question-label'>{propsQuestionWord} </label>
+              <input 
+                type="text"
+                name="answer" 
+                placeholder={myPlaceHolder}
+                value={formValues.answer} 
+                onChange = {handleChange}
+                autoComplete="off" 
+                autoCorrect="off" 
+                spellCheck ="false" 
+                autoCapitalize="off"/>
+            </div>
+          </form>
+          {/* This is hack to ensure the quiz element doesn't move when tick
              mark is rendered which is about 20px wide
               */}
-            <div style={{ width: response !== '✔' ? '20px' : '0px' }}></div>
-            <div>
-              {/* This is hack to ensure the tick mark is vertically aligned with input form
+          <div style={{ width: response !== '✔' ? '20px' : '0px' }}></div>
+          <div>
+            {/* This is hack to ensure the tick mark is vertically aligned with input form
               */}
-              <div className='tick-mark-container'> {response === '✔' ? response : null}</div>
-            </div>
+            <div className='tick-mark-container'> {response === '✔' ? response : null}</div>
           </div>
-          <div> {response !== '✔' ? response : null}</div>
         </div>
+        <div> {response !== '✔' ? response : null}</div>
       </Navbar>
     )
 

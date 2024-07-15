@@ -98,7 +98,7 @@ const VocabContent = () => {
       const isVerb = currentTopic.name === 'Verbs'
       var count = 0;
       return ( 
-        <div>
+        <>
           {topicWords.map((pair: Word) =>
             <div key ={showTrueOrder.toString() + (isVerb ?
               (pair.englishWord as VerbConjugationEnglish).infinitive : pair.englishWord)
@@ -109,7 +109,7 @@ const VocabContent = () => {
                 pair.englishWord} isVerb = {currentTopic.name === 'Verbs'}/>
             </div>                    
           )}
-        </div>
+        </>
       )
     }
     else {
@@ -200,7 +200,7 @@ const VocabContent = () => {
       
   }
   return (
-    <div>
+    <>
       <h4>Vocabulary</h4>
       <Container >    
         <NavbarBs>
@@ -252,7 +252,7 @@ const VocabContent = () => {
         <p></p>
         {ToggleQuiz()}
       </Container>
-    </div>
+    </>
   );
 }
  

@@ -83,7 +83,7 @@ const ListeningComprehensionContent = () => {
   }
 
   return (
-    <div>
+    <>
       <h4>Listening Comprehension</h4>
       <Container>    
         <NavbarBs>
@@ -109,7 +109,7 @@ const ListeningComprehensionContent = () => {
           {showListeningComprehensionTopic()}
         </div>
       </Container>
-    </div>
+    </>
   );
 }
  

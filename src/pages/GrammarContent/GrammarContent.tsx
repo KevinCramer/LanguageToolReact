@@ -58,7 +58,7 @@ const GrammarContent = () => {
   }
 
   return (
-    <div>
+    <>
       <h4>Grammar</h4>
       <Container>    
         <NavbarBs>
@@ -84,7 +84,7 @@ const GrammarContent = () => {
           {ShowGrammarExplanation()}
         </div>
       </Container>
-    </div>
+    </>
   );
 }
  
