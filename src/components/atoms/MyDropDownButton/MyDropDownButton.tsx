@@ -4,14 +4,14 @@ import React from 'react';
 
 type AlignType = React.ComponentProps<typeof DropdownButton>['align'];
 
-type MyButtonProps = {
+type CustomButtonProps = {
   title: string;
   children: React.ReactNode;
   align?: AlignType;
 
 }
 
-const MyButton = ({ title,children, align = 'start' }: MyButtonProps) => {
+const CustomButton = ({ title,children, align = 'start' }: CustomButtonProps) => {
   return (
     <DropdownButton
       title={title}
@@ -23,4 +23,4 @@ const MyButton = ({ title,children, align = 'start' }: MyButtonProps) => {
   );
 }
 
-export default MyButton;
+export default CustomButton;

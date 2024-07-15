@@ -1,14 +1,14 @@
-import './MyButton.css';
+import './CustomButton.css';
 import { Button } from 'react-bootstrap'
 import React from 'react';
 
-type MyButtonProps = {
+type CustomButtonProps = {
   disabled: boolean;
   onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
   children: React.ReactNode;
 }
 
-const MyButton = ({ disabled, onClick, children }: MyButtonProps) => {
+const CustomButton = ({ disabled, onClick, children }: CustomButtonProps) => {
   return (
     <Button
       className='my-custom-button'
@@ -22,4 +22,4 @@ const MyButton = ({ disabled, onClick, children }: MyButtonProps) => {
   );
 }
 
-export default MyButton;
+export default CustomButton;

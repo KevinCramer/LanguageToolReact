@@ -6,9 +6,9 @@ import {
   VerbConjugationEnglish,
   VerbConjugationForeign
 } from '../../../../types/vocabTypes'
+import CustomButton from '../../atoms/CustomButton/CustomButton'
 import { englishPronouns } from '../../../data/structured-data/words'
 import { modalTenses } from '../../../constants'
-import MyButton from '../../atoms/MyButton/MyButton'
 import { useState } from 'react'
 
 const StudyElement = (
@@ -60,14 +60,14 @@ const StudyElement = (
           foreignLanguageLabel}
       {showAudio && !showLeftLabel && <div>
         <audio src={ForeignLanguageWordAudio} id={ForeignLanguageWordAudio}></audio>
-        <MyButton disabled={!ForeignLanguageWord} onClick={() => { 
+        <CustomButton disabled={!ForeignLanguageWord} onClick={() => { 
           var audio = document.getElementById(ForeignLanguageWordAudio) as HTMLAudioElement;
           if (audio.paused) {
             audio.play();
           } else {
             audio.pause();
             audio.currentTime = 0; // Reset to the beginning of the audio
-          }}} > {ForeignLanguageWordAudio ? 'audio' : 'no audio'}</MyButton>
+          }}} > {ForeignLanguageWordAudio ? 'audio' : 'no audio'}</CustomButton>
       </div>}
       {isVerb && <Modal show ={showPopUp} onHide={hidePopUp}>
         <Modal.Header closeButton>
