@@ -8,7 +8,7 @@ import { languages as allLanguages } from '../../data/structured-data/listeningC
 import AudioPlayer from '../../components/atoms/CustomAudioPlayer/CustomAudioPlayer';
 import Dropdown from 'react-bootstrap/Dropdown';
 import { languageToSlugs } from '../../constants'
-import MyButton from '../../components/atoms/MyDropDownButton/myDropDownButton';
+import MyButton from '../../components/atoms/MyDropDownButton/MyDropDownButton';
 
 const ListeningComprehensionContent = () => {
   let languages = allLanguages

@@ -1,4 +1,4 @@
-import './mySwitch.css'; // Import your custom CSS file for styling
+import './MySwitch.css'; // Import your custom CSS file for styling
 import React from 'react';
 
 type CustomSwitchProps = {

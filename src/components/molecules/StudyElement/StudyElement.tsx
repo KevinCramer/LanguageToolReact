@@ -8,7 +8,7 @@ import {
 } from '../../../../types/vocabTypes'
 import { englishPronouns } from '../../../data/structured-data/words'
 import { modalTenses } from '../../../constants'
-import MyButton from '../../atoms/MyButton/myButton'
+import MyButton from '../../atoms/MyButton/MyButton'
 import { useState } from 'react'
 
 const StudyElement = (

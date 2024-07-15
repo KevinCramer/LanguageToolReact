@@ -1,4 +1,4 @@
-import '../../components/atoms/MyDropDownButton/myDropDownButton.css'
+import '../../components/atoms/MyDropDownButton/MyDropDownButton.css'
 import './VocabContent.css'
 import { Container, Navbar as NavbarBs, Table } from 'react-bootstrap';
 import {
@@ -16,8 +16,8 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { languages as allLanguages } from '../../data/structured-data/words';
 import Dropdown from 'react-bootstrap/Dropdown';
 import { languageToSlugs } from '../../constants'
-import MyButton from '../../components/atoms/MyDropDownButton/myDropDownButton';
-import MySwitch from '../../components/atoms/MySwitch/mySwitch';
+import MyButton from '../../components/atoms/MyDropDownButton/MyDropDownButton';
+import MySwitch from '../../components/atoms/MySwitch/MySwitch';
 import { nullOrUndefined } from '../../helpers/audio-player-helpers'
 import QuizElement from '../../components/atoms/QuizElement/QuizElement';
 import { scramble } from '../../helpers/vocab-content-helpers';

@@ -8,7 +8,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import Dropdown from 'react-bootstrap/Dropdown';
 import { languages } from '../../data/structured-data/grammar';
 import { languageToSlugs } from '../../constants'
-import MyButton from '../../components/atoms/MyDropDownButton/myDropDownButton';
+import MyButton from '../../components/atoms/MyDropDownButton/MyDropDownButton';
 
 const GrammarContent = () => {
   const navigate = useNavigate();
