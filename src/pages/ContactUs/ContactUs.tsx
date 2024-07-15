@@ -8,7 +8,7 @@ const ContactUs = () => {
         <div>
           You can reach out to us at&nbsp;
         </div>
-        <a href="mailto:contact@lingocommand.com" style={{}}>
+        <a href="mailto:contact@lingocommand.com">
             contact@lingocommand.com
         </a>
       </div>

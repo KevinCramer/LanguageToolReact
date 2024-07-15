@@ -52,19 +52,14 @@ const ListeningComprehensionContent = () => {
 
   function showListeningComprehensionTopic(){
     return (
-      <div className='audio-player-and-table-container'>
+      <div className='inner-audio-player-and-table-container'>
         <AudioPlayer audioFile={currentAudioTranscription.audioFile} />
-        <div style ={{ width: '300px', height: '20px' }}></div>
-        <div style={{ display: 'flex', justifyContent: 'center', }}>
+        <div className='inner-audio-player-and-table-container'>
           <Table striped bordered hover size="sm" className='transcription-table'>
             <thead>
               <tr>
-                <th style={{ textAlign: 'center', width: '50%' }}>
-                  {currentLanguage.languageName }
-                </th>
-                <th style={{ textAlign: 'center', width: '50%' }}>
-                  {'English' }
-                </th>
+                <th>{currentLanguage.languageName }</th>
+                <th>{'English' }</th>
               </tr>
             </thead>
             <tbody>
@@ -75,12 +70,8 @@ const ListeningComprehensionContent = () => {
                     <td></td>
                   </tr> )}
                   <tr key={index}>
-                    <td style={{ verticalAlign: 'middle', color: '#4A4A4A' }} >
-                      { content.foreignText}
-                    </td>
-                    <td style={{ verticalAlign: 'middle', color: '#4A4A4A' }}>     
-                      {content.englishText}
-                    </td>
+                    <td>{ content.foreignText}</td>
+                    <td>{content.englishText}</td>
                   </tr>
                 </>      
               ))}
@@ -93,16 +84,11 @@ const ListeningComprehensionContent = () => {
 
   return (
     <div>
-      <h4 style={{ textAlign:'center', paddingBottom: '50px' }}>Listening Comprehension</h4>
+      <h4>Listening Comprehension</h4>
       <Container>    
         <NavbarBs>
-          <Container style={{ justifyContent:'center' }}>
-            <div style={{ 
-              width: '400px',
-              display:'flex',
-              flexDirection: 'row',
-              justifyContent: 'center' 
-            }}>
+          <Container className='listening-comprehension-container'>
+            <div className='inner-listening-comprehension-container'>
               <MyButton title=
                 {String(currentLanguage.languageName)}> 
                 {languages.map((language: Language, index: number) =>
@@ -119,8 +105,7 @@ const ListeningComprehensionContent = () => {
             </div>
           </Container>
         </NavbarBs>
-        <p></p>
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <div className='audio-player-and-table-container '>
           {showListeningComprehensionTopic()}
         </div>
       </Container>

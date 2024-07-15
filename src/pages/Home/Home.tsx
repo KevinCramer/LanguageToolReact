@@ -8,7 +8,7 @@ export function Home(){
       <img src ={logoSvg} width={163} height={163} alt="logo"/>
     </div>
     <div className = "content2">
-      <h1 style ={{ marginBottom: '0.1rem' }}> 
+      <h1> 
                         LINGO
       </h1>
       <div className = "imageContent">
@@ -23,7 +23,6 @@ export function Home(){
       <div> 
         Learn foreign languages faster
       </div>
-      <div style ={{ height: '10vh' }}></div>
     </div>    
   </div> 
 }
