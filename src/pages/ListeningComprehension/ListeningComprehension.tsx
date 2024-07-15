@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { languages as allLanguages } from '../../data/structured-data/listeningComprehension'
 import AudioPlayer from '../../components/atoms/CustomAudioPlayer/CustomAudioPlayer';
-import CustomButton from '../../components/atoms/MyDropDownButton/MyDropDownButton';
+import CustomButton from '../../components/atoms/CustomDropDownButton/CustomDropDownButton';
 import Dropdown from 'react-bootstrap/Dropdown';
 import { languageToSlugs } from '../../constants'
 

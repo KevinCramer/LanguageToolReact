@@ -5,7 +5,7 @@ import { Language, Topic } from '../../../types/grammarTypes';
 import { queryParamCompress, queryParamDecompress } from '../../helpers/queryParamHelpers'
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import CustomButton from '../../components/atoms/MyDropDownButton/MyDropDownButton';
+import CustomButton from '../../components/atoms/CustomDropDownButton/CustomDropDownButton';
 import Dropdown from 'react-bootstrap/Dropdown';
 import { languages } from '../../data/structured-data/grammar';
 import { languageToSlugs } from '../../constants'

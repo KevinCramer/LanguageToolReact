@@ -1,4 +1,4 @@
-import '../../components/atoms/MyDropDownButton/MyDropDownButton.css'
+import '../../components/atoms/CustomDropDownButton/CustomDropDownButton.css'
 import './VocabContent.css'
 import { Container, Navbar as NavbarBs, Table } from 'react-bootstrap';
 import {
@@ -14,7 +14,7 @@ import { queryParamCompress, queryParamDecompress } from '../../helpers/queryPar
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { languages as allLanguages } from '../../data/structured-data/words';
-import CustomButton from '../../components/atoms/MyDropDownButton/MyDropDownButton';
+import CustomButton from '../../components/atoms/CustomDropDownButton/CustomDropDownButton';
 import Dropdown from 'react-bootstrap/Dropdown';
 import { languageToSlugs } from '../../constants'
 import MySwitch from '../../components/atoms/MySwitch/MySwitch';
