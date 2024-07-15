@@ -3,7 +3,7 @@ import blackBar from '../../assets/blackBar.png';
 import logoSvg from '../../assets/logoSvg.svg';
 
 export function Home(){
-  return <div>
+  return <div> {/*  outer div needed here for layout; don't use fragment */}
     <div className = "imageContent" >
       <img src ={logoSvg} width={163} height={163} alt="logo"/>
     </div>
