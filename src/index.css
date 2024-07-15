@@ -36,14 +36,14 @@ audio::-webkit-media-controls-timeline {
 
 audio::-webkit-media-controls-panel {
   padding: 0 0 0 1px;
-  justify-content: center; /*control panel elements are flex positioned*/
+  justify-content: center;
 }
 
 .dropdown-menu {
-  --bs-dropdown-link-active-bg: #4A4A4A;  /* Set the active dropdown link background color */
+  --bs-dropdown-link-active-bg: #4A4A4A;
 }
 
 .dropdown-menu .dropdown-item:active,
 .dropdown-menu .dropdown-item:focus:active {
-  background-color: var(--bs-dropdown-link-active-bg);  /* Use the active background color */
+  background-color: var(--bs-dropdown-link-active-bg);
 }

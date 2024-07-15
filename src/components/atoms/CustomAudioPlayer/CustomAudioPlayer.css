@@ -10,7 +10,7 @@
   margin: 10px;
   border-radius: 5px;
   border-width: 0px;
-  background-color: #F8F8F8; /* Replace #yourColor with the desired color */
+  background-color: #F8F8F8;
 }
 
 .audio-player input[type="range"] {
@@ -20,24 +20,23 @@
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 16px; /* Customize size */
-  height: 16px; /* Customize size */
-  background: #F8F8F8; /* Customize color */
+  width: 16px;
+  height: 16px;
+  background: #F8F8F8;
   cursor: pointer;
-  border-radius: 50%; /* Make it a circle */
-  border: 1px solid #000; /* Optional: add border */
+  border-radius: 50%;
+  border: 1px solid #000;
 }
 
 
 
-/* Optional: Additional styles for the track */
 input[type="range"] {
   -webkit-appearance: none;
   appearance: none;
   width: 100%;
-  height: 8px; /* Customize track height */
-  background: #F8F8F8; /* Customize track color */
-  border-radius: 4px; /* Customize track border radius */
+  height: 8px;
+  background: #F8F8F8;
+  border-radius: 4px;
   outline: none;
   cursor: pointer;
 }
