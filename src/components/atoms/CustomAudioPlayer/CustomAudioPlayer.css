@@ -41,3 +41,10 @@ input[type="range"] {
   outline: none;
   cursor: pointer;
 }
+
+.timestamp-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 300px;
+}

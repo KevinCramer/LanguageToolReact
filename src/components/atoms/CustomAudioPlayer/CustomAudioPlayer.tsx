@@ -54,11 +54,7 @@ const AudioPlayer = ({ audioFile }: any) => {
         value={(currentSeconds / totalSeconds) * 100 || 0}
         onChange={handleSeek}
       />
-      <div style={{ 
-        display:'flex',
-        flexDirection:'row',
-        justifyContent:'space-between',
-        width: '300px' }}>
+      <div className='timestamp-container'>
         <div>
           {timeElapsed(currentSeconds)}
         </div>
