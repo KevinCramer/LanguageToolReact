@@ -47,14 +47,12 @@ const GrammarContent = () => {
     currentLanguage.languageName, currentTopic.slugName, navigate ]);
   function ShowGrammarExplanation(){
     return (
-      <div style={{ width: '400px' }}>
-        <div style={{ display:'flex',flexDirection: 'column' }}>
-          {currentTopic.contents.map((content: string, index: number) =>
-            <div key = {index}>
-              {content}
-            </div>                    
-          )}
-        </div>
+      <div className='inner-grammar-explanation-container'>
+        {currentTopic.contents.map((content: string, index: number) =>
+          <div key = {index}>
+            {content}
+          </div>                    
+        )}
       </div>
     )
   }
@@ -64,8 +62,8 @@ const GrammarContent = () => {
       <h4>Grammar</h4>
       <Container>    
         <NavbarBs>
-          <Container style={{ justifyContent:'center' }}>
-            <div style={{ width: '400px', display:'flex', flexDirection: 'row' }}>
+          <Container className='grammar-container'>
+            <div className='inner-grammar-container'>
               <MyButton title=
                 {String(currentLanguage.languageName)}> 
                 {languages.map((language: Language, index: number) =>
@@ -82,7 +80,7 @@ const GrammarContent = () => {
           </Container>
         </NavbarBs>
         <p></p>
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <div className='grammar-explanation-container'>
           {ShowGrammarExplanation()}
         </div>
       </Container>
