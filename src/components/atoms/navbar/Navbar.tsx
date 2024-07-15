@@ -1,5 +1,5 @@
-import './Navbar.css';
-import { Container, Nav, Navbar as NavbarBs, NavbarCollapse } from 'react-bootstrap';
+import './navbar.css';
+import { Container, Nav, Navbar as NavbarBs } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
 
