@@ -1,4 +1,4 @@
-import './MySwitch.css';
+import './CustomSwitch.css';
 import React from 'react';
 
 type CustomSwitchProps = {
@@ -6,7 +6,7 @@ type CustomSwitchProps = {
   onChange: (checked: boolean) => void;
 }
 
-const MySwitch = ({ checked, onChange }: CustomSwitchProps) => {
+const CustomSwitch = ({ checked, onChange }: CustomSwitchProps) => {
   const handleChange = () => {
     onChange(!checked);
   };
@@ -19,4 +19,4 @@ const MySwitch = ({ checked, onChange }: CustomSwitchProps) => {
   );
 }
 
-export default MySwitch;
+export default CustomSwitch;

@@ -15,9 +15,9 @@ import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { languages as allLanguages } from '../../data/structured-data/words';
 import CustomButton from '../../components/atoms/CustomDropDownButton/CustomDropDownButton';
+import CustomSwitch from '../../components/atoms/CustomSwitch/CustomSwitch';
 import Dropdown from 'react-bootstrap/Dropdown';
 import { languageToSlugs } from '../../constants'
-import MySwitch from '../../components/atoms/MySwitch/MySwitch';
 import { nullOrUndefined } from '../../helpers/audio-player-helpers'
 import QuizElement from '../../components/atoms/QuizElement/QuizElement';
 import { scramble } from '../../helpers/vocab-content-helpers';
@@ -238,7 +238,7 @@ const VocabContent = () => {
               <div style={{ marginRight: '10px', fontWeight: quiz ? 'normal' : '600' }}>
                 Study
               </div>
-              <MySwitch 
+              <CustomSwitch 
                 onChange = {changeQuizState}
                 checked= {quiz} 
               /> 
