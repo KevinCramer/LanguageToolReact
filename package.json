@@ -6,21 +6,42 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "dependencies": {
+    "@ionic/react": "^8.2.2",
+    "@mdi/js": "^7.4.47",
+    "@mdi/react": "^1.6.1",
+    "@reduxjs/toolkit": "^1.9.1",
     "@vanilla-extract/css": "^1.9.2",
     "bootstrap": "^5.2.3",
+    "fixed-size-array": "^0.1.1",
+    "ionicons": "^7.4.0",
     "react": "^18.2.0",
     "react-bootstrap": "^2.6.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.4.4"
+    "react-icons": "^5.1.0",
+    "react-redux": "^8.0.5",
+    "react-router-dom": "^6.4.4",
+    "react-switch": "^7.0.0",
+    "typia": "^5.2.6"
   },
   "devDependencies": {
+    "@stylistic/eslint-plugin-js": "^1.4.0",
     "@types/react": "^18.0.24",
     "@types/react-dom": "^18.0.8",
+    "@types/react-howler": "^5.2.0",
     "@vitejs/plugin-react": "^2.2.0",
+    "dotenv": "^16.4.5",
+    "eslint": "^8.52.0",
+    "eslint-config-react-app": "^7.0.1",
+    "install": "^0.13.0",
+    "npm": "^10.5.0",
+    "openai": "^4.28.4",
     "typescript": "^4.6.4",
-    "vite": "^3.2.5"
+    "vite": "^3.2.5",
+    "vite-plugin-eslint": "^1.8.1"
   }
 }

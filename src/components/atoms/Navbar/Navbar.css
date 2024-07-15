@@ -1,0 +1,24 @@
+.nav-link-custom {
+  margin: 0px 10px 0px 10px;
+  color: #4A4A4A !important;
+  text-decoration: none;
+}
+
+.nav-link-custom:hover,
+.nav-link-custom:active,
+.nav-link-custom.active {
+  text-decoration: underline;
+  color:#F8F8F8;
+}
+
+/* Normal state */
+.hover-underline {
+  color: #4A4A4A;
+  margin-left: 10px;
+  text-decoration: none; /* No underline by default */
+}
+
+/* Hover state */
+.hover-underline:hover {
+  text-decoration: underline; /* Underline on hover */
+}

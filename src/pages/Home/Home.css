@@ -1,0 +1,29 @@
+h1 {
+    margin-bottom: 0.1rem;
+}
+
+.content2{
+    position: absolute;
+    width: 100%;
+    top:1;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: rgb(74, 74, 74);
+    font-size: large;
+    text-align:center;
+}
+
+.imageContent{
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+

@@ -1,0 +1,21 @@
+.verb-label {
+  text-align: center;
+  /* standard color used for link see contact us which uses same color*/
+  color: rgb(13, 110,253);
+  text-decoration-line: underline;
+  width: 100%;
+}
+
+.base-language-label {
+  text-align: center;
+  width: 100%;
+}
+
+.foreign-language-label-no-verb {
+  text-align: center;
+  width: 100%;
+}
+
+td {
+  width: 200px
+}

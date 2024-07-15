@@ -1,0 +1,33 @@
+{
+    "extends": [
+      "react-app"
+    ],
+    "plugins": [
+      "@stylistic/js" 
+    ],
+    "rules": {
+      // disable rules from base configurations
+      "linebreak-style": 0,
+       "no-redeclare": "off",
+       "no-console": "warn",
+       "object-curly-spacing": ["error", "always"],
+       "no-duplicate-imports": "error",
+       "sort-imports": ["warn",{
+        "ignoreCase": true
+       }],
+       "space-infix-ops": ["error", { "int32Hint": false }],
+       "@typescript-eslint/no-redeclare": "off",
+       "@typescript-eslint/quotes": [
+        "error",
+        "single",
+        {
+          "allowTemplateLiterals": true
+        }
+      ],
+       "@typescript-eslint/no-explicit-any": "warn",
+       "@stylistic/js/indent": ["warn", 2],
+       "@stylistic/js/max-len": ["warn", 100],
+       "@stylistic/js/no-multiple-empty-lines": ["warn",{ "max": 1 }],
+       "@stylistic/js/no-multi-spaces": "warn"      
+  }
+  }

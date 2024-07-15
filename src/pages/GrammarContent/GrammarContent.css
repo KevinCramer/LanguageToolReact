@@ -1,0 +1,25 @@
+h4 {
+  text-align: center;
+  padding-bottom: 50px;
+}
+
+.grammar-explanation-container {
+  display: flex;
+  justify-content: center;
+}
+
+.inner-grammar-explanation-container {
+  display:flex;
+  flex-direction: column;
+  width: 400px;
+}
+
+.grammar-container {
+  justify-content: center !important;
+}
+
+.inner-grammar-container {
+  display: flex;
+  flex-direction: row;
+  width: 400px;
+}

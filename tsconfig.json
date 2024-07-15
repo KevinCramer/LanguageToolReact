@@ -16,6 +16,6 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": ["src"],
+  "include": ["src", "types/vocabTypes.ts", "types/listeningComprehensionTypes.ts", "src/components/atoms/MyDropDownButton/MyDropDownButton.tsx"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

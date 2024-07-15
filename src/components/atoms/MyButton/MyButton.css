@@ -1,0 +1,19 @@
+.my-custom-button {
+  margin: 0px 10px 0px 0px;
+  background-color: #E8E8E8; 
+  border-color: #4A4A4A;
+  color: #4A4A4A;
+  border-radius: 5px;
+}
+
+.my-custom-button:hover,
+.my-custom-button:focus,
+.my-custom-button:active,
+.my-custom-button:focus:active {
+  background-color: #E8E8E8;
+  border-color: #E8E8E8;
+  color: #4A4A4A;
+  border-color: #4A4A4A;
+
+
+}
