@@ -8,7 +8,7 @@ import ListeningComprehension from './pages/ListeningComprehension/ListeningComp
 import Navbar from './components/atoms/Navbar/Navbar'
 import VocabContent from './pages/VocabContent/VocabContent'
 
-function App() {
+const App = ()=> {
   return (
     <div className="full-background">
       <Navbar />
