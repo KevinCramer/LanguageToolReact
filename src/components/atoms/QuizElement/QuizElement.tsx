@@ -50,9 +50,9 @@ const QuizElement = (
     }
     const myPlaceHolder = props.myCounter === 1 ? 'enter your answer here' : '';
     return (
-      <Navbar style={{ justifyContent:'center' }}>
+      <Navbar className='quiz-element-container'>
         <div>
-          <div style={{ display:'flex', flexDirection:'row' }}>
+          <div className='inner-quiz-element-container'>
             <form 
               onBlur={e => checkAnswer(
                 e as unknown as React.ChangeEvent<HTMLInputElement> ,
@@ -62,7 +62,7 @@ const QuizElement = (
                         formValues.answer, propsAnswerWord)}
             >
               <div className="ui form">
-                <label style= {{ width: '150px', textAlign:'left' }}>{propsQuestionWord} </label>
+                <label className='question-label'>{propsQuestionWord} </label>
                 <input 
                   type="text"
                   name="answer" 
@@ -82,8 +82,7 @@ const QuizElement = (
             <div>
               {/* This is hack to ensure the tick mark is vertically aligned with input form
               */}
-              <div style={{ height:'10px' }}></div>
-              <div> {response === '✔' ? response : null}</div>
+              <div className='tick-mark-container'> {response === '✔' ? response : null}</div>
             </div>
           </div>
           <div> {response !== '✔' ? response : null}</div>
