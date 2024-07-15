@@ -1,9 +1,9 @@
 import './Navbar.css';
-import { Container, Nav, Navbar as NavbarBs } from 'react-bootstrap';
+import { Container, Nav, Navbar as NavbarBs, NavbarCollapse } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
-import { useState } from 'react'; // Import useState hook
+import { useState } from 'react';
 
-export function Navbar() {
+const Navbar = () => {
   const [expanded, setExpanded] = useState(false); // State to manage navbar expansion
 
   // Function to toggle navbar collapse
@@ -24,6 +24,7 @@ export function Navbar() {
           <Nav className="me-auto">
             <Nav.Link
               className="nav-link-custom"
+              style={{ color: '#4A4A4A' }}
               to="/"
               as={NavLink}
               onClick={closeNavbar} // Close navbar on click
@@ -32,6 +33,7 @@ export function Navbar() {
             </Nav.Link>
             <Nav.Link
               className="nav-link-custom"
+              style={{ color: '#4A4A4A' }}
               to="/vocabulary"
               as={NavLink}
               onClick={closeNavbar} // Close navbar on click
@@ -40,6 +42,7 @@ export function Navbar() {
             </Nav.Link>
             <Nav.Link
               className="nav-link-custom"
+              style={{ color: '#4A4A4A' }}
               to="/listening-comprehension"
               as={NavLink}
               onClick={closeNavbar} // Close navbar on click
@@ -48,6 +51,7 @@ export function Navbar() {
             </Nav.Link>
             <Nav.Link
               className="nav-link-custom"
+              style={{ color: '#4A4A4A' }}
               to="/grammar"
               as={NavLink}
               onClick={closeNavbar} // Close navbar on click
@@ -56,6 +60,7 @@ export function Navbar() {
             </Nav.Link>
             <Nav.Link
               className="nav-link-custom"
+              style={{ color: '#4A4A4A' }}
               to="/contactus"
               as={NavLink}
               onClick={closeNavbar} // Close navbar on click
@@ -69,3 +74,5 @@ export function Navbar() {
     </NavbarBs>
   );
 }
+
+export default Navbar;
