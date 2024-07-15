@@ -5,3 +5,17 @@
   text-decoration-line: underline;
   width: 100%;
 }
+
+.base-language-label {
+  text-align: center;
+  width: 100%;
+}
+
+.foreign-language-label-no-verb {
+  text-align: center;
+  width: 100%;
+}
+
+td {
+  width: 200px
+}

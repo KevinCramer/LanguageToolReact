@@ -37,18 +37,17 @@ const StudyElement = (
       showLeftLabel
     } = props
 
-  const tableRowWidth = 200
   var showPopUp = false;
   var [showPopUp,setShowPopUp] = useState(showPopUp)
   const hidePopUp = () => { return setShowPopUp(false)}
   const displayPopUp = () => { return setShowPopUp(true)}
-  const baseLanguageLabel = <label style= {{ textAlign: 'center',width: '100%' }}>
+  const baseLanguageLabel = <label className='base-language-label'>
     <>{isVerb ? (showBaseLanguageFirst ? (BaseLanguageWord as VerbConjugation).infinitive :
       (ForeignLanguageWord as VerbConjugation).infinitive) : BaseLanguageWord}</> </label>
   const foreignLanguageLabelVerb = <label className='verb-label' onClick={displayPopUp}>
     { showBaseLanguageFirst ? (ForeignLanguageWord as VerbConjugation).infinitive : 
       (BaseLanguageWord as VerbConjugation).infinitive} </label>
-  const foreignLanguageLabelNoVerb = <label style= {{ textAlign: 'center', width: '100%' }}>
+  const foreignLanguageLabelNoVerb = <label className='foreign-language-label-no-verb'>
     <> {ForeignLanguageWord}</></label>
   const foreignLanguageLabel = isVerb ? foreignLanguageLabelVerb : foreignLanguageLabelNoVerb
   return (
@@ -82,17 +81,17 @@ const StudyElement = (
               <h5>{obj.title}</h5>
               {Array.from({ length: 6 }).map((_, j) => (
                 <tr key={i}> 
-                  {showBaseLanguageFirst ? <td style={{ width: tableRowWidth }}>
+                  {showBaseLanguageFirst ? <td>
                     {englishPronouns[j] + ' '}
                     {(BaseLanguageWord as VerbConjugationEnglish)
-                      .englishWordConjugation[obj.tense as keyof Tenses][j]}</td> : <td style={
-                    { width: tableRowWidth }}>{pronouns[j] + ' '} 
-                    {(BaseLanguageWord as VerbConjugationForeign)
-                      .foreignWordConjugation[obj.tense as keyof Tenses][j] }</td>}
-                  {showBaseLanguageFirst ? <td style={{ width: tableRowWidth }}>
+                      .englishWordConjugation[obj.tense as keyof Tenses][j]}</td> : 
+                    <td>{pronouns[j] + ' '} 
+                      {(BaseLanguageWord as VerbConjugationForeign)
+                        .foreignWordConjugation[obj.tense as keyof Tenses][j] }</td>}
+                  {showBaseLanguageFirst ? <td>
                     {pronouns[j] + ' '} {(ForeignLanguageWord as VerbConjugationForeign)
                       .foreignWordConjugation[obj.tense as keyof Tenses][j]}
-                  </td> : <td style={{ width: tableRowWidth }}>{englishPronouns[j] + ' '} 
+                  </td> : <td>{englishPronouns[j] + ' '} 
                     {(ForeignLanguageWord as VerbConjugationEnglish)
                       .englishWordConjugation[obj.tense as keyof Tenses][j]}</td> }
                 </tr>

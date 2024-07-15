@@ -1,14 +1,10 @@
+import './ContactUs.css'
+
 const ContactUs = () => { 
  
   return (
     <div>
-      <div style={{
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center', 
-        alignItems: 'center',
-        height: '60vh',
-        width: '100vw' }}>
+      <div className="contact-us-container">
         <div>
           You can reach out to us at&nbsp;
         </div>
