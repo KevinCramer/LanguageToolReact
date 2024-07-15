@@ -14,7 +14,7 @@ export const Home = () =>{
       </div>
       <h4>COMMAND</h4>
       <div> 
-        Learn foreign languages faster.
+        Learn foreign languages faster
       </div>
     </div>    
   </div> 
