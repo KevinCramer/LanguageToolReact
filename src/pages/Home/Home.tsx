@@ -3,7 +3,7 @@ import blackBar from '../../assets/blackBar.png';
 import logoSvg from '../../assets/logoSvg.svg';
 
 export function Home(){
-  return <>
+  return <div>
     <div className = "imageContent" >
       <img src ={logoSvg} width={163} height={163} alt="logo"/>
     </div>
@@ -17,5 +17,5 @@ export function Home(){
         Learn foreign languages faster
       </div>
     </div>    
-  </> 
+  </div> 
 }
