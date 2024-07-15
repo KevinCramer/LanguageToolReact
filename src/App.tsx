@@ -1,5 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
-import './index.css'
+import './index.scss'
 import { Route, Routes } from 'react-router-dom'
 import ContactUs from './pages/ContactUs/ContactUs'
 import GrammarContent from './pages/GrammarContent/GrammarContent'

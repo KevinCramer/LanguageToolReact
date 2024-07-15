@@ -1,5 +1,5 @@
 
-import './GrammarContent.css'
+import './GrammarContent.scss'
 import { Container, Navbar as NavbarBs } from 'react-bootstrap';
 import { Language, Topic } from '../../../types/grammarTypes';
 import { queryParamCompress, queryParamDecompress } from '../../helpers/queryParamHelpers'

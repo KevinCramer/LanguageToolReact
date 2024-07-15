@@ -1,4 +1,4 @@
-import './QuizElement.css'
+import './QuizElement.scss'
 import { Navbar } from 'react-bootstrap'
 import { useState } from 'react'
 import { VerbConjugation } from '../../../../types/vocabTypes'

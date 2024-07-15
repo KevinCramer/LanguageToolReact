@@ -1,6 +1,6 @@
+@import 'styles/variables';
 *{
-  color: #4A4A4A;
-
+  color: $dark-grey;
 }
 
 label {
@@ -40,7 +40,7 @@ audio::-webkit-media-controls-panel {
 }
 
 .dropdown-menu {
-  --bs-dropdown-link-active-bg: #4A4A4A;
+  --bs-dropdown-link-active-bg: $dark-grey;
 }
 
 .dropdown-menu .dropdown-item:active,

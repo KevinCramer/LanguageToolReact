@@ -1,4 +1,4 @@
-import './Home.css'
+import './Home.scss'
 import blackBar from '../../assets/blackBar.png';
 import logoSvg from '../../assets/logoSvg.svg';
 

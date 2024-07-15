@@ -1,3 +1,5 @@
+@import '../../styles/variables';
+
 h4 {
   text-align: center;
   padding-bottom: 50px;
@@ -11,21 +13,21 @@ h4 {
 .react-bootstrap-table {
   width: 400px;
   border-width: 1px;
-  border-color: #4A4A4A;
+  border-color: $dark-grey;
   border-style: solid;
 }
 
 .react-bootstrap-table th {
   text-align: center;
   width: 50%;
-  color: #4A4A4A; 
+  color: $dark-grey; 
 }
 
 
 .react-bootstrap-table th {
   text-align: center;
   width: 50%;
-  color: #4A4A4A; 
+  color: $dark-grey; 
 }
 
 .div-options-container {

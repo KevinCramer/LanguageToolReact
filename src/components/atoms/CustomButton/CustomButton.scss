@@ -1,0 +1,21 @@
+@import '../../../styles/variables';
+
+.my-custom-button {
+  margin: 0px 10px 0px 0px;
+  background-color: $light-grey; 
+  border-color: $dark-grey;
+  color: $dark-grey;
+  border-radius: 5px;
+}
+
+.my-custom-button:hover,
+.my-custom-button:focus,
+.my-custom-button:active,
+.my-custom-button:focus:active {
+  background-color: $light-grey;
+  border-color: $light-grey;
+  color: $dark-grey;
+  border-color: $dark-grey;
+
+
+}

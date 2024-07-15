@@ -1,4 +1,4 @@
-import './StudyElement.css'
+import './StudyElement.scss'
 import { Modal, Navbar } from 'react-bootstrap'
 import { 
   Tenses, 

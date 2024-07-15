@@ -1,4 +1,4 @@
-import './CustomButton.css';
+import './CustomButton.scss';
 import { Button } from 'react-bootstrap'
 import React from 'react';
 

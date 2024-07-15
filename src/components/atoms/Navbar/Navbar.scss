@@ -1,6 +1,8 @@
+@import '../../../styles/variables';
+
 .nav-link-custom {
   margin: 0px 10px 0px 10px;
-  color: #4A4A4A !important;
+  color: $dark-grey !important;
   text-decoration: none;
 }
 
@@ -8,11 +10,11 @@
 .nav-link-custom:active,
 .nav-link-custom.active {
   text-decoration: underline;
-  color:#F8F8F8;
+  color: $ultra-light-grey;
 }
 
 .hover-underline {
-  color: #4A4A4A;
+  color: $dark-grey;
   margin-left: 10px;
   text-decoration: none;
 }

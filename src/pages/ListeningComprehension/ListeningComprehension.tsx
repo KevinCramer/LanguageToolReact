@@ -1,4 +1,4 @@
-import './ListeningComprehension.css'
+import './ListeningComprehension.scss'
 import { AudioTranscription, Language, Paragraph } from '../../../types/listeningComprehension';
 import { Container, Navbar as NavbarBs, Table } from 'react-bootstrap';
 import { queryParamCompress, queryParamDecompress } from '../../helpers/queryParamHelpers'

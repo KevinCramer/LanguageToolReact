@@ -1,5 +1,5 @@
-import '../../components/atoms/CustomDropDownButton/CustomDropDownButton.css'
-import './VocabContent.css'
+import '../../components/atoms/CustomDropDownButton/CustomDropDownButton.scss'
+import './VocabContent.scss'
 import { Container, Navbar as NavbarBs, Table } from 'react-bootstrap';
 import {
   Language,
