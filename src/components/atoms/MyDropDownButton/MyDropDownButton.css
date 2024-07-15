@@ -5,9 +5,9 @@
   color: #4A4A4A;
   border-radius: 5px;
 
-  --bs-btn-active-bg: #F8F8F8;  /* Set the active background color */
+  --bs-btn-active-bg: #F8F8F8; 
   --bs-btn-active-border-color: #F8F8F8;
-  --bs-btn-active-color: #4A4A4A; /* Set the active border color */
+  --bs-btn-active-color: #4A4A4A;
 }
 
 .btn-primary:hover,
@@ -21,7 +21,7 @@
 
 .btn-primary:active,
 .btn-primary:focus:active {
-  background-color: var(--bs-btn-active-bg);  /* Use the active background color */
+  background-color: var(--bs-btn-active-bg); 
   border-color: var(--bs-btn-active-border-color); 
   color:var(--bs-btn-active-color);
 }
