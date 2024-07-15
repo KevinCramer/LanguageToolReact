@@ -1,4 +1,4 @@
-import './MySwitch.css'; // Import your custom CSS file for styling
+import './MySwitch.css';
 import React from 'react';
 
 type CustomSwitchProps = {
@@ -8,7 +8,7 @@ type CustomSwitchProps = {
 
 const MySwitch = ({ checked, onChange }: CustomSwitchProps) => {
   const handleChange = () => {
-    onChange(!checked); // Toggle the checked state
+    onChange(!checked);
   };
 
   return (

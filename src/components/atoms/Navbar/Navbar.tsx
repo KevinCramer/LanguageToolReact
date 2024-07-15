@@ -4,14 +4,12 @@ import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
 
 const Navbar = () => {
-  const [expanded, setExpanded] = useState(false); // State to manage navbar expansion
+  const [expanded, setExpanded] = useState(false);
 
-  // Function to toggle navbar collapse
   const handleNavbarToggle = () => {
     setExpanded(!expanded);
   };
 
-  // Function to close navbar when a link is clicked
   const closeNavbar = () => {
     setExpanded(false);
   };
