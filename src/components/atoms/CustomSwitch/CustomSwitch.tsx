@@ -1,5 +1,4 @@
 import './CustomSwitch.scss';
-import React from 'react';
 
 type CustomSwitchProps = {
   checked: boolean;
