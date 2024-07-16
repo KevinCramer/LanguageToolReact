@@ -1,7 +1,9 @@
+@import '../../../styles/variables';
+
 .verb-label {
   text-align: center;
   /* standard color used for link see contactUs which uses same color*/
-  color: rgb(13, 110,253);
+  color: $link-color;
   text-decoration-line: underline;
   width: 100%;
 }

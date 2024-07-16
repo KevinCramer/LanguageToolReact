@@ -6,7 +6,8 @@ import { useDispatch } from 'react-redux';
 
 export const Home = () =>{
   const dispatch = useDispatch();
-  return <div> {/*  outer div needed here for layout; don't use fragment */}
+  // outer div needed here for layout; don't use fragment 
+  return <div onClick={() => dispatch(toggleNavbar())}> 
     <div className = "imageContent" >
       <img src ={logoSvg} width={163} height={163} alt="logo"/>
     </div>
@@ -16,9 +17,9 @@ export const Home = () =>{
         <img src ={blackBar} width={130} height={1} alt="logo"/>
       </div>
       <h4>COMMAND</h4>
-      <button onClick={() => dispatch(toggleNavbar())}> 
+      <div> 
         Learn foreign languages faster
-      </button>
+      </div>
     </div>    
   </div> 
 }

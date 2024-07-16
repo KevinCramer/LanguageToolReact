@@ -1,8 +1,8 @@
 import './Navbar.scss';
 import { Container, Nav, Navbar as NavbarBs } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
-import { useState } from 'react';
 import { useSelector } from 'react-redux';
+import { useState } from 'react';
 
 const Navbar = () => {
   const [expanded, setExpanded] = useState(false);
@@ -17,7 +17,8 @@ const Navbar = () => {
   };
 
   return (
-    <NavbarBs expand="false" expanded={expanded || reduxExpanded.openNavbar} onToggle={handleNavbarToggle}>
+    <NavbarBs expand="false" expanded={expanded || reduxExpanded.openNavbar} 
+      onToggle={handleNavbarToggle}>
       <Container>
         <NavbarBs.Toggle aria-controls="basic-navbar-nav" />
         <NavbarBs.Collapse id="basic-navbar-nav">
