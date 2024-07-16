@@ -48,3 +48,5 @@ To ensure consistency and maintainability in the codebase, please adhere to the 
    - Resolve all errors shown in the browser's developer tools.
    - This includes fixing any issues related to JavaScript, network requests, and other runtime errors.
 
+8. **Use ES6 whenever possible**
+   - I.e avoid using 'require' and use import instead. 

@@ -1,5 +1,6 @@
 import './QuizElement.scss'
 import { Navbar } from 'react-bootstrap'
+import { roughlyEqual } from '../../../helpers/vocab-content-helpers'
 import { useState } from 'react'
 import { VerbConjugation } from '../../../../types/vocabTypes'
 
@@ -17,7 +18,6 @@ const QuizElement = (
     setFormValues({ ...formValues, [name]: value })
   }
 
-  const roughlyEqual = (a: string, b: string ) => {return (a.toLowerCase().trim() === b)};
   const checkAnswer = (
     e:React.ChangeEvent<HTMLInputElement>, 
     submittedAnswer:string, 
