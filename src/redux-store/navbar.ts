@@ -5,8 +5,8 @@ const initialState = {
 
 }
 
-export const pizzaSlice = createSlice({
-  name: 'pizza',
+export const navbarSlice = createSlice({
+  name: 'navbar',
   initialState,
   reducers: {
     toggleNavbar: (state: any) => {
@@ -15,5 +15,5 @@ export const pizzaSlice = createSlice({
   }
 })
 
-export const { toggleNavbar } = pizzaSlice.actions
-export default pizzaSlice.reducer
+export const { toggleNavbar } = navbarSlice.actions
+export default navbarSlice.reducer

@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
-import pizzaReducer from './pizzaSlice'
+import navbarSlice from './navbar'
 export const store = configureStore({
   reducer: {
-    pizza: pizzaReducer,
+    navbar: navbarSlice,
   },
 })

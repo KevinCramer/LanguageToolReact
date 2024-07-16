@@ -1,11 +1,10 @@
 import './Home.scss'
 import blackBar from '../../assets/blackBar.png';
 import logoSvg from '../../assets/logoSvg.svg';
-import { useDispatch, useSelector } from 'react-redux';
-import { toggleNavbar } from '../../pizzaSlice';
+import { toggleNavbar } from '../../redux-store/navbar';
+import { useDispatch } from 'react-redux';
 
 export const Home = () =>{
-  const pizza = useSelector(state => state.pizza)
   const dispatch = useDispatch();
   return <div> {/*  outer div needed here for layout; don't use fragment */}
     <div className = "imageContent" >

@@ -2,11 +2,11 @@ import './Navbar.scss';
 import { Container, Nav, Navbar as NavbarBs } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 const Navbar = () => {
   const [expanded, setExpanded] = useState(false);
-  const reduxExpanded = useSelector(state=> state.pizza);
+  const reduxExpanded = useSelector(state=> state.navbar);
 
   const handleNavbarToggle = () => {
     setExpanded(!expanded);
