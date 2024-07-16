@@ -4,15 +4,21 @@ const initialState = {
   isNavbarOpen: false
 
 }
+export interface NavbarState {
+  isNavbarOpen: boolean;
+}
 
+export interface RootState {
+  navbar: NavbarState;
+}
 export const navbarSlice = createSlice({
   name: 'navbar',
   initialState,
   reducers: {
-    toggleNavbar: (state: any) => {
-      state.openNavbar = !state.isNavbarOpen
+    toggleNavbar: (state: NavbarState) => {
+      state.isNavbarOpen = !state.isNavbarOpen
     },
-    closeNavbar: (state: any) => {
+    closeNavbar: (state: NavbarState) => {
       state.isNavbarOpen = false
     }
   }

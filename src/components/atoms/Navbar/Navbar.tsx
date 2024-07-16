@@ -1,12 +1,12 @@
 import './Navbar.scss';
-import { closeNavbar, toggleNavbar } from '../../../redux-store/navbar';
+import { closeNavbar, RootState, toggleNavbar } from '../../../redux-store/navbar';
 import { Container, Nav, Navbar as NavbarBs } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
   const dispatch = useDispatch();
-  const reduxStore = useSelector(state=> state.navbar);
+  const reduxStore = useSelector((state: RootState) => state.navbar);
 
   return (
     <NavbarBs expand="false" expanded={reduxStore.isNavbarOpen} 
