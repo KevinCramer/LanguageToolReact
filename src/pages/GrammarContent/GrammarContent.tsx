@@ -5,7 +5,7 @@ import { Language, Topic } from '../../../types/grammarTypes';
 import { queryParamCompress, queryParamDecompress } from '../../helpers/queryParamHelpers'
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import CustomButton from '../../components/atoms/CustomDropDownButton/CustomDropDownButton';
+import CustomDropDownButton from '../../components/atoms/CustomDropDownButton/CustomDropDownButton';
 import Dropdown from 'react-bootstrap/Dropdown';
 import { languages } from '../../data/structured-data/grammar';
 import { languageToSlugs } from '../../constants'
@@ -64,18 +64,18 @@ const GrammarContent = () => {
         <NavbarBs>
           <Container className='grammar-container'>
             <div className='inner-grammar-container'>
-              <CustomButton title=
+              <CustomDropDownButton title=
                 {String(currentLanguage.languageName)}> 
                 {languages.map((language: Language, index: number) =>
                   <Dropdown.Item key = {index} onClick = {() => [changeCurrentLanguage(
                     language)]}>
                     {language.languageName}</Dropdown.Item>)}
-              </CustomButton>
-              <CustomButton title={'Topic: ' + currentTopic.name}>
+              </CustomDropDownButton>
+              <CustomDropDownButton title={'Topic: ' + currentTopic.name}>
                 {currentLanguage.topics.map((topic: Topic, index: number) =>
                   <Dropdown.Item key = {index} onClick = {() => 
                     changeCurrentTopic(topic)}>{topic.name}</Dropdown.Item>)}
-              </CustomButton>
+              </CustomDropDownButton>
             </div>
           </Container>
         </NavbarBs>

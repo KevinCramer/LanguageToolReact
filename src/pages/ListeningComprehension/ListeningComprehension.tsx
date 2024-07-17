@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { languages as allLanguages } from '../../data/structured-data/listeningComprehension'
 import AudioPlayer from '../../components/atoms/CustomAudioPlayer/CustomAudioPlayer';
-import CustomButton from '../../components/atoms/CustomDropDownButton/CustomDropDownButton';
+import CustomDropDownButton from '../../components/atoms/CustomDropDownButton/CustomDropDownButton';
 import Dropdown from 'react-bootstrap/Dropdown';
 import { languageToSlugs } from '../../constants'
 
@@ -89,19 +89,19 @@ const ListeningComprehensionContent = () => {
         <NavbarBs>
           <Container className='listening-comprehension-container'>
             <div className='inner-listening-comprehension-container'>
-              <CustomButton title=
+              <CustomDropDownButton title=
                 {String(currentLanguage.languageName)}> 
                 {languages.map((language: Language, index: number) =>
                   <Dropdown.Item key = {index} onClick = {() => [changeCurrentLanguage(
                     language),changeCurrentAudioTranscription(language.audioTranscriptions[0]) ]}>
                     {language.languageName}</Dropdown.Item>)}
-              </CustomButton>
-              <CustomButton title={'Topic: ' + currentAudioTranscription.name}>
+              </CustomDropDownButton>
+              <CustomDropDownButton title={'Topic: ' + currentAudioTranscription.name}>
                 {currentLanguage.audioTranscriptions
                   .map((topic: AudioTranscription, index: number) =>
                     <Dropdown.Item key = {index} onClick = {() => 
                       changeCurrentAudioTranscription(topic)}>{topic.name}</Dropdown.Item>)}
-              </CustomButton>
+              </CustomDropDownButton>
             </div>
           </Container>
         </NavbarBs>

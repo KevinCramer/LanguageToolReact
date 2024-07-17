@@ -14,7 +14,7 @@ import { queryParamCompress, queryParamDecompress } from '../../helpers/queryPar
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { languages as allLanguages } from '../../data/structured-data/words';
-import CustomButton from '../../components/atoms/CustomDropDownButton/CustomDropDownButton';
+import CustomDropDownButton from '../../components/atoms/CustomDropDownButton/CustomDropDownButton';
 import CustomSwitch from '../../components/atoms/CustomSwitch/CustomSwitch';
 import Dropdown from 'react-bootstrap/Dropdown';
 import { languageToSlugs } from '../../constants'
@@ -206,20 +206,20 @@ const VocabContent = () => {
         <NavbarBs>
           <Container className='options-container'>
             <div className='div-options-container'>
-              <CustomButton title={currentLanguage.languageName}>
+              <CustomDropDownButton title={currentLanguage.languageName}>
                 {languages.map((languageItem: Language, index: number) =>
                   <Dropdown.Item key = {index} onClick = {() => [changeCurrentLanguage(
                     languageItem),
                   setCurrentAlphabet(0),changeCurrentTopic(languageItem.topics[0]) ]}>
                     {languageItem.languageName}</Dropdown.Item>)}
-              </CustomButton>
-              <CustomButton title={'Topic: ' + currentTopic.name}>
+              </CustomDropDownButton>
+              <CustomDropDownButton title={'Topic: ' + currentTopic.name}>
                 {(currentLanguage.topics as Topic[])
                   .map((topic: Topic, index: number) =>
                     <Dropdown.Item key = {index} onClick = {() => 
                       changeCurrentTopic(topic)}>{topic.name}</Dropdown.Item>)}
-              </CustomButton>
-              <CustomButton title="Settings" align="end">
+              </CustomDropDownButton>
+              <CustomDropDownButton title="Settings" align="end">
                 <Dropdown.Item onClick = {changeBaseLanguage}>toggle base language</Dropdown.Item>
                 <Dropdown.Item onClick = {() => changeAudioBool()}>
                   {audioBool ? 'hide audio' : 'show audio'}</Dropdown.Item>
@@ -228,7 +228,7 @@ const VocabContent = () => {
                 {currentLanguage.numForeignAlphabets > 1 && !currentTopic.isAlphabet &&
               <Dropdown.Item onClick = {changeCurrentAlphabet}>
                 toggle foreign alphabet</Dropdown.Item>}
-              </CustomButton>   
+              </CustomDropDownButton>   
             </div>             
           </Container>
         </NavbarBs>
