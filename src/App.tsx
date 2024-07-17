@@ -1,9 +1,10 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './index.scss'
+import { Container, Modal } from 'react-bootstrap'
 import { Route, Routes } from 'react-router-dom'
 import { AuthProvider } from './contexts/AuthContext'
 import ContactUs from './pages/ContactUs/ContactUs'
-import { Container, Modal } from 'react-bootstrap'
+import CustomButton from './components/atoms/CustomButton/CustomButton'
 import GrammarContent from './pages/GrammarContent/GrammarContent'
 import Home from './pages/Home/Home'
 import ListeningComprehension from './pages/ListeningComprehension/ListeningComprehension'
@@ -23,7 +24,7 @@ const App = ()=> {
       <div className="full-background">
         <div style = {{ display:'flex', flexDirection: 'row', justifyContent:'space-between' }}>
           <Navbar />
-          <button onClick={() => displayLogin()}>
+          <button style={{ color: '#F8F8F8', backgroundColor: '#4A4A4A', height: '40px', margin: '7px', borderRadius: '5px', borderColor: '#4A4A4A', borderWidth:'1px' }} onClick={() => displayLogin()}>
           Login
           </button>
         </div>
