@@ -1,15 +1,15 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './index.scss'
 import { Route, Routes } from 'react-router-dom'
-import { AuthProvider } from './context/AuthContext'
+import { AuthProvider } from './contexts/AuthContext'
 import ContactUs from './pages/ContactUs/ContactUs'
+import { Container } from 'react-bootstrap'
 import GrammarContent from './pages/GrammarContent/GrammarContent'
 import Home from './pages/Home/Home'
 import ListeningComprehension from './pages/ListeningComprehension/ListeningComprehension'
 import Navbar from './components/atoms/Navbar/Navbar'
-import VocabContent from './pages/VocabContent/VocabContent'
 import Signup from './components/atoms/Signup/Signup'
-import { Container } from 'react-bootstrap'
+import VocabContent from './pages/VocabContent/VocabContent'
 
 const App = ()=> {
   return (
