@@ -3,7 +3,7 @@ import './index.scss'
 import { Route, Routes } from 'react-router-dom'
 import { AuthProvider } from './contexts/AuthContext'
 import ContactUs from './pages/ContactUs/ContactUs'
-import { Container } from 'react-bootstrap'
+import { Container, Modal } from 'react-bootstrap'
 import GrammarContent from './pages/GrammarContent/GrammarContent'
 import Home from './pages/Home/Home'
 import ListeningComprehension from './pages/ListeningComprehension/ListeningComprehension'
@@ -36,15 +36,18 @@ const App = ()=> {
 
         </Routes>
       </div>
-      {showLogin && <Container className='d-flex align-items-center justify-content-center'
-        style={{ minHeight: '100vh' }}>
-        <div className='w-100' style={{ maxWidth: '400px' }}>
-          <button onClick={() => hideLogin()}>
-            X
-          </button>
-          <Signup/>
-        </div>
-      </Container>}
+      {showLogin && <Modal show ={showLogin} onHide={hideLogin}>
+        <Modal.Header closeButton>
+        </Modal.Header>
+        <Modal.Body>
+          <Container className='d-flex align-items-center justify-content-center'
+            style={{ minHeight: '60vh' }}>
+            <div className='w-100' style={{ maxWidth: '400px' }}>
+              <Signup/>
+            </div>
+          </Container>
+        </Modal.Body>
+      </Modal>}
     </AuthProvider>
   );
 }
