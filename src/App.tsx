@@ -24,8 +24,10 @@ const App = ()=> {
       <div className="full-background">
         <div style = {{ display:'flex', flexDirection: 'row', justifyContent:'space-between' }}>
           <Navbar />
-          <button style={{ color: '#F8F8F8', backgroundColor: '#4A4A4A', height: '40px', margin: '7px', borderRadius: '5px', borderColor: '#4A4A4A', borderWidth:'1px' }} onClick={() => displayLogin()}>
-          Login
+          <button style={{ color: '#F8F8F8', backgroundColor: '#4A4A4A', height: '40px',
+            marginTop: '7px', marginRight: '12px', borderRadius: '5px', borderColor: '#4A4A4A',
+            borderWidth:'1px' }} onClick={() => displayLogin()}>
+            <b style = {{ color: 'white' }}>Login</b>
           </button>
         </div>
         <Routes>
