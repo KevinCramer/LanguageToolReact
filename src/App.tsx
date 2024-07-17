@@ -9,6 +9,7 @@ import ListeningComprehension from './pages/ListeningComprehension/ListeningComp
 import Navbar from './components/atoms/Navbar/Navbar'
 import VocabContent from './pages/VocabContent/VocabContent'
 import Signup from './components/atoms/Signup/Signup'
+import { Container } from 'react-bootstrap'
 
 const App = ()=> {
   return (
@@ -24,7 +25,12 @@ const App = ()=> {
 
         </Routes>
       </div>
-      <Signup/>
+      <Container className='d-flex align-items-center justify-content-center'
+        style={{ minHeight: '100vh' }}>
+        <div className='w-100' style={{ maxWidth: '400px' }}>
+          <Signup/>
+        </div>
+      </Container>
     </AuthProvider>
   );
 }
