@@ -4,7 +4,6 @@ import { Container, Modal } from 'react-bootstrap'
 import { Route, Routes } from 'react-router-dom'
 import { AuthProvider } from './contexts/AuthContext'
 import ContactUs from './pages/ContactUs/ContactUs'
-import CustomButton from './components/atoms/CustomButton/CustomButton'
 import GrammarContent from './pages/GrammarContent/GrammarContent'
 import Home from './pages/Home/Home'
 import ListeningComprehension from './pages/ListeningComprehension/ListeningComprehension'
@@ -24,9 +23,8 @@ const App = ()=> {
       <div className="full-background">
         <div style = {{ display:'flex', flexDirection: 'row', justifyContent:'space-between' }}>
           <Navbar />
-          <button style={{ color: '#F8F8F8', backgroundColor: '#4A4A4A', height: '40px',
-            marginTop: '7px', marginRight: '12px', borderRadius: '5px', borderColor: '#4A4A4A',
-            borderWidth:'1px' }} onClick={() => displayLogin()}>
+          <button style={{ color: '#F8F8F8', backgroundColor: 'rgb(13, 110,253)', height: '40px',
+            marginTop: '7px', marginRight: '12px', borderRadius: '5px', border: 'none' }} onClick={() => displayLogin()}>
             <b style = {{ color: 'white' }}>Login</b>
           </button>
         </div>
