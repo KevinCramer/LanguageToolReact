@@ -1,9 +1,11 @@
 import { Alert, Button, Card, Form } from 'react-bootstrap'
 import { useRef, useState } from 'react'
+import { hideModal } from '../../../redux-store/login';
 import { useAuth } from '../../../contexts/AuthContext'
-import { useNavigate } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
 
 export default function UpdateProfile() {
+  const dispatch = useDispatch();
   const emailRef = useRef()
   const passwordRef = useRef()
   const passwordConfirmRef = useRef()
@@ -11,7 +13,6 @@ export default function UpdateProfile() {
   const { currentUser, updatePassword, updateEmail } = useAuth()
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
-  const navigate = useNavigate()
 
   // @ts-ignore
   function handleSubmit(e) {
@@ -38,7 +39,7 @@ export default function UpdateProfile() {
 
     Promise.all(promises)
       .then(() => {
-        navigate('/')
+        dispatch(hideModal());
       })
       .catch(() => {
         setError('Failed to update account')

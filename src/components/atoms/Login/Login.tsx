@@ -1,9 +1,8 @@
 import { Alert, Button, Card, Form } from 'react-bootstrap'
-import { displayForgotPassword, displaySignup } from '../../../redux-store/login'
+import { displayForgotPassword, displaySignup, hideModal } from '../../../redux-store/login'
 import { useRef, useState } from 'react'
 import { useAuth } from '../../../contexts/AuthContext'
 import { useDispatch } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
 
 export default function Login() {
   const dispatch = useDispatch();
@@ -13,7 +12,6 @@ export default function Login() {
   const { login } = useAuth()
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
-  const navigate = useNavigate()
 
   // @ts-ignore
   async function handleSubmit(e) {
@@ -24,7 +22,7 @@ export default function Login() {
       setLoading(true)
       // @ts-ignore
       await login(emailRef.current.value, passwordRef.current.value)
-      navigate('/')
+      dispatch(hideModal());
     } catch {
       setError('Failed to log in')
     }

@@ -1,9 +1,8 @@
 import { Alert, Button, Card, Form } from 'react-bootstrap'
+import { displayLogin, hideModal } from '../../../redux-store/login'
 import { useRef, useState } from 'react'
-import { displayLogin } from '../../../redux-store/login'
 import { useAuth } from '../../../contexts/AuthContext'
 import { useDispatch } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
 
 export default function Signup() {
   const dispatch = useDispatch();
@@ -14,7 +13,6 @@ export default function Signup() {
   const { signup } = useAuth()
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
-  const navigate = useNavigate();
 
   // @ts-ignore
   async function handleSubmit(e) {
@@ -30,7 +28,7 @@ export default function Signup() {
       // @ts-ignore
       await signup(emailRef.current.value, passwordRef.current.value)
       // @ts-ignore
-      navigate('/')
+      dispatch(hideModal());
     } catch {
       setError('Failed to create an account')
     }
