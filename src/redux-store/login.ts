@@ -4,7 +4,8 @@ export const loginModalStates = {
   none: 'none',
   login: 'login',
   signup: 'signup',
-  forgotPassword: 'forgotPassword'
+  forgotPassword: 'forgotPassword',
+  updateProfile: 'updateProfile',
 }
 const initialState = {
   modalToShow: loginModalStates.none
@@ -30,11 +31,14 @@ export const loginSlice = createSlice({
     displayForgotPassword: (state: LoginState) => {
       state.modalToShow = loginModalStates.forgotPassword
     },
-    hideModal: (state: LoginState) => {
+    displayUpdateProfile: (state: LoginState) => {
+      state.modalToShow = loginModalStates.updateProfile
+    }, hideModal: (state: LoginState) => {
       state.modalToShow = loginModalStates.none
     }
   }
 })
 
-export const { displayLogin, displaySignup, hideModal, displayForgotPassword } = loginSlice.actions
+export const { displayLogin, displaySignup, hideModal, 
+  displayForgotPassword, displayUpdateProfile } = loginSlice.actions
 export default loginSlice.reducer

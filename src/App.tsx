@@ -16,6 +16,7 @@ import { useAuth } from './contexts/AuthContext'
 import { useEffect } from 'react'
 import VocabContent from './pages/VocabContent/VocabContent'
 import Profile from './pages/Profile/Profile'
+import UpdateProfile from './components/atoms/UpdateProfile/UpdateProfile'
 
 const App = ()=> {
   const dispatch = useDispatch();
@@ -66,6 +67,8 @@ const App = ()=> {
               {reduxLogin.modalToShow === loginModalStates.signup && <Signup/>}
               {reduxLogin.modalToShow === loginModalStates.login && <Login/>}
               {reduxLogin.modalToShow === loginModalStates.forgotPassword && <ForgotPassword/>}
+              {reduxLogin.modalToShow === loginModalStates.updateProfile && <UpdateProfile/>}
+
             </div>
           </Container>
         </Modal.Body>
