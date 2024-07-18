@@ -12,7 +12,7 @@ export default function Signup() {
   const { signup } = useAuth()
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
-  const history = useNavigate()
+  const navigate = useNavigate();
 
   // @ts-ignore
   async function handleSubmit(e) {
@@ -28,7 +28,7 @@ export default function Signup() {
       // @ts-ignore
       await signup(emailRef.current.value, passwordRef.current.value)
       // @ts-ignore
-      history.push('/')
+      navigate('/')
     } catch {
       setError('Failed to create an account')
     }

@@ -24,7 +24,8 @@ const App = ()=> {
         <div style = {{ display:'flex', flexDirection: 'row', justifyContent:'space-between' }}>
           <Navbar />
           <button style={{ color: '#F8F8F8', backgroundColor: 'rgb(13, 110,253)', height: '40px',
-            marginTop: '7px', marginRight: '12px', borderRadius: '5px', border: 'none' }} onClick={() => displayLogin()}>
+            marginTop: '7px', marginRight: '12px', 
+            borderRadius: '5px', border: 'none' }} onClick={() => displayLogin()}>
             <b style = {{ color: 'white' }}>Login</b>
           </button>
         </div>
