@@ -1,10 +1,7 @@
-import { Container, Modal } from 'react-bootstrap';
-import { useDispatch, useSelector } from 'react-redux';
-import UpdateProfile from '../../components/atoms/UpdateProfile/UpdateProfile';
-import { displayUpdateProfile, hideModal, loginModalStates, RootState } from '../../redux-store/login'
+import { displayUpdateProfile } from '../../redux-store/auth'
+import { useDispatch, } from 'react-redux';
 
 const Profile = () => {
-  const reduxLogin = useSelector((state: RootState) => state.login);
   const dispatch = useDispatch();
   return (
     <>

@@ -1,7 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './index.scss'
+import { authModalStates, displayLogin, hideModal, RootState } from './redux-store/auth'
 import { Container, Modal } from 'react-bootstrap'
-import { displayLogin, hideModal, loginModalStates, RootState } from './redux-store/login'
 import { Route, Routes } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
 import ContactUs from './pages/ContactUs/ContactUs'
@@ -11,16 +11,16 @@ import Home from './pages/Home/Home'
 import ListeningComprehension from './pages/ListeningComprehension/ListeningComprehension'
 import Login from './components/atoms/Login/Login'
 import Navbar from './components/atoms/Navbar/Navbar'
+import Profile from './pages/Profile/Profile'
 import Signup from './components/atoms/Signup/Signup'
+import UpdateProfile from './components/atoms/UpdateProfile/UpdateProfile'
 import { useAuth } from './contexts/AuthContext'
 import { useEffect } from 'react'
 import VocabContent from './pages/VocabContent/VocabContent'
-import Profile from './pages/Profile/Profile'
-import UpdateProfile from './components/atoms/UpdateProfile/UpdateProfile'
 
 const App = ()=> {
   const dispatch = useDispatch();
-  const reduxLogin = useSelector((state: RootState) => state.login);
+  const reduxAuth = useSelector((state: RootState) => state.auth);
   // @ts-ignore
   const { currentUser, logout } = useAuth();
 
@@ -56,7 +56,7 @@ const App = ()=> {
 
         </Routes>
       </div>
-      <Modal show ={reduxLogin.modalToShow !== loginModalStates.none}
+      <Modal show ={reduxAuth.modalToShow !== authModalStates.none}
         onHide={() => dispatch(hideModal())}>
         <Modal.Header closeButton>
         </Modal.Header>
@@ -64,10 +64,10 @@ const App = ()=> {
           <Container className='d-flex align-items-center justify-content-center'
             style={{ minHeight: '60vh' }}>
             <div className='w-100' style={{ maxWidth: '400px' }}>
-              {reduxLogin.modalToShow === loginModalStates.signup && <Signup/>}
-              {reduxLogin.modalToShow === loginModalStates.login && <Login/>}
-              {reduxLogin.modalToShow === loginModalStates.forgotPassword && <ForgotPassword/>}
-              {reduxLogin.modalToShow === loginModalStates.updateProfile && <UpdateProfile/>}
+              {reduxAuth.modalToShow === authModalStates.signup && <Signup/>}
+              {reduxAuth.modalToShow === authModalStates.login && <Login/>}
+              {reduxAuth.modalToShow === authModalStates.forgotPassword && <ForgotPassword/>}
+              {reduxAuth.modalToShow === authModalStates.updateProfile && <UpdateProfile/>}
 
             </div>
           </Container>

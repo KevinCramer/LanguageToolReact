@@ -1,6 +1,6 @@
 import { Alert, Button, Card, Form } from 'react-bootstrap'
 import { useRef, useState } from 'react'
-import { hideModal } from '../../../redux-store/login';
+import { hideModal } from '../../../redux-store/auth';
 import { useAuth } from '../../../contexts/AuthContext'
 import { useDispatch } from 'react-redux'
 
@@ -39,7 +39,6 @@ export default function UpdateProfile() {
 
     Promise.all(promises)
       .then(() => {
-        dispatch(hideModal());
       })
       .catch(() => {
         setError('Failed to update account')
