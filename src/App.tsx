@@ -4,7 +4,6 @@ import { Container, Modal } from 'react-bootstrap'
 import { displayLogin, hideModal, loginModalStates, RootState } from './redux-store/login'
 import { Route, Routes } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
-import { useAuth } from './contexts/AuthContext'
 import ContactUs from './pages/ContactUs/ContactUs'
 import ForgotPassword from './components/atoms/ForgotPassword/ForgotPassword'
 import GrammarContent from './pages/GrammarContent/GrammarContent'
@@ -13,6 +12,8 @@ import ListeningComprehension from './pages/ListeningComprehension/ListeningComp
 import Login from './components/atoms/Login/Login'
 import Navbar from './components/atoms/Navbar/Navbar'
 import Signup from './components/atoms/Signup/Signup'
+import { useAuth } from './contexts/AuthContext'
+import { useEffect } from 'react'
 import VocabContent from './pages/VocabContent/VocabContent'
 
 const App = ()=> {
@@ -20,7 +21,12 @@ const App = ()=> {
   const reduxLogin = useSelector((state: RootState) => state.login);
   // @ts-ignore
   const { currentUser, logout } = useAuth();
-  console.log('currentUser: ', currentUser)
+
+  useEffect(() => {
+    if (currentUser && currentUser.email) {
+      dispatch(hideModal());
+    }
+  }, [currentUser && currentUser.email]);
 
   return (
     <>

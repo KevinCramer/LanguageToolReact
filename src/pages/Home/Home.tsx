@@ -12,7 +12,7 @@ export const Home = () =>{
   // outer div needed here for layout; don't use fragment 
   return <div onClick={() => dispatch(toggleNavbar())}> 
     {currentUser && currentUser.email && 
-    <div>
+    <div style={{ textAlign: 'center' }}>
       Welcome user with email: {currentUser && currentUser.email}
     </div>
     }
