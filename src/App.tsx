@@ -7,6 +7,7 @@ import ContactUs from './pages/ContactUs/ContactUs'
 import GrammarContent from './pages/GrammarContent/GrammarContent'
 import Home from './pages/Home/Home'
 import ListeningComprehension from './pages/ListeningComprehension/ListeningComprehension'
+import Login from './components/atoms/Login/Login'
 import Navbar from './components/atoms/Navbar/Navbar'
 import Signup from './components/atoms/Signup/Signup'
 import { useState } from 'react'
@@ -35,6 +36,8 @@ const App = ()=> {
           <Route path="/grammar" element={<GrammarContent />} />
           <Route path="/listening-comprehension" element={<ListeningComprehension />} />
           <Route path="/contactus" element={<ContactUs />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/login" element={<Login />} />
 
         </Routes>
       </div>
