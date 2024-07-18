@@ -5,12 +5,14 @@ import { Provider } from 'react-redux'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { store } from './redux-store/store'
-
+import { AuthProvider } from './contexts/AuthContext'
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <BrowserRouter>
       <Provider store = {store}>
-        <App />
+        <AuthProvider>
+          <App />
+        </AuthProvider>
       </Provider>
     </BrowserRouter>
   </React.StrictMode>

@@ -11,7 +11,11 @@ export const Home = () =>{
   const { currentUser } = useAuth();
   // outer div needed here for layout; don't use fragment 
   return <div onClick={() => dispatch(toggleNavbar())}> 
-    <div>Welcome user with email: {currentUser && currentUser.email}</div>
+    {currentUser && currentUser.email && 
+    <div>
+      Welcome user with email: {currentUser && currentUser.email}
+    </div>
+    }
     <div className = "imageContent" >
       <img src ={logoSvg} width={163} height={163} alt="logo"/>
     </div>

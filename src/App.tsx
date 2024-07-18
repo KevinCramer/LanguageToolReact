@@ -4,7 +4,7 @@ import { Container, Modal } from 'react-bootstrap'
 import { displayLogin, hideModal, loginModalStates, RootState } from './redux-store/login'
 import { Route, Routes } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
-import { AuthProvider } from './contexts/AuthContext'
+import { useAuth } from './contexts/AuthContext'
 import ContactUs from './pages/ContactUs/ContactUs'
 import ForgotPassword from './components/atoms/ForgotPassword/ForgotPassword'
 import GrammarContent from './pages/GrammarContent/GrammarContent'
@@ -18,16 +18,24 @@ import VocabContent from './pages/VocabContent/VocabContent'
 const App = ()=> {
   const dispatch = useDispatch();
   const reduxLogin = useSelector((state: RootState) => state.login);
+  // @ts-ignore
+  const { currentUser, logout } = useAuth();
+  console.log('currentUser: ', currentUser)
 
   return (
-    <AuthProvider>
+    <>
       <div className="full-background">
         <div style = {{ display:'flex', flexDirection: 'row', justifyContent:'space-between' }}>
           <Navbar />
           <button style={{ color: '#F8F8F8', backgroundColor: 'rgb(13, 110,253)', height: '40px',
             marginTop: '7px', marginRight: '12px', 
-            borderRadius: '5px', border: 'none' }} onClick={() => dispatch(displayLogin())}>
-            <b style = {{ color: 'white' }}>Login</b>
+            borderRadius: '5px', border: 'none' }} 
+          onClick={() => currentUser && currentUser.email ?
+            logout()
+            : dispatch(displayLogin())}>
+            <b style = {{ color: 'white' }}>
+              {currentUser && currentUser.email ? 'Log Out' : 'Log In'}
+            </b>
           </button>
         </div>
         <Routes>
@@ -53,7 +61,7 @@ const App = ()=> {
           </Container>
         </Modal.Body>
       </Modal>
-    </AuthProvider>
+    </>
   );
 }
 
