@@ -1,10 +1,12 @@
 import { Alert, Button, Card, Form } from 'react-bootstrap'
-import { Link, useNavigate } from 'react-router-dom'
 import { useRef, useState } from 'react'
-
+import { displayLogin } from '../../../redux-store/login'
 import { useAuth } from '../../../contexts/AuthContext'
+import { useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 
 export default function Signup() {
+  const dispatch = useDispatch();
   const emailRef = useRef()
   const passwordRef = useRef()
   const passwordConfirmRef = useRef()
@@ -65,7 +67,7 @@ export default function Signup() {
         </Card.Body>
       </Card>
       <div className="w-100 text-center mt-2">
-        Already have an account? <Link to="/login">Log In</Link>
+        Already have an account? <button onClick={() => dispatch(displayLogin())}>Log In</button>
       </div>
     </>
   )

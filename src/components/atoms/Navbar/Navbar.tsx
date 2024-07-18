@@ -6,10 +6,10 @@ import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
   const dispatch = useDispatch();
-  const reduxStore = useSelector((state: RootState) => state.navbar);
+  const reduxNavbar = useSelector((state: RootState) => state.navbar);
 
   return (
-    <NavbarBs expand="false" expanded={reduxStore.isNavbarOpen} 
+    <NavbarBs expand="false" expanded={reduxNavbar.isNavbarOpen} 
       onToggle={() => dispatch(toggleNavbar())}>
       <Container>
         <NavbarBs.Toggle aria-controls="basic-navbar-nav" />
