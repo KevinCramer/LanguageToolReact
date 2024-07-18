@@ -3,10 +3,12 @@ import { closeNavbar, RootState, toggleNavbar } from '../../../redux-store/navba
 import { Container, Nav, Navbar as NavbarBs } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-
+import { useAuth } from '../../../contexts/AuthContext';
 const Navbar = () => {
   const dispatch = useDispatch();
   const reduxNavbar = useSelector((state: RootState) => state.navbar);
+  // @ts-ignore
+  const { currentUser } = useAuth();
 
   return (
     <NavbarBs expand="false" expanded={reduxNavbar.isNavbarOpen} 
@@ -55,6 +57,14 @@ const Navbar = () => {
             >
             Contact Us
             </Nav.Link>
+            {currentUser && currentUser.email && <Nav.Link
+              className="nav-link-custom"
+              to="/profile"
+              as={NavLink}
+              onClick={() => dispatch(closeNavbar())}
+            >
+            Your Profile
+            </Nav.Link>}
           </Nav>
         
         </NavbarBs.Collapse>

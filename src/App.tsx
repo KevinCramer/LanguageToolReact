@@ -15,6 +15,7 @@ import Signup from './components/atoms/Signup/Signup'
 import { useAuth } from './contexts/AuthContext'
 import { useEffect } from 'react'
 import VocabContent from './pages/VocabContent/VocabContent'
+import Profile from './pages/Profile/Profile'
 
 const App = ()=> {
   const dispatch = useDispatch();
@@ -50,6 +51,8 @@ const App = ()=> {
           <Route path="/grammar" element={<GrammarContent />} />
           <Route path="/listening-comprehension" element={<ListeningComprehension />} />
           <Route path="/contactus" element={<ContactUs />} />
+          <Route path="/profile" element={<Profile />} />
+
         </Routes>
       </div>
       <Modal show ={reduxLogin.modalToShow !== loginModalStates.none}
