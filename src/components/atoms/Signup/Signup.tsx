@@ -66,8 +66,11 @@ export default function Signup() {
           </Form>
         </Card.Body>
       </Card>
-      <div className="w-100 text-center mt-2">
-        Already have an account? <button onClick={() => dispatch(displayLogin())}>Log In</button>
+      <div className="w-100 text-center mt-2" 
+        style={{ display:'flex', flexDirection: 'row', justifyContent: 'center' }}>
+        Already have an account?&nbsp;<div style={{ color: 'rgb(13, 110,253)', 
+          textDecoration: 'underline' }}
+        onClick={() => dispatch(displayLogin())}>Log In</div>
       </div>
     </>
   )

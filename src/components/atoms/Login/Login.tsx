@@ -58,8 +58,10 @@ export default function Login() {
           </div>
         </Card.Body>
       </Card>
-      <div className="w-100 text-center mt-2">
-        Need an account? <button onClick={() => dispatch(displaySignup())}>Sign Up</button>
+      <div className="w-100 text-center mt-2"
+        style={{ display:'flex', flexDirection: 'row', justifyContent: 'center' }}>
+        Need an account?&nbsp;<div style={{ color: 'rgb(13, 110,253)', 
+          textDecoration: 'underline' }} onClick={() => dispatch(displaySignup())}>Sign Up</div>
       </div>
     </>
   )
