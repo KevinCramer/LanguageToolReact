@@ -6,13 +6,13 @@ import { Route, Routes } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
 import { AuthProvider } from './contexts/AuthContext'
 import ContactUs from './pages/ContactUs/ContactUs'
+import ForgotPassword from './components/atoms/ForgotPassword/ForgotPassword'
 import GrammarContent from './pages/GrammarContent/GrammarContent'
 import Home from './pages/Home/Home'
 import ListeningComprehension from './pages/ListeningComprehension/ListeningComprehension'
 import Login from './components/atoms/Login/Login'
 import Navbar from './components/atoms/Navbar/Navbar'
 import Signup from './components/atoms/Signup/Signup'
-
 import VocabContent from './pages/VocabContent/VocabContent'
 
 const App = ()=> {
@@ -48,6 +48,7 @@ const App = ()=> {
             <div className='w-100' style={{ maxWidth: '400px' }}>
               {reduxLogin.modalToShow === loginModalStates.signup && <Signup/>}
               {reduxLogin.modalToShow === loginModalStates.login && <Login/>}
+              {reduxLogin.modalToShow === loginModalStates.forgotPassword && <ForgotPassword/>}
             </div>
           </Container>
         </Modal.Body>

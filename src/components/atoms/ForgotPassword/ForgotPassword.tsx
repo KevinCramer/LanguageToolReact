@@ -1,32 +1,30 @@
 import { Alert, Button, Card, Form } from 'react-bootstrap'
-import { displayForgotPassword, displaySignup } from '../../../redux-store/login'
+import { displayLogin, displaySignup } from '../../../redux-store/login'
 import { useRef, useState } from 'react'
 import { useAuth } from '../../../contexts/AuthContext'
 import { useDispatch } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
 
-export default function Login() {
+export default function ForgotPassword() {
   const dispatch = useDispatch();
   const emailRef = useRef()
-  const passwordRef = useRef()
   // @ts-ignore
-  const { login } = useAuth()
+  const { resetPassword } = useAuth()
   const [error, setError] = useState('')
+  const [message, setMessage] = useState('')
   const [loading, setLoading] = useState(false)
-  const navigate = useNavigate()
-
   // @ts-ignore
   async function handleSubmit(e) {
     e.preventDefault()
 
     try {
+      setMessage('')
       setError('')
       setLoading(true)
       // @ts-ignore
-      await login(emailRef.current.value, passwordRef.current.value)
-      navigate('/')
+      await resetPassword(emailRef.current.value)
+      setMessage('Check your inbox for further instructions')
     } catch {
-      setError('Failed to log in')
+      setError('Failed to reset password')
     }
 
     setLoading(false)
@@ -36,36 +34,30 @@ export default function Login() {
     <>
       <Card>
         <Card.Body>
-          <h2 className="text-center mb-4">Log In</h2>
+          <h2 className="text-center mb-4">Password Reset</h2>
           {error && <Alert variant="danger">{error}</Alert>}
+          {message && <Alert variant="success">{message}</Alert>}
           <Form onSubmit={handleSubmit}>
             <Form.Group id="email">
               <Form.Label>Email</Form.Label>
               {/* @ts-ignore */}
               <Form.Control type="email" ref={emailRef} required />
             </Form.Group>
-            <Form.Group id="password">
-              <Form.Label>Password</Form.Label>
-              {/* @ts-ignore */}
-              <Form.Control type="password" ref={passwordRef} required />
-            </Form.Group>
             <Button disabled={loading} className="w-100" type="submit">
-              Log In
+              Reset Password
             </Button>
           </Form>
           <div className="w-100 text-center mt-3">
             <div style={{ color: 'rgb(13, 110,253)', 
-              textDecoration: 'underline' }} 
-            onClick={() => dispatch(displayForgotPassword())}>
-              Forgot Password?
-            </div>
+              textDecoration: 'underline' }} onClick={() => dispatch(displayLogin())}>
+            Log In</div>
           </div>
         </Card.Body>
       </Card>
-      <div className="w-100 text-center mt-2"
-        style={{ display:'flex', flexDirection: 'row', justifyContent: 'center' }}>
-        Need an account?&nbsp;<div style={{ color: 'rgb(13, 110,253)', 
-          textDecoration: 'underline' }} onClick={() => dispatch(displaySignup())}>Sign Up</div>
+      <div className="w-100 text-center mt-2">
+        Need an account? <div style={{ color: 'rgb(13, 110,253)', 
+          textDecoration: 'underline' }} onClick={() => dispatch(displaySignup())}>
+            Sign Up</div>
       </div>
     </>
   )
