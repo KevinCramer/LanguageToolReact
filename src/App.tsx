@@ -2,7 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import './index.scss'
 import { authModalStates, displayLogin, hideModal, RootState } from './redux-store/auth'
 import { Container, Modal } from 'react-bootstrap'
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, useLocation, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
 import ContactUs from './pages/ContactUs/ContactUs'
 import ForgotPassword from './components/atoms/ForgotPassword/ForgotPassword'
@@ -20,6 +20,9 @@ import VocabContent from './pages/VocabContent/VocabContent'
 
 const App = ()=> {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const location = useLocation();
+
   const reduxAuth = useSelector((state: RootState) => state.auth);
   // @ts-ignore
   const { currentUser, logout } = useAuth();
@@ -38,9 +41,20 @@ const App = ()=> {
           <button style={{ color: '#F8F8F8', backgroundColor: 'rgb(13, 110,253)', height: '40px',
             marginTop: '7px', marginRight: '12px', 
             borderRadius: '5px', border: 'none' }} 
-          onClick={() => currentUser && currentUser.email ?
-            logout()
-            : dispatch(displayLogin())}>
+          onClick={async () => {
+            if (currentUser && currentUser.email) {
+              try {
+                await logout();
+                if (location.pathname === '/profile') {
+                  navigate('/');
+                }
+              } catch (error) {
+                console.error('Failed to log out', error);
+              }
+            } else {
+              // Assuming dispatch(displayLogin()) is defined and imported
+              dispatch(displayLogin());
+            }}}>
             <b style = {{ color: 'white' }}>
               {currentUser && currentUser.email ? 'Log Out' : 'Log In'}
             </b>
