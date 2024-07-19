@@ -25,7 +25,7 @@ export const Home = () =>{
         <img src ={blackBar} width={130} height={1} alt="logo"/>
       </div>
       <h4>COMMAND</h4>
-      <div> 
+      <div style={{ color: 'rgb(13, 110,253)', textDecoration: 'underline' }}> 
         Learn foreign languages faster
       </div>
     </div>    
