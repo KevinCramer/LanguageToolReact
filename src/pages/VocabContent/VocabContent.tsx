@@ -64,7 +64,12 @@ const VocabContent = () => {
       ;
     };
   const changeCurrentTopic = (topic: Topic) => {
-    return setCurrentTopic(topic);
+    if(topic.isLocked){
+      console.log('TOPIC IS LOCKED!!!')
+    }
+    else {
+      setCurrentTopic(topic);
+    }
   }
 
   const urlQuiz = urlSettings[5]
