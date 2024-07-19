@@ -9,7 +9,7 @@ const Profile = () => {
       <div style={{ color: 'rgb(13, 110,253)', 
         textDecoration: 'underline', textAlign: 'center' }} 
       onClick={() => dispatch(displayUpdateProfile())}>
-              Update Profile
+        Reset password
       </div>
     </>
   );

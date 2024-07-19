@@ -1,6 +1,6 @@
-import { createUserWithEmailAndPassword, updateEmail as firebaseUpdateEmail, 
+import { createUserWithEmailAndPassword, 
   updatePassword as firebaseUpdatePassword, onAuthStateChanged,
-  sendPasswordResetEmail,
+  sendEmailVerification, sendPasswordResetEmail,
   signInWithEmailAndPassword } from 'firebase/auth';
 import React, { useContext, useEffect, useState } from 'react'
 import { auth } from '../firebase'
@@ -21,6 +21,11 @@ export function AuthProvider({ children }: AuthProviderProp) {
 
   function signup(email: any, password: any) {
     return createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        sendEmailVerification(user);
+        return userCredential;
+      });
   }
 
   function login(email: any, password: any) {
@@ -35,16 +40,17 @@ export function AuthProvider({ children }: AuthProviderProp) {
     return sendPasswordResetEmail(auth, email)
   }
 
-  function updateEmail(newEmail: any) {
-    console.log('updateEmail is called from AuthContext.ts')
-    console.log('newEmail: ', newEmail)
-    //@ts-ignore
-    return firebaseUpdateEmail(currentUser, newEmail)
-  }
-
   function updatePassword(password: any) {
     //@ts-ignore
     return firebaseUpdatePassword(currentUser, password)
+  }
+
+  function sendVerificationEmail() {
+    if (currentUser) {
+      return sendEmailVerification(currentUser);
+    } else {
+      return Promise.reject(new Error('No user is signed in'));
+    }
   }
 
   useEffect(() => {
@@ -61,8 +67,8 @@ export function AuthProvider({ children }: AuthProviderProp) {
     signup,
     logout,
     resetPassword,
-    updateEmail,
     updatePassword,
+    sendVerificationEmail,
   }
 
   return (

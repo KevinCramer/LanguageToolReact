@@ -6,11 +6,10 @@ import { useDispatch } from 'react-redux'
 
 export default function UpdateProfile() {
   const dispatch = useDispatch();
-  const emailRef = useRef()
   const passwordRef = useRef()
   const passwordConfirmRef = useRef()
   // @ts-ignore
-  const { currentUser, updatePassword, updateEmail } = useAuth()
+  const { updatePassword } = useAuth()
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
 
@@ -26,11 +25,6 @@ export default function UpdateProfile() {
     setLoading(true)
     setError('')
 
-    // @ts-ignore
-    if (emailRef.current.value !== currentUser.email) {
-      // @ts-ignore
-      promises.push(updateEmail(emailRef.current.value))
-    }
     // @ts-ignore
     if (passwordRef.current.value) {
       // @ts-ignore
@@ -53,19 +47,9 @@ export default function UpdateProfile() {
     <>
       <Card>
         <Card.Body>
-          <h2 className="text-center mb-4">Update Profile</h2>
+          <h2 className="text-center mb-4">Reset Password</h2>
           {error && <Alert variant="danger">{error}</Alert>}
           <Form onSubmit={handleSubmit}>
-            <Form.Group id="email">
-              <Form.Label>Email</Form.Label>
-              <Form.Control
-                type="email"
-                // @ts-ignore
-                ref={emailRef}
-                required
-                defaultValue={currentUser.email}
-              />
-            </Form.Group>
             <Form.Group id="password">
               <Form.Label>Password</Form.Label>
               <Form.Control
@@ -85,7 +69,7 @@ export default function UpdateProfile() {
               />
             </Form.Group>
             <Button disabled={loading} className="w-100" type="submit">
-              Update
+              Submit
             </Button>
           </Form>
         </Card.Body>
