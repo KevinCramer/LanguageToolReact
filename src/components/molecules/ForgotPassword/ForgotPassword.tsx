@@ -1,7 +1,7 @@
 import { Alert, Button, Card, Form } from 'react-bootstrap'
 import { displayLogin, displaySignup } from '../../../redux-store/auth'
 import { useRef, useState } from 'react'
-import CustomLink from '../CustomLink/CustomLink'
+import CustomLink from '../../atoms/CustomLink/CustomLink'
 import { useAuth } from '../../../contexts/AuthContext'
 import { useDispatch } from 'react-redux'
 

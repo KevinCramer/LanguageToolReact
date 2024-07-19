@@ -5,14 +5,14 @@ import { Container, Modal } from 'react-bootstrap'
 import { Route, Routes, useLocation, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
 import ContactUs from './pages/ContactUs/ContactUs'
-import ForgotPassword from './components/atoms/ForgotPassword/ForgotPassword'
+import ForgotPassword from './components/molecules/ForgotPassword/ForgotPassword'
 import GrammarContent from './pages/GrammarContent/GrammarContent'
 import Home from './pages/Home/Home'
 import ListeningComprehension from './pages/ListeningComprehension/ListeningComprehension'
-import Login from './components/atoms/Login/Login'
+import Login from './components/molecules/Login/Login'
 import Navbar from './components/atoms/Navbar/Navbar'
 import Profile from './pages/Profile/Profile'
-import Signup from './components/atoms/Signup/Signup'
+import Signup from './components/molecules/Signup/Signup'
 import UpdateProfile from './components/atoms/UpdateProfile/UpdateProfile'
 import { useAuth } from './contexts/AuthContext'
 import { useEffect } from 'react'
@@ -49,10 +49,10 @@ const App = ()=> {
                   navigate('/');
                 }
               } catch (error) {
+                // eslint-disable-next-line no-console
                 console.error('Failed to log out', error);
               }
             } else {
-              // Assuming dispatch(displayLogin()) is defined and imported
               dispatch(displayLogin());
             }}}>
             <b style = {{ color: 'white' }}>
