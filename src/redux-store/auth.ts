@@ -15,7 +15,7 @@ export interface AuthState {
   modalToShow: string;
 }
 
-export interface RootState {
+export interface RootStateAuth {
   auth: AuthState;
 }
 export const authSlice = createSlice({

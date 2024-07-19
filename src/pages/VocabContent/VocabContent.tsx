@@ -23,9 +23,12 @@ import { nullOrUndefined } from '../../helpers/audio-player-helpers'
 import QuizElement from '../../components/atoms/QuizElement/QuizElement';
 import { scramble } from '../../helpers/vocab-content-helpers';
 import StudyElement from '../../components/molecules/StudyElement/StudyElement';
+import { useDispatch } from 'react-redux';
+import { denyPermission } from '../../redux-store/lock';
 
 const VocabContent = () => {
-  let languages = allLanguages
+  let languages = allLanguages;
+  const dispatch = useDispatch();
 
   const navigate = useNavigate();
 
@@ -65,7 +68,7 @@ const VocabContent = () => {
     };
   const changeCurrentTopic = (topic: Topic) => {
     if(topic.isLocked){
-      console.log('TOPIC IS LOCKED!!!')
+      dispatch(denyPermission());
     }
     else {
       setCurrentTopic(topic);

@@ -1,15 +1,16 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './index.scss'
-import { authModalStates, hideModal, RootState } from './redux-store/auth'
+import { authModalStates, hideModal, RootStateAuth } from './redux-store/auth'
 import { Container, Modal } from 'react-bootstrap'
-import { Route, Routes
-} from 'react-router-dom'
+import { resetPermission, RootStateLock } from './redux-store/lock'
+import { Route, Routes } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
 import ContactUs from './pages/ContactUs/ContactUs'
 import ForgotPassword from './components/molecules/ForgotPassword/ForgotPassword'
 import GrammarContent from './pages/GrammarContent/GrammarContent'
 import Home from './pages/Home/Home'
 import ListeningComprehension from './pages/ListeningComprehension/ListeningComprehension'
+import LockedContent from './components/atoms/LockedContent/LockedContent'
 import Login from './components/molecules/Login/Login'
 import Navbar from './components/atoms/Navbar/Navbar'
 import Profile from './pages/Profile/Profile'
@@ -22,7 +23,8 @@ import VocabContent from './pages/VocabContent/VocabContent'
 const App = ()=> {
   const dispatch = useDispatch();
 
-  const reduxAuth = useSelector((state: RootState) => state.auth);
+  const reduxAuth = useSelector((state: RootStateAuth) => state.auth);
+  const reduxLock = useSelector((state: RootStateLock) => state.lock);
   // @ts-ignore
   const { currentUser } = useAuth();
 
@@ -58,7 +60,19 @@ const App = ()=> {
               {reduxAuth.modalToShow === authModalStates.login && <Login/>}
               {reduxAuth.modalToShow === authModalStates.forgotPassword && <ForgotPassword/>}
               {reduxAuth.modalToShow === authModalStates.updateProfile && <UpdateProfile/>}
-
+            </div>
+          </Container>
+        </Modal.Body>
+      </Modal>
+      <Modal show ={reduxLock.permissionDenied}
+        onHide={() => dispatch(resetPermission())}>
+        <Modal.Header closeButton>
+        </Modal.Header>
+        <Modal.Body>
+          <Container className='d-flex align-items-center justify-content-center'
+            style={{ minHeight: '60vh' }}>
+            <div className='w-100' style={{ maxWidth: '400px' }}>
+              <LockedContent/>
             </div>
           </Container>
         </Modal.Body>

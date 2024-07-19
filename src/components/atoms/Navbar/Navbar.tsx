@@ -1,5 +1,5 @@
 import './Navbar.scss';
-import { closeNavbar, RootState, toggleNavbar } from '../../../redux-store/navbar';
+import { closeNavbar, RootStateNavbar, toggleNavbar } from '../../../redux-store/navbar';
 import { Container, Nav, Navbar as NavbarBs } from 'react-bootstrap';
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -10,7 +10,7 @@ const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const reduxNavbar = useSelector((state: RootState) => state.navbar);
+  const reduxNavbar = useSelector((state: RootStateNavbar) => state.navbar);
   // @ts-ignore
   const { currentUser, logout } = useAuth();
 

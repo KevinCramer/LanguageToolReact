@@ -8,7 +8,7 @@ export interface NavbarState {
   isNavbarOpen: boolean;
 }
 
-export interface RootState {
+export interface RootStateNavbar {
   navbar: NavbarState;
 }
 export const navbarSlice = createSlice({
