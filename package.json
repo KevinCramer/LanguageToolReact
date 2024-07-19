@@ -12,9 +12,13 @@
     "test": "vitest"
   },
   "dependencies": {
+    "@emotion/react": "^11.12.0",
+    "@emotion/styled": "^11.12.0",
     "@ionic/react": "^8.2.2",
     "@mdi/js": "^7.4.47",
     "@mdi/react": "^1.6.1",
+    "@mui/icons-material": "^5.16.4",
+    "@mui/material": "^5.16.4",
     "@reduxjs/toolkit": "^1.9.7",
     "@vanilla-extract/css": "^1.9.2",
     "bootstrap": "^5.2.3",

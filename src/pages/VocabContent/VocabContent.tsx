@@ -22,6 +22,9 @@ import { nullOrUndefined } from '../../helpers/audio-player-helpers'
 import QuizElement from '../../components/atoms/QuizElement/QuizElement';
 import { scramble } from '../../helpers/vocab-content-helpers';
 import StudyElement from '../../components/molecules/StudyElement/StudyElement';
+import LockIcon from '@mui/icons-material/Lock';
+import LockOpenIcon from '@mui/icons-material/LockOpen';
+
 const VocabContent = () => {
   let languages = allLanguages
 
@@ -211,7 +214,10 @@ const VocabContent = () => {
                   <Dropdown.Item key = {index} onClick = {() => [changeCurrentLanguage(
                     languageItem),
                   setCurrentAlphabet(0),changeCurrentTopic(languageItem.topics[0]) ]}>
-                    {languageItem.languageName}</Dropdown.Item>)}
+                    <div>
+                      {languageItem.languageName} <LockOpenIcon style={{ fontSize: '20px' }}/>
+                    </div>
+                  </Dropdown.Item>)}
               </CustomDropDownButton>
               <CustomDropDownButton title={'Topic: ' + currentTopic.name}>
                 {(currentLanguage.topics as Topic[])
