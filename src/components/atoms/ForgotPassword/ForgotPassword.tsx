@@ -17,17 +17,16 @@ export default function ForgotPassword() {
     e.preventDefault()
 
     try {
-      setMessage('')
-      setError('')
-      setLoading(true)
+      setMessage('');
+      setError('');
+      setLoading(true);
       // @ts-ignore
-      await resetPassword(emailRef.current.value)
-      setMessage('Check your inbox for further instructions')
-    } catch {
-      setError('Failed to reset password')
-    }
-
-    setLoading(false)
+      await resetPassword(emailRef.current.value);
+      setMessage('Check your inbox for further instructions');
+    } catch (error) {
+      setError(`Failed to reset password. The error is: ${error}`);
+    } 
+    setLoading(false);
   }
 
   return (

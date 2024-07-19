@@ -29,8 +29,8 @@ export default function Signup() {
       await signup(emailRef.current.value, passwordRef.current.value)
       // @ts-ignore
       dispatch(hideModal());
-    } catch {
-      setError('Failed to create an account')
+    } catch(error) {
+      setError(`Failed to create an account. The error is: ${error}`)
     }
 
     setLoading(false)

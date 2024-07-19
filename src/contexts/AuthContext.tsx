@@ -35,9 +35,11 @@ export function AuthProvider({ children }: AuthProviderProp) {
     return sendPasswordResetEmail(auth, email)
   }
 
-  function updateEmail(email: any) {
+  function updateEmail(newEmail: any) {
+    console.log('updateEmail is called from AuthContext.ts')
+    console.log('newEmail: ', newEmail)
     //@ts-ignore
-    return firebaseUpdateEmail(currentUser, email)
+    return firebaseUpdateEmail(currentUser, newEmail)
   }
 
   function updatePassword(password: any) {

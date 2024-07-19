@@ -23,8 +23,8 @@ export default function Login() {
       // @ts-ignore
       await login(emailRef.current.value, passwordRef.current.value)
       dispatch(hideModal());
-    } catch {
-      setError('Failed to log in')
+    } catch(error) {
+      setError(`Failed to log in. The error is: ${error}`)
     }
 
     setLoading(false)

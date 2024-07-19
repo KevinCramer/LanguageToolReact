@@ -39,9 +39,10 @@ export default function UpdateProfile() {
 
     Promise.all(promises)
       .then(() => {
+        dispatch(hideModal());
       })
-      .catch(() => {
-        setError('Failed to update account')
+      .catch((error) => {
+        setError(`Failed to update account. The error is: ${error}`)
       })
       .finally(() => {
         setLoading(false)
