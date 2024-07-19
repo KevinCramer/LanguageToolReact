@@ -2,7 +2,8 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import './index.scss'
 import { authModalStates, hideModal, RootState } from './redux-store/auth'
 import { Container, Modal } from 'react-bootstrap'
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes
+} from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
 import ContactUs from './pages/ContactUs/ContactUs'
 import ForgotPassword from './components/molecules/ForgotPassword/ForgotPassword'

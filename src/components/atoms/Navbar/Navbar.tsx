@@ -69,7 +69,7 @@ const Navbar = () => {
             >
             Your Profile
             </Nav.Link>}
-            <div 
+            <div className="log-in-log-out"
               onClick={async () => {
                 if (currentUser && currentUser.email) {
                   try {
