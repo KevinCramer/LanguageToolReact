@@ -1,10 +1,13 @@
+import React, { useState } from 'react';
 import './Navbar.scss';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 import { closeNavbar, RootStateNavbar, toggleNavbar } from '../../../redux-store/navbar';
-import { Container, Nav, Navbar as NavbarBs } from 'react-bootstrap';
+import { Container, Nav, Navbar as NavbarBs, NavDropdown } from 'react-bootstrap';
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { displayLogin } from '../../../redux-store/auth';
 import { useAuth } from '../../../contexts/AuthContext';
+
 const Navbar = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -14,9 +17,14 @@ const Navbar = () => {
   // @ts-ignore
   const { currentUser, logout } = useAuth();
 
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const handleDropdownToggle = (isOpen: boolean) => {
+    setIsDropdownOpen(isOpen);
+  };
+
   return (
-    <NavbarBs expand="false" expanded={reduxNavbar.isNavbarOpen} 
-      onToggle={() => dispatch(toggleNavbar())}>
+    <NavbarBs expand="false" expanded={reduxNavbar.isNavbarOpen} onToggle={() => dispatch(toggleNavbar())}>
       <Container>
         <NavbarBs.Toggle aria-controls="basic-navbar-nav" />
         <NavbarBs.Collapse id="basic-navbar-nav">
@@ -29,37 +37,52 @@ const Navbar = () => {
             >
               Home
             </Nav.Link>
-            <Nav.Link
+            <NavDropdown
+              title={
+                <span className={`dropdown-title ${isDropdownOpen ? 'open' : 'closed'}`}>
+                  <div style={{ 
+                    color: 'rgb(13, 110,253)', display: 'inline',
+                    borderRadius: '5px',
+                    fontWeight: 'bold'
+                  }} >Start Learning!</div>
+                </span>
+              }
+              id="study-dropdown"
               className="nav-link-custom"
-              to="/vocabulary"
-              as={NavLink}
-              onClick={() => dispatch(closeNavbar())}
+              onToggle={handleDropdownToggle}
             >
-              Vocabulary
-            </Nav.Link>
-            <Nav.Link
-              className="nav-link-custom"
-              to="/listening-comprehension"
-              as={NavLink}
-              onClick={() => dispatch(closeNavbar())}
-            >
-              Listening Comprehension
-            </Nav.Link>
-            <Nav.Link
-              className="nav-link-custom"
-              to="/grammar"
-              as={NavLink}
-              onClick={() => dispatch(closeNavbar())}
-            >
-              Grammar
-            </Nav.Link>
+              <NavDropdown.Item
+                className="nav-link-custom"
+                to="/vocabulary"
+                as={NavLink}
+                onClick={() => dispatch(closeNavbar())}
+              >
+                Vocabulary
+              </NavDropdown.Item>
+              <NavDropdown.Item
+                className="nav-link-custom"
+                to="/listening-comprehension"
+                as={NavLink}
+                onClick={() => dispatch(closeNavbar())}
+              >
+                Listening Comprehension
+              </NavDropdown.Item>
+              <NavDropdown.Item
+                className="nav-link-custom"
+                to="/grammar"
+                as={NavLink}
+                onClick={() => dispatch(closeNavbar())}
+              >
+                Grammar
+              </NavDropdown.Item>
+            </NavDropdown>
             <Nav.Link
               className="nav-link-custom"
               to="/contactus"
               as={NavLink}
               onClick={() => dispatch(closeNavbar())}
             >
-            Contact Us
+              Contact Us
             </Nav.Link>
             {currentUser && currentUser.email && <Nav.Link
               className="nav-link-custom"
@@ -67,7 +90,7 @@ const Navbar = () => {
               as={NavLink}
               onClick={() => dispatch(closeNavbar())}
             >
-            Your Profile
+                Account
             </Nav.Link>}
             <div className="log-in-log-out"
               onClick={async () => {
@@ -77,14 +100,16 @@ const Navbar = () => {
                     if (location.pathname === '/profile') {
                       navigate('/');
                     }
-                    dispatch(closeNavbar())
+                    dispatch(closeNavbar());
                   } catch (error) {
                     // eslint-disable-next-line no-console
                     console.error('Failed to log out', error);
                   }
                 } else {
                   dispatch(displayLogin());
-                }}}>
+                }
+              }}
+            >
               {currentUser && currentUser.email ? 'Log Out' : 'Log In'}
             </div>
           </Nav>
@@ -92,6 +117,6 @@ const Navbar = () => {
       </Container>
     </NavbarBs>
   );
-}
+};
 
 export default Navbar;

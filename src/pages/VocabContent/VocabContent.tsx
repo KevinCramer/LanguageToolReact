@@ -24,8 +24,8 @@ import { nullOrUndefined } from '../../helpers/audio-player-helpers'
 import QuizElement from '../../components/atoms/QuizElement/QuizElement';
 import { scramble } from '../../helpers/vocab-content-helpers';
 import StudyElement from '../../components/molecules/StudyElement/StudyElement';
-import { useDispatch } from 'react-redux';
 import { useAuth } from '../../contexts/AuthContext'
+import { useDispatch } from 'react-redux';
 
 const VocabContent = () => {
   let languages = allLanguages;

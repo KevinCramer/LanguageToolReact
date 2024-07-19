@@ -31,3 +31,35 @@
 .log-in-log-out:hover {
   text-decoration: underline;
 }
+
+
+.dropdown-title {
+  position: relative;
+  cursor: pointer;
+
+  &.closed::after {
+    content: '';
+    display: inline-block;
+    width: 12px; /* Adjust size */
+    height: 12px; /* Adjust size */
+    background-image: url('../../../assets/chevron-right-solid.svg'); /* Path to your SVG file */
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-left: 5px;
+  }
+
+  &.open::after {
+    content: '';
+    display: inline-block;
+    width: 12px; /* Adjust size */
+    height: 12px; /* Adjust size */
+    background-image: url('../../../assets/chevron-down-solid.svg'); /* Path to your SVG file */
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-left: 5px;
+  }
+}
+/* Ensure that the default Bootstrap dropdown arrow is hidden */
+.navbar-nav .nav-item .dropdown-toggle::after {
+  display: none !important; /* Hide the default arrow */
+}
