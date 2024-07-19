@@ -18,12 +18,11 @@ import CustomDropDownButton from '../../components/atoms/CustomDropDownButton/Cu
 import CustomSwitch from '../../components/atoms/CustomSwitch/CustomSwitch';
 import Dropdown from 'react-bootstrap/Dropdown';
 import { languageToSlugs } from '../../constants'
+import LockIcon from '@mui/icons-material/Lock';
 import { nullOrUndefined } from '../../helpers/audio-player-helpers'
 import QuizElement from '../../components/atoms/QuizElement/QuizElement';
 import { scramble } from '../../helpers/vocab-content-helpers';
 import StudyElement from '../../components/molecules/StudyElement/StudyElement';
-import LockIcon from '@mui/icons-material/Lock';
-import LockOpenIcon from '@mui/icons-material/LockOpen';
 
 const VocabContent = () => {
   let languages = allLanguages
@@ -214,16 +213,18 @@ const VocabContent = () => {
                   <Dropdown.Item key = {index} onClick = {() => [changeCurrentLanguage(
                     languageItem),
                   setCurrentAlphabet(0),changeCurrentTopic(languageItem.topics[0]) ]}>
-                    <div>
-                      {languageItem.languageName} <LockOpenIcon style={{ fontSize: '20px' }}/>
-                    </div>
+                    {languageItem.languageName}
                   </Dropdown.Item>)}
               </CustomDropDownButton>
               <CustomDropDownButton title={'Topic: ' + currentTopic.name}>
                 {(currentLanguage.topics as Topic[])
                   .map((topic: Topic, index: number) =>
                     <Dropdown.Item key = {index} onClick = {() => 
-                      changeCurrentTopic(topic)}>{topic.name}</Dropdown.Item>)}
+                      changeCurrentTopic(topic)}>
+                      <div>
+                        {topic.name} {topic.isLocked && <LockIcon style={{ fontSize: '20px' }}/>}
+                      </div>
+                    </Dropdown.Item>)}
               </CustomDropDownButton>
               <CustomDropDownButton title="Settings" align="end">
                 <Dropdown.Item onClick = {changeBaseLanguage}>toggle base language</Dropdown.Item>

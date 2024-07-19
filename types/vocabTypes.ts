@@ -42,7 +42,8 @@ export type TopicWithOneAlphabet = {
     slugName: string;
     hasOrdering: boolean;
     words: WordWithOneAlphabet[];
-    isAlphabet?: boolean;
+    isAlphabet: boolean;
+    isLocked: boolean;
 }
 
 export type TopicWithTwoAlphabets = {
@@ -50,7 +51,8 @@ export type TopicWithTwoAlphabets = {
     slugName: string;
     hasOrdering: boolean;
     words: WordWithTwoAlphabets[];
-    isAlphabet?: boolean;
+    isAlphabet: boolean;
+    isLocked: boolean;
 }
 
 export type TopicWithThreeAlphabets = {
@@ -58,7 +60,8 @@ export type TopicWithThreeAlphabets = {
     slugName: string;
     hasOrdering: boolean;
     words: WordWithThreeAlphabets[];
-    isAlphabet?: boolean;
+    isAlphabet: boolean;
+    isLocked: boolean;
 }
 
 export type Topic = TopicWithOneAlphabet | TopicWithTwoAlphabets | TopicWithThreeAlphabets;

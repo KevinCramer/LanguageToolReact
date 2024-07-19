@@ -408,7 +408,7 @@ export const englishVerbs: { [key: string]: VerbConjugationEnglish } = {
 export const englishPronouns: string[] = ['I','You','He/She','We','You (p)','They']
 
 const dutchTopics: TopicWithOneAlphabet[] = [
-  { name:'Clothes', slugName: 'clo', hasOrdering:false, words: [
+  { name:'Clothes', slugName: 'clo', hasOrdering:false, isLocked: false, isAlphabet: false, words: [
     { englishWord: 'trousers', foreignWord: ['broek'], foreignAudio: '' },
     { englishWord: 'sweater', foreignWord: ['trui'], foreignAudio: '' },
     { englishWord: 'underwear', foreignWord: ['onderbroek'], foreignAudio: '' },
@@ -420,7 +420,7 @@ const dutchTopics: TopicWithOneAlphabet[] = [
     { englishWord: 'hat', foreignWord: ['pet'], foreignAudio: '' },
     { englishWord: 'scarf', foreignWord: ['sjaal'], foreignAudio: '' },
   ] },
-  { name:'Colours', slugName: 'col', hasOrdering:false, words: [
+  { name:'Colours', slugName: 'col', hasOrdering:false, isLocked: false, isAlphabet: false, words: [
     { englishWord: 'red', foreignWord: ['rood'], foreignAudio: '' },
     { englishWord: 'blue', foreignWord: ['blauw'], foreignAudio: '' },
     { englishWord: 'green', foreignWord: ['groen'], foreignAudio: '' },
@@ -432,7 +432,7 @@ const dutchTopics: TopicWithOneAlphabet[] = [
     { englishWord: 'purple', foreignWord: ['paars'], foreignAudio: '' },
     { englishWord: 'pink', foreignWord: ['rose'], foreignAudio: '' },
   ] },
-  { name:'Food', slugName: 'foo', hasOrdering:false, words: [
+  { name:'Food', slugName: 'foo', hasOrdering:false, isLocked: false, isAlphabet: false, words: [
     { englishWord: 'potato', foreignWord: ['aardappel'], foreignAudio: '' },
     { englishWord: 'bread', foreignWord: ['brood'], foreignAudio: '' },
     { englishWord: 'meat', foreignWord: ['vlees'], foreignAudio: '' },
@@ -462,7 +462,7 @@ const dutchTopics: TopicWithOneAlphabet[] = [
     { englishWord: 'pancakes', foreignWord: ['pannekoeken'], foreignAudio: '' },
     { englishWord: 'spinach', foreignWord: ['spinazie'], foreignAudio: '' },
   ] },
-  { name:'Family', slugName: 'fam', hasOrdering:false, words: [
+  { name:'Family', slugName: 'fam', hasOrdering:false, isLocked: false, isAlphabet: false, words: [
     { englishWord: 'brother', foreignWord: ['broer'], foreignAudio: '' },
     { englishWord: 'sister ', foreignWord: ['zus'], foreignAudio: '' },
     { englishWord: 'mother', foreignWord: ['moeder'], foreignAudio: '' },
@@ -478,7 +478,7 @@ const dutchTopics: TopicWithOneAlphabet[] = [
     { englishWord: 'niece', foreignWord: ['nicht'], foreignAudio: '' },
     { englishWord: 'nephew', foreignWord: ['neef'], foreignAudio: '' },
   ] },
-  { name:'Numbers', slugName: 'num', hasOrdering:true, words: [
+  { name:'Numbers', slugName: 'num', hasOrdering:true, isLocked: false, isAlphabet: false, words: [
     { englishWord: 'one', foreignWord: ['een'], foreignAudio: '', order:1 },
     { englishWord: 'three', foreignWord: ['drie'], foreignAudio: '', order:2 },
     { englishWord: 'four', foreignWord: ['vier'], foreignAudio: '', order:3 },
@@ -489,7 +489,7 @@ const dutchTopics: TopicWithOneAlphabet[] = [
     { englishWord: 'nine', foreignWord: ['negen'], foreignAudio: '', order:8 },
     { englishWord: 'ten', foreignWord: ['tien'], foreignAudio: '', order:9 },
   ] },
-  { name:'Pronunciation', slugName: 'pnu', hasOrdering:false, words: [
+  { name:'Pronunciation', slugName: 'pnu', hasOrdering:false, isLocked: false, isAlphabet: false, words: [
     { englishWord: 'ei', foreignWord: ['aardbei'], foreignAudio: '' },
     { englishWord: 'ij', foreignWord: ['krijt'], foreignAudio: '' },
     { englishWord: 'sch', foreignWord: ['school'], foreignAudio: '' },
@@ -507,7 +507,7 @@ const dutchTopics: TopicWithOneAlphabet[] = [
     { englishWord: 'a', foreignWord: ['zal'], foreignAudio: '' },
     { englishWord: 'sj', foreignWord: ['sjaal'], foreignAudio: '' },
   ] },
-  { name:'Pronouns', slugName: 'pno', hasOrdering:true, words: [
+  { name:'Pronouns', slugName: 'pno', hasOrdering:true, isLocked: false, isAlphabet: false, words: [
     { englishWord: 'I', foreignWord: ['ik'], foreignAudio: '', order:1 },
     { englishWord: 'you ', foreignWord: ['jij'], foreignAudio: '', order:2 },
     { englishWord: 'he', foreignWord: ['hij'], foreignAudio: '', order:3 },
@@ -516,7 +516,7 @@ const dutchTopics: TopicWithOneAlphabet[] = [
     { englishWord: 'you (p)', foreignWord: ['julie'], foreignAudio: '', order:6 },
     { englishWord: 'They', foreignWord: ['zij'], foreignAudio: '', order:7 },
   ] },
-  { name:'Question Words', slugName: 'que', hasOrdering:false, words: [
+  { name:'Question Words', slugName: 'que', hasOrdering:false, isLocked: false, isAlphabet: false, words: [
     { englishWord: 'Why', foreignWord: ['waarom'], foreignAudio: '' },
     { englishWord: 'Where', foreignWord: ['waar'], foreignAudio: '' },
     { englishWord: 'When', foreignWord: ['wanneer'], foreignAudio: '' },
@@ -526,7 +526,7 @@ const dutchTopics: TopicWithOneAlphabet[] = [
 ]
 
 const arabicTopics: TopicWithTwoAlphabets[] = [
-  { name:'Arabic alphabet', slugName: 'alp', hasOrdering:true, isAlphabet: true, words: [
+  { name:'Arabic alphabet', slugName: 'alp', hasOrdering:true, isLocked: false, isAlphabet: true, words: [
     { englishWord: 'alef', foreignWord: ['ا','ا'], foreignAudio: '', order: 1 },
     { englishWord: 'baa', foreignWord: ['ب','ب'], foreignAudio: '', order: 2 },
     { englishWord: 'taa', foreignWord: ['ت','ت'], foreignAudio: '', order: 3 },
@@ -556,7 +556,7 @@ const arabicTopics: TopicWithTwoAlphabets[] = [
     { englishWord: 'yaa', foreignWord: ['ي','ي'], foreignAudio: '', order: 27 }
   ] },
   
-  { name:'Clothes', slugName: 'clo', hasOrdering:false, words: [
+  { name:'Clothes', slugName: 'clo', hasOrdering:false,isLocked: false, isAlphabet: false, words: [
     { englishWord: 'belt', foreignWord: ['ḥizām', 'حِزَام'], foreignAudio: '' },
     { englishWord: 'cap', foreignWord: ['qubba\'ah', 'قُبَّعَة'], foreignAudio: '' },
     { englishWord: 'clothes', foreignWord: ['malābis', 'مَلَابِس'], foreignAudio: '' },
@@ -571,7 +571,7 @@ const arabicTopics: TopicWithTwoAlphabets[] = [
     { englishWord: 'trousers', foreignWord: ['banṭalūn', 'بَنْطَلُون'], foreignAudio: '' },
     { englishWord: 'wallet', foreignWord: ['maḥfaḍhah', 'مَحْفَظَة'], foreignAudio: '' },
   ] },
-  { name:'Food', slugName: 'foo', hasOrdering:false, words: [
+  { name:'Food', slugName: 'foo', hasOrdering:false, isLocked: false, isAlphabet: false,words: [
     { englishWord: 'apple', foreignWord: ['tuffāḥah', 'تُفَّاحَة'], foreignAudio: '' },
     { englishWord: 'apricot', foreignWord: ['mishmish', 'مِشْمِش'], foreignAudio: '' },
     { englishWord: 'banana', foreignWord: ['mawz', 'مَوْز'], foreignAudio: '' },
@@ -627,7 +627,7 @@ const arabicTopics: TopicWithTwoAlphabets[] = [
     { englishWord: 'yogurt', foreignWord: ['zabādī', 'زَبادي'], foreignAudio: '' },
     { englishWord: 'zucchini', foreignWord: ['kūsah', 'كوسَة'], foreignAudio: '' },
   ] },
-  { name:'Colours', slugName: 'col', hasOrdering:false, words: [
+  { name:'Colours', slugName: 'col', hasOrdering:false, isLocked: false, isAlphabet: false,words: [
     { englishWord: 'black', foreignWord: ['aswad', 'أَسْوَد'], foreignAudio: '' },
     { englishWord: 'blue', foreignWord: ['azraq', 'أَزْرَق'], foreignAudio: '' },
     { englishWord: 'brown', foreignWord: ['bunniyy', 'بُنِّيّ'], foreignAudio: '' },
@@ -640,7 +640,7 @@ const arabicTopics: TopicWithTwoAlphabets[] = [
     { englishWord: 'yellow', foreignWord: ['asfar', 'أَصْفَر'], foreignAudio: '' },
     { englishWord: 'white', foreignWord: ['abyaḍ', 'أَبْيَض'], foreignAudio: '' },
   ] },
-  { name:'Numbers', slugName: 'num', hasOrdering:true, words: [
+  { name:'Numbers', slugName: 'num', hasOrdering:true, isLocked: false, isAlphabet: false,words: [
     { englishWord: 'one', foreignWord: ['waheed', 'وَاحِد'], foreignAudio: '', order:1 },
     { englishWord: 'two', foreignWord: ['ithnain', 'اِثْنَان'], foreignAudio: '', order:2 },
     { englishWord: 'three', foreignWord: ['thalāthah', 'ثَلَاثَة'], foreignAudio: '', order:3 },
@@ -652,7 +652,7 @@ const arabicTopics: TopicWithTwoAlphabets[] = [
     { englishWord: 'nine', foreignWord: ['tis\'ah', 'تِسْعَة'], foreignAudio: '', order:9 },
     { englishWord: 'ten', foreignWord: ['\'asharah', 'عَشَرَة'], foreignAudio: '', order:10 },
   ] },
-  { name:'Body', slugName: 'bod', hasOrdering:false, words: [
+  { name:'Body', slugName: 'bod', hasOrdering:false, isLocked: false, isAlphabet: false,words: [
     { englishWord: 'hand', foreignWord: ['yad', 'يَد'], foreignAudio: '' },
     { englishWord: 'head', foreignWord: ['ra\'s', 'رَأْس'], foreignAudio: '' },
     { englishWord: 'heart', foreignWord: ['qalb', 'قَلْب'], foreignAudio: '' },
@@ -677,7 +677,7 @@ const arabicTopics: TopicWithTwoAlphabets[] = [
     { englishWord: 'tooth', foreignWord: ['sinn', 'سِنّ'], foreignAudio: '' },
     { englishWord: 'blood', foreignWord: ['dam', 'دَم'], foreignAudio: '' },
   ] },
-  { name:'Adjectives', slugName: 'adj', hasOrdering:false, words: [
+  { name:'Adjectives', slugName: 'adj', hasOrdering:false, isLocked: false, isAlphabet: false, words: [
     { englishWord: 'a few', foreignWord: ['qalīl', 'قَلِيل'], foreignAudio: '' },
     { englishWord: 'a lot', foreignWord: ['kathīr', 'كَثِير'], foreignAudio: '' },
     { englishWord: 'beautiful', foreignWord: ['jamīl', 'جَمِيل'], foreignAudio: '' },
@@ -703,7 +703,7 @@ const arabicTopics: TopicWithTwoAlphabets[] = [
     { englishWord: 'smart', foreignWord: ['dhakiyy', 'ذَكِيّ'], foreignAudio: '' },
     { englishWord: 'tall', foreignWord: ['ṭawīl', 'طَوِيل'], foreignAudio: '' },
   ] },
-  { name:'Pronouns', slugName: 'pnn', hasOrdering:true, words: [
+  { name:'Pronouns', slugName: 'pnn', hasOrdering:true, isLocked: false, isAlphabet: false,words: [
     { englishWord: 'I', foreignWord: ['ana', 'أنا'], foreignAudio: '', order:1 },
     { englishWord: 'You (masculine)', foreignWord: ['anta', 'انتَ'], foreignAudio: '', order:2 },
     { englishWord: 'You (feminine)', foreignWord: ['anti', 'انتِ'], foreignAudio: '', order:3 },
@@ -731,7 +731,7 @@ const arabicTopics: TopicWithTwoAlphabets[] = [
   //   { englishWord: "how", foreignWord: ["kef"], foreignAudio: ""},
   //   { englishWord: "why", foreignWord: ["lay"], foreignAudio: ""},
   // ]},
-  { name:'Home', slugName: 'hom', hasOrdering:false, words: [
+  { name:'Home', slugName: 'hom', hasOrdering:false, isLocked: false, isAlphabet: false, words: [
     { englishWord: 'bedroom', foreignWord: ['ghurfatu n-nawm', 'غُرْفَةُ النَّوْم'], foreignAudio: '' },
     { englishWord: 'sofa', foreignWord: ['arīkah', 'أَرِيكَة'], foreignAudio: '' },
     { englishWord: 'toilet', foreignWord: ['mirḥāḍ', 'مِرْحَاض'], foreignAudio: '' },
@@ -798,7 +798,7 @@ const arabicTopics: TopicWithTwoAlphabets[] = [
     { englishWord: 'furniture', foreignWord: ['athāth', 'أَثَاث'], foreignAudio: '' },
     { englishWord: 'alarm clock', foreignWord: ['munabbih', 'مُنَبِّه'], foreignAudio: '' },
   ] },
-  { name:'Buildings', slugName: 'bui', hasOrdering:false, words: [
+  { name:'Buildings', slugName: 'bui', hasOrdering:false,isLocked: false, isAlphabet: false, words: [
     { englishWord: 'hospital', foreignWord: ['mustـshfā', 'مُسْتـشفَى'], foreignAudio: '' },
     { englishWord: 'airport', foreignWord: ['maṭār', 'مَطَار'], foreignAudio: '' },
     { englishWord: 'library', foreignWord: ['maktabah', 'مَكْتَبَة'], foreignAudio: '' },
@@ -816,7 +816,7 @@ const arabicTopics: TopicWithTwoAlphabets[] = [
     { englishWord: 'building', foreignWord: ['\'imārah', 'عِمارَة'], foreignAudio: '' },
     { englishWord: 'farm', foreignWord: ['mazra\'ah', 'مَزْرَعَة'], foreignAudio: '' },
   ] },
-  { name:'Professions',slugName: 'prf', hasOrdering:false, words: [
+  { name:'Professions',slugName: 'prf', hasOrdering:false, isLocked: false, isAlphabet: false, words: [
     { englishWord: 'butcher', foreignWord: ['jazzār', 'جَزَّار'], foreignAudio: '' },
     { englishWord: 'fireman', foreignWord: ['rajulu l-iṭfā`', 'رَجُلُ الإِطْفاء'], foreignAudio: '' },
     { englishWord: 'barber', foreignWord: ['ḥanllāq', 'حًلَّاق'], foreignAudio: '' },
@@ -839,7 +839,7 @@ const arabicTopics: TopicWithTwoAlphabets[] = [
   ] },
   // Hard to Read is not an alphabet topic, however we do want toggleForeignAlphabet to be disabled 
   // so this is a hack to ensure that.
-  { name:'Hard to Read', slugName: 'htd', hasOrdering:false, isAlphabet: true, words: [
+  { name:'Hard to Read', slugName: 'htd', hasOrdering:false, isLocked: false, isAlphabet: true, words: [
     { englishWord: 'as-sā\'atu l-waḥidah', foreignWord: ['السَّاعَةُ الوَحِدَة','السَّاعَةُ الوَحِدَة'], foreignAudio: '' },
     { englishWord: 'as-sā\'atu th-thāniyah', foreignWord: ['السَّاعَةُ الثَّانِيَة','السَّاعَةُ الثَّانِيَة'], foreignAudio: '' },
     { englishWord: 'as-sā\'atu th-thālithah', foreignWord: ['السَّاعَةُ الثَّالِثَة','السَّاعَةُ الثَّالِثَة'], foreignAudio: '' },
@@ -869,7 +869,7 @@ const arabicTopics: TopicWithTwoAlphabets[] = [
 ]
 
 const spanishTopics: TopicWithOneAlphabet[] = [
-  { name:'Clothes',slugName: 'clo', hasOrdering:false, words: [
+  { name:'Clothes',slugName: 'clo', hasOrdering:false, isLocked: false, isAlphabet: false, words: [
     { englishWord: '(the) trousers', foreignWord: ['(los) pantalones'], foreignAudio: spanishAudioTrousers },
     { englishWord: '(the) sweater', foreignWord: ['(el) suéter'], foreignAudio: spanishAudioSweater },
     { englishWord: '(the) underwear', foreignWord: ['(la) ropa interior'], foreignAudio: spanishAudioUnderwear },
@@ -880,7 +880,7 @@ const spanishTopics: TopicWithOneAlphabet[] = [
     { englishWord: '(the) hat', foreignWord: ['(el) sombrero'], foreignAudio: spanishAudioHat },
     { englishWord: '(the) scarf', foreignWord: ['(la) bufanda'], foreignAudio: spanishAudioScarf },
   ] },
-  { name:'Colours', slugName: 'col', hasOrdering:false, words: [
+  { name:'Colours', slugName: 'col', hasOrdering:false, isLocked: false, isAlphabet: false, words: [
     { englishWord: 'red', foreignWord: ['rojo'], foreignAudio: spanishAudioRed },
     { englishWord: 'blue', foreignWord: ['azul'], foreignAudio: spanishAudioBlue },
     { englishWord: 'green', foreignWord: ['verde'], foreignAudio: spanishAudioGreen },
@@ -892,7 +892,7 @@ const spanishTopics: TopicWithOneAlphabet[] = [
     { englishWord: 'purple', foreignWord: ['morado'], foreignAudio: spanishAudioPurple },
     { englishWord: 'pink', foreignWord: ['oyhr'], foreignAudio: spanishAudioPink },
   ] },
-  { name:'Food', slugName: 'foo', hasOrdering:false, words: [
+  { name:'Food', slugName: 'foo', hasOrdering:false, isLocked: false, isAlphabet: false, words: [
     { englishWord: '(the) potato', foreignWord: ['(la) papa'], foreignAudio: spanishAudioPotato },
     { englishWord: '(the) bread', foreignWord: ['(el) pan'], foreignAudio: spanishAudioBread },
     { englishWord: '(the) meat', foreignWord: ['(la) carne'], foreignAudio: spanishAudioMeat },
@@ -906,7 +906,7 @@ const spanishTopics: TopicWithOneAlphabet[] = [
   ] },
   // https://l-lingo.com/free-lessons/en/learn-spanish/numbers-1-10.html go to devtools console, and press audio to get the url 
   // to download the audio.
-  { name:'Numbers', slugName: 'num', hasOrdering:true, words: [
+  { name:'Numbers', slugName: 'num', hasOrdering:true, isLocked: false, isAlphabet: false, words: [
     { englishWord: 'one', foreignWord: ['uno'], foreignAudio: spanishAudioOne, order:1 },
     { englishWord: 'two', foreignWord: ['dos'], foreignAudio: spanishAudioTwo, order:2 },
     { englishWord: 'three', foreignWord: ['tres'], foreignAudio: spanishAudioThree, order:3 },
@@ -918,7 +918,7 @@ const spanishTopics: TopicWithOneAlphabet[] = [
     { englishWord: 'nine', foreignWord: ['nueve'], foreignAudio: spanishAudioNine, order:9 },
     { englishWord: 'ten', foreignWord: ['diez'], foreignAudio: spanishAudioTen, order:10 },
   ] },
-  { name:'Verbs', slugName: 'ver', hasOrdering:false, words: [
+  { name:'Verbs', slugName: 'ver', hasOrdering:false, isLocked: true, isAlphabet: false, words: [
     // Source of spanish verbs: https://ellaverbs.com/spanish-verbs/
     {
       englishWord: englishVerbs['to call'],
@@ -1221,7 +1221,7 @@ const spanishTopics: TopicWithOneAlphabet[] = [
               ],
       foreignAudio: spanishAudioToNeed },
   ] },
-  { name:'Pronouns', slugName: 'pro', hasOrdering:true, words: [
+  { name:'Pronouns', slugName: 'pro', hasOrdering:true, isLocked: false, isAlphabet: false, words: [
     { englishWord: 'I', foreignWord: ['yo'], foreignAudio: spanishAudioI, order:1 },
     { englishWord: 'you', foreignWord: ['tu'], foreignAudio: spanishAudioYou, order:2 },
     { englishWord: 'he', foreignWord: ['el'], foreignAudio: spanishAudioHe, order:3 },
@@ -1232,7 +1232,7 @@ const spanishTopics: TopicWithOneAlphabet[] = [
     { englishWord: 'they (fem)', foreignWord: ['ellos'], foreignAudio: spanishAudioTheyFeminine, order:8 },
 
   ] },
-  { name:'Body', slugName: 'bod', hasOrdering:false, words: [
+  { name:'Body', slugName: 'bod', hasOrdering:false, isLocked: false, isAlphabet: false, words: [
     { englishWord: '(the) hand', foreignWord: ['(la) mano'], foreignAudio: spanishAudioHand },
     { englishWord: '(the) head', foreignWord: ['(la) cabeza'], foreignAudio: spanishAudioHead },
     { englishWord: '(the) hair', foreignWord: ['(el) pelo'], foreignAudio: spanishAudioHair },
@@ -1249,7 +1249,7 @@ const spanishTopics: TopicWithOneAlphabet[] = [
     { englishWord: '(the) knee', foreignWord: ['(la) rodilla'], foreignAudio: spanishAudioKnee },
 
   ] },
-  { name:'Locations', slugName: 'loc', hasOrdering:false, words: [
+  { name:'Locations', slugName: 'loc', hasOrdering:false, isLocked: false, isAlphabet: false, words: [
     { englishWord: '(the) airport', foreignWord: ['(el) aeropuerto'], foreignAudio: spanishAudioAirport },
     { englishWord: '(the) bakery', foreignWord: ['(la) panadería'], foreignAudio: spanishAudioBakery },
     { englishWord: '(the) bank', foreignWord: ['(el) banco'], foreignAudio: spanishAudioBank },
@@ -1270,7 +1270,7 @@ const spanishTopics: TopicWithOneAlphabet[] = [
     { englishWord: '(the) university', foreignWord: ['(la) universidad'], foreignAudio: spanishAudioUniversity },
 
   ] },
-  { name:'Home', slugName: 'hom', hasOrdering:false, words: [
+  { name:'Home', slugName: 'hom', hasOrdering:false, isLocked: false, isAlphabet: false, words: [
     { englishWord: '(the) window', foreignWord: ['(la) ventana'], foreignAudio: spanishAudioWindow },
     { englishWord: '(the) bedroom', foreignWord: ['(el) dormitorio'], foreignAudio: spanishAudioBedRoom },
     { englishWord: '(the) kitchen', foreignWord: ['(la) cocina'], foreignAudio: spanishAudioKitchen },
@@ -1281,14 +1281,14 @@ const spanishTopics: TopicWithOneAlphabet[] = [
     { englishWord: '(the) garden', foreignWord: ['(el) jardín'], foreignAudio: spanishAudioGarden },
     { englishWord: '(the) living room', foreignWord: ['(el) salón'], foreignAudio: spanishAudioLivingRoom },
   ] },
-  { name:'Question words', slugName: 'que', hasOrdering:false, words: [
+  { name:'Question words', slugName: 'que', hasOrdering:false, isLocked: false, isAlphabet: false, words: [
     { englishWord: 'why', foreignWord: ['por qué'], foreignAudio: spanishAudioWhy },
     { englishWord: 'what', foreignWord: ['qué'], foreignAudio: spanishAudioWhat },
     { englishWord: 'where', foreignWord: ['dónde'], foreignAudio: spanishAudioWhere },
     { englishWord: 'how', foreignWord: ['cómo'], foreignAudio: spanishAudioHow },
     { englishWord: 'when', foreignWord: ['cuando'], foreignAudio: spanishAudioWhen },
   ] },
-  { name:'Conjuctions', slugName: 'con', hasOrdering:false, words: [
+  { name:'Conjuctions', slugName: 'con', hasOrdering:false, isLocked: false, isAlphabet: false, words: [
     { englishWord: 'and', foreignWord: ['y'], foreignAudio: spanishAudioAnd },
     { englishWord: 'but', foreignWord: ['pero'], foreignAudio: spanishAudioBut },
     { englishWord: 'or', foreignWord: ['o'], foreignAudio: spanishAudioOr },
@@ -1302,7 +1302,7 @@ const spanishTopics: TopicWithOneAlphabet[] = [
     { englishWord: 'nevertheless', foreignWord: ['sin embargo'], foreignAudio: spanishAudioNevertheless },
 
   ] },
-  { name:'Adjectives', slugName: 'adj', hasOrdering:false, words: [
+  { name:'Adjectives', slugName: 'adj', hasOrdering:false, isLocked: false, isAlphabet: false,words: [
     // https://www.fluentu.com/blog/spanish/common-spanish-adjectives/#toc_2
     { englishWord: 'open', foreignWord: ['abierto'], foreignAudio: spanishAudioOpen },
     { englishWord: 'boring', foreignWord: ['aburrido'], foreignAudio: spanishAudioBoring },
@@ -1361,7 +1361,7 @@ const spanishTopics: TopicWithOneAlphabet[] = [
 const spanishPronouns: string[] = ['Yo','Tu','El/Ella','Nosotros', 'Vosotros', 'Ellos/Ellas']
 
 const frenchTopics: TopicWithOneAlphabet[] = [
-  { name:'Numbers', slugName: 'num', hasOrdering:true, words: [
+  { name:'Numbers', slugName: 'num', hasOrdering:true, isLocked: false, isAlphabet: false, words: [
     { englishWord: 'one', foreignWord: ['un'], foreignAudio: '', order:1 },
     { englishWord: 'two', foreignWord: ['deux'], foreignAudio: '', order:2 },
     { englishWord: 'three', foreignWord: ['trois'], foreignAudio: '', order:3 },
@@ -1373,7 +1373,7 @@ const frenchTopics: TopicWithOneAlphabet[] = [
     { englishWord: 'nine', foreignWord: ['neuf'], foreignAudio: '', order:9 },
     { englishWord: 'ten', foreignWord: ['dix'], foreignAudio: '', order:10 },
   ] },
-  { name: 'Colours', slugName: 'col', hasOrdering: false, words: [
+  { name: 'Colours', slugName: 'col', hasOrdering: false, isLocked: false, isAlphabet: false, words: [
     { englishWord: 'red', foreignWord: ['rouge'], foreignAudio: '' },
     { englishWord: 'blue', foreignWord: ['bleu'], foreignAudio: '' },
     { englishWord: 'green', foreignWord: ['vert'], foreignAudio: '' },
@@ -1384,29 +1384,23 @@ const frenchTopics: TopicWithOneAlphabet[] = [
     { englishWord: 'black', foreignWord: ['noir'], foreignAudio: '' },
     { englishWord: 'purple', foreignWord: ['violet'], foreignAudio: '' },
     { englishWord: 'pink', foreignWord: ['rose'], foreignAudio: '' }
-  ]
-  },
-  {
-    name: 'Clothes',
-    slugName: 'clo',
-    hasOrdering: false,
-    words: [
-      { englishWord: 'trousers', foreignWord: ['pantalon'], foreignAudio: '' },
-      { englishWord: 'sweater', foreignWord: ['pull'], foreignAudio: '' },
-      { englishWord: 'underwear', foreignWord: ['sous-vêtements'], foreignAudio: '' },
-      { englishWord: 'tie', foreignWord: ['cravate'], foreignAudio: '' },
-      { englishWord: 'socks', foreignWord: ['chaussettes'], foreignAudio: '' },
-      { englishWord: 'shoes', foreignWord: ['chaussures'], foreignAudio: '' },
-      { englishWord: 'skirt', foreignWord: ['jupe'], foreignAudio: '' },
-      { englishWord: 'jacket', foreignWord: ['veste'], foreignAudio: '' },
-      { englishWord: 'hat', foreignWord: ['chapeau'], foreignAudio: '' },
-      { englishWord: 'scarf', foreignWord: ['écharpe'], foreignAudio: '' }
-    ]
-  }
+  ] },
+  { name: 'Clothes', slugName: 'clo', hasOrdering: false, isLocked: false, isAlphabet: false, words: [
+    { englishWord: 'trousers', foreignWord: ['pantalon'], foreignAudio: '' },
+    { englishWord: 'sweater', foreignWord: ['pull'], foreignAudio: '' },
+    { englishWord: 'underwear', foreignWord: ['sous-vêtements'], foreignAudio: '' },
+    { englishWord: 'tie', foreignWord: ['cravate'], foreignAudio: '' },
+    { englishWord: 'socks', foreignWord: ['chaussettes'], foreignAudio: '' },
+    { englishWord: 'shoes', foreignWord: ['chaussures'], foreignAudio: '' },
+    { englishWord: 'skirt', foreignWord: ['jupe'], foreignAudio: '' },
+    { englishWord: 'jacket', foreignWord: ['veste'], foreignAudio: '' },
+    { englishWord: 'hat', foreignWord: ['chapeau'], foreignAudio: '' },
+    { englishWord: 'scarf', foreignWord: ['écharpe'], foreignAudio: '' }
+  ] }
 ]
 
 const italianTopics: TopicWithOneAlphabet[] = [
-  { name:'Numbers', slugName: 'num', hasOrdering:true, words: [
+  { name:'Numbers', slugName: 'num', hasOrdering:true, isLocked: false, isAlphabet: false,words: [
     { englishWord: 'one', foreignWord: ['uno'], foreignAudio: '', order:1 },
     { englishWord: 'two', foreignWord: ['due'], foreignAudio: '', order:2 },
     { englishWord: 'three', foreignWord: ['tre'], foreignAudio: '', order:3 },
@@ -1418,7 +1412,7 @@ const italianTopics: TopicWithOneAlphabet[] = [
     { englishWord: 'nine', foreignWord: ['nove'], foreignAudio: '', order:9 },
     { englishWord: 'ten', foreignWord: ['dieci'], foreignAudio: '', order:10 },
   ] },
-  { name:'Colours', slugName: 'col', hasOrdering:false, words: [
+  { name:'Colours', slugName: 'col', hasOrdering:false, isLocked: false, isAlphabet: false, words: [
     { englishWord: 'red', foreignWord: ['rosso'], foreignAudio: '' },
     { englishWord: 'blue', foreignWord: ['blu'], foreignAudio: '' },
     { englishWord: 'green', foreignWord: ['verde'], foreignAudio: '' },
@@ -1430,26 +1424,21 @@ const italianTopics: TopicWithOneAlphabet[] = [
     { englishWord: 'purple', foreignWord: ['viola'], foreignAudio: '' },
     { englishWord: 'pink', foreignWord: ['rosa'], foreignAudio: '' }
   ] },
-  {
-    name: 'Clothes',
-    slugName: 'clo',
-    hasOrdering: false,
-    words: [
-      { englishWord: 'trousers', foreignWord: ['pantaloni'], foreignAudio: '' },
-      { englishWord: 'sweater', foreignWord: ['maglione'], foreignAudio: '' },
-      { englishWord: 'underwear', foreignWord: ['biancheria intima'], foreignAudio: '' },
-      { englishWord: 'tie', foreignWord: ['cravatta'], foreignAudio: '' },
-      { englishWord: 'socks', foreignWord: ['calzini'], foreignAudio: '' },
-      { englishWord: 'shoes', foreignWord: ['scarpe'], foreignAudio: '' },
-      { englishWord: 'skirt', foreignWord: ['gonna'], foreignAudio: '' },
-      { englishWord: 'jacket', foreignWord: ['giacca'], foreignAudio: '' },
-      { englishWord: 'hat', foreignWord: ['cappello'], foreignAudio: '' },
-      { englishWord: 'scarf', foreignWord: ['sciarpa'], foreignAudio: '' }
-    ]
-  }
+  { name: 'Clothes', slugName: 'clo', hasOrdering: false, isLocked: false, isAlphabet: false, words: [
+    { englishWord: 'trousers', foreignWord: ['pantaloni'], foreignAudio: '' },
+    { englishWord: 'sweater', foreignWord: ['maglione'], foreignAudio: '' },
+    { englishWord: 'underwear', foreignWord: ['biancheria intima'], foreignAudio: '' },
+    { englishWord: 'tie', foreignWord: ['cravatta'], foreignAudio: '' },
+    { englishWord: 'socks', foreignWord: ['calzini'], foreignAudio: '' },
+    { englishWord: 'shoes', foreignWord: ['scarpe'], foreignAudio: '' },
+    { englishWord: 'skirt', foreignWord: ['gonna'], foreignAudio: '' },
+    { englishWord: 'jacket', foreignWord: ['giacca'], foreignAudio: '' },
+    { englishWord: 'hat', foreignWord: ['cappello'], foreignAudio: '' },
+    { englishWord: 'scarf', foreignWord: ['sciarpa'], foreignAudio: '' }
+  ] }
 ]
 const germanTopics: TopicWithOneAlphabet[] = [
-  { name:'Numbers', slugName: 'num', hasOrdering:true, words: [
+  { name:'Numbers', slugName: 'num', hasOrdering:true,isLocked: false, isAlphabet: false, words: [
     { englishWord: 'one', foreignWord: ['eins'], foreignAudio: germanAudioOne, order:1 },
     { englishWord: 'two', foreignWord: ['zwei'], foreignAudio: germanAudioTwo, order:2 },
     { englishWord: 'three', foreignWord: ['drei'], foreignAudio: germanAudioThree, order:3 },
@@ -1461,7 +1450,7 @@ const germanTopics: TopicWithOneAlphabet[] = [
     { englishWord: 'nine', foreignWord: ['neun'], foreignAudio: germanAudioNine, order:9 },
     { englishWord: 'ten', foreignWord: ['zehn'], foreignAudio: germanAudioTen, order:10 },
   ] },
-  { name:'Colours', slugName: 'col', hasOrdering:false, words: [
+  { name:'Colours', slugName: 'col', hasOrdering:false,isLocked: false, isAlphabet: false, words: [
     { englishWord: 'red', foreignWord: ['rot'], foreignAudio: germanAudioRed },
     { englishWord: 'blue', foreignWord: ['blau'], foreignAudio: germanAudioBlue },
     { englishWord: 'green', foreignWord: ['grün'], foreignAudio: germanAudioGreen },
@@ -1473,27 +1462,23 @@ const germanTopics: TopicWithOneAlphabet[] = [
     { englishWord: 'purple', foreignWord: ['lila'], foreignAudio: germanAudioPurple },
     { englishWord: 'pink', foreignWord: ['rosa'], foreignAudio: germanAudioPink }
   ] },
-  {
-    name: 'Clothes',
-    slugName: 'clo',
-    hasOrdering: false,
-    words: [
-      { englishWord: 'trousers', foreignWord: ['hose'], foreignAudio: germanAudioTrousers },
-      { englishWord: 'sweater', foreignWord: ['pullover'], foreignAudio: germanAudioSweater },
-      { englishWord: 'underwear', foreignWord: ['unterwäsche'], foreignAudio: germanAudioUnderwear },
-      { englishWord: 'tie', foreignWord: ['krawatte'], foreignAudio: germanAudioTie },
-      { englishWord: 'socks', foreignWord: ['socken'], foreignAudio: germanAudioSocks },
-      { englishWord: 'shoes', foreignWord: ['schuhe'], foreignAudio: germanAudioShoes },
-      { englishWord: 'skirt', foreignWord: ['rock'], foreignAudio: germanAudioSkirt },
-      { englishWord: 'jacket', foreignWord: ['jacke'], foreignAudio: germanAudioJacket },
-      { englishWord: 'hat', foreignWord: ['hut'], foreignAudio: germanAudioHat },
-      { englishWord: 'scarf', foreignWord: ['schal'], foreignAudio: germanAudioScarf }
-    ]
+  { name: 'Clothes', slugName: 'clo',hasOrdering: false, isLocked: false,isAlphabet: false,words: [
+    { englishWord: 'trousers', foreignWord: ['hose'], foreignAudio: germanAudioTrousers },
+    { englishWord: 'sweater', foreignWord: ['pullover'], foreignAudio: germanAudioSweater },
+    { englishWord: 'underwear', foreignWord: ['unterwäsche'], foreignAudio: germanAudioUnderwear },
+    { englishWord: 'tie', foreignWord: ['krawatte'], foreignAudio: germanAudioTie },
+    { englishWord: 'socks', foreignWord: ['socken'], foreignAudio: germanAudioSocks },
+    { englishWord: 'shoes', foreignWord: ['schuhe'], foreignAudio: germanAudioShoes },
+    { englishWord: 'skirt', foreignWord: ['rock'], foreignAudio: germanAudioSkirt },
+    { englishWord: 'jacket', foreignWord: ['jacke'], foreignAudio: germanAudioJacket },
+    { englishWord: 'hat', foreignWord: ['hut'], foreignAudio: germanAudioHat },
+    { englishWord: 'scarf', foreignWord: ['schal'], foreignAudio: germanAudioScarf }
+  ]
   }
 ]
 
 const japaneseTopics: TopicWithThreeAlphabets[] = [
-  { name:'Hiragana alphabet', slugName: 'hir', hasOrdering:true, isAlphabet: true, words: [
+  { name:'Hiragana alphabet', slugName: 'hir', hasOrdering:true, isLocked: false, isAlphabet: true, words: [
     { englishWord: 'a', foreignWord: ['あ','あ','あ'], foreignAudio: '', order: 1 },
     { englishWord: 'i', foreignWord: ['い','い','い'], foreignAudio: '', order: 2 },
     { englishWord: 'u', foreignWord: ['う','う','う'], foreignAudio: '', order: 3 },
@@ -1541,7 +1526,7 @@ const japaneseTopics: TopicWithThreeAlphabets[] = [
     { englishWord: 'wo', foreignWord: ['を','を','を'], foreignAudio: '', order: 45 },
     { englishWord: 'n', foreignWord: ['ん','ん','ん'], foreignAudio: '', order: 46 }
   ] },
-  { name:'Katakana alphabet', slugName: 'kat', hasOrdering:true, isAlphabet: true, words: [
+  { name:'Katakana alphabet', slugName: 'kat', hasOrdering:true, isLocked: false, isAlphabet: true, words: [
     { englishWord: 'a', foreignWord: ['ア','ア','ア'], foreignAudio: '', order: 1 },
     { englishWord: 'u', foreignWord: ['ウ','ウ','ウ'], foreignAudio: '', order: 2 },
     { englishWord: 'e', foreignWord: ['エ','エ','エ'], foreignAudio: '', order: 3 },
@@ -1588,7 +1573,7 @@ const japaneseTopics: TopicWithThreeAlphabets[] = [
     { englishWord: 'wo', foreignWord: ['ヲ','ヲ','ヲ'], foreignAudio: '', order: 44 },
     { englishWord: 'n', foreignWord: ['ン','ン','ン'], foreignAudio: '', order: 45 }
   ] },
-  { name:'Numbers',slugName: 'num', hasOrdering:true, words: [
+  { name:'Numbers',slugName: 'num', hasOrdering:true, isLocked: false, isAlphabet: false, words: [
     { englishWord: 'one', foreignWord: ['ichi', 'いち','一'], foreignAudio: '', order:1 },
     { englishWord: 'two', foreignWord: ['ni', 'に','二'], foreignAudio: '', order:2 },
     { englishWord: 'three',foreignWord: ['san', 'さん','三'], foreignAudio: '', order:3 },
@@ -1600,7 +1585,7 @@ const japaneseTopics: TopicWithThreeAlphabets[] = [
     { englishWord: 'nine', foreignWord: ['ku,kyuu', 'く、きゅう','九'], foreignAudio: '', order:9 },
     { englishWord: 'ten', foreignWord: ['juu', 'じゅう','十'], foreignAudio: '', order:10 },
   ] },
-  { name:'Colours', slugName: 'col', hasOrdering:false, words: [
+  { name:'Colours', slugName: 'col', hasOrdering:false, isLocked: false, isAlphabet: false, words: [
     { englishWord: 'red', foreignWord: ['aka', 'あか', '赤'], foreignAudio: '' },
     { englishWord: 'blue', foreignWord: ['ao', 'あお', '青'], foreignAudio: '' },
     { englishWord: 'green', foreignWord: ['midori', 'みどり', '緑'], foreignAudio: '' },
@@ -1612,27 +1597,23 @@ const japaneseTopics: TopicWithThreeAlphabets[] = [
     { englishWord: 'purple', foreignWord: ['murasaki', 'むらさき', '紫'], foreignAudio: '' },
     { englishWord: 'pink', foreignWord: ['pinku', 'ピンク', 'unknown'], foreignAudio: '' }
   ] },
-  {
-    name: 'Clothes',
-    slugName: 'clo',
-    hasOrdering: false,
-    words: [
-      { englishWord: 'trousers', foreignWord: ['zubon', 'ズボン', 'ズボン'], foreignAudio: '' },
-      { englishWord: 'sweater', foreignWord: ['se-ta-', 'セーター', 'セーター'], foreignAudio: '' },
-      { englishWord: 'underwear', foreignWord: ['shitagi', 'したぎ', '下着'], foreignAudio: '' },
-      { englishWord: 'tie', foreignWord: ['nekutai', 'ネクタイ', 'ネクタイ'], foreignAudio: '' },
-      { englishWord: 'socks', foreignWord: ['kutsushita', 'くつした', '靴下'], foreignAudio: '' },
-      { englishWord: 'shoes', foreignWord: ['kutsu', 'くつ', '靴'], foreignAudio: '' },
-      { englishWord: 'skirt', foreignWord: ['suka-to', 'スカート', 'スカート'], foreignAudio: '' },
-      { englishWord: 'jacket', foreignWord: ['jyaketto', 'ジャケット', 'ジャケット'], foreignAudio: '' },
-      { englishWord: 'hat', foreignWord: ['boushi', 'ぼうし', '帽子'], foreignAudio: '' },
-      { englishWord: 'scarf', foreignWord: ['suka-fu', 'スカーフ', 'スカーフ'], foreignAudio: '' }
-    ]
+  { name: 'Clothes', slugName: 'clo',hasOrdering: false, isLocked: false, isAlphabet: false,words: [
+    { englishWord: 'trousers', foreignWord: ['zubon', 'ズボン', 'ズボン'], foreignAudio: '' },
+    { englishWord: 'sweater', foreignWord: ['se-ta-', 'セーター', 'セーター'], foreignAudio: '' },
+    { englishWord: 'underwear', foreignWord: ['shitagi', 'したぎ', '下着'], foreignAudio: '' },
+    { englishWord: 'tie', foreignWord: ['nekutai', 'ネクタイ', 'ネクタイ'], foreignAudio: '' },
+    { englishWord: 'socks', foreignWord: ['kutsushita', 'くつした', '靴下'], foreignAudio: '' },
+    { englishWord: 'shoes', foreignWord: ['kutsu', 'くつ', '靴'], foreignAudio: '' },
+    { englishWord: 'skirt', foreignWord: ['suka-to', 'スカート', 'スカート'], foreignAudio: '' },
+    { englishWord: 'jacket', foreignWord: ['jyaketto', 'ジャケット', 'ジャケット'], foreignAudio: '' },
+    { englishWord: 'hat', foreignWord: ['boushi', 'ぼうし', '帽子'], foreignAudio: '' },
+    { englishWord: 'scarf', foreignWord: ['suka-fu', 'スカーフ', 'スカーフ'], foreignAudio: '' }
+  ]
   }
 ]
 
 const mandarinTopics: TopicWithTwoAlphabets[] = [
-  { name:'Numbers', slugName: 'num', hasOrdering:true, words: [
+  { name:'Numbers', slugName: 'num', hasOrdering:true, isLocked: false, isAlphabet: false, words: [
     { englishWord: 'one', foreignWord: ['yī','一'], foreignAudio: '', order:1 },
     { englishWord: 'two', foreignWord: ['èr','二'], foreignAudio: '', order:2 },
     { englishWord: 'three',foreignWord: ['sān','三'], foreignAudio: '', order:3 },
@@ -1644,7 +1625,7 @@ const mandarinTopics: TopicWithTwoAlphabets[] = [
     { englishWord: 'nine', foreignWord: ['jiŭ', '九'], foreignAudio: '', order:9 },
     { englishWord: 'ten', foreignWord: ['shí','十'], foreignAudio: '', order:10 },
   ] },
-  { name:'Colours', slugName: 'col', hasOrdering:false, words: [
+  { name:'Colours', slugName: 'col', hasOrdering:false, isLocked: false, isAlphabet: false, words: [
     { englishWord: 'red', foreignWord: ['hóngsè', '红色'], foreignAudio: '' },
     { englishWord: 'blue', foreignWord: ['lánsè', '蓝色'], foreignAudio: '' },
     { englishWord: 'green', foreignWord: ['lǜsè', '绿色'], foreignAudio: '' },
@@ -1655,28 +1636,23 @@ const mandarinTopics: TopicWithTwoAlphabets[] = [
     { englishWord: 'black', foreignWord: ['hēisè', '黑色'], foreignAudio: '' },
     { englishWord: 'purple', foreignWord: ['zǐsè', '紫色'], foreignAudio: '' },
     { englishWord: 'pink', foreignWord: ['fěnhóngsè', '粉红色'], foreignAudio: '' }
+  ] },
+  { name: 'Clothes', slugName: 'clo', hasOrdering: false, isLocked: false, isAlphabet: false, words: [
+    { englishWord: 'trousers', foreignWord: ['kùzǐ', '裤子'], foreignAudio: '' },
+    { englishWord: 'sweater', foreignWord: ['máoyī', '毛衣'], foreignAudio: '' },
+    { englishWord: 'underwear', foreignWord: ['yīnxiāng', '内衣'], foreignAudio: '' },
+    { englishWord: 'tie', foreignWord: ['língdài', '领带'], foreignAudio: '' },
+    { englishWord: 'socks', foreignWord: ['wàzi', '袜子'], foreignAudio: '' },
+    { englishWord: 'shoes', foreignWord: ['xiézi', '鞋子'], foreignAudio: '' },
+    { englishWord: 'skirt', foreignWord: ['qúnzi', '裙子'], foreignAudio: '' },
+    { englishWord: 'jacket', foreignWord: ['jiákè', '夹克'], foreignAudio: '' },
+    { englishWord: 'hat', foreignWord: ['màozi', '帽子'], foreignAudio: '' },
+    { englishWord: 'scarf', foreignWord: ['wéijīn', '围巾'], foreignAudio: '' }
   ] }
-  ,{
-    name: 'Clothes',
-    slugName: 'clo',
-    hasOrdering: false,
-    words: [
-      { englishWord: 'trousers', foreignWord: ['kùzǐ', '裤子'], foreignAudio: '' },
-      { englishWord: 'sweater', foreignWord: ['máoyī', '毛衣'], foreignAudio: '' },
-      { englishWord: 'underwear', foreignWord: ['yīnxiāng', '内衣'], foreignAudio: '' },
-      { englishWord: 'tie', foreignWord: ['língdài', '领带'], foreignAudio: '' },
-      { englishWord: 'socks', foreignWord: ['wàzi', '袜子'], foreignAudio: '' },
-      { englishWord: 'shoes', foreignWord: ['xiézi', '鞋子'], foreignAudio: '' },
-      { englishWord: 'skirt', foreignWord: ['qúnzi', '裙子'], foreignAudio: '' },
-      { englishWord: 'jacket', foreignWord: ['jiákè', '夹克'], foreignAudio: '' },
-      { englishWord: 'hat', foreignWord: ['màozi', '帽子'], foreignAudio: '' },
-      { englishWord: 'scarf', foreignWord: ['wéijīn', '围巾'], foreignAudio: '' }
-    ]
-  }
 ]
 
 const koreanTopics: TopicWithTwoAlphabets[] = [
-  { name:'Numbers', slugName: 'num', hasOrdering:true, words: [
+  { name:'Numbers', slugName: 'num', hasOrdering:true, isLocked: false, isAlphabet: false,words: [
     { englishWord: 'one', foreignWord: ['ha-na','하나'], foreignAudio: '', order:1 },
     { englishWord: 'two', foreignWord: ['dool','둘'], foreignAudio: '', order:2 },
     { englishWord: 'three', foreignWord: ['seht','셋'], foreignAudio: '', order:3 },
@@ -1688,7 +1664,7 @@ const koreanTopics: TopicWithTwoAlphabets[] = [
     { englishWord: 'nine', foreignWord: ['ah-hope','아홉'], foreignAudio: '', order:9 },
     { englishWord: 'ten', foreignWord: ['yul','열'], foreignAudio: '', order:10 },
   ] },
-  { name:'Colours', slugName: 'col', hasOrdering:false, words: [
+  { name:'Colours', slugName: 'col', hasOrdering:false, isLocked: false, isAlphabet: false,words: [
     { englishWord: 'red', foreignWord: ['ppalgansaek', '빨간색'], foreignAudio: '' },
     { englishWord: 'blue', foreignWord: ['paransaek', '파란색'], foreignAudio: '' },
     { englishWord: 'green', foreignWord: ['choroksaek', '초록색'], foreignAudio: '' },
@@ -1700,24 +1676,20 @@ const koreanTopics: TopicWithTwoAlphabets[] = [
     { englishWord: 'purple', foreignWord: ['borasaek', '보라색'], foreignAudio: '' },
     { englishWord: 'pink', foreignWord: ['bunhongsaek', '분홍색'], foreignAudio: '' }
   ] },
-  {
-    name: 'Clothes',
-    slugName: 'clo',
-    hasOrdering: false,
-    words: [
-      { englishWord: 'trousers', foreignWord: ['baji', '바지'], foreignAudio: '' },
-      { englishWord: 'sweater', foreignWord: ['seuweteo', '스웨터'], foreignAudio: '' },
-      { englishWord: 'underwear', foreignWord: ['sangtae', '속옷'], foreignAudio: '' },
-      { englishWord: 'tie', foreignWord: ['maen', '넥타이'], foreignAudio: '' },
-      { englishWord: 'socks', foreignWord: ['yangmal', '양말'], foreignAudio: '' },
-      { englishWord: 'shoes', foreignWord: ['shinbal', '신발'], foreignAudio: '' },
-      { englishWord: 'skirt', foreignWord: ['chima', '치마'], foreignAudio: '' },
-      { englishWord: 'jacket', foreignWord: ['jaeket', '재킷'], foreignAudio: '' },
-      { englishWord: 'hat', foreignWord: ['moja', '모자'], foreignAudio: '' },
-      { englishWord: 'scarf', foreignWord: ['muffler', '머플러'], foreignAudio: '' }
-    ]
+  { name: 'Clothes', slugName: 'clo', hasOrdering: false, isLocked: false, isAlphabet: false, words: [
+    { englishWord: 'trousers', foreignWord: ['baji', '바지'], foreignAudio: '' },
+    { englishWord: 'sweater', foreignWord: ['seuweteo', '스웨터'], foreignAudio: '' },
+    { englishWord: 'underwear', foreignWord: ['sangtae', '속옷'], foreignAudio: '' },
+    { englishWord: 'tie', foreignWord: ['maen', '넥타이'], foreignAudio: '' },
+    { englishWord: 'socks', foreignWord: ['yangmal', '양말'], foreignAudio: '' },
+    { englishWord: 'shoes', foreignWord: ['shinbal', '신발'], foreignAudio: '' },
+    { englishWord: 'skirt', foreignWord: ['chima', '치마'], foreignAudio: '' },
+    { englishWord: 'jacket', foreignWord: ['jaeket', '재킷'], foreignAudio: '' },
+    { englishWord: 'hat', foreignWord: ['moja', '모자'], foreignAudio: '' },
+    { englishWord: 'scarf', foreignWord: ['muffler', '머플러'], foreignAudio: '' }
+  ]
   },
-  { name:'Hangul (Alphabet)', slugName: 'han', hasOrdering:true, isAlphabet: true, words: [
+  { name:'Hangul (Alphabet)', slugName: 'han', hasOrdering:true, isLocked: false, isAlphabet: true, words: [
     { englishWord: 'g', foreignWord: ['ㄱ','ㄱ'], foreignAudio: '', order: 1 },
     { englishWord: 'n', foreignWord: ['ㄴ','ㄴ'], foreignAudio: '', order: 2 },
     { englishWord: 'd', foreignWord: ['ㄷ','ㄷ'], foreignAudio: '', order: 3 },
@@ -1746,7 +1718,7 @@ const koreanTopics: TopicWithTwoAlphabets[] = [
 ]
 
 const portugueseTopics: TopicWithOneAlphabet[] = [
-  { name:'Numbers', slugName: 'num', hasOrdering:true, words: [
+  { name:'Numbers', slugName: 'num', hasOrdering:true, isLocked: false, isAlphabet: false, words: [
     { englishWord: 'one', foreignWord: ['um'], foreignAudio: '', order:1 },
     { englishWord: 'two', foreignWord: ['dois'], foreignAudio: '', order:2 },
     { englishWord: 'three', foreignWord: ['três'], foreignAudio: '', order:3 },
@@ -1758,7 +1730,7 @@ const portugueseTopics: TopicWithOneAlphabet[] = [
     { englishWord: 'nine', foreignWord: ['nove'], foreignAudio: '', order:9 },
     { englishWord: 'ten', foreignWord: ['dez'], foreignAudio: '', order:10 },
   ] },
-  { name:'Colours', slugName: 'col', hasOrdering:false, words: [
+  { name:'Colours', slugName: 'col', hasOrdering:false, isLocked: false, isAlphabet: false, words: [
     { englishWord: 'red', foreignWord: ['vermelho'], foreignAudio: '' },
     { englishWord: 'blue', foreignWord: ['azul'], foreignAudio: '' },
     { englishWord: 'green', foreignWord: ['verde'], foreignAudio: '' },
@@ -1771,10 +1743,7 @@ const portugueseTopics: TopicWithOneAlphabet[] = [
     { englishWord: 'pink', foreignWord: ['rosa'], foreignAudio: '' }
   ] },
   {
-    name: 'Clothes',
-    slugName: 'clo',
-    hasOrdering: false,
-    words: [
+    name: 'Clothes', slugName: 'clo', hasOrdering: false, isLocked: false, isAlphabet: false, words: [
       { englishWord: 'trousers', foreignWord: ['calças'], foreignAudio: '' },
       { englishWord: 'sweater', foreignWord: ['suéter'], foreignAudio: '' },
       { englishWord: 'underwear', foreignWord: ['roupa íntima'], foreignAudio: '' },
@@ -1791,7 +1760,7 @@ const portugueseTopics: TopicWithOneAlphabet[] = [
 ]
 
 const russianTopics: TopicWithTwoAlphabets[] = [
-  { name:'Russian alphabet', slugName: 'alp', hasOrdering:true, isAlphabet: true, words: [
+  { name:'Russian alphabet', slugName: 'alp', hasOrdering:true, isLocked: false, isAlphabet: true, words: [
     { englishWord: 'a', foreignWord: ['а','а'], foreignAudio: '', order: 1 },
     { englishWord: 'b', foreignWord: ['б','б'], foreignAudio: '', order: 2 },
     { englishWord: 'v', foreignWord: ['в','в'], foreignAudio: '', order: 3 },
@@ -1826,7 +1795,7 @@ const russianTopics: TopicWithTwoAlphabets[] = [
     { englishWord: 'yu', foreignWord: ['ю','ю'], foreignAudio: '', order: 32 },
     { englishWord: 'ya', foreignWord: ['я','я'], foreignAudio: '', order: 33 }
   ] },
-  { name:'Numbers', slugName: 'num', hasOrdering:true, words: [
+  { name:'Numbers', slugName: 'num', hasOrdering:true, isLocked: false, isAlphabet: false, words: [
     { englishWord: 'one', foreignWord: ['a-deen', 'один'], foreignAudio: '', order:1 },
     { englishWord: 'two', foreignWord: ['dva', 'два'], foreignAudio: '', order:2 },
     { englishWord: 'three', foreignWord: ['tree', 'три'], foreignAudio: '', order:3 },
@@ -1837,9 +1806,8 @@ const russianTopics: TopicWithTwoAlphabets[] = [
     { englishWord: 'eight', foreignWord: ['vo-syem', 'восемь'], foreignAudio: '', order:8 },
     { englishWord: 'nine', foreignWord: ['dyev-yat', 'девять'], foreignAudio: '', order:9 },
     { englishWord: 'ten', foreignWord: ['dyes-yat', 'десять'], foreignAudio: '', order:10 },
-    
   ] },
-  { name:'Colours', slugName: 'col', hasOrdering:false, words: [
+  { name:'Colours', slugName: 'col', hasOrdering:false, isLocked: false, isAlphabet: false, words: [
     { englishWord: 'red', foreignWord: ['krasnyy', 'красный'], foreignAudio: '' },
     { englishWord: 'blue', foreignWord: ['siniy', 'синий'], foreignAudio: '' },
     { englishWord: 'green', foreignWord: ['zelenyy', 'зеленый'], foreignAudio: '' },
@@ -1851,22 +1819,18 @@ const russianTopics: TopicWithTwoAlphabets[] = [
     { englishWord: 'purple', foreignWord: ['fioletovyy', 'фиолетовый'], foreignAudio: '' },
     { englishWord: 'pink', foreignWord: ['rozovyy', 'розовый'], foreignAudio: '' }
   ] },
-  {
-    name: 'Clothes',
-    slugName: 'clo',
-    hasOrdering: false,
-    words: [
-      { englishWord: 'trousers', foreignWord: [ 'bryuki','брюки'], foreignAudio: '' },
-      { englishWord: 'sweater', foreignWord: [ 'sviter', 'свитер'], foreignAudio: '' },
-      { englishWord: 'underwear', foreignWord: [ 'nizhneye bel\'ye', 'нижнее белье'], foreignAudio: '' },
-      { englishWord: 'tie', foreignWord: [ 'galstuk', 'галстук',], foreignAudio: '' },
-      { englishWord: 'socks', foreignWord: [ 'noski', 'носки',], foreignAudio: '' },
-      { englishWord: 'shoes', foreignWord: ['obuv\'', 'обувь'], foreignAudio: '' },
-      { englishWord: 'skirt', foreignWord: [ 'yubka', 'юбка',], foreignAudio: '' },
-      { englishWord: 'jacket', foreignWord: [ 'kurtka', 'куртка'], foreignAudio: '' },
-      { englishWord: 'hat', foreignWord: ['shapka', 'шапка',], foreignAudio: '' },
-      { englishWord: 'scarf', foreignWord: [ 'sharf', 'шарф',], foreignAudio: '' }
-    ]
+  { name: 'Clothes', slugName: 'clo', hasOrdering: false, isLocked: false, isAlphabet: false,words: [
+    { englishWord: 'trousers', foreignWord: [ 'bryuki','брюки'], foreignAudio: '' },
+    { englishWord: 'sweater', foreignWord: [ 'sviter', 'свитер'], foreignAudio: '' },
+    { englishWord: 'underwear', foreignWord: [ 'nizhneye bel\'ye', 'нижнее белье'], foreignAudio: '' },
+    { englishWord: 'tie', foreignWord: [ 'galstuk', 'галстук',], foreignAudio: '' },
+    { englishWord: 'socks', foreignWord: [ 'noski', 'носки',], foreignAudio: '' },
+    { englishWord: 'shoes', foreignWord: ['obuv\'', 'обувь'], foreignAudio: '' },
+    { englishWord: 'skirt', foreignWord: [ 'yubka', 'юбка',], foreignAudio: '' },
+    { englishWord: 'jacket', foreignWord: [ 'kurtka', 'куртка'], foreignAudio: '' },
+    { englishWord: 'hat', foreignWord: ['shapka', 'шапка',], foreignAudio: '' },
+    { englishWord: 'scarf', foreignWord: [ 'sharf', 'шарф',], foreignAudio: '' }
+  ]
   }
 ]
 
@@ -1874,39 +1838,34 @@ const russianTopics: TopicWithTwoAlphabets[] = [
 // https://qualifications.pearson.com/content/dam/pdf/GCSE/Greek/2017/specification-and-sample-assessments/specification-gcse2017-l12-greek-issue5.pdf
 
 const greekTopics: TopicWithTwoAlphabets[] = [
-  {
-    name: 'Greek Alphabet',
-    slugName: 'alp',
-    hasOrdering: true,
-    isAlphabet: true,
-    words: [
-      { englishWord: 'a', foreignWord: ['α', 'α'], foreignAudio: '', order: 1 },
-      { englishWord: 'v', foreignWord: ['β', 'β'], foreignAudio: '', order: 2 },
-      { englishWord: 'g', foreignWord: ['γ', 'γ'], foreignAudio: '', order: 3 },
-      { englishWord: 'd', foreignWord: ['δ', 'δ'], foreignAudio: '', order: 4 },
-      { englishWord: 'e', foreignWord: ['ε', 'ε'], foreignAudio: '', order: 5 },
-      { englishWord: 'z', foreignWord: ['ζ', 'ζ'], foreignAudio: '', order: 6 },
-      { englishWord: 'i', foreignWord: ['η', 'η'], foreignAudio: '', order: 7 },
-      { englishWord: 'th', foreignWord: ['θ', 'θ'], foreignAudio: '', order: 8 },
-      { englishWord: 'i', foreignWord: ['ι', 'ι'], foreignAudio: '', order: 9 },
-      { englishWord: 'k', foreignWord: ['κ', 'κ'], foreignAudio: '', order: 10 },
-      { englishWord: 'l', foreignWord: ['λ', 'λ'], foreignAudio: '', order: 11 },
-      { englishWord: 'm', foreignWord: ['μ', 'μ'], foreignAudio: '', order: 12 },
-      { englishWord: 'n', foreignWord: ['ν', 'ν'], foreignAudio: '', order: 13 },
-      { englishWord: 'x', foreignWord: ['ξ', 'ξ'], foreignAudio: '', order: 14 },
-      { englishWord: 'o', foreignWord: ['ο', 'ο'], foreignAudio: '', order: 15 },
-      { englishWord: 'p', foreignWord: ['π', 'π'], foreignAudio: '', order: 16 },
-      { englishWord: 'r', foreignWord: ['ρ', 'ρ'], foreignAudio: '', order: 17 },
-      { englishWord: 's', foreignWord: ['σ', 'σ'], foreignAudio: '', order: 18 },
-      { englishWord: 't', foreignWord: ['τ', 'τ'], foreignAudio: '', order: 19 },
-      { englishWord: 'y', foreignWord: ['υ', 'υ'], foreignAudio: '', order: 20 },
-      { englishWord: 'f', foreignWord: ['φ', 'φ'], foreignAudio: '', order: 21 },
-      { englishWord: 'ch', foreignWord: ['χ', 'χ'], foreignAudio: '', order: 22 },
-      { englishWord: 'ps', foreignWord: ['ψ', 'ψ'], foreignAudio: '', order: 23 },
-      { englishWord: 'o', foreignWord: ['ω', 'ω'], foreignAudio: '', order: 24 }
-    ]
+  { name: 'Greek Alphabet', slugName: 'alp', hasOrdering: true, isLocked: false, isAlphabet: true, words: [
+    { englishWord: 'a', foreignWord: ['α', 'α'], foreignAudio: '', order: 1 },
+    { englishWord: 'v', foreignWord: ['β', 'β'], foreignAudio: '', order: 2 },
+    { englishWord: 'g', foreignWord: ['γ', 'γ'], foreignAudio: '', order: 3 },
+    { englishWord: 'd', foreignWord: ['δ', 'δ'], foreignAudio: '', order: 4 },
+    { englishWord: 'e', foreignWord: ['ε', 'ε'], foreignAudio: '', order: 5 },
+    { englishWord: 'z', foreignWord: ['ζ', 'ζ'], foreignAudio: '', order: 6 },
+    { englishWord: 'i', foreignWord: ['η', 'η'], foreignAudio: '', order: 7 },
+    { englishWord: 'th', foreignWord: ['θ', 'θ'], foreignAudio: '', order: 8 },
+    { englishWord: 'i', foreignWord: ['ι', 'ι'], foreignAudio: '', order: 9 },
+    { englishWord: 'k', foreignWord: ['κ', 'κ'], foreignAudio: '', order: 10 },
+    { englishWord: 'l', foreignWord: ['λ', 'λ'], foreignAudio: '', order: 11 },
+    { englishWord: 'm', foreignWord: ['μ', 'μ'], foreignAudio: '', order: 12 },
+    { englishWord: 'n', foreignWord: ['ν', 'ν'], foreignAudio: '', order: 13 },
+    { englishWord: 'x', foreignWord: ['ξ', 'ξ'], foreignAudio: '', order: 14 },
+    { englishWord: 'o', foreignWord: ['ο', 'ο'], foreignAudio: '', order: 15 },
+    { englishWord: 'p', foreignWord: ['π', 'π'], foreignAudio: '', order: 16 },
+    { englishWord: 'r', foreignWord: ['ρ', 'ρ'], foreignAudio: '', order: 17 },
+    { englishWord: 's', foreignWord: ['σ', 'σ'], foreignAudio: '', order: 18 },
+    { englishWord: 't', foreignWord: ['τ', 'τ'], foreignAudio: '', order: 19 },
+    { englishWord: 'y', foreignWord: ['υ', 'υ'], foreignAudio: '', order: 20 },
+    { englishWord: 'f', foreignWord: ['φ', 'φ'], foreignAudio: '', order: 21 },
+    { englishWord: 'ch', foreignWord: ['χ', 'χ'], foreignAudio: '', order: 22 },
+    { englishWord: 'ps', foreignWord: ['ψ', 'ψ'], foreignAudio: '', order: 23 },
+    { englishWord: 'o', foreignWord: ['ω', 'ω'], foreignAudio: '', order: 24 }
+  ]
   },
-  { name: 'Numbers', slugName: 'num', hasOrdering: true, words: [
+  { name: 'Numbers', slugName: 'num', hasOrdering: true, isLocked: false, isAlphabet: false, words: [
     { englishWord: 'one', foreignWord: ['ena', 'ένα'], foreignAudio: '', order: 1 },
     { englishWord: 'two', foreignWord: ['dyo', 'δύο'], foreignAudio: '', order: 2 },
     { englishWord: 'three', foreignWord: ['tria', 'τρία'], foreignAudio: '', order: 3 },
@@ -1918,24 +1877,16 @@ const greekTopics: TopicWithTwoAlphabets[] = [
     { englishWord: 'nine', foreignWord: ['ennea', 'εννέα'], foreignAudio: '', order: 9 },
     { englishWord: 'ten', foreignWord: ['deka', 'δέκα'], foreignAudio: '', order: 10 },
   ] },
-  {
-    name: 'Days of the Week',
-    slugName: 'dow',
-    hasOrdering: true,
-    words: [
-      { englishWord: 'Monday', foreignWord: ['Deftera', 'Δευτέρα'], foreignAudio: '', order: 1 },
-      { englishWord: 'Tuesday', foreignWord: ['Triti', 'Τρίτη'], foreignAudio: '', order: 2 },
-      { englishWord: 'Wednesday', foreignWord: ['Tetarti', 'Τετάρτη'], foreignAudio: '', order: 3 },
-      { englishWord: 'Thursday', foreignWord: ['Pempti', 'Πέμπτη'], foreignAudio: '', order: 4 },
-      { englishWord: 'Friday', foreignWord: ['Paraskevi', 'Παρασκευή'], foreignAudio: '', order: 5 },
-      { englishWord: 'Saturday', foreignWord: ['Savvato', 'Σάββατο'], foreignAudio: '', order: 6 },
-      { englishWord: 'Sunday', foreignWord: ['Kyriaki', 'Κυριακή'], foreignAudio: '', order: 7 }
-    ]
-  },
-  {
-    name: 'Months of the Year',
-    slugName: 'months',
-    hasOrdering: true,
+  { name: 'Days of the Week', slugName: 'dow',hasOrdering: true, isLocked: false, isAlphabet: false, words: [
+    { englishWord: 'Monday', foreignWord: ['Deftera', 'Δευτέρα'], foreignAudio: '', order: 1 },
+    { englishWord: 'Tuesday', foreignWord: ['Triti', 'Τρίτη'], foreignAudio: '', order: 2 },
+    { englishWord: 'Wednesday', foreignWord: ['Tetarti', 'Τετάρτη'], foreignAudio: '', order: 3 },
+    { englishWord: 'Thursday', foreignWord: ['Pempti', 'Πέμπτη'], foreignAudio: '', order: 4 },
+    { englishWord: 'Friday', foreignWord: ['Paraskevi', 'Παρασκευή'], foreignAudio: '', order: 5 },
+    { englishWord: 'Saturday', foreignWord: ['Savvato', 'Σάββατο'], foreignAudio: '', order: 6 },
+    { englishWord: 'Sunday', foreignWord: ['Kyriaki', 'Κυριακή'], foreignAudio: '', order: 7 }
+  ] },
+  { name: 'Months of the Year', slugName: 'months', hasOrdering: true, isLocked: false, isAlphabet: false,
     words: [
       { englishWord: 'January', foreignWord: ['Ianuarios', 'Ιανουάριος'], foreignAudio: '', order: 1 },
       { englishWord: 'February', foreignWord: ['Fevrouarios', 'Φεβρουάριος'], foreignAudio: '', order: 2 },
@@ -1951,7 +1902,7 @@ const greekTopics: TopicWithTwoAlphabets[] = [
       { englishWord: 'December', foreignWord: ['Dekemvrios', 'Δεκέμβριος'], foreignAudio: '', order: 12 }
     ]
   },
-  { name: 'Colours', slugName: 'col', hasOrdering: false, words: [
+  { name: 'Colours', slugName: 'col', hasOrdering: false, isLocked: false, isAlphabet: false, words: [
     { englishWord: 'red', foreignWord: ['kokkino', 'κόκκινο'], foreignAudio: '' },
     { englishWord: 'blue', foreignWord: ['ble', 'μπλε'], foreignAudio: '' },
     { englishWord: 'green', foreignWord: ['prasino', 'πράσινο'], foreignAudio: '' },
@@ -1964,35 +1915,26 @@ const greekTopics: TopicWithTwoAlphabets[] = [
     { englishWord: 'pink', foreignWord: ['roz', 'ροζ'], foreignAudio: '' }
   ] },
   {
-    name: 'Question Words',
-    slugName: 'questions',
-    hasOrdering: false,
-    words: [
+    name: 'Question Words', slugName: 'questions', hasOrdering: false, isLocked: false, isAlphabet: false, words: [
       { englishWord: 'What', foreignWord: ['Ti', 'Τι'], foreignAudio: '' },
       { englishWord: 'Who', foreignWord: ['Poios', 'Ποιος'], foreignAudio: '' },
       { englishWord: 'Where', foreignWord: ['Pou', 'Πού'], foreignAudio: '' },
       { englishWord: 'When', foreignWord: ['Pote', 'Πότε'], foreignAudio: '' },
       { englishWord: 'Why', foreignWord: ['Giati', 'Γιατί'], foreignAudio: '' },
       { englishWord: 'How', foreignWord: ['Pos', 'Πώς'], foreignAudio: '' }
-    ]
-  },
-  {
-    name: 'Clothes',
-    slugName: 'clo',
-    hasOrdering: false,
-    words: [
-      { englishWord: 'trousers', foreignWord: ['panteloni', 'παντελόνι'], foreignAudio: '' },
-      { englishWord: 'sweater', foreignWord: ['poulover', 'πουλόβερ'], foreignAudio: '' },
-      { englishWord: 'underwear', foreignWord: ['esorouxa', 'εσώρουχα'], foreignAudio: '' },
-      { englishWord: 'tie', foreignWord: ['gravata', 'γραβάτα'], foreignAudio: '' },
-      { englishWord: 'socks', foreignWord: ['kaltses', 'κάλτσες'], foreignAudio: '' },
-      { englishWord: 'shoes', foreignWord: ['papoutsia', 'παπούτσια'], foreignAudio: '' },
-      { englishWord: 'skirt', foreignWord: ['fousta', 'φούστα'], foreignAudio: '' },
-      { englishWord: 'jacket', foreignWord: ['mpoufan', 'μπουφάν'], foreignAudio: '' },
-      { englishWord: 'hat', foreignWord: ['kapelo', 'καπέλο'], foreignAudio: '' },
-      { englishWord: 'scarf', foreignWord: ['kaskol', 'κασκόλ'], foreignAudio: '' }
-    ]
-  }
+    ] },
+  { name: 'Clothes',slugName: 'clo', hasOrdering: false,isLocked: false, isAlphabet: false, words: [
+    { englishWord: 'trousers', foreignWord: ['panteloni', 'παντελόνι'], foreignAudio: '' },
+    { englishWord: 'sweater', foreignWord: ['poulover', 'πουλόβερ'], foreignAudio: '' },
+    { englishWord: 'underwear', foreignWord: ['esorouxa', 'εσώρουχα'], foreignAudio: '' },
+    { englishWord: 'tie', foreignWord: ['gravata', 'γραβάτα'], foreignAudio: '' },
+    { englishWord: 'socks', foreignWord: ['kaltses', 'κάλτσες'], foreignAudio: '' },
+    { englishWord: 'shoes', foreignWord: ['papoutsia', 'παπούτσια'], foreignAudio: '' },
+    { englishWord: 'skirt', foreignWord: ['fousta', 'φούστα'], foreignAudio: '' },
+    { englishWord: 'jacket', foreignWord: ['mpoufan', 'μπουφάν'], foreignAudio: '' },
+    { englishWord: 'hat', foreignWord: ['kapelo', 'καπέλο'], foreignAudio: '' },
+    { englishWord: 'scarf', foreignWord: ['kaskol', 'κασκόλ'], foreignAudio: '' }
+  ] }
 ];
 export const languages: Language[] = 
         [

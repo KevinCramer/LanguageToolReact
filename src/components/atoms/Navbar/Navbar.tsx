@@ -1,10 +1,10 @@
 import './Navbar.scss';
 import { closeNavbar, RootState, toggleNavbar } from '../../../redux-store/navbar';
 import { Container, Nav, Navbar as NavbarBs } from 'react-bootstrap';
-import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
-import { useAuth } from '../../../contexts/AuthContext';
+import { useDispatch, useSelector } from 'react-redux';
 import { displayLogin } from '../../../redux-store/auth';
+import { useAuth } from '../../../contexts/AuthContext';
 const Navbar = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -77,6 +77,7 @@ const Navbar = () => {
                     if (location.pathname === '/profile') {
                       navigate('/');
                     }
+                    dispatch(closeNavbar())
                   } catch (error) {
                     // eslint-disable-next-line no-console
                     console.error('Failed to log out', error);
