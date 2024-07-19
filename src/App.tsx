@@ -1,8 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './index.scss'
-import { authModalStates, displayLogin, hideModal, RootState } from './redux-store/auth'
+import { authModalStates, hideModal, RootState } from './redux-store/auth'
 import { Container, Modal } from 'react-bootstrap'
-import { Route, Routes, useLocation, useNavigate } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
 import ContactUs from './pages/ContactUs/ContactUs'
 import ForgotPassword from './components/molecules/ForgotPassword/ForgotPassword'
@@ -20,12 +20,10 @@ import VocabContent from './pages/VocabContent/VocabContent'
 
 const App = ()=> {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
-  const location = useLocation();
 
   const reduxAuth = useSelector((state: RootState) => state.auth);
   // @ts-ignore
-  const { currentUser, logout } = useAuth();
+  const { currentUser } = useAuth();
 
   useEffect(() => {
     if (currentUser && currentUser.email) {
