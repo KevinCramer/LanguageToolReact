@@ -16,6 +16,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { languages as allLanguages } from '../../data/structured-data/words';
 import CustomDropDownButton from '../../components/atoms/CustomDropDownButton/CustomDropDownButton';
 import CustomSwitch from '../../components/atoms/CustomSwitch/CustomSwitch';
+import { denyPermission } from '../../redux-store/lock';
 import Dropdown from 'react-bootstrap/Dropdown';
 import { languageToSlugs } from '../../constants'
 import LockIcon from '@mui/icons-material/Lock';
@@ -24,13 +25,16 @@ import QuizElement from '../../components/atoms/QuizElement/QuizElement';
 import { scramble } from '../../helpers/vocab-content-helpers';
 import StudyElement from '../../components/molecules/StudyElement/StudyElement';
 import { useDispatch } from 'react-redux';
-import { denyPermission } from '../../redux-store/lock';
+import { useAuth } from '../../contexts/AuthContext'
 
 const VocabContent = () => {
   let languages = allLanguages;
   const dispatch = useDispatch();
 
   const navigate = useNavigate();
+
+  //@ts-ignore
+  const { currentUser } = useAuth();
 
   var urlSearchParams = new URLSearchParams(useLocation().search);
   const urlSettings = JSON.parse(
@@ -66,8 +70,9 @@ const VocabContent = () => {
       return setLanguage(language)
       ;
     };
+  const userIsLoggedIn = currentUser && currentUser.email
   const changeCurrentTopic = (topic: Topic) => {
-    if(topic.isLocked){
+    if(topic.isLocked && !(userIsLoggedIn) ){
       dispatch(denyPermission());
     }
     else {
@@ -230,7 +235,10 @@ const VocabContent = () => {
                     <Dropdown.Item key = {index} onClick = {() => 
                       changeCurrentTopic(topic)}>
                       <div>
-                        {topic.name} {topic.isLocked && <LockIcon style={{ fontSize: '20px' }}/>}
+                        {topic.name} {
+                          topic.isLocked 
+                          && !(userIsLoggedIn) 
+                          && <LockIcon style={{ fontSize: '20px' }}/>}
                       </div>
                     </Dropdown.Item>)}
               </CustomDropDownButton>
