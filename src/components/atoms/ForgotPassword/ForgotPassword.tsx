@@ -1,6 +1,7 @@
 import { Alert, Button, Card, Form } from 'react-bootstrap'
 import { displayLogin, displaySignup } from '../../../redux-store/auth'
 import { useRef, useState } from 'react'
+import CustomLink from '../CustomLink/CustomLink'
 import { useAuth } from '../../../contexts/AuthContext'
 import { useDispatch } from 'react-redux'
 
@@ -47,16 +48,17 @@ export default function ForgotPassword() {
             </Button>
           </Form>
           <div className="w-100 text-center mt-3">
-            <div style={{ color: 'rgb(13, 110,253)', 
-              textDecoration: 'underline' }} onClick={() => dispatch(displayLogin())}>
-            Log In</div>
+            <CustomLink onClick={() => dispatch(displayLogin())}>
+              Log In
+            </CustomLink>
           </div>
         </Card.Body>
       </Card>
       <div className="w-100 text-center mt-2">
-        Need an account? <div style={{ color: 'rgb(13, 110,253)', 
-          textDecoration: 'underline' }} onClick={() => dispatch(displaySignup())}>
-            Sign Up</div>
+        Need an account?
+        <CustomLink onClick={() => dispatch(displaySignup())}>
+              Sign Up
+        </CustomLink>
       </div>
     </>
   )

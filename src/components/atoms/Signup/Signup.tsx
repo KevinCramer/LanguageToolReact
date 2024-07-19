@@ -3,6 +3,7 @@ import { displayLogin, hideModal } from '../../../redux-store/auth'
 import { useRef, useState } from 'react'
 import { useAuth } from '../../../contexts/AuthContext'
 import { useDispatch } from 'react-redux'
+import CustomLink from '../CustomLink/CustomLink'
 
 export default function Signup() {
   const dispatch = useDispatch();
@@ -66,9 +67,9 @@ export default function Signup() {
       </Card>
       <div className="w-100 text-center mt-2" 
         style={{ display:'flex', flexDirection: 'row', justifyContent: 'center' }}>
-        Already have an account?&nbsp;<div style={{ color: 'rgb(13, 110,253)', 
-          textDecoration: 'underline' }}
-        onClick={() => dispatch(displayLogin())}>Log In</div>
+        Already have an account?&nbsp;<CustomLink onClick={() => dispatch(displayLogin())}>
+          Log In
+        </CustomLink>
       </div>
     </>
   )
