@@ -1221,7 +1221,7 @@ const spanishTopics: TopicWithOneAlphabet[] = [
               ],
       foreignAudio: spanishAudioToNeed },
   ] },
-  { name:'Pronouns', slugName: 'pro', hasOrdering:true, isLocked: false, isAlphabet: false, words: [
+  { name:'Pronouns', slugName: 'pro', hasOrdering:true, isLocked: true, isAlphabet: false, words: [
     { englishWord: 'I', foreignWord: ['yo'], foreignAudio: spanishAudioI, order:1 },
     { englishWord: 'you', foreignWord: ['tu'], foreignAudio: spanishAudioYou, order:2 },
     { englishWord: 'he', foreignWord: ['el'], foreignAudio: spanishAudioHe, order:3 },
@@ -1232,7 +1232,7 @@ const spanishTopics: TopicWithOneAlphabet[] = [
     { englishWord: 'they (fem)', foreignWord: ['ellos'], foreignAudio: spanishAudioTheyFeminine, order:8 },
 
   ] },
-  { name:'Body', slugName: 'bod', hasOrdering:false, isLocked: false, isAlphabet: false, words: [
+  { name:'Body', slugName: 'bod', hasOrdering:false, isLocked: true, isAlphabet: false, words: [
     { englishWord: '(the) hand', foreignWord: ['(la) mano'], foreignAudio: spanishAudioHand },
     { englishWord: '(the) head', foreignWord: ['(la) cabeza'], foreignAudio: spanishAudioHead },
     { englishWord: '(the) hair', foreignWord: ['(el) pelo'], foreignAudio: spanishAudioHair },
@@ -1249,7 +1249,7 @@ const spanishTopics: TopicWithOneAlphabet[] = [
     { englishWord: '(the) knee', foreignWord: ['(la) rodilla'], foreignAudio: spanishAudioKnee },
 
   ] },
-  { name:'Locations', slugName: 'loc', hasOrdering:false, isLocked: false, isAlphabet: false, words: [
+  { name:'Locations', slugName: 'loc', hasOrdering:false, isLocked: true, isAlphabet: false, words: [
     { englishWord: '(the) airport', foreignWord: ['(el) aeropuerto'], foreignAudio: spanishAudioAirport },
     { englishWord: '(the) bakery', foreignWord: ['(la) panadería'], foreignAudio: spanishAudioBakery },
     { englishWord: '(the) bank', foreignWord: ['(el) banco'], foreignAudio: spanishAudioBank },
@@ -1270,7 +1270,7 @@ const spanishTopics: TopicWithOneAlphabet[] = [
     { englishWord: '(the) university', foreignWord: ['(la) universidad'], foreignAudio: spanishAudioUniversity },
 
   ] },
-  { name:'Home', slugName: 'hom', hasOrdering:false, isLocked: false, isAlphabet: false, words: [
+  { name:'Home', slugName: 'hom', hasOrdering:false, isLocked: true, isAlphabet: false, words: [
     { englishWord: '(the) window', foreignWord: ['(la) ventana'], foreignAudio: spanishAudioWindow },
     { englishWord: '(the) bedroom', foreignWord: ['(el) dormitorio'], foreignAudio: spanishAudioBedRoom },
     { englishWord: '(the) kitchen', foreignWord: ['(la) cocina'], foreignAudio: spanishAudioKitchen },
@@ -1281,14 +1281,14 @@ const spanishTopics: TopicWithOneAlphabet[] = [
     { englishWord: '(the) garden', foreignWord: ['(el) jardín'], foreignAudio: spanishAudioGarden },
     { englishWord: '(the) living room', foreignWord: ['(el) salón'], foreignAudio: spanishAudioLivingRoom },
   ] },
-  { name:'Question words', slugName: 'que', hasOrdering:false, isLocked: false, isAlphabet: false, words: [
+  { name:'Question words', slugName: 'que', hasOrdering:false, isLocked: true, isAlphabet: false, words: [
     { englishWord: 'why', foreignWord: ['por qué'], foreignAudio: spanishAudioWhy },
     { englishWord: 'what', foreignWord: ['qué'], foreignAudio: spanishAudioWhat },
     { englishWord: 'where', foreignWord: ['dónde'], foreignAudio: spanishAudioWhere },
     { englishWord: 'how', foreignWord: ['cómo'], foreignAudio: spanishAudioHow },
     { englishWord: 'when', foreignWord: ['cuando'], foreignAudio: spanishAudioWhen },
   ] },
-  { name:'Conjuctions', slugName: 'con', hasOrdering:false, isLocked: false, isAlphabet: false, words: [
+  { name:'Conjuctions', slugName: 'con', hasOrdering:false, isLocked: true, isAlphabet: false, words: [
     { englishWord: 'and', foreignWord: ['y'], foreignAudio: spanishAudioAnd },
     { englishWord: 'but', foreignWord: ['pero'], foreignAudio: spanishAudioBut },
     { englishWord: 'or', foreignWord: ['o'], foreignAudio: spanishAudioOr },
@@ -1302,7 +1302,7 @@ const spanishTopics: TopicWithOneAlphabet[] = [
     { englishWord: 'nevertheless', foreignWord: ['sin embargo'], foreignAudio: spanishAudioNevertheless },
 
   ] },
-  { name:'Adjectives', slugName: 'adj', hasOrdering:false, isLocked: false, isAlphabet: false,words: [
+  { name:'Adjectives', slugName: 'adj', hasOrdering:false, isLocked: true, isAlphabet: false,words: [
     // https://www.fluentu.com/blog/spanish/common-spanish-adjectives/#toc_2
     { englishWord: 'open', foreignWord: ['abierto'], foreignAudio: spanishAudioOpen },
     { englishWord: 'boring', foreignWord: ['aburrido'], foreignAudio: spanishAudioBoring },
