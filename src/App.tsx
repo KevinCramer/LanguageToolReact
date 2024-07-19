@@ -36,30 +36,7 @@ const App = ()=> {
   return (
     <>
       <div className="full-background">
-        <div style = {{ display:'flex', flexDirection: 'row', justifyContent:'space-between' }}>
-          <Navbar />
-          <button style={{ color: '#F8F8F8', backgroundColor: 'rgb(13, 110,253)', height: '40px',
-            marginTop: '7px', marginRight: '12px', 
-            borderRadius: '5px', border: 'none' }} 
-          onClick={async () => {
-            if (currentUser && currentUser.email) {
-              try {
-                await logout();
-                if (location.pathname === '/profile') {
-                  navigate('/');
-                }
-              } catch (error) {
-                // eslint-disable-next-line no-console
-                console.error('Failed to log out', error);
-              }
-            } else {
-              dispatch(displayLogin());
-            }}}>
-            <b style = {{ color: 'white' }}>
-              {currentUser && currentUser.email ? 'Log Out' : 'Log In'}
-            </b>
-          </button>
-        </div>
+        <Navbar />
         <Routes>
           <Route path="/" element={ <div className='home-container'> <Home /></div>} />
           <Route path="/vocabulary" element={<VocabContent />} />

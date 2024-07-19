@@ -2,13 +2,17 @@ import './Navbar.scss';
 import { closeNavbar, RootState, toggleNavbar } from '../../../redux-store/navbar';
 import { Container, Nav, Navbar as NavbarBs } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../../contexts/AuthContext';
+import { displayLogin } from '../../../redux-store/auth';
 const Navbar = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const location = useLocation();
+
   const reduxNavbar = useSelector((state: RootState) => state.navbar);
   // @ts-ignore
-  const { currentUser } = useAuth();
+  const { currentUser, logout } = useAuth();
 
   return (
     <NavbarBs expand="false" expanded={reduxNavbar.isNavbarOpen} 
@@ -65,8 +69,24 @@ const Navbar = () => {
             >
             Your Profile
             </Nav.Link>}
+            <div 
+              onClick={async () => {
+                if (currentUser && currentUser.email) {
+                  try {
+                    await logout();
+                    if (location.pathname === '/profile') {
+                      navigate('/');
+                    }
+                  } catch (error) {
+                    // eslint-disable-next-line no-console
+                    console.error('Failed to log out', error);
+                  }
+                } else {
+                  dispatch(displayLogin());
+                }}}>
+              {currentUser && currentUser.email ? 'Log Out' : 'Log In'}
+            </div>
           </Nav>
-        
         </NavbarBs.Collapse>
       </Container>
     </NavbarBs>
