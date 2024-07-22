@@ -2,7 +2,7 @@
 import './GrammarContent.scss'
 import { Container, Navbar as NavbarBs } from 'react-bootstrap';
 import { Language, Topic } from '../../../types/grammarTypes';
-import { queryParamCompress, queryParamDecompress } from '../../helpers/queryParamHelpers'
+import { queryParamCompress, queryParamDecompress } from '../../helpers/query-param-helpers'
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import CustomDropDownButton from '../../components/atoms/CustomDropDownButton/CustomDropDownButton';

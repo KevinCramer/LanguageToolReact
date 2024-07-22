@@ -1,16 +1,20 @@
-import { auth } from '../firebase'; // Adjust the import according to your Firebase setup
+import { createHash, verifyHash } from '../helpers/hash-helpers';
+import { auth } from '../firebase';
+import { BroadcastChannel } from 'broadcast-channel';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const useInactivityTimer = (timeout: number = 1800000) => { // Default to 30 minutes
+const useInactivityTimer = (timeout: number) => {
   const navigate = useNavigate();
   let timer: NodeJS.Timeout;
   const broadcast = new BroadcastChannel('inactivity_channel');
 
   const resetTimer = () => {
     clearTimeout(timer);
-    const currentTime = Date.now();
-    localStorage.setItem('lastActivity', currentTime.toString());
+    const currentTime = Date.now().toString();
+    const hash = createHash(currentTime);
+    localStorage.setItem('lastActivity', currentTime);
+    localStorage.setItem('lastActivityHash', hash);
     broadcast.postMessage('reset');
     timer = setTimeout(signOut, timeout);
   };
@@ -19,8 +23,9 @@ const useInactivityTimer = (timeout: number = 1800000) => { // Default to 30 min
     auth.signOut().then(() => {
       console.log('User signed out due to inactivity.');
       localStorage.removeItem('lastActivity');
+      localStorage.removeItem('lastActivityHash');
       broadcast.postMessage('signout');
-      navigate('/'); // Redirect to login page
+      navigate('/'); 
     }).catch((error) => {
       console.error('Error signing out: ', error);
     });
@@ -28,13 +33,17 @@ const useInactivityTimer = (timeout: number = 1800000) => { // Default to 30 min
 
   const checkInactivity = () => {
     const lastActivity = localStorage.getItem('lastActivity');
-    if (lastActivity) {
+    const lastActivityHash = localStorage.getItem('lastActivityHash');
+    if (lastActivity && lastActivityHash && verifyHash(lastActivity, lastActivityHash)) {
       const inactivityPeriod = Date.now() - parseInt(lastActivity, 10);
       if (inactivityPeriod >= timeout) {
         signOut();
       } else {
         timer = setTimeout(signOut, timeout - inactivityPeriod);
       }
+    } else {
+      // Hash verification failed or no data found
+      signOut();
     }
   };
 

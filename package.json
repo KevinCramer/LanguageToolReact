@@ -23,6 +23,8 @@
     "@reduxjs/toolkit": "^1.9.7",
     "@vanilla-extract/css": "^1.9.2",
     "bootstrap": "^5.2.3",
+    "broadcast-channel": "^7.0.0",
+    "crypto-js": "^4.2.0",
     "firebase": "^10.12.3",
     "fixed-size-array": "^0.1.1",
     "ionicons": "^7.4.0",
@@ -37,6 +39,7 @@
   },
   "devDependencies": {
     "@stylistic/eslint-plugin-js": "^1.4.0",
+    "@types/crypto-js": "^4.2.2",
     "@types/react": "^18.0.24",
     "@types/react-dom": "^18.0.8",
     "@types/react-howler": "^5.2.0",

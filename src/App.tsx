@@ -23,7 +23,7 @@ import useInactivityTimer from './hooks/useInactivityTimer'
 import VocabContent from './pages/VocabContent/VocabContent'
 
 const App = ()=> {
-  useInactivityTimer(1 * 60 * 1000); // 5 minutes inactivity timeout
+  useInactivityTimer(10 * 1000); // 5 minutes inactivity timeout
   const dispatch = useDispatch();
 
   const reduxAuth = useSelector((state: RootStateAuth) => state.auth);

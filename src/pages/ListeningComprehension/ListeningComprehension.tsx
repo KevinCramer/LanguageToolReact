@@ -1,7 +1,7 @@
 import './ListeningComprehension.scss'
 import { AudioTranscription, Language, Paragraph } from '../../../types/listeningComprehension';
 import { Container, Navbar as NavbarBs, Table } from 'react-bootstrap';
-import { queryParamCompress, queryParamDecompress } from '../../helpers/queryParamHelpers'
+import { queryParamCompress, queryParamDecompress } from '../../helpers/query-param-helpers'
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { languages as allLanguages } from '../../data/structured-data/listeningComprehension'

@@ -10,7 +10,7 @@ import {
   WordWithThreeAlphabets, 
   WordWithTwoAlphabets 
 } from '../../../types/vocabTypes'
-import { queryParamCompress, queryParamDecompress } from '../../helpers/queryParamHelpers'
+import { queryParamCompress, queryParamDecompress } from '../../helpers/query-param-helpers'
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { languages as allLanguages } from '../../data/structured-data/words';
