@@ -23,7 +23,9 @@ import useInactivityTimer from './hooks/useInactivityTimer'
 import VocabContent from './pages/VocabContent/VocabContent'
 
 const App = ()=> {
-  useInactivityTimer(10 * 1000); // 5 minutes inactivity timeout
+  // will log out user iff there is no lingocommand tab 
+  // where the user was active in the last 30 minutes
+  useInactivityTimer(30 * 60 * 1000);
   const dispatch = useDispatch();
 
   const reduxAuth = useSelector((state: RootStateAuth) => state.auth);

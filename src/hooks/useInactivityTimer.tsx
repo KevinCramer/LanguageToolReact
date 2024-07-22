@@ -1,13 +1,14 @@
 import { createHash, verifyHash } from '../helpers/hash-helpers';
-import { auth } from '../firebase';
+import { auth } from '../firebase'; 
 import { BroadcastChannel } from 'broadcast-channel';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const useInactivityTimer = (timeout: number) => {
+const useInactivityTimer = (timeout: number = 1800000) => {
   const navigate = useNavigate();
   let timer: NodeJS.Timeout;
-  const broadcast = new BroadcastChannel('inactivity_channel');
+  const channelName = 'inactivity_channel';
+  const broadcast = new BroadcastChannel(channelName);
 
   const resetTimer = () => {
     clearTimeout(timer);
@@ -15,23 +16,17 @@ const useInactivityTimer = (timeout: number) => {
     const hash = createHash(currentTime);
     localStorage.setItem('lastActivity', currentTime);
     localStorage.setItem('lastActivityHash', hash);
-    broadcast.postMessage('reset');
-    timer = setTimeout(signOut, timeout);
+
+    try {
+      broadcast.postMessage('reset');
+    } catch (error) {
+      console.error('Error posting reset message:', error);
+    }
+
+    timer = setTimeout(checkInactivityAcrossTabs, timeout);
   };
 
-  const signOut = () => {
-    auth.signOut().then(() => {
-      console.log('User signed out due to inactivity.');
-      localStorage.removeItem('lastActivity');
-      localStorage.removeItem('lastActivityHash');
-      broadcast.postMessage('signout');
-      navigate('/'); 
-    }).catch((error) => {
-      console.error('Error signing out: ', error);
-    });
-  };
-
-  const checkInactivity = () => {
+  const checkInactivityAcrossTabs = () => {
     const lastActivity = localStorage.getItem('lastActivity');
     const lastActivityHash = localStorage.getItem('lastActivityHash');
     if (lastActivity && lastActivityHash && verifyHash(lastActivity, lastActivityHash)) {
@@ -39,39 +34,59 @@ const useInactivityTimer = (timeout: number) => {
       if (inactivityPeriod >= timeout) {
         signOut();
       } else {
-        timer = setTimeout(signOut, timeout - inactivityPeriod);
+        timer = setTimeout(checkInactivityAcrossTabs, timeout - inactivityPeriod);
       }
     } else {
-      // Hash verification failed or no data found
       signOut();
     }
   };
 
-  useEffect(() => {
-    window.onload = resetTimer;
-    document.onmousemove = resetTimer;
-    document.onkeypress = resetTimer;
-    document.onscroll = resetTimer;
-    document.onclick = resetTimer;
+  const signOut = () => {
+    auth.signOut().then(() => {
+      console.log('User signed out due to inactivity.');
+      localStorage.removeItem('lastActivity');
+      localStorage.removeItem('lastActivityHash');
 
-    broadcast.onmessage = (event) => {
+      try {
+        broadcast.postMessage('signout');
+      } catch (error) {
+        console.error('Error posting signout message:', error);
+      }
+
+      navigate('/'); 
+    }).catch((error) => {
+      console.error('Error signing out: ', error);
+    });
+  };
+
+  useEffect(() => {
+    const handleMessage = (event: MessageEvent) => {
       if (event.data === 'reset') {
         resetTimer();
       } else if (event.data === 'signout') {
-        signOut();
+        // Handle signout message if necessary, e.g., in case of any UI update
+        if (document.visibilityState === 'visible') {
+          signOut();
+        }
       }
     };
 
-    checkInactivity(); // Check inactivity on mount
+    broadcast.addEventListener('message', handleMessage);
+
+    const events = ['load', 'mousemove', 'keypress', 'scroll', 'click'];
+    events.forEach(event => window.addEventListener(event, resetTimer));
+
+    resetTimer(); // Initialize the timer on mount
 
     return () => {
       clearTimeout(timer);
-      window.onload = null;
-      document.onmousemove = null;
-      document.onkeypress = null;
-      document.onscroll = null;
-      document.onclick = null;
-      broadcast.close();
+      events.forEach(event => window.removeEventListener(event, resetTimer));
+      broadcast.removeEventListener('message', handleMessage);
+      try {
+        broadcast.close(); // Ensure channel is closed on unmount
+      } catch (error) {
+        console.error('Error closing broadcast channel:', error);
+      }
     };
   }, []);
 
