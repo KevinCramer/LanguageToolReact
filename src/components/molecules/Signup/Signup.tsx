@@ -1,3 +1,4 @@
+import './Signup.scss'
 import { Alert, Button, Card, Form } from 'react-bootstrap'
 import { displayLogin, hideModal } from '../../../redux-store/auth'
 import { useRef, useState } from 'react'
@@ -59,7 +60,7 @@ export default function Signup() {
               {/* @ts-ignore */}
               <Form.Control type="password" ref={passwordConfirmRef} required />
             </Form.Group>
-            <Button disabled={loading} className="w-100" type="submit">
+            <Button disabled={loading} className="w-100 btn-auth" type="submit">
               Sign Up
             </Button>
           </Form>

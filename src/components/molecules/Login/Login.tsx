@@ -48,7 +48,7 @@ export default function Login() {
               {/* @ts-ignore */}
               <Form.Control type="password" ref={passwordRef} required />
             </Form.Group>
-            <Button disabled={loading} className="w-100" type="submit">
+            <Button disabled={loading} className="w-100 btn-auth" type="submit">
               Log In
             </Button>
           </Form>
