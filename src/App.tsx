@@ -6,6 +6,7 @@ import { resetPermission, RootStateLock } from './redux-store/lock'
 import { Route, Routes } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
 import ContactUs from './pages/ContactUs/ContactUs'
+import DeleteAccount from './components/atoms/DeleteAccount/DeleteAccount'
 import ForgotPassword from './components/molecules/ForgotPassword/ForgotPassword'
 import GrammarContent from './pages/GrammarContent/GrammarContent'
 import Home from './pages/Home/Home'
@@ -18,10 +19,11 @@ import Signup from './components/molecules/Signup/Signup'
 import UpdateProfile from './components/atoms/UpdateProfile/UpdateProfile'
 import { useAuth } from './contexts/AuthContext'
 import { useEffect } from 'react'
+import useInactivityTimer from './hooks/useInactivityTimer'
 import VocabContent from './pages/VocabContent/VocabContent'
-import DeleteAccount from './components/atoms/DeleteAccount/DeleteAccount'
 
 const App = ()=> {
+  useInactivityTimer(1 * 60 * 1000); // 5 minutes inactivity timeout
   const dispatch = useDispatch();
 
   const reduxAuth = useSelector((state: RootStateAuth) => state.auth);
