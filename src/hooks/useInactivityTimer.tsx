@@ -1,8 +1,6 @@
-// src/hooks/useInactivityTimer.tsx
-
+import { auth } from '../firebase'; // Adjust the import according to your Firebase setup
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { auth } from '../firebase'; // Adjust the import according to your Firebase setup
 
 const useInactivityTimer = (timeout: number = 1800000) => { // Default to 30 minutes
   const navigate = useNavigate();
