@@ -19,6 +19,7 @@ import UpdateProfile from './components/atoms/UpdateProfile/UpdateProfile'
 import { useAuth } from './contexts/AuthContext'
 import { useEffect } from 'react'
 import VocabContent from './pages/VocabContent/VocabContent'
+import DeleteAccount from './components/atoms/DeleteAccount/DeleteAccount'
 
 const App = ()=> {
   const dispatch = useDispatch();
@@ -60,6 +61,7 @@ const App = ()=> {
               {reduxAuth.modalToShow === authModalStates.login && <Login/>}
               {reduxAuth.modalToShow === authModalStates.forgotPassword && <ForgotPassword/>}
               {reduxAuth.modalToShow === authModalStates.updateProfile && <UpdateProfile/>}
+              {reduxAuth.modalToShow === authModalStates.deleteAccount && <DeleteAccount/>}
             </div>
           </Container>
         </Modal.Body>

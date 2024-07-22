@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import './Navbar.scss';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import { closeNavbar, RootStateNavbar, toggleNavbar } from '../../../redux-store/navbar';
@@ -7,6 +6,7 @@ import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { displayLogin } from '../../../redux-store/auth';
 import { useAuth } from '../../../contexts/AuthContext';
+import { useState } from 'react';
 
 const Navbar = () => {
   const dispatch = useDispatch();
@@ -24,7 +24,8 @@ const Navbar = () => {
   };
 
   return (
-    <NavbarBs expand="false" expanded={reduxNavbar.isNavbarOpen} onToggle={() => dispatch(toggleNavbar())}>
+    <NavbarBs expand="false" expanded={reduxNavbar.isNavbarOpen}
+      onToggle={() => dispatch(toggleNavbar())}>
       <Container>
         <NavbarBs.Toggle aria-controls="basic-navbar-nav" />
         <NavbarBs.Collapse id="basic-navbar-nav">

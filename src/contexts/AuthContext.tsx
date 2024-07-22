@@ -1,7 +1,7 @@
-import { createUserWithEmailAndPassword, 
+import { createUserWithEmailAndPassword, deleteUser as firebaseDeleteUser,
   updatePassword as firebaseUpdatePassword, onAuthStateChanged,
   sendEmailVerification, sendPasswordResetEmail,
-  signInWithEmailAndPassword } from 'firebase/auth';
+  signInWithEmailAndPassword, } from 'firebase/auth';
 import React, { useContext, useEffect, useState } from 'react'
 import { auth } from '../firebase'
 
@@ -19,7 +19,7 @@ type AuthProviderProp = {
 export function AuthProvider({ children }: AuthProviderProp) {
   const [currentUser, setCurrentUser] = useState()
 
-  function signup(email: any, password: any) {
+  async function signup(email: any, password: any) {
     return createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
@@ -53,6 +53,15 @@ export function AuthProvider({ children }: AuthProviderProp) {
     }
   }
 
+  function deleteUser(){
+    if(currentUser){
+      return firebaseDeleteUser(currentUser)
+    }
+    else {
+      return Promise.reject(new Error('No user is signed in'))
+    }
+  }
+
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user: any) => {
       setCurrentUser(user);
@@ -63,12 +72,13 @@ export function AuthProvider({ children }: AuthProviderProp) {
   
   const value = {
     currentUser,
-    login,
     signup,
+    login,
     logout,
     resetPassword,
     updatePassword,
     sendVerificationEmail,
+    deleteUser,
   }
 
   return (

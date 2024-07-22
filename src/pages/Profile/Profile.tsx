@@ -1,5 +1,5 @@
+import { displayDeleteAccount, displayUpdateProfile } from '../../redux-store/auth'
 import CustomLink from '../../components/atoms/CustomLink/CustomLink';
-import { displayUpdateProfile } from '../../redux-store/auth'
 import { useDispatch, } from 'react-redux';
 
 const Profile = () => {
@@ -9,6 +9,9 @@ const Profile = () => {
       <h4>Profile</h4>
       <CustomLink onClick={() => dispatch(displayUpdateProfile())}>
         Reset Password
+      </CustomLink>
+      <CustomLink onClick={() => dispatch(displayDeleteAccount())}>
+        Delete Account
       </CustomLink>
     </>
   );
