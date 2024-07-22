@@ -234,7 +234,7 @@ const VocabContent = () => {
                   .map((topic: Topic, index: number) =>
                     <Dropdown.Item key = {index} onClick = {() => 
                       changeCurrentTopic(topic)}>
-                      <div>
+                      <div className="topic-container">
                         {topic.name} {
                           topic.isLocked 
                           && !(userIsLoggedIn) 
