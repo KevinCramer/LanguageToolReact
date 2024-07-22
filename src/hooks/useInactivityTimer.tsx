@@ -1,29 +1,35 @@
+
 import { createHash, verifyHash } from '../helpers/hash-helpers';
-import { auth } from '../firebase'; 
+import { useEffect, useRef } from 'react';
+import { auth } from '../firebase';
 import { BroadcastChannel } from 'broadcast-channel';
-import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const useInactivityTimer = (timeout: number = 1800000) => {
+const useInactivityTimer = (timeout: number, closedTimeout: number) => {
+
   const navigate = useNavigate();
-  let timer: NodeJS.Timeout;
   const channelName = 'inactivity_channel';
-  const broadcast = new BroadcastChannel(channelName);
+  const broadcastRef = useRef<BroadcastChannel | null>(null);
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
 
   const resetTimer = () => {
-    clearTimeout(timer);
+    if (timerRef.current) {
+      clearTimeout(timerRef.current);
+    }
     const currentTime = Date.now().toString();
     const hash = createHash(currentTime);
     localStorage.setItem('lastActivity', currentTime);
     localStorage.setItem('lastActivityHash', hash);
 
-    try {
-      broadcast.postMessage('reset');
-    } catch (error) {
-      console.error('Error posting reset message:', error);
+    if (broadcastRef.current) {
+      try {
+        broadcastRef.current.postMessage({ type: 'reset' });
+      } catch (error) {
+        console.error('Error posting reset message:', error);
+      }
     }
 
-    timer = setTimeout(checkInactivityAcrossTabs, timeout);
+    timerRef.current = setTimeout(checkInactivityAcrossTabs, timeout);
   };
 
   const checkInactivityAcrossTabs = () => {
@@ -34,7 +40,7 @@ const useInactivityTimer = (timeout: number = 1800000) => {
       if (inactivityPeriod >= timeout) {
         signOut();
       } else {
-        timer = setTimeout(checkInactivityAcrossTabs, timeout - inactivityPeriod);
+        timerRef.current = setTimeout(checkInactivityAcrossTabs, timeout - inactivityPeriod);
       }
     } else {
       signOut();
@@ -43,52 +49,80 @@ const useInactivityTimer = (timeout: number = 1800000) => {
 
   const signOut = () => {
     auth.signOut().then(() => {
-      console.log('User signed out due to inactivity.');
       localStorage.removeItem('lastActivity');
       localStorage.removeItem('lastActivityHash');
 
-      try {
-        broadcast.postMessage('signout');
-      } catch (error) {
-        console.error('Error posting signout message:', error);
+      if (broadcastRef.current) {
+        try {
+          broadcastRef.current.postMessage({ type: 'signout' });
+        } catch (error) {
+          console.error('Error posting signout message:', error);
+        }
       }
 
-      navigate('/'); 
+      navigate('/');
     }).catch((error) => {
       console.error('Error signing out: ', error);
     });
   };
 
   useEffect(() => {
+    broadcastRef.current = new BroadcastChannel(channelName);
+
     const handleMessage = (event: MessageEvent) => {
-      if (event.data === 'reset') {
+      const data = event.data as { type?: string };
+      if (data?.type === 'reset') {
         resetTimer();
-      } else if (event.data === 'signout') {
-        // Handle signout message if necessary, e.g., in case of any UI update
-        if (document.visibilityState === 'visible') {
+      } else if (data?.type === 'signout') {
+        signOut();
+      } else {
+        console.warn('Received unknown message type:', data);
+      }
+    };
+
+    broadcastRef.current.addEventListener('message', handleMessage);
+
+    const events = ['load', 'mousemove', 'keypress', 'scroll', 'click'];
+    events.forEach(event => window.addEventListener(event, resetTimer));
+
+    const checkAllTabsClosed = () => {
+      const lastClose = localStorage.getItem('lastClose');
+      if (lastClose) {
+        const closedPeriod = Date.now() - parseInt(lastClose, 10);
+        if (closedPeriod >= closedTimeout) {
           signOut();
         }
       }
     };
 
-    broadcast.addEventListener('message', handleMessage);
+    window.addEventListener('beforeunload', () => {
+      localStorage.setItem('lastClose', Date.now().toString());
+    });
 
-    const events = ['load', 'mousemove', 'keypress', 'scroll', 'click'];
-    events.forEach(event => window.addEventListener(event, resetTimer));
+    checkAllTabsClosed();
 
-    resetTimer(); // Initialize the timer on mount
+    resetTimer();
+
+    const periodicCheck = setInterval(() => {
+      checkInactivityAcrossTabs();
+    }, 10000); // Increase the interval to reduce load, e.g., 10 seconds
 
     return () => {
-      clearTimeout(timer);
+      if (timerRef.current) {
+        clearTimeout(timerRef.current);
+      }
+      clearInterval(periodicCheck);
       events.forEach(event => window.removeEventListener(event, resetTimer));
-      broadcast.removeEventListener('message', handleMessage);
-      try {
-        broadcast.close(); // Ensure channel is closed on unmount
-      } catch (error) {
-        console.error('Error closing broadcast channel:', error);
+      if (broadcastRef.current) {
+        broadcastRef.current.removeEventListener('message', handleMessage);
+        try {
+          broadcastRef.current.close(); // Ensure channel is closed on unmount
+        } catch (error) {
+          console.error('Error closing broadcast channel:', error);
+        }
       }
     };
-  }, []);
+  }, [closedTimeout]);
 
   return null; // This hook doesn't render anything
 };

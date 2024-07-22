@@ -22,10 +22,12 @@ import { useEffect } from 'react'
 import useInactivityTimer from './hooks/useInactivityTimer'
 import VocabContent from './pages/VocabContent/VocabContent'
 
+const msInMinute = 60 * 1000;
+
 const App = ()=> {
   // will log out user iff there is no lingocommand tab 
   // where the user was active in the last 30 minutes
-  useInactivityTimer(30 * 60 * 1000);
+  useInactivityTimer(30 * msInMinute, 30 * msInMinute);
   const dispatch = useDispatch();
 
   const reduxAuth = useSelector((state: RootStateAuth) => state.auth);
