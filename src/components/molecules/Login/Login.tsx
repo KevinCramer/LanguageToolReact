@@ -61,8 +61,8 @@ export default function Login() {
       </Card>
       <div className="w-100 text-center mt-2"
         style={{ display:'flex', flexDirection: 'row', justifyContent: 'center' }}>
-        Need an account?&nbsp;<CustomLink onClick={() => dispatch(displaySignup())}>
-        Sign Up
+        New to LingoCommand?&nbsp;<CustomLink onClick={() => dispatch(displaySignup())}>
+        Create account
         </CustomLink>
       </div>
     </>
