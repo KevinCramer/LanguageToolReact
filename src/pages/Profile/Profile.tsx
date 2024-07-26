@@ -9,9 +9,7 @@ const Profile = () => {
   const getPremium = async () => {
     const priceId = import.meta.env.VITE_STRIPE_PRODUCT_PRICE_ID;
     const checkoutUrl = await getCheckoutUrl(app, priceId);
-    console.log('checkoutUrl: ', checkoutUrl)
     window.location.href = checkoutUrl;
-    console.log('Upgrade to Premium');    
   }
 
   return (
@@ -25,9 +23,6 @@ const Profile = () => {
       </CustomLink>
       <div style={{ height: '200px' }}>
 
-      </div>
-      <div style={{ color:'white', width:'100%', textAlign:'center' }} onClick={() => getPremium()}>
-      [BETA] *** Upgrade to Premium ***
       </div>
     </>
   );
