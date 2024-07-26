@@ -23,9 +23,12 @@ const Profile = () => {
       <CustomLink onClick={() => dispatch(displayDeleteAccount())}>
         Delete Account
       </CustomLink>
-      <CustomLink onClick={() => getPremium()}>
+      <div style={{ height: '200px' }}>
+
+      </div>
+      <div style={{ color:'white', width:'100%', textAlign:'center' }} onClick={() => getPremium()}>
       [BETA] *** Upgrade to Premium ***
-      </CustomLink>
+      </div>
     </>
   );
 }
