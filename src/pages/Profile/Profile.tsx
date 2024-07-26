@@ -1,15 +1,13 @@
 import { displayDeleteAccount, displayUpdateProfile } from '../../redux-store/auth'
-import CustomLink from '../../components/atoms/CustomLink/CustomLink';
-import { useDispatch, } from 'react-redux';
-import { getCheckoutUrl } from '../../stripePayment';
 import app from '../../firebase';
-import { useNavigate } from 'react-router-dom';
+import CustomLink from '../../components/atoms/CustomLink/CustomLink';
+import { getCheckoutUrl } from '../../stripePayment';
+import { useDispatch, } from 'react-redux';
 
 const Profile = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const getPremium = async () => {
-    const priceId = 'price_1PgT4NRraXayJTTJ54CIEfCQ';
+    const priceId = import.meta.env.VITE_STRIPE_PRODUCT_PRICE_ID;
     const checkoutUrl = await getCheckoutUrl(app, priceId);
     console.log('checkoutUrl: ', checkoutUrl)
     window.location.href = checkoutUrl;
@@ -26,7 +24,7 @@ const Profile = () => {
         Delete Account
       </CustomLink>
       <CustomLink onClick={() => getPremium()}>
-      Upgrade to Premium
+      [BETA] *** Upgrade to Premium ***
       </CustomLink>
     </>
   );
