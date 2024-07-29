@@ -244,8 +244,8 @@ const VocabContent = () => {
               </CustomDropDownButton>
               <CustomDropDownButton title="Settings" align="end">
                 <Dropdown.Item onClick = {changeBaseLanguage}>toggle base language</Dropdown.Item>
-                <Dropdown.Item onClick = {() => changeAudioBool()}>
-                  {audioBool ? 'hide audio' : 'show audio'}</Dropdown.Item>
+                {!quiz && <Dropdown.Item onClick = {() => changeAudioBool()}>
+                  {audioBool ? 'hide audio' : 'show audio'}</Dropdown.Item>}
                 <Dropdown.Item onClick = {changeOrder}>
                   {showTrueOrder ? 'random ordering' : 'default ordering'}</Dropdown.Item>
                 {currentLanguage.numForeignAlphabets > 1 && !currentTopic.isAlphabet &&
