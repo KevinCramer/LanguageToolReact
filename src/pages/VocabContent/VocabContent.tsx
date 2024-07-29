@@ -87,7 +87,7 @@ const VocabContent = () => {
     return setQuiz((!quiz))}
 
   const urlAudio = urlSettings[6]
-  var audioBool = !nullOrUndefined(urlAudio) ? urlAudio : false 
+  var audioBool = !nullOrUndefined(urlAudio) ? urlAudio : true 
   var [audioBool,setAudioBool] = useState(audioBool)
   const changeAudioBool = () => { return setAudioBool(!audioBool)}
 
