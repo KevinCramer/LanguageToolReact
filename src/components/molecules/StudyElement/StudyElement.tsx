@@ -10,6 +10,8 @@ import CustomButton from '../../atoms/CustomButton/CustomButton'
 import { englishPronouns } from '../../../data/structured-data/words'
 import { modalTenses } from '../../../constants'
 import { useState } from 'react'
+import VolumeUpIcon from '@mui/icons-material/VolumeUp';
+import VolumeOffIcon from '@mui/icons-material/VolumeOff';
 
 const StudyElement = (
   props: 
@@ -67,7 +69,7 @@ const StudyElement = (
           } else {
             audio.pause();
             audio.currentTime = 0; // Reset to the beginning of the audio
-          }}} > {ForeignLanguageWordAudio ? 'audio' : 'no audio'}</CustomButton>
+          }}} > {ForeignLanguageWordAudio ? <VolumeUpIcon/> : <VolumeOffIcon/>}</CustomButton>
       </div>}
       {isVerb && <Modal show ={showPopUp} onHide={hidePopUp}>
         <Modal.Header closeButton>
