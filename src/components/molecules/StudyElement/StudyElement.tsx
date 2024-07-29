@@ -9,7 +9,9 @@ import {
 import CustomButton from '../../atoms/CustomButton/CustomButton'
 import { englishPronouns } from '../../../data/structured-data/words'
 import { modalTenses } from '../../../constants'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import VolumeUpIcon from '@mui/icons-material/VolumeUp';
+import VolumeOffIcon from '@mui/icons-material/VolumeOff';
 
 const StudyElement = (
   props: 
@@ -39,6 +41,36 @@ const StudyElement = (
 
   var showPopUp = false;
   var [showPopUp,setShowPopUp] = useState(showPopUp)
+  var [isPlaying, setIsPlaying] = useState(false);
+
+  const handleAudioToggle = () => {
+    const audio = document.getElementById(ForeignLanguageWordAudio) as HTMLAudioElement;
+    if (audio) {
+      if (audio.paused) {
+        audio.play();
+        setIsPlaying(true);
+      } else {
+        audio.pause();
+        audio.currentTime = 0; // Reset to the beginning of the audio
+        setIsPlaying(false);
+      }
+    }
+  };
+
+  useEffect(() => {
+    const audio = document.getElementById(ForeignLanguageWordAudio) as HTMLAudioElement;
+    if (audio) {
+      const handleAudioEnd = () => {
+        setIsPlaying(false);
+      };
+
+      audio.addEventListener('ended', handleAudioEnd);
+      return () => {
+        audio.removeEventListener('ended', handleAudioEnd);
+      };
+    }
+  }, [ForeignLanguageWordAudio]);
+
   const hidePopUp = () => { return setShowPopUp(false)}
   const displayPopUp = () => { return setShowPopUp(true)}
   const baseLanguageLabel = <label className='base-language-label'>
@@ -60,14 +92,11 @@ const StudyElement = (
           foreignLanguageLabel}
       {showAudio && !showLeftLabel && <div>
         <audio src={ForeignLanguageWordAudio} id={ForeignLanguageWordAudio}></audio>
-        <CustomButton disabled={!ForeignLanguageWord} onClick={() => { 
-          var audio = document.getElementById(ForeignLanguageWordAudio) as HTMLAudioElement;
-          if (audio.paused) {
-            audio.play();
-          } else {
-            audio.pause();
-            audio.currentTime = 0; // Reset to the beginning of the audio
-          }}} > {ForeignLanguageWordAudio ? 'audio' : 'no audio'}</CustomButton>
+        <CustomButton disabled={!ForeignLanguageWord} onClick={handleAudioToggle}>
+          {ForeignLanguageWordAudio ? 
+            <VolumeUpIcon style={{ color: isPlaying ? 'rgb(13, 110,253)' : '#4A4A4A' }} /> :
+            <VolumeOffIcon />}
+        </CustomButton>
       </div>}
       {isVerb && <Modal show ={showPopUp} onHide={hidePopUp}>
         <Modal.Header closeButton>
