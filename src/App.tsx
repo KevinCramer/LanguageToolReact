@@ -57,8 +57,10 @@ const App = ()=> {
           <Route path="/profile" element={<Profile />} />
           <Route path="/spanish" element={<Spanish/>} />
           <Route path="/japanese" element={<Japanese/>} />
-          <Route path="/spanish-vocab" element={<VocabContentNew key="spanish" languageNumber={0}/>} />
-          <Route path="/japanese-vocab" element={<VocabContentNew key="japanese" languageNumber={1} />} />
+          <Route path="/spanish/vocab" element={<VocabContentNew 
+            key="spanish" languageNumber={0}/>} />
+          <Route path="/japanese/vocab" element={<VocabContentNew
+            key="japanese" languageNumber={1} />} />
 
         </Routes>
       </div>

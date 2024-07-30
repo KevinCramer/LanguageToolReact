@@ -5,7 +5,7 @@ const Japanese = () => {
   return (
     <>
       <div className="contact-us-container">
-        <a href="/japanese-vocab">
+        <a href="/japanese/vocab">
             vocab
         </a>
       </div>

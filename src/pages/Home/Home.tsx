@@ -27,27 +27,8 @@ export const Home = () =>{
         <img src ={blackBar} width={130} height={1} alt="black-line"/>
       </div>
       <h4>COMMAND</h4>
-      <div> 
-        I want to learn
-      </div>
-      <div style={{ display: 'flex' }}>
-        <a href='/spanish' style={{ color: '#4A4A4A', textDecoration: 'none' }}>
-          <div style={{ margin:'30px' }} >
-            <img src={spanishFlag} alt="Spanish flag"/>
-            <div>
-        Spanish
-            </div> 
-          </div>
-        </a>
-        <a href='/japanese' style={{ color: '#4A4A4A', textDecoration: 'none' }}>
-          <div style={{ margin:'30px' }}>
-            <img src={japaneseFlag} alt="Japanese flag"/>
-            <div>
-            Japanese
-            </div>
-          </div>
-        </a>
-        
+      <div style={{ color: 'rgb(13, 110,253)', textDecoration: 'underline' }}> 
+        Learn foreign languages faster
       </div>
     </div>    
   </div> 
