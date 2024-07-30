@@ -1,7 +1,11 @@
 https://lingocommand.com/
 https://lingocommand.com/spanish
 https://lingocommand.com/spanish/vocabulary
-https://lingocommand.com/spanish/grammar
+https://lingocommand.com/spanish/grammar/definite-article
+https://lingocommand.com/spanish/grammar/indefinite-article
+https://lingocommand.com/spanish/grammar/nouns
+https://lingocommand.com/spanish/grammar/adjectives
+https://lingocommand.com/spanish/grammar/verbs
 https://lingocommand.com/spanish/listening-comprehension
 https://lingocommand.com/japanese
 https://lingocommand.com/japanese/vocabulary
