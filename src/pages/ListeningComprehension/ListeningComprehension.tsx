@@ -20,10 +20,10 @@ const ListeningComprehensionContent = (
 
   const navigate = useNavigate();
 
-  var quiz = false
-  var [quiz,setQuiz] = useState(quiz)
-  const changeQuizState = () => {
-    return setQuiz((!quiz))}
+  var transcriptionInEnglish = false
+  var [transcriptionInEnglish,setTranscriptionInEnglish] = useState(transcriptionInEnglish)
+  const changeTranscriptionInEnglishState = () => {
+    return setTranscriptionInEnglish((!transcriptionInEnglish))}
 
   var urlSearchParams = new URLSearchParams(useLocation().search);
   const urlSettings = JSON.parse(
@@ -63,40 +63,39 @@ const ListeningComprehensionContent = (
   function showListeningComprehensionTopic(){
     return (
       <div className='inner-audio-player-and-table-container'>
-        <div>
-                Transcription in: 
-        </div>
         <div className='div-switch-container'>
-          <div style={{ marginRight: '10px', fontWeight: quiz ? 'normal' : '600' }}>
+          <div style={{ marginRight: '10px', fontWeight: transcriptionInEnglish ? 'normal' : '600' }}>
                 English
           </div>
           <CustomSwitch 
-            onChange = {changeQuizState}
-            checked= {quiz} 
+            onChange = {changeTranscriptionInEnglishState}
+            checked= {!transcriptionInEnglish} 
           /> 
-          <div style = {{ marginLeft: '10px', fontWeight: quiz ? '600' : 'normal' }}>
-                 Spanish
+          <div style = {{ marginLeft: '10px', fontWeight: transcriptionInEnglish ? '600' : 'normal' }}>
+            {currentLanguage.languageName}
           </div>  
-        </div>      
-        <Table striped bordered hover size="sm" className='transcription-table'>
+        </div>    
+        <Table striped bordered hover size="sm" className='transcription-table' >
           <thead>
             <tr>
               <th>Audio</th>
-              <th>Transcription</th>
+              <th>Transcription ({transcriptionInEnglish ? 'English' : currentLanguage.languageName })</th>
             </tr>
           </thead>
           <tbody>
             {currentAudioTranscription.contents.map((content: Paragraph, index: number) => (
               <>
-                { index !== 0 && (<tr key={-index}>
-                  <td></td>
-                  <td></td>
+                {index !== 0 && (<tr key={-index}>
+                  <td colSpan={2} style={{ textAlign:'center' }}>
+                  </td>
                 </tr> )}
                 <tr key={index}>
-                  <td>         
-                    <AudioPlayer audioFile={content.audioFile} />
+                  <td style={{ height: '10px' }}>      
+                    <div style={{ display:'flex', alignItems: 'center', height: '100%' }}>
+                      <AudioPlayer audioFile={content.audioFile} />
+                    </div>   
                   </td>
-                  <td>{ quiz ? content.foreignText : content.englishText}</td>
+                  <td>{ transcriptionInEnglish ? content.foreignText : content.englishText}</td>
                 </tr>
               </>      
             ))}
