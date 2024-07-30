@@ -94,7 +94,7 @@ const ListeningComprehensionContent = (
                 </tr> )}
                 <tr key={index}>
                   <td>         
-                    <AudioPlayer audioFile={currentAudioTranscription.audioFile} />
+                    <AudioPlayer audioFile={content.audioFile} />
                   </td>
                   <td>{ quiz ? content.foreignText : content.englishText}</td>
                 </tr>
