@@ -22,6 +22,8 @@ import { useEffect } from 'react'
 import useInactivityTimer from './hooks/useInactivityTimer'
 import VocabContent from './pages/VocabContent/VocabContent'
 import VocabContentNew from './pages/VocabContentNew/VocabContentNew'
+import Japanese from './pages/Japanese/Japanese'
+import Spanish from './pages/Spanish/Spanish'
 
 const msInMinute = 60 * 1000;
 
@@ -53,8 +55,10 @@ const App = ()=> {
           <Route path="/listening-comprehension" element={<ListeningComprehension />} />
           <Route path="/contactus" element={<ContactUs />} />
           <Route path="/profile" element={<Profile />} />
-          <Route path="/spanish" element={<VocabContentNew key="spanish" languageNumber={0}/>} />
-          <Route path="/japanese" element={<VocabContentNew key="japanese" languageNumber={1} />} />
+          <Route path="/spanish" element={<Spanish/>} />
+          <Route path="/japanese" element={<Japanese/>} />
+          <Route path="/spanish-vocab" element={<VocabContentNew key="spanish" languageNumber={0}/>} />
+          <Route path="/japanese-vocab" element={<VocabContentNew key="japanese" languageNumber={1} />} />
 
         </Routes>
       </div>

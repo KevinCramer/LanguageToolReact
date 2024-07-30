@@ -54,27 +54,19 @@ const Navbar = () => {
             >
               <NavDropdown.Item
                 className="nav-link-custom"
-                to="/vocabulary"
+                to="/spanish"
                 as={NavLink}
                 onClick={() => dispatch(closeNavbar())}
               >
-                Vocabulary
+                Spanish
               </NavDropdown.Item>
               <NavDropdown.Item
                 className="nav-link-custom"
-                to="/listening-comprehension"
+                to="/japanese"
                 as={NavLink}
                 onClick={() => dispatch(closeNavbar())}
               >
-                Listening Comprehension
-              </NavDropdown.Item>
-              <NavDropdown.Item
-                className="nav-link-custom"
-                to="/grammar"
-                as={NavLink}
-                onClick={() => dispatch(closeNavbar())}
-              >
-                Grammar
+                Japanese
               </NavDropdown.Item>
             </NavDropdown>
             <Nav.Link
@@ -84,22 +76,6 @@ const Navbar = () => {
               onClick={() => dispatch(closeNavbar())}
             >
               Contact Us
-            </Nav.Link>
-            <Nav.Link
-              className="nav-link-custom"
-              to="/spanish"
-              as={NavLink}
-              onClick={() => dispatch(closeNavbar())}
-            >
-              Spanish
-            </Nav.Link>
-            <Nav.Link
-              className="nav-link-custom"
-              to="/japanese"
-              as={NavLink}
-              onClick={() => dispatch(closeNavbar())}
-            >
-              Japanese
             </Nav.Link>
             {currentUser && currentUser.email && <Nav.Link
               className="nav-link-custom"
