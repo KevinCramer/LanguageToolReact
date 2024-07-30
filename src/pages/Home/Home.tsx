@@ -31,18 +31,23 @@ export const Home = () =>{
         I want to learn
       </div>
       <div style={{ display: 'flex' }}>
-        <div style={{ margin:'30px' }} >
-          <img src={spanishFlag} alt="Spanish flag"/>
-          <div>
+        <a href='/spanish' style={{ color: '#4A4A4A', textDecoration: 'none' }}>
+          <div style={{ margin:'30px' }} >
+            <img src={spanishFlag} alt="Spanish flag"/>
+            <div>
         Spanish
-          </div> 
-        </div>
-        <div style={{ margin:'30px' }}>
-          <img src={japaneseFlag} alt="Japanese flag"/>
-          <div>
-            Japanese
+            </div> 
           </div>
-        </div>
+        </a>
+        <a href='/japanese' style={{ color: '#4A4A4A', textDecoration: 'none' }}>
+          <div style={{ margin:'30px' }}>
+            <img src={japaneseFlag} alt="Japanese flag"/>
+            <div>
+            Japanese
+            </div>
+          </div>
+        </a>
+        
       </div>
     </div>    
   </div> 
