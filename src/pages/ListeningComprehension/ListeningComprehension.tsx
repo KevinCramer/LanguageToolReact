@@ -92,13 +92,6 @@ const ListeningComprehensionContent = (
         <NavbarBs>
           <Container className='listening-comprehension-container'>
             <div className='inner-listening-comprehension-container'>
-              <CustomDropDownButton title=
-                {String(currentLanguage.languageName)}> 
-                {languages.map((language: Language, index: number) =>
-                  <Dropdown.Item key = {index} onClick = {() => [changeCurrentLanguage(
-                    language),changeCurrentAudioTranscription(language.audioTranscriptions[0]) ]}>
-                    {language.languageName}</Dropdown.Item>)}
-              </CustomDropDownButton>
               <CustomDropDownButton title={'Topic: ' + currentAudioTranscription.name}>
                 {currentLanguage.audioTranscriptions
                   .map((topic: AudioTranscription, index: number) =>

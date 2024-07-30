@@ -67,13 +67,6 @@ const GrammarContent = (
         <NavbarBs>
           <Container className='grammar-container'>
             <div className='inner-grammar-container'>
-              <CustomDropDownButton title=
-                {String(currentLanguage.languageName)}> 
-                {languages.map((language: Language, index: number) =>
-                  <Dropdown.Item key = {index} onClick = {() => [changeCurrentLanguage(
-                    language)]}>
-                    {language.languageName}</Dropdown.Item>)}
-              </CustomDropDownButton>
               <CustomDropDownButton title={'Topic: ' + currentTopic.name}>
                 {currentLanguage.topics.map((topic: Topic, index: number) =>
                   <Dropdown.Item key = {index} onClick = {() => 
