@@ -5,7 +5,7 @@ const Spanish = () => {
   return (
     <>
       <div className="contact-us-container">
-        <a href="/spanish/vocab">
+        <a href="/spanish/vocabulary">
             Vocab
         </a>
         <a href="/spanish/grammar">

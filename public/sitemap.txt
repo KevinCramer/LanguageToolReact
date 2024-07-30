@@ -1,4 +1,9 @@
 https://lingocommand.com/
-https://lingocommand.com/vocabulary
-https://lingocommand.com/grammar
-https://lingocommand.com/listening-comprehension
+https://lingocommand.com/spanish
+https://lingocommand.com/spanish/vocabulary
+https://lingocommand.com/spanish/grammar
+https://lingocommand.com/spanish/listening-comprehension
+https://lingocommand.com/japanese
+https://lingocommand.com/japanese/vocabulary
+
+

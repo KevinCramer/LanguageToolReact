@@ -51,17 +51,14 @@ const App = ()=> {
         <Routes>
           <Route path="/" element={ <div className='home-container'> <Home /></div>} />
           <Route path="/vocabulary" element={<VocabContent />} />
-          <Route path="/spanish/grammar" element={<GrammarContent languageNumber={0} />} />
-          <Route path="/spanish/listening-comprehension" element={<ListeningComprehension languageNumber={0}/>} />
           <Route path="/contactus" element={<ContactUs />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/spanish" element={<Spanish/>} />
+          <Route path="/spanish/vocabulary" element={<VocabContentNew languageNumber={0}/>} />
+          <Route path="/spanish/grammar" element={<GrammarContent languageNumber={0} />} />
+          <Route path="/spanish/listening-comprehension" element={<ListeningComprehension languageNumber={0}/>} />
           <Route path="/japanese" element={<Japanese/>} />
-          <Route path="/spanish/vocab" element={<VocabContentNew 
-            key="spanish" languageNumber={0}/>} />
-          <Route path="/japanese/vocab" element={<VocabContentNew
-            key="japanese" languageNumber={1} />} />
-
+          <Route path="/japanese/vocabulary" element={<VocabContentNew languageNumber={1} />} />
         </Routes>
       </div>
       <Modal show ={reduxAuth.modalToShow !== authModalStates.none}
