@@ -85,6 +85,22 @@ const Navbar = () => {
             >
               Contact Us
             </Nav.Link>
+            <Nav.Link
+              className="nav-link-custom"
+              to="/spanish"
+              as={NavLink}
+              onClick={() => dispatch(closeNavbar())}
+            >
+              Spanish
+            </Nav.Link>
+            <Nav.Link
+              className="nav-link-custom"
+              to="/japanese"
+              as={NavLink}
+              onClick={() => dispatch(closeNavbar())}
+            >
+              Japanese
+            </Nav.Link>
             {currentUser && currentUser.email && <Nav.Link
               className="nav-link-custom"
               to="/profile"

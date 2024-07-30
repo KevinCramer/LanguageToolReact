@@ -21,13 +21,14 @@ import { useAuth } from './contexts/AuthContext'
 import { useEffect } from 'react'
 import useInactivityTimer from './hooks/useInactivityTimer'
 import VocabContent from './pages/VocabContent/VocabContent'
+import VocabContentNew from './pages/VocabContentNew/VocabContentNew'
 
 const msInMinute = 60 * 1000;
 
 const App = ()=> {
   // will log out user iff there is no lingocommand tab 
   // where the user was active in the last 30 minutes
-  useInactivityTimer(30 * msInMinute, 30 * msInMinute);
+  // useInactivityTimer(30 * msInMinute, 30 * msInMinute);
   const dispatch = useDispatch();
 
   const reduxAuth = useSelector((state: RootStateAuth) => state.auth);
@@ -52,6 +53,8 @@ const App = ()=> {
           <Route path="/listening-comprehension" element={<ListeningComprehension />} />
           <Route path="/contactus" element={<ContactUs />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/spanish" element={<VocabContentNew key="spanish" languageNumber={0}/>} />
+          <Route path="/japanese" element={<VocabContentNew key="japanese" languageNumber={1} />} />
 
         </Routes>
       </div>
