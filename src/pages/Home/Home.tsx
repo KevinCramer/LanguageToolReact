@@ -1,8 +1,8 @@
 import './Home.scss'
 import blackBar from '../../assets/blackBar.png';
+import japaneseFlag from '../../assets/flag-icons/japanese-flag-icon.svg'
 import logoSvg from '../../assets/logoSvg.svg';
 import spanishFlag from '../../assets/flag-icons/spanish-flag-icon.svg'
-import japaneseFlag from '../../assets/flag-icons/japanese-flag-icon.svg'
 import { toggleNavbar } from '../../redux-store/navbar';
 import { useAuth } from '../../contexts/AuthContext'
 import { useDispatch } from 'react-redux';

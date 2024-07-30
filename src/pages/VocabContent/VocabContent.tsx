@@ -72,7 +72,7 @@ const VocabContent = () => {
     };
   const userIsLoggedIn = currentUser && currentUser.email
   const changeCurrentTopic = (topic: Topic) => {
-    if(topic.isLocked && !(userIsLoggedIn) ){
+    if(topic.isLocked && false ){
       dispatch(denyPermission());
     }
     else {
@@ -237,7 +237,7 @@ const VocabContent = () => {
                       <div className="topic-container">
                         {topic.name} {
                           topic.isLocked 
-                          && !(userIsLoggedIn) 
+                          && false // currently ensuring content is always unlocked
                           && <LockIcon style={{ fontSize: '20px' }}/>}
                       </div>
                     </Dropdown.Item>)}
