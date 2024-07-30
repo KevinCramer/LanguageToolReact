@@ -10,7 +10,10 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import { languages } from '../../data/structured-data/grammar';
 import { languageToSlugs } from '../../constants'
 
-const GrammarContent = () => {
+const GrammarContent = (
+  props: {
+    languageNumber: number
+    }) => {
   const navigate = useNavigate();
   var urlSearchParams = new URLSearchParams(useLocation().search);
   
@@ -19,7 +22,7 @@ const GrammarContent = () => {
   ) || []
   const urlLanguage = urlSettings[0]
   var currentLanguage: Language = languages
-    .find(l => languageToSlugs[l.languageName] === urlLanguage) || languages[0]
+    .find(l => languageToSlugs[l.languageName] === urlLanguage) || languages[props.languageNumber]
   var [currentLanguage,setLanguage] = useState(currentLanguage);
 
   const urlTopic = urlSettings[1]
@@ -59,7 +62,7 @@ const GrammarContent = () => {
 
   return (
     <>
-      <h4>Grammar</h4>
+      <h4> {languages[props.languageNumber].languageName} Grammar</h4>
       <Container>    
         <NavbarBs>
           <Container className='grammar-container'>
@@ -86,6 +89,6 @@ const GrammarContent = () => {
       </Container>
     </>
   );
-}
+};
  
 export default GrammarContent;

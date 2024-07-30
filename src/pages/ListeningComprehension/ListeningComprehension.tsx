@@ -10,7 +10,10 @@ import CustomDropDownButton from '../../components/atoms/CustomDropDownButton/Cu
 import Dropdown from 'react-bootstrap/Dropdown';
 import { languageToSlugs } from '../../constants'
 
-const ListeningComprehensionContent = () => {
+const ListeningComprehensionContent = (
+  props: {
+    languageNumber: number
+    }) => {
   let languages = allLanguages
   languages = languages.filter(l => l.languageName === 'Spanish')
 
@@ -21,7 +24,7 @@ const ListeningComprehensionContent = () => {
   ) || []
   const urlLanguage = urlSettings[0]
   var currentLanguage: Language = languages
-    .find(l => languageToSlugs[l.languageName] === urlLanguage) || languages[0]
+    .find(l => languageToSlugs[l.languageName] === urlLanguage) || languages[props.languageNumber]
   var [currentLanguage,setLanguage] = useState(currentLanguage);
 
   const urlTopic = urlSettings[1]
@@ -84,7 +87,7 @@ const ListeningComprehensionContent = () => {
 
   return (
     <>
-      <h4>Listening Comprehension</h4>
+      <h4>{languages[props.languageNumber].languageName} Listening Comprehension</h4>
       <Container>    
         <NavbarBs>
           <Container className='listening-comprehension-container'>

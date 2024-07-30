@@ -51,8 +51,8 @@ const App = ()=> {
         <Routes>
           <Route path="/" element={ <div className='home-container'> <Home /></div>} />
           <Route path="/vocabulary" element={<VocabContent />} />
-          <Route path="/grammar" element={<GrammarContent />} />
-          <Route path="/listening-comprehension" element={<ListeningComprehension />} />
+          <Route path="/spanish/grammar" element={<GrammarContent languageNumber={0} />} />
+          <Route path="/spanish/listening-comprehension" element={<ListeningComprehension languageNumber={0}/>} />
           <Route path="/contactus" element={<ContactUs />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/spanish" element={<Spanish/>} />

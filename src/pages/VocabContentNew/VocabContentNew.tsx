@@ -43,7 +43,6 @@ const VocabContentNew = (
   const urlSettings = JSON.parse(
     queryParamDecompress(urlSearchParams.get('s') as string) as string
   ) || []
-  console.log('urlSettings: ', urlSettings)
   const urlLanguage = urlSettings[0]
   var currentLanguage: Language = languages
     .find(l => languageToSlugs[l.languageName] === urlLanguage) || languages[props.languageNumber]

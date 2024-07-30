@@ -8,10 +8,10 @@ const Spanish = () => {
         <a href="/spanish/vocab">
             Vocab
         </a>
-        <a href="/grammar">
+        <a href="/spanish/grammar">
             Grammar
         </a>
-        <a href="/listening-comprehension">
+        <a href="/spanish/listening-comprehension">
             Listening Comprehension
         </a>
       </div>
