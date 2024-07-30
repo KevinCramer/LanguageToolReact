@@ -6,9 +6,9 @@ const Spanish = () => {
     <>
       <div className="contact-us-container">
         <a href="/spanish/vocabulary">
-            Vocab
+            Vocabulary
         </a>
-        <a href="/spanish/grammar">
+        <a href="/spanish/grammar/definite-article">
             Grammar
         </a>
         <a href="/spanish/listening-comprehension">
