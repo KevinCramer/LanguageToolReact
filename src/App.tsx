@@ -51,7 +51,7 @@ const App = ()=> {
         <Routes>
           <Route path="/" element={ <div className='home-container'> <Home /></div>} />
           <Route path="/vocabulary" element={<VocabContent />} />
-          <Route path="/contactus" element={<ContactUs />} />
+          <Route path="/contact" element={<ContactUs />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/spanish" element={<Spanish/>} />
           <Route path="/spanish/vocabulary" element={<VocabContentNew languageNumber={0}/>} />

@@ -71,7 +71,7 @@ const Navbar = () => {
             </NavDropdown>
             <Nav.Link
               className="nav-link-custom"
-              to="/contactus"
+              to="/contact"
               as={NavLink}
               onClick={() => dispatch(closeNavbar())}
             >
