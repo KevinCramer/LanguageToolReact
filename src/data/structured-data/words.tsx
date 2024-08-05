@@ -221,6 +221,15 @@ import germanAudioWhite from '../raw-data/audio_vocab/german/colours/white.mp3'
 import germanAudioBlack from '../raw-data/audio_vocab/german/colours/black.mp3'
 
 import japaneseAudioHat from '../raw-data/audio_vocab/japanese/clothes/hat.mp3'
+import japaneseAudioJacket from '../raw-data/audio_vocab/japanese/clothes/jacket.mp3'
+import japaneseAudioScarf from '../raw-data/audio_vocab/japanese/clothes/scarf.mp3'
+import japaneseAudioShoes from '../raw-data/audio_vocab/japanese/clothes/shoes.mp3'
+import japaneseAudioSkirt from '../raw-data/audio_vocab/japanese/clothes/skirt.mp3'
+import japaneseAudioSocks from '../raw-data/audio_vocab/japanese/clothes/socks.mp3'
+import japaneseAudioSweater from '../raw-data/audio_vocab/japanese/clothes/sweater.mp3'
+import japaneseAudioTie from '../raw-data/audio_vocab/japanese/clothes/tie.mp3'
+import japaneseAudioTrousers from '../raw-data/audio_vocab/japanese/clothes/trousers.mp3'
+import japaneseAudioUnderwear from '../raw-data/audio_vocab/japanese/clothes/underwear.mp3'
 
 import { sortTopics } from '../../helpers/words-data-helper';
 import { Language, VerbConjugationEnglish, TopicWithOneAlphabet, TopicWithTwoAlphabets, TopicWithThreeAlphabets } from '../../../types/vocabTypes';
@@ -1603,16 +1612,16 @@ const japaneseTopics: TopicWithThreeAlphabets[] = [
     { englishWord: 'pink', foreignWord: ['pinku', 'ピンク', 'unknown'], foreignAudio: '' }
   ] },
   { name: 'Clothes', slugName: 'clo',hasOrdering: false, isLocked: false, isAlphabet: false,words: [
-    { englishWord: 'trousers', foreignWord: ['zubon', 'ズボン', 'ズボン'], foreignAudio: '' },
-    { englishWord: 'sweater', foreignWord: ['se-ta-', 'セーター', 'セーター'], foreignAudio: '' },
-    { englishWord: 'underwear', foreignWord: ['shitagi', 'したぎ', '下着'], foreignAudio: '' },
-    { englishWord: 'tie', foreignWord: ['nekutai', 'ネクタイ', 'ネクタイ'], foreignAudio: '' },
-    { englishWord: 'socks', foreignWord: ['kutsushita', 'くつした', '靴下'], foreignAudio: '' },
-    { englishWord: 'shoes', foreignWord: ['kutsu', 'くつ', '靴'], foreignAudio: '' },
-    { englishWord: 'skirt', foreignWord: ['suka-to', 'スカート', 'スカート'], foreignAudio: '' },
-    { englishWord: 'jacket', foreignWord: ['jyaketto', 'ジャケット', 'ジャケット'], foreignAudio: '' },
+    { englishWord: 'trousers', foreignWord: ['zubon', 'ズボン', 'ズボン'], foreignAudio: japaneseAudioTrousers },
+    { englishWord: 'sweater', foreignWord: ['se-ta-', 'セーター', 'セーター'], foreignAudio: japaneseAudioSweater },
+    { englishWord: 'underwear', foreignWord: ['shitagi', 'したぎ', '下着'], foreignAudio: japaneseAudioUnderwear },
+    { englishWord: 'tie', foreignWord: ['nekutai', 'ネクタイ', 'ネクタイ'], foreignAudio: japaneseAudioTie },
+    { englishWord: 'socks', foreignWord: ['kutsushita', 'くつした', '靴下'], foreignAudio: japaneseAudioSocks },
+    { englishWord: 'shoes', foreignWord: ['kutsu', 'くつ', '靴'], foreignAudio: japaneseAudioShoes },
+    { englishWord: 'skirt', foreignWord: ['suka-to', 'スカート', 'スカート'], foreignAudio: japaneseAudioSkirt },
+    { englishWord: 'jacket', foreignWord: ['jyaketto', 'ジャケット', 'ジャケット'], foreignAudio: japaneseAudioJacket },
     { englishWord: 'hat', foreignWord: ['boushi', 'ぼうし', '帽子'], foreignAudio: japaneseAudioHat },
-    { englishWord: 'scarf', foreignWord: ['suka-fu', 'スカーフ', 'スカーフ'], foreignAudio: '' }
+    { englishWord: 'scarf', foreignWord: ['suka-fu', 'スカーフ', 'スカーフ'], foreignAudio: japaneseAudioScarf }
   ]
   }
 ]
