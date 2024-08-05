@@ -16,6 +16,7 @@ export const queryParamDecompress = (compressedSettings: string)=> {
   }
   let output = '['
   const a = compressedSettings.split('-')
+  output += '""' + ','; // Default value for currentLanguage
   output += '"' + a[0] + '",'
   output += a[1][0] === 'T' ? 'true,' : 'false,'
   output += a[1][1] + ','
