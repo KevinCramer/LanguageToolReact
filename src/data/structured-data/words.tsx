@@ -231,6 +231,17 @@ import japaneseAudioTie from '../raw-data/audio_vocab/japanese/clothes/tie.mp3'
 import japaneseAudioTrousers from '../raw-data/audio_vocab/japanese/clothes/trousers.mp3'
 import japaneseAudioUnderwear from '../raw-data/audio_vocab/japanese/clothes/underwear.mp3'
 
+import japaneseAudioBlack from '../raw-data/audio_vocab/japanese/colours/black.mp3'
+import japaneseAudioBlue from '../raw-data/audio_vocab/japanese/colours/blue.mp3'
+import japaneseAudioBrown from '../raw-data/audio_vocab/japanese/colours/brown.mp3'
+import japaneseAudioGreen from '../raw-data/audio_vocab/japanese/colours/green.mp3'
+import japaneseAudioGrey from '../raw-data/audio_vocab/japanese/colours/grey.mp3'
+import japaneseAudioOrange from '../raw-data/audio_vocab/japanese/colours/orange.mp3'
+import japaneseAudioPink from '../raw-data/audio_vocab/japanese/colours/pink.mp3'
+import japaneseAudioPurple from '../raw-data/audio_vocab/japanese/colours/purple.mp3'
+import japaneseAudioRed from '../raw-data/audio_vocab/japanese/colours/red.mp3'
+import japaneseAudioWhite from '../raw-data/audio_vocab/japanese/colours/white.mp3'
+
 import { sortTopics } from '../../helpers/words-data-helper';
 import { Language, VerbConjugationEnglish, TopicWithOneAlphabet, TopicWithTwoAlphabets, TopicWithThreeAlphabets } from '../../../types/vocabTypes';
 
@@ -1600,16 +1611,16 @@ const japaneseTopics: TopicWithThreeAlphabets[] = [
     { englishWord: 'ten', foreignWord: ['juu', 'じゅう','十'], foreignAudio: '', order:10 },
   ] },
   { name:'Colours', slugName: 'col', hasOrdering:false, isLocked: true, isAlphabet: false, words: [
-    { englishWord: 'red', foreignWord: ['aka', 'あか', '赤'], foreignAudio: '' },
-    { englishWord: 'blue', foreignWord: ['ao', 'あお', '青'], foreignAudio: '' },
-    { englishWord: 'green', foreignWord: ['midori', 'みどり', '緑'], foreignAudio: '' },
-    { englishWord: 'orange', foreignWord: ['orenji', 'オレンジ', 'unknown'], foreignAudio: '' },
-    { englishWord: 'brown', foreignWord: ['chairo', 'ちゃいろ', '茶色'], foreignAudio: '' },
-    { englishWord: 'grey', foreignWord: ['haiiro', 'はいいろ', '灰色'], foreignAudio: '' },
-    { englishWord: 'white', foreignWord: ['shiro', 'しろ', '白'], foreignAudio: '' },
-    { englishWord: 'black', foreignWord: ['kuro', 'くろ', '黒'], foreignAudio: '' },
-    { englishWord: 'purple', foreignWord: ['murasaki', 'むらさき', '紫'], foreignAudio: '' },
-    { englishWord: 'pink', foreignWord: ['pinku', 'ピンク', 'unknown'], foreignAudio: '' }
+    { englishWord: 'red', foreignWord: ['aka', 'あか', '赤'], foreignAudio: japaneseAudioRed },
+    { englishWord: 'blue', foreignWord: ['ao', 'あお', '青'], foreignAudio: japaneseAudioBlue },
+    { englishWord: 'green', foreignWord: ['midori', 'みどり', '緑'], foreignAudio: japaneseAudioGreen },
+    { englishWord: 'orange', foreignWord: ['orenji', 'オレンジ', 'unknown'], foreignAudio: japaneseAudioOrange },
+    { englishWord: 'brown', foreignWord: ['chairo', 'ちゃいろ', '茶色'], foreignAudio: japaneseAudioBrown },
+    { englishWord: 'grey', foreignWord: ['haiiro', 'はいいろ', '灰色'], foreignAudio: japaneseAudioGrey },
+    { englishWord: 'white', foreignWord: ['shiro', 'しろ', '白'], foreignAudio: japaneseAudioWhite },
+    { englishWord: 'black', foreignWord: ['kuro', 'くろ', '黒'], foreignAudio: japaneseAudioBlack },
+    { englishWord: 'purple', foreignWord: ['murasaki', 'むらさき', '紫'], foreignAudio: japaneseAudioPurple },
+    { englishWord: 'pink', foreignWord: ['pinku', 'ピンク', 'unknown'], foreignAudio: japaneseAudioPink }
   ] },
   { name: 'Clothes', slugName: 'clo',hasOrdering: false, isLocked: false, isAlphabet: false,words: [
     { englishWord: 'trousers', foreignWord: ['zubon', 'ズボン', 'ズボン'], foreignAudio: japaneseAudioTrousers },
