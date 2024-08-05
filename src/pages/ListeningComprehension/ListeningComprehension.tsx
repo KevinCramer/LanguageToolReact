@@ -64,14 +64,14 @@ const ListeningComprehensionContent = (
     return (
       <div className='inner-audio-player-and-table-container'>
         <div className='div-switch-container'>
-          <div style={{ marginRight: '10px', fontWeight: transcriptionInEnglish ? 'normal' : '600' }}>
+          <div style={{ marginRight: '10px', fontWeight: transcriptionInEnglish ? '600' : 'normal' }}>
                 English
           </div>
           <CustomSwitch 
             onChange = {changeTranscriptionInEnglishState}
             checked= {!transcriptionInEnglish} 
           /> 
-          <div style = {{ marginLeft: '10px', fontWeight: transcriptionInEnglish ? '600' : 'normal' }}>
+          <div style = {{ marginLeft: '10px', fontWeight: transcriptionInEnglish ? 'normal' : '600' }}>
             {currentLanguage.languageName}
           </div>  
         </div>    
@@ -95,7 +95,7 @@ const ListeningComprehensionContent = (
                       <AudioPlayer audioFile={content.audioFile} />
                     </div>   
                   </td>
-                  <td>{ transcriptionInEnglish ? content.foreignText : content.englishText}</td>
+                  <td>{ transcriptionInEnglish ? content.englishText : content.foreignText}</td>
                 </tr>
               </>      
             ))}
