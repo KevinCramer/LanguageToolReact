@@ -951,7 +951,7 @@ const spanishTopics: TopicWithOneAlphabet[] = [
         ],
       foreignAudio: spanishAudioToStudy },
     {
-      englishWord: { ...englishVerbs['to be'], infinitive: 'to be (1)' } ,
+      englishWord: { ...englishVerbs['to be'], infinitive: 'to be (I)' } ,
       foreignWord: 
         [
           {
@@ -966,7 +966,7 @@ const spanishTopics: TopicWithOneAlphabet[] = [
         ],
       foreignAudio: spanishAudioToBe1 },
     {
-      englishWord: { ...englishVerbs['to be'], infinitive: 'to be (2)' } ,
+      englishWord: { ...englishVerbs['to be'], infinitive: 'to be (II)' } ,
       foreignWord: 
         [
           {
@@ -981,7 +981,7 @@ const spanishTopics: TopicWithOneAlphabet[] = [
         ],
       foreignAudio: spanishAudioToBe2 },
     {
-      englishWord: { ...englishVerbs['to have'], infinitive: 'to have (1)' } ,
+      englishWord: { ...englishVerbs['to have'], infinitive: 'to have (I)' } ,
       foreignWord: 
         [
           {
@@ -1071,7 +1071,7 @@ const spanishTopics: TopicWithOneAlphabet[] = [
         ],
       foreignAudio: spanishAudioToPut },
     {
-      englishWord: { ...englishVerbs['to have'], infinitive: 'to have (2)' } ,
+      englishWord: { ...englishVerbs['to have'], infinitive: 'to have (II)' } ,
       foreignWord: 
         [
           {
@@ -1577,12 +1577,15 @@ const japaneseTopics: TopicWithThreeAlphabets[] = [
     { englishWord: 'one', foreignWord: ['ichi', 'いち','一'], foreignAudio: '', order:1 },
     { englishWord: 'two', foreignWord: ['ni', 'に','二'], foreignAudio: '', order:2 },
     { englishWord: 'three',foreignWord: ['san', 'さん','三'], foreignAudio: '', order:3 },
-    { englishWord: 'four', foreignWord: ['shi/yon', 'し、よん','四'], foreignAudio: '', order:4 },
+    { englishWord: 'four (I)', foreignWord: ['shi', 'し','四'], foreignAudio: '', order:4 },
+    { englishWord: 'four (II)', foreignWord: ['yon', 'よん','四'], foreignAudio: '', order:4 },
     { englishWord: 'five', foreignWord: ['go', 'ご','五'], foreignAudio: '', order:5 },
     { englishWord: 'six', foreignWord: ['roku', 'ろく','六'], foreignAudio: '', order:6 },
-    { englishWord: 'seven', foreignWord: ['shichi,nana', 'しち、なな','七'], foreignAudio: '', order:7 },
+    { englishWord: 'seven (I)', foreignWord: ['shichi', 'しち','七'], foreignAudio: '', order:7 },
+    { englishWord: 'seven (II)', foreignWord: ['nana', 'なな','七'], foreignAudio: '', order:7 },
     { englishWord: 'eight', foreignWord: ['hachi', 'はち','八'], foreignAudio: '', order:8 },
-    { englishWord: 'nine', foreignWord: ['ku,kyuu', 'く、きゅう','九'], foreignAudio: '', order:9 },
+    { englishWord: 'nine (I)', foreignWord: ['ku', 'く','九'], foreignAudio: '', order:9 },
+    { englishWord: 'nine (II)', foreignWord: ['kyuu', 'きゅう','九'], foreignAudio: '', order:9 },
     { englishWord: 'ten', foreignWord: ['juu', 'じゅう','十'], foreignAudio: '', order:10 },
   ] },
   { name:'Colours', slugName: 'col', hasOrdering:false, isLocked: true, isAlphabet: false, words: [
