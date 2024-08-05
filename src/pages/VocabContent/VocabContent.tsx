@@ -94,7 +94,6 @@ const VocabContent = () => {
   // Ensure default language is reflected in the URL if not already present
   useEffect(() => {
     const settings = [
-      languageToSlugs[currentLanguage.languageName],
       currentTopic.slugName, 
       showBaseLanguage,
       currentAlphabet, 
