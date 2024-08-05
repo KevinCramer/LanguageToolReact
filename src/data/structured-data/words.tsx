@@ -220,6 +220,8 @@ import germanAudioRed from '../raw-data/audio_vocab/german/colours/red.mp3'
 import germanAudioWhite from '../raw-data/audio_vocab/german/colours/white.mp3'
 import germanAudioBlack from '../raw-data/audio_vocab/german/colours/black.mp3'
 
+import japaneseAudioHat from '../raw-data/audio_vocab/japanese/clothes/hat.mp3'
+
 import { sortTopics } from '../../helpers/words-data-helper';
 import { Language, VerbConjugationEnglish, TopicWithOneAlphabet, TopicWithTwoAlphabets, TopicWithThreeAlphabets } from '../../../types/vocabTypes';
 
@@ -1609,7 +1611,7 @@ const japaneseTopics: TopicWithThreeAlphabets[] = [
     { englishWord: 'shoes', foreignWord: ['kutsu', 'くつ', '靴'], foreignAudio: '' },
     { englishWord: 'skirt', foreignWord: ['suka-to', 'スカート', 'スカート'], foreignAudio: '' },
     { englishWord: 'jacket', foreignWord: ['jyaketto', 'ジャケット', 'ジャケット'], foreignAudio: '' },
-    { englishWord: 'hat', foreignWord: ['boushi', 'ぼうし', '帽子'], foreignAudio: '' },
+    { englishWord: 'hat', foreignWord: ['boushi', 'ぼうし', '帽子'], foreignAudio: japaneseAudioHat },
     { englishWord: 'scarf', foreignWord: ['suka-fu', 'スカーフ', 'スカーフ'], foreignAudio: '' }
   ]
   }
