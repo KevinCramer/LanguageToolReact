@@ -242,6 +242,20 @@ import japaneseAudioPurple from '../raw-data/audio_vocab/japanese/colours/purple
 import japaneseAudioRed from '../raw-data/audio_vocab/japanese/colours/red.mp3'
 import japaneseAudioWhite from '../raw-data/audio_vocab/japanese/colours/white.mp3'
 
+import japaneseAudioOne from '../raw-data/audio_vocab/japanese/numbers/one.mp3'
+import japaneseAudioTwo from '../raw-data/audio_vocab/japanese/numbers/two.mp3'
+import japaneseAudioThree from '../raw-data/audio_vocab/japanese/numbers/three.mp3'
+import japaneseAudioFourShi from '../raw-data/audio_vocab/japanese/numbers/four_shi.mp3'
+import japaneseAudioFourYon from '../raw-data/audio_vocab/japanese/numbers/four_yon.mp3'
+import japaneseAudioFive from '../raw-data/audio_vocab/japanese/numbers/five.mp3'
+import japaneseAudioSix from '../raw-data/audio_vocab/japanese/numbers/six.mp3'
+import japaneseAudioSevenShichi from '../raw-data/audio_vocab/japanese/numbers/seven_shichi.mp3'
+import japaneseAudioSevenNana from '../raw-data/audio_vocab/japanese/numbers/seven_nana.mp3'
+import japaneseAudioEight from '../raw-data/audio_vocab/japanese/numbers/eight.mp3'
+import japaneseAudioNineKu from '../raw-data/audio_vocab/japanese/numbers/nine_ku.mp3'
+import japaneseAudioNineKyuu from '../raw-data/audio_vocab/japanese/numbers/nine_kyuu.mp3'
+import japaneseAudioTen from '../raw-data/audio_vocab/japanese/numbers/ten.mp3'
+
 import { sortTopics } from '../../helpers/words-data-helper';
 import { Language, VerbConjugationEnglish, TopicWithOneAlphabet, TopicWithTwoAlphabets, TopicWithThreeAlphabets } from '../../../types/vocabTypes';
 
@@ -1596,19 +1610,19 @@ const japaneseTopics: TopicWithThreeAlphabets[] = [
     { englishWord: 'n', foreignWord: ['ン','ン','ン'], foreignAudio: '', order: 45 }
   ] },
   { name:'Numbers',slugName: 'num', hasOrdering:true, isLocked: false, isAlphabet: false, words: [
-    { englishWord: 'one', foreignWord: ['ichi', 'いち','一'], foreignAudio: '', order:1 },
-    { englishWord: 'two', foreignWord: ['ni', 'に','二'], foreignAudio: '', order:2 },
-    { englishWord: 'three',foreignWord: ['san', 'さん','三'], foreignAudio: '', order:3 },
-    { englishWord: 'four (I)', foreignWord: ['shi', 'し','四'], foreignAudio: '', order:4 },
-    { englishWord: 'four (II)', foreignWord: ['yon', 'よん','四'], foreignAudio: '', order:4 },
-    { englishWord: 'five', foreignWord: ['go', 'ご','五'], foreignAudio: '', order:5 },
-    { englishWord: 'six', foreignWord: ['roku', 'ろく','六'], foreignAudio: '', order:6 },
-    { englishWord: 'seven (I)', foreignWord: ['shichi', 'しち','七'], foreignAudio: '', order:7 },
-    { englishWord: 'seven (II)', foreignWord: ['nana', 'なな','七'], foreignAudio: '', order:7 },
-    { englishWord: 'eight', foreignWord: ['hachi', 'はち','八'], foreignAudio: '', order:8 },
-    { englishWord: 'nine (I)', foreignWord: ['ku', 'く','九'], foreignAudio: '', order:9 },
-    { englishWord: 'nine (II)', foreignWord: ['kyuu', 'きゅう','九'], foreignAudio: '', order:9 },
-    { englishWord: 'ten', foreignWord: ['juu', 'じゅう','十'], foreignAudio: '', order:10 },
+    { englishWord: 'one', foreignWord: ['ichi', 'いち','一'], foreignAudio: japaneseAudioOne, order:1 },
+    { englishWord: 'two', foreignWord: ['ni', 'に','二'], foreignAudio: japaneseAudioTwo, order:2 },
+    { englishWord: 'three',foreignWord: ['san', 'さん','三'], foreignAudio: japaneseAudioThree, order:3 },
+    { englishWord: 'four (I)', foreignWord: ['shi', 'し','四'], foreignAudio: japaneseAudioFourShi, order:4 },
+    { englishWord: 'four (II)', foreignWord: ['yon', 'よん','四'], foreignAudio: japaneseAudioFourYon, order:4 },
+    { englishWord: 'five', foreignWord: ['go', 'ご','五'], foreignAudio: japaneseAudioFive, order:5 },
+    { englishWord: 'six', foreignWord: ['roku', 'ろく','六'], foreignAudio: japaneseAudioSix, order:6 },
+    { englishWord: 'seven (I)', foreignWord: ['shichi', 'しち','七'], foreignAudio: japaneseAudioSevenShichi, order:7 },
+    { englishWord: 'seven (II)', foreignWord: ['nana', 'なな','七'], foreignAudio: japaneseAudioSevenNana, order:7 },
+    { englishWord: 'eight', foreignWord: ['hachi', 'はち','八'], foreignAudio: japaneseAudioEight, order:8 },
+    { englishWord: 'nine (I)', foreignWord: ['ku', 'く','九'], foreignAudio: japaneseAudioNineKu, order:9 },
+    { englishWord: 'nine (II)', foreignWord: ['kyuu', 'きゅう','九'], foreignAudio: japaneseAudioNineKyuu, order:9 },
+    { englishWord: 'ten', foreignWord: ['juu', 'じゅう','十'], foreignAudio: japaneseAudioTen, order:10 },
   ] },
   { name:'Colours', slugName: 'col', hasOrdering:false, isLocked: true, isAlphabet: false, words: [
     { englishWord: 'red', foreignWord: ['aka', 'あか', '赤'], foreignAudio: japaneseAudioRed },
