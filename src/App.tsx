@@ -56,7 +56,7 @@ const App = ()=> {
           <Route path="/spanish" element={<Spanish/>} />
           <Route path="/spanish/vocabulary" element={<VocabContentNew languageNumber={0}/>} />
           <Route path="/spanish/grammar/:topicSlug" element={<GrammarContent languageNumber={0} />} />
-          <Route path="/spanish/listening-comprehension" element={<ListeningComprehension languageNumber={0}/>} />
+          <Route path="/spanish/listening-comprehension/:topicSlug" element={<ListeningComprehension languageNumber={0}/>} />
           <Route path="/japanese" element={<Japanese/>} />
           <Route path="/japanese/vocabulary" element={<VocabContentNew languageNumber={1} />} />
         </Routes>

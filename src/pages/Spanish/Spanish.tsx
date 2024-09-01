@@ -11,7 +11,7 @@ const Spanish = () => {
         <a href="/spanish/grammar/definite-article">
             Grammar
         </a>
-        <a href="/spanish/listening-comprehension">
+        <a href="/spanish/listening-comprehension/me-gusta-leer">
             Listening Comprehension
         </a>
       </div>

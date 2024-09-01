@@ -20,7 +20,7 @@ const japaneseAudioTranscriptions: AudioTranscription[] = [
 const spanishAudioTranscriptions: AudioTranscription[] = [
   // https://snappyspanish.com/beginner-spanish-story-the-feeling-of-winning/
   {
-    name:'Me gusta leer', slugName: 'mgl', contents: [
+    name:'Me gusta leer', slugName: 'me-gusta-leer', contents: [
       { 
         englishText: 'Do you like reading? I read a book every week. And sometimes I read two books. Also, I’m a journalist and I have to read a lot at work. I’m a specialist in scientific news and everyday I write one article.', 
         foreignText: '¿Te gusta leer? Yo leo un libro todas las semanas. Y a veces, leo dos libros. Además, soy periodista y tengo que leer mucho en el trabajo. Soy especialista en noticias científicas y todos los días escribo un artículo.',
@@ -45,7 +45,7 @@ const spanishAudioTranscriptions: AudioTranscription[] = [
 export const 
   languages: Language[] = 
         [
-          { languageName: 'Japanese', audioTranscriptions: (japaneseAudioTranscriptions) },
           { languageName: 'Spanish', audioTranscriptions: (spanishAudioTranscriptions) },
+          { languageName: 'Japanese', audioTranscriptions: (japaneseAudioTranscriptions) },
         ]
       
