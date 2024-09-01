@@ -1659,7 +1659,7 @@ const japaneseTopics: TopicWithThreeAlphabets[] = [
   ] },
   {
     name: 'First Grade Kanji (80)',
-    slugName: 'first_grade_kanji',
+    slugName: 'kanji_grade1',
     hasOrdering: true,
     isLocked: true,
     isAlphabet: true,
