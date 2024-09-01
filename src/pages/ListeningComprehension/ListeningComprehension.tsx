@@ -2,7 +2,7 @@ import './ListeningComprehension.scss';
 import { AudioTranscription, Language, Paragraph } from '../../../types/listeningComprehension';
 import { Container, Navbar as NavbarBs, Table } from 'react-bootstrap';
 import { useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { languages as allLanguages } from '../../data/structured-data/listeningComprehension';
 import AudioPlayer from '../../components/atoms/CustomAudioPlayer/CustomAudioPlayer';
 import CustomDropDownButton from '../../components/atoms/CustomDropDownButton/CustomDropDownButton';
@@ -11,7 +11,8 @@ import Dropdown from 'react-bootstrap/Dropdown';
 
 const ListeningComprehensionContent = (props: { languageNumber: number }) => {
   const navigate = useNavigate();
-  const { topicSlug } = useParams(); // Extract the topicSlug from the URL
+  const { topicSlug } = useParams();
+  const location = useLocation();
 
   const currentLanguage: Language = allLanguages[props.languageNumber];
 
@@ -19,27 +20,38 @@ const ListeningComprehensionContent = (props: { languageNumber: number }) => {
     (t) => t.slugName === topicSlug
   ) || currentLanguage.audioTranscriptions[0];
 
+  // Read the 'transcriptionInEnglish' from query params or default to false
+  const queryParams = new URLSearchParams(location.search);
+  const initialTranscriptionInEnglish = queryParams.get('eng') === 'T';
+
   const [currentAudioTranscription, setCurrentAudioTranscription] = useState<AudioTranscription>(
     initialAudioTranscription
   );
 
-  const [transcriptionInEnglish, setTranscriptionInEnglish] = useState(false);
+  const [transcriptionInEnglish, setTranscriptionInEnglish] = useState(initialTranscriptionInEnglish);
 
   const changeCurrentAudioTranscription = (currentAudioTranscription: AudioTranscription) => {
-    navigate(`/spanish/listening-comprehension/${currentAudioTranscription.slugName}`);
+    const query = new URLSearchParams(location.search);
+    query.set('eng', transcriptionInEnglish ? 'T' : 'F');
+    navigate(`/spanish/listening-comprehension/${currentAudioTranscription.slugName}?${query.toString()}`);
     setCurrentAudioTranscription(currentAudioTranscription);
   };
 
-  const toggleTranscriptionLanguage = () => setTranscriptionInEnglish(!transcriptionInEnglish);
+  const toggleTranscriptionLanguage = () => {
+    const newTranscriptionInEnglish = !transcriptionInEnglish;
+    setTranscriptionInEnglish(newTranscriptionInEnglish);
+
+    // Update the URL with the new transcriptionInEnglish state
+    const query = new URLSearchParams(location.search);
+    query.set('eng', newTranscriptionInEnglish ? 'T' : 'F');
+    navigate(`${location.pathname}?${query.toString()}`);
+  };
 
   useEffect(() => {
-    const settings = [
-      topicSlug
-    ]
-    navigate(`/spanish/listening-comprehension/${topicSlug}`);
-
-  }, [
-    currentLanguage.languageName, topicSlug, currentAudioTranscription.slugName, navigate ]);
+    const query = new URLSearchParams(location.search);
+    query.set('eng', transcriptionInEnglish ? 'T' : 'F');
+    navigate(`/spanish/listening-comprehension/${topicSlug}?${query.toString()}`, { replace: true });
+  }, [currentLanguage.languageName, topicSlug, currentAudioTranscription.slugName, navigate, transcriptionInEnglish]);
 
   const renderListeningComprehensionTopic = () => (
     <div className="inner-audio-player-and-table-container">
