@@ -12,7 +12,7 @@ const Spanish = () => {
         The Spanish language has about 500 million native speakers, mainly in the Americas and Spain. Learning it opens doors to new connections, cultures, and job opportunities.
         </div>
         <div>
-          <a href="/spanish/study-plan">
+          <a href="/spanish/study-guide">
           Study Guide 
           </a>
           This guide helps beginners quickly learn Spanish and build confidence in speaking, whilst also offering plenty of valuable content for more advanced users.

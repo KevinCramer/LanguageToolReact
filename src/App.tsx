@@ -24,6 +24,7 @@ import VocabContent from './pages/VocabContent/VocabContent'
 import VocabContentNew from './pages/VocabContentNew/VocabContentNew'
 import Japanese from './pages/Japanese/Japanese'
 import Spanish from './pages/Spanish/Spanish'
+import SpanishStudyGuide from './pages/Spanish/SpanishStudyGuide'
 
 const msInMinute = 60 * 1000;
 
@@ -55,6 +56,7 @@ const App = ()=> {
           <Route path="/profile" element={<Profile />} />
           <Route path="/spanish" element={<Spanish/>} />
           <Route path="/spanish/vocabulary" element={<VocabContentNew languageNumber={0}/>} />
+          <Route path="/spanish/study-guide" element={<SpanishStudyGuide/>} />
           <Route path="/spanish/grammar/:topicSlug" element={<GrammarContent languageNumber={0} />} />
           <Route path="/spanish/listening-comprehension/:topicSlug" element={<ListeningComprehension languageNumber={0}/>} />
           <Route path="/japanese" element={<Japanese/>} />
