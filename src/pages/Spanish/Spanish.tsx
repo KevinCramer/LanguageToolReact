@@ -1,4 +1,7 @@
 import './Spanish.scss'
+import dart from '../../assets/dart.svg';
+import dictionary from '../../assets/dictionary.png';
+import headphones from '../../assets/headphones.svg';
 
 const Spanish = () => { 
  
@@ -18,12 +21,21 @@ const Spanish = () => {
         <div>
 
         </div>
+        <div>
+          <img src ={dictionary} width={100} height={100} alt="Grammar Icon"/>
+        </div>
         <a href="/spanish/vocabulary">
           Vocabulary
         </a>
+        <div>
+          <img src ={dart} width={100} height={100} alt="Grammar Icon"/>
+        </div>
         <a href="/spanish/grammar/definite-article">
           Grammar
         </a>
+        <div>
+          <img src ={headphones} width={150} height={100} alt="Listening Comprehension Icon"/>
+        </div>
         <a href="/spanish/listening-comprehension/me-gusta-leer">
           Listening Comprehension
         </a>
