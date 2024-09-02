@@ -45,7 +45,7 @@ const Navbar = () => {
                     color: 'rgb(13, 110,253)', display: 'inline',
                     borderRadius: '5px',
                     fontWeight: 'bold'
-                  }} >Start Learning!</div>
+                  }} >Languages</div>
                 </span>
               }
               id="study-dropdown"
