@@ -6,6 +6,12 @@
   padding-top: 10%;
   padding-left: 15%;
   padding-right:15%;
-  height: 60vh;
   width: 100vw;
+}
+
+@media (min-width: 500px) {
+  .study-materials-div {
+    display: flex;
+    justify-content: space-around;
+  }
 }

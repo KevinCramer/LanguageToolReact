@@ -14,7 +14,7 @@ const Spanish = () => {
         </div>
         <div>
           
-          <div style={{ paddingTop:'30px' }}>
+          <div style={{ marginTop:'30px' }}>
           This guide helps beginners learn Spanish and gain confidence in their skills. It also offers valuable content for advanced users.
           </div>
           <div style={{ textAlign: 'center', paddingTop: '30px' }}>
@@ -27,7 +27,7 @@ const Spanish = () => {
         <div style={{ paddingTop:'30px' }}>
         Alternatively, you can create your own study plan using the resources available. At LingoCommand the Spanish study materials are divided into three main sections:
         </div>
-        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+        <div className="study-materials-div">
           <div style={{ textAlign: 'center', margin: '10px' }}>
             <img src={dictionary} width={100} height={100} alt="Grammar Icon" style={{ display: 'block', margin: '0 auto 10px' }} />
             <a href="/spanish/vocabulary">Vocabulary</a>
