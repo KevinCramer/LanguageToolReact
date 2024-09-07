@@ -10,7 +10,7 @@ const SpanishStudyGuide = () => {
           (If you get 90% or higher  for each quiz without studying the topic in the last 24 hours you are ready to move to phase 2). 
         </div>
         <div style={{ paddingTop:'20px' }}>
-          <b>Phase 2:</b> Study the vocabulary for these topics until you get 90% accuracy taking the quiz: <a href="/spanish/vocabulary?s=pro-T0TFT">pronouns</a>,<a href="/spanish/vocabulary?s=que-T0TFT">question words</a>, <a href="/spanish/vocabulary?s=con-T0TFT">conjunctions</a>. < br /> Use same approach as phase 1. 
+          <b>Phase 2:</b> Study the vocabulary for these topics until you get 90% accuracy taking the quiz: <a href="/spanish/vocabulary?s=pro-T0TFT">pronouns</a>, <a href="/spanish/vocabulary?s=que-T0TFT">question words</a>, <a href="/spanish/vocabulary?s=con-T0TFT">conjunctions</a>. < br /> Use same approach as phase 1. 
         </div>
         <div style={{ paddingTop:'20px' }}>
           <b>Phase 3:</b> Study the grammar lessons 1 through 5.   
