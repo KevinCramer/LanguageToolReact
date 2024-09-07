@@ -14,13 +14,13 @@ const Japanese = () => {
         </div>
         <div className="study-materials-div">
           <a href="/japanese/writing-systems" style={{ paddingLeft: '50px', paddingRight: '30px' }}>
-            <img src={pen} width={100} height={100} alt="Writing Systems Icon" style={{ display: 'block', margin: '0 auto 10px' }} />
+            <img src={pen} width={80} height={80} alt="Writing Systems Icon" style={{ display: 'block', margin: '0 auto 10px' }} />
             < div style={{ textAlign: 'center' }}>
             Writing < br /> Systems
             </div>
           </a>
           <a href="/japanese/vocabulary" style={{ textAlign: 'center', margin: '10px' }}>
-            <img src={dictionary} width={100} height={100} alt="Vocabulary Icon" style={{ display: 'block', margin: '0 auto 10px' }} />
+            <img src={dictionary} width={80} height={80} alt="Vocabulary Icon" style={{ display: 'block', margin: '0 auto 10px' }} />
             <div>Vocabulary</div>
           </a>
         </div>
