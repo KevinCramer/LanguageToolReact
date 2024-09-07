@@ -12,6 +12,7 @@
 @media (min-width: 500px) {
   .study-materials-div {
     display: flex;
-    justify-content: space-around;
+    justify-content: left;
+    padding-top: 30px;
   }
 }

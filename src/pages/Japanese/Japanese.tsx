@@ -14,16 +14,16 @@ const Japanese = () => {
         At LingoCommand the Japanese study materials are divided into 2 main sections:
         </div>
         <div className="study-materials-div">
-          <div>
+          <a href="/japanese/writing-systems" style={{ paddingLeft: '50px', paddingRight: '30px' }}>
             <img src={pen} width={100} height={100} alt="Writing Systems Icon" style={{ display: 'block', margin: '0 auto 10px' }} />
-            <a href="/japanese/writing-systems" style={{ textAlign: 'center' }}>
+            < div style={{ textAlign: 'center' }}>
             Writing < br /> Systems
-            </a>
-          </div>
-          <div style={{ textAlign: 'center', margin: '10px' }}>
+            </div>
+          </a>
+          <a href="/japanese/vocabulary" style={{ textAlign: 'center', margin: '10px' }}>
             <img src={dictionary} width={100} height={100} alt="Vocabulary Icon" style={{ display: 'block', margin: '0 auto 10px' }} />
-            <a href="/japanese/vocabulary">Vocabulary</a>
-          </div>
+            <div>Vocabulary</div>
+          </a>
         </div>
         
       </div>

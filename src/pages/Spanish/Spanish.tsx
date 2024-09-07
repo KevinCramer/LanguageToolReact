@@ -17,29 +17,30 @@ const Spanish = () => {
           <div style={{ marginTop:'30px' }}>
           This guide helps beginners learn Spanish and gain confidence in their skills. It also offers valuable content for advanced users.
           </div>
-          <div style={{ textAlign: 'center', paddingTop: '30px' }}>
-            <div>
+          <div className="study-materials-div">
+            <a href="/spanish/study-guide" 
+              style={{ textAlign: 'center', paddingLeft: '20px' }}>
               <img src={upwardTrend} width={100} height={100} alt="Study Guide Icon" />
-            </div>
-            <a href="/spanish/study-guide">Study Guide</a>
+              <div>Study Guide</div>
+            </a>
           </div>
         </div>
         <div style={{ paddingTop:'30px' }}>
         Alternatively, you can create your own study plan using the resources available. At LingoCommand the Spanish study materials are divided into three main sections:
         </div>
         <div className="study-materials-div">
-          <div style={{ textAlign: 'center', margin: '10px' }}>
+          <a href="/spanish/vocabulary" style={{ textAlign: 'center', margin: '10px', paddingRight: '30px', paddingLeft: '20px' }}>
             <img src={dictionary} width={100} height={100} alt="Vocabulary Icon" style={{ display: 'block', margin: '0 auto 10px' }} />
-            <a href="/spanish/vocabulary">Vocabulary</a>
-          </div>
-          <div style={{ textAlign: 'center', margin: '10px' }}>
+            <div >Vocabulary</div>
+          </a>
+          <a href="/spanish/grammar/definite-article" style={{ textAlign: 'center', margin: '10px', paddingRight: '30px' }}>
             <img src={dart} width={100} height={100} alt="Grammar Icon" style={{ display: 'block', margin: '0 auto 10px' }} />
-            <a href="/spanish/grammar/definite-article">Grammar</a>
-          </div>
-          <div style={{ textAlign: 'center', margin: '10px' }}>
+            <div >Grammar</div>
+          </a>
+          <a href="/spanish/listening-comprehension/me-gusta-leer"style={{ textAlign: 'center', margin: '10px' }}>
             <img src={headphones} width={100} height={100} alt="Listening Comprehension Icon" style={{ display: 'block', margin: '0 auto 10px' }} />
-            <a href="/spanish/listening-comprehension/me-gusta-leer">Listening <br />Comprehension</a>
-          </div>
+            <div>Listening <br />Comprehension</div>
+          </a>
         </div>
       </div>
     </>
