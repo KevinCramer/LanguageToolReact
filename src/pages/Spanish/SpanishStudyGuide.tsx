@@ -7,7 +7,7 @@ const SpanishStudyGuide = () => {
  
   return (
     <>
-      <div className="contact-us-container">
+      <div className="spanish-container">
         <div>
         Phase 1: Study the vocabulary for these topics: clothes, numbers, colours, food, home, body, locations. We recommend you spend no more than 15 minutes studying a topic’s vocabulary before taking a quiz. Then if the grade is below 90% which is completely normal go back and do another round of 15 minutes of studying. Make sure to take breaks, and you can also switch between studying a few topics to mix things up. 
 
