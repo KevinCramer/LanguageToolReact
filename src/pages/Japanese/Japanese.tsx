@@ -1,4 +1,6 @@
 import './Japanese.scss'
+import dictionary from '../../assets/dictionary.svg';
+import pen from '../../assets/pen.svg';
 
 const Japanese = () => { 
  
@@ -6,24 +8,24 @@ const Japanese = () => {
     <>
       <div className="japanese-container">
         <div>
-          The Japanese language has 3 writing systems:
+         The Japanese language has 130 million native speakers with about 95% of them living in Japan. The language is known for its levels of politeness and formality, which affect word choice and sentence structure. 
         </div>
-        <div style={{ paddingLeft: '20px', paddingTop:'10px' }}>
-          <a href="/japanese/vocabulary?s=hir-T0TFT">Hiragana</a> - a phonetic writing system used for native japanese words. (It has 46 characters)
+        <div style={{ paddingTop: '20px' }}>
+        At LingoCommand the Japanese study materials are divided into 2 main sections:
         </div>
-        <div style={{ paddingLeft: '20px', paddingTop:'10px' }}>
-          <a href="/japanese/vocabulary?s=kat-T0TFT">Katakana</a> - a phonetic writing system mainly used for loan words from other languages. (It has 46 characters)
+        <div className="study-materials-div">
+          <div>
+            <img src={pen} width={100} height={100} alt="Writing Systems Icon" style={{ display: 'block', margin: '0 auto 10px' }} />
+            <a href="/japanese/writing-systems" style={{ textAlign: 'center' }}>
+            Writing < br /> Systems
+            </a>
+          </div>
+          <div style={{ textAlign: 'center', margin: '10px' }}>
+            <img src={dictionary} width={100} height={100} alt="Vocabulary Icon" style={{ display: 'block', margin: '0 auto 10px' }} />
+            <a href="/japanese/vocabulary">Vocabulary</a>
+          </div>
         </div>
-        <div style={{ paddingLeft: '20px', paddingTop:'10px' }}>
-          <a href="/japanese/vocabulary?s=kanji_grade1-T0TFT">Kanji</a> - a non phonetic writing system. (It has over 50,000 characters). 
-        </div>
-        <div style={{ paddingLeft: '20px' }}>
-        The Japanese government has designated 2,136 characters as 'Jōyō kanji' ('daily use kanji').
-        High school students are expected to be able to read and write these kanji by the time they graduate.
-        </div>
-        <a href="/japanese/vocabulary" style={{ paddingTop: '50px', textAlign: 'center' }}>
-            Vocabulary
-        </a>
+        
       </div>
     </>
   );

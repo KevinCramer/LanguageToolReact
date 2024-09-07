@@ -29,7 +29,7 @@ const Spanish = () => {
         </div>
         <div className="study-materials-div">
           <div style={{ textAlign: 'center', margin: '10px' }}>
-            <img src={dictionary} width={100} height={100} alt="Grammar Icon" style={{ display: 'block', margin: '0 auto 10px' }} />
+            <img src={dictionary} width={100} height={100} alt="Vocabulary Icon" style={{ display: 'block', margin: '0 auto 10px' }} />
             <a href="/spanish/vocabulary">Vocabulary</a>
           </div>
           <div style={{ textAlign: 'center', margin: '10px' }}>
