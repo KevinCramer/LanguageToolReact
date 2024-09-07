@@ -12,7 +12,7 @@ const Spanish = () => {
         <div>
           <h4> Spanish</h4>
           <div>
-          This guide helps beginners learn Spanish and gain confidence in their skills. It also offers valuable content for advanced users.
+          LingoCommand helps beginners learn Spanish and gain confidence in their skills. We also offers valuable content for advanced users. Try our study guide below:
           </div>
           <div className="study-materials-div">
             <a href="/spanish/study-guide" 
@@ -39,7 +39,7 @@ const Spanish = () => {
             <div>Listening <br />Comprehension</div>
           </a>
         </div>
-        <i style={{ fontSize:'16px', paddingTop: '30px' }}>
+        <i style={{ fontSize:'16px', paddingTop: '30px', paddingBottom: '30px' }}>
         There are about 500 million native Spanish speakers, mainly in Spain and the Americas. Learning Spanish opens doors to new connections, cultures, and job opportunities.
         </i>
       </div>

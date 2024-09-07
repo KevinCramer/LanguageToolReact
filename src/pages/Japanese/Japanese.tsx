@@ -1,6 +1,7 @@
 import './Japanese.scss'
 import dictionary from '../../assets/dictionary.svg';
 import pen from '../../assets/pen.svg';
+import upwardTrend from '../../assets/upward-trend.svg';
 
 const Japanese = () => { 
  
@@ -9,7 +10,18 @@ const Japanese = () => {
       <div className="japanese-container">
         <h4> Japanese</h4>
         <div style={{ paddingTop: '20px' }}>
-        At LingoCommand the Japanese study materials are divided into 2 main sections:
+        LingoCommand helps beginners learn Japanese and gain confidence in their skills. We also offers valuable content for advanced users. Try our study guide below:
+        </div>
+        <div className="study-materials-div">
+          <a href="/japanese/study-guide" style={{ paddingLeft: '50px', paddingRight: '30px' }}>
+            <img src={upwardTrend} width={80} height={80} alt="Study Guide Icon" style={{ display: 'block', margin: '0 auto 10px' }} />
+            < div style={{ textAlign: 'center' }}>
+            Study Guide
+            </div>
+          </a>
+        </div>
+        <div style={{ paddingTop: '20px' }}>
+        Alternatively, you can create your own study plan using the resources available. At LingoCommand the Japanese study materials are divided into two main sections:
         </div>
         <div className="study-materials-div">
           <a href="/japanese/writing-systems" style={{ paddingLeft: '50px', paddingRight: '30px' }}>
@@ -23,7 +35,7 @@ const Japanese = () => {
             <div>Vocabulary</div>
           </a>
         </div>
-        <i style={{ fontSize:'16px', paddingTop: '30px' }}>
+        <i style={{ fontSize:'16px', paddingTop: '30px', paddingBottom: '30px' }}>
           The Japanese language has 130 million native speakers, with about 95% residing in Japan. 
           Over the past 40 years, the number of people learning Japanese as a second language has increased over twentyfold. 
         </i>

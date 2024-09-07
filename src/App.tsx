@@ -25,6 +25,7 @@ import VocabContentNew from './pages/VocabContentNew/VocabContentNew'
 import Japanese from './pages/Japanese/Japanese'
 import Spanish from './pages/Spanish/Spanish'
 import SpanishStudyGuide from './pages/Spanish/SpanishStudyGuide'
+import JapaneseStudyGuide from './pages/Japanese/JapaneseStudyGuide'
 import JapaneseWritingSystems from './pages/Japanese/WritingSystems'
 
 const msInMinute = 60 * 1000;
@@ -63,6 +64,7 @@ const App = ()=> {
           <Route path="/japanese" element={<Japanese/>} />
           <Route path="/japanese/vocabulary" element={<VocabContentNew languageNumber={1} />} />
           <Route path="/japanese/writing-systems" element={<JapaneseWritingSystems />} />
+          <Route path="/japanese/study-guide" element={<JapaneseStudyGuide/>} />
         </Routes>
       </div>
       <Modal show ={reduxAuth.modalToShow !== authModalStates.none}
