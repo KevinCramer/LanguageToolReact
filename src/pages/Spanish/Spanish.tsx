@@ -20,7 +20,7 @@ const Spanish = () => {
           <div className="study-materials-div">
             <a href="/spanish/study-guide" 
               style={{ textAlign: 'center', paddingLeft: '20px' }}>
-              <img src={upwardTrend} width={100} height={100} alt="Study Guide Icon" />
+              <img src={upwardTrend} width={100} height={100} alt="Study Guide Icon" style={{ display: 'block', margin: '0 auto 10px' }} />
               <div>Study Guide</div>
             </a>
           </div>
