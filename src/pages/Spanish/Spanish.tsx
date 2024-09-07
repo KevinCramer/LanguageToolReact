@@ -8,7 +8,7 @@ const Spanish = () => {
  
   return (
     <>
-      <div className="contact-us-container">
+      <div className="spanish-container">
         <div>
         There are about 500 million native Spanish speakers, mainly in Spain and the Americas. Learning Spanish opens doors to new connections, cultures, and job opportunities.
         </div>
