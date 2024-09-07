@@ -7,9 +7,8 @@ const Japanese = () => {
   return (
     <>
       <div className="japanese-container">
-        <div>
-         The Japanese language has 130 million native speakers with about 95% of them living in Japan. The language is known for its levels of politeness and formality, which affect word choice and sentence structure. 
-        </div>
+        <i>
+        The Japanese language has 130 million native speakers, with 95% residing in Japan. Over the past 40 years, the number of people learning it as a second language has increased twentyfold.        </i>
         <div style={{ paddingTop: '20px' }}>
         At LingoCommand the Japanese study materials are divided into 2 main sections:
         </div>
