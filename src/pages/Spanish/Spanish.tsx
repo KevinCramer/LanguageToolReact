@@ -9,12 +9,9 @@ const Spanish = () => {
   return (
     <>
       <div className="spanish-container">
-        <i>
-        There are about 500 million native Spanish speakers, mainly in Spain and the Americas. Learning Spanish opens doors to new connections, cultures, and job opportunities.
-        </i>
         <div>
-          
-          <div style={{ marginTop:'30px' }}>
+          <h4> Spanish</h4>
+          <div>
           This guide helps beginners learn Spanish and gain confidence in their skills. It also offers valuable content for advanced users.
           </div>
           <div className="study-materials-div">
@@ -42,6 +39,9 @@ const Spanish = () => {
             <div>Listening <br />Comprehension</div>
           </a>
         </div>
+        <i style={{ fontSize:'16px', paddingTop: '30px' }}>
+        There are about 500 million native Spanish speakers, mainly in Spain and the Americas. Learning Spanish opens doors to new connections, cultures, and job opportunities.
+        </i>
       </div>
     </>
   );

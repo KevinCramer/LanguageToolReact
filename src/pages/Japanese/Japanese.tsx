@@ -7,8 +7,7 @@ const Japanese = () => {
   return (
     <>
       <div className="japanese-container">
-        <i>
-        The Japanese language has 130 million native speakers, with 95% residing in Japan. Over the past 40 years, the number of people learning it as a second language has increased twentyfold.        </i>
+        <h4> Japanese</h4>
         <div style={{ paddingTop: '20px' }}>
         At LingoCommand the Japanese study materials are divided into 2 main sections:
         </div>
@@ -24,6 +23,10 @@ const Japanese = () => {
             <div>Vocabulary</div>
           </a>
         </div>
+        <i style={{ fontSize:'16px', paddingTop: '30px' }}>
+          The Japanese language has 130 million native speakers, with about 95% residing in Japan. 
+          Over the past 40 years, the number of people learning Japanese as a second language has increased over twentyfold. 
+        </i>
         
       </div>
     </>
