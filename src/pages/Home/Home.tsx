@@ -1,8 +1,8 @@
 import './Home.scss'
 import blackBar from '../../assets/blackBar.png';
-import japaneseFlag from '../../assets/flag-icons/japanese-flag-icon.svg'
-import logoSvg from '../../assets/logoSvg.svg';
+import newLogoSvg from '../../assets/newLogoSvg.svg';
 import spanishFlag from '../../assets/flag-icons/spanish-flag-icon.svg'
+import japaneseFlag from '../../assets/flag-icons/japanese-flag-icon.svg'
 import { toggleNavbar } from '../../redux-store/navbar';
 import { useAuth } from '../../contexts/AuthContext'
 import { useDispatch } from 'react-redux';
@@ -19,16 +19,25 @@ export const Home = () =>{
     </div>
     }
     <div className = "imageContent" >
-      <img src ={logoSvg} width={163} height={163} alt="LingoCommand Logo"/>
+      <img src ={newLogoSvg} width={220} height={220} alt="LingoCommand Logo"/>
     </div>
     <div className = "content2">
-      <h1>LINGO</h1>
-      <div className = "imageContent">
-        <img src ={blackBar} width={130} height={1} alt="black-line"/>
+      <div style={{ paddingTop: '10px', fontSize: '22px' }}> 
+      Learn foreign languages faster     
       </div>
-      <h4>COMMAND</h4>
-      <div style={{ color: 'rgb(13, 110,253)', textDecoration: 'underline' }}> 
-        Learn foreign languages faster
+      <div style={{ display: 'flex', paddingTop: '50px' }}>
+        <a href="/spanish"style={{ margin:'30px' }} >
+          <img src={spanishFlag} alt="Spanish flag"/>
+          <div>
+        Spanish
+          </div> 
+        </a>
+        <a href="/japanese" style={{ margin:'30px' }}>
+          <img src={japaneseFlag} alt="Japanese flag"/>
+          <div>
+            Japanese
+          </div>
+        </a>
       </div>
     </div>    
   </div> 
