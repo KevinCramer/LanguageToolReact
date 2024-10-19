@@ -14,9 +14,9 @@ import ListeningComprehension from './pages/ListeningComprehension/ListeningComp
 import LockedContent from './components/atoms/LockedContent/LockedContent'
 import Login from './components/molecules/Login/Login'
 import Navbar from './components/atoms/Navbar/Navbar'
-import Profile from './pages/Profile/Profile'
+import Account from './pages/Account/Account'
 import Signup from './components/molecules/Signup/Signup'
-import UpdateProfile from './components/atoms/UpdateProfile/UpdateProfile'
+import UpdateAccount from './components/atoms/UpdateAccount/UpdateAccount'
 import { useAuth } from './contexts/AuthContext'
 import { useEffect } from 'react'
 import useInactivityTimer from './hooks/useInactivityTimer'
@@ -55,7 +55,7 @@ const App = ()=> {
           <Route path="/" element={ <div className='home-container'> <Home /></div>} />
           <Route path="/vocabulary" element={<VocabContent />} />
           <Route path="/contact" element={<ContactUs />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route path="/account" element={<Account />} />
           <Route path="/spanish" element={<Spanish/>} />
           <Route path="/spanish/vocabulary" element={<VocabContentNew languageNumber={0}/>} />
           <Route path="/spanish/study-guide" element={<SpanishStudyGuide/>} />
@@ -78,7 +78,7 @@ const App = ()=> {
               {reduxAuth.modalToShow === authModalStates.signup && <Signup/>}
               {reduxAuth.modalToShow === authModalStates.login && <Login/>}
               {reduxAuth.modalToShow === authModalStates.forgotPassword && <ForgotPassword/>}
-              {reduxAuth.modalToShow === authModalStates.updateProfile && <UpdateProfile/>}
+              {reduxAuth.modalToShow === authModalStates.updateAccount && <UpdateAccount/>}
               {reduxAuth.modalToShow === authModalStates.deleteAccount && <DeleteAccount/>}
             </div>
           </Container>

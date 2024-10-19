@@ -4,7 +4,7 @@ import { hideModal } from '../../../redux-store/auth';
 import { useAuth } from '../../../contexts/AuthContext'
 import { useDispatch } from 'react-redux'
 
-export default function UpdateProfile() {
+export default function UpdateAccount() {
   const dispatch = useDispatch();
   const passwordRef = useRef()
   const passwordConfirmRef = useRef()

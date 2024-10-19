@@ -79,7 +79,7 @@ const Navbar = () => {
             </Nav.Link>
             {currentUser && currentUser.email && <Nav.Link
               className="nav-link-custom"
-              to="/profile"
+              to="/account"
               as={NavLink}
               onClick={() => dispatch(closeNavbar())}
             >
@@ -90,7 +90,7 @@ const Navbar = () => {
                 if (currentUser && currentUser.email) {
                   try {
                     await logout();
-                    if (location.pathname === '/profile') {
+                    if (location.pathname === '/account') {
                       navigate('/');
                     }
                     dispatch(closeNavbar());
