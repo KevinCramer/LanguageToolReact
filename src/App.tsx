@@ -7,6 +7,7 @@ import { Route, Routes } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
 import Account from './pages/Account/Account'
 import ContactUs from './pages/ContactUs/ContactUs'
+import Custom404Error from './pages/Custom404Error/Custom404Error'
 import DeleteAccount from './components/atoms/DeleteAccount/DeleteAccount'
 import ForgotPassword from './components/molecules/ForgotPassword/ForgotPassword'
 import GrammarContent from './pages/GrammarContent/GrammarContent'
@@ -62,6 +63,7 @@ const App = ()=> {
           <Route path="/japanese/vocabulary" element={<VocabContentNew languageNumber={1} />} />
           <Route path="/japanese/writing-systems" element={<JapaneseWritingSystems />} />
           <Route path="/japanese/study-guide" element={<JapaneseStudyGuide/>} />
+          <Route path="/*" element={<Custom404Error/>} />
         </Routes>
       </div>
       <Modal show ={reduxAuth.modalToShow !== authModalStates.none}
