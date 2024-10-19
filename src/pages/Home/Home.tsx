@@ -10,6 +10,12 @@ export const Home = () =>{
   const dispatch = useDispatch();
   // @ts-ignore
   const { currentUser } = useAuth();
+
+  // Prevent toggleNavbar on flag clicks
+  const handleFlagClick = (event: any) => {
+    event.stopPropagation();
+  };
+
   // outer div needed here for layout; don't use fragment 
   return <div onClick={() => dispatch(toggleNavbar())}> 
     {currentUser && currentUser.email && 
@@ -17,21 +23,21 @@ export const Home = () =>{
       Welcome user with email: {currentUser && currentUser.email}
     </div>
     }
-    <div className = "imageContent" >
-      <img src ={lingoCommandLogo} width={220} height={220} alt="LingoCommand Logo"/>
+    <div className="imageContent">
+      <img src={lingoCommandLogo} width={220} height={220} alt="LingoCommand Logo"/>
     </div>
-    <div className = "content2">
+    <div className="content2">
       <div style={{ paddingTop: '10px', fontSize: '22px' }}> 
       Learn foreign languages faster     
       </div>
       <div style={{ display: 'flex', paddingTop: '50px' }}>
-        <a href="/spanish"style={{ margin:'30px' }} >
+        <a href="/spanish" style={{ margin:'30px' }} onClick={handleFlagClick}>
           <img src={spanishFlag} alt="Spanish flag"/>
           <div>
-        Spanish
+            Spanish
           </div> 
         </a>
-        <a href="/japanese" style={{ margin:'30px' }}>
+        <a href="/japanese" style={{ margin:'30px' }} onClick={handleFlagClick}>
           <img src={japaneseFlag} alt="Japanese flag"/>
           <div>
             Japanese
