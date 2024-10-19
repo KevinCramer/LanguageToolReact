@@ -1,8 +1,7 @@
 import './Home.scss'
-import blackBar from '../../assets/blackBar.png';
-import newLogoSvg from '../../assets/newLogoSvg.svg';
-import spanishFlag from '../../assets/flag-icons/spanish-flag-icon.svg'
 import japaneseFlag from '../../assets/flag-icons/japanese-flag-icon.svg'
+import lingoCommandLogo from '../../assets/lingoCommandLogo.svg';
+import spanishFlag from '../../assets/flag-icons/spanish-flag-icon.svg'
 import { toggleNavbar } from '../../redux-store/navbar';
 import { useAuth } from '../../contexts/AuthContext'
 import { useDispatch } from 'react-redux';
@@ -19,7 +18,7 @@ export const Home = () =>{
     </div>
     }
     <div className = "imageContent" >
-      <img src ={newLogoSvg} width={220} height={220} alt="LingoCommand Logo"/>
+      <img src ={lingoCommandLogo} width={220} height={220} alt="LingoCommand Logo"/>
     </div>
     <div className = "content2">
       <div style={{ paddingTop: '10px', fontSize: '22px' }}> 
