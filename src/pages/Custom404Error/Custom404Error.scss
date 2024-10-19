@@ -1,10 +1,14 @@
 .custom-404-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: left;
-  padding-top: 10%;
-  padding-left: 15%;
-  padding-right:15%;
+  align-items: center;
+  height: 60vh;
   width: 100vw;
-  font-size: 18px;
-}
+  }
+  
+  .text-wrapper {
+    display: inline-block; /* Keeps the text and link on the same line */
+    text-align: center;  
+
+  }

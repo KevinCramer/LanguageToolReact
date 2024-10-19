@@ -5,7 +5,9 @@ const Custom404Error = () => {
   return (
     <>
       <div className="custom-404-container">
-  Oh no! that page does not exist. Head to our&nbsp;<a href='/'>homepage</a>&nbsp;that does exist.
+        <div className="text-wrapper">
+        Oh no! That page does not exist. Head to our <a href='/'>homepage</a> that does exist.
+        </div>   
       </div>
     </>
   );
