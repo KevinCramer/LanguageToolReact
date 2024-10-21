@@ -25,7 +25,7 @@ export default function Signup() {
     }
 
     if( emailRef.current && emailRef.current.value !== 'kevincramer1996@gmail.com') {
-      return setError('Sorry we are currently not accepting signups due to the ICO data protection fee of £40/year. ')
+      return setError('Sorry we are currently not accepting signups to avoid incurring the ICO data protection fee. ')
     }
 
     try {
