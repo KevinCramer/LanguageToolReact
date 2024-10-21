@@ -12,7 +12,7 @@ const Spanish = () => {
         <div>
           <h4> Spanish</h4>
           <div>
-          LingoCommand helps beginners learn Spanish and gain confidence in their skills. We also offers valuable content for advanced users. Try our study guide below:
+          LingoCommand helps beginners learn Spanish and gain confidence in their skills. We also offer valuable content for advanced users. Try our study guide below:
           </div>
           <div className="study-materials-div">
             <a href="/spanish/study-guide" 
@@ -23,7 +23,7 @@ const Spanish = () => {
           </div>
         </div>
         <div style={{ paddingTop:'30px' }}>
-        Alternatively, you can create your own study plan using the resources available. At LingoCommand the Spanish study materials are divided into three main sections:
+        Alternatively, you can create your own study plan using the resources available at LingoCommand. The Spanish study materials are divided into three main sections:
         </div>
         <div className="study-materials-div">
           <a href="/spanish/vocabulary" style={{ textAlign: 'center', margin: '10px', paddingRight: '30px', paddingLeft: '20px' }}>

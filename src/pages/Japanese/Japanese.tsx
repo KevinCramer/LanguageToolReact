@@ -13,7 +13,7 @@ const Japanese = () => {
       <div className="japanese-container">
         <h4> Japanese</h4>
         <div style={{ paddingTop: '20px' }}>
-        LingoCommand helps beginners learn Japanese and gain confidence in their skills. We also offers valuable content for advanced users. Try our study guide below:
+        LingoCommand helps beginners learn Japanese and gain confidence in their skills. We also offer valuable content for advanced users. Try our study guide below:
         </div>
         <div className="study-materials-div">
           <a href="/japanese/study-guide" style={{ paddingLeft: '50px', paddingRight: '30px' }}>
@@ -24,7 +24,7 @@ const Japanese = () => {
           </a>
         </div>
         <div style={{ paddingTop: '20px' }}>
-        Alternatively, you can create your own study plan using the resources available. At LingoCommand the Japanese study materials are divided into two main sections:
+        Alternatively, you can create your own study plan using the resources available at LingoCommand. The Japanese study materials are divided into two main sections:
         </div>
         <div className="study-materials-div">
           <a href="/japanese/writing-systems" style={{ paddingLeft: '50px', paddingRight: '30px' }}>
