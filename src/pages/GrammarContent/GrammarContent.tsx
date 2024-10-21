@@ -14,6 +14,7 @@ const GrammarContent = (
     }) => {
   const navigate = useNavigate();
   const { topicSlug } = useParams(); // Extract the topicSlug from the URL
+  console.log(props.languageNumber)
 
   var currentLanguage: Language = languages[props.languageNumber]
 
@@ -22,14 +23,14 @@ const GrammarContent = (
   var [currentTopic,setCurrentTopic] = useState(currentTopic)
 
   const changeCurrentTopic = (topic: Topic) => {
-    navigate(`/spanish/grammar/${topic.slugName}`)
+    navigate(`/${currentLanguage.languageName.toLowerCase()}/grammar/${topic.slugName}`)
     return setCurrentTopic(topic);}
 
   useEffect(() => {
     const settings = [
       topicSlug
     ]
-    navigate(`/spanish/grammar/${topicSlug}`);
+    navigate(`/${currentLanguage.languageName.toLowerCase()}/grammar/${topicSlug}`);
 
   }, [
     currentLanguage.languageName, topicSlug, currentTopic.slugName, navigate ]);

@@ -63,6 +63,8 @@ const App = ()=> {
           <Route path="/japanese/vocabulary" element={<VocabContentNew languageNumber={1} />} />
           <Route path="/japanese/writing-systems" element={<JapaneseWritingSystems />} />
           <Route path="/japanese/study-guide" element={<JapaneseStudyGuide/>} />
+          <Route path="/japanese/grammar/:topicSlug" element={<GrammarContent languageNumber={1} />} />
+          <Route path="/japanese/listening-comprehension/:topicSlug" element={<ListeningComprehension languageNumber={1}/>} />
           <Route path="/*" element={<Custom404Error/>} />
         </Routes>
       </div>

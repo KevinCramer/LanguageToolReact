@@ -33,7 +33,7 @@ const ListeningComprehensionContent = (props: { languageNumber: number }) => {
   const changeCurrentAudioTranscription = (currentAudioTranscription: AudioTranscription) => {
     const query = new URLSearchParams(location.search);
     query.set('eng', transcriptionInEnglish ? 'T' : 'F');
-    navigate(`/spanish/listening-comprehension/${currentAudioTranscription.slugName}?${query.toString()}`);
+    navigate(`/${currentLanguage.languageName.toLowerCase()}/listening-comprehension/${currentAudioTranscription.slugName}?${query.toString()}`);
     setCurrentAudioTranscription(currentAudioTranscription);
   };
 
@@ -50,7 +50,7 @@ const ListeningComprehensionContent = (props: { languageNumber: number }) => {
   useEffect(() => {
     const query = new URLSearchParams(location.search);
     query.set('eng', transcriptionInEnglish ? 'T' : 'F');
-    navigate(`/spanish/listening-comprehension/${topicSlug}?${query.toString()}`, { replace: true });
+    navigate(`/${currentLanguage.languageName.toLowerCase()}/listening-comprehension/${topicSlug}?${query.toString()}`, { replace: true });
   }, [currentLanguage.languageName, topicSlug, currentAudioTranscription.slugName, navigate, transcriptionInEnglish]);
 
   const renderListeningComprehensionTopic = () => (
