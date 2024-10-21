@@ -8,7 +8,7 @@ import { useDispatch } from 'react-redux'
 
 export default function Signup() {
   const dispatch = useDispatch();
-  const emailRef = useRef()
+  const emailRef = useRef<HTMLInputElement>(null);
   const passwordRef = useRef()
   const passwordConfirmRef = useRef()
   // @ts-ignore
@@ -22,6 +22,10 @@ export default function Signup() {
     // @ts-ignore
     if (passwordRef.current.value !== passwordConfirmRef.current.value) {
       return setError('Passwords do not match')
+    }
+
+    if( emailRef.current && emailRef.current.value !== 'kevincramer1996@gmail.com') {
+      return setError('Sorry we are currently not accepting signups due to the ICO data protection fee of £40/year. ')
     }
 
     try {
