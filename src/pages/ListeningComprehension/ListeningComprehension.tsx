@@ -21,38 +21,43 @@ const ListeningComprehensionContent = (props: { languageNumber: number }) => {
     (t) => t.slugName === topicSlug
   ) || currentLanguage.audioTranscriptions[0];
 
-  // Read the 'transcriptionInEnglish' from query params or default to false
+  // Read the 'transcriptionInEnglish' and 'numAlphabet' from query params or default values
   const queryParams = new URLSearchParams(location.search);
   const initialTranscriptionInEnglish = queryParams.get('eng') === 'T';
+  const initialAlphabet = parseInt(queryParams.get('numAlphabet') || '0')
 
   const [currentAudioTranscription, setCurrentAudioTranscription] = useState<AudioTranscription>(
     initialAudioTranscription
   );
 
   const [transcriptionInEnglish, setTranscriptionInEnglish] = useState(initialTranscriptionInEnglish);
+  
+  const [currentAlphabet, setCurrentAlphabet] = useState(initialAlphabet);
 
   const changeCurrentAudioTranscription = (currentAudioTranscription: AudioTranscription) => {
-    const query = new URLSearchParams(location.search);
-    query.set('eng', transcriptionInEnglish ? 'T' : 'F');
-    navigate(`/${currentLanguage.languageName.toLowerCase()}/listening-comprehension/${currentAudioTranscription.slugName}?${query.toString()}`);
     setCurrentAudioTranscription(currentAudioTranscription);
+    updateURL(currentAudioTranscription.slugName);
   };
 
   const toggleTranscriptionLanguage = () => {
     const newTranscriptionInEnglish = !transcriptionInEnglish;
     setTranscriptionInEnglish(newTranscriptionInEnglish);
-
-    // Update the URL with the new transcriptionInEnglish state
-    const query = new URLSearchParams(location.search);
-    query.set('eng', newTranscriptionInEnglish ? 'T' : 'F');
-    navigate(`${location.pathname}?${query.toString()}`);
+    updateURL(currentAudioTranscription.slugName, newTranscriptionInEnglish);
   };
 
-  var currentAlphabet: number = 0;
-  var [currentAlphabet,setCurrentAlphabet] = useState(currentAlphabet)
-  const changeCurrentAlphabet = () => { return setCurrentAlphabet(
-    currentAlphabet = (currentAlphabet + 1) % currentLanguage.numForeignAlphabets)}
-    
+  const changeCurrentAlphabet = () => {
+    const newAlphabet = (currentAlphabet + 1) % currentLanguage.numForeignAlphabets;
+    setCurrentAlphabet(newAlphabet);
+    updateURL(currentAudioTranscription.slugName, transcriptionInEnglish, newAlphabet);
+  };
+
+  const updateURL = (slugName: string, transcriptionEng: boolean = transcriptionInEnglish, alphabet: number = currentAlphabet) => {
+    const query = new URLSearchParams(location.search);
+    query.set('eng', transcriptionEng ? 'T' : 'F');
+    query.set('numAlphabet', alphabet.toString());
+    navigate(`/${currentLanguage.languageName.toLowerCase()}/listening-comprehension/${slugName}?${query.toString()}`);
+  };
+
   useEffect(() => {
     const query = new URLSearchParams(location.search);
     query.set('eng', transcriptionInEnglish ? 'T' : 'F');
@@ -78,7 +83,6 @@ const ListeningComprehensionContent = (props: { languageNumber: number }) => {
           <tr>
             <th>Audio</th>
             <th>Transcription ({transcriptionInEnglish ? 'English' : currentLanguage.languageName}) 
-
               { currentLanguage.numForeignAlphabets > 1 && <CustomButton disabled={false} onClick={changeCurrentAlphabet}>
                 toggle foreign alphabet 
               </CustomButton>}
@@ -93,7 +97,7 @@ const ListeningComprehensionContent = (props: { languageNumber: number }) => {
                   <td colSpan={2} style={{ textAlign: 'center' }}></td>
                 </tr>
               )}
-              <tr>
+              <tr key={index}>
                 <td style={{ height: '10px' }}>
                   <div style={{ display: 'flex', alignItems: 'center', height: '100%' }}>
                     <AudioPlayer audioFile={content.audioFile} />
