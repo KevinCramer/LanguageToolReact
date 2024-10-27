@@ -83,7 +83,7 @@ const ListeningComprehensionContent = (props: { languageNumber: number }) => {
           <tr>
             <th>Audio</th>
             <th>Transcription ({transcriptionInEnglish ? 'English' : currentLanguage.languageName}) 
-              { currentLanguage.numForeignAlphabets > 1 && <CustomButton disabled={false} onClick={changeCurrentAlphabet}>
+              { currentLanguage.numForeignAlphabets > 1 && !transcriptionInEnglish && <CustomButton disabled={false} onClick={changeCurrentAlphabet}>
                 toggle foreign alphabet 
               </CustomButton>}
             </th>
