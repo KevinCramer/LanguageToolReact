@@ -42,7 +42,7 @@ const Japanese = () => {
             <img src={dart} width={80} height={80} alt="Grammar Icon" style={{ display: 'block', margin: '0 auto 10px' }} />
             <div >Grammar</div>
           </a>
-          <a href="/japanese/listening-comprehension/me-gusta-leer"style={{ textAlign: 'center', margin: '10px' }}>
+          <a href="/japanese/listening-comprehension/aiko’s-book-sanctuary"style={{ textAlign: 'center', margin: '10px' }}>
             <img src={headphones} width={80} height={80} alt="Listening Comprehension Icon" style={{ display: 'block', margin: '0 auto 10px' }} />
             <div>Listening <br />Comprehension</div>
           </a>
