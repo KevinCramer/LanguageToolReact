@@ -1,8 +1,8 @@
 import { AudioTranscriptionWithOneAlphabet, AudioTranscriptionWithThreeAlphabet, Language } from '../../../types/listeningComprehension'
 
-import iLikeReadingPart1 from '../raw-data/listening-comprehension//spanish/i-like-reading-part1.mp3'
-import iLikeReadingPart2 from '../raw-data/listening-comprehension//spanish/i-like-reading-part2.mp3'
-import iLikeReadingPart3 from '../raw-data/listening-comprehension//spanish/i-like-reading-part3.mp3'
+import shoppingForFamilyMealsPart1 from '../raw-data/listening-comprehension//spanish/shopping-for-family-meals-part1.mp3'
+import shoppingForFamilyMealsPart2 from '../raw-data/listening-comprehension//spanish/shopping-for-family-meals-part2.mp3'
+import shoppingForFamilyMealsPart3 from '../raw-data/listening-comprehension//spanish/shopping-for-family-meals-part3.mp3'
 
 import aikosBookSanctuaryPart1 from '../raw-data/listening-comprehension/japanese/aiko-book-sanctuary-part1.mp3'
 import aikosBookSanctuaryPart2 from '../raw-data/listening-comprehension/japanese/aiko-book-sanctuary-part2.mp3'
@@ -46,22 +46,22 @@ const japaneseAudioTranscriptions: AudioTranscriptionWithThreeAlphabet[] = [
 const spanishAudioTranscriptions: AudioTranscriptionWithOneAlphabet[] = [
   // https://snappyspanish.com/beginner-spanish-story-the-feeling-of-winning/
   {
-    name:'Me gusta leer', slugName: 'me-gusta-leer', contents: [
+    name:'Shopping for Family Meals', slugName: 'shopping-for-family-meals', contents: [
       { 
-        englishText: 'Do you like reading? I read a book every week. And sometimes I read two books. Also, I’m a journalist and I have to read a lot at work. I’m a specialist in scientific news and everyday I write one article.', 
-        foreignText: ['¿Te gusta leer? Yo leo un libro todas las semanas. Y a veces, leo dos libros. Además, soy periodista y tengo que leer mucho en el trabajo. Soy especialista en noticias científicas y todos los días escribo un artículo.'],
-        audioFile: iLikeReadingPart1
+        englishText: 'Every week, I go to the grocery store to buy food for my family. It’s one of my favorite tasks because I love cooking. As I walk through the store, I start in the fresh produce section. I pick up bright red apples, green lettuce, and ripe bananas. The smell of fresh fruits and vegetables always makes me feel good. I love the colors, too; everything looks so fresh and inviting.', 
+        foreignText: ['Cada semana, voy al supermercado a comprar comida para mi familia. Es una de mis tareas favoritas porque me encanta cocinar. Al caminar por la tienda, empiezo en la sección de productos frescos. Tomo manzanas rojas brillantes, lechuga verde y plátanos maduros. El olor de las frutas y verduras frescas siempre me hace sentir bien. También me encantan los colores; todo se ve tan fresco y atractivo.'],
+        audioFile: shoppingForFamilyMealsPart1
       },
       { 
-        englishText: 'I always buy books in this bookstore. It is very big, right? The owner’s name is Teresa and she is a very nice woman. Also, she knows alot about books. Every week I go to the bookstore to buy a new book. Sometimes, I don’t know which book to choose. So, I ask Teresa and she always says “The best books are those of Cervantes and Gabriel García Márquez”.', 
-        foreignText: ['Yo siempre compro libros en esta librería. Es muy grande, ¿verdad? La dueña se llama Teresa y es una mujer muy simpática. Además, ella sabe mucho sobre libros. Todas las semanas voy a la librería a comprar un nuevo libro. A veces, no sé qué libro escoger. Entonces, yo pregunto a Teresa y ella siempre dice “Los mejores libros son los de Cervantes y Gabriel García Márquez”.'], 
-        audioFile: iLikeReadingPart2
+        englishText: 'Next, I head to the bakery. I can’t resist the soft, warm bread. I choose a loaf of whole wheat and some sweet pastries for breakfast. The smell of baked goods fills the air, making my mouth water. Then, I go to the meat section. I look for chicken breasts and ground beef, checking the packages to find the freshest options. I always try to pick lean cuts to keep our meals healthy.', 
+        foreignText: ['A continuación, me dirijo a la panadería. No puedo resistirme al pan suave y caliente. Elijo un pan integral y algunos pasteles dulces para el desayuno. El aroma de los productos horneados llena el aire, haciendo que se me haga agua la boca. Luego, voy a la sección de carne. Busco pechugas de pollo y carne molida, revisando los paquetes para encontrar las opciones más frescas. Siempre trato de elegir cortes magros para mantener nuestras comidas saludables.'], 
+        audioFile: shoppingForFamilyMealsPart2
 
       },
       { 
-        englishText: 'At night, after dinner, I go to the living room to rest. I sit down, open a book and start to read. Sometimes, I listen to music at the same time. I like history books. I esepcially like biographies. The lives of actors, athletes or politicians are very interesting. And I always learn a lot of new things. Books are better than the television.', 
-        foreignText: ['Por la noche, después de cenar, voy al salón a descansar. Me siento, abro un libro y empiezo a leer. A veces, escucho música al mismo tiempo. Me gustan los libros de historia. En especial, me gustan las biografías. La vida de actores, deportistas o políticos es muy interesante. Y yo siempre aprendo muchas cosas nuevas. Los libros son mejores que la televisión.'],
-        audioFile: iLikeReadingPart3
+        englishText: 'Finally, I visit the dairy aisle, grabbing some milk, cheese, and yogurt. I like to eat healthy, so I also pick up a few boxes of whole grain cereal. As I make my way to the snack aisle, I choose some nuts and dark chocolate for treats. As I finish my shopping, I feel satisfied. I love filling my cart with good food, ready to make delicious meals for my family. Shopping at the grocery store is a simple joy in my week!', 
+        foreignText: ['Finalmente, visito la sección de lácteos, agarrando leche, queso y yogur. Me gusta comer sano, así que también llevo algunas cajas de cereales integrales. A medida que me dirijo a la sección de snacks, elijo algunos frutos secos y chocolate negro para mis antojos. Cuando termino de comprar, me siento satisfecho. Me encanta llenar mi carrito con buena comida, lista para preparar deliciosas comidas para mi familia. ¡Hacer las compras en el supermercado es una alegría simple en mi semana!'],
+        audioFile: shoppingForFamilyMealsPart3
 
       },
       
