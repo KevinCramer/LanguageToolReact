@@ -8,6 +8,7 @@ import AudioPlayer from '../../components/atoms/CustomAudioPlayer/CustomAudioPla
 import CustomDropDownButton from '../../components/atoms/CustomDropDownButton/CustomDropDownButton';
 import CustomSwitch from '../../components/atoms/CustomSwitch/CustomSwitch';
 import Dropdown from 'react-bootstrap/Dropdown';
+import CustomButton from '../../components/atoms/CustomButton/CustomButton';
 
 const ListeningComprehensionContent = (props: { languageNumber: number }) => {
   const navigate = useNavigate();
@@ -47,6 +48,11 @@ const ListeningComprehensionContent = (props: { languageNumber: number }) => {
     navigate(`${location.pathname}?${query.toString()}`);
   };
 
+  var currentAlphabet: number = 0;
+  var [currentAlphabet,setCurrentAlphabet] = useState(currentAlphabet)
+  const changeCurrentAlphabet = () => { return setCurrentAlphabet(
+    currentAlphabet = (currentAlphabet + 1) % currentLanguage.numForeignAlphabets)}
+    
   useEffect(() => {
     const query = new URLSearchParams(location.search);
     query.set('eng', transcriptionInEnglish ? 'T' : 'F');
@@ -71,7 +77,12 @@ const ListeningComprehensionContent = (props: { languageNumber: number }) => {
         <thead>
           <tr>
             <th>Audio</th>
-            <th>Transcription ({transcriptionInEnglish ? 'English' : currentLanguage.languageName})</th>
+            <th>Transcription ({transcriptionInEnglish ? 'English' : currentLanguage.languageName}) 
+
+              { currentLanguage.numForeignAlphabets > 1 && <CustomButton disabled={false} onClick={changeCurrentAlphabet}>
+                toggle foreign alphabet 
+              </CustomButton>}
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -88,7 +99,7 @@ const ListeningComprehensionContent = (props: { languageNumber: number }) => {
                     <AudioPlayer audioFile={content.audioFile} />
                   </div>
                 </td>
-                <td>{transcriptionInEnglish ? content.englishText : content.foreignText}</td>
+                <td>{transcriptionInEnglish ? content.englishText : content.foreignText[currentAlphabet]}</td>
               </tr>
             </>
           ))}
