@@ -24,7 +24,7 @@ const Japanese = () => {
           </a>
         </div>
         <div style={{ paddingTop: '20px' }}>
-        Alternatively, you can create your own study plan using the resources available at LingoCommand. The Japanese study materials are divided into two main sections:
+        Alternatively, you can create your own study plan using the resources available at LingoCommand. The Japanese study materials are divided into four main sections:
         </div>
         <div className="study-materials-div">
           <a href="/japanese/writing-systems" style={{ paddingLeft: '50px', paddingRight: '30px' }}>

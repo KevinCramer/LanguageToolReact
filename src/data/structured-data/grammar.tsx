@@ -5,7 +5,11 @@ import { Language, Topic } from '../../../types/grammarTypes'
 
 // https://www.spanish.academy/blog/spanish-grammar-for-beginners-8-parts-of-speech/
 const japaneseTopics: Topic[] = [
-  { name:'definite article', slugName: 'definite-article', contents: [' The definite article specificies which object, person, or place is being talked about. English only has one definite article, namely the word "the". For example we say "the car", or "the city" in English. Spanish on the other hand has 4 definite articles:','\0', '1) Masculine singular: el','2) Masculine plural: los', '3) Feminine singular: la', '4) Feminine plural: las','\0', 'For example the word for hand in Spanish is mano. Mano is a feminine noun in Spanish. Thus "the hand" is in Spanish "la mano".'] }, 
+  { name:'Keigo', slugName: 'keigo', contents: ['Keigo (敬語) is the Japanese system of polite or honorific language, used to show respect and social hierarchy. Essential in formal settings, it’s divided into three main types:','\0',
+    'Sonkeigo (尊敬語) – Respectful Language: Used to elevate the status of the person you’re speaking about. Common in business or when speaking about superiors. For example, 行く (iku - to go) becomes いらっしゃる (irassharu).','\0',
+    'Kenjougo (謙譲語) – Humble Language: Used to lower oneself, showing humility when talking about your own actions or those of your group. For instance, する (suru - to do) becomes いたす (itasu).','\0',
+    'Teineigo (丁寧語) – Polite Language: Adds a general level of formality, often ending with -ます (masu) and -です (desu). It’s commonly used in everyday polite conversation.','\0',
+    'Mastering keigo takes practice, as it involves specific word forms and vocabulary shifts. However, understanding keigo is essential for professional interactions and showing respect in Japanese culture.'] }, 
 ]
 
 // https://www.spanish.academy/blog/spanish-grammar-for-beginners-8-parts-of-speech/
