@@ -78,7 +78,7 @@ const ListeningComprehensionContent = (props: { languageNumber: number }) => {
           {currentLanguage.languageName}
         </div>
       </div>
-      <Table striped bordered hover size="sm" className="transcription-table">
+      <table className="scrolldown">
         <thead>
           <tr>
             <th>Audio</th>
@@ -92,11 +92,6 @@ const ListeningComprehensionContent = (props: { languageNumber: number }) => {
         <tbody>
           {currentAudioTranscription.contents.map((content: Paragraph, index: number) => (
             <>
-              {index !== 0 && (
-                <tr>
-                  <td colSpan={2} style={{ textAlign: 'center' }}></td>
-                </tr>
-              )}
               <tr key={index}>
                 <td style={{ height: '10px' }}>
                   <div style={{ display: 'flex', alignItems: 'center', height: '100%' }}>
@@ -108,7 +103,7 @@ const ListeningComprehensionContent = (props: { languageNumber: number }) => {
             </>
           ))}
         </tbody>
-      </Table>
+      </table>
     </div>
   );
 
