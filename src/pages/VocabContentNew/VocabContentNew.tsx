@@ -254,7 +254,7 @@ const VocabContentNew = (
                 toggle foreign alphabet</Dropdown.Item>}
               </CustomDropDownButton>  
               <CustomButton disabled={false} backgroundColor='rgb(13, 110,253)' color='white' onClick={displayPopUp}>
-                <div style={{ fontWeight: 'bold' }}>?</div>
+                <div style={{ fontWeight: 'bold' }}>info</div>
               </CustomButton> 
             </div>             
           </Container>

@@ -27,6 +27,7 @@ import { useAuth } from './contexts/AuthContext'
 import { useEffect } from 'react'
 import VocabContent from './pages/VocabContent/VocabContent'
 import VocabContentNew from './pages/VocabContentNew/VocabContentNew'
+import myVideo from './data/raw-data/tutorial-videos/japanese-comprehension-video-guide.mp4'
 
 const App = ()=> {
   // will log out user iff there is no lingocommand tab 
@@ -64,7 +65,7 @@ const App = ()=> {
           <Route path="/japanese/writing-systems" element={<JapaneseWritingSystems />} />
           <Route path="/japanese/study-guide" element={<JapaneseStudyGuide/>} />
           <Route path="/japanese/grammar/:topicSlug" element={<GrammarContent languageNumber={1} />} />
-          <Route path="/japanese/listening-comprehension/:topicSlug" element={<ListeningComprehension languageNumber={1}/>} />
+          <Route path="/japanese/listening-comprehension/:topicSlug" element={<ListeningComprehension languageNumber={1} howToGuideVideo={myVideo}/>} />
           <Route path="/*" element={<Custom404Error/>} />
         </Routes>
       </div>

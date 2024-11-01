@@ -10,7 +10,7 @@ import CustomSwitch from '../../components/atoms/CustomSwitch/CustomSwitch';
 import Dropdown from 'react-bootstrap/Dropdown';
 import CustomButton from '../../components/atoms/CustomButton/CustomButton';
 
-const ListeningComprehensionContent = (props: { languageNumber: number }) => {
+const ListeningComprehensionContent = (props: { languageNumber: number, howToGuideVideo?: any }) => {
   const navigate = useNavigate();
   const { topicSlug } = useParams();
   const location = useLocation();
@@ -116,7 +116,7 @@ const ListeningComprehensionContent = (props: { languageNumber: number }) => {
         <NavbarBs>
           <Container className="listening-comprehension-container">
             <div className="inner-listening-comprehension-container">
-              <CustomDropDownButton title={`Topic: ${currentAudioTranscription.name}`}>
+              <CustomDropDownButton title={`Topic: ${currentAudioTranscription.name.substring(0,10)}...`}>
                 {currentLanguage.audioTranscriptions.map((topic: AudioTranscription, index: number) => (
                   <Dropdown.Item
                     key={index}
@@ -127,10 +127,10 @@ const ListeningComprehensionContent = (props: { languageNumber: number }) => {
                 ))}
               </CustomDropDownButton>
               { currentLanguage.numForeignAlphabets > 1 && <CustomButton disabled={false} onClick={changeCurrentAlphabet}>
-                toggle alphabet 
+                toggle foreign alphabet 
               </CustomButton>}
               <CustomButton disabled={false} backgroundColor='rgb(13, 110,253)' color='white' onClick={displayPopUp}>
-                <div style={{ fontWeight: 'bold' }}>?</div>
+                <div style={{ fontWeight: 'bold', }}>info</div>
               </CustomButton>
             </div>
           </Container>
@@ -145,7 +145,10 @@ const ListeningComprehensionContent = (props: { languageNumber: number }) => {
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            Video
+            <video width="460" controls>
+              <source src={props.howToGuideVideo} type="video/mp4"/>
+              Your browser does not support the video tag.
+            </video>
           </Modal.Body>
         </Modal>
       </Container>
