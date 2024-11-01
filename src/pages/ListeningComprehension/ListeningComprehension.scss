@@ -8,16 +8,12 @@
  
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: $dark-grey; 
+  background: #acacac; 
   border-radius: 5px;
   border: 2px solid transparent;
   background-clip: content-box;
 }
 
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #555; 
-}
 
 h4 {
   text-align: center;

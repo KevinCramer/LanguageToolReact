@@ -1,6 +1,6 @@
 import './ListeningComprehension.scss';
 import { AudioTranscription, Language, Paragraph } from '../../../types/listeningComprehension';
-import { Container, Navbar as NavbarBs, Table } from 'react-bootstrap';
+import { Container, Navbar as NavbarBs } from 'react-bootstrap';
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { languages as allLanguages } from '../../data/structured-data/listeningComprehension';
@@ -8,7 +8,7 @@ import AudioPlayer from '../../components/atoms/CustomAudioPlayer/CustomAudioPla
 import CustomDropDownButton from '../../components/atoms/CustomDropDownButton/CustomDropDownButton';
 import CustomSwitch from '../../components/atoms/CustomSwitch/CustomSwitch';
 import Dropdown from 'react-bootstrap/Dropdown';
-import CustomButton from '../../components/atoms/CustomButton/CustomButton';
+import CustomButtonLight from '../../components/atoms/CustomButtonLight/CustomButton';
 
 const ListeningComprehensionContent = (props: { languageNumber: number }) => {
   const navigate = useNavigate();
@@ -83,9 +83,6 @@ const ListeningComprehensionContent = (props: { languageNumber: number }) => {
           <tr>
             <th>Audio</th>
             <th>Transcription ({transcriptionInEnglish ? 'English' : currentLanguage.languageName}) 
-              { currentLanguage.numForeignAlphabets > 1 && !transcriptionInEnglish && <CustomButton disabled={false} onClick={changeCurrentAlphabet}>
-                toggle foreign alphabet 
-              </CustomButton>}
             </th>
           </tr>
         </thead>
@@ -124,6 +121,9 @@ const ListeningComprehensionContent = (props: { languageNumber: number }) => {
                   </Dropdown.Item>
                 ))}
               </CustomDropDownButton>
+              <CustomButtonLight disabled={false} onClick={changeCurrentAlphabet}>
+                toggle alphabet 
+              </CustomButtonLight>
             </div>
           </Container>
         </NavbarBs>
