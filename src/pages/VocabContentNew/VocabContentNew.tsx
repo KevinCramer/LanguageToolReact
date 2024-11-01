@@ -226,7 +226,12 @@ const VocabContentNew = (
   return (
     <>
       <h4> {currentLanguage.languageName} Vocabulary</h4>
-      <Container >    
+      <Container >   
+        <div style={{ display: 'flex', justifyContent: 'center', paddingBottom: '20px' }}>
+          <CustomButton disabled={false} backgroundColor='rgb(13, 110,253)' color='white' onClick={displayPopUp}>
+            <div style={{ fontWeight: 'bold' } }>How to Guide</div>
+          </CustomButton>
+        </div> 
         <NavbarBs>
           <Container className='options-container'>
             <div className='div-options-container'>
@@ -253,9 +258,6 @@ const VocabContentNew = (
               <Dropdown.Item onClick = {changeCurrentAlphabet}>
                 toggle foreign alphabet</Dropdown.Item>}
               </CustomDropDownButton>  
-              <CustomButton disabled={false} backgroundColor='rgb(13, 110,253)' color='white' onClick={displayPopUp}>
-                <div style={{ fontWeight: 'bold' }}>info</div>
-              </CustomButton> 
             </div>             
           </Container>
         </NavbarBs>

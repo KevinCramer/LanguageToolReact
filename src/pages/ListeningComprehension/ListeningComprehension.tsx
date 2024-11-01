@@ -113,8 +113,14 @@ const ListeningComprehensionContent = (props: { languageNumber: number, howToGui
     <>
       <h4>{currentLanguage.languageName} Listening Comprehension</h4>
       <Container>
+        <div style={{ display: 'flex', justifyContent: 'center', paddingBottom: '20px' }}>
+          <CustomButton disabled={false} backgroundColor='rgb(13, 110,253)' color='white' onClick={displayPopUp}>
+            <div style={{ fontWeight: 'bold' } }>How to Guide</div>
+          </CustomButton>
+        </div>
         <NavbarBs>
           <Container className="listening-comprehension-container">
+       
             <div className="inner-listening-comprehension-container">
               <CustomDropDownButton title={`Topic: ${currentAudioTranscription.name.substring(0,10)}...`}>
                 {currentLanguage.audioTranscriptions.map((topic: AudioTranscription, index: number) => (
@@ -129,9 +135,6 @@ const ListeningComprehensionContent = (props: { languageNumber: number, howToGui
               { currentLanguage.numForeignAlphabets > 1 && <CustomButton disabled={false} onClick={changeCurrentAlphabet}>
                 toggle foreign alphabet 
               </CustomButton>}
-              <CustomButton disabled={false} backgroundColor='rgb(13, 110,253)' color='white' onClick={displayPopUp}>
-                <div style={{ fontWeight: 'bold', }}>info</div>
-              </CustomButton>
             </div>
           </Container>
         </NavbarBs>
