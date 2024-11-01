@@ -1,6 +1,6 @@
 import './ListeningComprehension.scss';
 import { AudioTranscription, Language, Paragraph } from '../../../types/listeningComprehension';
-import { Container, Navbar as NavbarBs } from 'react-bootstrap';
+import { Container, Modal, Navbar as NavbarBs } from 'react-bootstrap';
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { languages as allLanguages } from '../../data/structured-data/listeningComprehension';
@@ -8,7 +8,7 @@ import AudioPlayer from '../../components/atoms/CustomAudioPlayer/CustomAudioPla
 import CustomDropDownButton from '../../components/atoms/CustomDropDownButton/CustomDropDownButton';
 import CustomSwitch from '../../components/atoms/CustomSwitch/CustomSwitch';
 import Dropdown from 'react-bootstrap/Dropdown';
-import CustomButtonLight from '../../components/atoms/CustomButtonLight/CustomButtonLight';
+import CustomButton from '../../components/atoms/CustomButton/CustomButton';
 
 const ListeningComprehensionContent = (props: { languageNumber: number }) => {
   const navigate = useNavigate();
@@ -50,6 +50,11 @@ const ListeningComprehensionContent = (props: { languageNumber: number }) => {
     setCurrentAlphabet(newAlphabet);
     updateURL(currentAudioTranscription.slugName, transcriptionInEnglish, newAlphabet);
   };
+
+  var showPopUp = false;
+  var [showPopUp,setShowPopUp] = useState(showPopUp)
+  const hidePopUp = () => { return setShowPopUp(false)}
+  const displayPopUp = () => { return setShowPopUp(true)}
 
   const updateURL = (slugName: string, transcriptionEng: boolean = transcriptionInEnglish, alphabet: number = currentAlphabet) => {
     const query = new URLSearchParams(location.search);
@@ -121,15 +126,28 @@ const ListeningComprehensionContent = (props: { languageNumber: number }) => {
                   </Dropdown.Item>
                 ))}
               </CustomDropDownButton>
-              <CustomButtonLight disabled={false} onClick={changeCurrentAlphabet}>
+              { currentLanguage.numForeignAlphabets > 1 && <CustomButton disabled={false} onClick={changeCurrentAlphabet}>
                 toggle alphabet 
-              </CustomButtonLight>
+              </CustomButton>}
+              <CustomButton disabled={false} backgroundColor='rgb(13, 110,253)' color='white' onClick={displayPopUp}>
+                <div style={{ fontWeight: 'bold' }}>?</div>
+              </CustomButton>
             </div>
           </Container>
         </NavbarBs>
         <div className="audio-player-and-table-container">
           {renderListeningComprehensionTopic()}
         </div>
+        <Modal show ={showPopUp} onHide={hidePopUp}>
+          <Modal.Header closeButton>
+            <Modal.Title id="contained-modal-title-vleft">
+              How to Guide!
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            Video
+          </Modal.Body>
+        </Modal>
       </Container>
     </>
   );

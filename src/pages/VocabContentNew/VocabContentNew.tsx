@@ -1,6 +1,6 @@
 import '../../components/atoms/CustomDropDownButton/CustomDropDownButton.scss'
 import './VocabContentNew.scss'
-import { Container, Navbar as NavbarBs, Table } from 'react-bootstrap';
+import { Container, Modal, Navbar as NavbarBs, Table } from 'react-bootstrap';
 import {
   Language,
   Topic, 
@@ -26,6 +26,7 @@ import { scramble } from '../../helpers/vocab-content-helpers';
 import StudyElement from '../../components/molecules/StudyElement/StudyElement';
 import { useAuth } from '../../contexts/AuthContext'
 import { useDispatch } from 'react-redux';
+import CustomButton from '../../components/atoms/CustomButton/CustomButton';
 
 const VocabContentNew = (
   props: {
@@ -93,6 +94,11 @@ const VocabContentNew = (
   var audioBool = !nullOrUndefined(urlAudio) ? urlAudio : true 
   var [audioBool,setAudioBool] = useState(audioBool)
   const changeAudioBool = () => { return setAudioBool(!audioBool)}
+  
+  var showPopUp = false;
+  var [showPopUp,setShowPopUp] = useState(showPopUp)
+  const hidePopUp = () => { return setShowPopUp(false)}
+  const displayPopUp = () => { return setShowPopUp(true)}
 
   // Ensure default language is reflected in the URL if not already present
   useEffect(() => {
@@ -246,7 +252,10 @@ const VocabContentNew = (
                 {currentLanguage.numForeignAlphabets > 1 && !currentTopic.isAlphabet &&
               <Dropdown.Item onClick = {changeCurrentAlphabet}>
                 toggle foreign alphabet</Dropdown.Item>}
-              </CustomDropDownButton>   
+              </CustomDropDownButton>  
+              <CustomButton disabled={false} backgroundColor='rgb(13, 110,253)' color='white' onClick={displayPopUp}>
+                <div style={{ fontWeight: 'bold' }}>?</div>
+              </CustomButton> 
             </div>             
           </Container>
         </NavbarBs>
@@ -269,6 +278,16 @@ const VocabContentNew = (
         </NavbarBs>
         <p></p>
         {ToggleQuiz()}
+        <Modal show ={showPopUp} onHide={hidePopUp}>
+          <Modal.Header closeButton>
+            <Modal.Title id="contained-modal-title-vleft">
+              How to Guide!
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            Video
+          </Modal.Body>
+        </Modal>
       </Container>
     </>
   );
