@@ -8,7 +8,7 @@ import AudioPlayer from '../../components/atoms/CustomAudioPlayer/CustomAudioPla
 import CustomDropDownButton from '../../components/atoms/CustomDropDownButton/CustomDropDownButton';
 import CustomSwitch from '../../components/atoms/CustomSwitch/CustomSwitch';
 import Dropdown from 'react-bootstrap/Dropdown';
-import CustomButtonLight from '../../components/atoms/CustomButtonLight/CustomButton';
+import CustomButtonLight from '../../components/atoms/CustomButtonLight/CustomButtonLight';
 
 const ListeningComprehensionContent = (props: { languageNumber: number }) => {
   const navigate = useNavigate();

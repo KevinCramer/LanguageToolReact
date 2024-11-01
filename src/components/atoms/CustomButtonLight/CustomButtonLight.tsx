@@ -11,7 +11,7 @@ type CustomButtonLightProps = {
 const CustomButtonLight = ({ disabled, onClick, children }: CustomButtonLightProps) => {
   return (
     <Button
-      className='my-custom-button'
+      className='my-custom-button-light'
       size="sm"
       variant="secondary"
       aria-disabled={disabled}
