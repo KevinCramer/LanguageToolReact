@@ -2,7 +2,7 @@
 
 /* width */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 
 /* Track */
@@ -13,6 +13,7 @@
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: #888; 
+  border-radius: 5px;
 }
 
 /* Handle on hover */
@@ -80,6 +81,7 @@ table.scrolldown {
   /* border-collapse: collapse; */
   border-spacing: 0;
   border: 1px solid black;
+
 }
 
 /* To display the block as level element */
@@ -96,7 +98,7 @@ thead tr th {
 table.scrolldown tbody {
 
   /* Set the height of table body */
-  height: 500px;
+  height: 400px;
 
   /* Set vertical scroll */
 
