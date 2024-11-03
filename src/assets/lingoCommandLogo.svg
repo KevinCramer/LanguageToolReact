@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
-  <circle style="fill: rgba(190, 24, 24, 0); paint-order: stroke markers; stroke-width: 9.88217px; stroke: rgb(74, 74, 74);" transform="matrix(0.7092199921607971, 0, 0, 0.7074729800224304, -165.24833679199222, -24.302989959716797)" cx="584.492" cy="387.631" r="324.758"/>
+  <circle style="fill: rgba(255, 255, 255, 100); paint-order: stroke markers; stroke-width: 20px; stroke: rgb(74, 74, 74);" transform="matrix(0.7092199921607971, 0, 0, 0.7074729800224304, -165.24833679199222, -24.302989959716797)" cx="584.492" cy="387.631" r="324.758"/>
   <text style="fill: rgb(51, 51, 51); font-family: 'Times New Roman'; font-size: 28px; white-space: pre;" transform="matrix(4.613720893859863, 0, 0, 5.444302082061768, -1044.8316650390625, -756.7811889648438)"><tspan x="238.421" y="192.014">LINGO</tspan><tspan x="238.421" dy="1em">​</tspan></text>
   <text style="fill: rgb(51, 51, 51); font-family: 'Times New Roman'; font-size: 28px; white-space: pre;" transform="matrix(1.8939120769500732, 0, 0, 2.2627809047698975, -338.84515380859375, -150.8489227294922)"><tspan x="238.421" y="192.014" dy="1em">​</tspan><tspan>COMMAND</tspan></text>
 </svg>
