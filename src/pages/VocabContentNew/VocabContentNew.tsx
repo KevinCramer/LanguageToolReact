@@ -227,11 +227,9 @@ const VocabContentNew = (
     <>
       <h4> {currentLanguage.languageName} Vocabulary</h4>
       <Container >   
-        <div style={{ display: 'flex', justifyContent: 'center', paddingBottom: '20px' }}>
-          <CustomButton disabled={false} backgroundColor='rgb(13, 110,253)' color='white' onClick={displayPopUp}>
-            <div style={{ fontWeight: 'bold' } }>How to Guide</div>
-          </CustomButton>
-        </div> 
+        <div style={{ display: 'flex', justifyContent: 'center', paddingBottom: '60px' }}>
+          <button style= {{ color:'rgb(13, 110,253)', border: 'none', backgroundColor: '#F8F8F8', textDecoration: 'underline ' }} onClick={displayPopUp}>How to Guide</button>
+        </div>
         <NavbarBs>
           <Container className='options-container'>
             <div className='div-options-container'>
@@ -261,24 +259,20 @@ const VocabContentNew = (
             </div>             
           </Container>
         </NavbarBs>
-        <NavbarBs>
-          <Container className='switch-container'>
-            <div className='div-switch-container'>
-              <div style={{ marginRight: '10px', fontWeight: quiz ? 'normal' : '600' }}>
+        <Container className='switch-container'>
+          <div className='div-switch-container' style ={{ paddingTop: '20px' }}>
+            <div style={{ marginRight: '10px', fontWeight: quiz ? 'normal' : '600' }}>
                 Study
-              </div>
-              <CustomSwitch 
-                onChange = {changeQuizState}
-                checked= {quiz} 
-              /> 
-              <div style = {{ marginLeft: '10px', fontWeight: quiz ? '600' : 'normal' }}>
-                 Quiz
-              </div>               
             </div>
-          </Container>
-          
-        </NavbarBs>
-        <p></p>
+            <CustomSwitch 
+              onChange = {changeQuizState}
+              checked= {quiz} 
+            /> 
+            <div style = {{ marginLeft: '10px', fontWeight: quiz ? '600' : 'normal' }}>
+                 Quiz
+            </div>               
+          </div>
+        </Container>
         {ToggleQuiz()}
         <Modal show ={showPopUp} onHide={hidePopUp}>
           <Modal.Header closeButton>

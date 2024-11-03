@@ -112,12 +112,10 @@ const ListeningComprehensionContent = (props: { languageNumber: number, howToGui
   return (
     <>
       <h4>{currentLanguage.languageName} Listening Comprehension</h4>
+      <div style={{ display: 'flex', justifyContent: 'center', paddingBottom: '60px', paddingTop: '0px' }}>
+        <button style= {{ color:'rgb(13, 110,253)', border: 'none', backgroundColor: '#F8F8F8', textDecoration: 'underline ' }} onClick={displayPopUp}>How to Guide</button>
+      </div>
       <Container>
-        <div style={{ display: 'flex', justifyContent: 'center', paddingBottom: '20px' }}>
-          <CustomButton disabled={false} backgroundColor='rgb(13, 110,253)' color='white' onClick={displayPopUp}>
-            <div style={{ fontWeight: 'bold' } }>How to Guide</div>
-          </CustomButton>
-        </div>
         <NavbarBs>
           <Container className="listening-comprehension-container">
        

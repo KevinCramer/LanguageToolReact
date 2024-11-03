@@ -2,7 +2,7 @@
 
 h4 {
   text-align: center;
-  padding-bottom: 50px;
+  padding-bottom: 0px;
 }
 
 .table-container, .options-container, .switch-container { 
@@ -40,6 +40,7 @@ h4 {
 .div-switch-container {
   display: flex;
   flex-direction: row;
+  padding-top: 0px;
 }
 
 .topic-container {
