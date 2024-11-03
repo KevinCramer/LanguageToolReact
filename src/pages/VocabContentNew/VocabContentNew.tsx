@@ -228,7 +228,7 @@ const VocabContentNew = (
       <h4> {currentLanguage.languageName} Vocabulary</h4>
       <Container >   
         <div style={{ display: 'flex', justifyContent: 'center', paddingBottom: '60px' }}>
-          <button style= {{ color:'rgb(13, 110,253)', border: 'none', backgroundColor: '#F8F8F8', textDecoration: 'underline ' }} onClick={displayPopUp}>How to Guide</button>
+          <button style= {{ color:'rgb(13, 110,253)', border: 'none', backgroundColor: '#F8F8F8', textDecoration: 'underline', fontSize: '18px' }} onClick={displayPopUp}>How to Guide</button>
         </div>
         <NavbarBs>
           <Container className='options-container'>
