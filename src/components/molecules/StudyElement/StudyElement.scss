@@ -26,6 +26,26 @@
   width: 100%;
 }
 
-td {
-  width: 200px
+.verb-table {
+  /* Your CSS styles here */
+  border: 2px solid white;
 }
+
+.verb-table tr:first-child {
+  /* Your CSS styles here */
+  border-bottom: 2px solid white;
+}
+
+.verb-table td {
+  width: 200px;
+
+}
+
+.verb-table tr td:not(:last-child) {
+  /* Your CSS styles here */
+  border-right: 1px solid black;
+}
+
+
+
+

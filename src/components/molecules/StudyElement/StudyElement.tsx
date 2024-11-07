@@ -104,14 +104,19 @@ const StudyElement = (
       </div>}
       {isVerb && <Modal show ={showPopUp} onHide={hidePopUp}>
         <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-vcenter">
-            {(ForeignLanguageWord as VerbConjugation).infinitive}
+          <Modal.Title id="contained-modal-title-vcenter" style={{ paddingLeft: '30px', textAlign: 'center', width: '100%' }}>
+            {(ForeignLanguageWord as VerbConjugation).infinitive.toUpperCase()}
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
           {modalTenses.map((obj, i) => (
-            <tr key={i}>
-              <h5>{obj.title}</h5>
+            <table key={i} style={{ margin: '0 auto', marginBottom: '40px' }} className='verb-table'>
+              {/* Top row with a single centered cell */}
+              <tr>
+                <td colSpan={2} style={{ textAlign: 'center' }}>
+                  <h6>{obj.title}</h6>
+                </td>
+              </tr>
               {Array.from({ length: 6 }).map((_, j) => (
                 <tr key={i}> 
                   {showBaseLanguageFirst ? <td>
@@ -130,7 +135,7 @@ const StudyElement = (
                 </tr>
               ))
               }
-            </tr>
+            </table>
           ))
           }
         </Modal.Body>
