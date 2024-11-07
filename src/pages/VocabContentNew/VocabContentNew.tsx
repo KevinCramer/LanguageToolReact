@@ -30,6 +30,7 @@ import { useDispatch } from 'react-redux';
 const VocabContentNew = (
   props: {
     languageNumber: number
+    isWritingSystem?: boolean
     }) => {
   let languages = allLanguages;
   const dispatch = useDispatch();
@@ -220,7 +221,9 @@ const VocabContentNew = (
   }
   return (
     <>
-      <h4> {currentLanguage.languageName} Vocabulary</h4>
+      <h4> 
+        {currentLanguage.languageName} {props.isWritingSystem ? 'Writing Systems' : 'Vocabulary'}
+      </h4>
       <Container >   
         <div style={{ display: 'flex', justifyContent: 'center', paddingBottom: '60px' }}>
           <button style= {{ color:'rgb(13, 110,253)', border: 'none', backgroundColor: '#F8F8F8',

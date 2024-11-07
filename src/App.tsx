@@ -60,8 +60,8 @@ const App = ()=> {
           <Route path="/spanish/listening-comprehension/:topicSlug" element={<ListeningComprehension languageNumber={0}/>} />
           <Route path="/japanese" element={<Japanese/>} />
           <Route path="/japanese/vocabulary" element={<VocabContentNew languageNumber={1} />} />
-          <Route path="/japanese/writing-systems" element={<JapaneseWritingSystems />} />
-          <Route path="/japanese/writing-systems2" element={<VocabContentNew languageNumber={2} />} />
+          <Route path="/japanese/writing-systems-explanation" element={<JapaneseWritingSystems />} />
+          <Route path="/japanese/writing-systems" element={<VocabContentNew languageNumber={2} isWritingSystem ={true} />} />
           <Route path="/japanese/study-guide" element={<JapaneseStudyGuide/>} />
           <Route path="/japanese/grammar/:topicSlug" element={<GrammarContent languageNumber={1} />} />
           <Route path="/japanese/listening-comprehension/:topicSlug" element={<ListeningComprehension languageNumber={1} howToGuideVideo={myVideo}/>} />
