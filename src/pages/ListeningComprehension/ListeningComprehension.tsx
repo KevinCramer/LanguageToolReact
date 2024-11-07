@@ -71,63 +71,70 @@ const ListeningComprehensionContent = (props: { languageNumber: number, howToGui
     navigate(`/${currentLanguage.languageName.toLowerCase()}/listening-comprehension/${topicSlug}?${query.toString()}`, { replace: true });
   }, [currentLanguage.languageName, topicSlug, currentAudioTranscription.slugName, navigate, transcriptionInEnglish]);
 
+  const titleMap: Record<TranscriptionType, string> = {
+    [TranscriptionType.Audio]: `${currentLanguage.languageName} Audio`,
+    [TranscriptionType.English]:'English Transcription',
+    [TranscriptionType.WritingSystem1]: `${currentLanguage.languageName} Transcription ${currentLanguage.numForeignAlphabets > 1 ? '(Roman Alphabetisation)' : ''}`,
+    [TranscriptionType.WritingSystem2]: `${currentLanguage.languageName} Transcription (Hiragana and Katakana)`,
+    [TranscriptionType.WritingSystem3]: `${currentLanguage.languageName} Transcription (Hiragana, Katakana, and Kanji)`,
+
+  }
+
   const renderListeningComprehensionTopic = () => (
     <div className="inner-audio-player-and-table-container">
       <table className="scrolldown">
         <thead>
           <tr>
-            <th><CustomDropDownButton title={currentLeft.toString()}>
-              <Dropdown.Item
-                onClick={() =>{changeLeft(TranscriptionType.Audio)}}
-              >
-                {currentLanguage.languageName} Audio
+            <th><CustomDropDownButton title={
+              titleMap[currentLeft as TranscriptionType].length > 15 ?
+                titleMap[currentLeft as TranscriptionType].substring(0,15) + '...' :
+                titleMap[currentLeft as TranscriptionType]}>
+              <Dropdown.Item onClick={() =>{changeLeft(TranscriptionType.Audio)}}>
+                {titleMap[TranscriptionType.Audio]}
               </Dropdown.Item>
-              <Dropdown.Item
-                onClick={() =>{changeLeft(TranscriptionType.WritingSystem1)}}
-              >
-                {currentLanguage.languageName} Transcription {currentLanguage.numForeignAlphabets > 1 && '(Roman Alphabetisation)'}
+              <Dropdown.Item onClick={() =>{changeLeft(TranscriptionType.WritingSystem1)}}>
+                {titleMap[TranscriptionType.WritingSystem1]}
               </Dropdown.Item>
               {currentLanguage.numForeignAlphabets > 1 && <Dropdown.Item
                 onClick={() =>{changeLeft(TranscriptionType.WritingSystem2)}}
               >
-                {currentLanguage.languageName} Transcription(Hiragana and Katanana)
+                {titleMap[TranscriptionType.WritingSystem2]}
               </Dropdown.Item>}
               {currentLanguage.numForeignAlphabets > 2 && <Dropdown.Item
                 onClick={() =>{changeLeft(TranscriptionType.WritingSystem3)}}
               >
-                {currentLanguage.languageName} Transcription(Hiragana, Katanana, and Kanji)
+                {titleMap[TranscriptionType.WritingSystem3]}
               </Dropdown.Item>}
               <Dropdown.Item
-                onClick={() =>{changeRight(TranscriptionType.English)}}
+                onClick={() =>{changeLeft(TranscriptionType.English)}}
               >
-                English Transcription
+                {titleMap[TranscriptionType.English]}
               </Dropdown.Item>
             </CustomDropDownButton></th>
-            <th><CustomDropDownButton title={currentRight.toLocaleString()}>
-              <Dropdown.Item
-                onClick={() =>{changeRight(TranscriptionType.Audio)}}
-              >
-                {currentLanguage.languageName} Audio
+            <th><CustomDropDownButton title={
+              titleMap[currentRight as TranscriptionType].length > 15 ?
+                titleMap[currentRight as TranscriptionType].substring(0,15) + '...' :
+                titleMap[currentRight as TranscriptionType]}>
+              <Dropdown.Item onClick={() =>{changeRight(TranscriptionType.Audio)}}>
+                {titleMap[TranscriptionType.Audio]}
               </Dropdown.Item>
-              <Dropdown.Item
-                onClick={() =>{changeRight(TranscriptionType.WritingSystem1)}}
-              >
-                {currentLanguage.languageName} Transcription {currentLanguage.numForeignAlphabets > 1 && '(Roman Alphabetisation)'}
+              <Dropdown.Item onClick={() =>{changeRight(TranscriptionType.WritingSystem1)}}>
+                {titleMap[TranscriptionType.WritingSystem1]}
               </Dropdown.Item>
               {currentLanguage.numForeignAlphabets > 1 && <Dropdown.Item
                 onClick={() =>{changeRight(TranscriptionType.WritingSystem2)}}
               >
-                {currentLanguage.languageName} Transcription(Hiragana and Katanana)
+                {titleMap[TranscriptionType.WritingSystem2]}
               </Dropdown.Item>}
               {currentLanguage.numForeignAlphabets > 2 && <Dropdown.Item
                 onClick={() =>{changeRight(TranscriptionType.WritingSystem3)}}
               >
-                {currentLanguage.languageName} Transcription(Hiragana, Katanana, and Kanji)
+                {titleMap[TranscriptionType.WritingSystem3]}
               </Dropdown.Item>}
               <Dropdown.Item
                 onClick={() =>{changeRight(TranscriptionType.English)}}
               >
-                English Transcription
+                {titleMap[TranscriptionType.English]}
               </Dropdown.Item>
             </CustomDropDownButton></th>
           </tr>
@@ -181,15 +188,20 @@ const ListeningComprehensionContent = (props: { languageNumber: number, howToGui
   return (
     <>
       <h4>{currentLanguage.languageName} Listening and Reading Comprehension</h4>
-      <div style={{ display: 'flex', justifyContent: 'center', paddingBottom: '60px', paddingTop: '0px' }}>
-        <button style= {{ color:'rgb(13, 110,253)', border: 'none', backgroundColor: '#F8F8F8', textDecoration: 'underline', fontSize: '18px' }} onClick={displayPopUp}>How to Guide</button>
+      <div style={{ display: 'flex', justifyContent: 'center', paddingBottom: '60px',
+        paddingTop: '0px' }}>
+        <button style= {{ color:'rgb(13, 110,253)', border: 'none', backgroundColor: '#F8F8F8',
+          textDecoration: 'underline', fontSize: '18px' }}
+        onClick={displayPopUp}>How to Guide</button>
       </div>
       <Container>
         <NavbarBs>
           <Container className="listening-comprehension-container">
        
             <div className="inner-listening-comprehension-container">
-              <CustomDropDownButton title={`Topic: ${currentAudioTranscription.name.substring(0,10)}...`}>
+              <CustomDropDownButton title={`Topic: ${currentAudioTranscription.name.length > 15 ? 
+                currentAudioTranscription.name.substring(0,15) + '...' 
+                : currentAudioTranscription.name}`}>
                 {currentLanguage.audioTranscriptions.map((topic: AudioTranscription, index: number) => (
                   <Dropdown.Item
                     key={index}
