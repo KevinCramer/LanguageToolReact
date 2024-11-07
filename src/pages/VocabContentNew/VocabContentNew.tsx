@@ -160,6 +160,7 @@ const VocabContentNew = (
                       showAudio = {audioBool} 
                       showBaseLanguageFirst = {showBaseLanguage} 
                       isVerb = {currentTopic.name === 'Verbs'}
+                      strokeOrderVideo = {pair.strokeOrderVideo}
                       pronouns = {currentLanguage.pronouns}
                       showLeftLabel = {true}
                     />
@@ -174,6 +175,7 @@ const VocabContentNew = (
                       showAudio = {audioBool} 
                       showBaseLanguageFirst = {showBaseLanguage} 
                       isVerb = {currentTopic.name === 'Verbs'}
+                      strokeOrderVideo = {pair.strokeOrderVideo}
                       pronouns = {currentLanguage.pronouns}
                       showLeftLabel = {false}
                     />

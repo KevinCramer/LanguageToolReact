@@ -29,6 +29,7 @@ export type WordWithNumAlphabets<N extends number> = {
     foreignWord: FixedSizeArray<N, string | VerbConjugationForeign>;
     foreignAudio: string;
     order?: number;
+    strokeOrderVideo?: any;
 }
 
 export type WordWithOneAlphabet = WordWithNumAlphabets<1>;

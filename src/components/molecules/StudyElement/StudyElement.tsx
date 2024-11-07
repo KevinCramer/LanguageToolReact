@@ -22,6 +22,7 @@ const StudyElement = (
     showAudio: boolean,
     showBaseLanguageFirst: boolean,
     isVerb: boolean,
+    strokeOrderVideo?: any,
     pronouns: string[]
     showLeftLabel: boolean, 
   }) => 
@@ -35,6 +36,7 @@ const StudyElement = (
       showAudio,
       showBaseLanguageFirst,
       isVerb,
+      strokeOrderVideo,
       pronouns,
       showLeftLabel
     } = props
@@ -79,9 +81,12 @@ const StudyElement = (
   const foreignLanguageLabelVerb = <label className='verb-label' onClick={displayPopUp}>
     { showBaseLanguageFirst ? (ForeignLanguageWord as VerbConjugation).infinitive : 
       (BaseLanguageWord as VerbConjugation).infinitive} </label>
+  const foreignLanguageLabelStrokeOrder = <label className='foreign-language-label-stroke-order'
+    onClick={displayPopUp}> <> {ForeignLanguageWord}</></label>
   const foreignLanguageLabelNoVerb = <label className='foreign-language-label-no-verb'>
     <> {ForeignLanguageWord}</></label>
-  const foreignLanguageLabel = isVerb ? foreignLanguageLabelVerb : foreignLanguageLabelNoVerb
+  console.log('strokeOrderVideo:', strokeOrderVideo)
+  const foreignLanguageLabel = isVerb ? foreignLanguageLabelVerb : (!!strokeOrderVideo ? foreignLanguageLabelStrokeOrder : foreignLanguageLabelNoVerb)
   return (
     <Navbar>
       { showLeftLabel ? (
@@ -129,6 +134,19 @@ const StudyElement = (
             </tr>
           ))
           }
+        </Modal.Body>
+      </Modal>}
+      {!!strokeOrderVideo && <Modal show ={showPopUp} onHide={hidePopUp}>
+        <Modal.Header closeButton>
+          <Modal.Title id="contained-modal-title-vleft">
+            {(ForeignLanguageWord as VerbConjugation).infinitive}
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <video width="460" controls>
+            <source src={ strokeOrderVideo} type="video/mp4"/>
+              Your browser does not support the video tag.
+          </video>        
         </Modal.Body>
       </Modal>}
     </Navbar>
