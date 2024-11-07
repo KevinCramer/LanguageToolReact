@@ -43,8 +43,8 @@ const Japanese = () => {
             <div >Grammar</div>
           </a>
           <a href="/japanese/listening-comprehension/aiko’s-book-sanctuary"style={{ textAlign: 'center', margin: '10px' }}>
-            <img src={headphones} width={80} height={80} alt="Listening Comprehension Icon" style={{ display: 'block', margin: '0 auto 10px' }} />
-            <div>Listening <br />Comprehension</div>
+            <img src={headphones} width={80} height={80} alt="Listening and Reading Comprehension Icon" style={{ display: 'block', margin: '0 auto 10px' }} />
+            <div>Listening and Reading <br />Comprehension</div>
           </a>
         </div>
         <i style={{ fontSize:'16px', paddingTop: '30px', paddingBottom: '30px' }}>

@@ -180,7 +180,7 @@ const ListeningComprehensionContent = (props: { languageNumber: number, howToGui
 
   return (
     <>
-      <h4>{currentLanguage.languageName} Reading and Listening Comprehension</h4>
+      <h4>{currentLanguage.languageName} Listening and Reading Comprehension</h4>
       <div style={{ display: 'flex', justifyContent: 'center', paddingBottom: '60px', paddingTop: '0px' }}>
         <button style= {{ color:'rgb(13, 110,253)', border: 'none', backgroundColor: '#F8F8F8', textDecoration: 'underline', fontSize: '18px' }} onClick={displayPopUp}>How to Guide</button>
       </div>
