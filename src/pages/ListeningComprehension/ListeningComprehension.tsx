@@ -83,25 +83,25 @@ const ListeningComprehensionContent = (props: { languageNumber: number, howToGui
                 {currentLanguage.languageName} Audio
               </Dropdown.Item>
               <Dropdown.Item
-                onClick={() =>{changeLeft(TranscriptionType.English)}}
-              >
-                Transcription( English)
-              </Dropdown.Item>
-              <Dropdown.Item
                 onClick={() =>{changeLeft(TranscriptionType.WritingSystem1)}}
               >
-                Transcription( Roman Alphabetisation)
+                {currentLanguage.languageName} Transcription {currentLanguage.numForeignAlphabets > 1 && '(Roman Alphabetisation)'}
               </Dropdown.Item>
-              <Dropdown.Item
+              {currentLanguage.numForeignAlphabets > 1 && <Dropdown.Item
                 onClick={() =>{changeLeft(TranscriptionType.WritingSystem2)}}
               >
-                Transcription(Hiragana and Katanana)
-              </Dropdown.Item> 
-              <Dropdown.Item
+                {currentLanguage.languageName} Transcription(Hiragana and Katanana)
+              </Dropdown.Item>}
+              {currentLanguage.numForeignAlphabets > 2 && <Dropdown.Item
                 onClick={() =>{changeLeft(TranscriptionType.WritingSystem3)}}
               >
-                  Transcription(Hiragana, Katanana, and Kanji)
-              </Dropdown.Item>  
+                {currentLanguage.languageName} Transcription(Hiragana, Katanana, and Kanji)
+              </Dropdown.Item>}
+              <Dropdown.Item
+                onClick={() =>{changeRight(TranscriptionType.English)}}
+              >
+                English Transcription
+              </Dropdown.Item>
             </CustomDropDownButton></th>
             <th><CustomDropDownButton title={currentRight.toLocaleString()}>
               <Dropdown.Item
@@ -110,25 +110,25 @@ const ListeningComprehensionContent = (props: { languageNumber: number, howToGui
                 {currentLanguage.languageName} Audio
               </Dropdown.Item>
               <Dropdown.Item
-                onClick={() =>{changeRight(TranscriptionType.English)}}
-              >
-                Transcription( English)
-              </Dropdown.Item>
-              <Dropdown.Item
                 onClick={() =>{changeRight(TranscriptionType.WritingSystem1)}}
               >
-                Transcription( Roman Alphabetisation)
+                {currentLanguage.languageName} Transcription {currentLanguage.numForeignAlphabets > 1 && '(Roman Alphabetisation)'}
               </Dropdown.Item>
-              <Dropdown.Item
+              {currentLanguage.numForeignAlphabets > 1 && <Dropdown.Item
                 onClick={() =>{changeRight(TranscriptionType.WritingSystem2)}}
               >
-                Transcription(Hiragana and Katanana)
-              </Dropdown.Item> 
-              <Dropdown.Item
+                {currentLanguage.languageName} Transcription(Hiragana and Katanana)
+              </Dropdown.Item>}
+              {currentLanguage.numForeignAlphabets > 2 && <Dropdown.Item
                 onClick={() =>{changeRight(TranscriptionType.WritingSystem3)}}
               >
-                  Transcription(Hiragana, Katanana, and Kanji)
-              </Dropdown.Item> 
+                {currentLanguage.languageName} Transcription(Hiragana, Katanana, and Kanji)
+              </Dropdown.Item>}
+              <Dropdown.Item
+                onClick={() =>{changeRight(TranscriptionType.English)}}
+              >
+                English Transcription
+              </Dropdown.Item>
             </CustomDropDownButton></th>
           </tr>
         </thead>
