@@ -30,7 +30,7 @@ const Japanese = () => {
           <a href="/japanese/writing-systems-explanation" style={{ paddingLeft: '50px', paddingRight: '60px' }}>
             <img src={pen} width={80} height={80} alt="Writing Systems Icon" style={{ display: 'block', margin: '0 auto 10px' }} />
             < div style={{ textAlign: 'center' }}>
-            Writing < br /> Systems
+            Writing Systems < br />  (Alphabets)
             </div>
           </a>
           <a href="/japanese/vocabulary" style={{ textAlign: 'center', margin: '10px', paddingRight: '60px' }}>
