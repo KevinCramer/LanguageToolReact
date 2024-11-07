@@ -10,13 +10,14 @@
   font-size: 18px;
   background-color: white;
   min-width: 400px;
-  margin-top: 12px;
+  margin-top: 0px;
   margin-left: 12px;
   margin-right: 12px;
   flex-grow: 1;        /* Allow the container to take up remaining vertical space */
-  min-height: calc(100vh - 20%); 
   border-radius: 5px;
-}
+  overflow-y: auto; /* Adds a vertical scrollbar when content overflows */
+  height: calc(100vh - 68px); /* Restricts the container's height to 80% of the viewport */}
+
 
 @media (min-width: 500px) {
   .study-materials-div {
