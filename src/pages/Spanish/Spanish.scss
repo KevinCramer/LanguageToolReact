@@ -1,18 +1,20 @@
 .spanish-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: top;
   align-items: left;
   margin-top: 10%;
-  padding-top: 30px;
+  padding-top: 50px;
   padding-left: 15%;
   padding-right:15%;
-  width: 100vw;
   font-size: 18px;
   background-color: white;
+  min-width: 400px;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
   flex-grow: 1;        /* Allow the container to take up remaining vertical space */
-  min-height: calc(100vh - 10%); /* Ensures it fills at least the viewport height minus the top margin */
-
+  min-height: calc(100vh - 20%); 
 }
 
 @media (min-width: 500px) {
