@@ -26,7 +26,7 @@ const Navbar = () => {
   return (
     <NavbarBs expand="false" expanded={reduxNavbar.isNavbarOpen }
       onToggle={() => dispatch(toggleNavbar())}>
-      <Container>
+      <Container style ={{ margin: '0px' }}>
         <NavbarBs.Toggle aria-controls="basic-navbar-nav" className="navbar-toggle-custom" />
         <NavbarBs.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
