@@ -16,7 +16,7 @@
   flex-grow: 1;        /* Allow the container to take up remaining vertical space */
   border-radius: 5px;
   overflow-y: auto; /* Adds a vertical scrollbar when content overflows */
-  height: calc(100vh - 68px); /* Restricts the container's height to 80% of the viewport */}
+  height: calc(100vh - 90px); /* Restricts the container's height to 80% of the viewport */}
 
 
 @media (min-width: 500px) {
