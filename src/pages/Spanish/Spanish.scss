@@ -3,11 +3,16 @@
   flex-direction: column;
   justify-content: center;
   align-items: left;
-  padding-top: 10%;
+  margin-top: 10%;
+  padding-top: 30px;
   padding-left: 15%;
   padding-right:15%;
   width: 100vw;
   font-size: 18px;
+  background-color: white;
+  flex-grow: 1;        /* Allow the container to take up remaining vertical space */
+  min-height: calc(100vh - 10%); /* Ensures it fills at least the viewport height minus the top margin */
+
 }
 
 @media (min-width: 500px) {

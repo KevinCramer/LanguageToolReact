@@ -10,7 +10,7 @@ const Spanish = () => {
     <>
       <div className="spanish-container">
         <div>
-          <h4 style = {{ color: 'white' }}> Spanish</h4>
+          <h4> Spanish</h4>
           <div>
           LingoCommand helps beginners learn Spanish and gain confidence in their skills. We also offer valuable content for advanced users. Try our study guide below:
           </div>
@@ -29,7 +29,7 @@ const Spanish = () => {
           <a href="/spanish/vocabulary" style={{ textAlign: 'center', margin: '10px', paddingRight: '60px', paddingLeft: '20px' }}>
             <img src={dictionary} width={80} height={80} alt="Vocabulary Icon" style={{ display: 'block', margin: '0 auto 10px' }} />
             <div >Vocabulary</div>
-          </a>
+          </a> 
           <a href="/spanish/grammar/definite-article" style={{ textAlign: 'center', margin: '10px', paddingRight: '60px' }}>
             <img src={dart} width={80} height={80} alt="Grammar Icon" style={{ display: 'block', margin: '0 auto 10px' }} />
             <div >Grammar</div>
