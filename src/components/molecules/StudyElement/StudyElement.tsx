@@ -104,7 +104,7 @@ const StudyElement = (
       </div>}
       {isVerb && <Modal show ={showPopUp} onHide={hidePopUp}>
         <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-vleft">
+          <Modal.Title id="contained-modal-title-vcenter">
             {(ForeignLanguageWord as VerbConjugation).infinitive}
           </Modal.Title>
         </Modal.Header>
@@ -138,7 +138,7 @@ const StudyElement = (
       {strokeOrderVideo && <Modal show ={showPopUp} onHide={hidePopUp}>
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vleft">
-            {(ForeignLanguageWord as VerbConjugation).infinitive}
+            {ForeignLanguageWord.toString() + ' - Hiragana Stroke Order'}
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
