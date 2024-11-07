@@ -17,7 +17,7 @@
   flex-grow: 1;        /* Allow the container to take up remaining vertical space */
   border-radius: 5px;
   overflow-y: auto; /* Adds a vertical scrollbar when content overflows */
-  height: calc(85vh); /* Restricts the container's height to 80% of the viewport */}
+  height: calc(90dvh); /* using dynamic viewport height to support ui element in viewport on mobile*/}
 
 
 @media (min-width: 500px) {
