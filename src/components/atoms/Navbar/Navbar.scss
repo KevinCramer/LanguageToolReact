@@ -72,6 +72,7 @@
 .navbar-toggle-custom {
   color: white; // Sets the icon color to white
   border-color: white; // Ensures the toggle button’s border is white as well
+  border-width: 1px;
 
   &:focus, &:hover {
     color: white; // Keeps it white on hover and focus
