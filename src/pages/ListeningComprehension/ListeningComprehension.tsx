@@ -80,7 +80,7 @@ const ListeningComprehensionContent = (props: { languageNumber: number, howToGui
               <Dropdown.Item
                 onClick={() =>{changeLeft(TranscriptionType.Audio)}}
               >
-                  Audio
+                {currentLanguage.languageName} Audio
               </Dropdown.Item>
               <Dropdown.Item
                 onClick={() =>{changeLeft(TranscriptionType.English)}}
@@ -107,7 +107,7 @@ const ListeningComprehensionContent = (props: { languageNumber: number, howToGui
               <Dropdown.Item
                 onClick={() =>{changeRight(TranscriptionType.Audio)}}
               >
-                  Audio
+                {currentLanguage.languageName} Audio
               </Dropdown.Item>
               <Dropdown.Item
                 onClick={() =>{changeRight(TranscriptionType.English)}}
