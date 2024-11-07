@@ -5,6 +5,7 @@
   align-items: left;
   margin-top: 10%;
   padding-top: 50px;
+  padding-bottom:12px;
   padding-left: 15%;
   padding-right:15%;
   font-size: 18px;
@@ -16,7 +17,7 @@
   flex-grow: 1;        /* Allow the container to take up remaining vertical space */
   border-radius: 5px;
   overflow-y: auto; /* Adds a vertical scrollbar when content overflows */
-  height: calc(100vh - 300px); /* Restricts the container's height to 80% of the viewport */}
+  height: calc(85vh); /* Restricts the container's height to 80% of the viewport */}
 
 
 @media (min-width: 500px) {
