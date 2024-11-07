@@ -24,13 +24,13 @@ export const Home = () =>{
     </div>
     }
     <div className="imageContent">
-      <img src={lingoCommandLogo} width={220} height={220} alt="LingoCommand Logo"/>
+      <img src={lingoCommandLogo} width={180} height={180} alt="LingoCommand Logo"/>
     </div>
     <div className="content2">
       <div style={{ paddingTop: '10px', fontSize: '22px', color: 'white' }}> 
       Learn foreign languages faster     
       </div>
-      <div style={{ display: 'flex', paddingTop: '0px' }}>
+      <div style={{ display: 'flex', paddingTop: '100px' }}>
         <a href="/spanish" style={{ margin:'30px' }} onClick={handleFlagClick}>
           <img src={spanishFlag} style={{ width: '80px', height: '80px' }} alt="Spanish flag"/>
           <div>
