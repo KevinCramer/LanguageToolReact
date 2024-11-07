@@ -38,12 +38,17 @@
 
 .verb-table td {
   width: 200px;
+  border-bottom: 2px solid rgb(220, 220,220);
+
+
 
 }
 
+
+
 .verb-table tr td:not(:last-child) {
   /* Your CSS styles here */
-  border-right: 1px solid black;
+  border-right: 2px solid rgb(220, 220, 220);
 }
 
 
