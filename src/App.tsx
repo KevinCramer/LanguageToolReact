@@ -25,7 +25,6 @@ import SpanishStudyGuide from './pages/Spanish/SpanishStudyGuide'
 import UpdateAccount from './components/atoms/UpdateAccount/UpdateAccount'
 import { useAuth } from './contexts/AuthContext'
 import { useEffect } from 'react'
-import VocabContent from './pages/VocabContent/VocabContent'
 import VocabContentNew from './pages/VocabContentNew/VocabContentNew'
 import myVideo from './data/raw-data/tutorial-videos/japanese-comprehension-video-guide.mp4'
 
@@ -52,7 +51,6 @@ const App = ()=> {
         <Navbar />
         <Routes>
           <Route path="/" element={ <div className='home-container'> <Home /></div>} />
-          <Route path="/vocabulary" element={<VocabContent />} />
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/account" element={<Account />} />
           <Route path="/spanish" element={<Spanish/>} />

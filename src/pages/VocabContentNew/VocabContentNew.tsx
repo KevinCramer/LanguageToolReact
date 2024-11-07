@@ -26,7 +26,6 @@ import { scramble } from '../../helpers/vocab-content-helpers';
 import StudyElement from '../../components/molecules/StudyElement/StudyElement';
 import { useAuth } from '../../contexts/AuthContext'
 import { useDispatch } from 'react-redux';
-import CustomButton from '../../components/atoms/CustomButton/CustomButton';
 
 const VocabContentNew = (
   props: {
@@ -69,11 +68,7 @@ const VocabContentNew = (
   var showTrueOrder = !nullOrUndefined(urlShowTrueOrder) ? urlShowTrueOrder : true
   var [showTrueOrder,setShowTrueOrder] = useState(showTrueOrder)
   const changeOrder = () => { return setShowTrueOrder(!showTrueOrder)}
-  const changeCurrentLanguage = 
-    ( language: Language) => {
-      return setLanguage(language)
-      ;
-    };
+
   const userIsLoggedIn = currentUser && currentUser.email
   const changeCurrentTopic = (topic: Topic) => {
     if(topic.isLocked && false ){
@@ -228,7 +223,9 @@ const VocabContentNew = (
       <h4> {currentLanguage.languageName} Vocabulary</h4>
       <Container >   
         <div style={{ display: 'flex', justifyContent: 'center', paddingBottom: '60px' }}>
-          <button style= {{ color:'rgb(13, 110,253)', border: 'none', backgroundColor: '#F8F8F8', textDecoration: 'underline', fontSize: '18px' }} onClick={displayPopUp}>How to Guide</button>
+          <button style= {{ color:'rgb(13, 110,253)', border: 'none', backgroundColor: '#F8F8F8',
+            textDecoration: 'underline', fontSize: '18px' }} 
+          onClick={displayPopUp}>How to Guide</button>
         </div>
         <NavbarBs>
           <Container className='options-container'>
