@@ -143,37 +143,37 @@ const ListeningComprehensionContent = (props: { languageNumber: number, howToGui
           {currentAudioTranscription.contents.map((content: Paragraph, index: number) => (
             <>
               <tr key={index}>
-                <td style={{ height: '10px' }}>
-                  {currentLeft === 'Audio' && <div style={{ display: 'flex', alignItems: 'center', height: '100%' }}>
+                <td style={{ height: '10px', verticalAlign: 'top', paddingTop: '20px' }}>
+                  {currentLeft === 'Audio' && <div style={{ display: 'flex' }}>
                     <AudioPlayer audioFile={content.audioFile} />
                   </div>}
-                  {currentLeft === 'WritingSystem1' && <div style={{ display: 'flex', alignItems: 'center', height: '100%' }}>
+                  {currentLeft === 'WritingSystem1' && <div style={{ display: 'flex' }}>
                     {content.foreignText[0]}
                   </div>}
-                  {currentLeft === 'WritingSystem2' && <div style={{ display: 'flex', alignItems: 'center', height: '100%' }}>
+                  {currentLeft === 'WritingSystem2' && <div style={{ display: 'flex' }}>
                     {content.foreignText[1]}
                   </div>}
-                  {currentLeft === 'WritingSystem3' && <div style={{ display: 'flex', alignItems: 'center', height: '100%' }}>
+                  {currentLeft === 'WritingSystem3' && <div style={{ display: 'flex' }}>
                     {content.foreignText[2]}
                   </div>}
-                  {currentLeft === 'English' && <div style={{ display: 'flex', alignItems: 'center', height: '100%' }}>
+                  {currentLeft === 'English' && <div style={{ display: 'flex' }}>
                     {content.englishText}
                   </div>}
                 </td>
-                <td>
-                  {currentRight === 'Audio' && <div style={{ display: 'flex', alignItems: 'center', height: '100%' }}>
+                <td style={{ verticalAlign: 'top', paddingTop: '20px' }}>
+                  {currentRight === 'Audio' && <div style={{ display: 'flex' }}>
                     <AudioPlayer audioFile={content.audioFile} />
                   </div>}
-                  {currentRight === 'WritingSystem1' && <div style={{ display: 'flex', alignItems: 'center', height: '100%' }}>
+                  {currentRight === 'WritingSystem1' && <div style={{ display: 'flex' }}>
                     {content.foreignText[0]}
                   </div>}
-                  {currentRight === 'WritingSystem2' && <div style={{ display: 'flex', alignItems: 'center', height: '100%' }}>
+                  {currentRight === 'WritingSystem2' && <div style={{ display: 'flex' }}>
                     {content.foreignText[1]}
                   </div>}
-                  {currentRight === 'WritingSystem3' && <div style={{ display: 'flex', alignItems: 'center', height: '100%' }}>
+                  {currentRight === 'WritingSystem3' && <div style={{ display: 'flex' }}>
                     {content.foreignText[2]}
                   </div>}
-                  {currentRight === 'English' && <div style={{ display: 'flex', alignItems: 'center', height: '100%' }}>
+                  {currentRight === 'English' && <div style={{ display: 'flex' }}>
                     {content.englishText}
                   </div>}
                 </td>
