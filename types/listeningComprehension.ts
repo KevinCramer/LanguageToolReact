@@ -32,3 +32,11 @@ export type Language  = {
     audioTranscriptions: AudioTranscription[];
     numForeignAlphabets: number;
 }
+
+export enum TranscriptionType {
+    Audio = 'Audio',
+    English = 'English',
+    WritingSystem1 = 'WritingSystem1',
+    WritingSystem2 = 'WritingSystem2',
+    WritingSystem3 = 'WritingSystem3'
+  }

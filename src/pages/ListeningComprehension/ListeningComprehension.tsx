@@ -1,14 +1,12 @@
 import './ListeningComprehension.scss';
-import { AudioTranscription, Language, Paragraph } from '../../../types/listeningComprehension';
+import { AudioTranscription, Language, Paragraph, TranscriptionType } from '../../../types/listeningComprehension';
 import { Container, Modal, Navbar as NavbarBs } from 'react-bootstrap';
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { languages as allLanguages } from '../../data/structured-data/listeningComprehension';
 import AudioPlayer from '../../components/atoms/CustomAudioPlayer/CustomAudioPlayer';
 import CustomDropDownButton from '../../components/atoms/CustomDropDownButton/CustomDropDownButton';
-import CustomSwitch from '../../components/atoms/CustomSwitch/CustomSwitch';
 import Dropdown from 'react-bootstrap/Dropdown';
-import CustomButton from '../../components/atoms/CustomButton/CustomButton';
 
 const ListeningComprehensionContent = (props: { languageNumber: number, howToGuideVideo?: any }) => {
   const navigate = useNavigate();
@@ -34,21 +32,25 @@ const ListeningComprehensionContent = (props: { languageNumber: number, howToGui
   
   const [currentAlphabet, setCurrentAlphabet] = useState(initialAlphabet);
 
+  const initialLeft = queryParams.get('L') || TranscriptionType.Audio
+  const [currentLeft, setCurrentLeft] = useState(initialLeft);
+
+  const initialRight = queryParams.get('R') || TranscriptionType.English
+  const [currentRight, setCurrentRight] = useState(initialRight);
+
   const changeCurrentAudioTranscription = (currentAudioTranscription: AudioTranscription) => {
     setCurrentAudioTranscription(currentAudioTranscription);
-    updateURL(currentAudioTranscription.slugName);
+    updateURL(currentAudioTranscription.slugName, currentLeft, currentRight);
   };
 
-  const toggleTranscriptionLanguage = () => {
-    const newTranscriptionInEnglish = !transcriptionInEnglish;
-    setTranscriptionInEnglish(newTranscriptionInEnglish);
-    updateURL(currentAudioTranscription.slugName, newTranscriptionInEnglish);
+  const changeLeft = (input: TranscriptionType) => {
+    setCurrentLeft(input);
+    updateURL(currentAudioTranscription.slugName, input,currentRight );
   };
 
-  const changeCurrentAlphabet = () => {
-    const newAlphabet = (currentAlphabet + 1) % currentLanguage.numForeignAlphabets;
-    setCurrentAlphabet(newAlphabet);
-    updateURL(currentAudioTranscription.slugName, transcriptionInEnglish, newAlphabet);
+  const changeRight = (input: TranscriptionType) => {
+    setCurrentRight(input);
+    updateURL(currentAudioTranscription.slugName, currentLeft,input );
   };
 
   var showPopUp = false;
@@ -56,10 +58,10 @@ const ListeningComprehensionContent = (props: { languageNumber: number, howToGui
   const hidePopUp = () => { return setShowPopUp(false)}
   const displayPopUp = () => { return setShowPopUp(true)}
 
-  const updateURL = (slugName: string, transcriptionEng: boolean = transcriptionInEnglish, alphabet: number = currentAlphabet) => {
+  const updateURL = (slugName: string, left: any, right : any) => {
     const query = new URLSearchParams(location.search);
-    query.set('eng', transcriptionEng ? 'T' : 'F');
-    query.set('numAlphabet', alphabet.toString());
+    query.set('L', left);
+    query.set('R', right);
     navigate(`/${currentLanguage.languageName.toLowerCase()}/listening-comprehension/${slugName}?${query.toString()}`);
   };
 
@@ -71,24 +73,63 @@ const ListeningComprehensionContent = (props: { languageNumber: number, howToGui
 
   const renderListeningComprehensionTopic = () => (
     <div className="inner-audio-player-and-table-container">
-      <div className="div-switch-container">
-        <div style={{ marginRight: '10px', fontWeight: transcriptionInEnglish ? '600' : 'normal' }}>
-          English
-        </div>
-        <CustomSwitch
-          onChange={toggleTranscriptionLanguage}
-          checked={!transcriptionInEnglish}
-        />
-        <div style={{ marginLeft: '10px', fontWeight: transcriptionInEnglish ? 'normal' : '600' }}>
-          {currentLanguage.languageName}
-        </div>
-      </div>
       <table className="scrolldown">
         <thead>
           <tr>
-            <th>Audio</th>
-            <th>Transcription ({transcriptionInEnglish ? 'English' : currentLanguage.languageName}) 
-            </th>
+            <th><CustomDropDownButton title={currentLeft.toString()}>
+              <Dropdown.Item
+                onClick={() =>{changeLeft(TranscriptionType.Audio)}}
+              >
+                  Audio
+              </Dropdown.Item>
+              <Dropdown.Item
+                onClick={() =>{changeLeft(TranscriptionType.English)}}
+              >
+                Transcription( English)
+              </Dropdown.Item>
+              <Dropdown.Item
+                onClick={() =>{changeLeft(TranscriptionType.WritingSystem1)}}
+              >
+                Transcription( Roman Alphabetisation)
+              </Dropdown.Item>
+              <Dropdown.Item
+                onClick={() =>{changeLeft(TranscriptionType.WritingSystem2)}}
+              >
+                Transcription(Hiragana and Katanana)
+              </Dropdown.Item> 
+              <Dropdown.Item
+                onClick={() =>{changeLeft(TranscriptionType.WritingSystem3)}}
+              >
+                  Transcription(Hiragana, Katanana, and Kanji)
+              </Dropdown.Item>  
+            </CustomDropDownButton></th>
+            <th><CustomDropDownButton title={currentRight.toLocaleString()}>
+              <Dropdown.Item
+                onClick={() =>{changeRight(TranscriptionType.Audio)}}
+              >
+                  Audio
+              </Dropdown.Item>
+              <Dropdown.Item
+                onClick={() =>{changeRight(TranscriptionType.English)}}
+              >
+                Transcription( English)
+              </Dropdown.Item>
+              <Dropdown.Item
+                onClick={() =>{changeRight(TranscriptionType.WritingSystem1)}}
+              >
+                Transcription( Roman Alphabetisation)
+              </Dropdown.Item>
+              <Dropdown.Item
+                onClick={() =>{changeRight(TranscriptionType.WritingSystem2)}}
+              >
+                Transcription(Hiragana and Katanana)
+              </Dropdown.Item> 
+              <Dropdown.Item
+                onClick={() =>{changeRight(TranscriptionType.WritingSystem3)}}
+              >
+                  Transcription(Hiragana, Katanana, and Kanji)
+              </Dropdown.Item> 
+            </CustomDropDownButton></th>
           </tr>
         </thead>
         <tbody>
@@ -96,11 +137,39 @@ const ListeningComprehensionContent = (props: { languageNumber: number, howToGui
             <>
               <tr key={index}>
                 <td style={{ height: '10px' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', height: '100%' }}>
+                  {currentLeft === 'Audio' && <div style={{ display: 'flex', alignItems: 'center', height: '100%' }}>
                     <AudioPlayer audioFile={content.audioFile} />
-                  </div>
+                  </div>}
+                  {currentLeft === 'WritingSystem1' && <div style={{ display: 'flex', alignItems: 'center', height: '100%' }}>
+                    {content.foreignText[0]}
+                  </div>}
+                  {currentLeft === 'WritingSystem2' && <div style={{ display: 'flex', alignItems: 'center', height: '100%' }}>
+                    {content.foreignText[1]}
+                  </div>}
+                  {currentLeft === 'WritingSystem3' && <div style={{ display: 'flex', alignItems: 'center', height: '100%' }}>
+                    {content.foreignText[2]}
+                  </div>}
+                  {currentLeft === 'English' && <div style={{ display: 'flex', alignItems: 'center', height: '100%' }}>
+                    {content.englishText}
+                  </div>}
                 </td>
-                <td>{transcriptionInEnglish ? content.englishText : content.foreignText[currentAlphabet]}</td>
+                <td>
+                  {currentRight === 'Audio' && <div style={{ display: 'flex', alignItems: 'center', height: '100%' }}>
+                    <AudioPlayer audioFile={content.audioFile} />
+                  </div>}
+                  {currentRight === 'WritingSystem1' && <div style={{ display: 'flex', alignItems: 'center', height: '100%' }}>
+                    {content.foreignText[0]}
+                  </div>}
+                  {currentRight === 'WritingSystem2' && <div style={{ display: 'flex', alignItems: 'center', height: '100%' }}>
+                    {content.foreignText[1]}
+                  </div>}
+                  {currentRight === 'WritingSystem3' && <div style={{ display: 'flex', alignItems: 'center', height: '100%' }}>
+                    {content.foreignText[2]}
+                  </div>}
+                  {currentRight === 'English' && <div style={{ display: 'flex', alignItems: 'center', height: '100%' }}>
+                    {content.englishText}
+                  </div>}
+                </td>
               </tr>
             </>
           ))}
@@ -111,7 +180,7 @@ const ListeningComprehensionContent = (props: { languageNumber: number, howToGui
 
   return (
     <>
-      <h4>{currentLanguage.languageName} Listening Comprehension</h4>
+      <h4>{currentLanguage.languageName} Reading and Listening Comprehension</h4>
       <div style={{ display: 'flex', justifyContent: 'center', paddingBottom: '60px', paddingTop: '0px' }}>
         <button style= {{ color:'rgb(13, 110,253)', border: 'none', backgroundColor: '#F8F8F8', textDecoration: 'underline', fontSize: '18px' }} onClick={displayPopUp}>How to Guide</button>
       </div>
@@ -130,9 +199,6 @@ const ListeningComprehensionContent = (props: { languageNumber: number, howToGui
                   </Dropdown.Item>
                 ))}
               </CustomDropDownButton>
-              { currentLanguage.numForeignAlphabets > 1 && <CustomButton disabled={false} onClick={changeCurrentAlphabet}>
-                toggle foreign alphabet 
-              </CustomButton>}
             </div>
           </Container>
         </NavbarBs>
