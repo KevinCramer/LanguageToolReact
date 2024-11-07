@@ -24,10 +24,10 @@ const Navbar = () => {
   };
 
   return (
-    <NavbarBs expand="false" expanded={reduxNavbar.isNavbarOpen}
+    <NavbarBs expand="false" expanded={reduxNavbar.isNavbarOpen }
       onToggle={() => dispatch(toggleNavbar())}>
       <Container>
-        <NavbarBs.Toggle aria-controls="basic-navbar-nav" />
+        <NavbarBs.Toggle aria-controls="basic-navbar-nav" className="navbar-toggle-custom" />
         <NavbarBs.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link
@@ -42,7 +42,7 @@ const Navbar = () => {
               title={
                 <span className={`dropdown-title ${isDropdownOpen ? 'open' : 'closed'}`}>
                   <div style={{ 
-                    color: 'rgb(13, 110,253)', display: 'inline',
+                    color: 'white', display: 'inline',
                     borderRadius: '5px',
                     fontWeight: 'bold'
                   }} >Languages</div>

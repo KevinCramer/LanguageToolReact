@@ -2,7 +2,7 @@
 
 .nav-link-custom {
   margin: 0px 10px 0px 10px;
-  color: $dark-grey !important;
+  color: white !important;
   text-decoration: none;
 }
 
@@ -14,7 +14,7 @@
 }
 
 .hover-underline {
-  color: $dark-grey;
+  color: white;
   margin-left: 10px;
   text-decoration: none;
 }
@@ -26,10 +26,12 @@
 
 .log-in-log-out {
   margin: 0.5rem 10px 0.5rem 10px;
+  color: white;
 }
 
 .log-in-log-out:hover {
   text-decoration: underline;
+  color: white
 }
 
 
@@ -62,4 +64,16 @@
 /* Ensure that the default Bootstrap dropdown arrow is hidden */
 .navbar-nav .nav-item .dropdown-toggle::after {
   display: none !important; /* Hide the default arrow */
+}
+
+.navbar-toggle-custom .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='white' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+.navbar-toggle-custom {
+  color: white; // Sets the icon color to white
+  border-color: white; // Ensures the toggle button’s border is white as well
+
+  &:focus, &:hover {
+    color: white; // Keeps it white on hover and focus
+  }
 }

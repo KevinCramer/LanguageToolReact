@@ -61,3 +61,21 @@ audio::-webkit-media-controls-panel {
   border: none !important;
   height: 40px
 }
+
+.full-background {
+  background-image: url('/src/assets/nyc.jpeg');
+  background-size: cover; /* Ensures image covers entire div */
+  background-position: center; /* Centers image */
+  width: 100%; /* Adjust width as needed */
+  height: 45vh; /* Full viewport height */
+}
+
+.full-background::before {
+  content: '';
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Black with 50% transparency */
+}

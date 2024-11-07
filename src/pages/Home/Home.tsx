@@ -27,7 +27,7 @@ export const Home = () =>{
       <img src={lingoCommandLogo} width={220} height={220} alt="LingoCommand Logo"/>
     </div>
     <div className="content2">
-      <div style={{ paddingTop: '10px', fontSize: '22px' }}> 
+      <div style={{ paddingTop: '10px', fontSize: '22px', color: 'white' }}> 
       Learn foreign languages faster     
       </div>
       <div style={{ display: 'flex', paddingTop: '0px' }}>
