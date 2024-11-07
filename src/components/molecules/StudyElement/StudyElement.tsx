@@ -85,8 +85,7 @@ const StudyElement = (
     onClick={displayPopUp}> <> {ForeignLanguageWord}</></label>
   const foreignLanguageLabelNoVerb = <label className='foreign-language-label-no-verb'>
     <> {ForeignLanguageWord}</></label>
-  console.log('strokeOrderVideo:', strokeOrderVideo)
-  const foreignLanguageLabel = isVerb ? foreignLanguageLabelVerb : (!!strokeOrderVideo ? foreignLanguageLabelStrokeOrder : foreignLanguageLabelNoVerb)
+  const foreignLanguageLabel = isVerb ? foreignLanguageLabelVerb : (strokeOrderVideo ? foreignLanguageLabelStrokeOrder : foreignLanguageLabelNoVerb)
   return (
     <Navbar>
       { showLeftLabel ? (
@@ -136,7 +135,7 @@ const StudyElement = (
           }
         </Modal.Body>
       </Modal>}
-      {!!strokeOrderVideo && <Modal show ={showPopUp} onHide={hidePopUp}>
+      {strokeOrderVideo && <Modal show ={showPopUp} onHide={hidePopUp}>
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vleft">
             {(ForeignLanguageWord as VerbConjugation).infinitive}

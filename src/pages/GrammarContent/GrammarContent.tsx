@@ -14,7 +14,6 @@ const GrammarContent = (
     }) => {
   const navigate = useNavigate();
   const { topicSlug } = useParams(); // Extract the topicSlug from the URL
-  console.log(props.languageNumber)
 
   var currentLanguage: Language = languages[props.languageNumber]
 
