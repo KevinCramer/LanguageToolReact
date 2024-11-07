@@ -43,15 +43,10 @@ const Japanese = () => {
             <div >Grammar</div>
           </a>
           <a href="/japanese/listening-comprehension/aiko’s-book-sanctuary"style={{ textAlign: 'center', margin: '10px' }}>
-            <img src={learningKnowledge} width={80} height={80} alt="Listening and Reading Comprehension Icon" style={{ display: 'block', margin: '0 auto 10px' }} />
-            <div>Listening and Reading <br />Comprehension</div>
+            <img src={learningKnowledge} width={80} height={80} alt="Reading and Listening Comprehension Icon" style={{ display: 'block', margin: '0 auto 10px' }} />
+            <div>Reading and Listening <br />Comprehension</div>
           </a>
         </div>
-        <i style={{ fontSize:'16px', paddingTop: '30px', paddingBottom: '30px' }}>
-          The Japanese language has 130 million native speakers, with about 95% residing in Japan. 
-          Over the past 40 years, the number of people learning Japanese as a second language has increased over twentyfold. 
-        </i>
-
       </div>
     </>
   );

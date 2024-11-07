@@ -21,6 +21,9 @@ const SpanishStudyGuide = () => {
         <div style={{ paddingTop:'20px' }}>
           <b>Phase 5:</b> As proficiency improves continue to further prioritise immersion, until at one point you spend maybe 80% of your time on immersion. 
         </div>
+        <i style={{ fontSize:'16px', paddingTop: '100px', paddingBottom: '30px' }}>
+        There are about 500 million native Spanish speakers, mainly in Spain and the Americas. Learning Spanish opens doors to new connections, cultures, and job opportunities.
+        </i>
       </div>
     </>
   );

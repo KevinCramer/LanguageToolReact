@@ -32,7 +32,7 @@ const ListeningComprehensionContent = (props: { languageNumber: number, howToGui
   
   const [currentAlphabet, setCurrentAlphabet] = useState(initialAlphabet);
 
-  const initialLeft = queryParams.get('L') || TranscriptionType.Audio
+  const initialLeft = queryParams.get('L') || TranscriptionType.WritingSystem3
   const [currentLeft, setCurrentLeft] = useState(initialLeft);
 
   const initialRight = queryParams.get('R') || TranscriptionType.English
@@ -187,7 +187,7 @@ const ListeningComprehensionContent = (props: { languageNumber: number, howToGui
 
   return (
     <>
-      <h4>{currentLanguage.languageName} Listening and Reading Comprehension</h4>
+      <h4>{currentLanguage.languageName} Reading and Listening Comprehension</h4>
       <div style={{ display: 'flex', justifyContent: 'center', paddingBottom: '60px',
         paddingTop: '0px' }}>
         <button style= {{ color:'rgb(13, 110,253)', border: 'none', backgroundColor: '#F8F8F8',

@@ -30,15 +30,15 @@ export const Home = () =>{
       <div style={{ paddingTop: '10px', fontSize: '22px' }}> 
       Learn foreign languages faster     
       </div>
-      <div style={{ display: 'flex', paddingTop: '50px' }}>
+      <div style={{ display: 'flex', paddingTop: '0px' }}>
         <a href="/spanish" style={{ margin:'30px' }} onClick={handleFlagClick}>
-          <img src={spanishFlag} alt="Spanish flag"/>
+          <img src={spanishFlag} style={{ width: '80px', height: '80px' }} alt="Spanish flag"/>
           <div>
             Spanish
           </div> 
         </a>
         <a href="/japanese" style={{ margin:'30px' }} onClick={handleFlagClick}>
-          <img src={japaneseFlag} alt="Japanese flag"/>
+          <img src={japaneseFlag} style ={{ width: '80px', height: '80px' }} alt="Japanese flag"/>
           <div>
             Japanese
           </div>

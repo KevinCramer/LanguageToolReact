@@ -35,13 +35,10 @@ const Spanish = () => {
             <div >Grammar</div>
           </a>
           <a href="/spanish/listening-comprehension/me-gusta-leer"style={{ textAlign: 'center', margin: '10px' }}>
-            <img src={learningKnowledge} width={80} height={80} alt="Listening and Reading Comprehension Icon" style={{ display: 'block', margin: '0 auto 10px' }} />
-            <div>Listening and Reading <br />Comprehension</div>
+            <img src={learningKnowledge} width={80} height={80} alt="Reading and Listening Comprehension Icon" style={{ display: 'block', margin: '0 auto 10px' }} />
+            <div>Reading and Listening <br />Comprehension</div>
           </a>
         </div>
-        <i style={{ fontSize:'16px', paddingTop: '30px', paddingBottom: '30px' }}>
-        There are about 500 million native Spanish speakers, mainly in Spain and the Americas. Learning Spanish opens doors to new connections, cultures, and job opportunities.
-        </i>
       </div>
     </>
   );
