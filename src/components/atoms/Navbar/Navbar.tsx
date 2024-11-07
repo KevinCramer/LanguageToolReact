@@ -53,7 +53,7 @@ const Navbar = () => {
               onToggle={handleDropdownToggle}
             >
               <NavDropdown.Item
-                className="nav-link-custom"
+                className="nav-link-custom2"
                 to="/spanish"
                 as={NavLink}
                 onClick={() => dispatch(closeNavbar())}
@@ -61,7 +61,7 @@ const Navbar = () => {
                 Spanish
               </NavDropdown.Item>
               <NavDropdown.Item
-                className="nav-link-custom"
+                className="nav-link-custom2"
                 to="/japanese"
                 as={NavLink}
                 onClick={() => dispatch(closeNavbar())}

@@ -4,6 +4,14 @@
   margin: 0px 10px 0px 10px;
   color: white !important;
   text-decoration: none;
+  width: 30%
+}
+
+.nav-link-custom2 {
+  margin: 0px 10px 0px 10px;
+  color: #4A4A4A !important;
+  text-decoration: none;
+  width: 50%
 }
 
 .nav-link-custom:hover,
@@ -11,6 +19,12 @@
 .nav-link-custom.active {
   text-decoration: underline;
   color: $ultra-light-grey;
+}
+
+.nav-link-custom2:hover,
+.nav-link-custom2:active,
+.nav-link-custom2.active {
+  text-decoration: underline;
 }
 
 .hover-underline {
