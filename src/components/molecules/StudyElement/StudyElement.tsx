@@ -142,7 +142,7 @@ const StudyElement = (
       </Modal>}
       {strokeOrderVideo && <Modal show ={showPopUp} onHide={hidePopUp}>
         <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-vleft">
+          <Modal.Title id="contained-modal-title-vleft" style = {{ textAlign: 'center', width: '100%' }}>
             {ForeignLanguageWord.toString() + ' - Hiragana Stroke Order'}
           </Modal.Title>
         </Modal.Header>

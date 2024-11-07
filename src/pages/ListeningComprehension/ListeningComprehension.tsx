@@ -141,7 +141,7 @@ const ListeningComprehensionContent = (props: { languageNumber: number, howToGui
         </div>
         <Modal show ={showPopUp} onHide={hidePopUp}>
           <Modal.Header closeButton>
-            <Modal.Title id="contained-modal-title-vleft">
+            <Modal.Title id="contained-modal-title-vleft" style={{ textAlign: 'center', width: '100%' }}>
               How to Guide!
             </Modal.Title>
           </Modal.Header>
