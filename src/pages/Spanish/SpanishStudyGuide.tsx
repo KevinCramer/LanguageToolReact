@@ -4,7 +4,8 @@ const SpanishStudyGuide = () => {
  
   return (
     <>
-      <div className="spanish-container">
+      <div className="page-container">
+        <h4 style={{ paddingBottom: '30px' }}>Spanish Study Guide</h4>
         <div>
           <b>Phase 1:</b> Study the vocabulary for these topics: <a href="/spanish/vocabulary?s=clo-T0TFT">clothes</a>, <a href="/spanish/vocabulary?s=num-T0TFT">numbers</a>, <a href="/spanish/vocabulary?s=col-T0TFT">colours</a>, <a href="/spanish/vocabulary?s=foo-T0TFT">food</a>, <a href="/spanish/vocabulary?s=hom-T0TFT">home</a>, <a href="/spanish/vocabulary?s=bod-T0TFT">body</a>, <a href="/spanish/vocabulary?s=loc-T0TFT">locations</a>. < br />We recommend you spend no more than 15 minutes studying a topic’s vocabulary before taking a quiz. Then if the grade is below 90% which is completely normal go back and do another round of 15 minutes of studying. Make sure to take breaks, and you can also switch between studying a few topics to mix things up. 
           (If you get 90% or higher  for each quiz without studying the topic in the last 24 hours you are ready to move to phase 2). 

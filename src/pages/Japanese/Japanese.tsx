@@ -10,8 +10,8 @@ const Japanese = () => {
  
   return (
     <>
-      <div className="japanese-container">
-        <h4 style = {{ color: 'white' }}> Japanese</h4>
+      <div className="page-container">
+        <h4> Japanese</h4>
         <div style={{ paddingTop: '20px' }}>
         LingoCommand helps beginners learn Japanese and gain confidence in their skills. We also offer valuable content for advanced users. Try our study guide below:
         </div>

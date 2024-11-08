@@ -8,7 +8,7 @@ const Spanish = () => {
  
   return (
     <>
-      <div className="spanish-container">
+      <div className="page-container">
         <h4 style={{ paddingBottom:'30px' }}> Spanish</h4>
         <div>
           <div>

@@ -4,7 +4,8 @@ const JapaneseStudyGuide = () => {
  
   return (
     <>
-      <div className="spanish-container">
+      <div className="page-container">
+        <h4 style={{ paddingBottom: '30px' }}>Japanese Study Guide</h4>
         <div>
           <b>Phase 1:</b> learn <a href="/japanese/vocabulary?s=hir-T0TFT">hiragana</a>,and <a href="/japanese/vocabulary?s=kat-T0TFT">katakana</a>. 
         </div>
