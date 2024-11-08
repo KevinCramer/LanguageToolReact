@@ -11,7 +11,7 @@ const Japanese = () => {
   return (
     <>
       <div className="page-container">
-        <div style={{ position: 'relative', left: '50%', transform: 'translate(-50%, 0%)', maxWidth:'800px' }}>
+        <div className="central-container">
           <h4> Japanese</h4>
           <div style={{ paddingTop: '20px' }}>
         LingoCommand helps beginners learn Japanese and gain confidence in their skills. We also offer valuable content for advanced users. Try our study guide below:

@@ -48,24 +48,26 @@ const GrammarContent = (
   return (
     <>
       <div className="page-container">
-        <h4> {languages[props.languageNumber].languageName} Grammar</h4>
-        <Container>    
-          <NavbarBs>
-            <Container className='grammar-container'>
-              <div className='inner-grammar-container'>
-                <CustomDropDownButton title={'Topic: ' + currentTopic.name}>
-                  {currentLanguage.topics.map((topic: Topic, index: number) =>
-                    <Dropdown.Item key = {index} onClick = {() => 
-                      changeCurrentTopic(topic)}>{topic.name}</Dropdown.Item>)}
-                </CustomDropDownButton>
-              </div>
-            </Container>
-          </NavbarBs>
-          <p></p>
-          <div className='grammar-explanation-container'>
-            {ShowGrammarExplanation()}
-          </div>
-        </Container>
+        <div className="central-container">
+          <h4> {languages[props.languageNumber].languageName} Grammar</h4>
+          <Container>    
+            <NavbarBs>
+              <Container className='grammar-container'>
+                <div className='inner-grammar-container'>
+                  <CustomDropDownButton title={'Topic: ' + currentTopic.name}>
+                    {currentLanguage.topics.map((topic: Topic, index: number) =>
+                      <Dropdown.Item key = {index} onClick = {() => 
+                        changeCurrentTopic(topic)}>{topic.name}</Dropdown.Item>)}
+                  </CustomDropDownButton>
+                </div>
+              </Container>
+            </NavbarBs>
+            <p></p>
+            <div className='grammar-explanation-container'>
+              {ShowGrammarExplanation()}
+            </div>
+          </Container>
+        </div>
       </div>
     </>
   );
