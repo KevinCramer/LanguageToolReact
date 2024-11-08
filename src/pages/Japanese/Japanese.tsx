@@ -2,6 +2,7 @@ import './Japanese.scss'
 import dictionary from '../../assets/dictionary.svg';
 import dart from '../../assets/dart.svg';
 import learningKnowledge from '../../assets/learningKnowledge.svg';
+import japanPicture from '../../assets/japan.jpeg';
 
 import pen from '../../assets/pen.svg';
 import upwardTrend from '../../assets/upward-trend.svg';
@@ -12,7 +13,15 @@ const Japanese = () => {
     <>
       <div className="page-container">
         <div className="central-container">
-          <h4> Japanese</h4>
+          <div style={{ position: 'relative', display: 'inline-block' }}>
+            <img src={japanPicture} width={800} alt="Picture of Japan" style={{ display: 'block', margin: '0 auto 10px', borderRadius: '5px' }} />
+            
+            <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', fontSize: '40px', textAlign: 'center'
+
+            }} >
+    Learn Japanese
+            </div>
+          </div>
           <div style={{ paddingTop: '20px' }}>
         LingoCommand helps beginners learn Japanese and gain confidence in their skills. We also offer valuable content for advanced users. Try our study guide below:
           </div>
