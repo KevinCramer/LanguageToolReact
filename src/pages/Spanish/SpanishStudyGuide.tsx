@@ -15,15 +15,16 @@ const SpanishStudyGuide = () => {
             <b>Phase 2:</b> Study the vocabulary for these topics until you get 90% accuracy taking the quiz: <a href="/spanish/vocabulary?s=pro-T0TFT">pronouns</a>, <a href="/spanish/vocabulary?s=que-T0TFT">question words</a>, <a href="/spanish/vocabulary?s=con-T0TFT">conjunctions</a>. < br /> Use same approach as phase 1. 
           </div>
           <div style={{ paddingTop:'20px' }}>
-            <b>Phase 3:</b> Study the grammar lessons 1 through 5.   
+            <b>Phase 3:</b> Study the first five <a href="/spanish/grammar/definite-article">grammar lessons</a>.   
           </div> 
           <div style={{ paddingTop:'20px' }}>
-            <b>Phase 4:</b> Spend 1/3rd of time learning verbs, 1/3 of time learning new vocab, 1/3 of time doing immersion. 
+            <b>Phase 4:</b> Spend 1/3rd of time learning <a href="/spanish/vocabulary?s=ver-T0TFT">verbs</a>, 1/3 of time learning new vocabulary, 1/3 of time doing immersion. 
           </div> 
           <div style={{ paddingTop:'20px' }}>
             <b>Phase 5:</b> As proficiency improves continue to further prioritise immersion, until at one point you spend maybe 80% of your time on immersion. 
           </div>
-          <i style={{ fontSize:'16px', paddingTop: '100px', paddingBottom: '30px' }}>
+          <div style={{ height: '100px' }}></div>
+          <i style={{ fontSize:'16px' }}>
         There are about 500 million native Spanish speakers, mainly in Spain and the Americas. Learning Spanish opens doors to new connections, cultures, and job opportunities.
           </i>
         </div>
