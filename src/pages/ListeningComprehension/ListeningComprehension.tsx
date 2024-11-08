@@ -1,11 +1,12 @@
 import './ListeningComprehension.scss';
-import { AudioTranscription, Language, Paragraph, TranscriptionType } from '../../../types/listeningComprehension';
+import { AudioTranscription, Language,
+  Paragraph, TranscriptionType } from '../../../types/listeningComprehension';
 import { Container, Modal, Navbar as NavbarBs } from 'react-bootstrap';
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { languages as allLanguages } from '../../data/structured-data/listeningComprehension';
 import AudioPlayer from '../../components/atoms/CustomAudioPlayer/CustomAudioPlayer';
-import CustomDropDownButton from '../../components/atoms/CustomDropDownButton/CustomDropDownButton';
+import CustomDropDownButtonWhite from '../../components/atoms/CustomDropDownButtonWhite/CustomDropDownButtonWhite';
 import Dropdown from 'react-bootstrap/Dropdown';
 
 const ListeningComprehensionContent = (props: { languageNumber: number, howToGuideVideo?: any }) => {
@@ -85,9 +86,9 @@ const ListeningComprehensionContent = (props: { languageNumber: number, howToGui
       <table className="scrolldown">
         <thead>
           <tr>
-            <th><CustomDropDownButton title={
-              titleMap[currentLeft as TranscriptionType].length > 15 ?
-                titleMap[currentLeft as TranscriptionType].substring(0,15) + '...' :
+            <th><CustomDropDownButtonWhite title={
+              titleMap[currentLeft as TranscriptionType].length > 20 ?
+                titleMap[currentLeft as TranscriptionType].substring(0,20) + '...' :
                 titleMap[currentLeft as TranscriptionType]}>
               <Dropdown.Item onClick={() =>{changeLeft(TranscriptionType.Audio)}}>
                 {titleMap[TranscriptionType.Audio]}
@@ -110,10 +111,10 @@ const ListeningComprehensionContent = (props: { languageNumber: number, howToGui
               >
                 {titleMap[TranscriptionType.English]}
               </Dropdown.Item>
-            </CustomDropDownButton></th>
-            <th><CustomDropDownButton title={
-              titleMap[currentRight as TranscriptionType].length > 15 ?
-                titleMap[currentRight as TranscriptionType].substring(0,15) + '...' :
+            </CustomDropDownButtonWhite></th>
+            <th><CustomDropDownButtonWhite title={
+              titleMap[currentRight as TranscriptionType].length > 20 ?
+                titleMap[currentRight as TranscriptionType].substring(0,20) + '...' :
                 titleMap[currentRight as TranscriptionType]}>
               <Dropdown.Item onClick={() =>{changeRight(TranscriptionType.Audio)}}>
                 {titleMap[TranscriptionType.Audio]}
@@ -136,7 +137,7 @@ const ListeningComprehensionContent = (props: { languageNumber: number, howToGui
               >
                 {titleMap[TranscriptionType.English]}
               </Dropdown.Item>
-            </CustomDropDownButton></th>
+            </CustomDropDownButtonWhite></th>
           </tr>
         </thead>
         <tbody>
@@ -199,8 +200,8 @@ const ListeningComprehensionContent = (props: { languageNumber: number, howToGui
           <Container className="listening-comprehension-container">
        
             <div className="inner-listening-comprehension-container">
-              <CustomDropDownButton title={`Topic: ${currentAudioTranscription.name.length > 15 ? 
-                currentAudioTranscription.name.substring(0,15) + '...' 
+              <CustomDropDownButtonWhite title={`Topic: ${currentAudioTranscription.name.length > 25 ? 
+                currentAudioTranscription.name.substring(0,25) + '...' 
                 : currentAudioTranscription.name}`}>
                 {currentLanguage.audioTranscriptions.map((topic: AudioTranscription, index: number) => (
                   <Dropdown.Item
@@ -210,7 +211,7 @@ const ListeningComprehensionContent = (props: { languageNumber: number, howToGui
                     {topic.name}
                   </Dropdown.Item>
                 ))}
-              </CustomDropDownButton>
+              </CustomDropDownButtonWhite>
             </div>
           </Container>
         </NavbarBs>

@@ -1,0 +1,29 @@
+@import '../../../styles/variables';
+
+.btn-primary {
+  margin: 0px 10px 0px 0px;
+  background-color: white; 
+  border-color: white;
+  color: $dark-grey;
+  border-radius: 5px;
+
+  --bs-btn-active-bg: $ultra-light-grey; 
+  --bs-btn-active-border-color: $ultra-light-grey;
+  --bs-btn-active-color: $dark-grey;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary:focus:active {
+  background-color: $ultra-light-grey; 
+  border-color: white;
+  color: $dark-grey;
+}
+
+.btn-primary:active,
+.btn-primary:focus:active {
+  background-color: var(--bs-btn-active-bg); 
+  border-color: white; 
+  color:var(--bs-btn-active-color);
+}
