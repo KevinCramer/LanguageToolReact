@@ -7,6 +7,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import CustomDropDownButton from '../../components/atoms/CustomDropDownButton/CustomDropDownButton';
 import Dropdown from 'react-bootstrap/Dropdown';
 import { languages } from '../../data/structured-data/grammar';
+import NavbarDark from '../../components/atoms/NavbarDark/NavbarDark';
 
 const GrammarContent = (
   props: {
@@ -47,26 +48,31 @@ const GrammarContent = (
 
   return (
     <>
-      <div className="page-container-no-padding-small-font">
-        <div className="central-container">
-          <h4> {languages[props.languageNumber].languageName} Grammar</h4>
-          <Container>    
-            <NavbarBs>
-              <Container className='grammar-container'>
-                <div className='inner-grammar-container'>
-                  <CustomDropDownButton title={'Topic: ' + currentTopic.name}>
-                    {currentLanguage.topics.map((topic: Topic, index: number) =>
-                      <Dropdown.Item key = {index} onClick = {() => 
-                        changeCurrentTopic(topic)}>{topic.name}</Dropdown.Item>)}
-                  </CustomDropDownButton>
-                </div>
-              </Container>
-            </NavbarBs>
-            <p></p>
-            <div className='grammar-explanation-container'>
-              {ShowGrammarExplanation()}
-            </div>
-          </Container>
+      <div style={{ height:'12px' }}>
+      </div>
+      <div style={{ backgroundColor:'white', borderRadius: '5px', marginLeft:'12px', marginRight:'12px' }}>
+        <NavbarDark />
+        <div className="page-container-no-padding-small-font">
+          <div className="central-container">
+            <h4> {languages[props.languageNumber].languageName} Grammar</h4>
+            <Container>    
+              <NavbarBs>
+                <Container className='grammar-container'>
+                  <div className='inner-grammar-container'>
+                    <CustomDropDownButton title={'Topic: ' + currentTopic.name}>
+                      {currentLanguage.topics.map((topic: Topic, index: number) =>
+                        <Dropdown.Item key = {index} onClick = {() => 
+                          changeCurrentTopic(topic)}>{topic.name}</Dropdown.Item>)}
+                    </CustomDropDownButton>
+                  </div>
+                </Container>
+              </NavbarBs>
+              <p></p>
+              <div className='grammar-explanation-container'>
+                {ShowGrammarExplanation()}
+              </div>
+            </Container>
+          </div>
         </div>
       </div>
     </>

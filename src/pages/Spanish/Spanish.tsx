@@ -9,7 +9,7 @@ const Spanish = () => {
  
   return (
     <>
-      <div style={{ height:'12px', }}>
+      <div style={{ height:'12px' }}>
       </div>
       <div style={{ backgroundColor:'white', borderRadius: '5px', marginLeft:'12px', marginRight:'12px' }}>
         <NavbarDark />
