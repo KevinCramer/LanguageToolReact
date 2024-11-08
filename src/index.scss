@@ -102,6 +102,25 @@ audio::-webkit-media-controls-panel {
   height: calc(90dvh); /* using dynamic viewport height to support ui element in viewport on mobile*/
 }
 
+.page-container-no-padding-small-font {
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  align-items: left;
+  margin-top: 10%;
+  padding-top: 50px;
+  padding-bottom:12px;
+  background-color: white;
+  min-width: 400px;
+  margin-top: 0px;
+  margin-left: 12px;
+  margin-right: 12px;
+  flex-grow: 1;        /* Allow the container to take up remaining vertical space */
+  border-radius: 5px;
+  overflow-y: auto; /* Adds a vertical scrollbar when content overflows */
+  height: calc(90dvh); /* using dynamic viewport height to support ui element in viewport on mobile*/
+}
+
 .central-container {
   position: relative;
   left: 50%;

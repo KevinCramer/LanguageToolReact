@@ -47,7 +47,7 @@ const GrammarContent = (
 
   return (
     <>
-      <div className="page-container">
+      <div className="page-container-no-padding-small-font">
         <div className="central-container">
           <h4> {languages[props.languageNumber].languageName} Grammar</h4>
           <Container>    

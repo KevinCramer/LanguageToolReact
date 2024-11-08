@@ -223,7 +223,7 @@ const VocabContentNew = (
   }
   return (
     <>
-      <div className="page-container">
+      <div className="page-container-no-padding-small-font">
         <h4> 
           {currentLanguage.languageName} {props.isWritingSystem ? 'Writing Systems' : 'Vocabulary'}
         </h4>

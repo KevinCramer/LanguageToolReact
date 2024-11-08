@@ -191,7 +191,7 @@ const ListeningComprehensionContent = (props: { languageNumber: number, howToGui
 
   return (
     <>
-      <div className="page-container">
+      <div className="page-container-no-padding-small-font">
         <h4>{currentLanguage.languageName} Reading and Listening Comprehension</h4>
         <div style={{ display: 'flex', justifyContent: 'center', paddingBottom: '60px',
           paddingTop: '0px' }}>
