@@ -140,17 +140,19 @@ const StudyElement = (
           }
         </Modal.Body>
       </Modal>}
-      {strokeOrderVideo && <Modal show ={showPopUp} onHide={hidePopUp}>
+      { strokeOrderVideo && <Modal show={showPopUp} onHide={hidePopUp} size="lg" centered>
         <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-vleft" style = {{ textAlign: 'center', width: '100%' }}>
+          <Modal.Title style={{ textAlign: 'center', width: '100%' }}>
             {ForeignLanguageWord.toString() + ' - Hiragana Stroke Order'}
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <video width="460" controls>
-            <source src={ strokeOrderVideo} type="video/mp4"/>
+          <div className="embed-responsive embed-responsive-16by9">
+            <video width="100%" controls>
+              <source src={strokeOrderVideo} type="video/mp4"/>
               Your browser does not support the video tag.
-          </video>        
+            </video>
+          </div>
         </Modal.Body>
       </Modal>}
     </Navbar>
