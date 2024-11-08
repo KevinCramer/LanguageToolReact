@@ -34,7 +34,9 @@ const ListeningComprehensionContent = (props: { languageNumber: number, howToGui
   
   const [currentAlphabet, setCurrentAlphabet] = useState(initialAlphabet);
 
-  const initialLeft = queryParams.get('L') || TranscriptionType.WritingSystem3
+  const initialLeft = queryParams.get('L') || 
+  (currentLanguage.numForeignAlphabets > 1 ? TranscriptionType.WritingSystem3 
+    : TranscriptionType.WritingSystem1)
   const [currentLeft, setCurrentLeft] = useState(initialLeft);
 
   const initialRight = queryParams.get('R') || TranscriptionType.English
