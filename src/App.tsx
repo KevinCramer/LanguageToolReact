@@ -27,6 +27,7 @@ import { useAuth } from './contexts/AuthContext'
 import { useEffect } from 'react'
 import VocabContentNew from './pages/VocabContentNew/VocabContentNew'
 import myVideo from './data/raw-data/tutorial-videos/japanese-comprehension-video-guide.mp4'
+import NavbarDark from './components/atoms/NavbarDark/NavbarDark'
 
 const App = ()=> {
   const location = useLocation();
@@ -70,6 +71,7 @@ const App = ()=> {
         </Routes>
       </div>}
       {location.pathname !== '/' && location.pathname !== '/contact' && <div className="plain-background">
+        <NavbarDark/>
         <Routes>
           <Route path="/" element={ <div className='home-container'> <Home /></div>} />
           <Route path="/contact" element={<ContactUs />} />
