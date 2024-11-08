@@ -3,7 +3,7 @@ import './index.scss'
 import { authModalStates, hideModal, RootStateAuth } from './redux-store/auth'
 import { Container, Modal } from 'react-bootstrap'
 import { resetPermission, RootStateLock } from './redux-store/lock'
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, useLocation } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
 import Account from './pages/Account/Account'
 import ContactUs from './pages/ContactUs/ContactUs'
@@ -29,6 +29,7 @@ import VocabContentNew from './pages/VocabContentNew/VocabContentNew'
 import myVideo from './data/raw-data/tutorial-videos/japanese-comprehension-video-guide.mp4'
 
 const App = ()=> {
+  const location = useLocation();
   // will log out user iff there is no lingocommand tab 
   // where the user was active in the last 30 minutes
   // useInactivityTimer(30 * msInMinute, 30 * msInMinute);
@@ -47,7 +48,7 @@ const App = ()=> {
 
   return (
     <>
-      <div className="full-background">
+      {(location.pathname === '/' || location.pathname === '/contact') && <div className="full-background">
         <Navbar />
         <Routes>
           <Route path="/" element={ <div className='home-container'> <Home /></div>} />
@@ -67,7 +68,27 @@ const App = ()=> {
           <Route path="/japanese/listening-comprehension/:topicSlug" element={<ListeningComprehension languageNumber={1} howToGuideVideo={myVideo}/>} />
           <Route path="/*" element={<Custom404Error/>} />
         </Routes>
-      </div>
+      </div>}
+      {location.pathname !== '/' && location.pathname !== '/contact' && <div className="full-background">
+        <Routes>
+          <Route path="/" element={ <div className='home-container'> <Home /></div>} />
+          <Route path="/contact" element={<ContactUs />} />
+          <Route path="/account" element={<Account />} />
+          <Route path="/spanish" element={<Spanish/>} />
+          <Route path="/spanish/vocabulary" element={<VocabContentNew languageNumber={0}/>} />
+          <Route path="/spanish/study-guide" element={<SpanishStudyGuide/>} />
+          <Route path="/spanish/grammar/:topicSlug" element={<GrammarContent languageNumber={0} />} />
+          <Route path="/spanish/listening-comprehension/:topicSlug" element={<ListeningComprehension languageNumber={0}/>} />
+          <Route path="/japanese" element={<Japanese/>} />
+          <Route path="/japanese/vocabulary" element={<VocabContentNew languageNumber={1} />} />
+          <Route path="/japanese/writing-systems-explanation" element={<JapaneseWritingSystems />} />
+          <Route path="/japanese/writing-systems" element={<VocabContentNew languageNumber={2} isWritingSystem ={true} />} />
+          <Route path="/japanese/study-guide" element={<JapaneseStudyGuide/>} />
+          <Route path="/japanese/grammar/:topicSlug" element={<GrammarContent languageNumber={1} />} />
+          <Route path="/japanese/listening-comprehension/:topicSlug" element={<ListeningComprehension languageNumber={1} howToGuideVideo={myVideo}/>} />
+          <Route path="/*" element={<Custom404Error/>} />
+        </Routes>
+      </div>}
       <Modal show ={reduxAuth.modalToShow !== authModalStates.none}
         onHide={() => dispatch(hideModal())}>
         <Modal.Header closeButton>

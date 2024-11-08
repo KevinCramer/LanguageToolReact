@@ -80,6 +80,24 @@ audio::-webkit-media-controls-panel {
   background-color: rgba(0, 0, 0, 0.5); /* Black with 50% transparency */
 }
 
+.plain-background {
+  background-color: #788186;
+  background-size: cover; /* Ensures image covers entire div */
+  background-position: center; /* Centers image */
+  width: 100%; /* Adjust width as needed */
+  height: 100vh; /* Full viewport height */
+}
+
+.plain-background::before {
+  content: '';
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Black with 50% transparency */
+}
+
 .page-container {
   display: flex;
   flex-direction: column;
