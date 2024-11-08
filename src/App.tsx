@@ -69,7 +69,7 @@ const App = ()=> {
           <Route path="/*" element={<Custom404Error/>} />
         </Routes>
       </div>}
-      {location.pathname !== '/' && location.pathname !== '/contact' && <div className="full-background">
+      {location.pathname !== '/' && location.pathname !== '/contact' && <div className="plain-background">
         <Routes>
           <Route path="/" element={ <div className='home-container'> <Home /></div>} />
           <Route path="/contact" element={<ContactUs />} />
