@@ -1,7 +1,7 @@
 import './ListeningComprehension.scss';
 import { AudioTranscription, Language,
   Paragraph, TranscriptionType } from '../../../types/listeningComprehension';
-import { Container, Modal, Navbar as NavbarBs } from 'react-bootstrap';
+import { Container, Modal, Navbar as NavbarBs, Table } from 'react-bootstrap';
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { languages as allLanguages } from '../../data/structured-data/listeningComprehension';
@@ -86,7 +86,7 @@ const ListeningComprehensionContent = (props: { languageNumber: number, howToGui
 
   const renderListeningComprehensionTopic = () => (
     <div className="inner-audio-player-and-table-container">
-      <table className="scrolldown">
+      <Table striped bordered hover size="sm" className="react-bootstrap-table2">
         <thead>
           <tr>
             <th><CustomDropDownButtonWhite title={
@@ -185,7 +185,7 @@ const ListeningComprehensionContent = (props: { languageNumber: number, howToGui
             </>
           ))}
         </tbody>
-      </table>
+      </Table>
     </div>
   );
 

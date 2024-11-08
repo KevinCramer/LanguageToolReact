@@ -65,38 +65,17 @@ td {
 }
 
 table.scrolldown {
-  width: 412px;
 
   /* border-collapse: collapse; */
-  border-spacing: 0;
   border: 1px solid black;
-  background-color: white;
-
 }
 
-/* To display the block as level element */
-table.scrolldown tbody,
-table.scrolldown thead {
-  display: block;
-}
 
 thead tr th {
   height: 40px;
   line-height: 20px;
 }
 
-table.scrolldown tbody {
-
-  /* Set the height of table body */
-  height: 400px;
-
-  /* Set vertical scroll */
-
-
-  /* Hide the horizontal scroll */
-  overflow-x: hidden;
-
-}
 
 tbody {
   border-top: 1px solid black;
@@ -111,4 +90,25 @@ thead th {
 td {
   text-align: center;
   border-bottom: 1px solid black;
+}
+
+
+.react-bootstrap-table2 {
+  border-width: 1px;
+  border-color: $dark-grey;
+  border-style: solid;
+  max-width: 800px;
+}
+
+.react-bootstrap-table2 th {
+  text-align: center;
+  width: 50%;
+  color: $dark-grey; 
+}
+
+
+.react-bootstrap-table2 th {
+  text-align: center;
+  width: 50%;
+  color: $dark-grey; 
 }
