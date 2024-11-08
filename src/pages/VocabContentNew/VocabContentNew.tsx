@@ -223,70 +223,72 @@ const VocabContentNew = (
   }
   return (
     <>
-      <h4> 
-        {currentLanguage.languageName} {props.isWritingSystem ? 'Writing Systems' : 'Vocabulary'}
-      </h4>
-      <Container >   
-        <div style={{ display: 'flex', justifyContent: 'center', paddingBottom: '60px' }}>
-          <button style= {{ color:'rgb(13, 110,253)', border: 'none', backgroundColor: '#F8F8F8',
-            textDecoration: 'underline', fontSize: '18px' }} 
-          onClick={displayPopUp}>How to Guide</button>
-        </div>
-        <NavbarBs>
-          <Container className='options-container'>
-            <div className='div-options-container'>
-              <CustomDropDownButton title={'Topic: ' + currentTopic.name}>
-                {(currentLanguage.topics as Topic[])
-                  .map((topic: Topic, index: number) =>
-                    <Dropdown.Item key = {index} onClick = {() => 
-                      changeCurrentTopic(topic)}>
-                      <div className="topic-container">
-                        {topic.name} {
-                          topic.isLocked 
+      <div className="page-container">
+        <h4> 
+          {currentLanguage.languageName} {props.isWritingSystem ? 'Writing Systems' : 'Vocabulary'}
+        </h4>
+        <Container >   
+          <div style={{ display: 'flex', justifyContent: 'center', paddingBottom: '60px' }}>
+            <button style= {{ color:'rgb(13, 110,253)', border: 'none', backgroundColor: 'white',
+              textDecoration: 'underline', fontSize: '18px' }} 
+            onClick={displayPopUp}>How to Guide</button>
+          </div>
+          <NavbarBs>
+            <Container className='options-container'>
+              <div className='div-options-container'>
+                <CustomDropDownButton title={'Topic: ' + currentTopic.name}>
+                  {(currentLanguage.topics as Topic[])
+                    .map((topic: Topic, index: number) =>
+                      <Dropdown.Item key = {index} onClick = {() => 
+                        changeCurrentTopic(topic)}>
+                        <div className="topic-container">
+                          {topic.name} {
+                            topic.isLocked 
                           && false // currently ensuring content is always unlocked
                           && <LockIcon style={{ fontSize: '20px' }}/>}
-                      </div>
-                    </Dropdown.Item>)}
-              </CustomDropDownButton>
-              <CustomDropDownButton title="Settings" align="end">
-                <Dropdown.Item onClick = {changeBaseLanguage}>toggle base language</Dropdown.Item>
-                {!quiz && <Dropdown.Item onClick = {() => changeAudioBool()}>
-                  {audioBool ? 'hide audio' : 'show audio'}</Dropdown.Item>}
-                <Dropdown.Item onClick = {changeOrder}>
-                  {showTrueOrder ? 'random ordering' : 'default ordering'}</Dropdown.Item>
-                {currentLanguage.numForeignAlphabets > 1 && !currentTopic.isAlphabet &&
+                        </div>
+                      </Dropdown.Item>)}
+                </CustomDropDownButton>
+                <CustomDropDownButton title="Settings" align="end">
+                  <Dropdown.Item onClick = {changeBaseLanguage}>toggle base language</Dropdown.Item>
+                  {!quiz && <Dropdown.Item onClick = {() => changeAudioBool()}>
+                    {audioBool ? 'hide audio' : 'show audio'}</Dropdown.Item>}
+                  <Dropdown.Item onClick = {changeOrder}>
+                    {showTrueOrder ? 'random ordering' : 'default ordering'}</Dropdown.Item>
+                  {currentLanguage.numForeignAlphabets > 1 && !currentTopic.isAlphabet &&
               <Dropdown.Item onClick = {changeCurrentAlphabet}>
                 toggle foreign alphabet</Dropdown.Item>}
-              </CustomDropDownButton>  
-            </div>             
-          </Container>
-        </NavbarBs>
-        <Container className='switch-container'>
-          <div className='div-switch-container' style ={{ paddingTop: '20px' }}>
-            <div style={{ marginRight: '10px', fontWeight: quiz ? 'normal' : '600' }}>
+                </CustomDropDownButton>  
+              </div>             
+            </Container>
+          </NavbarBs>
+          <Container className='switch-container'>
+            <div className='div-switch-container' style ={{ paddingTop: '20px' }}>
+              <div style={{ marginRight: '10px', fontWeight: quiz ? 'normal' : '600' }}>
                 Study
-            </div>
-            <CustomSwitch 
-              onChange = {changeQuizState}
-              checked= {quiz} 
-            /> 
-            <div style = {{ marginLeft: '10px', fontWeight: quiz ? '600' : 'normal' }}>
+              </div>
+              <CustomSwitch 
+                onChange = {changeQuizState}
+                checked= {quiz} 
+              /> 
+              <div style = {{ marginLeft: '10px', fontWeight: quiz ? '600' : 'normal' }}>
                  Quiz
-            </div>               
-          </div>
-        </Container>
-        {ToggleQuiz()}
-        <Modal show ={showPopUp} onHide={hidePopUp}>
-          <Modal.Header closeButton>
-            <Modal.Title id="contained-modal-title-vleft" style={{ textAlign: 'center', width: '100%' }}>
+              </div>               
+            </div>
+          </Container>
+          {ToggleQuiz()}
+          <Modal show ={showPopUp} onHide={hidePopUp}>
+            <Modal.Header closeButton>
+              <Modal.Title id="contained-modal-title-vleft" style={{ textAlign: 'center', width: '100%' }}>
               How to Guide!
-            </Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
+              </Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
             Video
-          </Modal.Body>
-        </Modal>
-      </Container>
+            </Modal.Body>
+          </Modal>
+        </Container>
+      </div>
     </>
   );
 };

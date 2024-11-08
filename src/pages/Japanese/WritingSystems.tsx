@@ -4,7 +4,8 @@ const JapaneseWritingSystems = () => {
  
   return (
     <>
-      <div className="japanese-container">
+      <div className="page-container">
+        <h4 style={{ paddingBottom: '30px' }}>Japanese Writing Systems</h4>
         <div>
           The Japanese language has 3 writing systems:
         </div>
