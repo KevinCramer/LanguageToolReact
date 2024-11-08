@@ -39,7 +39,7 @@ const NavbarDark = () => {
             </Nav.Link>
             <NavDropdown
               title={
-                <span className={`dropdown-title ${isDropdownOpen ? 'open' : 'closed'}`}>
+                <span className={`dropdown-title-dark ${isDropdownOpen ? 'open' : 'closed'}`}>
                   <div style={{ 
                     display: 'inline',
                     borderRadius: '5px',
@@ -54,6 +54,7 @@ const NavbarDark = () => {
                 to="/spanish"
                 as={NavLink}
                 onClick={() => dispatch(closeNavbar())}
+                style={{ color:'#4A4A4A' }}
               >
                 Spanish
               </NavDropdown.Item>
@@ -61,6 +62,7 @@ const NavbarDark = () => {
                 to="/japanese"
                 as={NavLink}
                 onClick={() => dispatch(closeNavbar())}
+                style={{ color:'#4A4A4A' }}
               >
                 Japanese
               </NavDropdown.Item>

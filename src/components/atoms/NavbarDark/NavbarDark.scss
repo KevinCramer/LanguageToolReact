@@ -1,0 +1,26 @@
+.dropdown-title-dark {
+    position: relative;
+    cursor: pointer;
+  
+    &.closed::after {
+      content: '';
+      display: inline-block;
+      width: 12px; /* Adjust size */
+      height: 12px; /* Adjust size */
+      background-image: url('../../../assets/chevron-right-solid-grey.svg'); /* Path to your SVG file */
+      background-size: contain;
+      background-repeat: no-repeat;
+      margin-left: 5px;
+    }
+  
+    &.open::after {
+      content: '';
+      display: inline-block;
+      width: 12px; /* Adjust size */
+      height: 12px; /* Adjust size */
+      background-image: url('../../../assets/chevron-down-solid-grey.svg'); /* Path to your SVG file */
+      background-size: contain;
+      background-repeat: no-repeat;
+      margin-left: 5px;
+    }
+  }
