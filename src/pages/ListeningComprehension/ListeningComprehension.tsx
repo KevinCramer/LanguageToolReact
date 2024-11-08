@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { languages as allLanguages } from '../../data/structured-data/listeningComprehension';
 import AudioPlayer from '../../components/atoms/CustomAudioPlayer/CustomAudioPlayer';
+import CustomDropDownButton from '../../components/atoms/CustomDropDownButton/CustomDropDownButton';
 import CustomDropDownButtonWhite from '../../components/atoms/CustomDropDownButtonWhite/CustomDropDownButtonWhite';
 import Dropdown from 'react-bootstrap/Dropdown';
 
@@ -188,50 +189,52 @@ const ListeningComprehensionContent = (props: { languageNumber: number, howToGui
 
   return (
     <>
-      <h4>{currentLanguage.languageName} Reading and Listening Comprehension</h4>
-      <div style={{ display: 'flex', justifyContent: 'center', paddingBottom: '60px',
-        paddingTop: '0px' }}>
-        <button style= {{ color:'rgb(13, 110,253)', border: 'none', backgroundColor: '#F8F8F8',
-          textDecoration: 'underline', fontSize: '18px' }}
-        onClick={displayPopUp}>How to Guide</button>
-      </div>
-      <Container>
-        <NavbarBs>
-          <Container className="listening-comprehension-container">
-       
-            <div className="inner-listening-comprehension-container">
-              <CustomDropDownButtonWhite title={`Topic: ${currentAudioTranscription.name.length > 25 ? 
-                currentAudioTranscription.name.substring(0,25) + '...' 
-                : currentAudioTranscription.name}`}>
-                {currentLanguage.audioTranscriptions.map((topic: AudioTranscription, index: number) => (
-                  <Dropdown.Item
-                    key={index}
-                    onClick={() => changeCurrentAudioTranscription(topic)}
-                  >
-                    {topic.name}
-                  </Dropdown.Item>
-                ))}
-              </CustomDropDownButtonWhite>
-            </div>
-          </Container>
-        </NavbarBs>
-        <div className="audio-player-and-table-container">
-          {renderListeningComprehensionTopic()}
+      <div className="page-container">
+        <h4>{currentLanguage.languageName} Reading and Listening Comprehension</h4>
+        <div style={{ display: 'flex', justifyContent: 'center', paddingBottom: '60px',
+          paddingTop: '0px' }}>
+          <button style= {{ color:'rgb(13, 110,253)', border: 'none', backgroundColor: 'white',
+            textDecoration: 'underline', fontSize: '18px' }}
+          onClick={displayPopUp}>How to Guide</button>
         </div>
-        <Modal show ={showPopUp} onHide={hidePopUp}>
-          <Modal.Header closeButton>
-            <Modal.Title id="contained-modal-title-vleft" style={{ textAlign: 'center', width: '100%' }}>
+        <Container>
+          <NavbarBs>
+            <Container className="listening-comprehension-container">
+       
+              <div className="inner-listening-comprehension-container">
+                <CustomDropDownButton title={`Topic: ${currentAudioTranscription.name.length > 25 ? 
+                  currentAudioTranscription.name.substring(0,25) + '...' 
+                  : currentAudioTranscription.name}`}>
+                  {currentLanguage.audioTranscriptions.map((topic: AudioTranscription, index: number) => (
+                    <Dropdown.Item
+                      key={index}
+                      onClick={() => changeCurrentAudioTranscription(topic)}
+                    >
+                      {topic.name}
+                    </Dropdown.Item>
+                  ))}
+                </CustomDropDownButton>
+              </div>
+            </Container>
+          </NavbarBs>
+          <div className="audio-player-and-table-container">
+            {renderListeningComprehensionTopic()}
+          </div>
+          <Modal show ={showPopUp} onHide={hidePopUp}>
+            <Modal.Header closeButton>
+              <Modal.Title id="contained-modal-title-vleft" style={{ textAlign: 'center', width: '100%' }}>
               How to Guide!
-            </Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <video width="460" controls>
-              <source src={props.howToGuideVideo} type="video/mp4"/>
+              </Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              <video width="460" controls>
+                <source src={props.howToGuideVideo} type="video/mp4"/>
               Your browser does not support the video tag.
-            </video>
-          </Modal.Body>
-        </Modal>
-      </Container>
+              </video>
+            </Modal.Body>
+          </Modal>
+        </Container>
+      </div>
     </>
   );
 };
