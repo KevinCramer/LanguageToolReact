@@ -222,17 +222,17 @@ const ListeningComprehensionContent = (props: { languageNumber: number, howToGui
           <div className="audio-player-and-table-container">
             {renderListeningComprehensionTopic()}
           </div>
-          <Modal show ={showPopUp} onHide={hidePopUp}>
+          <Modal show={showPopUp} onHide={hidePopUp} size="lg" centered>
             <Modal.Header closeButton>
-              <Modal.Title id="contained-modal-title-vleft" style={{ textAlign: 'center', width: '100%' }}>
-              How to Guide!
-              </Modal.Title>
+              <Modal.Title>Responsive Video</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-              <video width="460" controls>
-                <source src={props.howToGuideVideo} type="video/mp4"/>
+              <div className="embed-responsive embed-responsive-16by9">
+                <video width="100%" controls>
+                  <source src={props.howToGuideVideo} type="video/mp4"/>
               Your browser does not support the video tag.
-              </video>
+                </video>
+              </div>
             </Modal.Body>
           </Modal>
         </Container>
