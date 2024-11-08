@@ -224,7 +224,7 @@ const ListeningComprehensionContent = (props: { languageNumber: number, howToGui
           </div>
           <Modal show={showPopUp} onHide={hidePopUp} size="lg" centered>
             <Modal.Header closeButton>
-              <Modal.Title>Responsive Video</Modal.Title>
+              <Modal.Title style={{ textAlign: 'center', width: '100%' }}>How to Guide</Modal.Title>
             </Modal.Header>
             <Modal.Body>
               <div className="embed-responsive embed-responsive-16by9">
