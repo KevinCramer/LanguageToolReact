@@ -10,7 +10,7 @@ const Spanish = () => {
     <>
       <div className="page-container">
         <div className="central-container">
-          <h4 style={{ paddingBottom:'30px' }}> Spanish</h4>
+          <h4 style={{ paddingBottom:'30px' }}> Learn Spanish</h4>
           <div>
             <div>
           LingoCommand helps beginners learn Spanish and gain confidence in their skills. We also offer valuable content for advanced users. Try our study guide below:

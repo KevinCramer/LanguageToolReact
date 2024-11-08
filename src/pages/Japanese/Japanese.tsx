@@ -13,15 +13,8 @@ const Japanese = () => {
     <>
       <div className="page-container">
         <div className="central-container">
-          <div style={{ position: 'relative', display: 'inline-block' }}>
-            <img src={japanPicture} width={800} alt="Picture of Japan" style={{ display: 'block', margin: '0 auto 10px', borderRadius: '5px' }} />
-            
-            <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', fontSize: '40px', textAlign: 'center'
+          <h4 style={{ paddingBottom:'30px' }}> Learn Japanese</h4>
 
-            }} >
-    Learn Japanese
-            </div>
-          </div>
           <div style={{ paddingTop: '20px' }}>
         LingoCommand helps beginners learn Japanese and gain confidence in their skills. We also offer valuable content for advanced users. Try our study guide below:
           </div>
