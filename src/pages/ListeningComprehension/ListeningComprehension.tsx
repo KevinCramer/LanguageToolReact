@@ -66,13 +66,13 @@ const ListeningComprehensionContent = (props: { languageNumber: number, howToGui
     const query = new URLSearchParams(location.search);
     query.set('L', left);
     query.set('R', right);
-    navigate(`/${currentLanguage.languageName.toLowerCase()}/listening-comprehension/${slugName}?${query.toString()}`);
+    navigate(`/${currentLanguage.languageName.toLowerCase()}/comprehension/${slugName}?${query.toString()}`);
   };
 
   useEffect(() => {
     const query = new URLSearchParams(location.search);
     query.set('eng', transcriptionInEnglish ? 'T' : 'F');
-    navigate(`/${currentLanguage.languageName.toLowerCase()}/listening-comprehension/${topicSlug}?${query.toString()}`, { replace: true });
+    navigate(`/${currentLanguage.languageName.toLowerCase()}/comprehension/${topicSlug}?${query.toString()}`, { replace: true });
   }, [currentLanguage.languageName, topicSlug, currentAudioTranscription.slugName, navigate, transcriptionInEnglish]);
 
   const titleMap: Record<TranscriptionType, string> = {

@@ -18,10 +18,10 @@ const SpanishStudyGuide = () => {
             <b>Phase 3:</b> Study the first five <a href="/spanish/grammar/definite-article">grammar lessons</a>.   
           </div> 
           <div style={{ paddingTop:'20px' }}>
-            <b>Phase 4:</b> Spend 1/3rd of time learning <a href="/spanish/vocabulary?s=ver-T0TFT">verbs</a>, 1/3 of time learning new vocabulary, 1/3 of time doing immersion. 
+            <b>Phase 4:</b> Spend 1/3rd of time learning <a href="/spanish/vocabulary?s=ver-T0TFT">verbs</a>, 1/3 of time learning <a href="/spanish/vocabulary?s=clo-T0TFT">vocabulary</a>, 1/3 of time doing <a href="/spanish/comprehension/shopping-for-family-meals?eng=F&L=WritingSystem1&R=English">reading and listening comprehension</a>.
           </div> 
           <div style={{ paddingTop:'20px' }}>
-            <b>Phase 5:</b> As proficiency improves continue to further prioritise immersion, until at one point you spend maybe 80% of your time on immersion. 
+            <b>Phase 5:</b> As proficiency improves continue to further prioritise <a href="/spanish/comprehension/shopping-for-family-meals?eng=F&L=WritingSystem1&R=English">reading and listening comprehension</a> until at one point you spend maybe 80% of your time doing that. 
           </div>
           <div style={{ height: '100px' }}></div>
           <i style={{ fontSize:'16px' }}>

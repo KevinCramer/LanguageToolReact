@@ -41,11 +41,11 @@ const Japanese = () => {
               <div>Vocabulary</div>
             </a>
 
-            <a href="/japanese/grammar/definite-article" style={{ textAlign: 'center', margin: '10px', paddingRight: '60px' }}>
+            <a href="/japanese/grammar/keigo" style={{ textAlign: 'center', margin: '10px', paddingRight: '60px' }}>
               <img src={dart} width={80} height={80} alt="Grammar Icon" style={{ display: 'block', margin: '0 auto 10px' }} />
               <div >Grammar</div>
             </a>
-            <a href="/japanese/listening-comprehension/aiko’s-book-sanctuary"style={{ textAlign: 'center', margin: '10px' }}>
+            <a href="/japanese/comprehension/aikos-book-sanctuary"style={{ textAlign: 'center', margin: '10px' }}>
               <img src={learningKnowledge} width={80} height={80} alt="Reading and Listening Comprehension Icon" style={{ display: 'block', margin: '0 auto 10px' }} />
               <div>Reading and Listening <br />Comprehension</div>
             </a>

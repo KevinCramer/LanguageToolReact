@@ -11,7 +11,7 @@ import aikosBookSanctuaryPart3 from '../raw-data/listening-comprehension/japanes
 /* eslint-disable @stylistic/js/max-len */
 const japaneseAudioTranscriptions: AudioTranscriptionWithThreeAlphabet[] = [
   {
-    name:'Aiko’s Book Sanctuary', slugName: 'aiko’s-book-sanctuary', contents: [
+    name:'Aiko’s Book Sanctuary', slugName: 'aikos-book-sanctuary', contents: [
       { 
         englishText: 'Aiko loves reading books and finds comfort and excitement at her local library. Every Saturday morning, she spends hours exploring the shelves, searching for her next adventure or something interesting to learn. For Aiko, the library is more than just a place to read; it’s a quiet escape from her busy life. She enjoys the variety—one week, she might be lost in a historical novel, and the next, she’s reading a collection of poems or a book on psychology.',
         foreignText: [

@@ -35,7 +35,7 @@ const Spanish = () => {
               <img src={dart} width={80} height={80} alt="Grammar Icon" style={{ display: 'block', margin: '0 auto 10px' }} />
               <div >Grammar</div>
             </a>
-            <a href="/spanish/listening-comprehension/me-gusta-leer"style={{ textAlign: 'center', margin: '10px' }}>
+            <a href="/spanish/comprehension/shopping-for-family-meals"style={{ textAlign: 'center', margin: '10px' }}>
               <img src={learningKnowledge} width={80} height={80} alt="Reading and Listening Comprehension Icon" style={{ display: 'block', margin: '0 auto 10px' }} />
               <div>Reading and Listening <br />Comprehension</div>
             </a>
