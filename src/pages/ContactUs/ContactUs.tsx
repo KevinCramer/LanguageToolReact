@@ -27,10 +27,13 @@ const ContactUs = () => {
           <a href="https://www.linkedin.com/company/lingocommand/posts/?feedView=all" style={{ color: 'white' }}>
             LinkedIn
           </a>
-          <a href=" https://x.com/lingocommand" style={{ color: 'white' }}>
+          <a href="https://x.com/lingocommand" style={{ color: 'white' }}>
             Twitter
           </a>
-         
+          <a href="https://www.tiktok.com/@lingocommand" style={{ color: 'white' }}>
+            TikTok
+          </a>
+          
         </div>
       </div>
       
