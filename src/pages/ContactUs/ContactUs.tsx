@@ -16,14 +16,21 @@ const ContactUs = () => {
         </div>
         <div style={{ display:'flex', flexDirection: 'column', paddingTop: '5px', textAlign: 'center' }}>
           <a href="https://www.youtube.com/@lingocommand" style={{ color: 'white' }}>
-            youtube
+            YouTube
           </a>
           <a href="https://www.instagram.com/lingocommand/" style={{ color: 'white' }}>
-            instagram
+            Instagram
           </a>
           <a href="https://www.facebook.com/profile.php?id=100068758832446" style={{ color: 'white' }}>
-            facebook
+            Facebook
           </a>
+          <a href="https://www.linkedin.com/company/lingocommand/posts/?feedView=all" style={{ color: 'white' }}>
+            LinkedIn
+          </a>
+          <a href=" https://x.com/lingocommand" style={{ color: 'white' }}>
+            Twitter
+          </a>
+         
         </div>
       </div>
       
