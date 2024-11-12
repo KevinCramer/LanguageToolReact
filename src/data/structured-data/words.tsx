@@ -304,6 +304,9 @@ import japaneseAudioWo from '../raw-data/audio_vocab/japanese/hiragana/wo.mp3'
 import japaneseAudioN from '../raw-data/audio_vocab/japanese/hiragana/n.mp3'
 
 import hiraganaVideoA from '../raw-data/writing-system-videos/japanese/hiragana/a.mp4'
+import hiraganaVideoI from '../raw-data/writing-system-videos/japanese/hiragana/i.mp4'
+import hiraganaVideoU from '../raw-data/writing-system-videos/japanese/hiragana/u.mp4'
+
 import { sortTopics } from '../../helpers/words-data-helper';
 import { Language, VerbConjugationEnglish, TopicWithOneAlphabet, TopicWithTwoAlphabets, TopicWithThreeAlphabets } from '../../../types/vocabTypes';
 
@@ -1564,8 +1567,8 @@ const germanTopics: TopicWithOneAlphabet[] = [
 const japaneseTopics: TopicWithThreeAlphabets[] = [
   { name:'Hiragana alphabet', slugName: 'hir', hasOrdering:true, isLocked: true, isAlphabet: true, words: [
     { englishWord: 'a', foreignWord: ['あ','あ','あ'], foreignAudio: japaneseAudioA, order: 1, strokeOrderVideo: hiraganaVideoA },
-    { englishWord: 'i', foreignWord: ['い','い','い'], foreignAudio: japaneseAudioI, order: 2 },
-    { englishWord: 'u', foreignWord: ['う','う','う'], foreignAudio: japaneseAudioU, order: 3 },
+    { englishWord: 'i', foreignWord: ['い','い','い'], foreignAudio: japaneseAudioI, order: 2, strokeOrderVideo: hiraganaVideoI },
+    { englishWord: 'u', foreignWord: ['う','う','う'], foreignAudio: japaneseAudioU, order: 3, strokeOrderVideo: hiraganaVideoU },
     { englishWord: 'e', foreignWord: ['え','え','え'], foreignAudio: japaneseAudioE, order: 4 },
     { englishWord: 'o', foreignWord: ['お','お','お'], foreignAudio: japaneseAudioO, order: 5 },
     { englishWord: 'ka', foreignWord: ['か','か','か'], foreignAudio: japaneseAudioKa, order: 6 },
