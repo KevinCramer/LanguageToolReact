@@ -9,6 +9,7 @@ import AudioPlayer from '../../components/atoms/CustomAudioPlayer/CustomAudioPla
 import CustomDropDownButton from '../../components/atoms/CustomDropDownButton/CustomDropDownButton';
 import CustomDropDownButtonWhite from '../../components/atoms/CustomDropDownButtonWhite/CustomDropDownButtonWhite';
 import Dropdown from 'react-bootstrap/Dropdown';
+import { dividerClasses } from '@mui/material';
 
 const ListeningComprehensionContent = (props: { languageNumber: number, howToGuideVideo?: any }) => {
   const navigate = useNavigate();
@@ -227,12 +228,15 @@ const ListeningComprehensionContent = (props: { languageNumber: number, howToGui
               <Modal.Title style={{ textAlign: 'center', width: '100%' }}>How to Guide</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-              <div className="embed-responsive embed-responsive-16by9">
-                <video width="100%" controls>
-                  <source src={props.howToGuideVideo} type="video/mp4"/>
-              Your browser does not support the video tag.
-                </video>
-              </div>
+              {currentLanguage.languageName === 'Japanese' &&
+               <div className="embed-responsive embed-responsive-16by9">
+                 <video width="100%" controls>
+                   <source src={props.howToGuideVideo} type="video/mp4"/>
+                    Your browser does not support the video tag.
+                 </video>
+               </div>}
+              {currentLanguage.languageName !== 'Japanese' &&
+              <div>Video coming soon</div>}
             </Modal.Body>
           </Modal>
         </Container>
