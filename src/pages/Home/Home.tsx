@@ -3,13 +3,11 @@ import japaneseFlag from '../../assets/flag-icons/japanese-flag-icon.svg'
 import lingoCommandLogo from '../../assets/lingoCommandLogo.svg';
 import spanishFlag from '../../assets/flag-icons/spanish-flag-icon.svg'
 import { toggleNavbar } from '../../redux-store/navbar';
-import { useAuth } from '../../contexts/AuthContext'
 import { useDispatch } from 'react-redux';
 
 export const Home = () =>{
   const dispatch = useDispatch();
   // @ts-ignore
-  const { currentUser } = useAuth();
 
   // Prevent toggleNavbar on flag clicks
   const handleFlagClick = (event: any) => {
@@ -18,11 +16,7 @@ export const Home = () =>{
 
   // outer div needed here for layout; don't use fragment 
   return <div onClick={() => dispatch(toggleNavbar())}> 
-    {currentUser && currentUser.email && 
-    <div style={{ textAlign: 'center' }}>
-      Welcome user with email: {currentUser && currentUser.email}
-    </div>
-    }
+
     <div className="imageContent">
       <img src={lingoCommandLogo} width={180} height={180} alt="LingoCommand Logo"/>
     </div>
