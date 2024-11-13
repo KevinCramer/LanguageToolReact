@@ -1,3 +1,5 @@
+@import '../../../styles/variables';
+
 .dropdown-title-dark {
     position: relative;
     cursor: pointer;
@@ -24,3 +26,14 @@
       margin-left: 5px;
     }
   }
+
+
+.log-in-log-out-dark {
+  margin: 0.5rem 10px 0.5rem 10px;
+  color: $dark-grey;
+}
+
+.log-in-log-out-dark:hover {
+  text-decoration: underline;
+  color: $dark-grey
+}

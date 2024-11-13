@@ -31,6 +31,7 @@ const NavbarDark = () => {
         <NavbarBs.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link
+              className="nav-link-custom2"
               to="/"
               as={NavLink}
               onClick={() => dispatch(closeNavbar())}
@@ -38,6 +39,7 @@ const NavbarDark = () => {
               Home
             </Nav.Link>
             <NavDropdown
+              className="nav-link-custom2"
               title={
                 <span className={`dropdown-title-dark ${isDropdownOpen ? 'open' : 'closed'}`}>
                   <div style={{ 
@@ -68,6 +70,7 @@ const NavbarDark = () => {
               </NavDropdown.Item>
             </NavDropdown>
             <Nav.Link
+              className="nav-link-custom2"
               to="/contact"
               as={NavLink}
               onClick={() => dispatch(closeNavbar())}
@@ -75,13 +78,14 @@ const NavbarDark = () => {
               Contact Us
             </Nav.Link>
             {currentUser && currentUser.email && <Nav.Link
+              className="nav-link-custom2"
               to="/account"
               as={NavLink}
               onClick={() => dispatch(closeNavbar())}
             >
                 Account
             </Nav.Link>}
-            <div
+            <div className="log-in-log-out-dark"
               onClick={async () => {
                 if (currentUser && currentUser.email) {
                   try {
