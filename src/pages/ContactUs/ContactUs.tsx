@@ -18,6 +18,9 @@ const ContactUs = () => {
           <a href="https://www.youtube.com/@lingocommand" style={{ color: 'white' }}>
             YouTube
           </a>
+          <a href="https://www.tiktok.com/@lingocommand" style={{ color: 'white' }}>
+            TikTok
+          </a>
           <a href="https://www.instagram.com/lingocommand/" style={{ color: 'white' }}>
             Instagram
           </a>
@@ -30,8 +33,8 @@ const ContactUs = () => {
           <a href="https://x.com/lingocommand" style={{ color: 'white' }}>
             Twitter
           </a>
-          <a href="https://www.tiktok.com/@lingocommand" style={{ color: 'white' }}>
-            TikTok
+          <a href="https://pinterest.com/lingocommand/" style={{ color: 'white' }}>
+            Pinterest
           </a>
           
         </div>
