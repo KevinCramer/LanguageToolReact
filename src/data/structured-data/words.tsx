@@ -1797,7 +1797,153 @@ const japaneseTopics: TopicWithThreeAlphabets[] = [
     { englishWord: 'hat', foreignWord: ['boushi', 'ぼうし', '帽子'], foreignAudio: japaneseAudioHat },
     { englishWord: 'scarf', foreignWord: ['suka-fu', 'スカーフ', 'スカーフ'], foreignAudio: japaneseAudioScarf }
   ]
-  }
+  },
+  { 
+    name: 'Days of the Week', slugName: 'day', hasOrdering: true, isLocked: false, isAlphabet: false, words: [
+      { englishWord: 'Monday', foreignWord: ['getsuyōbi', 'げつようび', '月曜日'], foreignAudio: '', order: 1 },
+      { englishWord: 'Tuesday', foreignWord: ['kayōbi', 'かようび', '火曜日'], foreignAudio: '', order: 2 },
+      { englishWord: 'Wednesday', foreignWord: ['suiyōbi', 'すいようび', '水曜日'], foreignAudio: '', order: 3 },
+      { englishWord: 'Thursday', foreignWord: ['mokuyōbi', 'もくようび', '木曜日'], foreignAudio: '', order: 4 },
+      { englishWord: 'Friday', foreignWord: ['kinyōbi', 'きんようび', '金曜日'], foreignAudio: '', order: 5 },
+      { englishWord: 'Saturday', foreignWord: ['doyōbi', 'どようび', '土曜日'], foreignAudio: '', order: 6 },
+      { englishWord: 'Sunday', foreignWord: ['nichiyōbi', 'にちようび', '日曜日'], foreignAudio: '', order: 7 }
+    ] 
+  },
+  { 
+    name: 'Months of the Year', slugName: 'months', hasOrdering: true, isLocked: false, isAlphabet: false, 
+    words: [
+      { englishWord: 'January', foreignWord: ['ichigatsu', 'いちがつ', '一月'], foreignAudio: '', order: 1 },
+      { englishWord: 'February', foreignWord: ['nigatsu', 'にがつ', '二月'], foreignAudio: '', order: 2 },
+      { englishWord: 'March', foreignWord: ['sangatsu', 'さんがつ', '三月'], foreignAudio: '', order: 3 },
+      { englishWord: 'April', foreignWord: ['shigatsu', 'しがつ', '四月'], foreignAudio: '', order: 4 },
+      { englishWord: 'May', foreignWord: ['gogatsu', 'ごがつ', '五月'], foreignAudio: '', order: 5 },
+      { englishWord: 'June', foreignWord: ['rokugatsu', 'ろくがつ', '六月'], foreignAudio: '', order: 6 },
+      { englishWord: 'July', foreignWord: ['shichigatsu', 'しちがつ', '七月'], foreignAudio: '', order: 7 },
+      { englishWord: 'August', foreignWord: ['hachigatsu', 'はちがつ', '八月'], foreignAudio: '', order: 8 },
+      { englishWord: 'September', foreignWord: ['kugatsu', 'くがつ', '九月'], foreignAudio: '', order: 9 },
+      { englishWord: 'October', foreignWord: ['jūgatsu', 'じゅうがつ', '十月'], foreignAudio: '', order: 10 },
+      { englishWord: 'November', foreignWord: ['jūichigatsu', 'じゅういちがつ', '十一月'], foreignAudio: '', order: 11 },
+      { englishWord: 'December', foreignWord: ['jūnigatsu', 'じゅうにがつ', '十二月'], foreignAudio: '', order: 12 }
+    ] 
+  },
+  { 
+    name: 'Regular Adjectives', slugName: 'adj1', hasOrdering: false, isLocked: false, isAlphabet: false, 
+    words: [
+      { englishWord: 'happy', foreignWord: ['ureshii', 'うれしい', '嬉しい'], foreignAudio: '' },
+      { englishWord: 'sad', foreignWord: ['kanashii', 'かなしい', '悲しい'], foreignAudio: '' },
+      { englishWord: 'angry', foreignWord: ['okotte iru', 'おこっている', '怒っている'], foreignAudio: '' },
+      { englishWord: 'lonely', foreignWord: ['sabishii', 'さびしい', '寂しい'], foreignAudio: '' },
+      { englishWord: 'sick', foreignWord: ['guai ga warui', 'ぐあいがわるい', '具合が悪い'], foreignAudio: '' },
+      { englishWord: 'clever', foreignWord: ['kashikoi', 'かしこい', '賢い'], foreignAudio: '' },
+      { englishWord: 'annoy', foreignWord: ['iradatashii', 'いらだたしい', '苛立たしい'], foreignAudio: '' },
+      { englishWord: 'small', foreignWord: ['chiisai', 'ちいさい', '小さい'], foreignAudio: '' },
+      { englishWord: 'narrow', foreignWord: ['semai', 'せまい', '狭い'], foreignAudio: '' },
+      { englishWord: 'short', foreignWord: ['mijikai', 'みじかい', '短い'], foreignAudio: '' },
+      { englishWord: 'hard', foreignWord: ['katai', 'かたい', '硬い'], foreignAudio: '' },
+      { englishWord: 'soft', foreignWord: ['yawarakai', 'やわらかい', '柔らかい'], foreignAudio: '' },
+      { englishWord: 'light', foreignWord: ['karui', 'かるい', '軽い'], foreignAudio: '' },
+      { englishWord: 'cheap', foreignWord: ['yasui', 'やすい', '安い'], foreignAudio: '' },
+      { englishWord: 'busy', foreignWord: ['isogashii', 'いそがしい', '忙しい'], foreignAudio: '' },
+      { englishWord: 'rainy', foreignWord: ['ame ga ooi', 'あめがおおい', '雨が多い'], foreignAudio: '' },
+      { englishWord: 'humid', foreignWord: ['shimeppoi', 'しめっぽい', '湿っぽい'], foreignAudio: '' },
+      { englishWord: 'windy', foreignWord: ['kaze no tsuyoi', 'かぜのつよい', '風の強い'], foreignAudio: '' },
+      { englishWord: 'sunny', foreignWord: ['akarui', 'あかるい', '明るい'], foreignAudio: '' },
+      { englishWord: 'good', foreignWord: ['yoi', 'よい', '良い'], foreignAudio: '' },
+      { englishWord: 'tall', foreignWord: ['se ga takai', 'せがたかい', '背が高い'], foreignAudio: '' },
+      { englishWord: 'strong', foreignWord: ['tsuyoi', 'つよい', '強い'], foreignAudio: '' },
+      { englishWord: 'cool', foreignWord: ['suzushii', 'すずしい', '涼しい'], foreignAudio: '' },
+      { englishWord: 'ugly', foreignWord: ['minikui', 'みにくい', '醜い'], foreignAudio: '' },
+      { englishWord: 'scary', foreignWord: ['kowai', 'こわい', '怖い'], foreignAudio: '' },
+      { englishWord: 'cold', foreignWord: ['tsumetai', 'つめたい', '冷たい'], foreignAudio: '' },
+      { englishWord: 'interesting', foreignWord: ['kyoumibukai', 'きょうみぶかい', '興味深い'], foreignAudio: '' },
+      { englishWord: 'funny', foreignWord: ['omoshiroi', 'おもしろい', '面白い'], foreignAudio: '' },
+      { englishWord: 'difficult', foreignWord: ['muzukashii', 'むずかしい', '難しい'], foreignAudio: '' },
+      { englishWord: 'hot', foreignWord: ['atsui', 'あつい', '暑い'], foreignAudio: '' },
+      { englishWord: 'bad', foreignWord: ['warui', 'わるい', '悪い'], foreignAudio: '' },
+      { englishWord: 'dirty', foreignWord: ['kitanai', 'きたない', '汚い'], foreignAudio: '' },
+      { englishWord: 'near', foreignWord: ['chikai', 'ちかい', '近い'], foreignAudio: '' },
+      { englishWord: 'low', foreignWord: ['hikui', 'ひくい', '低い'], foreignAudio: '' },
+      { englishWord: 'high', foreignWord: ['takai', 'たかい', '高い'], foreignAudio: '' }
+    ] 
+  },
+  {
+    name: 'Irregular Adjectives', slugName: 'adj2', hasOrdering: false, isLocked: false, isAlphabet: false, words: [
+      { englishWord: 'calm', foreignWord: ['ochitsuita', 'おちついた', '落ち着いた'], foreignAudio: '' },
+      { englishWord: 'polite', foreignWord: ['teinei', 'ていねい', '丁寧'], foreignAudio: '' },
+      { englishWord: 'honest', foreignWord: ['seijitsu', 'せいじつ', '誠実'], foreignAudio: '' },
+      { englishWord: 'proud', foreignWord: ['hokori ni omou', 'ほこりにおもう', '誇りに思う'], foreignAudio: '' },
+      { englishWord: 'expensive', foreignWord: ['kouka', 'こうか', '高価'], foreignAudio: '' },
+      { englishWord: 'sunny', foreignWord: ['hogaraka', 'ほがらか', '朗らか'], foreignAudio: '' },
+      { englishWord: 'healthy', foreignWord: ['kenkouteki', 'けんこうてき', '健康的'], foreignAudio: '' },
+      { englishWord: 'beautiful', foreignWord: ['kirei', 'きれい', 'きれい'], foreignAudio: '' },
+      { englishWord: 'kind', foreignWord: ['shinsetsu', 'しんせつ', '親切'], foreignAudio: '' },
+      { englishWord: 'easy', foreignWord: ['kantan', 'かんたん', '簡単'], foreignAudio: '' },
+      { englishWord: 'clean', foreignWord: ['kirei', 'きれい', 'きれい'], foreignAudio: '' },
+      { englishWord: 'rich', foreignWord: ['yutaka', 'ゆたか', '豊か'], foreignAudio: '' },
+      { englishWord: 'poor', foreignWord: ['binbou', 'びんぼう', '貧乏'], foreignAudio: '' },
+      { englishWord: 'famous', foreignWord: ['yuumei', 'ゆうめい', '有名'], foreignAudio: '' }
+    ]
+  },
+  {
+    name: 'Animals', slugName: 'animals', hasOrdering: false, isLocked: false, isAlphabet: false, words: [
+      { englishWord: 'dog', foreignWord: ['inu', 'いぬ', '犬'], foreignAudio: '' },
+      { englishWord: 'cat', foreignWord: ['neko', 'ねこ', '猫'], foreignAudio: '' },
+      { englishWord: 'chicken', foreignWord: ['niwatori', 'にわとり', '鶏'], foreignAudio: '' },
+      { englishWord: 'cow', foreignWord: ['ushi', 'うし', '牛'], foreignAudio: '' },
+      { englishWord: 'horse', foreignWord: ['uma', 'うま', '馬'], foreignAudio: '' },
+      { englishWord: 'sheep', foreignWord: ['hitsuji', 'ひつじ', '羊'], foreignAudio: '' },
+      { englishWord: 'pig', foreignWord: ['buta', 'ぶた', '豚'], foreignAudio: '' },
+      { englishWord: 'fish', foreignWord: ['sakana', 'さかな', '魚'], foreignAudio: '' },
+      { englishWord: 'bird', foreignWord: ['tori', 'とり', '鳥'], foreignAudio: '' },
+      { englishWord: 'rabbit', foreignWord: ['usagi', 'うさぎ', '兎'], foreignAudio: '' }
+    ]
+  },
+  {
+    name: 'Locations', slugName: 'locations', hasOrdering: false, isLocked: false, isAlphabet: false, words: [
+      { englishWord: 'bakery', foreignWord: ['panya', 'ぱんや', 'パン屋'], foreignAudio: '' },
+      { englishWord: 'supermarket', foreignWord: ['suupaa', 'スーパー', 'unknown'], foreignAudio: '' },
+      { englishWord: 'cinema', foreignWord: ['eigakan', 'えいがかん', '映画館'], foreignAudio: '' },
+      { englishWord: 'park', foreignWord: ['kouen', 'こうえん', '公園'], foreignAudio: '' },
+      { englishWord: 'school', foreignWord: ['gakkou', 'がっこう', '学校'], foreignAudio: '' },
+      { englishWord: 'library', foreignWord: ['toshokan', 'としょかん', '図書館'], foreignAudio: '' },
+      { englishWord: 'hospital', foreignWord: ['byouin', 'びょういん', '病院'], foreignAudio: '' },
+      { englishWord: 'station', foreignWord: ['eki', 'えき', '駅'], foreignAudio: '' },
+      { englishWord: 'restaurant', foreignWord: ['resutoran', 'レストラン', 'unknown'], foreignAudio: '' },
+      { englishWord: 'hotel', foreignWord: ['hoteru', 'ホテル', 'unknown'], foreignAudio: '' }
+    ]
+  },
+  { 
+    name: 'Body', slugName: 'body', hasOrdering: false, isLocked: false, isAlphabet: false, words: [
+      { englishWord: 'arm', foreignWord: ['ude', 'うで', '腕'], foreignAudio: '' },
+      { englishWord: 'leg', foreignWord: ['ashi', 'あし', '足'], foreignAudio: '' },
+      { englishWord: 'eyes', foreignWord: ['me', 'め', '目'], foreignAudio: '' },
+      { englishWord: 'ears', foreignWord: ['mimi', 'みみ', '耳'], foreignAudio: '' },
+      { englishWord: 'mouth', foreignWord: ['kuchi', 'くち', '口'], foreignAudio: '' },
+      { englishWord: 'head', foreignWord: ['atama', 'あたま', '頭'], foreignAudio: '' },
+      { englishWord: 'hand', foreignWord: ['te', 'て', '手'], foreignAudio: '' },
+      { englishWord: 'fingers', foreignWord: ['yubi', 'ゆび', '指'], foreignAudio: '' },
+      { englishWord: 'stomach', foreignWord: ['onaka', 'おなか', 'お腹'], foreignAudio: '' },
+      { englishWord: 'back', foreignWord: ['senaka', 'せなか', '背中'], foreignAudio: '' },
+      { englishWord: 'feet', foreignWord: ['ashi', 'あし', '足'], foreignAudio: '' }
+    ]
+  },
+  {
+    name: 'Food', slugName: 'food', hasOrdering: false, isLocked: false, isAlphabet: false, words: [
+      { englishWord: 'bread', foreignWord: ['pan', 'パン', 'unknown'], foreignAudio: '' },
+      { englishWord: 'eggs', foreignWord: ['tamago', 'たまご', '卵'], foreignAudio: '' },
+      { englishWord: 'chicken', foreignWord: ['toriniku', 'とりにく', '鶏肉'], foreignAudio: '' },
+      { englishWord: 'rice', foreignWord: ['gohan', 'ごはん', 'ご飯'], foreignAudio: '' },
+      { englishWord: 'fish', foreignWord: ['sakana', 'さかな', '魚'], foreignAudio: '' },
+      { englishWord: 'milk', foreignWord: ['gyūnyū', 'ぎゅうにゅう', '牛乳'], foreignAudio: '' },
+      { englishWord: 'cheese', foreignWord: ['chiizu', 'チーズ', 'unknown'], foreignAudio: '' },
+      { englishWord: 'apple', foreignWord: ['ringo', 'りんご', '林檎'], foreignAudio: '' },
+      { englishWord: 'banana', foreignWord: ['banana', 'バナナ', 'unknown'], foreignAudio: '' },
+      { englishWord: 'carrot', foreignWord: ['ninjin', 'にんじん', '人参'], foreignAudio: '' },
+      { englishWord: 'potato', foreignWord: ['jagaimo', 'じゃがいも', 'じゃが芋'], foreignAudio: '' },
+      { englishWord: 'water', foreignWord: ['mizu', 'みず', '水'], foreignAudio: '' }
+    ]
+  },
+
 ]
 
 const mandarinTopics: TopicWithTwoAlphabets[] = [
