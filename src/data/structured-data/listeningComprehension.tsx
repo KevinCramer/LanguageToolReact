@@ -17,7 +17,7 @@ const japaneseAudioTranscriptions: AudioTranscriptionWithFourAlphabet[] = [
         foreignText: [
           'Aiko-san wa hon o yomu koto ga daisuki de, jimoto no toshokan de kokoro no yasuragi to tanoshisa o mitsuketeimasu. Maishuu doyoubi no asa, kanojo wa tsugi no bouken ya kyoumi-bukai manabi o sagashite, nanjikan mo tana o arukimawari masu. Aiko-san ni totte toshokan wa tada no dokusho basho de wa naku, isogashii nichijou kara no shizuka na touhi basho desu. Shuu ni yotte, rekishi shousetsu ni bottou suru koto mo areba, shishuu ya shinrigaku no hon o yomu koto mo arimasu.',
           'あいこさんはほんをよむことがだいすきで、じもとのとしょかんでこころのやすらぎとたのしさをみつけています。まいしゅうどようびのあさ、かのじょはつぎのぼうけんやきょうみぶかいまなびをさがして、なんじかんもたなをあるきまわります。あいこさんにとってとしょかんはただのどくしょばしょではなく、いそがしいにちじょうからのしずかなとうひばしょです。しゅうによって、れきししょうせつにぼっとうすることもあれば、ししゅうやしんりがくのほんをよむこともあります。',
-          'あいこさん は ほん を よむ こと が だいすき で、 じもと の としょかん で こころ の やすらぎ と たのしさ を みつけて います。 まいしゅう どようび の あさ、 かのじょ は つぎ の ぼうけん や きょうみぶかい まなび を さがして、 なんじかん も たな を あるきまわり ます。 あいこさん に とって としょかん は ただ の どくしょ ばしょ で は なく、 いそがしい にちじょう から の しずかな とうひ ばしょ です。 しゅう に よって、 れきし しょうせつ に ぼっとう する こと も あれば、 ししゅう や しんり がく の ほん を よむ こと も あります。',
+          'あいこさん は ほん を よむ こと が だいすき で、 じもと の としょかん で こころ の やすらぎ と たのしさ を みつけています。まいしゅう どようび の あさ、 かのじょ は つぎ の ぼうけん や きょうみぶかい まなび を さがして、 なんじかん も たな を あるきまわり ます。あいこさん に とって としょかん は ただ の どくしょ ばしょ で は なく、 いそがしい にちじょう から の しずか な とうひ ばしょ です。しゅう に よって、 れきし しょうせつ に ぼっとう する こと も あれば、 ししゅう や しんりがく の ほん を よむ こと も あります。',
           '愛子さんは本を読むことが大好きで、地元の図書館で心の安らぎと楽しさを見つけています。毎週土曜日の朝、彼女は次の冒険や興味深い学びを探して、何時間も棚を歩き回ります。愛子さんにとって図書館はただの読書場所ではなく、忙しい日常からの静かな逃避場所です。週によって、歴史小説に没頭することもあれば、詩集や心理学の本を読むこともあります。'
         ],
         audioFile: aikosBookSanctuaryPart1

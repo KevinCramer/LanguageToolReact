@@ -169,9 +169,9 @@ const ListeningComprehensionContent = (props: { languageNumber: number, howToGui
                     {content.foreignText[1]}
                   </div>}
                   {currentLeft === 'WritingSystem2v2' && <div style={{ display: 'flex', textAlign:'left', paddingLeft:'5px', paddingRight: '5px' }}>
-                    {content.foreignText[2].replace(/ /g, '\u00A0\u00A0')}
+                    {content.foreignText[2].replace(/ /g, '__')}
                   </div>}
-                  {currentLeft === 'WritingSystem4' && <div style={{ display: 'flex', textAlign:'left', paddingLeft:'5px', paddingRight: '5px' }}>
+                  {currentLeft === 'WritingSystem3' && <div style={{ display: 'flex', textAlign:'left', paddingLeft:'5px', paddingRight: '5px' }}>
                     {content.foreignText[3]}
                   </div>}
                   {currentLeft === 'English' && <div style={{ display: 'flex', textAlign:'left', paddingLeft:'5px', paddingRight: '5px' }}>
@@ -189,9 +189,9 @@ const ListeningComprehensionContent = (props: { languageNumber: number, howToGui
                     {content.foreignText[1]}
                   </div>}
                   {currentRight === 'WritingSystem2v2' && <div style={{ display: 'flex', textAlign:'left', paddingLeft:'5px', paddingRight: '5px' }}>
-                    {content.foreignText[2].replace(/ /g, '\u00A0\u00A0')}
+                    {content.foreignText[2].replace(/ /g, '__')}
                   </div>}
-                  {currentRight === 'WritingSystem4' && <div style={{ display: 'flex', textAlign:'left', paddingLeft:'5px', paddingRight: '5px' }}>
+                  {currentRight === 'WritingSystem3' && <div style={{ display: 'flex', textAlign:'left', paddingLeft:'5px', paddingRight: '5px' }}>
                     {content.foreignText[3]}
                   </div>}
                   {currentRight === 'English' && <div style={{ display: 'flex', textAlign:'left', paddingLeft:'5px', paddingRight: '5px' }}>
