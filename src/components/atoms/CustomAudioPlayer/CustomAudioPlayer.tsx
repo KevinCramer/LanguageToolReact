@@ -6,17 +6,15 @@ import { IonIcon } from '@ionic/react';
 
 type AudioPlayerProps = {
   audioFile: string;
-  audioFile75?: string;
-  audioFile50?: string;
 };
 
 const playbackSpeedOptions = [
-  { label: 'normal', value: 0.8 }, // Default playback speed
-  { label: 'slow', value: 0.65 }, // 75% speed
+  { label: 'normal', value: 0.1 }, // Default playback speed
+  { label: 'slow', value: 0.75 }, // 75% speed
   { label: 'very slow', value: 0.5 }, // 50% speed
 ];
 
-const AudioPlayer: React.FC<AudioPlayerProps> = ({ audioFile, audioFile75, audioFile50 }) => {
+const AudioPlayer: React.FC<AudioPlayerProps> = ({ audioFile, }) => {
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
   const [currentSeconds, setCurrentSeconds] = useState<number>(0);
   const [totalSeconds, setTotalSeconds] = useState<number>(0);
@@ -60,10 +58,7 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ audioFile, audioFile75, audio
 
     if (audioRef.current) {
       audioRef.current.pause();
-      audioRef.current.src =
-        selectedSpeed === 0.75 ? audioFile75 || audioFile :
-          selectedSpeed === 0.5 ? audioFile50 || audioFile :
-            audioFile;
+      audioRef.current.src = audioFile;
       audioRef.current.playbackRate = selectedSpeed; // Adjust playback speed
       audioRef.current.play();
     }
