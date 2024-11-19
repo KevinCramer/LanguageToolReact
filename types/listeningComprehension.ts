@@ -1,6 +1,5 @@
 import { FixedSizeArray } from 'fixed-size-array';
 
-
 export type ParagraphWithNumAlphabets<N extends number> = {
     englishText: string 
     foreignText: FixedSizeArray<N, string>;
@@ -8,7 +7,10 @@ export type ParagraphWithNumAlphabets<N extends number> = {
 
 }
 
-export type Paragraph = ParagraphWithNumAlphabets<1> | ParagraphWithNumAlphabets<2>  | ParagraphWithNumAlphabets<3>
+export type Paragraph = 
+ParagraphWithNumAlphabets<1> | ParagraphWithNumAlphabets<2> |
+ParagraphWithNumAlphabets<3> | ParagraphWithNumAlphabets<4>
+
 export type AudioTranscriptionWithOneAlphabet = {
     name: string;
     slugName: string;
@@ -25,9 +27,17 @@ export type AudioTranscriptionWithThreeAlphabet = {
     contents: ParagraphWithNumAlphabets<3>[];
 }
 
-export type AudioTranscription = AudioTranscriptionWithOneAlphabet | AudioTranscriptionWithTwoAlphabet | AudioTranscriptionWithThreeAlphabet;
+export type AudioTranscriptionWithFourAlphabet = {
+    name: string;
+    slugName: string;
+    contents: ParagraphWithNumAlphabets<4>[];
+}
 
-export type Language  = {
+export type AudioTranscription = 
+AudioTranscriptionWithOneAlphabet | AudioTranscriptionWithTwoAlphabet |
+AudioTranscriptionWithThreeAlphabet | AudioTranscriptionWithFourAlphabet;
+
+export type Language = {
     languageName: string;
     audioTranscriptions: AudioTranscription[];
     numForeignAlphabets: number;
@@ -38,5 +48,6 @@ export enum TranscriptionType {
     English = 'English',
     WritingSystem1 = 'WritingSystem1',
     WritingSystem2 = 'WritingSystem2',
+    WritingSystem2v2 = 'WritingSystem2v2',
     WritingSystem3 = 'WritingSystem3'
   }

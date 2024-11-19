@@ -9,7 +9,6 @@ import AudioPlayer from '../../components/atoms/CustomAudioPlayer/CustomAudioPla
 import CustomDropDownButton from '../../components/atoms/CustomDropDownButton/CustomDropDownButton';
 import CustomDropDownButtonWhite from '../../components/atoms/CustomDropDownButtonWhite/CustomDropDownButtonWhite';
 import Dropdown from 'react-bootstrap/Dropdown';
-import { dividerClasses } from '@mui/material';
 
 const ListeningComprehensionContent = (props: { languageNumber: number, howToGuideVideo?: any }) => {
   const navigate = useNavigate();
@@ -81,6 +80,7 @@ const ListeningComprehensionContent = (props: { languageNumber: number, howToGui
     [TranscriptionType.English]:'English Transcription',
     [TranscriptionType.WritingSystem1]: `${currentLanguage.languageName} Transcription ${currentLanguage.numForeignAlphabets > 1 ? '(Roman Alphabetisation)' : ''}`,
     [TranscriptionType.WritingSystem2]: `${currentLanguage.languageName} Transcription (Hiragana and Katakana)`,
+    [TranscriptionType.WritingSystem2v2]: `${currentLanguage.languageName} Transcription (Hiragana and Katakana with spacing)`,
     [TranscriptionType.WritingSystem3]: `${currentLanguage.languageName} Transcription (Hiragana, Katakana, and Kanji)`,
 
   }
@@ -104,6 +104,11 @@ const ListeningComprehensionContent = (props: { languageNumber: number, howToGui
                 onClick={() =>{changeLeft(TranscriptionType.WritingSystem2)}}
               >
                 {titleMap[TranscriptionType.WritingSystem2]}
+              </Dropdown.Item>}
+              {currentLanguage.numForeignAlphabets > 1 && <Dropdown.Item
+                onClick={() =>{changeLeft(TranscriptionType.WritingSystem2v2)}}
+              >
+                {titleMap[TranscriptionType.WritingSystem2v2]}
               </Dropdown.Item>}
               {currentLanguage.numForeignAlphabets > 2 && <Dropdown.Item
                 onClick={() =>{changeLeft(TranscriptionType.WritingSystem3)}}
@@ -130,6 +135,11 @@ const ListeningComprehensionContent = (props: { languageNumber: number, howToGui
                 onClick={() =>{changeRight(TranscriptionType.WritingSystem2)}}
               >
                 {titleMap[TranscriptionType.WritingSystem2]}
+              </Dropdown.Item>}
+              {currentLanguage.numForeignAlphabets > 1 && <Dropdown.Item
+                onClick={() =>{changeRight(TranscriptionType.WritingSystem2v2)}}
+              >
+                {titleMap[TranscriptionType.WritingSystem2v2]}
               </Dropdown.Item>}
               {currentLanguage.numForeignAlphabets > 2 && <Dropdown.Item
                 onClick={() =>{changeRight(TranscriptionType.WritingSystem3)}}
@@ -158,8 +168,11 @@ const ListeningComprehensionContent = (props: { languageNumber: number, howToGui
                   {currentLeft === 'WritingSystem2' && <div style={{ display: 'flex', textAlign:'left', paddingLeft:'5px', paddingRight: '5px' }}>
                     {content.foreignText[1]}
                   </div>}
-                  {currentLeft === 'WritingSystem3' && <div style={{ display: 'flex', textAlign:'left', paddingLeft:'5px', paddingRight: '5px' }}>
-                    {content.foreignText[2]}
+                  {currentLeft === 'WritingSystem2v2' && <div style={{ display: 'flex', textAlign:'left', paddingLeft:'5px', paddingRight: '5px' }}>
+                    {content.foreignText[2].replace(/ /g, '\u00A0\u00A0')}
+                  </div>}
+                  {currentLeft === 'WritingSystem4' && <div style={{ display: 'flex', textAlign:'left', paddingLeft:'5px', paddingRight: '5px' }}>
+                    {content.foreignText[3]}
                   </div>}
                   {currentLeft === 'English' && <div style={{ display: 'flex', textAlign:'left', paddingLeft:'5px', paddingRight: '5px' }}>
                     {content.englishText}
@@ -175,8 +188,11 @@ const ListeningComprehensionContent = (props: { languageNumber: number, howToGui
                   {currentRight === 'WritingSystem2' && <div style={{ display: 'flex', textAlign:'left', paddingLeft:'5px', paddingRight: '5px' }}>
                     {content.foreignText[1]}
                   </div>}
-                  {currentRight === 'WritingSystem3' && <div style={{ display: 'flex', textAlign:'left', paddingLeft:'5px', paddingRight: '5px' }}>
-                    {content.foreignText[2]}
+                  {currentRight === 'WritingSystem2v2' && <div style={{ display: 'flex', textAlign:'left', paddingLeft:'5px', paddingRight: '5px' }}>
+                    {content.foreignText[2].replace(/ /g, '\u00A0\u00A0')}
+                  </div>}
+                  {currentRight === 'WritingSystem4' && <div style={{ display: 'flex', textAlign:'left', paddingLeft:'5px', paddingRight: '5px' }}>
+                    {content.foreignText[3]}
                   </div>}
                   {currentRight === 'English' && <div style={{ display: 'flex', textAlign:'left', paddingLeft:'5px', paddingRight: '5px' }}>
                     {content.englishText}
