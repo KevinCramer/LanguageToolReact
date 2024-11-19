@@ -80,7 +80,7 @@ const ListeningComprehensionContent = (props: { languageNumber: number, howToGui
     [TranscriptionType.English]:'English Transcription',
     [TranscriptionType.WritingSystem1]: `${currentLanguage.languageName} Transcription ${currentLanguage.numForeignAlphabets > 1 ? '(Roman Alphabetisation)' : ''}`,
     [TranscriptionType.WritingSystem2]: `${currentLanguage.languageName} Transcription (Hiragana and Katakana)`,
-    [TranscriptionType.WritingSystem2v2]: `${currentLanguage.languageName} Transcription (Hiragana and Katakana with spacing)`,
+    [TranscriptionType.WritingSystem2v2]: `${currentLanguage.languageName} Transcription (Hiragana and Katakana + spacing)`,
     [TranscriptionType.WritingSystem3]: `${currentLanguage.languageName} Transcription (Hiragana, Katakana, and Kanji)`,
 
   }
@@ -101,14 +101,14 @@ const ListeningComprehensionContent = (props: { languageNumber: number, howToGui
                 {titleMap[TranscriptionType.WritingSystem1]}
               </Dropdown.Item>
               {currentLanguage.numForeignAlphabets > 1 && <Dropdown.Item
-                onClick={() =>{changeLeft(TranscriptionType.WritingSystem2)}}
-              >
-                {titleMap[TranscriptionType.WritingSystem2]}
-              </Dropdown.Item>}
-              {currentLanguage.numForeignAlphabets > 1 && <Dropdown.Item
                 onClick={() =>{changeLeft(TranscriptionType.WritingSystem2v2)}}
               >
                 {titleMap[TranscriptionType.WritingSystem2v2]}
+              </Dropdown.Item>}
+              {currentLanguage.numForeignAlphabets > 1 && <Dropdown.Item
+                onClick={() =>{changeLeft(TranscriptionType.WritingSystem2)}}
+              >
+                {titleMap[TranscriptionType.WritingSystem2]}
               </Dropdown.Item>}
               {currentLanguage.numForeignAlphabets > 2 && <Dropdown.Item
                 onClick={() =>{changeLeft(TranscriptionType.WritingSystem3)}}
@@ -132,14 +132,14 @@ const ListeningComprehensionContent = (props: { languageNumber: number, howToGui
                 {titleMap[TranscriptionType.WritingSystem1]}
               </Dropdown.Item>
               {currentLanguage.numForeignAlphabets > 1 && <Dropdown.Item
-                onClick={() =>{changeRight(TranscriptionType.WritingSystem2)}}
-              >
-                {titleMap[TranscriptionType.WritingSystem2]}
-              </Dropdown.Item>}
-              {currentLanguage.numForeignAlphabets > 1 && <Dropdown.Item
                 onClick={() =>{changeRight(TranscriptionType.WritingSystem2v2)}}
               >
                 {titleMap[TranscriptionType.WritingSystem2v2]}
+              </Dropdown.Item>}
+              {currentLanguage.numForeignAlphabets > 1 && <Dropdown.Item
+                onClick={() =>{changeRight(TranscriptionType.WritingSystem2)}}
+              >
+                {titleMap[TranscriptionType.WritingSystem2]}
               </Dropdown.Item>}
               {currentLanguage.numForeignAlphabets > 2 && <Dropdown.Item
                 onClick={() =>{changeRight(TranscriptionType.WritingSystem3)}}
