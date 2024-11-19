@@ -80,7 +80,7 @@ const ListeningComprehensionContent = (props: { languageNumber: number, howToGui
     [TranscriptionType.English]:'English Transcription',
     [TranscriptionType.WritingSystem1]: `${currentLanguage.languageName} Transcription ${currentLanguage.numForeignAlphabets > 1 ? '(Roman Alphabetisation)' : ''}`,
     [TranscriptionType.WritingSystem2]: `${currentLanguage.languageName} Transcription (Hiragana and Katakana)`,
-    [TranscriptionType.WritingSystem2v2]: `${currentLanguage.languageName} Transcription (Hiragana and Katakana + spacing)`,
+    [TranscriptionType.WritingSystem2v2]: `${currentLanguage.languageName} Transcription (Hiragana and Katakana with spacing)`,
     [TranscriptionType.WritingSystem3]: `${currentLanguage.languageName} Transcription (Hiragana, Katakana, and Kanji)`,
 
   }
