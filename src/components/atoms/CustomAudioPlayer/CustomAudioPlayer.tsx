@@ -3,14 +3,18 @@ import { pause, play } from 'ionicons/icons';
 import { timeElapsed, timeRemaining } from '../../../helpers/audio-player-helpers';
 import { useRef, useState } from 'react';
 import { IonIcon } from '@ionic/react';
-import { Button } from 'react-bootstrap';
-import CustomButton from '../CustomButton/CustomButton';
 
 type AudioPlayerProps = {
   audioFile: string;
   audioFile75?: string;
   audioFile50?: string;
 };
+
+const playbackSpeedOptions = [
+  { label: 'normal', value: 0.8 }, // Default playback speed
+  { label: 'slow', value: 0.65 }, // 75% speed
+  { label: 'very slow', value: 0.5 }, // 50% speed
+];
 
 const AudioPlayer: React.FC<AudioPlayerProps> = ({ audioFile, audioFile75, audioFile50 }) => {
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
@@ -50,32 +54,41 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ audioFile, audioFile75, audio
     setCurrentSeconds(newTime);
   };
 
-  const handleSpeedToggle = () => {
-    let newSpeed = playbackSpeed;
-    if (playbackSpeed === 1) {
-      newSpeed = 0.75;
-    } else if (playbackSpeed === 0.75) {
-      newSpeed = 0.5;
-    } else {
-      newSpeed = 1;
-    }
-    setPlaybackSpeed(newSpeed);
+  const handleSpeedChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const selectedSpeed = parseFloat(event.target.value);
+    setPlaybackSpeed(selectedSpeed);
 
     if (audioRef.current) {
       audioRef.current.pause();
       audioRef.current.src =
-        newSpeed === 0.75 ? audioFile75 || audioFile :
-          newSpeed === 0.5 ? audioFile50 || audioFile :
+        selectedSpeed === 0.75 ? audioFile75 || audioFile :
+          selectedSpeed === 0.5 ? audioFile50 || audioFile :
             audioFile;
-      audioRef.current.playbackRate = newSpeed; // Adjust playback speed
+      audioRef.current.playbackRate = selectedSpeed; // Adjust playback speed
       audioRef.current.play();
     }
 
-    setIsPlaying(true); // Ensure the audio resumes playing after speed toggle
+    setIsPlaying(true); // Ensure the audio resumes playing after speed change
   };
 
   return (
-    <div className="audio-player">
+    <div className="audio-player" style={{ borderWidth: '4px' }}>
+      <div style={{ display: 'flex', flexDirection: 'row', paddingBottom: '10px' }}>
+        <div>
+          {'speed:\u2002'}
+        </div>
+        <select
+          value={playbackSpeed}
+          onChange={handleSpeedChange}
+          className="speed-selector"
+        >
+          {playbackSpeedOptions.map((option) => (
+            <option key={option.value} value={option.value}>
+              {option.label}
+            </option>
+          ))}
+        </select>
+      </div>
       <audio
         ref={audioRef}
         onTimeUpdate={handleTimeUpdate}
@@ -98,9 +111,6 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ audioFile, audioFile75, audio
         <div>{timeElapsed(currentSeconds)}</div>
         <div>{timeRemaining(currentSeconds, totalSeconds)}</div>
       </div>
-      <button style={{ borderRadius: '5px', borderColor: '#4A4A4A',borderWidth: '1px', color: '#4A4A4A' }} disabled={false} onClick={handleSpeedToggle}>
-        Audio Speed: {playbackSpeed === 1 ? '100%' : playbackSpeed === 0.75 ? '75%' : '50%'}
-      </button>
     </div>
   );
 };
