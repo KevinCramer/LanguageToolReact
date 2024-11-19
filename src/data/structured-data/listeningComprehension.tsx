@@ -17,7 +17,7 @@ const japaneseAudioTranscriptions: AudioTranscriptionWithFourAlphabet[] = [
         foreignText: [
           'Aiko-san wa hon o yomu koto ga daisuki de, jimoto no toshokan de kokoro no yasuragi to tanoshisa o mitsuketeimasu. Maishuu doyoubi no asa, kanojo wa tsugi no bouken ya kyoumi-bukai manabi o sagashite, nanjikan mo tana o arukimawari masu. Aiko-san ni totte toshokan wa tada no dokusho basho de wa naku, isogashii nichijou kara no shizuka na touhi basho desu. Shuu ni yotte, rekishi shousetsu ni bottou suru koto mo areba, shishuu ya shinrigaku no hon o yomu koto mo arimasu.',
           'あいこさんはほんをよむことがだいすきで、じもとのとしょかんでこころのやすらぎとたのしさをみつけています。まいしゅうどようびのあさ、かのじょはつぎのぼうけんやきょうみぶかいまなびをさがして、なんじかんもたなをあるきまわります。あいこさんにとってとしょかんはただのどくしょばしょではなく、いそがしいにちじょうからのしずかなとうひばしょです。しゅうによって、れきししょうせつにぼっとうすることもあれば、ししゅうやしんりがくのほんをよむこともあります。',
-          'あいこさん は ほん を よむ こと が だいすき で、 じもと の としょかん で こころ の やすらぎ と たのしさ を みつけています。まいしゅう どようび の あさ、 かのじょ は つぎ の ぼうけん や きょうみぶかい まなび を さがして、 なんじかん も たな を あるきまわり ます。あいこさん に とって としょかん は ただ の どくしょ ばしょ で は なく、 いそがしい にちじょう から の しずか な とうひ ばしょ です。しゅう に よって、 れきし しょうせつ に ぼっとう する こと も あれば、 ししゅう や しんりがく の ほん を よむ こと も あります。',
+          'あいこさん は ほん を よむ こと が だいすき で、 じもと の としょかん で こころ の やすらぎ と たのしさ を みつけています。 まいしゅう どようび の あさ、 かのじょ は つぎ の ぼうけん や きょうみぶかい まなび を さがして、 なんじかん も たな を あるきまわり ます。 あいこさん に とって としょかん は ただ の どくしょ ばしょ で は なく、 いそがしい にちじょう から の しずか な とうひ ばしょ です。 しゅう に よって、 れきし しょうせつ に ぼっとう する こと も あれば、 ししゅう や しんりがく の ほん を よむ こと も あります。',
           '愛子さんは本を読むことが大好きで、地元の図書館で心の安らぎと楽しさを見つけています。毎週土曜日の朝、彼女は次の冒険や興味深い学びを探して、何時間も棚を歩き回ります。愛子さんにとって図書館はただの読書場所ではなく、忙しい日常からの静かな逃避場所です。週によって、歴史小説に没頭することもあれば、詩集や心理学の本を読むこともあります。'
         ],
         audioFile: aikosBookSanctuaryPart1
@@ -25,9 +25,9 @@ const japaneseAudioTranscriptions: AudioTranscriptionWithFourAlphabet[] = [
       { 
         englishText: 'The calm atmosphere helps her focus, letting her dive deeply into each story. Aiko likes to sit by the large windows where sunlight fills the room, making each reading session feel warm and relaxing. She often brings a notebook to write down her favorite lines or new ideas she finds along the way.', 
         foreignText: [
-          'Toshokan no ochitsuita fun’iki wa shuchuuryoku o takamete kure, monogatari ni fukaku hairikomu koto ga dekimasu. Aiko-san wa ookina mado no soba ni suwaru no ga suki de, soko kara sashikomu youkou ga heya o atataku terashi, rirakkusu shita dokusho jikan o sugoseru masu. Kanojo wa okiniiri no bunshou ya atarashii aidea o kakitomeru tame ni, nooto o motte kuru koto mo arimasu.',
-          'としょかんのおちついたふんいきはしゅうちゅうりょくをたかめてくれ、ものがたりにふかくはいりこむことができます。あいこさんはおおきなまどのそばにすわるのがすきで、そこからさしこむようこうがへやをあたたかくてらし、リラックスしたどくしょじかんをすごせます。かのじょはおきにいりのぶんしょうやあたらしいアイデアをかきとめるために、ノートをもってくることもあります。',
-          'としょかん の おちついた ふんいき は しゅうちゅうりょく を たかめて くれ、 ものがたり に ふかく はいりこむ こと が できます。 あいこさん は おおきな まど の そば に すわる の が すき で、 そこ から さしこむ ようこう が へや を あたたかく てらし、 リラックス した どくしょじかん を すごせます。 かのじょ は おきにいり の ぶんしょう や あたらしい アイデア を かきとめる ため に、 ノート を もってくる こと も あります。',
+          'Toshokan no ochitsuita fun’iki wa shuchuuryoku o takamete kure, monogatari ni fukaku hairikomu koto ga dekimasu. Aiko-san wa ookina mado no soba ni suwaru no ga suki de, soko kara sashikomu youkou ga heya o atatakaku terashi, rirakkusu shita dokusho jikan o sugoseru masu. Kanojo wa okiniiri no bunshou ya atarashii aidea o kakitomeru tame ni, nooto o motte kuru koto mo arimasu.',
+          'としょかんのおちついたふんいきはしゅうちゅうりょくをたかめてくれ、ものがたりにふかくはいりこむことができます。あいこさんはおおきなまどのそばにすわるのがすきで、そこからさしこむようこうがへやをあたたかくてらし、リラックスしたどくしょじかんをすごせるます。かのじょはおきにいりのぶんしょうやあたらしいアイデアをかきとめるために、ノートをもってくることもあります。',
+          'としょかん の おちついた ふんいき は しゅうちゅうりょく を たかめて くれ、 ものがたり に ふかく はいりこむ こと が できます。 あいこさん は おおきな まど の そば に すわる の が すき で、 そこ から さしこむ ようこう が へや を あたたかく てらし、 リラックス した どくしょじかん を すごせる ます。 かのじょ は おきにいり の ぶんしょう や あたらしい アイデア を かきとめる ため に、 ノート を もって くる こと も あります。',
           '図書館の落ち着いた雰囲気は集中力を高めてくれ、物語に深く入り込むことができます。愛子さんは大きな窓のそばに座るのが好きで、そこから差し込む陽光が部屋を温かく照らし、リラックスした読書時間を過ごせます。彼女はお気に入りの文章や新しいアイデアを書き留めるために、ノートを持ってくることもあります。'
         ],
         audioFile: aikosBookSanctuaryPart2

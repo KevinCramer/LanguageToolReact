@@ -168,9 +168,26 @@ const ListeningComprehensionContent = (props: { languageNumber: number, howToGui
                   {currentLeft === 'WritingSystem2' && <div style={{ display: 'flex', textAlign:'left', paddingLeft:'5px', paddingRight: '5px' }}>
                     {content.foreignText[1]}
                   </div>}
-                  {currentLeft === 'WritingSystem2v2' && <div style={{ display: 'flex', textAlign:'left', paddingLeft:'5px', paddingRight: '5px' }}>
-                    {content.foreignText[2].replace(/ /g, '__')}
-                  </div>}
+                  {currentLeft === 'WritingSystem2v2' && (
+                    <div style={{
+                      display: 'flex', 
+                      flexWrap: 'wrap', // Allows the child divs to wrap to the next line
+                      textAlign: 'left', 
+                      width: '100%' // You can adjust the width depending on your container size
+                    }}>
+                      {content.foreignText[2]
+                        .split(' ') // Split by spaces
+                        .map((word, index) => (
+                          <div key={index} style={{
+                            display: 'inline-block', 
+                            paddingRight: '4px',
+                            marginRight: '4px' // Optional, adds spacing between the words
+                          }}>
+                            {word}
+                          </div>
+                        ))}
+                    </div>
+                  )}
                   {currentLeft === 'WritingSystem3' && <div style={{ display: 'flex', textAlign:'left', paddingLeft:'5px', paddingRight: '5px' }}>
                     {content.foreignText[3]}
                   </div>}
@@ -188,9 +205,26 @@ const ListeningComprehensionContent = (props: { languageNumber: number, howToGui
                   {currentRight === 'WritingSystem2' && <div style={{ display: 'flex', textAlign:'left', paddingLeft:'5px', paddingRight: '5px' }}>
                     {content.foreignText[1]}
                   </div>}
-                  {currentRight === 'WritingSystem2v2' && <div style={{ display: 'flex', textAlign:'left', paddingLeft:'5px', paddingRight: '5px' }}>
-                    {content.foreignText[2].replace(/ /g, '__')}
-                  </div>}
+                  {currentRight === 'WritingSystem2v2' && (
+                    <div style={{
+                      display: 'flex', 
+                      flexWrap: 'wrap', // Allows the child divs to wrap to the next line
+                      textAlign: 'left', 
+                      width: '100%' // You can adjust the width depending on your container size
+                    }}>
+                      {content.foreignText[2]
+                        .split(' ') // Split by spaces
+                        .map((word, index) => (
+                          <div key={index} style={{
+                            display: 'inline-block', 
+                            paddingRight: '4px',
+                            marginRight: '4px' // Optional, adds spacing between the words
+                          }}>
+                            {word}
+                          </div>
+                        ))}
+                    </div>
+                  )}
                   {currentRight === 'WritingSystem3' && <div style={{ display: 'flex', textAlign:'left', paddingLeft:'5px', paddingRight: '5px' }}>
                     {content.foreignText[3]}
                   </div>}
