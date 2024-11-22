@@ -314,6 +314,17 @@ import hiraganaVideoKu from '../raw-data/writing-system-videos/japanese/hiragana
 import hiraganaVideoKe from '../raw-data/writing-system-videos/japanese/hiragana/ke.mp4'
 import hiraganaVideoKo from '../raw-data/writing-system-videos/japanese/hiragana/ko.mp4'
 import hiraganaVideoSa from '../raw-data/writing-system-videos/japanese/hiragana/sa.mp4'
+import hiraganaVideoShi from '../raw-data/writing-system-videos/japanese/hiragana/shi.mp4'
+import hiraganaVideoSu from '../raw-data/writing-system-videos/japanese/hiragana/su.mp4'
+import hiraganaVideoSe from '../raw-data/writing-system-videos/japanese/hiragana/se.mp4'
+import hiraganaVideoSo from '../raw-data/writing-system-videos/japanese/hiragana/so.mp4'
+import hiraganaVideoTa from '../raw-data/writing-system-videos/japanese/hiragana/ta.mp4'
+import hiraganaVideoChi from '../raw-data/writing-system-videos/japanese/hiragana/chi.mp4'
+import hiraganaVideoTsu from '../raw-data/writing-system-videos/japanese/hiragana/tsu.mp4'
+import hiraganaVideoTe from '../raw-data/writing-system-videos/japanese/hiragana/te.mp4'
+import hiraganaVideoTo from '../raw-data/writing-system-videos/japanese/hiragana/to.mp4'
+import hiraganaVideoNa from '../raw-data/writing-system-videos/japanese/hiragana/na.mp4'
+import hiraganaVideoNi from '../raw-data/writing-system-videos/japanese/hiragana/ni.mp4'
 
 import { sortTopics } from '../../helpers/words-data-helper';
 import { Language, VerbConjugationEnglish, TopicWithOneAlphabet, TopicWithTwoAlphabets, TopicWithThreeAlphabets } from '../../../types/vocabTypes';
@@ -1585,17 +1596,17 @@ const japaneseTopics: TopicWithThreeAlphabets[] = [
     { englishWord: 'ke', foreignWord: ['け','け','け'], foreignAudio: japaneseAudioKe, order: 9, strokeOrderVideo: hiraganaVideoKe },
     { englishWord: 'ko', foreignWord: ['こ','こ','こ'], foreignAudio: japaneseAudioKo, order: 10, strokeOrderVideo: hiraganaVideoKo },
     { englishWord: 'sa', foreignWord: ['さ','さ','さ'], foreignAudio: japaneseAudioSa, order: 11, strokeOrderVideo: hiraganaVideoSa },
-    { englishWord: 'shi', foreignWord: ['し','し','し'], foreignAudio: japaneseAudioShi, order: 12 },
-    { englishWord: 'su', foreignWord: ['す','す','す'], foreignAudio: japaneseAudioSu, order: 13 },
-    { englishWord: 'se', foreignWord: ['せ','せ','せ'], foreignAudio: japaneseAudioSe, order: 14 },
-    { englishWord: 'so', foreignWord: ['そ','そ','そ'], foreignAudio: japaneseAudioSo, order: 15 },
-    { englishWord: 'ta', foreignWord: ['た','た','た'], foreignAudio: japaneseAudioTa, order: 16 },
-    { englishWord: 'chi', foreignWord: ['ち','ち','ち'], foreignAudio: japaneseAudioChi, order: 17 },
-    { englishWord: 'tsu', foreignWord: ['つ','つ','つ'], foreignAudio: japaneseAudioTsu, order: 18 },
-    { englishWord: 'te', foreignWord: ['て','て','て'], foreignAudio: japaneseAudioTe, order: 19 },
-    { englishWord: 'to', foreignWord: ['と','と','と'], foreignAudio: japaneseAudioTo, order: 20 },
-    { englishWord: 'na', foreignWord: ['な','な','な'], foreignAudio: japaneseAudioNa, order: 21 },
-    { englishWord: 'ni', foreignWord: ['に','に','に'], foreignAudio: japaneseAudioNi, order: 22 },
+    { englishWord: 'shi', foreignWord: ['し','し','し'], foreignAudio: japaneseAudioShi, order: 12 ,strokeOrderVideo: hiraganaVideoShi },
+    { englishWord: 'su', foreignWord: ['す','す','す'], foreignAudio: japaneseAudioSu, order: 13 ,strokeOrderVideo: hiraganaVideoSu },
+    { englishWord: 'se', foreignWord: ['せ','せ','せ'], foreignAudio: japaneseAudioSe, order: 14 ,strokeOrderVideo: hiraganaVideoSe },
+    { englishWord: 'so', foreignWord: ['そ','そ','そ'], foreignAudio: japaneseAudioSo, order: 15 ,strokeOrderVideo: hiraganaVideoSo },
+    { englishWord: 'ta', foreignWord: ['た','た','た'], foreignAudio: japaneseAudioTa, order: 16 ,strokeOrderVideo: hiraganaVideoTa },
+    { englishWord: 'chi', foreignWord: ['ち','ち','ち'], foreignAudio: japaneseAudioChi, order: 17 ,strokeOrderVideo: hiraganaVideoChi },
+    { englishWord: 'tsu', foreignWord: ['つ','つ','つ'], foreignAudio: japaneseAudioTsu, order: 18 ,strokeOrderVideo: hiraganaVideoTsu },
+    { englishWord: 'te', foreignWord: ['て','て','て'], foreignAudio: japaneseAudioTe, order: 19 ,strokeOrderVideo: hiraganaVideoTe },
+    { englishWord: 'to', foreignWord: ['と','と','と'], foreignAudio: japaneseAudioTo, order: 20 ,strokeOrderVideo: hiraganaVideoTo },
+    { englishWord: 'na', foreignWord: ['な','な','な'], foreignAudio: japaneseAudioNa, order: 21 ,strokeOrderVideo: hiraganaVideoNa },
+    { englishWord: 'ni', foreignWord: ['に','に','に'], foreignAudio: japaneseAudioNi, order: 22 ,strokeOrderVideo: hiraganaVideoNi },
     { englishWord: 'nu', foreignWord: ['ぬ','ぬ','ぬ'], foreignAudio: japaneseAudioNu, order: 23 },
     { englishWord: 'ne', foreignWord: ['ね','ね','ね'], foreignAudio: japaneseAudioNe, order: 24 },
     { englishWord: 'no', foreignWord: ['の','の','の'], foreignAudio: japaneseAudioNo, order: 25 },
