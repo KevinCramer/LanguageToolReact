@@ -22,14 +22,14 @@ const GrammarContent = (
   var [currentTopic,setCurrentTopic] = useState(currentTopic)
 
   const changeCurrentTopic = (topic: Topic) => {
-    navigate(`/${currentLanguage.languageName.toLowerCase()}/grammar/${topic.slugName}`)
+    navigate(`/${currentLanguage.languageName.toLowerCase()}/grammar/${topic.slugName}`, { replace: true });
     return setCurrentTopic(topic);}
 
   useEffect(() => {
     const settings = [
       topicSlug
     ]
-    navigate(`/${currentLanguage.languageName.toLowerCase()}/grammar/${topicSlug}`);
+    navigate(`/${currentLanguage.languageName.toLowerCase()}/grammar/${topicSlug}`, { replace: true });
 
   }, [
     currentLanguage.languageName, topicSlug, currentTopic.slugName, navigate ]);

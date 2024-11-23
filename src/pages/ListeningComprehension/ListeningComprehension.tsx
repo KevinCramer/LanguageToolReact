@@ -66,7 +66,7 @@ const ListeningComprehensionContent = (props: { languageNumber: number, howToGui
     const query = new URLSearchParams(location.search);
     query.set('L', left);
     query.set('R', right);
-    navigate(`/${currentLanguage.languageName.toLowerCase()}/comprehension/${slugName}?${query.toString()}`);
+    navigate(`/${currentLanguage.languageName.toLowerCase()}/comprehension/${slugName}?${query.toString()}`, { replace: true });
   };
 
   useEffect(() => {

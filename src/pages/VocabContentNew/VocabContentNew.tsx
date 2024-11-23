@@ -107,7 +107,7 @@ const VocabContentNew = (
       quiz,
       audioBool
     ]
-    navigate(`?s=${queryParamCompress(JSON.stringify(settings))}`);
+    navigate(`?s=${queryParamCompress(JSON.stringify(settings))}`, { replace: true });
 
   }, [
     currentLanguage.languageName, currentTopic.slugName, showBaseLanguage,
