@@ -5,6 +5,8 @@ import lingoCommandLogo from '../../assets/lingoCommandLogo.svg';
 import spanishFlag from '../../assets/flag-icons/spanish-flag-icon.svg';
 import { toggleNavbar } from '../../redux-store/navbar';
 import { useDispatch } from 'react-redux';
+import { Button, Card, Container, Form, Modal } from 'react-bootstrap';
+import CustomLink from '../../components/atoms/CustomLink/CustomLink';
 
 export const Home = () => {
   const dispatch = useDispatch();
@@ -104,70 +106,39 @@ export const Home = () => {
 
       {/* Modal */}
       {isModalOpen && (
-        <div
-          style={{
-            position: 'fixed',
-            width: '50%',
-            height: '50%',
-            backgroundColor: 'rgba(0, 0, 0, 0.8)', // Darker background for better contrast
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            top: '50%', // Position the top of the modal at the middle of the screen
-            left: '50%', // Position the left of the modal at the middle of the screen
-            transform: 'translate(-50%, -50%)', // Adjust for modal's own width and height to truly center it
-            zIndex: 1000,
-          }}
-        >
-          <div
-            style={{
-              width: '100%', // Take up full width
-              height: '100%', // Take up full height
-              backgroundColor: 'white', // Modal background
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center',
-              alignItems: 'center',
-              textAlign: 'center',
-              position: 'relative', // To position child elements inside
-            }}
-          >
-            <h2 style={{ marginBottom: '100px', fontSize: '24px', color: '#333' }}>
-        I want to learn...
-            </h2>
-
-            <div style={{ display: 'flex' }}>
-              <a href="/spanish" style={{ margin:'30px' }} onClick={handleFlagClick}>
-                <img src={spanishFlag} style={{ width: '80px', height: '80px' }} alt="Spanish flag"/>
-                <div>
-            Spanish
-                </div> 
-              </a>
-              <a href="/japanese" style={{ margin:'30px', marginBottom: '100px' }} onClick={handleFlagClick}>
-                <img src={japaneseFlag} style ={{ width: '80px', height: '80px' }} alt="Japanese flag"/>
-                <div>
-            Japanese
+        <>
+          <Modal show ={true} onHide={closeModal}>
+            <Modal.Header closeButton>
+            </Modal.Header>
+            <Modal.Body>
+              <Container className='d-flex align-items-center justify-content-center'
+                style={{ minHeight: '60vh' }}>
+                <div className='w-100' style={{ maxWidth: '400px' }}>
+                  <Card>
+                    <Card.Body>
+                      <h2 className="text-center mb-4">I want to learn...</h2>
+                      <div style={{ display: 'flex', justifyContent: 'center' }}>
+                        <a href="/spanish" style={{ margin:'30px' }} onClick={handleFlagClick}>
+                          <img src={spanishFlag} style={{ width: '80px', height: '80px' }} alt="Spanish flag"/>
+                          <div>
+                            Spanish
+                          </div> 
+                        </a>
+                        <a href="/japanese" style={{ margin:'30px', marginBottom: '100px' }} onClick={handleFlagClick}>
+                          <img src={japaneseFlag} style ={{ width: '80px', height: '80px' }} alt="Japanese flag"/>
+                          <div>
+                            Japanese
+                          </div>
+                        </a>
+                      </div>
+                    </Card.Body>
+                  </Card>
                 </div>
-              </a>
-            </div>
-            <button
-              style={{
-                backgroundColor: '#1e90ff',
-                color: 'white',
-                border: 'none',
-                borderRadius: '5px',
-                padding: '10px 20px',
-                cursor: 'pointer',
-                textTransform: 'uppercase',
-                boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.2)',
-                transition: 'all 0.3s ease',
-              }}
-              onClick={closeModal}
-            >
-        BACK HOME
-            </button>
-          </div>
-        </div>
+              </Container>
+            </Modal.Body>
+          </Modal>
+         
+        </>
       )}
     </div>
   );
