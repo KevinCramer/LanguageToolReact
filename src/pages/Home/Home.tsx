@@ -51,7 +51,7 @@ export const Home = () => {
       <div className="imageContent">
       </div>
       <div className="content2">
-        <div style ={{ display:'flex', flexDirection: isMobile ? 'column' : 'row' }}>  
+        <div style ={{ display:'flex', flexDirection: isMobile ? 'column' : 'row', alignItems: 'center' }}>  
           <div
             style={{
               paddingTop: '10px',
@@ -80,6 +80,8 @@ export const Home = () => {
               boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.2)',
               transition: 'all 0.3s ease',
               letterSpacing: '0.25rem',
+              width: isMobile ? '50%' : ''
+
             }}
             onMouseOver={(e) => {
               e.currentTarget.style.backgroundColor = '#4682b4';
