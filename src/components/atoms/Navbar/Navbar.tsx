@@ -56,10 +56,10 @@ const Navbar = () => {
       style={{
         width: '100%',
         position: 'relative',
-        height: '6rem',
+        height: isMobile ? '78px' : '98px',
         display: 'flex',
         alignItems: 'center',
-        backgroundColor: 'transparent',
+        backgroundColor: isOnLanguagesPage ? 'rgba(0,0,0,0.1)' : 'rgba(255,255,255,0.1)',
       }}
     >
       <Nav
@@ -87,7 +87,7 @@ const Navbar = () => {
           onClick={() => dispatch(closeNavbar())}
         >
           <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
-            <img src={lingoCommandLogo} width={90} height={90} alt="LingoCommand Logo" />
+            <img src={lingoCommandLogo} width={isMobile ? 70 : 90} height={ isMobile ? 70 : 90} alt="LingoCommand Logo" />
             {!isMobile && <div style={{ width: '20px' }}></div>}
             {!isMobile && <div>
               <div>LingoCommand</div>
