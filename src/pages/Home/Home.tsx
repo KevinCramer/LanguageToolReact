@@ -25,46 +25,54 @@ export const Home = () => {
       <div className="imageContent">
       </div>
       <div className="content2">
-        <div
-          style={{
-            paddingTop: '0px',
-            paddingBottom: '10px',
-            fontSize: '26px',
-            color: 'white',
-            letterSpacing: '0.25rem',
-          }}
-        >
+        <div style ={{ display:'flex', flexDirection: 'row' }}>  
+          <div
+            style={{
+              paddingTop: '10px',
+              paddingBottom: '10px',
+              fontSize: '26px',
+              color: 'white',
+              letterSpacing: '0.25rem',
+            }}
+          >
           Learn Foreign Languages Faster
-        </div>
-        <button
-          style={{
-            marginTop: '10px',
-            fontSize: '18px',
-            color: 'white',
-            backgroundColor: '#1e90ff',
-            border: 'none',
-            borderRadius: '5px',
-            padding: '10px 20px',
-            cursor: 'pointer',
-            boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.2)',
-            transition: 'all 0.3s ease',
-            letterSpacing: '0.25rem'
-          }}
-          onMouseOver={(e) => {
-            e.currentTarget.style.backgroundColor = '#4682b4';
-            e.currentTarget.style.transform = 'scale(1.05)';
-          }}
-          onMouseOut={(e) => {
-            e.currentTarget.style.backgroundColor = '#1e90ff';
-            e.currentTarget.style.transform = 'scale(1)';
-          }}
-          onClick={(event) => {
-            event.stopPropagation(); // Prevent toggleNavbar
-            setIsModalOpen(true);
-          }}
-        >
+          </div>
+          <div style={{ width: '40px' }}>
+
+          </div>
+          <button
+            style={{
+              marginTop: '10px',
+              marginBottom: '10px',
+              marginRight: '00px',
+              fontSize: '18px',
+              color: 'white',
+              backgroundColor: '#1e90ff',
+              border: 'none',
+              borderRadius: '5px',
+              padding: '10px 20px',
+              cursor: 'pointer',
+              boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.2)',
+              transition: 'all 0.3s ease',
+              letterSpacing: '0.25rem'
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.style.backgroundColor = '#4682b4';
+              e.currentTarget.style.transform = 'scale(1.05)';
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.style.backgroundColor = '#1e90ff';
+              e.currentTarget.style.transform = 'scale(1)';
+            }}
+            onClick={(event) => {
+              event.stopPropagation(); // Prevent toggleNavbar
+              setIsModalOpen(true);
+            }}
+          >
           Start Now
-        </button>
+          </button>
+        </div>
+
       </div>
 
       {/* Modal */}
