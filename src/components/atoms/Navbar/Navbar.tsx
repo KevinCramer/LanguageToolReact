@@ -42,28 +42,37 @@ const Navbar = () => {
       <Nav
         style={{
           position: 'absolute',
-          left: '50%',
-          transform: 'translateX(-50%)',
+          left: 0,
+          right: 0,
           display: 'flex',
-          gap: '1rem',
+          justifyContent: 'space-between', // Use space-between to spread items
           alignItems: 'center',
+          padding: '0 2rem', // Add some padding on the left and right
         }}
       >
         <Nav.Link
           to="/"
           as={NavLink}
           style={{
-            color: isOnLanguagesPage ? 'black' : 'white', // Black if on a Languages page
+            color: isOnLanguagesPage ? 'black' : 'white',
             textDecoration: 'none',
             whiteSpace: 'nowrap',
             padding: '0.5rem 1rem',
             position: 'relative',
-            letterSpacing: '0.25rem'
+            letterSpacing: '0.25rem',
+            fontSize: '20px',
           }}
           onClick={() => dispatch(closeNavbar())}
         >
-          <img src={lingoCommandLogo} width={80} height={80} alt="LingoCommand Logo"/>
+          <div style ={{ display:'flex', flexDirection: 'row', alignItems:'center' }}>
+            <img src={lingoCommandLogo} width={90} height={90} alt="LingoCommand Logo" />
+            <div style={{ width: '20px' }}></div>
+            <div>
+              <div>LingoCommand</div>
+            </div>
+          </div>    
         </Nav.Link>
+
         <NavDropdown
           title={
             <span
@@ -72,11 +81,11 @@ const Navbar = () => {
                 whiteSpace: 'nowrap',
                 textDecoration: 'none',
                 position: 'relative',
-                letterSpacing: '0.25rem'
-
+                letterSpacing: '0.25rem',
+                fontSize: '20px',
               }}
             >
-              LANGUAGES
+        Languages
             </span>
           }
           id="study-dropdown"
@@ -91,7 +100,7 @@ const Navbar = () => {
             style={{ whiteSpace: 'nowrap' }}
             onClick={() => dispatch(closeNavbar())}
           >
-            Spanish
+      Spanish
           </NavDropdown.Item>
           <NavDropdown.Item
             to="/japanese"
@@ -99,41 +108,46 @@ const Navbar = () => {
             style={{ whiteSpace: 'nowrap' }}
             onClick={() => dispatch(closeNavbar())}
           >
-            Japanese
+      Japanese
           </NavDropdown.Item>
         </NavDropdown>
+
         <Nav.Link
           to="/contact"
           as={NavLink}
           style={{
-            color: isOnLanguagesPage ? 'black' : 'white', // Black if on a Languages page
+            color: isOnLanguagesPage ? 'black' : 'white',
             textDecoration: 'none',
             whiteSpace: 'nowrap',
             padding: '0.5rem 1rem',
             position: 'relative',
-            letterSpacing: '0.25rem'
+            fontSize: '20px',
+            letterSpacing: '0.25rem',
           }}
           onClick={() => dispatch(closeNavbar())}
         >
-          CONTACT US
+    Contact Us 
         </Nav.Link>
+
         {currentUser && currentUser.email && (
           <Nav.Link
             to="/account"
             as={NavLink}
             style={{
-              color: isOnLanguagesPage ? 'black' : 'white', // Black if on a Languages page
+              color: isOnLanguagesPage ? 'black' : 'white',
               textDecoration: 'none',
               whiteSpace: 'nowrap',
               padding: '0.5rem 1rem',
               position: 'relative',
-              letterSpacing: '0.25rem'
+              fontSize: '20px',
+              letterSpacing: '0.25rem',
             }}
             onClick={() => dispatch(closeNavbar())}
           >
-            ACCOUNT
+      Account
           </Nav.Link>
         )}
+
         <div
           style={{
             color: isOnLanguagesPage ? 'black' : 'white',
@@ -141,8 +155,8 @@ const Navbar = () => {
             whiteSpace: 'nowrap',
             cursor: 'pointer',
             padding: '0.5rem 1rem',
-            letterSpacing: '0.25rem'
-
+            fontSize: '20px',
+            letterSpacing: '0.25rem',
           }}
           onClick={async () => {
             if (currentUser && currentUser.email) {
@@ -160,9 +174,19 @@ const Navbar = () => {
             }
           }}
         >
-          {currentUser && currentUser.email ? 'LOG OUT' : 'LOG IN'}
+          {currentUser && currentUser.email ? 'Log Out' : 'Log In'}
         </div>
       </Nav>
+      <hr
+        style={{
+          position: 'absolute',
+          bottom: 0,
+          width: '100%',
+          border: 'none',
+          borderTop: `1px solid ${isOnLanguagesPage ? 'black' : 'white'}`, // Conditional color
+          margin: 0,
+        }}
+      />
     </NavbarBs>
   );
 };

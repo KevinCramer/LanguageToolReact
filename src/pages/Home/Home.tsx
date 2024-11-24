@@ -27,9 +27,9 @@ export const Home = () => {
       <div className="content2">
         <div
           style={{
-            paddingTop: '10px',
-            paddingBottom: '20px',
-            fontSize: '22px',
+            paddingTop: '0px',
+            paddingBottom: '10px',
+            fontSize: '26px',
             color: 'white',
             letterSpacing: '0.25rem',
           }}
@@ -48,6 +48,7 @@ export const Home = () => {
             cursor: 'pointer',
             boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.2)',
             transition: 'all 0.3s ease',
+            letterSpacing: '0.25rem'
           }}
           onMouseOver={(e) => {
             e.currentTarget.style.backgroundColor = '#4682b4';
