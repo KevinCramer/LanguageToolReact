@@ -5,7 +5,7 @@ import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { displayLogin } from '../../../redux-store/auth';
 import { useAuth } from '../../../contexts/AuthContext';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import lingoCommandLogo from '../../../assets/lingoCommandLogo.svg';
 
 const Navbar = () => {
@@ -24,6 +24,32 @@ const Navbar = () => {
   };
 
   const isOnLanguagesPage = location.pathname.startsWith('/spanish') || location.pathname.startsWith('/japanese');
+
+  const useWindowWidth = () => {
+    const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
+
+    useEffect(() => {
+      // Update the windowWidth state when the window is resized
+      const handleResize = () => {
+        setWindowWidth(window.innerWidth);
+      };
+  
+      // Add event listener to handle window resizing
+      window.addEventListener('resize', handleResize);
+  
+      // Cleanup event listener when the component unmounts
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }, []);
+  
+    return windowWidth;
+  };
+
+  const width = useWindowWidth(); // Get the current window width
+
+  // Now you can use `width` to check screen size in your component
+  const isMobile = width < 768; // Example: is the screen size less than or equal to 768px?
 
   return (
     <NavbarBs
@@ -66,10 +92,10 @@ const Navbar = () => {
         >
           <div style ={{ display:'flex', flexDirection: 'row', alignItems:'center' }}>
             <img src={lingoCommandLogo} width={90} height={90} alt="LingoCommand Logo" />
-            <div style={{ width: '20px' }}></div>
-            <div>
+            {!isMobile && <div style={{ width: '20px' }}></div>}
+            {!isMobile && <div>
               <div>LingoCommand</div>
-            </div>
+            </div>}
           </div>    
         </Nav.Link>
 
@@ -97,7 +123,7 @@ const Navbar = () => {
           <NavDropdown.Item
             to="/spanish"
             as={NavLink}
-            style={{ whiteSpace: 'nowrap' }}
+            style={{ whiteSpace: 'nowrap', color: 'black' }}
             onClick={() => dispatch(closeNavbar())}
           >
       Spanish
@@ -105,7 +131,7 @@ const Navbar = () => {
           <NavDropdown.Item
             to="/japanese"
             as={NavLink}
-            style={{ whiteSpace: 'nowrap' }}
+            style={{ whiteSpace: 'nowrap', color: 'black' }}
             onClick={() => dispatch(closeNavbar())}
           >
       Japanese
