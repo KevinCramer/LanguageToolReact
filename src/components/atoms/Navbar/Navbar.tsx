@@ -48,7 +48,7 @@ const Navbar = () => {
 
   const width = useWindowWidth(); // Get the current window width
 
-  // Now you can use `width` to check screen size in your component
+  // Now you can use width to check screen size in your component
   const isMobile = width < 768; // Example: is the screen size less than or equal to 768px?
 
   return (
@@ -59,21 +59,18 @@ const Navbar = () => {
         height: '6rem',
         display: 'flex',
         alignItems: 'center',
-        backgroundColor: 'transparent', // Ensure no background color
-
+        backgroundColor: 'transparent',
       }}
-    >      
-     
-      {/* Navigation Section */}
+    >
       <Nav
         style={{
           position: 'absolute',
           left: 0,
           right: 0,
           display: 'flex',
-          justifyContent: 'space-between', // Use space-between to spread items
+          justifyContent: 'space-between',
           alignItems: 'center',
-          padding: '0 2rem', // Add some padding on the left and right
+          padding: '0 1rem',
         }}
       >
         <Nav.Link
@@ -83,20 +80,20 @@ const Navbar = () => {
             color: isOnLanguagesPage ? 'black' : 'white',
             textDecoration: 'none',
             whiteSpace: 'nowrap',
-            padding: '0.5rem 1rem',
+            padding: '0rem rem',
             position: 'relative',
             letterSpacing: '0.25rem',
-            fontSize: '20px',
+            fontSize: `clamp(10px, 2vw , 20px)`, // Gradually changes from 16px to 20px based on screen width
           }}
           onClick={() => dispatch(closeNavbar())}
         >
-          <div style ={{ display:'flex', flexDirection: 'row', alignItems:'center' }}>
+          <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
             <img src={lingoCommandLogo} width={90} height={90} alt="LingoCommand Logo" />
             {!isMobile && <div style={{ width: '20px' }}></div>}
             {!isMobile && <div>
               <div>LingoCommand</div>
             </div>}
-          </div>    
+          </div>
         </Nav.Link>
 
         <NavDropdown
@@ -108,10 +105,10 @@ const Navbar = () => {
                 textDecoration: 'none',
                 position: 'relative',
                 letterSpacing: '0.25rem',
-                fontSize: '20px',
+                fontSize: `clamp(10px, 2vw , 20px)`, // Gradually changes from 16px to 20px based on screen width
               }}
             >
-        Languages
+              Languages
             </span>
           }
           id="study-dropdown"
@@ -123,18 +120,26 @@ const Navbar = () => {
           <NavDropdown.Item
             to="/spanish"
             as={NavLink}
-            style={{ whiteSpace: 'nowrap', color: 'black' }}
+            style={{
+              whiteSpace: 'nowrap',
+              color: 'black',
+              fontSize: `clamp(14px, 2vw + 0.5rem, 16px)`, // Gradually changes font size for items
+            }}
             onClick={() => dispatch(closeNavbar())}
           >
-      Spanish
+            Spanish
           </NavDropdown.Item>
           <NavDropdown.Item
             to="/japanese"
             as={NavLink}
-            style={{ whiteSpace: 'nowrap', color: 'black' }}
+            style={{
+              whiteSpace: 'nowrap',
+              color: 'black',
+              fontSize: `clamp(14px, 2vw + 0.5rem, 16px)`, // Gradually changes font size for items
+            }}
             onClick={() => dispatch(closeNavbar())}
           >
-      Japanese
+            Japanese
           </NavDropdown.Item>
         </NavDropdown>
 
@@ -147,12 +152,12 @@ const Navbar = () => {
             whiteSpace: 'nowrap',
             padding: '0.5rem 1rem',
             position: 'relative',
-            fontSize: '20px',
+            fontSize: `clamp(10px, 2vw , 20px)`, // Gradually changes from 16px to 20px based on screen width
             letterSpacing: '0.25rem',
           }}
           onClick={() => dispatch(closeNavbar())}
         >
-    Contact Us 
+          Contact Us
         </Nav.Link>
 
         {currentUser && currentUser.email && (
@@ -165,12 +170,12 @@ const Navbar = () => {
               whiteSpace: 'nowrap',
               padding: '0.5rem 1rem',
               position: 'relative',
-              fontSize: '20px',
+              fontSize: `clamp(10px, 2vw , 20px)`, // Gradually changes from 16px to 20px based on screen width
               letterSpacing: '0.25rem',
             }}
             onClick={() => dispatch(closeNavbar())}
           >
-      Account
+            Account
           </Nav.Link>
         )}
 
@@ -181,7 +186,7 @@ const Navbar = () => {
             whiteSpace: 'nowrap',
             cursor: 'pointer',
             padding: '0.5rem 1rem',
-            fontSize: '20px',
+            fontSize: `clamp(10px, 2vw , 20px)`, // Gradually changes from 16px to 20px based on screen width
             letterSpacing: '0.25rem',
           }}
           onClick={async () => {
@@ -209,7 +214,7 @@ const Navbar = () => {
           bottom: 0,
           width: '100%',
           border: 'none',
-          borderTop: `1px solid ${isOnLanguagesPage ? 'black' : 'white'}`, // Conditional color
+          borderTop: `1px solid ${isOnLanguagesPage ? 'black' : 'white'}`,
           margin: 0,
         }}
       />
