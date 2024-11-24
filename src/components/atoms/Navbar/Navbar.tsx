@@ -59,7 +59,7 @@ const Navbar = () => {
         height: isMobile ? '78px' : '98px',
         display: 'flex',
         alignItems: 'center',
-        backgroundColor: isOnLanguagesPage ? 'rgba(0,0,0,0.1)' : 'rgba(220,220,220)',
+        backgroundColor: 'transparent',
       }}
     >
       <Nav
@@ -76,7 +76,7 @@ const Navbar = () => {
           to="/"
           as={NavLink}
           style={{
-            color: 'black',
+            color: isOnLanguagesPage ? 'black' : 'white',
             textDecoration: 'none',
             whiteSpace: 'nowrap',
             position: 'relative',
@@ -98,7 +98,7 @@ const Navbar = () => {
           title={
             <span
               style={{
-                color: 'black',
+                color: isOnLanguagesPage ? 'black' : 'white',
                 whiteSpace: 'nowrap',
                 textDecoration: 'none',
                 position: 'relative',
@@ -145,7 +145,7 @@ const Navbar = () => {
           to="/contact"
           as={NavLink}
           style={{
-            color: 'black',
+            color: isOnLanguagesPage ? 'black' : 'white',
             textDecoration: 'none',
             whiteSpace: 'nowrap',
             padding: '0.5rem 1rem',
@@ -163,7 +163,7 @@ const Navbar = () => {
             to="/account"
             as={NavLink}
             style={{
-              color: 'black',
+              color: isOnLanguagesPage ? 'black' : 'white',
               textDecoration: 'none',
               whiteSpace: 'nowrap',
               padding: '0.5rem 1rem',
@@ -179,7 +179,7 @@ const Navbar = () => {
 
         <div
           style={{
-            color: 'black',
+            color: isOnLanguagesPage ? 'black' : 'white',
             textDecoration: 'none',
             whiteSpace: 'nowrap',
             cursor: 'pointer',
@@ -212,7 +212,7 @@ const Navbar = () => {
           bottom: 0,
           width: '100%',
           border: 'none',
-          borderTop: '1px solid black',
+          borderTop: `2px solid ${isOnLanguagesPage ? 'black' : 'white'}`,
           margin: 0,
         }}
       />
