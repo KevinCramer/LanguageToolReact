@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Home.scss';
 import japaneseFlag from '../../assets/flag-icons/japanese-flag-icon.svg';
 import lingoCommandLogo from '../../assets/lingoCommandLogo.svg';
@@ -20,12 +20,38 @@ export const Home = () => {
     setIsModalOpen(false);
   };
 
+  const useWindowWidth = () => {
+    const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
+
+    useEffect(() => {
+      // Update the windowWidth state when the window is resized
+      const handleResize = () => {
+        setWindowWidth(window.innerWidth);
+      };
+  
+      // Add event listener to handle window resizing
+      window.addEventListener('resize', handleResize);
+  
+      // Cleanup event listener when the component unmounts
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }, []);
+  
+    return windowWidth;
+  };
+
+  const width = useWindowWidth(); // Get the current window width
+
+  // Now you can use width to check screen size in your component
+  const isMobile = width < 768; // Example: is the screen size less than or equal to 768px?
+
   return (
     <div onClick={() => dispatch(toggleNavbar())}>
       <div className="imageContent">
       </div>
       <div className="content2">
-        <div style ={{ display:'flex', flexDirection: 'row' }}>  
+        <div style ={{ display:'flex', flexDirection: isMobile ? 'column' : 'row' }}>  
           <div
             style={{
               paddingTop: '10px',
@@ -37,9 +63,8 @@ export const Home = () => {
           >
           Learn Foreign Languages Faster
           </div>
-          <div style={{ width: '40px' }}>
-
-          </div>
+          {!isMobile && <div style={{ width: '40px' }}>
+          </div>}
           <button
             style={{
               marginTop: '10px',
@@ -54,7 +79,7 @@ export const Home = () => {
               cursor: 'pointer',
               boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.2)',
               transition: 'all 0.3s ease',
-              letterSpacing: '0.25rem'
+              letterSpacing: '0.25rem',
             }}
             onMouseOver={(e) => {
               e.currentTarget.style.backgroundColor = '#4682b4';
