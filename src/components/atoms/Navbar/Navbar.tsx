@@ -59,7 +59,7 @@ const Navbar = () => {
         height: isMobile ? '78px' : '98px',
         display: 'flex',
         alignItems: 'center',
-        backgroundColor: isOnLanguagesPage ? 'rgba(0,0,0,0.1)' : 'rgba(255,255,255,0.1)',
+        backgroundColor: isOnLanguagesPage ? 'rgba(0,0,0,0.1)' : 'rgba(220,220,220)',
       }}
     >
       <Nav
@@ -68,7 +68,7 @@ const Navbar = () => {
           left: 0,
           right: 0,
           display: 'flex',
-          justifyContent: 'space-between',
+          justifyContent:'space-around',
           alignItems: 'center',
         }}
       >
@@ -76,10 +76,9 @@ const Navbar = () => {
           to="/"
           as={NavLink}
           style={{
-            color: isOnLanguagesPage ? 'black' : 'white',
+            color: 'black',
             textDecoration: 'none',
             whiteSpace: 'nowrap',
-            padding: '0rem rem',
             position: 'relative',
             letterSpacing: isMobile ? '' : '0.25rem',
             fontSize: `clamp(18px, 2vw , 20px)`, // Gradually changes from 16px to 20px based on screen width
@@ -99,7 +98,7 @@ const Navbar = () => {
           title={
             <span
               style={{
-                color: isOnLanguagesPage ? 'black' : 'white',
+                color: 'black',
                 whiteSpace: 'nowrap',
                 textDecoration: 'none',
                 position: 'relative',
@@ -146,7 +145,7 @@ const Navbar = () => {
           to="/contact"
           as={NavLink}
           style={{
-            color: isOnLanguagesPage ? 'black' : 'white',
+            color: 'black',
             textDecoration: 'none',
             whiteSpace: 'nowrap',
             padding: '0.5rem 1rem',
@@ -164,7 +163,7 @@ const Navbar = () => {
             to="/account"
             as={NavLink}
             style={{
-              color: isOnLanguagesPage ? 'black' : 'white',
+              color: 'black',
               textDecoration: 'none',
               whiteSpace: 'nowrap',
               padding: '0.5rem 1rem',
@@ -180,7 +179,7 @@ const Navbar = () => {
 
         <div
           style={{
-            color: isOnLanguagesPage ? 'black' : 'white',
+            color: 'black',
             textDecoration: 'none',
             whiteSpace: 'nowrap',
             cursor: 'pointer',
@@ -213,7 +212,7 @@ const Navbar = () => {
           bottom: 0,
           width: '100%',
           border: 'none',
-          borderTop: `1px solid ${isOnLanguagesPage ? 'black' : 'white'}`,
+          borderTop: '1px solid black',
           margin: 0,
         }}
       />
