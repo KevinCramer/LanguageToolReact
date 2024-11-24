@@ -70,6 +70,8 @@ const Navbar = () => {
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
+          overflowX:'auto',
+
         }}
       >
         <Nav.Link
