@@ -117,7 +117,7 @@ audio::-webkit-media-controls-panel {
   flex-grow: 1;        /* Allow the container to take up remaining vertical space */
   border-radius: 5px;
   overflow-y: auto; /* Adds a vertical scrollbar when content overflows */
-  height: calc(90dvh); /* using dynamic viewport height to support ui element in viewport on mobile*/
+  height: calc(85dvh); /* using dynamic viewport height to support ui element in viewport on mobile*/
 }
 
 .page-container-no-padding-small-font {
@@ -136,7 +136,7 @@ audio::-webkit-media-controls-panel {
   flex-grow: 1;        /* Allow the container to take up remaining vertical space */
   border-radius: 5px;
   overflow-y: auto; /* Adds a vertical scrollbar when content overflows */
-  height: calc(90dvh); /* using dynamic viewport height to support ui element in viewport on mobile*/
+  height: calc(85dvh); /* using dynamic viewport height to support ui element in viewport on mobile*/
 }
 
 .central-container {
