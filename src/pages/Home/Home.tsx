@@ -1,45 +1,140 @@
-import './Home.scss'
-import japaneseFlag from '../../assets/flag-icons/japanese-flag-icon.svg'
+import React, { useState } from 'react';
+import './Home.scss';
+import japaneseFlag from '../../assets/flag-icons/japanese-flag-icon.svg';
 import lingoCommandLogo from '../../assets/lingoCommandLogo.svg';
-import spanishFlag from '../../assets/flag-icons/spanish-flag-icon.svg'
+import spanishFlag from '../../assets/flag-icons/spanish-flag-icon.svg';
 import { toggleNavbar } from '../../redux-store/navbar';
 import { useDispatch } from 'react-redux';
 
-export const Home = () =>{
+export const Home = () => {
   const dispatch = useDispatch();
-  // @ts-ignore
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   // Prevent toggleNavbar on flag clicks
   const handleFlagClick = (event: any) => {
     event.stopPropagation();
   };
 
-  // outer div needed here for layout; don't use fragment 
-  return <div onClick={() => dispatch(toggleNavbar())}> 
+  // Function to handle modal close
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
 
-    <div className="imageContent">
-      <img src={lingoCommandLogo} width={180} height={180} alt="LingoCommand Logo"/>
-    </div>
-    <div className="content2">
-      <div style={{ paddingTop: '10px', fontSize: '22px', color: 'white' }}> 
-      Learn foreign languages faster     
+  return (
+    <div onClick={() => dispatch(toggleNavbar())}>
+      <div className="imageContent">
       </div>
-      <div style={{ display: 'flex' }}>
-        <a href="/spanish" style={{ margin:'30px', color:'white' }} onClick={handleFlagClick}>
-          <img src={spanishFlag} style={{ width: '80px', height: '80px' }} alt="Spanish flag"/>
-          <div>
+      <div className="content2">
+        <div
+          style={{
+            paddingTop: '10px',
+            paddingBottom: '20px',
+            fontSize: '22px',
+            color: 'white',
+            letterSpacing: '0.25rem',
+          }}
+        >
+          Learn Foreign Languages Faster
+        </div>
+        <button
+          style={{
+            marginTop: '10px',
+            fontSize: '18px',
+            color: 'white',
+            backgroundColor: '#1e90ff',
+            border: 'none',
+            borderRadius: '5px',
+            padding: '10px 20px',
+            cursor: 'pointer',
+            boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.2)',
+            transition: 'all 0.3s ease',
+          }}
+          onMouseOver={(e) => {
+            e.currentTarget.style.backgroundColor = '#4682b4';
+            e.currentTarget.style.transform = 'scale(1.05)';
+          }}
+          onMouseOut={(e) => {
+            e.currentTarget.style.backgroundColor = '#1e90ff';
+            e.currentTarget.style.transform = 'scale(1)';
+          }}
+          onClick={(event) => {
+            event.stopPropagation(); // Prevent toggleNavbar
+            setIsModalOpen(true);
+          }}
+        >
+          Start Now
+        </button>
+      </div>
+
+      {/* Modal */}
+      {isModalOpen && (
+        <div
+          style={{
+            position: 'fixed',
+            width: '50%',
+            height: '50%',
+            backgroundColor: 'rgba(0, 0, 0, 0.8)', // Darker background for better contrast
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            top: '50%', // Position the top of the modal at the middle of the screen
+            left: '50%', // Position the left of the modal at the middle of the screen
+            transform: 'translate(-50%, -50%)', // Adjust for modal's own width and height to truly center it
+            zIndex: 1000,
+          }}
+        >
+          <div
+            style={{
+              width: '100%', // Take up full width
+              height: '100%', // Take up full height
+              backgroundColor: 'white', // Modal background
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+              alignItems: 'center',
+              textAlign: 'center',
+              position: 'relative', // To position child elements inside
+            }}
+          >
+            <h2 style={{ marginBottom: '100px', fontSize: '24px', color: '#333' }}>
+        I want to learn...
+            </h2>
+
+            <div style={{ display: 'flex' }}>
+              <a href="/spanish" style={{ margin:'30px' }} onClick={handleFlagClick}>
+                <img src={spanishFlag} style={{ width: '80px', height: '80px' }} alt="Spanish flag"/>
+                <div>
             Spanish
-          </div> 
-        </a>
-        <a href="/japanese" style={{ margin:'30px', color:'white' }} onClick={handleFlagClick}>
-          <img src={japaneseFlag} style ={{ width: '80px', height: '80px' }} alt="Japanese flag"/>
-          <div>
+                </div> 
+              </a>
+              <a href="/japanese" style={{ margin:'30px', marginBottom: '100px' }} onClick={handleFlagClick}>
+                <img src={japaneseFlag} style ={{ width: '80px', height: '80px' }} alt="Japanese flag"/>
+                <div>
             Japanese
+                </div>
+              </a>
+            </div>
+            <button
+              style={{
+                backgroundColor: '#1e90ff',
+                color: 'white',
+                border: 'none',
+                borderRadius: '5px',
+                padding: '10px 20px',
+                cursor: 'pointer',
+                textTransform: 'uppercase',
+                boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.2)',
+                transition: 'all 0.3s ease',
+              }}
+              onClick={closeModal}
+            >
+        BACK HOME
+            </button>
           </div>
-        </a>
-      </div>
-    </div>    
-  </div> 
-}
+        </div>
+      )}
+    </div>
+  );
+};
 
 export default Home;

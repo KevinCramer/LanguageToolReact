@@ -71,7 +71,7 @@ const App = ()=> {
         </Routes>
       </div>}
       {location.pathname !== '/' && location.pathname !== '/contact' && <div className="plain-background">
-        <NavbarDark/>
+        <Navbar/>
         <Routes>
           <Route path="/" element={ <div className='home-container'> <Home /></div>} />
           <Route path="/contact" element={<ContactUs />} />

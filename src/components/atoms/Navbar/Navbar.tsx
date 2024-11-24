@@ -1,12 +1,12 @@
-import './Navbar.scss';
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import { closeNavbar, RootStateNavbar, toggleNavbar } from '../../../redux-store/navbar';
-import { Container, Nav, Navbar as NavbarBs, NavDropdown } from 'react-bootstrap';
+import { closeNavbar, RootStateNavbar } from '../../../redux-store/navbar';
+import { Nav, Navbar as NavbarBs, NavDropdown } from 'react-bootstrap';
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { displayLogin } from '../../../redux-store/auth';
 import { useAuth } from '../../../contexts/AuthContext';
 import { useState } from 'react';
+import lingoCommandLogo from '../../../assets/lingoCommandLogo.svg';
 
 const Navbar = () => {
   const dispatch = useDispatch();
@@ -23,91 +23,146 @@ const Navbar = () => {
     setIsDropdownOpen(isOpen);
   };
 
+  const isOnLanguagesPage = location.pathname.startsWith('/spanish') || location.pathname.startsWith('/japanese');
+
   return (
-    <NavbarBs expand="false" expanded={reduxNavbar.isNavbarOpen }
-      onToggle={() => dispatch(toggleNavbar())}>
-      <Container style ={{ margin: '0px' }}>
-        <NavbarBs.Toggle aria-controls="basic-navbar-nav" className="navbar-toggle-custom" />
-        <NavbarBs.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link
-              className="nav-link-custom"
-              to="/"
-              as={NavLink}
-              onClick={() => dispatch(closeNavbar())}
-            >
-              Home
-            </Nav.Link>
-            <NavDropdown
-              title={
-                <span className={`dropdown-title ${isDropdownOpen ? 'open' : 'closed'}`}>
-                  <div style={{ 
-                    color: 'white', display: 'inline',
-                    borderRadius: '5px',
-                    fontWeight: 'bold'
-                  }} >Languages</div>
-                </span>
-              }
-              id="study-dropdown"
-              className="nav-link-custom"
-              onToggle={handleDropdownToggle}
-            >
-              <NavDropdown.Item
-                className="nav-link-custom2"
-                to="/spanish"
-                as={NavLink}
-                onClick={() => dispatch(closeNavbar())}
-              >
-                Spanish
-              </NavDropdown.Item>
-              <NavDropdown.Item
-                className="nav-link-custom2"
-                to="/japanese"
-                as={NavLink}
-                onClick={() => dispatch(closeNavbar())}
-              >
-                Japanese
-              </NavDropdown.Item>
-            </NavDropdown>
-            <Nav.Link
-              className="nav-link-custom"
-              to="/contact"
-              as={NavLink}
-              onClick={() => dispatch(closeNavbar())}
-            >
-              Contact Us
-            </Nav.Link>
-            {currentUser && currentUser.email && <Nav.Link
-              className="nav-link-custom"
-              to="/account"
-              as={NavLink}
-              onClick={() => dispatch(closeNavbar())}
-            >
-                Account
-            </Nav.Link>}
-            <div className="log-in-log-out"
-              onClick={async () => {
-                if (currentUser && currentUser.email) {
-                  try {
-                    await logout();
-                    if (location.pathname === '/account') {
-                      navigate('/');
-                    }
-                    dispatch(closeNavbar());
-                  } catch (error) {
-                    // eslint-disable-next-line no-console
-                    console.error('Failed to log out', error);
-                  }
-                } else {
-                  dispatch(displayLogin());
-                }
+    <NavbarBs
+      style={{
+        width: '100%',
+        position: 'relative',
+        height: '6rem',
+        display: 'flex',
+        alignItems: 'center',
+        backgroundColor: 'transparent', // Ensure no background color
+
+      }}
+    >      
+     
+      {/* Navigation Section */}
+      <Nav
+        style={{
+          position: 'absolute',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          display: 'flex',
+          gap: '1rem',
+          alignItems: 'center',
+        }}
+      >
+        <Nav.Link
+          to="/"
+          as={NavLink}
+          style={{
+            color: isOnLanguagesPage ? 'black' : 'white', // Black if on a Languages page
+            textDecoration: 'none',
+            whiteSpace: 'nowrap',
+            padding: '0.5rem 1rem',
+            position: 'relative',
+            letterSpacing: '0.25rem'
+          }}
+          onClick={() => dispatch(closeNavbar())}
+        >
+          <img src={lingoCommandLogo} width={80} height={80} alt="LingoCommand Logo"/>
+        </Nav.Link>
+        <NavDropdown
+          title={
+            <span
+              style={{
+                color: isOnLanguagesPage ? 'black' : 'white',
+                whiteSpace: 'nowrap',
+                textDecoration: 'none',
+                position: 'relative',
+                letterSpacing: '0.25rem'
+
               }}
             >
-              {currentUser && currentUser.email ? 'Log Out' : 'Log In'}
-            </div>
-          </Nav>
-        </NavbarBs.Collapse>
-      </Container>
+              LANGUAGES
+            </span>
+          }
+          id="study-dropdown"
+          onToggle={handleDropdownToggle}
+          style={{
+            padding: '0.5rem 1rem',
+          }}
+        >
+          <NavDropdown.Item
+            to="/spanish"
+            as={NavLink}
+            style={{ whiteSpace: 'nowrap' }}
+            onClick={() => dispatch(closeNavbar())}
+          >
+            Spanish
+          </NavDropdown.Item>
+          <NavDropdown.Item
+            to="/japanese"
+            as={NavLink}
+            style={{ whiteSpace: 'nowrap' }}
+            onClick={() => dispatch(closeNavbar())}
+          >
+            Japanese
+          </NavDropdown.Item>
+        </NavDropdown>
+        <Nav.Link
+          to="/contact"
+          as={NavLink}
+          style={{
+            color: isOnLanguagesPage ? 'black' : 'white', // Black if on a Languages page
+            textDecoration: 'none',
+            whiteSpace: 'nowrap',
+            padding: '0.5rem 1rem',
+            position: 'relative',
+            letterSpacing: '0.25rem'
+          }}
+          onClick={() => dispatch(closeNavbar())}
+        >
+          CONTACT US
+        </Nav.Link>
+        {currentUser && currentUser.email && (
+          <Nav.Link
+            to="/account"
+            as={NavLink}
+            style={{
+              color: isOnLanguagesPage ? 'black' : 'white', // Black if on a Languages page
+              textDecoration: 'none',
+              whiteSpace: 'nowrap',
+              padding: '0.5rem 1rem',
+              position: 'relative',
+              letterSpacing: '0.25rem'
+            }}
+            onClick={() => dispatch(closeNavbar())}
+          >
+            ACCOUNT
+          </Nav.Link>
+        )}
+        <div
+          style={{
+            color: isOnLanguagesPage ? 'black' : 'white',
+            textDecoration: 'none',
+            whiteSpace: 'nowrap',
+            cursor: 'pointer',
+            padding: '0.5rem 1rem',
+            letterSpacing: '0.25rem'
+
+          }}
+          onClick={async () => {
+            if (currentUser && currentUser.email) {
+              try {
+                await logout();
+                if (location.pathname === '/account') {
+                  navigate('/');
+                }
+                dispatch(closeNavbar());
+              } catch (error) {
+                console.error('Failed to log out', error);
+              }
+            } else {
+              dispatch(displayLogin());
+            }
+          }}
+        >
+          {currentUser && currentUser.email ? 'LOG OUT' : 'LOG IN'}
+        </div>
+      </Nav>
     </NavbarBs>
   );
 };
