@@ -1,8 +1,20 @@
 .contact-us-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: top;
   align-items: center;
-  height: 60vh;
-  width: 100vw;
+  margin-top: 10%;
+  padding-top: 100px;
+  padding-left:12px;
+  padding-right:12px;
+  padding-bottom:12px;
+  font-size: 18px;
+  min-width: 400px;
+  margin-top: 0px;
+  margin-left: 12px;
+  margin-right: 12px;
+  flex-grow: 1;        /* Allow the container to take up remaining vertical space */
+  border-radius: 5px;
+  overflow-y: auto; /* Adds a vertical scrollbar when content overflows */
+  height: calc(85dvh); /* using dynamic viewport height to support ui element in viewport on mobile*/
 }
