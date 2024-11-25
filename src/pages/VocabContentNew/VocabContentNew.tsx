@@ -270,7 +270,12 @@ const VocabContentNew = (
                       </Dropdown.Item>)}
                 </CustomDropDownButton>
                 <CustomDropDownButton title="Settings" align="end">
-                  {!quiz && <Dropdown.Item onClick = {() => changeAudioBool()}>
+                  {!quiz && <Dropdown.Item
+                    onClick={(event) => {
+                      changeAudioBool();
+                      preventDropdownClose(event);
+                    }}
+                  >
                     <input
                       type="checkbox"
                       checked={audioBool} // Checkbox is checked if showBaseLanguage is true
@@ -281,7 +286,10 @@ const VocabContentNew = (
                         width: '20px'
                       }} />
                     show audio</Dropdown.Item>}
-                  <Dropdown.Item onClick = {changeBaseLanguage}>
+                  <Dropdown.Item onClick={(event) => {
+                    changeBaseLanguage();
+                    preventDropdownClose(event);
+                  }}>
                     <input
                       type="checkbox"
                       checked={!showBaseLanguage} // Checkbox is checked if showBaseLanguage is true
@@ -292,7 +300,10 @@ const VocabContentNew = (
                         width: '20px'
                       }} />
                     swap columns</Dropdown.Item>
-                  <Dropdown.Item onClick = {changeOrder}>
+                  <Dropdown.Item onClick={(event) => {
+                    changeOrder();
+                    preventDropdownClose(event);
+                  }}>
                     <input
                       type="checkbox"
                       checked={!showTrueOrder} // Checkbox is checked if showBaseLanguage is true
