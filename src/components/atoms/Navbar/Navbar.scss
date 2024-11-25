@@ -1,8 +1,3 @@
-/* Default dropdown arrow (closed state) */
-.dropdown-toggle::after {
-  color: white; /* Default arrow color */
-}
-
 /* When on the languages page */
 .dropdown-language-page .dropdown-toggle::after {
   color: black; /* Arrow color for language page */
