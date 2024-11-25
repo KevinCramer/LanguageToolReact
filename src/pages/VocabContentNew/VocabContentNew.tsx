@@ -62,8 +62,25 @@ const VocabContentNew = (
   const urlCurrentAlphabet = urlSettings[3]
   var currentAlphabet: number = parseInt(urlCurrentAlphabet as string) || 0;
   var [currentAlphabet,setCurrentAlphabet] = useState(currentAlphabet)
-  const changeCurrentAlphabet = () => { return setCurrentAlphabet(
-    currentAlphabet = (currentAlphabet + 1) % currentLanguage.numForeignAlphabets)}
+  const changeCurrentAlphabet = (number: number) => { return setCurrentAlphabet(
+    currentAlphabet = number)}
+
+  const handleSelectChange = (event: any) => {
+    // Handle select change (optional)
+    if(event.target.value === '0'){
+      changeCurrentAlphabet(0)
+    }
+    if(event.target.value === '1'){
+      changeCurrentAlphabet(1)
+    }
+    if(event.target.value === '2'){
+      changeCurrentAlphabet(2)
+    }
+  };
+  
+  const preventDropdownClose = (event: any) => {
+    event.stopPropagation(); // Prevent click event from closing the dropdown
+  };
 
   const urlShowTrueOrder = urlSettings[4]
   var showTrueOrder = !nullOrUndefined(urlShowTrueOrder) ? urlShowTrueOrder : true
@@ -253,14 +270,58 @@ const VocabContentNew = (
                       </Dropdown.Item>)}
                 </CustomDropDownButton>
                 <CustomDropDownButton title="Settings" align="end">
-                  <Dropdown.Item onClick = {changeBaseLanguage}>toggle base language</Dropdown.Item>
                   {!quiz && <Dropdown.Item onClick = {() => changeAudioBool()}>
-                    {audioBool ? 'hide audio' : 'show audio'}</Dropdown.Item>}
+                    <input
+                      type="checkbox"
+                      checked={audioBool} // Checkbox is checked if showBaseLanguage is true
+                      onChange={changeAudioBool} // Toggle onChange as well
+                      style={{
+                        transform: 'scale(1.5)', // Increase size by a factor of 2 (adjust as needed)
+                        marginRight: '10px', // Space between checkbox and text
+                        width: '20px'
+                      }} />
+                    show audio</Dropdown.Item>}
+                  <Dropdown.Item onClick = {changeBaseLanguage}>
+                    <input
+                      type="checkbox"
+                      checked={!showBaseLanguage} // Checkbox is checked if showBaseLanguage is true
+                      onChange={changeBaseLanguage} // Toggle onChange as well
+                      style={{
+                        transform: 'scale(1.5)', // Increase size by a factor of 2 (adjust as needed)
+                        marginRight: '10px', // Space between checkbox and text
+                        width: '20px'
+                      }} />
+                    swap columns</Dropdown.Item>
                   <Dropdown.Item onClick = {changeOrder}>
-                    {showTrueOrder ? 'random ordering' : 'default ordering'}</Dropdown.Item>
+                    <input
+                      type="checkbox"
+                      checked={!showTrueOrder} // Checkbox is checked if showBaseLanguage is true
+                      onChange={changeOrder} // Toggle onChange as well
+                      style={{
+                        transform: 'scale(1.5)', // Increase size by a factor of 2 (adjust as needed)
+                        marginRight: '10px', // Space between checkbox and text
+                        width: '20px'
+                      }} />
+                    random ordering</Dropdown.Item>
                   {currentLanguage.numForeignAlphabets > 1 && !currentTopic.isAlphabet &&
-              <Dropdown.Item onClick = {changeCurrentAlphabet}>
-                toggle foreign alphabet</Dropdown.Item>}
+              <Dropdown.Item>
+                <select 
+                  name="alphabets" 
+                  id="alphabets" 
+                  onChange={handleSelectChange} 
+                  onClick={preventDropdownClose} // Prevent dropdown from closing
+                  style={{
+                    width: 'auto', // Make the select element only as wide as the content
+                    display: 'inline-block', // Allow the select element to shrink to fit content
+                    padding: '5px', // Add some padding for visual spacing
+                  }}
+                >
+                  <option value='0'>romaji</option>
+                  <option value="1">hiragana, katakana</option>
+                  <option value="2">hiragana, katakana, kanji</option>
+                </select>
+
+              </Dropdown.Item>}
                 </CustomDropDownButton>  
               </div>             
             </Container>
