@@ -19,3 +19,5 @@ export const languageToSlugs: Record<string,string> = {
   'Greek': 'grk'
 
 }
+
+export const lightGrey = 'rgb(230,230,230)'

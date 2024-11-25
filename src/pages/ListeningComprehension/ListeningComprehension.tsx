@@ -9,9 +9,9 @@ import AudioPlayer from '../../components/atoms/CustomAudioPlayer/CustomAudioPla
 import CustomDropDownButton from '../../components/atoms/CustomDropDownButton/CustomDropDownButton';
 import CustomDropDownButtonWhite from '../../components/atoms/CustomDropDownButtonWhite/CustomDropDownButtonWhite';
 import Dropdown from 'react-bootstrap/Dropdown';
+import { lightGrey } from '../../constants';
 
 const ListeningComprehensionContent = (props: { languageNumber: number, howToGuideVideo?: any }) => {
-  const lightGrey = 'rgb(230,230,230)'
   const navigate = useNavigate();
   const { topicSlug } = useParams();
   const location = useLocation();
@@ -287,6 +287,7 @@ const ListeningComprehensionContent = (props: { languageNumber: number, howToGui
                   {currentLanguage.audioTranscriptions.map((topic: AudioTranscription, index: number) => (
                     <Dropdown.Item
                       key={index}
+                      style={{ backgroundColor: index === currentLanguage.audioTranscriptions.findIndex(item => item.name === currentAudioTranscription.name) ? lightGrey : '' }}
                       onClick={() => changeCurrentAudioTranscription(topic)}
                     >
                       {topic.name}

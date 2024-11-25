@@ -7,6 +7,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import CustomDropDownButton from '../../components/atoms/CustomDropDownButton/CustomDropDownButton';
 import Dropdown from 'react-bootstrap/Dropdown';
 import { languages } from '../../data/structured-data/grammar';
+import { lightGrey } from '../../constants';
 
 const GrammarContent = (
   props: {
@@ -56,8 +57,10 @@ const GrammarContent = (
                 <div className='inner-grammar-container'>
                   <CustomDropDownButton title={'Topic: ' + currentTopic.name}>
                     {currentLanguage.topics.map((topic: Topic, index: number) =>
-                      <Dropdown.Item key = {index} onClick = {() => 
-                        changeCurrentTopic(topic)}>{topic.name}</Dropdown.Item>)}
+                      <Dropdown.Item key = {index} 
+                        style={{ backgroundColor: index === languages[props.languageNumber].topics.findIndex(item => item.name === currentTopic.name) ? lightGrey : '' }}
+                        onClick = {() => 
+                          changeCurrentTopic(topic)}>{topic.name}</Dropdown.Item>)}
                   </CustomDropDownButton>
                 </div>
               </Container>

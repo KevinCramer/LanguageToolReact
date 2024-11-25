@@ -18,7 +18,7 @@ import CustomDropDownButton from '../../components/atoms/CustomDropDownButton/Cu
 import CustomSwitch from '../../components/atoms/CustomSwitch/CustomSwitch';
 import { denyPermission } from '../../redux-store/lock';
 import Dropdown from 'react-bootstrap/Dropdown';
-import { languageToSlugs } from '../../constants'
+import { languageToSlugs, lightGrey } from '../../constants'
 import LockIcon from '@mui/icons-material/Lock';
 import { nullOrUndefined } from '../../helpers/audio-player-helpers'
 import QuizElement from '../../components/atoms/QuizElement/QuizElement';
@@ -239,8 +239,11 @@ const VocabContentNew = (
                 <CustomDropDownButton title={'Topic: ' + currentTopic.name}>
                   {(currentLanguage.topics as Topic[])
                     .map((topic: Topic, index: number) =>
-                      <Dropdown.Item key = {index} onClick = {() => 
-                        changeCurrentTopic(topic)}>
+                      <Dropdown.Item 
+                        style={{ backgroundColor: index === languages[props.languageNumber].topics
+                          .findIndex(item => item.name === currentTopic.name) ? lightGrey : '' }}
+                        key = {index} onClick = {() => 
+                          changeCurrentTopic(topic)}>
                         <div className="topic-container">
                           {topic.name} {
                             topic.isLocked 
