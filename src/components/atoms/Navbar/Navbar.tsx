@@ -7,6 +7,7 @@ import { displayLogin } from '../../../redux-store/auth';
 import { useAuth } from '../../../contexts/AuthContext';
 import { useEffect, useState } from 'react';
 import lingoCommandLogo from '../../../assets/lingoCommandLogo.svg';
+import './Navbar.scss';
 
 const Navbar = () => {
   const dispatch = useDispatch();
@@ -114,6 +115,8 @@ const Navbar = () => {
           style={{
             padding: '0.5rem 1rem',
           }}
+          className={isOnLanguagesPage ? 'dropdown-language-page' : 'dropdown-other-page'}
+
         >
           <NavDropdown.Item
             to="/spanish"
