@@ -4,6 +4,12 @@
   .dropdown-item {
     font-size: 0.875rem; /* Adjust this size as needed (e.g., 14px) */
   }
+
+  .dropdown-item.selected {
+    background-color: grey; /* Adjust this size as needed (e.g., 14px) */
+  }
+
+  
   .btn-primary {
     margin: 0px 10px 0px 0px;
     background-color: white; 
@@ -29,6 +35,6 @@
   .btn-primary:focus:active {
     background-color: var(--bs-btn-active-bg); 
     border-color: white; 
-    color:var(--bs-btn-active-color);
+    color: var(--bs-btn-active-color);
   }
 }

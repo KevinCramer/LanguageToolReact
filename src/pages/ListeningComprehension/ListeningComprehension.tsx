@@ -11,6 +11,7 @@ import CustomDropDownButtonWhite from '../../components/atoms/CustomDropDownButt
 import Dropdown from 'react-bootstrap/Dropdown';
 
 const ListeningComprehensionContent = (props: { languageNumber: number, howToGuideVideo?: any }) => {
+  const lightGrey = 'rgb(230,230,230)'
   const navigate = useNavigate();
   const { topicSlug } = useParams();
   const location = useLocation();
@@ -94,29 +95,42 @@ const ListeningComprehensionContent = (props: { languageNumber: number, howToGui
               titleMap[currentLeft as TranscriptionType].length > 20 ?
                 titleMap[currentLeft as TranscriptionType].substring(0,20) + '...' :
                 titleMap[currentLeft as TranscriptionType]}>
-              <Dropdown.Item onClick={() =>{changeLeft(TranscriptionType.Audio)}}>
+              <Dropdown.Item style={{
+                backgroundColor: currentLeft === TranscriptionType.Audio ? lightGrey : ''
+              }}onClick={() =>{changeLeft(TranscriptionType.Audio)}}>
                 {titleMap[TranscriptionType.Audio]}
               </Dropdown.Item>
-              <Dropdown.Item onClick={() =>{changeLeft(TranscriptionType.WritingSystem1)}}>
+              <Dropdown.Item style={{
+                backgroundColor: currentLeft === TranscriptionType.WritingSystem1 ? lightGrey : ''
+              }} onClick={() =>{changeLeft(TranscriptionType.WritingSystem1)}}>
                 {titleMap[TranscriptionType.WritingSystem1]}
               </Dropdown.Item>
               {currentLanguage.numForeignAlphabets > 1 && <Dropdown.Item
-                onClick={() =>{changeLeft(TranscriptionType.WritingSystem2v2)}}
+                style={{
+                  backgroundColor: currentLeft === TranscriptionType.WritingSystem2v2 ? lightGrey : ''
+                }}onClick={() =>{changeLeft(TranscriptionType.WritingSystem2v2)}}
               >
                 {titleMap[TranscriptionType.WritingSystem2v2]}
               </Dropdown.Item>}
               {currentLanguage.numForeignAlphabets > 1 && <Dropdown.Item
-                onClick={() =>{changeLeft(TranscriptionType.WritingSystem2)}}
+                style={{
+                  backgroundColor: currentLeft === TranscriptionType.WritingSystem2 ? lightGrey : ''
+                }}onClick={() =>{changeLeft(TranscriptionType.WritingSystem2)}}
               >
                 {titleMap[TranscriptionType.WritingSystem2]}
               </Dropdown.Item>}
               {currentLanguage.numForeignAlphabets > 2 && <Dropdown.Item
+                style={{
+                  backgroundColor: currentLeft === TranscriptionType.WritingSystem3 ? lightGrey : ''
+                }}
                 onClick={() =>{changeLeft(TranscriptionType.WritingSystem3)}}
               >
                 {titleMap[TranscriptionType.WritingSystem3]}
               </Dropdown.Item>}
               <Dropdown.Item
-                onClick={() =>{changeLeft(TranscriptionType.English)}}
+                style={{
+                  backgroundColor: currentLeft === TranscriptionType.English ? lightGrey : ''
+                }}onClick={() =>{changeLeft(TranscriptionType.English)}}
               >
                 {titleMap[TranscriptionType.English]}
               </Dropdown.Item>
@@ -125,29 +139,41 @@ const ListeningComprehensionContent = (props: { languageNumber: number, howToGui
               titleMap[currentRight as TranscriptionType].length > 20 ?
                 titleMap[currentRight as TranscriptionType].substring(0,20) + '...' :
                 titleMap[currentRight as TranscriptionType]}>
-              <Dropdown.Item onClick={() =>{changeRight(TranscriptionType.Audio)}}>
+              <Dropdown.Item style={{
+                backgroundColor: currentRight === TranscriptionType.Audio ? lightGrey : ''
+              }}onClick={() =>{changeRight(TranscriptionType.Audio)}}>
                 {titleMap[TranscriptionType.Audio]}
               </Dropdown.Item>
-              <Dropdown.Item onClick={() =>{changeRight(TranscriptionType.WritingSystem1)}}>
+              <Dropdown.Item style={{
+                backgroundColor: currentRight === TranscriptionType.WritingSystem1 ? lightGrey : ''
+              }}onClick={() =>{changeRight(TranscriptionType.WritingSystem1)}}>
                 {titleMap[TranscriptionType.WritingSystem1]}
               </Dropdown.Item>
               {currentLanguage.numForeignAlphabets > 1 && <Dropdown.Item
-                onClick={() =>{changeRight(TranscriptionType.WritingSystem2v2)}}
+                style={{
+                  backgroundColor: currentRight === TranscriptionType.WritingSystem2v2 ? lightGrey : ''
+                }}onClick={() =>{changeRight(TranscriptionType.WritingSystem2v2)}}
               >
                 {titleMap[TranscriptionType.WritingSystem2v2]}
               </Dropdown.Item>}
               {currentLanguage.numForeignAlphabets > 1 && <Dropdown.Item
-                onClick={() =>{changeRight(TranscriptionType.WritingSystem2)}}
+                style={{
+                  backgroundColor: currentRight === TranscriptionType.WritingSystem2 ? lightGrey : ''
+                }}onClick={() =>{changeRight(TranscriptionType.WritingSystem2)}}
               >
                 {titleMap[TranscriptionType.WritingSystem2]}
               </Dropdown.Item>}
               {currentLanguage.numForeignAlphabets > 2 && <Dropdown.Item
-                onClick={() =>{changeRight(TranscriptionType.WritingSystem3)}}
+                style={{
+                  backgroundColor: currentRight === TranscriptionType.WritingSystem3 ? lightGrey : ''
+                }}onClick={() =>{changeRight(TranscriptionType.WritingSystem3)}}
               >
                 {titleMap[TranscriptionType.WritingSystem3]}
               </Dropdown.Item>}
               <Dropdown.Item
-                onClick={() =>{changeRight(TranscriptionType.English)}}
+                style={{
+                  backgroundColor: currentRight === TranscriptionType.English ? lightGrey : ''
+                }}onClick={() =>{changeRight(TranscriptionType.English)}}
               >
                 {titleMap[TranscriptionType.English]}
               </Dropdown.Item>
