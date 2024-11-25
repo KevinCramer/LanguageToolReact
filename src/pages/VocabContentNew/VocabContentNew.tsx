@@ -18,7 +18,7 @@ import CustomDropDownButton from '../../components/atoms/CustomDropDownButton/Cu
 import CustomSwitch from '../../components/atoms/CustomSwitch/CustomSwitch';
 import { denyPermission } from '../../redux-store/lock';
 import Dropdown from 'react-bootstrap/Dropdown';
-import { languageToSlugs, lightGrey } from '../../constants'
+import { languageToSlugs, lightGrey, lingoCommandIsLocked } from '../../constants'
 import LockIcon from '@mui/icons-material/Lock';
 import { nullOrUndefined } from '../../helpers/audio-player-helpers'
 import QuizElement from '../../components/atoms/QuizElement/QuizElement';
@@ -72,7 +72,7 @@ const VocabContentNew = (
 
   const userIsLoggedIn = currentUser && currentUser.email
   const changeCurrentTopic = (topic: Topic) => {
-    if(topic.isLocked && false ){
+    if(topic.isLocked && lingoCommandIsLocked ){
       dispatch(denyPermission());
     }
     else {
@@ -247,7 +247,7 @@ const VocabContentNew = (
                         <div className="topic-container">
                           {topic.name} {
                             topic.isLocked 
-                          && false // currently ensuring content is always unlocked
+                          && lingoCommandIsLocked 
                           && <LockIcon style={{ fontSize: '20px' }}/>}
                         </div>
                       </Dropdown.Item>)}

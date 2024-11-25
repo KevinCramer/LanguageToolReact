@@ -21,3 +21,5 @@ export const languageToSlugs: Record<string,string> = {
 }
 
 export const lightGrey = 'rgb(230,230,230)'
+
+export const lingoCommandIsLocked = true;
