@@ -82,7 +82,7 @@ const Navbar = () => {
             whiteSpace: 'nowrap',
             position: 'relative',
             letterSpacing: isMobile ? '' : '0.25rem',
-            fontSize: `clamp(18px, 2vw , 20px)`, // Gradually changes from 16px to 20px based on screen width
+            fontSize: isMobile ? '18px' : '20px', 
           }}
           onClick={() => dispatch(closeNavbar())}
         >
@@ -104,7 +104,7 @@ const Navbar = () => {
                 textDecoration: 'none',
                 position: 'relative',
                 letterSpacing: isMobile ? '' : '0.25rem',
-                fontSize: `clamp(18px, 2vw , 20px)`, // Gradually changes from 16px to 20px based on screen width
+                fontSize: isMobile ? '18px' : '20px', 
               }}
             >
               Languages
@@ -124,7 +124,7 @@ const Navbar = () => {
             style={{
               whiteSpace: 'nowrap',
               color: 'black',
-              fontSize: `clamp(14px, 2vw + 0.5rem, 16px)`, // Gradually changes font size for items
+              fontSize: isMobile ? '16px' : '18px', 
             }}
             onClick={() => dispatch(closeNavbar())}
           >
@@ -136,7 +136,7 @@ const Navbar = () => {
             style={{
               whiteSpace: 'nowrap',
               color: 'black',
-              fontSize: `clamp(14px, 2vw + 0.5rem, 16px)`, // Gradually changes font size for items
+              fontSize: isMobile ? '16px' : '18px', 
             }}
             onClick={() => dispatch(closeNavbar())}
           >
@@ -153,7 +153,7 @@ const Navbar = () => {
             whiteSpace: 'nowrap',
             padding: '0.5rem 1rem',
             position: 'relative',
-            fontSize: `clamp(18px, 2vw , 20px)`, // Gradually changes from 16px to 20px based on screen width
+            fontSize: isMobile ? '18px' : '20px', 
             letterSpacing: isMobile ? '' : '0.25rem',
           }}
           onClick={() => dispatch(closeNavbar())}
@@ -171,7 +171,7 @@ const Navbar = () => {
               whiteSpace: 'nowrap',
               padding: '0.5rem 1rem',
               position: 'relative',
-              fontSize: `clamp(18px, 2vw , 20px)`, // Gradually changes from 16px to 20px based on screen width
+              fontSize: isMobile ? '18px' : '20px',
               letterSpacing: isMobile ? '' : '0.25rem',
             }}
             onClick={() => dispatch(closeNavbar())}
@@ -187,7 +187,7 @@ const Navbar = () => {
             whiteSpace: 'nowrap',
             cursor: 'pointer',
             padding: '0.5rem 1rem',
-            fontSize: `clamp(18px, 2vw , 20px)`, // Gradually changes from 16px to 20px based on screen width
+            fontSize: isMobile ? '18px' : '20px',
             letterSpacing: isMobile ? '' : '0.25rem',
           }}
           onClick={async () => {
