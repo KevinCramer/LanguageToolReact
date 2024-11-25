@@ -27,7 +27,6 @@ import { useAuth } from './contexts/AuthContext'
 import { useEffect } from 'react'
 import VocabContentNew from './pages/VocabContentNew/VocabContentNew'
 import myVideo from './data/raw-data/tutorial-videos/japanese-comprehension-video-guide.mp4'
-import NavbarDark from './components/atoms/NavbarDark/NavbarDark'
 
 const App = ()=> {
   const location = useLocation();
@@ -40,6 +39,7 @@ const App = ()=> {
   const reduxLock = useSelector((state: RootStateLock) => state.lock);
   // @ts-ignore
   const { currentUser } = useAuth();
+  const pathWithBackground = location.pathname === '/' || location.pathname === '/contact' || location.pathname === '/account'
 
   useEffect(() => {
     if (currentUser && currentUser.email) {
@@ -49,7 +49,7 @@ const App = ()=> {
 
   return (
     <>
-      {(location.pathname === '/' || location.pathname === '/contact') && <div className="full-background">
+      {pathWithBackground && <div className="full-background">
         <Navbar />
         <Routes>
           <Route path="/" element={ <div className='home-container'> <Home /></div>} />
@@ -70,7 +70,7 @@ const App = ()=> {
           <Route path="/*" element={<Custom404Error/>} />
         </Routes>
       </div>}
-      {location.pathname !== '/' && location.pathname !== '/contact' && <div className="plain-background">
+      {!pathWithBackground && <div className="plain-background">
         <Navbar/>
         <Routes>
           <Route path="/" element={ <div className='home-container'> <Home /></div>} />

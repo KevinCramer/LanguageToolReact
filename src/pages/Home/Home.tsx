@@ -2,21 +2,17 @@ import './Home.scss';
 import { useEffect, useState } from 'react';
 import japaneseFlag from '../../assets/flag-icons/japanese-flag-icon.svg';
 import spanishFlag from '../../assets/flag-icons/spanish-flag-icon.svg';
-import { toggleNavbar } from '../../redux-store/navbar';
-import { useDispatch } from 'react-redux';
+import { backHome, RootStateNavbar, startNow } from '../../redux-store/navbar';
+import { useDispatch, useSelector } from 'react-redux';
 
 export const Home = () => {
   const dispatch = useDispatch();
-  const [isHome, setBackHome] = useState(true);
+
+  const reduxNavbar = useSelector((state: RootStateNavbar) => state.navbar);
 
   // Prevent toggleNavbar on flag clicks
   const handleFlagClick = (event: any) => {
     event.stopPropagation();
-  };
-
-  // Function to handle modal close
-  const backHome = () => {
-    setBackHome(true);
   };
 
   const useWindowWidth = () => {
@@ -46,9 +42,9 @@ export const Home = () => {
   const isMobile = width < 768; // Example: is the screen size less than or equal to 768px?
 
   return (
-    <div onClick={() => dispatch(toggleNavbar())}>
+    <div>
       <div className="content2">
-        {isHome && <div style ={{ display:'flex', flexDirection: isMobile ? 'column' : 'row', alignItems: 'center' }}>  
+        {reduxNavbar.isHome && <div style ={{ display:'flex', flexDirection: isMobile ? 'column' : 'row', alignItems: 'center' }}>  
           <div
             style={{
               paddingTop: '10px',
@@ -90,13 +86,13 @@ export const Home = () => {
             }}
             onClick={(event) => {
               event.stopPropagation(); // Prevent toggleNavbar
-              setBackHome(false);
+              dispatch(startNow())
             }}
           >
           Start Now
           </button>
         </div>}
-        { !isHome && <div style={{ }}>
+        { !reduxNavbar.isHome && <div style={{ }}>
           <a href="/spanish" style={{ margin:'30px', textDecorationColor: 'white' }} onClick={handleFlagClick}>
             <div style={{ display:'flex', flexDirection:'row', alignItems: 'center' }}>
               <img src={spanishFlag} style={{ width: '80px', height: '80px' }} alt="Spanish flag"/>
@@ -145,7 +141,7 @@ export const Home = () => {
             }}
             onClick={(event) => {
               event.stopPropagation(); // Prevent toggleNavbar
-              backHome();
+              dispatch(backHome());
             }}
           >
           back home

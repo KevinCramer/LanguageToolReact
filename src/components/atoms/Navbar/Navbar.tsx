@@ -1,5 +1,5 @@
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import { closeNavbar, RootStateNavbar } from '../../../redux-store/navbar';
+import { backHome, RootStateNavbar } from '../../../redux-store/navbar';
 import { Nav, Navbar as NavbarBs, NavDropdown } from 'react-bootstrap';
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -14,7 +14,6 @@ const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const reduxNavbar = useSelector((state: RootStateNavbar) => state.navbar);
   // @ts-ignore
   const { currentUser, logout } = useAuth();
 
@@ -84,7 +83,7 @@ const Navbar = () => {
             letterSpacing: isMobile ? '' : '0.25rem',
             fontSize: isMobile ? '18px' : '20px', 
           }}
-          onClick={() => dispatch(closeNavbar())}
+          onClick={() => dispatch(backHome())}
         >
           <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
             <img src={lingoCommandLogo} width={isMobile ? 70 : 90} height={ isMobile ? 70 : 90} alt="LingoCommand Logo" />
@@ -126,7 +125,6 @@ const Navbar = () => {
               color: 'black',
               fontSize: isMobile ? '16px' : '18px', 
             }}
-            onClick={() => dispatch(closeNavbar())}
           >
             Spanish
           </NavDropdown.Item>
@@ -138,7 +136,6 @@ const Navbar = () => {
               color: 'black',
               fontSize: isMobile ? '16px' : '18px', 
             }}
-            onClick={() => dispatch(closeNavbar())}
           >
             Japanese
           </NavDropdown.Item>
@@ -156,7 +153,6 @@ const Navbar = () => {
             fontSize: isMobile ? '18px' : '20px', 
             letterSpacing: isMobile ? '' : '0.25rem',
           }}
-          onClick={() => dispatch(closeNavbar())}
         >
           Contact Us
         </Nav.Link>
@@ -174,7 +170,6 @@ const Navbar = () => {
               fontSize: isMobile ? '18px' : '20px',
               letterSpacing: isMobile ? '' : '0.25rem',
             }}
-            onClick={() => dispatch(closeNavbar())}
           >
             Account
           </Nav.Link>
@@ -197,7 +192,6 @@ const Navbar = () => {
                 if (location.pathname === '/account') {
                   navigate('/');
                 }
-                dispatch(closeNavbar());
               } catch (error) {
                 console.error('Failed to log out', error);
               }

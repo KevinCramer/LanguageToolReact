@@ -1,11 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  isNavbarOpen: false
+  isHome: true
 
 }
 export interface NavbarState {
-  isNavbarOpen: boolean;
+  isHome: boolean;
 }
 
 export interface RootStateNavbar {
@@ -15,14 +15,14 @@ export const navbarSlice = createSlice({
   name: 'navbar',
   initialState,
   reducers: {
-    toggleNavbar: (state: NavbarState) => {
-      state.isNavbarOpen = !state.isNavbarOpen
+    backHome: (state: NavbarState) => {
+      state.isHome = true
     },
-    closeNavbar: (state: NavbarState) => {
-      state.isNavbarOpen = false
+    startNow: (state: NavbarState) => {
+      state.isHome = false
     }
   }
 })
 
-export const { toggleNavbar, closeNavbar } = navbarSlice.actions
+export const { backHome, startNow } = navbarSlice.actions
 export default navbarSlice.reducer

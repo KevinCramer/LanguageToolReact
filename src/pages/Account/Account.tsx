@@ -14,11 +14,14 @@ const Account = () => {
 
   return (
     <>
-      <h4>Account</h4>
-      <CustomLink onClick={() => dispatch(displayUpdateAccount())}>
+      <div style={{ height:'100px' }}>
+
+      </div>
+      <h4 style={{ color:'white' }}>Account</h4>
+      <CustomLink isWhite={true} onClick={() => dispatch(displayUpdateAccount())}>
         Reset Password
       </CustomLink>
-      <CustomLink onClick={() => dispatch(displayDeleteAccount())}>
+      <CustomLink isWhite={true} onClick={() => dispatch(displayDeleteAccount())}>
         Delete Account
       </CustomLink>
     </>

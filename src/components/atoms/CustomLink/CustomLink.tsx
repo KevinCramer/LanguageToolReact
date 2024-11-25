@@ -4,12 +4,13 @@ type CustomLinkProps = {
   onClick: any;
   children: React.ReactNode;
   inline?: boolean;
+  isWhite?: boolean;
 }
 
-const CustomLink = ({ onClick, children, inline = false }: CustomLinkProps) => {
+const CustomLink = ({ onClick, children, inline = false, isWhite = false }: CustomLinkProps) => {
 
   return (
-    <div style={{ color: 'rgb(13, 110,253)', 
+    <div style={{ color: isWhite ? 'white' : 'rgb(13, 110,253)', 
       textDecoration: 'underline', textAlign: 'center',
       display: inline ? 'inline' : '' }} 
     onClick={onClick}>
