@@ -144,7 +144,7 @@ export const Home = () => {
               dispatch(backHome());
             }}
           >
-          back home
+          Back Home
           </button>
         </div>}
       </div>
