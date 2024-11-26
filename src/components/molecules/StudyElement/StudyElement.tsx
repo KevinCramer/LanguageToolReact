@@ -94,7 +94,7 @@ const StudyElement = (
           baseLanguageLabel) :
         isVerb ? (showBaseLanguageFirst ? foreignLanguageLabel : baseLanguageLabel) :
           foreignLanguageLabel}
-      {showAudio && !showLeftLabel && <div>
+      {showAudio && (showBaseLanguageFirst ? !showLeftLabel : showLeftLabel) && <div>
         <audio src={ForeignLanguageWordAudio} id={ForeignLanguageWordAudio}></audio>
         <CustomButton disabled={!ForeignLanguageWord} onClick={handleAudioToggle}>
           {ForeignLanguageWordAudio ? 
