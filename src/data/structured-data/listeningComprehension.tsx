@@ -266,7 +266,7 @@ const spanishAudioTranscriptions: AudioTranscriptionWithOneAlphabet[] = [
       }, 
       { 
         englishText: 'I look for chicken breasts and ground beef, checking the packages to find the freshest options.', 
-        foreignText: ['Luego, voy a la sección de carne. Busco pechugas de pollo y carne molida, revisando los paquetes para encontrar las opciones más frescas.'], 
+        foreignText: ['Busco pechugas de pollo y carne molida, revisando los paquetes para encontrar las opciones más frescas.'], 
         audioFile: shoppingForFamilyMealsParagraph2
       }, 
       { 
