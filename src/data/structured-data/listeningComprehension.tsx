@@ -4,6 +4,28 @@ import shoppingForFamilyMealsParagraph1 from '../raw-data/listening-comprehensio
 import shoppingForFamilyMealsParagraph2 from '../raw-data/listening-comprehension//spanish/shopping-for-family-meals-paragraph2.mp3'
 import shoppingForFamilyMealsParagraph3 from '../raw-data/listening-comprehension//spanish/shopping-for-family-meals-paragraph3.mp3'
 
+import shoppingForFamilyMealsParagraph1Sentence1 from '../raw-data/listening-comprehension//spanish/shopping-for-family-meals-paragraph1-sentence1.mp3'
+import shoppingForFamilyMealsParagraph1Sentence2 from '../raw-data/listening-comprehension//spanish/shopping-for-family-meals-paragraph1-sentence2.mp3'
+import shoppingForFamilyMealsParagraph1Sentence3 from '../raw-data/listening-comprehension//spanish/shopping-for-family-meals-paragraph1-sentence3.mp3'
+import shoppingForFamilyMealsParagraph1Sentence4 from '../raw-data/listening-comprehension//spanish/shopping-for-family-meals-paragraph1-sentence4.mp3'
+import shoppingForFamilyMealsParagraph1Sentence5 from '../raw-data/listening-comprehension//spanish/shopping-for-family-meals-paragraph1-sentence5.mp3'
+import shoppingForFamilyMealsParagraph1Sentence6 from '../raw-data/listening-comprehension//spanish/shopping-for-family-meals-paragraph1-sentence6.mp3'
+
+import shoppingForFamilyMealsParagraph2Sentence1 from '../raw-data/listening-comprehension//spanish/shopping-for-family-meals-paragraph2-sentence1.mp3'
+import shoppingForFamilyMealsParagraph2Sentence2 from '../raw-data/listening-comprehension//spanish/shopping-for-family-meals-paragraph2-sentence2.mp3'
+import shoppingForFamilyMealsParagraph2Sentence3 from '../raw-data/listening-comprehension//spanish/shopping-for-family-meals-paragraph2-sentence3.mp3'
+import shoppingForFamilyMealsParagraph2Sentence4 from '../raw-data/listening-comprehension//spanish/shopping-for-family-meals-paragraph2-sentence4.mp3'
+import shoppingForFamilyMealsParagraph2Sentence5 from '../raw-data/listening-comprehension//spanish/shopping-for-family-meals-paragraph2-sentence5.mp3'
+import shoppingForFamilyMealsParagraph2Sentence6 from '../raw-data/listening-comprehension//spanish/shopping-for-family-meals-paragraph2-sentence6.mp3'
+import shoppingForFamilyMealsParagraph2Sentence7 from '../raw-data/listening-comprehension//spanish/shopping-for-family-meals-paragraph2-sentence7.mp3'
+
+import shoppingForFamilyMealsParagraph3Sentence1 from '../raw-data/listening-comprehension//spanish/shopping-for-family-meals-paragraph3-sentence1.mp3'
+import shoppingForFamilyMealsParagraph3Sentence2 from '../raw-data/listening-comprehension//spanish/shopping-for-family-meals-paragraph3-sentence2.mp3'
+import shoppingForFamilyMealsParagraph3Sentence3 from '../raw-data/listening-comprehension//spanish/shopping-for-family-meals-paragraph3-sentence3.mp3'
+import shoppingForFamilyMealsParagraph3Sentence4 from '../raw-data/listening-comprehension//spanish/shopping-for-family-meals-paragraph3-sentence4.mp3'
+import shoppingForFamilyMealsParagraph3Sentence5 from '../raw-data/listening-comprehension//spanish/shopping-for-family-meals-paragraph3-sentence5.mp3'
+import shoppingForFamilyMealsParagraph3Sentence6 from '../raw-data/listening-comprehension//spanish/shopping-for-family-meals-paragraph3-sentence6.mp3'
+
 import aikosBookSanctuaryParagraph1 from '../raw-data/listening-comprehension/japanese/aiko-book-sanctuary-paragraph1.mp3'
 import aikosBookSanctuaryParagraph2 from '../raw-data/listening-comprehension/japanese/aiko-book-sanctuary-paragraph2.mp3'
 import aikosBookSanctuaryParagraph3 from '../raw-data/listening-comprehension/japanese/aiko-book-sanctuary-paragraph3.mp3'
@@ -211,99 +233,99 @@ const spanishAudioTranscriptions: AudioTranscriptionWithOneAlphabet[] = [
       { 
         englishText: 'Every week, I go to the grocery store to buy food for my family.', 
         foreignText: ['Cada semana, voy al supermercado a comprar comida para mi familia.'],
-        audioFile: shoppingForFamilyMealsParagraph1
+        audioFile: shoppingForFamilyMealsParagraph1Sentence1
       },
       { 
         englishText: 'It’s one of my favorite tasks because I love cooking.', 
         foreignText: ['Es una de mis tareas favoritas porque me encanta cocinar.'],
-        audioFile: shoppingForFamilyMealsParagraph1
+        audioFile: shoppingForFamilyMealsParagraph1Sentence2
       }, 
       { 
         englishText: 'As I walk through the store, I start in the fresh produce section.', 
         foreignText: ['Al caminar por la tienda, empiezo en la sección de productos frescos.'],
-        audioFile: shoppingForFamilyMealsParagraph1
+        audioFile: shoppingForFamilyMealsParagraph1Sentence3
       }, 
       { 
         englishText: 'I pick up bright red apples, green lettuce, and ripe bananas. ', 
         foreignText: ['Tomo manzanas rojas brillantes, lechuga verde y plátanos maduros. '],
-        audioFile: shoppingForFamilyMealsParagraph1
+        audioFile: shoppingForFamilyMealsParagraph1Sentence4
       }, 
       { 
         englishText: 'The smell of fresh fruits and vegetables always makes me feel good.', 
         foreignText: ['El olor de las frutas y verduras frescas siempre me hace sentir bien. '],
-        audioFile: shoppingForFamilyMealsParagraph1
+        audioFile: shoppingForFamilyMealsParagraph1Sentence5
       },
       { 
         englishText: 'I love the colors, too; everything looks so fresh and inviting.', 
         foreignText: ['También me encantan los colores; todo se ve tan fresco y atractivo.'],
-        audioFile: shoppingForFamilyMealsParagraph1
+        audioFile: shoppingForFamilyMealsParagraph1Sentence6
       },
       // paragraph break
       { 
         englishText: 'Next, I head to the bakery.', 
         foreignText: ['A continuación, me dirijo a la panadería.'], 
-        audioFile: shoppingForFamilyMealsParagraph2
+        audioFile: shoppingForFamilyMealsParagraph2Sentence1
       },
       { 
         englishText: 'I can’t resist the soft, warm bread.', 
         foreignText: ['No puedo resistirme al pan suave y caliente.'], 
-        audioFile: shoppingForFamilyMealsParagraph2
+        audioFile: shoppingForFamilyMealsParagraph2Sentence2
       }, 
       { 
         englishText: ' I choose a loaf of whole wheat and some sweet pastries for breakfast.', 
         foreignText: ['Elijo un pan integral y algunos pasteles dulces para el desayuno.'], 
-        audioFile: shoppingForFamilyMealsParagraph2
+        audioFile: shoppingForFamilyMealsParagraph2Sentence3
       }, 
       { 
         englishText: 'The smell of baked goods fills the air, making my mouth water. ', 
         foreignText: ['El aroma de los productos horneados llena el aire, haciendo que se me haga agua la boca.'], 
-        audioFile: shoppingForFamilyMealsParagraph2
+        audioFile: shoppingForFamilyMealsParagraph2Sentence4
       }, 
       { 
         englishText: 'Then, I go to the meat section.', 
         foreignText: ['Luego, voy a la sección de carne.'], 
-        audioFile: shoppingForFamilyMealsParagraph2
+        audioFile: shoppingForFamilyMealsParagraph2Sentence5
       }, 
       { 
         englishText: 'I look for chicken breasts and ground beef, checking the packages to find the freshest options.', 
         foreignText: ['Busco pechugas de pollo y carne molida, revisando los paquetes para encontrar las opciones más frescas.'], 
-        audioFile: shoppingForFamilyMealsParagraph2
+        audioFile: shoppingForFamilyMealsParagraph2Sentence6
       }, 
       { 
         englishText: 'I always try to pick lean cuts to keep our meals healthy.', 
         foreignText: ['Siempre trato de elegir cortes magros para mantener nuestras comidas saludables.'], 
-        audioFile: shoppingForFamilyMealsParagraph2
+        audioFile: shoppingForFamilyMealsParagraph2Sentence7
       },
       // paragraph break
       { 
         englishText: 'Finally, I visit the dairy aisle, grabbing some milk, cheese, and yogurt.', 
         foreignText: ['Finalmente, visito la sección de lácteos, agarrando leche, queso y yogur.'],
-        audioFile: shoppingForFamilyMealsParagraph3
+        audioFile: shoppingForFamilyMealsParagraph3Sentence1
       },
       { 
         englishText: 'I like to eat healthy, so I also pick up a few boxes of whole grain cereal.', 
         foreignText: ['Me gusta comer sano, así que también llevo algunas cajas de cereales integrales.'],
-        audioFile: shoppingForFamilyMealsParagraph3
+        audioFile: shoppingForFamilyMealsParagraph3Sentence2
       },
       { 
         englishText: 'As I make my way to the snack aisle, I choose some nuts and dark chocolate for treats.', 
         foreignText: ['A medida que me dirijo a la sección de snacks, elijo algunos frutos secos y chocolate negro para mis antojos.'],
-        audioFile: shoppingForFamilyMealsParagraph3
+        audioFile: shoppingForFamilyMealsParagraph3Sentence3
       },
       { 
         englishText: 'As I finish my shopping, I feel satisfied.', 
         foreignText: ['Cuando termino de comprar, me siento satisfecho.'],
-        audioFile: shoppingForFamilyMealsParagraph3
+        audioFile: shoppingForFamilyMealsParagraph3Sentence4
       },
       { 
         englishText: 'I love filling my cart with good food, ready to make delicious meals for my family.', 
         foreignText: ['Me encanta llenar mi carrito con buena comida, lista para preparar deliciosas comidas para mi familia.'],
-        audioFile: shoppingForFamilyMealsParagraph3
+        audioFile: shoppingForFamilyMealsParagraph3Sentence5
       },
       { 
         englishText: 'Shopping at the grocery store is a simple joy in my week!', 
         foreignText: ['¡Hacer las compras en el supermercado es una alegría simple en mi semana!'],
-        audioFile: shoppingForFamilyMealsParagraph3
+        audioFile: shoppingForFamilyMealsParagraph3Sentence6
       },
     ] 
   },
