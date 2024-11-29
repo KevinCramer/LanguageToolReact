@@ -309,7 +309,7 @@ const ListeningComprehensionContent = (props: { languageNumber: number, howToGui
                     </Dropdown.Item>
                   ))}
                 </CustomDropDownButton>
-                <CustomDropDownButton title='Settings'>
+                <CustomDropDownButton title='Settings' align="end">
                   <Dropdown.Item
                     onClick={() => {}}
                   >
