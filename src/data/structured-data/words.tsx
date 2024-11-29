@@ -1938,7 +1938,7 @@ const japaneseTopics: TopicWithThreeAlphabets[] = [
     ] 
   },
   { 
-    name: 'Months of the Year', slugName: 'months', hasOrdering: true, isLocked: false, isAlphabet: false, 
+    name: 'Months of the Year', slugName: 'mon', hasOrdering: true, isLocked: false, isAlphabet: false, 
     words: [
       { englishWord: 'January', foreignWord: ['ichigatsu', 'いちがつ', '一月'], foreignAudio: japaneseAudioJanuary, order: 1 },
       { englishWord: 'February', foreignWord: ['nigatsu', 'にがつ', '二月'], foreignAudio: japaneseAudioFebruary, order: 2 },
