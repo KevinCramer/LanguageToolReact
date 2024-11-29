@@ -206,6 +206,107 @@ const spanishAudioTranscriptions: AudioTranscriptionWithOneAlphabet[] = [
       },
     ] 
   },
+  {
+    name:'Shopping for Family Meals sentence breakdown', slugName: 'shopping-for-family-meals-sentence', contents: [
+      { 
+        englishText: 'Every week, I go to the grocery store to buy food for my family.', 
+        foreignText: ['Cada semana, voy al supermercado a comprar comida para mi familia.'],
+        audioFile: shoppingForFamilyMealsPart1
+      },
+      { 
+        englishText: 'It’s one of my favorite tasks because I love cooking.', 
+        foreignText: ['Es una de mis tareas favoritas porque me encanta cocinar.'],
+        audioFile: shoppingForFamilyMealsPart1
+      }, 
+      { 
+        englishText: 'As I walk through the store, I start in the fresh produce section.', 
+        foreignText: ['Al caminar por la tienda, empiezo en la sección de productos frescos.'],
+        audioFile: shoppingForFamilyMealsPart1
+      }, 
+      { 
+        englishText: 'I pick up bright red apples, green lettuce, and ripe bananas. ', 
+        foreignText: ['Tomo manzanas rojas brillantes, lechuga verde y plátanos maduros. '],
+        audioFile: shoppingForFamilyMealsPart1
+      }, 
+      { 
+        englishText: 'The smell of fresh fruits and vegetables always makes me feel good.', 
+        foreignText: ['El olor de las frutas y verduras frescas siempre me hace sentir bien. '],
+        audioFile: shoppingForFamilyMealsPart1
+      },
+      { 
+        englishText: 'I love the colors, too; everything looks so fresh and inviting.', 
+        foreignText: ['También me encantan los colores; todo se ve tan fresco y atractivo.'],
+        audioFile: shoppingForFamilyMealsPart1
+      },
+      // paragraph break
+      { 
+        englishText: 'Next, I head to the bakery.', 
+        foreignText: ['A continuación, me dirijo a la panadería.'], 
+        audioFile: shoppingForFamilyMealsPart2
+      },
+      { 
+        englishText: 'I can’t resist the soft, warm bread.', 
+        foreignText: ['No puedo resistirme al pan suave y caliente.'], 
+        audioFile: shoppingForFamilyMealsPart2
+      }, 
+      { 
+        englishText: ' I choose a loaf of whole wheat and some sweet pastries for breakfast.', 
+        foreignText: ['Elijo un pan integral y algunos pasteles dulces para el desayuno.'], 
+        audioFile: shoppingForFamilyMealsPart2
+      }, 
+      { 
+        englishText: 'The smell of baked goods fills the air, making my mouth water. ', 
+        foreignText: ['El aroma de los productos horneados llena el aire, haciendo que se me haga agua la boca.'], 
+        audioFile: shoppingForFamilyMealsPart2
+      }, 
+      { 
+        englishText: 'Then, I go to the meat section.', 
+        foreignText: ['Luego, voy a la sección de carne.'], 
+        audioFile: shoppingForFamilyMealsPart2
+      }, 
+      { 
+        englishText: 'I look for chicken breasts and ground beef, checking the packages to find the freshest options.', 
+        foreignText: ['Luego, voy a la sección de carne. Busco pechugas de pollo y carne molida, revisando los paquetes para encontrar las opciones más frescas.'], 
+        audioFile: shoppingForFamilyMealsPart2
+      }, 
+      { 
+        englishText: 'I always try to pick lean cuts to keep our meals healthy.', 
+        foreignText: ['Siempre trato de elegir cortes magros para mantener nuestras comidas saludables.'], 
+        audioFile: shoppingForFamilyMealsPart2
+      },
+      // paragraph break
+      { 
+        englishText: 'Finally, I visit the dairy aisle, grabbing some milk, cheese, and yogurt.', 
+        foreignText: ['Finalmente, visito la sección de lácteos, agarrando leche, queso y yogur.'],
+        audioFile: shoppingForFamilyMealsPart3
+      },
+      { 
+        englishText: 'I like to eat healthy, so I also pick up a few boxes of whole grain cereal.', 
+        foreignText: ['Me gusta comer sano, así que también llevo algunas cajas de cereales integrales.'],
+        audioFile: shoppingForFamilyMealsPart3
+      },
+      { 
+        englishText: 'As I make my way to the snack aisle, I choose some nuts and dark chocolate for treats.', 
+        foreignText: ['A medida que me dirijo a la sección de snacks, elijo algunos frutos secos y chocolate negro para mis antojos.'],
+        audioFile: shoppingForFamilyMealsPart3
+      },
+      { 
+        englishText: 'As I finish my shopping, I feel satisfied.', 
+        foreignText: ['Cuando termino de comprar, me siento satisfecho.'],
+        audioFile: shoppingForFamilyMealsPart3
+      },
+      { 
+        englishText: 'I love filling my cart with good food, ready to make delicious meals for my family.', 
+        foreignText: ['Me encanta llenar mi carrito con buena comida, lista para preparar deliciosas comidas para mi familia.'],
+        audioFile: shoppingForFamilyMealsPart3
+      },
+      { 
+        englishText: 'Shopping at the grocery store is a simple joy in my week!', 
+        foreignText: ['¡Hacer las compras en el supermercado es una alegría simple en mi semana!'],
+        audioFile: shoppingForFamilyMealsPart3
+      },
+    ] 
+  },
 ]
 
 export const 
