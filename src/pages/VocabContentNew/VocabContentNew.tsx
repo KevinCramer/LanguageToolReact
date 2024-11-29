@@ -316,6 +316,7 @@ const VocabContentNew = (
                     random ordering</Dropdown.Item>
                   {currentLanguage.numForeignAlphabets > 1 && !currentTopic.isAlphabet &&
               <Dropdown.Item>
+                writing system: &nbsp;
                 <select 
                   name="alphabets" 
                   id="alphabets" 

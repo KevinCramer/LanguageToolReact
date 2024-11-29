@@ -35,6 +35,10 @@ const ListeningComprehensionContent = (props: { languageNumber: number, howToGui
   
   const [currentAlphabet, setCurrentAlphabet] = useState(initialAlphabet);
 
+  const preventDropdownClose = (event: any) => {
+    event.stopPropagation(); // Prevent click event from closing the dropdown
+  };
+
   const initialLeft = queryParams.get('L') || 
   (currentLanguage.numForeignAlphabets > 1 ? TranscriptionType.WritingSystem3 
     : TranscriptionType.WritingSystem1)
@@ -304,6 +308,27 @@ const ListeningComprehensionContent = (props: { languageNumber: number, howToGui
                       {topic.name}
                     </Dropdown.Item>
                   ))}
+                </CustomDropDownButton>
+                <CustomDropDownButton title='Settings'>
+                  <Dropdown.Item
+                    onClick={() => {}}
+                  >
+                      Granularity: &nbsp;
+                    <select 
+                      name="alphabets" 
+                      id="alphabets" 
+                      onChange={() => {}} 
+                      onClick={preventDropdownClose} // Prevent dropdown from closing
+                      style={{
+                        width: 'auto', // Make the select element only as wide as the content
+                        display: 'inline-block', // Allow the select element to shrink to fit content
+                        padding: '5px', // Add some padding for visual spacing
+                      }}
+                    >
+                      <option value='0'>paragraph</option>
+                      <option value="1">sentence</option>
+                    </select>
+                  </Dropdown.Item>
                 </CustomDropDownButton>
               </div>
             </Container>
