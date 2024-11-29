@@ -8,7 +8,7 @@ const JapaneseStudyGuide = () => {
         <div className="central-container">
           <h4 style={{ paddingBottom: '30px' }}>Japanese Study Guide</h4>
           <div>
-            <b>Phase 1:</b> Spend a few minutes reading about Japanese writing systems <a href="/japanese/writing-systems-explanation">here</a> 
+            <b>Phase 1:</b> Spend a few minutes reading about <a href="/japanese/writing-systems-explanation">Japanese writing systems</a> 
           </div>
           <div style={{ paddingTop:'20px' }}>
             <b>Phase 2:</b> Master <a href="/japanese/writing-systems?s=hir-T0TFT">hiragana</a> and <a href="/japanese/writing-systems?s=kat-T0TFT">katakana</a>. 
