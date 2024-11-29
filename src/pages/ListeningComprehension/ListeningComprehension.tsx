@@ -63,6 +63,16 @@ const ListeningComprehensionContent = (props: { languageNumber: number, howToGui
   const hidePopUp = () => { return setShowPopUp(false)}
   const displayPopUp = () => { return setShowPopUp(true)}
 
+  var leftVisibility = true;
+  var [leftVisibility,setLeftVisibility] = useState(leftVisibility)
+  const changeLeftVisiblity = () => {
+    setLeftVisibility((prevLeftVisibility) => !prevLeftVisibility);
+  };
+  var rightVisibility = true;
+  var [rightVisibility,setRightVisibility] = useState(rightVisibility)
+  const changeRightVisiblity = () => {
+    setRightVisibility((prevRightVisibility) => !prevRightVisibility);
+  };
   const updateURL = (slugName: string, left: any, right : any) => {
     const query = new URLSearchParams(location.search);
     query.set('L', left);
@@ -134,7 +144,8 @@ const ListeningComprehensionContent = (props: { languageNumber: number, howToGui
               >
                 {titleMap[TranscriptionType.English]}
               </Dropdown.Item>
-            </CustomDropDownButtonWhite></th>
+            </CustomDropDownButtonWhite> <button onClick={() => changeLeftVisiblity()}>{leftVisibility ? 'hide' : 'show'}</button>
+            </th>
             <th><CustomDropDownButtonWhite title={
               titleMap[currentRight as TranscriptionType].length > 20 ?
                 titleMap[currentRight as TranscriptionType].substring(0,20) + '...' :
@@ -177,7 +188,7 @@ const ListeningComprehensionContent = (props: { languageNumber: number, howToGui
               >
                 {titleMap[TranscriptionType.English]}
               </Dropdown.Item>
-            </CustomDropDownButtonWhite></th>
+            </CustomDropDownButtonWhite><button onClick={() => changeRightVisiblity()}>{rightVisibility ? 'hide' : 'show'}</button></th>
           </tr>
         </thead>
         <tbody>
@@ -186,13 +197,13 @@ const ListeningComprehensionContent = (props: { languageNumber: number, howToGui
               <tr key={index}>
                 <td style={{ height: '10px', verticalAlign: 'top', paddingTop: '15px' }}>
                   {currentLeft === 'Audio' && <div style={{ display: 'flex' }}>
-                    <AudioPlayer audioFile={content.audioFile} />
+                    {leftVisibility && <AudioPlayer audioFile={content.audioFile} />}
                   </div>}
                   {currentLeft === 'WritingSystem1' && <div style={{ display: 'flex', textAlign:'left', paddingLeft:'5px', paddingRight: '5px' }}>
-                    {content.foreignText[0]}
+                    {leftVisibility ? content.foreignText[0] : null}
                   </div>}
                   {currentLeft === 'WritingSystem2' && <div style={{ display: 'flex', textAlign:'left', paddingLeft:'5px', paddingRight: '5px' }}>
-                    {content.foreignText[1]}
+                    {leftVisibility ? content.foreignText[1] : null}
                   </div>}
                   {currentLeft === 'WritingSystem2v2' && (
                     <div style={{
@@ -201,7 +212,7 @@ const ListeningComprehensionContent = (props: { languageNumber: number, howToGui
                       textAlign: 'left', 
                       width: '100%' // You can adjust the width depending on your container size
                     }}>
-                      {content.foreignText[2]
+                      { leftVisibility ? content.foreignText[2]
                         .split(' ') // Split by spaces
                         .map((word, index) => (
                           <div key={index} style={{
@@ -211,25 +222,25 @@ const ListeningComprehensionContent = (props: { languageNumber: number, howToGui
                           }}>
                             {word}
                           </div>
-                        ))}
+                        )) : null}
                     </div>
                   )}
                   {currentLeft === 'WritingSystem3' && <div style={{ display: 'flex', textAlign:'left', paddingLeft:'5px', paddingRight: '5px' }}>
-                    {content.foreignText[3]}
+                    {leftVisibility ? content.foreignText[3] : null }
                   </div>}
                   {currentLeft === 'English' && <div style={{ display: 'flex', textAlign:'left', paddingLeft:'5px', paddingRight: '5px' }}>
-                    {content.englishText}
+                    {leftVisibility ? content.englishText : null}
                   </div>}
                 </td>
                 <td style={{ verticalAlign: 'top', paddingTop: '15px' }}>
                   {currentRight === 'Audio' && <div style={{ display: 'flex' }}>
-                    <AudioPlayer audioFile={content.audioFile} />
+                    {rightVisibility && <AudioPlayer audioFile={content.audioFile} />}
                   </div>}
                   {currentRight === 'WritingSystem1' && <div style={{ display: 'flex', textAlign:'left', paddingLeft:'5px', paddingRight: '5px' }}>
-                    {content.foreignText[0]}
+                    {rightVisibility ? content.foreignText[0] : null}
                   </div>}
                   {currentRight === 'WritingSystem2' && <div style={{ display: 'flex', textAlign:'left', paddingLeft:'5px', paddingRight: '5px' }}>
-                    {content.foreignText[1]}
+                    {rightVisibility ? content.foreignText[1] : null}
                   </div>}
                   {currentRight === 'WritingSystem2v2' && (
                     <div style={{
@@ -238,7 +249,7 @@ const ListeningComprehensionContent = (props: { languageNumber: number, howToGui
                       textAlign: 'left', 
                       width: '100%' // You can adjust the width depending on your container size
                     }}>
-                      {content.foreignText[2]
+                      {rightVisibility ? content.foreignText[2]
                         .split(' ') // Split by spaces
                         .map((word, index) => (
                           <div key={index} style={{
@@ -248,14 +259,14 @@ const ListeningComprehensionContent = (props: { languageNumber: number, howToGui
                           }}>
                             {word}
                           </div>
-                        ))}
+                        )) : null}
                     </div>
                   )}
                   {currentRight === 'WritingSystem3' && <div style={{ display: 'flex', textAlign:'left', paddingLeft:'5px', paddingRight: '5px' }}>
-                    {content.foreignText[3]}
+                    {rightVisibility ? content.foreignText[3] : null}
                   </div>}
                   {currentRight === 'English' && <div style={{ display: 'flex', textAlign:'left', paddingLeft:'5px', paddingRight: '5px' }}>
-                    {content.englishText}
+                    {rightVisibility ? content.englishText : null}
                   </div>}
                 </td>
               </tr>
