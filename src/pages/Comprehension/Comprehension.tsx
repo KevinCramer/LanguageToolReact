@@ -11,6 +11,7 @@ import { lightGrey, mobileBreakPoint } from '../../constants';
 import CustomButton from '../../components/atoms/CustomButton/CustomButton';
 import CustomDropDownButtonWhite from '../../components/atoms/CustomDropDownButtonWhite/CustomDropDownButtonWhite';
 import CustomSwitch from '../../components/atoms/CustomSwitch/CustomSwitch';
+import RenderTableCell from '../../components/molecules/RenderTableCell/RenderTableCell';
 
 const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?: any }) => {
   const navigate = useNavigate();
@@ -122,76 +123,6 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
     return sentence.foreignText.length === numAlphabets;
   };
 
-  const renderTableCell = (
-    current: TranscriptionType,
-    visibility: boolean,
-    sentences: (SentenceWithNumAlphabets<1> | SentenceWithNumAlphabets<2>
-       | SentenceWithNumAlphabets<3> | SentenceWithNumAlphabets<4>)[], // Flexible type
-    audioFile: Paragraph['audioFile']
-  ) => {
-    if (!visibility) return null;
-  
-    // Determine the display mode based on granularity
-    const displayContent = granularity === 'sentence'
-      ? sentences // Use individual sentences when granularity is 'sentence'
-      : [{ 
-        englishText: sentences.map((s) => s.englishText).join(' '), 
-        foreignText: [
-          sentences.map((s) => s.foreignText[0]).join(' '),
-          sentences.map((s) => s.foreignText[1]).join(''),
-          sentences.map((s) => s.foreignText[2]).join(' '),
-          sentences.map((s) => s.foreignText[3]).join('')
-        ], 
-        audioFile: audioFile 
-      }]; // Join all sentences into a single paragraph
-  
-    if (granularity === 'sentence') {
-      // When granularity is sentence, return each sentence in its own row
-      return (
-        <div className="table-cell">
-          {displayContent.map((content, index) => (
-            <div key={index}>
-              {current === TranscriptionType.Audio && <AudioPlayer audioFile={content.audioFile || ''} />}
-              {current === TranscriptionType.English && <div>{content.englishText}</div>}
-              {current === TranscriptionType.WritingSystem1 && <div>{content.foreignText[0]}</div>}
-              {current === TranscriptionType.WritingSystem2 && <div>{content.foreignText[1]}</div>}
-              {current === TranscriptionType.WritingSystem2v2 && (
-                <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-                  {content.foreignText[2]?.split(' ').map((word: any, idx: any) => (
-                    <div key={idx} style={{ display: 'inline-block', paddingRight: '5px', marginRight: '5px', marginTop: '10px' }}>
-                      {word}
-                    </div>
-                  ))}
-                </div>
-              )}
-              {current === TranscriptionType.WritingSystem3 && <div>{content.foreignText[3] || ''}</div>}
-            </div>
-          ))}
-        </div>
-      );
-    } else {
-      // When granularity is paragraph, render all content in a single row
-      return (
-        <div className="table-cell">
-          {current === TranscriptionType.Audio && <AudioPlayer audioFile={displayContent[0].audioFile || ''} />}
-          {current === TranscriptionType.English && <div>{displayContent[0].englishText}</div>}
-          {current === TranscriptionType.WritingSystem1 && <div>{displayContent[0].foreignText[0]}</div>}
-          {current === TranscriptionType.WritingSystem2 && <div>{displayContent[0].foreignText[1]}</div>}
-          {current === TranscriptionType.WritingSystem2v2 && (
-            <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-              {displayContent[0].foreignText[2]?.split(' ').map((word, idx) => (
-                <div key={idx} style={{ display: 'inline-block', paddingRight: '4px', marginRight: '4px' }}>
-                  {word}
-                </div>
-              ))}
-            </div>
-          )}
-          {current === TranscriptionType.WritingSystem3 && <div>{displayContent[0].foreignText[3] || ''}</div>}
-        </div>
-      );
-    }
-  };
-
   const renderComprehensionTopic = () => {
     // Flatten the paragraphs into individual sentences if granularity is 'sentence'
     const rowsToRender = granularity === 'sentence'
@@ -238,8 +169,23 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
             >
               {rowsToRender.map((row, index) => (
                 <tr key={index}>
-                  <td style={{ verticalAlign: 'top' }}>{renderTableCell(currentLeft as TranscriptionType, leftVisibility, row.sentences, row.audioFile)}</td>
-                  <td style={{ verticalAlign: 'top' }}>{renderTableCell(currentRight as TranscriptionType, rightVisibility, row.sentences, row.audioFile)}</td>
+                  <td style={{ verticalAlign: 'top' }}>
+                    <RenderTableCell
+                      current={currentLeft as TranscriptionType}
+                      visibility={leftVisibility}
+                      sentences={row.sentences}
+                      audioFile={row.audioFile}
+                      granularity={granularity}
+                    />
+                  </td>
+                  <td style={{ verticalAlign: 'top' }}>
+                    <RenderTableCell
+                      current={currentRight as TranscriptionType}
+                      visibility={rightVisibility}
+                      sentences={row.sentences}
+                      audioFile={row.audioFile}
+                      granularity={granularity}
+                    />                  </td>
                 </tr>
               ))}
             </tbody>
