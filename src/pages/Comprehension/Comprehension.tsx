@@ -204,9 +204,9 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
                       side === 'Left' ? setCurrentLeft : setCurrentRight
                     )}
                   </CustomDropDownButtonWhite>
-                  <button onClick={toggleVisibility(side === 'Left' ? setLeftVisibility : setRightVisibility)}>
+                  {false && <button onClick={toggleVisibility(side === 'Left' ? setLeftVisibility : setRightVisibility)}>
                     {side === 'Left' ? (leftVisibility ? 'hide' : 'show') : (rightVisibility ? 'hide' : 'show')}
-                  </button>
+                  </button>}
                 </th>
               ))}
             </tr>
