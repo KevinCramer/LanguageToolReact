@@ -6,9 +6,9 @@ import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { languages as allLanguages } from '../../data/structured-data/comprehension';
 import AudioPlayer from '../../components/atoms/CustomAudioPlayer/CustomAudioPlayer';
 import CustomDropDownButton from '../../components/atoms/CustomDropDownButton/CustomDropDownButton';
-import CustomDropDownButtonWhite from '../../components/atoms/CustomDropDownButtonWhite/CustomDropDownButtonWhite';
 import Dropdown from 'react-bootstrap/Dropdown';
 import { lightGrey } from '../../constants';
+import CustomButton from '../../components/atoms/CustomButton/CustomButton';
 
 const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?: any }) => {
   const navigate = useNavigate();
@@ -192,21 +192,29 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
             <tr>
               {['Left', 'Right'].map((side) => (
                 <th key={side}>
-                  <CustomDropDownButtonWhite
-                    title={
-                      titleMap[(side === 'Left' ? currentLeft : currentRight) as TranscriptionType].length > 20
-                        ? `${titleMap[(side === 'Left' ? currentLeft : currentRight) as TranscriptionType].substring(0, 20)}...`
-                        : titleMap[(side === 'Left' ? currentLeft : currentRight) as TranscriptionType]
-                    }
-                  >
-                    {renderDropdownItems(
-                      (side === 'Left' ? currentLeft : currentRight) as TranscriptionType,
-                      side === 'Left' ? setCurrentLeft : setCurrentRight
-                    )}
-                  </CustomDropDownButtonWhite>
-                  {false && <button onClick={toggleVisibility(side === 'Left' ? setLeftVisibility : setRightVisibility)}>
-                    {side === 'Left' ? (leftVisibility ? 'hide' : 'show') : (rightVisibility ? 'hide' : 'show')}
-                  </button>}
+                  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '5px' }}>
+                    <CustomDropDownButton
+                      size=''
+                      title={
+                        titleMap[(side === 'Left' ? currentLeft : currentRight) as TranscriptionType].length > 20
+                          ? `${titleMap[(side === 'Left' ? currentLeft : currentRight) as TranscriptionType].substring(0, 20)}...`
+                          : titleMap[(side === 'Left' ? currentLeft : currentRight) as TranscriptionType]
+                      }
+                    >
+                      {renderDropdownItems(
+              (side === 'Left' ? currentLeft : currentRight) as TranscriptionType,
+              side === 'Left' ? setCurrentLeft : setCurrentRight
+                      )}
+                    </CustomDropDownButton>
+
+                    <CustomButton
+                      size=''
+                      disabled={false}
+                      onClick={toggleVisibility(side === 'Left' ? setLeftVisibility : setRightVisibility)}
+                    >
+                      {side === 'Left' ? (leftVisibility ? 'hide' : 'show') : (rightVisibility ? 'hide' : 'show')}
+                    </CustomButton>
+                  </div>
                 </th>
               ))}
             </tr>
@@ -246,6 +254,7 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
           <Container className="listening-comprehension-container">
             <div className="inner-listening-comprehension-container">
               <CustomDropDownButton
+                size=''
                 title={`Topic: ${
                   currentAudioTranscription.name.length > 25
                     ? `${currentAudioTranscription.name.substring(0, 25)}...`
@@ -270,7 +279,7 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
                   </Dropdown.Item>
                 ))}
               </CustomDropDownButton>
-              <CustomDropDownButton title='Settings' align="end">
+              <CustomDropDownButton title='Settings' align="end" size=''>
                 <Dropdown.Item
                   onClick={() => {}}
                 >
