@@ -207,7 +207,7 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
     return (
       <div className="inner-audio-player-and-table-container">
         <Table striped bordered hover size="sm" className="react-bootstrap-table2 scrollable-table">
-          <thead style={{ display: 'table', width: 'calc(100% - 16px)', tableLayout: 'fixed' }}>
+          <thead style={{ display: 'table', width: isMobileDevice ? 'calc(100% - 16px)' : '100%', tableLayout: 'fixed' }}>
             <tr>
               {['Left', 'Right'].map((side) => (
                 <th key={side}>
@@ -231,7 +231,6 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
           <div className="scrollable-tbody">
             <tbody
               style={{
-                width: isMobileDevice ? 'calc(100% - 18px)' : '100%',
                 overflowX: 'hidden', // Disable horizontal scrolling
               }}
             >
