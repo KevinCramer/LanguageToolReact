@@ -15,7 +15,7 @@ import Home from './pages/Home/Home'
 import Japanese from './pages/Japanese/Japanese'
 import JapaneseStudyGuide from './pages/Japanese/JapaneseStudyGuide'
 import JapaneseWritingSystems from './pages/Japanese/WritingSystems'
-import ListeningComprehension from './pages/ListeningComprehension/ListeningComprehension'
+import Comprehension from './pages/Comprehension/Comprehension'
 import LockedContent from './components/atoms/LockedContent/LockedContent'
 import Login from './components/molecules/Login/Login'
 import Navbar from './components/atoms/Navbar/Navbar'
@@ -59,14 +59,14 @@ const App = ()=> {
           <Route path="/spanish/vocabulary" element={<VocabContentNew languageNumber={0}/>} />
           <Route path="/spanish/study-guide" element={<SpanishStudyGuide/>} />
           <Route path="/spanish/grammar/:topicSlug" element={<GrammarContent languageNumber={0} />} />
-          <Route path="/spanish/comprehension/:topicSlug" element={<ListeningComprehension languageNumber={0}/>} />
+          <Route path="/spanish/comprehension/:topicSlug" element={<Comprehension languageNumber={0}/>} />
           <Route path="/japanese" element={<Japanese/>} />
           <Route path="/japanese/vocabulary" element={<VocabContentNew languageNumber={1} />} />
           <Route path="/japanese/writing-systems-explanation" element={<JapaneseWritingSystems />} />
           <Route path="/japanese/writing-systems" element={<VocabContentNew languageNumber={2} isWritingSystem ={true} />} />
           <Route path="/japanese/study-guide" element={<JapaneseStudyGuide/>} />
           <Route path="/japanese/grammar/:topicSlug" element={<GrammarContent languageNumber={1} />} />
-          <Route path="/japanese/comprehension/:topicSlug" element={<ListeningComprehension languageNumber={1} howToGuideVideo={myVideo}/>} />
+          <Route path="/japanese/comprehension/:topicSlug" element={<Comprehension languageNumber={1} howToGuideVideo={myVideo}/>} />
           <Route path="/*" element={<Custom404Error/>} />
         </Routes>
       </div>}
@@ -80,14 +80,14 @@ const App = ()=> {
           <Route path="/spanish/vocabulary" element={<VocabContentNew languageNumber={0}/>} />
           <Route path="/spanish/study-guide" element={<SpanishStudyGuide/>} />
           <Route path="/spanish/grammar/:topicSlug" element={<GrammarContent languageNumber={0} />} />
-          <Route path="/spanish/comprehension/:topicSlug" element={<ListeningComprehension languageNumber={0}/>} />
+          <Route path="/spanish/comprehension/:topicSlug" element={<Comprehension languageNumber={0}/>} />
           <Route path="/japanese" element={<Japanese/>} />
           <Route path="/japanese/vocabulary" element={<VocabContentNew languageNumber={1} />} />
           <Route path="/japanese/writing-systems-explanation" element={<JapaneseWritingSystems />} />
           <Route path="/japanese/writing-systems" element={<VocabContentNew languageNumber={2} isWritingSystem ={true} />} />
           <Route path="/japanese/study-guide" element={<JapaneseStudyGuide/>} />
           <Route path="/japanese/grammar/:topicSlug" element={<GrammarContent languageNumber={1} />} />
-          <Route path="/japanese/comprehension/:topicSlug" element={<ListeningComprehension languageNumber={1} howToGuideVideo={myVideo}/>} />
+          <Route path="/japanese/comprehension/:topicSlug" element={<Comprehension languageNumber={1} howToGuideVideo={myVideo}/>} />
           <Route path="/*" element={<Custom404Error/>} />
         </Routes>
       </div>}

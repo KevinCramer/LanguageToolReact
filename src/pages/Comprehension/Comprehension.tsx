@@ -1,17 +1,17 @@
-import './ListeningComprehension.scss';
+import './Comprehension.scss';
 import { AudioTranscription, Language,
-  Paragraph, TranscriptionType } from '../../../types/listeningComprehension';
+  Paragraph, TranscriptionType } from '../../../types/Comprehension';
 import { Container, Modal, Navbar as NavbarBs, Table } from 'react-bootstrap';
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
-import { languages as allLanguages } from '../../data/structured-data/listeningComprehension';
+import { languages as allLanguages } from '../../data/structured-data/comprehension';
 import AudioPlayer from '../../components/atoms/CustomAudioPlayer/CustomAudioPlayer';
 import CustomDropDownButton from '../../components/atoms/CustomDropDownButton/CustomDropDownButton';
 import CustomDropDownButtonWhite from '../../components/atoms/CustomDropDownButtonWhite/CustomDropDownButtonWhite';
 import Dropdown from 'react-bootstrap/Dropdown';
 import { lightGrey } from '../../constants';
 
-const ListeningComprehensionContent = (props: { languageNumber: number, howToGuideVideo?: any }) => {
+const ComprehensionContent = (props: { languageNumber: number, howToGuideVideo?: any }) => {
   const navigate = useNavigate();
   const { topicSlug } = useParams();
   const location = useLocation();
@@ -100,7 +100,7 @@ const ListeningComprehensionContent = (props: { languageNumber: number, howToGui
 
   }
 
-  const renderListeningComprehensionTopic = () => (
+  const renderComprehensionTopic = () => (
     <div className="inner-audio-player-and-table-container">
       <Table striped bordered hover size="sm" className="react-bootstrap-table2">
         <thead>
@@ -334,7 +334,7 @@ const ListeningComprehensionContent = (props: { languageNumber: number, howToGui
             </Container>
           </NavbarBs>
           <div className="audio-player-and-table-container">
-            {renderListeningComprehensionTopic()}
+            {renderComprehensionTopic()}
           </div>
           <Modal show={showPopUp} onHide={hidePopUp} size="lg" centered>
             <Modal.Header closeButton>
@@ -358,4 +358,4 @@ const ListeningComprehensionContent = (props: { languageNumber: number, howToGui
   );
 };
 
-export default ListeningComprehensionContent;
+export default ComprehensionContent;
