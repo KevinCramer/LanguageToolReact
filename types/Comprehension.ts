@@ -1,8 +1,13 @@
 import { FixedSizeArray } from 'fixed-size-array';
 
-export type ParagraphWithNumAlphabets<N extends number> = {
-    englishText: string 
+export type SentenceWithNumAlphabets<N extends number> = {
+    englishText: string
     foreignText: FixedSizeArray<N, string>;
+    audioFile: any;
+}
+
+export type ParagraphWithNumAlphabets<N extends number> = {
+    sentences: SentenceWithNumAlphabets<N>[]
     audioFile: any;
 
 }

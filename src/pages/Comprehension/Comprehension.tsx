@@ -204,10 +204,10 @@ const ComprehensionContent = (props: { languageNumber: number, howToGuideVideo?:
                     {leftVisibility && <AudioPlayer audioFile={content.audioFile} />}
                   </div>}
                   {currentLeft === 'WritingSystem1' && <div style={{ display: 'flex', textAlign:'left', paddingLeft:'5px', paddingRight: '5px' }}>
-                    {leftVisibility ? content.foreignText[0] : null}
+                    {leftVisibility ? content.sentences.map(sentence => sentence.foreignText[0]).join(' ') : null}
                   </div>}
                   {currentLeft === 'WritingSystem2' && <div style={{ display: 'flex', textAlign:'left', paddingLeft:'5px', paddingRight: '5px' }}>
-                    {leftVisibility ? content.foreignText[1] : null}
+                    {leftVisibility ? content.sentences.map(sentence => sentence.foreignText[1]).join('') : null}
                   </div>}
                   {currentLeft === 'WritingSystem2v2' && (
                     <div style={{
@@ -216,7 +216,7 @@ const ComprehensionContent = (props: { languageNumber: number, howToGuideVideo?:
                       textAlign: 'left', 
                       width: '100%' // You can adjust the width depending on your container size
                     }}>
-                      { leftVisibility ? content.foreignText[2]
+                      { leftVisibility ? content.sentences.map(sentence => sentence.foreignText[2]).join('')
                         .split(' ') // Split by spaces
                         .map((word, index) => (
                           <div key={index} style={{
@@ -230,10 +230,10 @@ const ComprehensionContent = (props: { languageNumber: number, howToGuideVideo?:
                     </div>
                   )}
                   {currentLeft === 'WritingSystem3' && <div style={{ display: 'flex', textAlign:'left', paddingLeft:'5px', paddingRight: '5px' }}>
-                    {leftVisibility ? content.foreignText[3] : null }
+                    {leftVisibility ? content.sentences.map(sentence => sentence.foreignText[3]).join('') : null }
                   </div>}
                   {currentLeft === 'English' && <div style={{ display: 'flex', textAlign:'left', paddingLeft:'5px', paddingRight: '5px' }}>
-                    {leftVisibility ? content.englishText : null}
+                    {leftVisibility ? content.sentences.map(sentence => sentence.englishText).join(' ') : null}
                   </div>}
                 </td>
                 <td style={{ verticalAlign: 'top', paddingTop: '15px' }}>
@@ -241,10 +241,10 @@ const ComprehensionContent = (props: { languageNumber: number, howToGuideVideo?:
                     {rightVisibility && <AudioPlayer audioFile={content.audioFile} />}
                   </div>}
                   {currentRight === 'WritingSystem1' && <div style={{ display: 'flex', textAlign:'left', paddingLeft:'5px', paddingRight: '5px' }}>
-                    {rightVisibility ? content.foreignText[0] : null}
+                    {rightVisibility ? content.sentences.map(sentence => sentence.foreignText[0]).join(' ') : null}
                   </div>}
                   {currentRight === 'WritingSystem2' && <div style={{ display: 'flex', textAlign:'left', paddingLeft:'5px', paddingRight: '5px' }}>
-                    {rightVisibility ? content.foreignText[1] : null}
+                    {rightVisibility ? content.sentences.map(sentence => sentence.foreignText[1]).join('') : null}
                   </div>}
                   {currentRight === 'WritingSystem2v2' && (
                     <div style={{
@@ -253,7 +253,7 @@ const ComprehensionContent = (props: { languageNumber: number, howToGuideVideo?:
                       textAlign: 'left', 
                       width: '100%' // You can adjust the width depending on your container size
                     }}>
-                      {rightVisibility ? content.foreignText[2]
+                      {rightVisibility ? content.sentences.map(sentence => sentence.foreignText[2]).join('')
                         .split(' ') // Split by spaces
                         .map((word, index) => (
                           <div key={index} style={{
@@ -267,10 +267,10 @@ const ComprehensionContent = (props: { languageNumber: number, howToGuideVideo?:
                     </div>
                   )}
                   {currentRight === 'WritingSystem3' && <div style={{ display: 'flex', textAlign:'left', paddingLeft:'5px', paddingRight: '5px' }}>
-                    {rightVisibility ? content.foreignText[3] : null}
+                    {rightVisibility ? content.sentences.map(sentence => sentence.foreignText[3]).join('') : null}
                   </div>}
                   {currentRight === 'English' && <div style={{ display: 'flex', textAlign:'left', paddingLeft:'5px', paddingRight: '5px' }}>
-                    {rightVisibility ? content.englishText : null}
+                    {rightVisibility ? content.sentences.map(sentence => sentence.englishText).join(' ') : null}
                   </div>}
                 </td>
               </tr>
