@@ -8,6 +8,7 @@ import { useAuth } from '../../../contexts/AuthContext';
 import { useEffect, useState } from 'react';
 import lingoCommandLogo from '../../../assets/lingoCommandLogo.svg';
 import './Navbar.scss';
+import { mobileBreakPoint } from '../../../constants';
 
 const Navbar = () => {
   const dispatch = useDispatch();
@@ -49,7 +50,7 @@ const Navbar = () => {
   const width = useWindowWidth(); // Get the current window width
 
   // Now you can use width to check screen size in your component
-  const isMobile = width < 768; // Example: is the screen size less than or equal to 768px?
+  const isMobile = width < mobileBreakPoint; 
 
   return (
     <NavbarBs

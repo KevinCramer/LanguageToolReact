@@ -7,13 +7,37 @@ import { languages as allLanguages } from '../../data/structured-data/comprehens
 import AudioPlayer from '../../components/atoms/CustomAudioPlayer/CustomAudioPlayer';
 import CustomDropDownButton from '../../components/atoms/CustomDropDownButton/CustomDropDownButton';
 import Dropdown from 'react-bootstrap/Dropdown';
-import { lightGrey } from '../../constants';
+import { lightGrey, mobileBreakPoint } from '../../constants';
 import CustomButton from '../../components/atoms/CustomButton/CustomButton';
 
 const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?: any }) => {
   const navigate = useNavigate();
   const { topicSlug } = useParams();
   const location = useLocation();
+
+  const useWindowWidth = () => {
+    const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
+
+    useEffect(() => {
+      // Update the windowWidth state when the window is resized
+      const handleResize = () => {
+        setWindowWidth(window.innerWidth);
+      };
+  
+      // Add event listener to handle window resizing
+      window.addEventListener('resize', handleResize);
+  
+      // Cleanup event listener when the component unmounts
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }, []);
+  
+    return windowWidth;
+  };
+
+  const width = useWindowWidth(); // Get the current window width
+  const isMobile = width < mobileBreakPoint
 
   const currentLanguage: Language = allLanguages[props.languageNumber];
 
@@ -192,7 +216,7 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
             <tr>
               {['Left', 'Right'].map((side) => (
                 <th key={side}>
-                  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '5px' }}>
+                  <div style={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row', justifyContent: 'center', alignItems: 'center', padding: '5px' }}>
                     <CustomDropDownButton
                       size=''
                       title={
@@ -206,14 +230,16 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
               side === 'Left' ? setCurrentLeft : setCurrentRight
                       )}
                     </CustomDropDownButton>
-
-                    <CustomButton
-                      size=''
-                      disabled={false}
-                      onClick={toggleVisibility(side === 'Left' ? setLeftVisibility : setRightVisibility)}
-                    >
-                      {side === 'Left' ? (leftVisibility ? 'hide' : 'show') : (rightVisibility ? 'hide' : 'show')}
-                    </CustomButton>
+                    <div style={{ paddingTop: isMobile ? '5px' : '0px' }}>
+                      <CustomButton
+                        size=''
+                        disabled={false}
+                        onClick={toggleVisibility(side === 'Left' ? setLeftVisibility : setRightVisibility)}
+                      >
+                        {side === 'Left' ? (leftVisibility ? 'hide' : 'show') : (rightVisibility ? 'hide' : 'show')}
+                      </CustomButton>
+                      
+                    </div>
                   </div>
                 </th>
               ))}

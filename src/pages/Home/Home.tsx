@@ -4,6 +4,7 @@ import japaneseFlag from '../../assets/flag-icons/japanese-flag-icon.svg';
 import spanishFlag from '../../assets/flag-icons/spanish-flag-icon.svg';
 import { backHome, RootStateNavbar, startNow } from '../../redux-store/navbar';
 import { useDispatch, useSelector } from 'react-redux';
+import { mobileBreakPoint } from '../../constants';
 
 export const Home = () => {
   const dispatch = useDispatch();
@@ -39,7 +40,7 @@ export const Home = () => {
   const width = useWindowWidth(); // Get the current window width
 
   // Now you can use width to check screen size in your component
-  const isMobile = width < 768; // Example: is the screen size less than or equal to 768px?
+  const isMobile = width < mobileBreakPoint
 
   return (
     <div>
