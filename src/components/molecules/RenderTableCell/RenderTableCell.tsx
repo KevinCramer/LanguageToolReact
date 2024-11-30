@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Paragraph, SentenceWithNumAlphabets, TranscriptionType } from '../../../../types/Comprehension';
 import AudioPlayer from '../../atoms/CustomAudioPlayer/CustomAudioPlayer';
 
@@ -20,23 +20,93 @@ const RenderTableCell = ({
   audioFile: Paragraph['audioFile'];
   granularity: string;
 }) => {
-  if (!visibility) return null;
+  const [show, setShow] = useState(false);
+  const toggleShow = () => { return setShow(!show)}
 
   const displayContent =
-    granularity === 'sentence'
-      ? sentences
-      : [
-        {
-          englishText: sentences.map((s) => s.englishText).join(' '),
-          foreignText: [
-            sentences.map((s) => s.foreignText[0]).join(' '),
-            sentences.map((s) => s.foreignText[1]).join(''),
-            sentences.map((s) => s.foreignText[2]).join(' '),
-            sentences.map((s) => s.foreignText[3]).join(''),
-          ],
-          audioFile: audioFile,
-        },
-      ];
+  granularity === 'sentence'
+    ? sentences
+    : [
+      {
+        englishText: sentences.map((s) => s.englishText).join(' '),
+        foreignText: [
+          sentences.map((s) => s.foreignText[0]).join(' '),
+          sentences.map((s) => s.foreignText[1]).join(''),
+          sentences.map((s) => s.foreignText[2]).join(' '),
+          sentences.map((s) => s.foreignText[3]).join(''),
+        ],
+        audioFile: audioFile,
+      },
+    ];
+
+  if (!visibility) {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    return (
+      <>
+        {show && 
+        <div>
+          {granularity === 'sentence' && 
+          <div>
+            <div className="table-cell">
+              {displayContent.map((content, index) => (
+                <div key={index}>
+                  {current === TranscriptionType.Audio && <AudioPlayer audioFile={content.audioFile || ''} />}
+                  {current === TranscriptionType.English && <div>{content.englishText}</div>}
+                  {current === TranscriptionType.WritingSystem1 && <div>{content.foreignText[0]}</div>}
+                  {current === TranscriptionType.WritingSystem2 && <div>{content.foreignText[1]}</div>}
+                  {current === TranscriptionType.WritingSystem2v2 && (
+                    <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+                      {content.foreignText[2]?.split(' ').map((word: any, idx: any) => (
+                        <div
+                          key={idx}
+                          style={{
+                            display: 'inline-block',
+                            paddingRight: '5px',
+                            marginRight: '5px',
+                            marginTop: '10px',
+                          }}
+                        >
+                          {word}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                  {current === TranscriptionType.WritingSystem3 && <div>{content.foreignText[3] || ''}</div>}
+                </div>
+              ))}
+            </div>          </div>
+          }
+          {granularity === 'paragraph' && 
+          <div>
+            <div className="table-cell">
+              {current === TranscriptionType.Audio && <AudioPlayer audioFile={displayContent[0].audioFile || ''} />}
+              {current === TranscriptionType.English && <div>{displayContent[0].englishText}</div>}
+              {current === TranscriptionType.WritingSystem1 && <div>{displayContent[0].foreignText[0]}</div>}
+              {current === TranscriptionType.WritingSystem2 && <div>{displayContent[0].foreignText[1]}</div>}
+              {current === TranscriptionType.WritingSystem2v2 && (
+                <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+                  {displayContent[0].foreignText[2]?.split(' ').map((word, idx) => (
+                    <div
+                      key={idx}
+                      style={{ display: 'inline-block', paddingRight: '4px', marginRight: '4px' }}
+                    >
+                      {word}
+                    </div>
+                  ))}
+                </div>
+              )}
+              {current === TranscriptionType.WritingSystem3 && <div>{displayContent[0].foreignText[3] || ''}</div>}
+            </div>
+          </div>
+          }
+        </div>}
+        <button onClick={toggleShow}>
+          {show ? 'Hide Content' : 'Show Content'}
+        </button>
+      </>
+    );
+
+  }
 
   if (granularity === 'sentence') {
     return (
