@@ -230,7 +230,7 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
               side === 'Left' ? setCurrentLeft : setCurrentRight
                       )}
                     </CustomDropDownButton>
-                    <div style={{ paddingTop: isMobile ? '5px' : '0px' }}>
+                    <div style={{ paddingTop: isMobile ? '10px' : '0px' }}>
                       <CustomButton
                         size= {isMobile ? 'sm' : ''}
                         disabled={false}
@@ -280,7 +280,7 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
           <Container className="listening-comprehension-container">
             <div className="inner-listening-comprehension-container">
               <CustomDropDownButton
-                size=''
+                size={isMobile ? 'sm' : ''}
                 title={`Topic: ${
                   currentAudioTranscription.name.length > 25
                     ? `${currentAudioTranscription.name.substring(0, 25)}...`
@@ -305,7 +305,7 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
                   </Dropdown.Item>
                 ))}
               </CustomDropDownButton>
-              <CustomDropDownButton title='Settings' align="end" size=''>
+              <CustomDropDownButton title='Settings' align="end" size={isMobile ? 'sm' : ''}>
                 <Dropdown.Item
                   onClick={() => {}}
                 >
