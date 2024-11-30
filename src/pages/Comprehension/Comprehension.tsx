@@ -231,7 +231,8 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
           <div className="scrollable-tbody">
             <tbody
               style={{
-                width: isMobileDevice ? 'calc(100% - 16px)' : '100%',
+                width: isMobileDevice ? 'calc(100% - 18px)' : '100%',
+                overflowX: 'hidden', // Disable horizontal scrolling
               }}
             >
               {rowsToRender.map((row, index) => (
