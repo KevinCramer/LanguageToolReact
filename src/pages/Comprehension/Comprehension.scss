@@ -133,9 +133,14 @@ td {
 }
 
 .scrollable-table tbody {
-  display: block; /* Break the natural table flow */
-  max-height: calc(50dvh); /* Set a maximum height to make it scrollable */
-  overflow-y: overlay; /* Ensures scrollbar does not take up space */
+  display: block;
+  max-height: calc(65dvh - 100px);
+  overflow-y: scroll; /* Forces scrollbar to show */
+  -webkit-overflow-scrolling: touch;
+}
+
+.scrollable-table tbody::-webkit-scrollbar {
+  width: 16px; /* Specify width for the scrollbar */
 }
 
 .scrollable-table tbody::-webkit-scrollbar {
