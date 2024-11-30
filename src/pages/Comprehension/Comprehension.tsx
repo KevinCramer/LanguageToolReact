@@ -218,7 +218,7 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
                 <th key={side}>
                   <div style={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row', justifyContent: 'center', alignItems: 'center', padding: '5px' }}>
                     <CustomDropDownButton
-                      size=''
+                      size= {isMobile ? 'sm' : ''}
                       title={
                         titleMap[(side === 'Left' ? currentLeft : currentRight) as TranscriptionType].length > 20
                           ? `${titleMap[(side === 'Left' ? currentLeft : currentRight) as TranscriptionType].substring(0, 20)}...`
@@ -232,7 +232,7 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
                     </CustomDropDownButton>
                     <div style={{ paddingTop: isMobile ? '5px' : '0px' }}>
                       <CustomButton
-                        size=''
+                        size= {isMobile ? 'sm' : ''}
                         disabled={false}
                         onClick={toggleVisibility(side === 'Left' ? setLeftVisibility : setRightVisibility)}
                       >
