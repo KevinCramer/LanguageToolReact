@@ -302,35 +302,46 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
                     preventDropdownClose(event);
                   }}
                 >
-                  <input
-                    type="checkbox"
-                    checked={!leftVisibility}
-                    onChange={toggleLeftVisibility}
-                    style={{
-                      transform: 'scale(1.5)', // Increase size by a factor of 2 (adjust as needed)
-                      marginRight: '10px', // Space between checkbox and text
-                      width: '20px'
-                    }} 
-                    key={leftVisibility as any} // Changing the key forces the rerender
+                  <div style={{ color: rightVisibility ? '#4A4A4A' : '#E0E0E0' }}>
+                    <input
+                      type="checkbox"
+                      checked={!leftVisibility}
+                      onChange={toggleLeftVisibility}
+                      disabled={!rightVisibility}
+                      style={{
+                        transform: 'scale(1.5)', // Increase size by a factor of 2 (adjust as needed)
+                        marginRight: '10px', // Space between checkbox and text
+                        width: '20px'
+                      }} 
+                      key={leftVisibility as any} // Changing the key forces the rerender
 
-                  /> hide left column</DropdownItem>
+                    /> 
+                    hide left column
+                  </div>
+                </DropdownItem>
                 <DropdownItem
                   onClick={(event) => {
                     toggleRightVisibility();
                     preventDropdownClose(event);
                   }}
                 >
-                  <input
-                    type="checkbox"
-                    checked={!rightVisibility}
-                    onChange={toggleRightVisibility}
-                    style={{
-                      transform: 'scale(1.5)', // Increase size by a factor of 2 (adjust as needed)
-                      marginRight: '10px', // Space between checkbox and text
-                      width: '20px'
-                    }} 
-                    key={rightVisibility as any} // Changing the key forces the rerender
-                  /> hide right column</DropdownItem>
+                  <div style={{ color: leftVisibility ? '#4A4A4A' : '#E0E0E0' }}>
+                    <input
+                      type="checkbox"
+                      checked={!rightVisibility}
+                      onChange={toggleRightVisibility}
+                      disabled={!leftVisibility}
+                      style={{
+                        transform: 'scale(1.5)', // Increase size by a factor of 2 (adjust as needed)
+                        marginRight: '10px', // Space between checkbox and text
+                        width: '20px'
+                      }} 
+                      key={rightVisibility as any} // Changing the key forces the rerender
+                    /> 
+                  hide right column
+                  </div>
+                  
+                </DropdownItem>
               </CustomDropDownButton>
             </div>
           </Container>
