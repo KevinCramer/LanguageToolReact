@@ -191,8 +191,8 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
   
     return (
       <div className="inner-audio-player-and-table-container">
-        <Table striped bordered hover size="sm" className="react-bootstrap-table2">
-          <thead>
+        <Table striped bordered hover size="sm" className="react-bootstrap-table2 scrollable-table">
+          <thead style={{ display: 'table', width: 'calc(100% - 16px)', tableLayout: 'fixed' }}>
             <tr>
               {['Left', 'Right'].map((side) => (
                 <th key={side}>
@@ -213,14 +213,16 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
               ))}
             </tr>
           </thead>
-          <tbody>
-            {rowsToRender.map((row, index) => (
-              <tr key={index}>
-                <td>{renderTableCell(currentLeft as TranscriptionType, leftVisibility, row.sentences, row.audioFile)}</td>
-                <td>{renderTableCell(currentRight as TranscriptionType, rightVisibility, row.sentences, row.audioFile)}</td>
-              </tr>
-            ))}
-          </tbody>
+          <div className="scrollable-tbody">
+            <tbody>
+              {rowsToRender.map((row, index) => (
+                <tr key={index}>
+                  <td style={{ verticalAlign: 'top' }}>{renderTableCell(currentLeft as TranscriptionType, leftVisibility, row.sentences, row.audioFile)}</td>
+                  <td style={{ verticalAlign: 'top' }}>{renderTableCell(currentRight as TranscriptionType, rightVisibility, row.sentences, row.audioFile)}</td>
+                </tr>
+              ))}
+            </tbody>
+          </div>
         </Table>
       </div>
     );

@@ -117,3 +117,56 @@ td {
   text-align: left; // Ensure left alignment
   padding: 10px 5px 0px 5px; // Add some padding for better spacing
 };
+
+
+
+.scrollable-table {
+  width: 100%; /* Ensure the table takes full width */
+  border-collapse: collapse; /* Maintain proper table structure */
+  position: relative; /* Enables absolute positioning for the scrollbar container */
+}
+
+.scrollable-table thead th {
+  position: sticky; /* Keeps the header fixed */
+  top: 0; /* Position the sticky header at the top */
+  z-index: 1; /* Keep the header above scrollable rows */
+}
+
+.scrollable-table tbody {
+  display: block; /* Break the natural table flow */
+  max-height: calc(50dvh); /* Set a maximum height to make it scrollable */
+  overflow-y: overlay; /* Ensures scrollbar does not take up space */
+}
+
+.scrollable-table tbody::-webkit-scrollbar {
+  width: 16px; /* Set scrollbar width */
+}
+
+.scrollable-table tbody::-webkit-scrollbar-thumb {
+  background-color: #ccc; /* Style for the scrollbar thumb */
+  border-radius: 8px; /* Rounded corners for the thumb */
+}
+
+.scrollable-table tbody::-webkit-scrollbar-track {
+  background-color: #f5f5f5; /* Background for the scrollbar track */
+}
+
+.scrollable-table tbody tr {
+  display: table; /* Keep rows structured like a table */
+  width: 100%; /* Ensure rows match the table width */
+  table-layout: fixed; /* Prevent column squishing */
+}
+
+.scrollable-table thead,
+.scrollable-table tbody tr {
+  display: table; /* Restore table layout */
+  width: 100%; /* Match width for perfect alignment */
+}
+
+.scrollable-table tbody tr:nth-child(odd) {
+  background-color: #f0f0f0; /* Light grey for odd rows */
+}
+
+.scrollable-table tbody tr:nth-child(even) {
+  background-color: #ffffff; /* White for even rows */
+}
