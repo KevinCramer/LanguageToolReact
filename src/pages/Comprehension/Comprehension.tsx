@@ -32,10 +32,12 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
     useState<AudioTranscription>(initialAudioTranscription);
   const [transcriptionInEnglish, setTranscriptionInEnglish] = useState(initialTranscriptionInEnglish);
   const [currentAlphabet, setCurrentAlphabet] = useState(initialAlphabet);
-
+  const [granularity, setGranularity] = useState<'sentence' | 'paragraph'>('paragraph'); // Granularity state
+  
   const preventDropdownClose = (event: any) => {
     event.stopPropagation(); // Prevent click event from closing the dropdown
   };
+
   const [currentLeft, setCurrentLeft] = useState(initialLeft);
   const [currentRight, setCurrentRight] = useState(initialRight);
   const [leftVisibility, setLeftVisibility] = useState(true);
@@ -96,53 +98,72 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
   const renderTableCell = (
     current: TranscriptionType,
     visibility: boolean,
-    sentences: Paragraph['sentences']
+    sentences: Paragraph['sentences'],
+    audioFile: Paragraph['audioFile']
   ) => {
     if (!visibility) return null;
   
-    switch (current) {
-    case TranscriptionType.Audio:
-      return <div className="table-cell"><AudioPlayer audioFile={sentences[0]?.audioFile || ''} /></div>;
-    case TranscriptionType.English:
-      return <div className="table-cell">{sentences.map((s) => s.englishText).join(' ')}</div>;
-    case TranscriptionType.WritingSystem1:
-      return <div className="table-cell">{sentences.map((s) => s.foreignText[0]).join(' ')}</div>;
-    case TranscriptionType.WritingSystem2:
-      return <div className="table-cell">{sentences.map((s) => s.foreignText[1]).join('')}</div>;
-    case TranscriptionType.WritingSystem2v2: // Hiragana and Katakana with spacing
+    // Determine the display mode based on granularity
+    const displayContent = granularity === 'sentence'
+      ? sentences // Use individual sentences when granularity is 'sentence'
+      : [{ 
+        englishText: sentences.map((s) => s.englishText).join(' '), 
+        foreignText: [
+          sentences.map((s) => s.foreignText[0]).join(' '),
+          sentences.map((s) => s.foreignText[1]).join(''),
+          sentences.map((s) => s.foreignText[2]).join(' '),
+          sentences.map((s) => s.foreignText[3]).join('')
+        ], 
+        audioFile: audioFile 
+      }]; // Join all sentences into a single paragraph
+  
+    if (granularity === 'sentence') {
+      // When granularity is sentence, return each sentence in its own row
       return (
-        <div
-          style={{
-            display: 'flex',
-            flexWrap: 'wrap', // Allows wrapping of child divs
-            textAlign: 'left',
-            width: '100%', // Adjust the width depending on container size
-            paddingTop: '10px'
-          }}
-        >
-          {sentences
-            .map((sentence) => sentence.foreignText[2] || '') // Get foreignText at index 2
-            .join(' ') // Join all sentences into a single string with spaces
-            .split(' ') // Split the string by spaces into individual words
-            .map((word, index) => (
-              <div
-                key={index}
-                style={{
-                  display: 'inline-block',
-                  paddingRight: '4px',
-                  marginRight: '4px', // Optional: Adds space between words
-                }}
-              >
-                {word}
-              </div>
-            ))}
+        <div className="table-cell">
+          {displayContent.map((content, index) => (
+            <div key={index}>
+              {current === TranscriptionType.Audio && <AudioPlayer audioFile={content.audioFile || ''} />}
+              {current === TranscriptionType.English && <div>{content.englishText}</div>}
+              {current === TranscriptionType.WritingSystem1 && <div>{content.foreignText[0]}</div>}
+              {current === TranscriptionType.WritingSystem2 && <div>{content.foreignText[1]}</div>}
+              {current === TranscriptionType.WritingSystem2v2 && (
+                <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+                  {content.foreignText[2]?.split(' ').map((word: any, idx: any) => (
+                    <div key={idx} style={{ display: 'inline-block', paddingRight: '5px', marginRight: '5px', marginTop: '10px' }}>
+                      {word}
+                    </div>
+                  ))}
+                </div>
+              )}
+              {current === TranscriptionType.WritingSystem3 && <div>{content.foreignText[3] || ''}</div>}
+            </div>
+          ))}
         </div>
       );
-    case TranscriptionType.WritingSystem3: // Hiragana, Katakana, and Kanji
-      return <div className="table-cell">{sentences.map((s) => s.foreignText[3] || '').join('')}</div>;
+    } else {
+      // When granularity is paragraph, render all content in a single row
+      return (
+        <div className="table-cell">
+          {current === TranscriptionType.Audio && <AudioPlayer audioFile={displayContent[0].audioFile || ''} />}
+          {current === TranscriptionType.English && <div>{displayContent[0].englishText}</div>}
+          {current === TranscriptionType.WritingSystem1 && <div>{displayContent[0].foreignText[0]}</div>}
+          {current === TranscriptionType.WritingSystem2 && <div>{displayContent[0].foreignText[1]}</div>}
+          {current === TranscriptionType.WritingSystem2v2 && (
+            <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+              {displayContent[0].foreignText[2]?.split(' ').map((word, idx) => (
+                <div key={idx} style={{ display: 'inline-block', paddingRight: '4px', marginRight: '4px' }}>
+                  {word}
+                </div>
+              ))}
+            </div>
+          )}
+          {current === TranscriptionType.WritingSystem3 && <div>{displayContent[0].foreignText[3] || ''}</div>}
+        </div>
+      );
     }
   };
-
+    
   const renderComprehensionTopic = () => (
     <div className="inner-audio-player-and-table-container">
       <Table striped bordered hover size="sm" className="react-bootstrap-table2">
@@ -172,8 +193,8 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
         <tbody>
           {currentAudioTranscription.contents.map((content, index) => (
             <tr key={index}>
-              <td>{renderTableCell(currentLeft as TranscriptionType, leftVisibility, content.sentences)}</td>
-              <td>{renderTableCell(currentRight as TranscriptionType, rightVisibility, content.sentences)}</td>
+              <td>{renderTableCell(currentLeft as TranscriptionType, leftVisibility, content.sentences, content.audioFile)}</td>
+              <td>{renderTableCell(currentRight as TranscriptionType, rightVisibility, content.sentences, content.audioFile)}</td>
             </tr>
           ))}
         </tbody>
@@ -231,20 +252,21 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
                 <Dropdown.Item
                   onClick={() => {}}
                 >
-                      Granularity: &nbsp;
-                  <select 
+                  Granularity: &nbsp;
+                  <select
                     name="alphabets" 
-                    id="alphabets" 
-                    onChange={() => {}} 
-                    onClick={preventDropdownClose} // Prevent dropdown from closing
+                    id="alphabets"
+                    value={granularity}
+                    onChange={(e) => setGranularity(e.target.value as 'sentence' | 'paragraph')} // Set the granularity
+                    onClick={preventDropdownClose} 
                     style={{
-                      width: 'auto', // Make the select element only as wide as the content
-                      display: 'inline-block', // Allow the select element to shrink to fit content
-                      padding: '5px', // Add some padding for visual spacing
+                      width: 'auto',
+                      display: 'inline-block',
+                      padding: '5px',
                     }}
                   >
-                    <option value='0'>paragraph</option>
-                    <option value="1">sentence</option>
+                    <option value="paragraph">Paragraph</option>
+                    <option value="sentence">Sentence</option>
                   </select>
                 </Dropdown.Item>
               </CustomDropDownButton>
