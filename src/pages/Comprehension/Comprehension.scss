@@ -140,11 +140,7 @@ td {
 }
 
 .scrollable-table tbody::-webkit-scrollbar {
-  width: 16px; /* Specify width for the scrollbar */
-}
-
-.scrollable-table tbody::-webkit-scrollbar {
-  width: 16px; /* Set scrollbar width */
+  width: 16px; /* Set the width of the scrollbar */
 }
 
 .scrollable-table tbody::-webkit-scrollbar-thumb {

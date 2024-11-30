@@ -16,6 +16,21 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
   const { topicSlug } = useParams();
   const location = useLocation();
 
+  const [isMobileDevice, setIsMobileDevice] = useState(false);
+
+  // Check if the device is mobile
+  const checkIfMobile = () => {
+    const userAgent = navigator.userAgent.toLowerCase();
+    // Regular expression to check for mobile devices (phones, tablets)
+    const isMobile = /iphone|ipod|android|blackberry|windows phone|mobile/i.test(userAgent);
+    setIsMobileDevice(isMobile);
+  };
+
+  // Run the check on mount
+  useEffect(() => {
+    checkIfMobile();
+  }, []);
+
   const currentLanguage: Language = allLanguages[props.languageNumber];
 
   const initialAudioTranscription =
@@ -214,7 +229,11 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
             </tr>
           </thead>
           <div className="scrollable-tbody">
-            <tbody>
+            <tbody
+              style={{
+                width: isMobileDevice ? 'calc(100% - 16px)' : '100%',
+              }}
+            >
               {rowsToRender.map((row, index) => (
                 <tr key={index}>
                   <td style={{ verticalAlign: 'top' }}>{renderTableCell(currentLeft as TranscriptionType, leftVisibility, row.sentences, row.audioFile)}</td>
