@@ -10,6 +10,7 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import { lightGrey, mobileBreakPoint } from '../../constants';
 import CustomButton from '../../components/atoms/CustomButton/CustomButton';
 import CustomDropDownButtonWhite from '../../components/atoms/CustomDropDownButtonWhite/CustomDropDownButtonWhite';
+import CustomSwitch from '../../components/atoms/CustomSwitch/CustomSwitch';
 
 const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?: any }) => {
   const navigate = useNavigate();
@@ -297,22 +298,18 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
                 <Dropdown.Item
                   onClick={preventDropdownClose} 
                 >
-                  Granularity: &nbsp;
-                  <select
-                    name="alphabets" 
-                    id="alphabets"
-                    value={granularity}
-                    onChange={(e) => setGranularity(e.target.value as 'sentence' | 'paragraph')} // Set the granularity
-                    onClick={preventDropdownClose} 
-                    style={{
-                      width: 'auto',
-                      display: 'inline-block',
-                      padding: '5px',
-                    }}
-                  >
-                    <option value="paragraph">Paragraph</option>
-                    <option value="sentence">Sentence</option>
-                  </select>
+                  <div className='div-switch-container' style ={{ paddingTop: '20px' }}>
+                    <div style={{ marginRight: '10px', fontWeight: granularity === 'sentence' ? 'normal' : '600' }}>
+                Paragraph
+                    </div>
+                    <CustomSwitch 
+                      onChange={() => setGranularity(granularity === 'sentence' ? 'paragraph' : 'sentence')} 
+                      checked= {granularity === 'sentence'} 
+                    /> 
+                    <div style = {{ marginLeft: '10px', fontWeight: granularity === 'sentence' ? '600' : 'normal' }}>
+                 Sentence
+                    </div>               
+                  </div>
                 </Dropdown.Item>
                 <hr/>
                 <DropdownItem
