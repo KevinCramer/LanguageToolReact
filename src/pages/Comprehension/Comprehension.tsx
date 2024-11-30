@@ -1,6 +1,6 @@
 import './Comprehension.scss';
 import { AudioTranscription, Language, Paragraph, SentenceWithNumAlphabets, TranscriptionType } from '../../../types/Comprehension';
-import { Container, Modal, Navbar as NavbarBs, Table } from 'react-bootstrap';
+import { Container, DropdownItem, Modal, Navbar as NavbarBs, Table } from 'react-bootstrap';
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { languages as allLanguages } from '../../data/structured-data/comprehension';
@@ -9,35 +9,12 @@ import CustomDropDownButton from '../../components/atoms/CustomDropDownButton/Cu
 import Dropdown from 'react-bootstrap/Dropdown';
 import { lightGrey, mobileBreakPoint } from '../../constants';
 import CustomButton from '../../components/atoms/CustomButton/CustomButton';
+import CustomDropDownButtonWhite from '../../components/atoms/CustomDropDownButtonWhite/CustomDropDownButtonWhite';
 
 const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?: any }) => {
   const navigate = useNavigate();
   const { topicSlug } = useParams();
   const location = useLocation();
-
-  const useWindowWidth = () => {
-    const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
-
-    useEffect(() => {
-      // Update the windowWidth state when the window is resized
-      const handleResize = () => {
-        setWindowWidth(window.innerWidth);
-      };
-  
-      // Add event listener to handle window resizing
-      window.addEventListener('resize', handleResize);
-  
-      // Cleanup event listener when the component unmounts
-      return () => {
-        window.removeEventListener('resize', handleResize);
-      };
-    }, []);
-  
-    return windowWidth;
-  };
-
-  const width = useWindowWidth(); // Get the current window width
-  const isMobile = width < mobileBreakPoint
 
   const currentLanguage: Language = allLanguages[props.languageNumber];
 
@@ -66,6 +43,9 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
   const [currentLeft, setCurrentLeft] = useState(initialLeft);
   const [currentRight, setCurrentRight] = useState(initialRight);
   const [leftVisibility, setLeftVisibility] = useState(true);
+  const toggleLeftVisibility = () => { return setLeftVisibility(!leftVisibility)}
+  const toggleRightVisibility = () => { return setRightVisibility(!rightVisibility)}
+
   const [rightVisibility, setRightVisibility] = useState(true);
   const [showPopUp, setShowPopUp] = useState(false);
 
@@ -216,31 +196,19 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
             <tr>
               {['Left', 'Right'].map((side) => (
                 <th key={side}>
-                  <div style={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row', justifyContent: 'center', alignItems: 'center', padding: '5px' }}>
-                    <CustomDropDownButton
-                      size= {isMobile ? 'sm' : ''}
-                      title={
-                        titleMap[(side === 'Left' ? currentLeft : currentRight) as TranscriptionType].length > 20
-                          ? `${titleMap[(side === 'Left' ? currentLeft : currentRight) as TranscriptionType].substring(0, 20)}...`
-                          : titleMap[(side === 'Left' ? currentLeft : currentRight) as TranscriptionType]
-                      }
-                    >
-                      {renderDropdownItems(
+                  <CustomDropDownButtonWhite
+                    title={
+                      titleMap[(side === 'Left' ? currentLeft : currentRight) as TranscriptionType].length > 20
+                        ? `${titleMap[(side === 'Left' ? currentLeft : currentRight) as TranscriptionType].substring(0, 20)}...`
+                        : titleMap[(side === 'Left' ? currentLeft : currentRight) as TranscriptionType]
+                    }
+                  >
+                    {renderDropdownItems(
               (side === 'Left' ? currentLeft : currentRight) as TranscriptionType,
               side === 'Left' ? setCurrentLeft : setCurrentRight
-                      )}
-                    </CustomDropDownButton>
-                    <div style={{ paddingTop: isMobile ? '10px' : '0px' }}>
-                      <CustomButton
-                        size= {isMobile ? 'sm' : ''}
-                        disabled={false}
-                        onClick={toggleVisibility(side === 'Left' ? setLeftVisibility : setRightVisibility)}
-                      >
-                        {side === 'Left' ? (leftVisibility ? 'hide' : 'show') : (rightVisibility ? 'hide' : 'show')}
-                      </CustomButton>
-                      
-                    </div>
-                  </div>
+                    )}
+                  </CustomDropDownButtonWhite>
+                  
                 </th>
               ))}
             </tr>
@@ -280,7 +248,6 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
           <Container className="listening-comprehension-container">
             <div className="inner-listening-comprehension-container">
               <CustomDropDownButton
-                size={isMobile ? 'sm' : ''}
                 title={`Topic: ${
                   currentAudioTranscription.name.length > 25
                     ? `${currentAudioTranscription.name.substring(0, 25)}...`
@@ -305,9 +272,9 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
                   </Dropdown.Item>
                 ))}
               </CustomDropDownButton>
-              <CustomDropDownButton title='Settings' align="end" size={isMobile ? 'sm' : ''}>
+              <CustomDropDownButton title='Settings' align="end">
                 <Dropdown.Item
-                  onClick={() => {}}
+                  onClick={preventDropdownClose} 
                 >
                   Granularity: &nbsp;
                   <select
@@ -326,6 +293,38 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
                     <option value="sentence">Sentence</option>
                   </select>
                 </Dropdown.Item>
+                <DropdownItem
+                  onClick={(event) => {
+                    toggleLeftVisibility();
+                    preventDropdownClose(event);
+                  }}
+                >
+                  <input
+                    type="checkbox"
+                    checked={!leftVisibility}
+                    onChange={toggleLeftVisibility}
+                    style={{
+                      transform: 'scale(1.5)', // Increase size by a factor of 2 (adjust as needed)
+                      marginRight: '10px', // Space between checkbox and text
+                      width: '20px'
+                    }} 
+                  /> clear left column</DropdownItem>
+                <DropdownItem
+                  onClick={(event) => {
+                    toggleRightVisibility();
+                    preventDropdownClose(event);
+                  }}
+                >
+                  <input
+                    type="checkbox"
+                    checked={!rightVisibility}
+                    onChange={toggleRightVisibility}
+                    style={{
+                      transform: 'scale(1.5)', // Increase size by a factor of 2 (adjust as needed)
+                      marginRight: '10px', // Space between checkbox and text
+                      width: '20px'
+                    }} 
+                  /> clear right column</DropdownItem>
               </CustomDropDownButton>
             </div>
           </Container>
