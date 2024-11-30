@@ -293,6 +293,7 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
                     <option value="sentence">Sentence</option>
                   </select>
                 </Dropdown.Item>
+                <hr/>
                 <DropdownItem
                   onClick={(event) => {
                     toggleLeftVisibility();
@@ -308,6 +309,8 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
                       marginRight: '10px', // Space between checkbox and text
                       width: '20px'
                     }} 
+                    key={leftVisibility as any} // Changing the key forces the rerender
+
                   /> clear left column</DropdownItem>
                 <DropdownItem
                   onClick={(event) => {
@@ -324,6 +327,7 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
                       marginRight: '10px', // Space between checkbox and text
                       width: '20px'
                     }} 
+                    key={rightVisibility as any} // Changing the key forces the rerender
                   /> clear right column</DropdownItem>
               </CustomDropDownButton>
             </div>

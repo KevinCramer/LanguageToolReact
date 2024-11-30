@@ -270,6 +270,30 @@ const VocabContentNew = (
                       </Dropdown.Item>)}
                 </CustomDropDownButton>
                 <CustomDropDownButton title="Settings" align="end">
+                  {currentLanguage.numForeignAlphabets > 1 && !currentTopic.isAlphabet &&
+                  <>
+                    <Dropdown.Item>
+                writing system:  &nbsp;
+                      <select 
+                        name="alphabets" 
+                        id="alphabets" 
+                        onChange={handleSelectChange} 
+                        onClick={preventDropdownClose} // Prevent dropdown from closing
+                        style={{
+                          width: 'auto', // Make the select element only as wide as the content
+                          display: 'inline-block', // Allow the select element to shrink to fit content
+                          padding: '5px', // Add some padding for visual spacing
+                        }}
+                      >
+                        <option value='0'>romaji</option>
+                        <option value="1">hiragana, katakana</option>
+                        <option value="2">hiragana, katakana, kanji</option>
+                      </select>
+                    </Dropdown.Item>
+                    <hr/>
+                  </>
+                  }
+
                   {!quiz && <Dropdown.Item
                     onClick={(event) => {
                       changeAudioBool();
@@ -314,26 +338,6 @@ const VocabContentNew = (
                         width: '20px'
                       }} />
                     random ordering</Dropdown.Item>
-                  {currentLanguage.numForeignAlphabets > 1 && !currentTopic.isAlphabet &&
-              <Dropdown.Item>
-                writing system: &nbsp;
-                <select 
-                  name="alphabets" 
-                  id="alphabets" 
-                  onChange={handleSelectChange} 
-                  onClick={preventDropdownClose} // Prevent dropdown from closing
-                  style={{
-                    width: 'auto', // Make the select element only as wide as the content
-                    display: 'inline-block', // Allow the select element to shrink to fit content
-                    padding: '5px', // Add some padding for visual spacing
-                  }}
-                >
-                  <option value='0'>romaji</option>
-                  <option value="1">hiragana, katakana</option>
-                  <option value="2">hiragana, katakana, kanji</option>
-                </select>
-
-              </Dropdown.Item>}
                 </CustomDropDownButton>  
               </div>             
             </Container>
