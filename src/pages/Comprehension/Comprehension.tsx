@@ -332,7 +332,7 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
                     }} 
                     key={leftVisibility as any} // Changing the key forces the rerender
 
-                  /> clear left column</DropdownItem>
+                  /> hide left column</DropdownItem>
                 <DropdownItem
                   onClick={(event) => {
                     toggleRightVisibility();
@@ -349,7 +349,7 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
                       width: '20px'
                     }} 
                     key={rightVisibility as any} // Changing the key forces the rerender
-                  /> clear right column</DropdownItem>
+                  /> hide right column</DropdownItem>
               </CustomDropDownButton>
             </div>
           </Container>
