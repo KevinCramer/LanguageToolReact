@@ -61,6 +61,7 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
   const [leftVisibility, setLeftVisibility] = useState(true);
   const toggleLeftVisibility = () => { return setLeftVisibility(!leftVisibility)}
   const toggleRightVisibility = () => { return setRightVisibility(!rightVisibility)}
+  const toggleGranularity = () => { return setGranularity(granularity === 'sentence' ? 'paragraph' : 'sentence')}
 
   const [rightVisibility, setRightVisibility] = useState(true);
   const [showPopUp, setShowPopUp] = useState(false);
@@ -295,23 +296,6 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
                 ))}
               </CustomDropDownButton>
               <CustomDropDownButton title='Settings' align="end">
-                <Dropdown.Item
-                  onClick={preventDropdownClose} 
-                >
-                  <div className='div-switch-container' style ={{ paddingTop: '20px' }}>
-                    <div style={{ marginRight: '10px', fontWeight: granularity === 'sentence' ? 'normal' : '600' }}>
-                Paragraph
-                    </div>
-                    <CustomSwitch 
-                      onChange={() => setGranularity(granularity === 'sentence' ? 'paragraph' : 'sentence')} 
-                      checked= {granularity === 'sentence'} 
-                    /> 
-                    <div style = {{ marginLeft: '10px', fontWeight: granularity === 'sentence' ? '600' : 'normal' }}>
-                 Sentence
-                    </div>               
-                  </div>
-                </Dropdown.Item>
-                <hr/>
                 <DropdownItem
                   onClick={(event) => {
                     toggleLeftVisibility();
@@ -351,6 +335,18 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
             </div>
           </Container>
         </NavbarBs>
+        <div className='div-switch-container' style ={{ paddingTop: '20px', justifyContent: 'center' }}>
+          <div style={{ marginRight: '10px', fontWeight: granularity === 'sentence' ? 'normal' : '600' }}>
+                Paragraphs
+          </div>
+          <CustomSwitch 
+            onChange={toggleGranularity} 
+            checked= {granularity === 'sentence'} 
+          /> 
+          <div style = {{ marginLeft: '10px', fontWeight: granularity === 'sentence' ? '600' : 'normal' }}>
+                 Sentences
+          </div>               
+        </div>
         <div className="audio-player-and-table-container">{renderComprehensionTopic()}</div>
         <Modal show={showPopUp} onHide={() => setShowPopUp(false)} size="lg" centered>
           <Modal.Header closeButton>
