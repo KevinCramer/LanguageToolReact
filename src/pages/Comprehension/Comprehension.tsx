@@ -1,5 +1,5 @@
 import './Comprehension.scss';
-import { AudioTranscription, Language, Paragraph, TranscriptionType } from '../../../types/Comprehension';
+import { AudioTranscription, Language, Paragraph, SentenceWithNumAlphabets, TranscriptionType } from '../../../types/Comprehension';
 import { Container, Modal, Navbar as NavbarBs, Table } from 'react-bootstrap';
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
@@ -95,10 +95,15 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
     });
   };
 
+  const isSentenceWithNumAlphabets = (sentence: any, numAlphabets: number): boolean => {
+    return sentence.foreignText.length === numAlphabets;
+  };
+
   const renderTableCell = (
     current: TranscriptionType,
     visibility: boolean,
-    sentences: Paragraph['sentences'],
+    sentences: (SentenceWithNumAlphabets<1> | SentenceWithNumAlphabets<2>
+       | SentenceWithNumAlphabets<3> | SentenceWithNumAlphabets<4>)[], // Flexible type
     audioFile: Paragraph['audioFile']
   ) => {
     if (!visibility) return null;
@@ -163,45 +168,60 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
       );
     }
   };
-    
-  const renderComprehensionTopic = () => (
-    <div className="inner-audio-player-and-table-container">
-      <Table striped bordered hover size="sm" className="react-bootstrap-table2">
-        <thead>
-          <tr>
-            {['Left', 'Right'].map((side) => (
-              <th key={side}>
-                <CustomDropDownButtonWhite
-                  title={
-                    titleMap[(side === 'Left' ? currentLeft : currentRight) as TranscriptionType].length > 20
-                      ? `${titleMap[(side === 'Left' ? currentLeft : currentRight) as TranscriptionType].substring(0, 20)}...`
-                      : titleMap[(side === 'Left' ? currentLeft : currentRight) as TranscriptionType]
-                  }
-                >
-                  {renderDropdownItems(
-                    (side === 'Left' ? currentLeft : currentRight) as TranscriptionType,
-                    side === 'Left' ? setCurrentLeft : setCurrentRight
-                  )}
-                </CustomDropDownButtonWhite>
-                <button onClick={toggleVisibility(side === 'Left' ? setLeftVisibility : setRightVisibility)}>
-                  {side === 'Left' ? (leftVisibility ? 'hide' : 'show') : (rightVisibility ? 'hide' : 'show')}
-                </button>
-              </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {currentAudioTranscription.contents.map((content, index) => (
-            <tr key={index}>
-              <td>{renderTableCell(currentLeft as TranscriptionType, leftVisibility, content.sentences, content.audioFile)}</td>
-              <td>{renderTableCell(currentRight as TranscriptionType, rightVisibility, content.sentences, content.audioFile)}</td>
-            </tr>
-          ))}
-        </tbody>
-      </Table>
-    </div>
-  );
 
+  const renderComprehensionTopic = () => {
+    // Flatten the paragraphs into individual sentences if granularity is 'sentence'
+    const rowsToRender = granularity === 'sentence'
+      ? currentAudioTranscription.contents.flatMap((content) =>
+        content.sentences.map((sentence) => ({
+          sentences: [sentence], // Wrap each sentence in an array to pass to renderTableCell
+          audioFile: content.audioFile,
+        }))
+      )
+      : currentAudioTranscription.contents.map((content) => ({
+        sentences: content.sentences, // Keep sentences as they are when granularity is 'paragraph'
+        audioFile: content.audioFile,
+      }));
+  
+    return (
+      <div className="inner-audio-player-and-table-container">
+        <Table striped bordered hover size="sm" className="react-bootstrap-table2">
+          <thead>
+            <tr>
+              {['Left', 'Right'].map((side) => (
+                <th key={side}>
+                  <CustomDropDownButtonWhite
+                    title={
+                      titleMap[(side === 'Left' ? currentLeft : currentRight) as TranscriptionType].length > 20
+                        ? `${titleMap[(side === 'Left' ? currentLeft : currentRight) as TranscriptionType].substring(0, 20)}...`
+                        : titleMap[(side === 'Left' ? currentLeft : currentRight) as TranscriptionType]
+                    }
+                  >
+                    {renderDropdownItems(
+                      (side === 'Left' ? currentLeft : currentRight) as TranscriptionType,
+                      side === 'Left' ? setCurrentLeft : setCurrentRight
+                    )}
+                  </CustomDropDownButtonWhite>
+                  <button onClick={toggleVisibility(side === 'Left' ? setLeftVisibility : setRightVisibility)}>
+                    {side === 'Left' ? (leftVisibility ? 'hide' : 'show') : (rightVisibility ? 'hide' : 'show')}
+                  </button>
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {rowsToRender.map((row, index) => (
+              <tr key={index}>
+                <td>{renderTableCell(currentLeft as TranscriptionType, leftVisibility, row.sentences, row.audioFile)}</td>
+                <td>{renderTableCell(currentRight as TranscriptionType, rightVisibility, row.sentences, row.audioFile)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </Table>
+      </div>
+    );
+  };
+    
   return (
     <div className="page-container-no-padding-small-font">
       <h4>{currentLanguage.languageName} Reading and Listening Comprehension</h4>
