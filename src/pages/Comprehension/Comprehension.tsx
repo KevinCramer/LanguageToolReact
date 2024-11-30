@@ -27,12 +27,13 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
     queryParams.get('L') ||
     (currentLanguage.numForeignAlphabets > 1 ? TranscriptionType.WritingSystem3 : TranscriptionType.WritingSystem1);
   const initialRight = queryParams.get('R') || TranscriptionType.English;
+  const initialGranularity = queryParams.get('gran') || 'paragraph';
 
   const [currentAudioTranscription, setCurrentAudioTranscription] =
     useState<AudioTranscription>(initialAudioTranscription);
   const [transcriptionInEnglish, setTranscriptionInEnglish] = useState(initialTranscriptionInEnglish);
   const [currentAlphabet, setCurrentAlphabet] = useState(initialAlphabet);
-  const [granularity, setGranularity] = useState<'sentence' | 'paragraph'>('paragraph'); // Granularity state
+  const [granularity, setGranularity] = useState(initialGranularity); // Granularity state
   
   const preventDropdownClose = (event: any) => {
     event.stopPropagation(); // Prevent click event from closing the dropdown
@@ -55,10 +56,11 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
     [TranscriptionType.WritingSystem3]: `${currentLanguage.languageName} (Hiragana, Katakana, and Kanji)`,
   };
 
-  const updateURL = (slugName: string, left: TranscriptionType, right: TranscriptionType) => {
+  const updateURL = (slugName: string, left: TranscriptionType, right: TranscriptionType, granularity: string) => {
     const query = new URLSearchParams(location.search);
     query.set('L', left);
     query.set('R', right);
+    query.set('gran', granularity)
     navigate(`/${currentLanguage.languageName.toLowerCase()}/comprehension/${slugName}?${query.toString()}`, {
       replace: true,
     });
@@ -67,8 +69,8 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
   useEffect(() => {
     const query = new URLSearchParams(location.search);
     query.set('eng', transcriptionInEnglish ? 'T' : 'F');
-    updateURL(topicSlug as string, currentLeft as TranscriptionType, currentRight as TranscriptionType); // Call updateURL here
-  }, [transcriptionInEnglish, currentLeft, currentRight, topicSlug]);
+    updateURL(topicSlug as string, currentLeft as TranscriptionType, currentRight as TranscriptionType, granularity); // Call updateURL here
+  }, [transcriptionInEnglish, currentLeft, currentRight, topicSlug, granularity]);
 
   const toggleVisibility = (setter: React.Dispatch<React.SetStateAction<boolean>>) => () => {
     setter((prev) => !prev);
