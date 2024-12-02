@@ -150,7 +150,13 @@ const VocabContent = (
       const isVerb = currentTopic.name === 'Verbs'
       var count = 0;
       return ( 
-        <>
+        <div style={{ display: 'block',
+          maxHeight: 'calc(65dvh - 100px)',
+          overflowY: 'scroll', 
+          border: 'solid 1px #E0E0E0',
+          width: isMobileDevice ? '400px' : '416px',
+          margin: '0 auto', // Centers the div horizontally
+        }}>
           {topicWords.map((pair: Word) =>
             <div key ={showTrueOrder.toString() + (isVerb ?
               (pair.englishWord as VerbConjugationEnglish).infinitive : pair.englishWord)
@@ -161,7 +167,7 @@ const VocabContent = (
                 pair.englishWord} isVerb = {currentTopic.name === 'Verbs'}/>
             </div>                    
           )}
-        </>
+        </div>
       )
     }
     else {
