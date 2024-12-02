@@ -37,6 +37,21 @@ const VocabContent = (
 
   const navigate = useNavigate();
 
+  const [isMobileDevice, setIsMobileDevice] = useState(false);
+
+  // Check if the device is mobile
+  const checkIfMobile = () => {
+    const userAgent = navigator.userAgent.toLowerCase();
+    // Regular expression to check for mobile devices (phones, tablets)
+    const isMobile = /iphone|ipod|android|blackberry|windows phone|mobile/i.test(userAgent);
+    setIsMobileDevice(isMobile);
+  };
+
+  // Run the check on mount
+  useEffect(() => {
+    checkIfMobile();
+  }, []);
+
   //@ts-ignore
   const { currentUser } = useAuth();
 
@@ -153,8 +168,8 @@ const VocabContent = (
       return (
         <div className='table-container'>
           <title>{currentLanguage.languageName }Vocabulary</title>
-          <Table striped bordered hover size="sm" className="react-bootstrap-table">
-            <thead>
+          <Table striped bordered hover size="sm" className="react-bootstrap-table scrollable-table">
+            <thead style={{ display: 'table', width: isMobileDevice ? '100%' : 'calc(100% - 16px)', tableLayout: 'fixed' }}>
               <tr>
                 <th>
                   {showBaseLanguage ? 'English' : currentLanguage.languageName }
@@ -164,42 +179,48 @@ const VocabContent = (
                 </th>
               </tr>
             </thead>
-            <tbody>
-              {topicWords.map((pair: Word, index: number) => (
-                <tr key={index}>
-                  <td>     
-                    <StudyElement 
-                      BaseLanguageWord = { showBaseLanguage ? pair.englishWord :
-                        pair.foreignWord[currentAlphabet]} 
-                      ForeignLanguageWord = {showBaseLanguage ? 
-                        pair.foreignWord[currentAlphabet] : pair.englishWord}  
-                      ForeignLanguageWordAudio = {pair.foreignAudio} 
-                      showAudio = {audioBool} 
-                      showBaseLanguageFirst = {showBaseLanguage} 
-                      isVerb = {currentTopic.name === 'Verbs'}
-                      strokeOrderVideo = {pair.strokeOrderVideo}
-                      pronouns = {currentLanguage.pronouns}
-                      showLeftLabel = {true}
-                    />
-                  </td>
-                  <td>     
-                    <StudyElement 
-                      BaseLanguageWord = { showBaseLanguage ? pair.englishWord :
-                        pair.foreignWord[currentAlphabet]} 
-                      ForeignLanguageWord = {showBaseLanguage ? 
-                        pair.foreignWord[currentAlphabet] : pair.englishWord}  
-                      ForeignLanguageWordAudio = {pair.foreignAudio} 
-                      showAudio = {audioBool} 
-                      showBaseLanguageFirst = {showBaseLanguage} 
-                      isVerb = {currentTopic.name === 'Verbs'}
-                      strokeOrderVideo = {pair.strokeOrderVideo}
-                      pronouns = {currentLanguage.pronouns}
-                      showLeftLabel = {false}
-                    />
-                  </td>
-                </tr>
-              ))}
-            </tbody>
+            <div className="scrollable-tbody">
+              <tbody
+                style={{
+                  overflowX: 'hidden', // Disable horizontal scrolling
+                }}
+              >
+                {topicWords.map((pair: Word, index: number) => (
+                  <tr key={index}>
+                    <td>     
+                      <StudyElement 
+                        BaseLanguageWord = { showBaseLanguage ? pair.englishWord :
+                          pair.foreignWord[currentAlphabet]} 
+                        ForeignLanguageWord = {showBaseLanguage ? 
+                          pair.foreignWord[currentAlphabet] : pair.englishWord}  
+                        ForeignLanguageWordAudio = {pair.foreignAudio} 
+                        showAudio = {audioBool} 
+                        showBaseLanguageFirst = {showBaseLanguage} 
+                        isVerb = {currentTopic.name === 'Verbs'}
+                        strokeOrderVideo = {pair.strokeOrderVideo}
+                        pronouns = {currentLanguage.pronouns}
+                        showLeftLabel = {true}
+                      />
+                    </td>
+                    <td>     
+                      <StudyElement 
+                        BaseLanguageWord = { showBaseLanguage ? pair.englishWord :
+                          pair.foreignWord[currentAlphabet]} 
+                        ForeignLanguageWord = {showBaseLanguage ? 
+                          pair.foreignWord[currentAlphabet] : pair.englishWord}  
+                        ForeignLanguageWordAudio = {pair.foreignAudio} 
+                        showAudio = {audioBool} 
+                        showBaseLanguageFirst = {showBaseLanguage} 
+                        isVerb = {currentTopic.name === 'Verbs'}
+                        strokeOrderVideo = {pair.strokeOrderVideo}
+                        pronouns = {currentLanguage.pronouns}
+                        showLeftLabel = {false}
+                      />
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </div>
           </Table>
         </div>
       )
