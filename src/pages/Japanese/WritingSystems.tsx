@@ -11,13 +11,13 @@ const JapaneseWritingSystems = () => {
           The Japanese language has 3 writing systems:
           </div>
           <div style={{ paddingTop:'10px' }}>
-            <a href="/japanese/writing-systems?s=hir-T0TFT">Hiragana</a> - a phonetic writing system used for native japanese words. (It has 46 characters)
+            <a href="/japanese/hiragana-explained">Hiragana</a> - a phonetic writing system used for native japanese words. (It has 46 basic characters)
           </div>
           <div style={{ paddingTop:'10px' }}>
-            <a href="/japanese/writing-systems?s=kat-T0TFT">Katakana</a> - a phonetic writing system mainly used for loan words from other languages. (It has 46 characters)
+            <a href="/japanese/katakana-explained">Katakana</a> - a phonetic writing system mainly used for loan words from other languages. (It has 46 basic characters)
           </div>
           <div style={{ paddingTop:'10px' }}>
-            <a href="/japanese/writing-systems?s=kanji_grade1-T0TFT">Kanji</a> - a non phonetic writing system. (It has over 50,000 characters). 
+            <a href="/japanese/kanji-explained">Kanji</a> - a non phonetic writing system. (It has over 50,000 characters). 
           </div>
           <div>
         The Japanese government has designated 2,136 characters as 'Jōyō kanji' ('daily use kanji').

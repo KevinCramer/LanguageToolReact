@@ -30,7 +30,7 @@ const Japanese = () => {
         Alternatively, you can create your own study plan using the resources available at LingoCommand. The Japanese study materials are divided into four main sections:
           </div>
           <div className="study-materials-div">
-            <a href="/japanese/writing-systems-explanation" style={{ paddingLeft: '50px', paddingRight: '60px' }}>
+            <a href="/japanese/writing-systems-explained" style={{ paddingLeft: '50px', paddingRight: '60px' }}>
               <img src={pen} width={80} height={80} alt="Writing Systems Icon" style={{ display: 'block', margin: '0 auto 10px' }} />
               < div style={{ textAlign: 'center' }}>
             Writing Systems < br />  (Alphabets)

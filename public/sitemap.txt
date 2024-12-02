@@ -21,8 +21,13 @@ https://www.lingocommand.com/spanish/grammar/verbs
 https://www.lingocommand.com/spanish/comprehension/shopping-for-family-meals?eng=F
 https://www.lingocommand.com/japanese
 https://www.lingocommand.com/japanese/study-guide
-https://www.lingocommand.com/japanese/writing-systems-explanation
+https://www.lingocommand.com/japanese/writing-systems-explained
+https://www.lingocommand.com/japanese/hiragana-explained
+https://www.lingocommand.com/japanese/katakana-explained
+https://www.lingocommand.com/japanese/kanji-explained
 https://www.lingocommand.com/japanese/writing-systems?s=hir-T0TFT
+https://www.lingocommand.com/japanese/writing-systems?s=hirdak-T0TFT
+https://www.lingocommand.com/japanese/writing-systems?s=hiryoon-T0TFT
 https://www.lingocommand.com/japanese/writing-systems?s=kat-T0TFT
 https://www.lingocommand.com/japanese/writing-systems?s=kanji_grade1-T0TFT
 https://www.lingocommand.com/japanese/vocabulary?s=clo-T0TFT

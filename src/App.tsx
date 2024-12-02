@@ -15,6 +15,9 @@ import Home from './pages/Home/Home'
 import Japanese from './pages/Japanese/Japanese'
 import JapaneseStudyGuide from './pages/Japanese/JapaneseStudyGuide'
 import JapaneseWritingSystems from './pages/Japanese/WritingSystems'
+import HiraganaExplained from './pages/Japanese/HiraganaExplained'
+import KatakanaExplained from './pages/Japanese/KatakanaExplained'
+import KanjiExplained from './pages/Japanese/KanjiExplained'
 import Comprehension from './pages/Comprehension/Comprehension'
 import LockedContent from './components/atoms/LockedContent/LockedContent'
 import Login from './components/molecules/Login/Login'
@@ -62,7 +65,10 @@ const App = ()=> {
           <Route path="/spanish/comprehension/:topicSlug" element={<Comprehension languageNumber={0}/>} />
           <Route path="/japanese" element={<Japanese/>} />
           <Route path="/japanese/vocabulary" element={<VocabContent languageNumber={1} />} />
-          <Route path="/japanese/writing-systems-explanation" element={<JapaneseWritingSystems />} />
+          <Route path="/japanese/writing-systems-explained" element={<JapaneseWritingSystems />} />
+          <Route path="/japanese/hiragana-explained" element={<HiraganaExplained />} />
+          <Route path="/japanese/katakana-explained" element={<KatakanaExplained />} />
+          <Route path="/japanese/kanji-explained" element={<KanjiExplained />} />
           <Route path="/japanese/writing-systems" element={<VocabContent languageNumber={2} isWritingSystem ={true} />} />
           <Route path="/japanese/study-guide" element={<JapaneseStudyGuide/>} />
           <Route path="/japanese/grammar/:topicSlug" element={<GrammarContent languageNumber={1} />} />
@@ -83,7 +89,10 @@ const App = ()=> {
           <Route path="/spanish/comprehension/:topicSlug" element={<Comprehension languageNumber={0}/>} />
           <Route path="/japanese" element={<Japanese/>} />
           <Route path="/japanese/vocabulary" element={<VocabContent languageNumber={1} />} />
-          <Route path="/japanese/writing-systems-explanation" element={<JapaneseWritingSystems />} />
+          <Route path="/japanese/writing-systems-explained" element={<JapaneseWritingSystems />} />
+          <Route path="/japanese/hiragana-explained" element={<HiraganaExplained />} />
+          <Route path="/japanese/katakana-explained" element={<KatakanaExplained />} />
+          <Route path="/japanese/kanji-explained" element={<KanjiExplained />} />
           <Route path="/japanese/writing-systems" element={<VocabContent languageNumber={2} isWritingSystem ={true} />} />
           <Route path="/japanese/study-guide" element={<JapaneseStudyGuide/>} />
           <Route path="/japanese/grammar/:topicSlug" element={<GrammarContent languageNumber={1} />} />
