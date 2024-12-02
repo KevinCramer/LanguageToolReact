@@ -1,5 +1,5 @@
 import '../../components/atoms/CustomDropDownButton/CustomDropDownButton.scss'
-import './VocabContentNew.scss'
+import './VocabContent.scss'
 import { Container, Modal, Navbar as NavbarBs, Table } from 'react-bootstrap';
 import {
   Language,
@@ -27,7 +27,7 @@ import StudyElement from '../../components/molecules/StudyElement/StudyElement';
 import { useAuth } from '../../contexts/AuthContext'
 import { useDispatch } from 'react-redux';
 
-const VocabContentNew = (
+const VocabContent = (
   props: {
     languageNumber: number
     isWritingSystem?: boolean
@@ -373,4 +373,4 @@ const VocabContentNew = (
   );
 };
  
-export default VocabContentNew;
+export default VocabContent;

@@ -25,7 +25,7 @@ import SpanishStudyGuide from './pages/Spanish/SpanishStudyGuide'
 import UpdateAccount from './components/atoms/UpdateAccount/UpdateAccount'
 import { useAuth } from './contexts/AuthContext'
 import { useEffect } from 'react'
-import VocabContentNew from './pages/VocabContentNew/VocabContentNew'
+import VocabContent from './pages/VocabContent/VocabContent'
 import myVideo from './data/raw-data/tutorial-videos/japanese-comprehension-video-guide.mp4'
 
 const App = ()=> {
@@ -56,14 +56,14 @@ const App = ()=> {
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/account" element={<Account />} />
           <Route path="/spanish" element={<Spanish/>} />
-          <Route path="/spanish/vocabulary" element={<VocabContentNew languageNumber={0}/>} />
+          <Route path="/spanish/vocabulary" element={<VocabContent languageNumber={0}/>} />
           <Route path="/spanish/study-guide" element={<SpanishStudyGuide/>} />
           <Route path="/spanish/grammar/:topicSlug" element={<GrammarContent languageNumber={0} />} />
           <Route path="/spanish/comprehension/:topicSlug" element={<Comprehension languageNumber={0}/>} />
           <Route path="/japanese" element={<Japanese/>} />
-          <Route path="/japanese/vocabulary" element={<VocabContentNew languageNumber={1} />} />
+          <Route path="/japanese/vocabulary" element={<VocabContent languageNumber={1} />} />
           <Route path="/japanese/writing-systems-explanation" element={<JapaneseWritingSystems />} />
-          <Route path="/japanese/writing-systems" element={<VocabContentNew languageNumber={2} isWritingSystem ={true} />} />
+          <Route path="/japanese/writing-systems" element={<VocabContent languageNumber={2} isWritingSystem ={true} />} />
           <Route path="/japanese/study-guide" element={<JapaneseStudyGuide/>} />
           <Route path="/japanese/grammar/:topicSlug" element={<GrammarContent languageNumber={1} />} />
           <Route path="/japanese/comprehension/:topicSlug" element={<Comprehension languageNumber={1} howToGuideVideo={myVideo}/>} />
@@ -77,14 +77,14 @@ const App = ()=> {
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/account" element={<Account />} />
           <Route path="/spanish" element={<Spanish/>} />
-          <Route path="/spanish/vocabulary" element={<VocabContentNew languageNumber={0}/>} />
+          <Route path="/spanish/vocabulary" element={<VocabContent languageNumber={0}/>} />
           <Route path="/spanish/study-guide" element={<SpanishStudyGuide/>} />
           <Route path="/spanish/grammar/:topicSlug" element={<GrammarContent languageNumber={0} />} />
           <Route path="/spanish/comprehension/:topicSlug" element={<Comprehension languageNumber={0}/>} />
           <Route path="/japanese" element={<Japanese/>} />
-          <Route path="/japanese/vocabulary" element={<VocabContentNew languageNumber={1} />} />
+          <Route path="/japanese/vocabulary" element={<VocabContent languageNumber={1} />} />
           <Route path="/japanese/writing-systems-explanation" element={<JapaneseWritingSystems />} />
-          <Route path="/japanese/writing-systems" element={<VocabContentNew languageNumber={2} isWritingSystem ={true} />} />
+          <Route path="/japanese/writing-systems" element={<VocabContent languageNumber={2} isWritingSystem ={true} />} />
           <Route path="/japanese/study-guide" element={<JapaneseStudyGuide/>} />
           <Route path="/japanese/grammar/:topicSlug" element={<GrammarContent languageNumber={1} />} />
           <Route path="/japanese/comprehension/:topicSlug" element={<Comprehension languageNumber={1} howToGuideVideo={myVideo}/>} />
