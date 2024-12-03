@@ -29,7 +29,6 @@ import UpdateAccount from './components/atoms/UpdateAccount/UpdateAccount'
 import { useAuth } from './contexts/AuthContext'
 import { useEffect } from 'react'
 import VocabContent from './pages/VocabContent/VocabContent'
-import myVideo from './data/raw-data/tutorial-videos/japanese-comprehension-video-guide.mp4'
 
 const App = ()=> {
   const location = useLocation();
@@ -72,7 +71,7 @@ const App = ()=> {
           <Route path="/japanese/writing-systems" element={<VocabContent languageNumber={2} isWritingSystem ={true} />} />
           <Route path="/japanese/study-guide" element={<JapaneseStudyGuide/>} />
           <Route path="/japanese/grammar/:topicSlug" element={<GrammarContent languageNumber={1} />} />
-          <Route path="/japanese/comprehension/:topicSlug" element={<Comprehension languageNumber={1} howToGuideVideo={myVideo}/>} />
+          <Route path="/japanese/comprehension/:topicSlug" element={<Comprehension languageNumber={1}/>} />
           <Route path="/*" element={<Custom404Error/>} />
         </Routes>
       </div>}
@@ -96,7 +95,7 @@ const App = ()=> {
           <Route path="/japanese/writing-systems" element={<VocabContent languageNumber={2} isWritingSystem ={true} />} />
           <Route path="/japanese/study-guide" element={<JapaneseStudyGuide/>} />
           <Route path="/japanese/grammar/:topicSlug" element={<GrammarContent languageNumber={1} />} />
-          <Route path="/japanese/comprehension/:topicSlug" element={<Comprehension languageNumber={1} howToGuideVideo={myVideo}/>} />
+          <Route path="/japanese/comprehension/:topicSlug" element={<Comprehension languageNumber={1}/>} />
           <Route path="/*" element={<Custom404Error/>} />
         </Routes>
       </div>}

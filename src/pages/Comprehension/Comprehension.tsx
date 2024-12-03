@@ -309,7 +309,7 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
           <Modal.Header closeButton>
             <Modal.Title style={{ textAlign: 'center', width: '100%' }}>How to Guide</Modal.Title>
           </Modal.Header>
-          <Modal.Body>
+          {false && <Modal.Body>
             {currentLanguage.languageName === 'Japanese' ? (
               <div className="embed-responsive embed-responsive-16by9">
                 <iframe
@@ -325,6 +325,9 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
                 src={props.howToGuideVideo}
               />
             )}
+          </Modal.Body>}
+          <Modal.Body>
+            Video coming soon
           </Modal.Body>
         </Modal>
       </Container>
