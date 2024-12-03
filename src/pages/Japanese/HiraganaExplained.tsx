@@ -19,23 +19,22 @@ const HiraganaExplained = () => {
           <div style={{ paddingTop:'10px' }}>
             <b>Hiragana with Dakuten and Han-Dakuten</b>
             <div>
-              Dakuten and han-dakuten are little marks, called diacretics, you add to the hiragana characters to change their sounds. 
-              Dakuten (゛) add a voiced sound, and han-dakuten (゜) create a “p” sound.
-              For example, adding dakuten to “か” (ka) changes it to “が” (ga). 
-              This has a significant effect on meanings and pronunciation, 
-              so you need to know these.        
-              There are <a href="/japanese/writing-systems?s=hirdak-T0TFT">25 hiragana with dakuten/han-dakuten pairs</a> to learn. 
+            Dakuten (゛) and han-dakuten (゜) are marks added on top of hiragana that alter pronunciation.
+            Dakuten add a <i>voiced</i> sound. For example: <b>か (ka) → が (ga)</b>. <br></br> 
+            Han-dakuten create a "p" sound. For example: <b>は (ha) → ぱ (pa)</b>. <br></br> 
+            Mastering these <a href="/japanese/writing-systems?s=hirdak-T0TFT">25 hiragana variations</a> is essential for accurate pronunciation and meaning.       
             </div>
 
           </div>
           <div style={{ paddingTop:'10px' }}>
             <b>Yōon</b>
             <div>
-              Some hiragana characters combine to make different sounds called Yōon. 
-              When written out, the first character is its usual size, but the second is a little smaller.
-              Combinations like “きゃ” (kya) and “しょ” (sho) are not just two separate sounds but a single, fluid syllable. 
-              This blending is essential for words like “きょう” (today) and “しょうがっこう” (elementary school).
-              There are  <a href="/japanese/writing-systems?s=hiryoon-T0TFT">36 hiragana Yōon combinations</a> to learn. 
+              Some hiragana combine to form Yōon sounds. In these combinations,
+              the first character remains full-sized, while the second is smaller.
+              Examples like “きゃ” (kya) and “しょ” (sho) represent single, blended 
+              syllables rather than separate sounds. This blending is crucial in words 
+              like “きょう” (kyou, today) and “しょうがっこう” (shougakkou, elementary school). 
+              There are <a href="/japanese/writing-systems?s=hiryoon-T0TFT">36 Yōon combinations</a> to learn. 
             </div>
           </div>
         </div>
