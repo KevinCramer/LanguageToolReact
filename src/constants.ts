@@ -22,6 +22,6 @@ export const languageToSlugs: Record<string,string> = {
 
 export const lightGrey = 'rgb(230,230,230)'
 
-export const lingoCommandIsLocked = false;
+export const lingoCommandIsLocked = true;
 
 export const mobileBreakPoint = 768;

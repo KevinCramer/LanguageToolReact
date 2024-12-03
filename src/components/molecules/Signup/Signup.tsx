@@ -24,9 +24,9 @@ export default function Signup() {
       return setError('Passwords do not match')
     }
 
-    if( emailRef.current && emailRef.current.value !== 'kevincramer1996@gmail.com') {
-      return setError('Sorry we are currently not accepting signups to avoid incurring the ICO data protection fee. ')
-    }
+    // if( emailRef.current && emailRef.current.value !== 'kevincramer1996@gmail.com') {
+    //   return setError('Sorry we are currently not accepting signups to avoid incurring the ICO data protection fee. ')
+    // }
 
     try {
       setError('')
