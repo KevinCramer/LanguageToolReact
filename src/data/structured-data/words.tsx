@@ -1113,7 +1113,7 @@ const spanishTopics: TopicWithOneAlphabet[] = [
     { englishWord: 'white', foreignWord: ['blanco'], foreignAudio: spanishAudioWhite },
     { englishWord: 'black', foreignWord: ['negro'], foreignAudio: spanishAudioBlack },
     { englishWord: 'purple', foreignWord: ['morado'], foreignAudio: spanishAudioPurple },
-    { englishWord: 'pink', foreignWord: ['oyhr'], foreignAudio: spanishAudioPink },
+    { englishWord: 'pink', foreignWord: ['rosa'], foreignAudio: spanishAudioPink },
   ] },
   { name:'Food', slugName: 'foo', hasOrdering:false, isLocked: true, isAlphabet: false, words: [
     { englishWord: '(the) potato', foreignWord: ['(la) papa'], foreignAudio: spanishAudioPotato },
