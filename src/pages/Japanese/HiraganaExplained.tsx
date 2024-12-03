@@ -8,34 +8,34 @@ const HiraganaExplained = () => {
         <div className="central-container">
           <h4 style={{ paddingBottom: '30px' }}>Hiragana Explained</h4>
           <div>
-          Learning hiragana is the first step to learning japanese. By learning hiragana you will learn the basics of Japanese pronunciation. 
+          Learning hiragana is the first step to learning japanese. By learning all 3 concepts below you will learn the basics of Japanese pronunciation. 
           </div>
-          <div style={{ paddingTop:'10px' }}>
-            <b>Basic Hiragana</b>
-            <div>
-              Hiragana has <a href="/japanese/writing-systems?s=hir-T0TFT">46 basic sounds</a>.
-            </div>
+          <div style={{ paddingTop:'20px' }}>
+            <b>Basic Hiragana</b>  has <a href="/japanese/writing-systems?s=hir-T0TFT">46 sounds</a>.
           </div>
-          <div style={{ paddingTop:'10px' }}>
-            <b>Hiragana with Dakuten and Han-Dakuten</b>
-            <div>
-            Dakuten (゛) and han-dakuten (゜) are marks added on top of hiragana that alter pronunciation.
-            Dakuten add a <i>voiced</i> sound. For example: <b>か (ka) → が (ga)</b>. <br></br> 
-            Han-dakuten create a "p" sound. For example: <b>は (ha) → ぱ (pa)</b>. <br></br> 
-            Mastering these <a href="/japanese/writing-systems?s=hirdak-T0TFT">25 hiragana variations</a> is essential for accurate pronunciation and meaning.       
-            </div>
+          <div style={{ paddingTop:'20px' }}>
+            <b>Dakuten and Han-Dakuten</b> create another <a href="/japanese/writing-systems?s=hirdak-T0TFT">25 hiragana variations</a>. <br></br>
+            Dakuten and han-dakuten are marks added on top of hiragana that alter pronunciation. 
+            <div style={{ height: '0px' }}>
 
-          </div>
-          <div style={{ paddingTop:'10px' }}>
-            <b>Yōon</b>
-            <div>
-              Some hiragana combine to form Yōon sounds. In these combinations,
-              the first character remains full-sized, while the second is smaller.
-              Examples like “きゃ” (kya) and “しょ” (sho) represent single, blended 
-              syllables rather than separate sounds. This blending is crucial in words 
-              like “きょう” (kyou, today) and “しょうがっこう” (shougakkou, elementary school). 
-              There are <a href="/japanese/writing-systems?s=hiryoon-T0TFT">36 Yōon combinations</a> to learn. 
             </div>
+            The dakuten mark is <b>( ゛)</b>. It adds a <i>voiced</i> sound. There are 20 dakuten variations. <br></br>
+            For example: <b>か (ka) → が (ga)</b>. <br></br> 
+            <div style={{ height: '0px' }}>
+
+            </div>
+            The han-dakuten mark is <b>( ゜)</b>. It creates a  "p" sound. There are 5 variations. <br></br> For example: <b>は (ha) → ぱ (pa)</b>.
+            <div style={{ height: '20px' }}>
+
+            </div>      
+          </div>
+          <div style={{ paddingTop:'0px' }}>
+            <b>Yōon</b>  creates another <a href="/japanese/writing-systems?s=hiryoon-T0TFT">36 combinations</a>. <div></div>
+            Some hiragana combine to form Yōon sounds. In these combinations,
+              the first character remains full-sized, while the second is smaller.
+              Examples like <b>きゃ(kya) </b>and <b>しょ(sho)</b> represent single, blended 
+              syllables rather than separate sounds. This blending is crucial in words 
+              like <br></br><b>きょう(kyou, today)</b> and <b>しょうがっこう(shougakkou, elementary school)</b>. 
           </div>
         </div>
       </div>
