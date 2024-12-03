@@ -1971,7 +1971,7 @@ const japaneseTopics: TopicWithThreeAlphabets[] = [
     { englishWord: 'nine (II)', foreignWord: ['kyuu', 'きゅう','九'], foreignAudio: japaneseAudioNineKyuu, order:9 },
     { englishWord: 'ten', foreignWord: ['juu', 'じゅう','十'], foreignAudio: japaneseAudioTen, order:10 },
   ] },
-  { name:'Colours', slugName: 'col', hasOrdering:false, isLocked: true, isAlphabet: false, words: [
+  { name:'Colours', slugName: 'col', hasOrdering:false, isLocked: false, isAlphabet: false, words: [
     { englishWord: 'red', foreignWord: ['aka', 'あか', '赤'], foreignAudio: japaneseAudioRed },
     { englishWord: 'blue', foreignWord: ['ao', 'あお', '青'], foreignAudio: japaneseAudioBlue },
     { englishWord: 'green', foreignWord: ['midori', 'みどり', '緑'], foreignAudio: japaneseAudioGreen },
