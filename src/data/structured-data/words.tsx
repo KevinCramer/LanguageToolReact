@@ -1702,7 +1702,7 @@ const germanTopics: TopicWithOneAlphabet[] = [
 ]
 
 const japaneseTopics: TopicWithThreeAlphabets[] = [
-  { name:'Basic Hiragana', slugName: 'hir', hasOrdering:true, isLocked: true, isAlphabet: true, words: [
+  { name:'Basic Hiragana', slugName: 'hir', hasOrdering:true, isLocked: false, isAlphabet: true, words: [
     { englishWord: 'a', foreignWord: ['あ','あ','あ'], foreignAudio: japaneseAudioA, order: 1, strokeOrderVideo: hiraganaVideoA },
     { englishWord: 'i', foreignWord: ['い','い','い'], foreignAudio: japaneseAudioI, order: 2, strokeOrderVideo: hiraganaVideoI },
     { englishWord: 'u', foreignWord: ['う','う','う'], foreignAudio: japaneseAudioU, order: 3, strokeOrderVideo: hiraganaVideoU },
@@ -1819,7 +1819,7 @@ const japaneseTopics: TopicWithThreeAlphabets[] = [
   ]
 
   },
-  { name:'Basic Katakana', slugName: 'kat', hasOrdering:true, isLocked: true, isAlphabet: true, words: [
+  { name:'Basic Katakana', slugName: 'kat', hasOrdering:true, isLocked: false, isAlphabet: true, words: [
     { englishWord: 'a', foreignWord: ['ア','ア','ア'], foreignAudio: japaneseAudioA, order: 1 },
     { englishWord: 'i', foreignWord: ['イ','イ','イ'], foreignAudio: japaneseAudioI, order: 2 },
     { englishWord: 'u', foreignWord: ['ウ','ウ','ウ'], foreignAudio: japaneseAudioU, order: 3 },
@@ -1997,7 +1997,7 @@ const japaneseTopics: TopicWithThreeAlphabets[] = [
   ]
   },
   { 
-    name: 'Days of the Week', slugName: 'day', hasOrdering: true, isLocked: false, isAlphabet: false, words: [
+    name: 'Days of the Week', slugName: 'day', hasOrdering: true, isLocked: true, isAlphabet: false, words: [
       { englishWord: 'Monday', foreignWord: ['getsuyōbi', 'げつようび', '月曜日'], foreignAudio: japaneseAudioMonday, order: 1 },
       { englishWord: 'Tuesday', foreignWord: ['kayōbi', 'かようび', '火曜日'], foreignAudio: japaneseAudioTuesday, order: 2 },
       { englishWord: 'Wednesday', foreignWord: ['suiyōbi', 'すいようび', '水曜日'], foreignAudio: japaneseAudioWednesday, order: 3 },
@@ -2008,7 +2008,7 @@ const japaneseTopics: TopicWithThreeAlphabets[] = [
     ] 
   },
   { 
-    name: 'Months of the Year', slugName: 'mon', hasOrdering: true, isLocked: false, isAlphabet: false, 
+    name: 'Months of the Year', slugName: 'mon', hasOrdering: true, isLocked: true, isAlphabet: false, 
     words: [
       { englishWord: 'January', foreignWord: ['ichigatsu', 'いちがつ', '一月'], foreignAudio: japaneseAudioJanuary, order: 1 },
       { englishWord: 'February', foreignWord: ['nigatsu', 'にがつ', '二月'], foreignAudio: japaneseAudioFebruary, order: 2 },
@@ -2025,7 +2025,7 @@ const japaneseTopics: TopicWithThreeAlphabets[] = [
     ] 
   },
   { 
-    name: 'Regular Adjectives', slugName: 'adj1', hasOrdering: false, isLocked: false, isAlphabet: false, 
+    name: 'Regular Adjectives', slugName: 'adj1', hasOrdering: false, isLocked: true, isAlphabet: false, 
     words: [
       { englishWord: 'happy', foreignWord: ['ureshii', 'うれしい', '嬉しい'], foreignAudio: japaneseAudioHappy },
       { englishWord: 'sad', foreignWord: ['kanashii', 'かなしい', '悲しい'], foreignAudio: japaneseAudioSad },
@@ -2064,7 +2064,7 @@ const japaneseTopics: TopicWithThreeAlphabets[] = [
     ] 
   },
   {
-    name: 'Irregular Adjectives', slugName: 'adj2', hasOrdering: false, isLocked: false, isAlphabet: false, words: [
+    name: 'Irregular Adjectives', slugName: 'adj2', hasOrdering: false, isLocked: true, isAlphabet: false, words: [
       { englishWord: 'calm', foreignWord: ['ochitsuita', 'おちついた', '落ち着いた'], foreignAudio: japaneseAudioCalm },
       { englishWord: 'polite', foreignWord: ['teinei', 'ていねい', '丁寧'], foreignAudio: japaneseAudioPolite },
       { englishWord: 'honest', foreignWord: ['seijitsu', 'せいじつ', '誠実'], foreignAudio: japaneseAudioHonest },
@@ -2081,7 +2081,7 @@ const japaneseTopics: TopicWithThreeAlphabets[] = [
     ]
   },
   {
-    name: 'Animals', slugName: 'animals', hasOrdering: false, isLocked: false, isAlphabet: false, words: [
+    name: 'Animals', slugName: 'animals', hasOrdering: false, isLocked: true, isAlphabet: false, words: [
       { englishWord: 'dog', foreignWord: ['inu', 'いぬ', '犬'], foreignAudio: japaneseAudioDog },
       { englishWord: 'cat', foreignWord: ['neko', 'ねこ', '猫'], foreignAudio: japaneseAudioCat },
       { englishWord: 'chicken', foreignWord: ['niwatori', 'にわとり', '鶏'], foreignAudio: japaneseAudioChickenAnimal },
@@ -2095,7 +2095,7 @@ const japaneseTopics: TopicWithThreeAlphabets[] = [
     ]
   },
   {
-    name: 'Locations', slugName: 'locations', hasOrdering: false, isLocked: false, isAlphabet: false, words: [
+    name: 'Locations', slugName: 'locations', hasOrdering: false, isLocked: true, isAlphabet: false, words: [
       { englishWord: 'bakery', foreignWord: ['panya', 'ぱんや', 'パン屋'], foreignAudio: japaneseAudioBakery },
       { englishWord: 'supermarket', foreignWord: ['suupaa', 'スーパー', 'unknown'], foreignAudio: japaneseAudioSupermarket },
       { englishWord: 'cinema', foreignWord: ['eigakan', 'えいがかん', '映画館'], foreignAudio: japaneseAudioCinema },
@@ -2109,7 +2109,7 @@ const japaneseTopics: TopicWithThreeAlphabets[] = [
     ]
   },
   { 
-    name: 'Body', slugName: 'body', hasOrdering: false, isLocked: false, isAlphabet: false, words: [
+    name: 'Body', slugName: 'body', hasOrdering: false, isLocked: true, isAlphabet: false, words: [
       { englishWord: 'arm', foreignWord: ['ude', 'うで', '腕'], foreignAudio: japaneseAudioArm },
       { englishWord: 'leg', foreignWord: ['ashi', 'あし', '足'], foreignAudio: japaneseAudioLeg },
       { englishWord: 'eyes', foreignWord: ['me', 'め', '目'], foreignAudio: japaneseAudioEyes },
@@ -2124,7 +2124,7 @@ const japaneseTopics: TopicWithThreeAlphabets[] = [
     ]
   },
   {
-    name: 'Food', slugName: 'food', hasOrdering: false, isLocked: false, isAlphabet: false, words: [
+    name: 'Food', slugName: 'food', hasOrdering: false, isLocked: true, isAlphabet: false, words: [
       { englishWord: 'bread', foreignWord: ['pan', 'パン', 'unknown'], foreignAudio: japaneseAudioBread },
       { englishWord: 'eggs', foreignWord: ['tamago', 'たまご', '卵'], foreignAudio: japaneseAudioEggs },
       { englishWord: 'chicken', foreignWord: ['toriniku', 'とりにく', '鶏肉'], foreignAudio: japaneseAudioChicken },
