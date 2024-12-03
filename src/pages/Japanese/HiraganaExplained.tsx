@@ -30,7 +30,7 @@ const HiraganaExplained = () => {
             </div>      
           </div>
           <div style={{ paddingTop:'0px' }}>
-            <b>Yōon</b>  creates another <a href="/japanese/writing-systems?s=hiryoon-T0TFT">36 combinations</a>. <div></div>
+            <b>Yōon</b>  creates an additional <a href="/japanese/writing-systems?s=hiryoon-T0TFT">36 hiragana combinations</a>. <div></div>
             Some hiragana combine to form Yōon sounds. In these combinations,
               the first character remains full-sized, while the second is smaller.
               Examples like <b>きゃ(kya) </b>and <b>しょ(sho)</b> represent single, blended 
