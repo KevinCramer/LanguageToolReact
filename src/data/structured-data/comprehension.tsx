@@ -109,7 +109,7 @@ const japaneseAudioTranscriptions: AudioTranscriptionWithFourAlphabet[] = [
             'Aiko-san wa ookina mado no soba ni suwaru no ga suki de, soko kara sashikomu youkou ga heya o atatakaku terashi, rirakkusu shita dokusho jikan o sugoseru masu.',
             'あいこさんはおおきなまどのそばにすわるのがすきで、そこからさしこむようこうがへやをあたたかくてらし、リラックスしたどくしょじかんをすごせるます。',
             'あいこさん は おおきな まど の そば に すわる の が すき で、 そこ から さしこむ ようこう が へや を あたたかく てらし、 リラックス した どくしょじかん を すごせる ます。',
-            '愛子さんは大きな窓のそばに座るのが好きで、そこから差し込む陽光が部屋を温かく照らし、リラックスした読書時間を過ごせます。'
+            '愛子さんは大きな窓のそばに座るのが好きで、そこから差し込む陽光が部屋を暖かく照らし、リラックスした読書時間を過ごせます。'
           ],
           audioFile: aikosBookSanctuaryParagraph2Sentence2
         },      
@@ -134,7 +134,7 @@ const japaneseAudioTranscriptions: AudioTranscriptionWithFourAlphabet[] = [
               'Toshokan de kanojo ga toku ni suki na no wa, soko de kanjiru komyuniti no fun’iki desu.',
               'としょかんでかのじょがとくにすきなのは、そこでかんじるコミュニティのふんいきです。',
               'としょかん で かのじょ が とくに すき な の は、 そこで かんじる コミュニティ の ふんいき です。',
-              '愛子さんにとって、としょかんは学図書館で彼女が特に好きなのは、そこで感じるコミュニティの雰囲気です。'
+              '図書館で彼女が特に好きなのは、そこで感じるコミュニティの雰囲気です。'
             ],
             audioFile: aikosBookSanctuaryParagraph3Sentence1
           },
@@ -154,7 +154,7 @@ const japaneseAudioTranscriptions: AudioTranscriptionWithFourAlphabet[] = [
               'Aiko-san ni totte, toshokan wa manabi to tsunagari no basho de ari, seichou deki, onajiku hon ga suki na hitobito to deairu tokubetsu na basho na no desu.',
               'あいこさんにとって、としょかんはまなびとつながりのばしょであり、せいちょうでき、おなじくほんがすきなひとびととであえるとくべつなばしょなのです。',
               'あいこさん に とって、 としょかん は まなび と つながり の ばしょ で  あり、 せいちょう でき、 おなじく ほん が すき な ひとびと と であえる とくべつ な ばしょ な の です。',
-              'びとつながりの場所であり、成長でき、同じく本が好きな人々と出会える特別な場所なのです。'
+              '愛子さんにとって、図書館は学びとつながりの場所であり、成長でき、同じく本が好きな人々と出会える特別な場所なのです。'
             ],
             audioFile: aikosBookSanctuaryParagraph3Sentence3
           },
