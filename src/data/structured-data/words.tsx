@@ -444,6 +444,7 @@ import hiraganaVideoNa from '../raw-data/writing-system-videos/japanese/hiragana
 import hiraganaVideoNi from '../raw-data/writing-system-videos/japanese/hiragana/ni.mp4'
 import hiraganaVideoNu from '../raw-data/writing-system-videos/japanese/hiragana/nu.mp4'
 import hiraganaVideoNe from '../raw-data/writing-system-videos/japanese/hiragana/ne.mp4'
+import hiraganaVideoNo from '../raw-data/writing-system-videos/japanese/hiragana/no.mp4'
 
 import { sortTopics } from '../../helpers/words-data-helper';
 import { Language, VerbConjugationEnglish, TopicWithOneAlphabet, TopicWithTwoAlphabets, TopicWithThreeAlphabets } from '../../../types/vocabTypes';
@@ -1728,7 +1729,7 @@ const japaneseTopics: TopicWithThreeAlphabets[] = [
     { englishWord: 'ni', foreignWord: ['に','に','に'], foreignAudio: japaneseAudioNi, order: 22, strokeOrderVideo: hiraganaVideoNi },
     { englishWord: 'nu', foreignWord: ['ぬ','ぬ','ぬ'], foreignAudio: japaneseAudioNu, order: 23, strokeOrderVideo: hiraganaVideoNu },
     { englishWord: 'ne', foreignWord: ['ね','ね','ね'], foreignAudio: japaneseAudioNe, order: 24, strokeOrderVideo: hiraganaVideoNe },
-    { englishWord: 'no', foreignWord: ['の','の','の'], foreignAudio: japaneseAudioNo, order: 25 },
+    { englishWord: 'no', foreignWord: ['の','の','の'], foreignAudio: japaneseAudioNo, order: 25, strokeOrderVideo: hiraganaVideoNo },
     { englishWord: 'ha', foreignWord: ['は','は','は'], foreignAudio: japaneseAudioHa, order: 26 },
     { englishWord: 'hi', foreignWord: ['ひ','ひ','ひ'], foreignAudio: japaneseAudioHi, order: 27 },
     { englishWord: 'fu', foreignWord: ['ふ','ふ','ふ'], foreignAudio: japaneseAudioFu, order: 28 },
