@@ -1772,7 +1772,7 @@ const japaneseTopics: TopicWithThreeAlphabets[] = [
     { englishWord: 'ro', foreignWord: ['ろ','ろ','ろ'], foreignAudio: japaneseAudioRo, order: 43, strokeOrderVideo: hiraganaVideoRo },
     { englishWord: 'wa', foreignWord: ['わ','わ','わ'], foreignAudio: japaneseAudioWa, order: 44, strokeOrderVideo: hiraganaVideoWa },
     { englishWord: 'wo(o)', foreignWord: ['を','を','を'], foreignAudio: japaneseAudioWo, order: 45, strokeOrderVideo: hiraganaVideoWo },
-    { englishWord: 'n', foreignWord: ['ん','ん','ん'], foreignAudio: japaneseAudioN, order: 46 }
+    { englishWord: 'n', foreignWord: ['ん','ん','ん'], foreignAudio: japaneseAudioN, order: 46, strokeOrderVideo: hiraganaVideoN },
   ] },
   {
     name: 'Hiragana with Dakuten and Han-Dakuten', slugName: 'hirdak', hasOrdering: true, isLocked: true, isAlphabet: true, words: [
