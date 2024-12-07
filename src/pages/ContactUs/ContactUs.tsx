@@ -74,13 +74,6 @@ const ContactUs = () => {
             <span style={spanStyle}>LinkedIn</span>
           </a>
           <a
-            href="https://x.com/lingocommand"
-            style={aTagStyle}
-          >
-            <FaTwitter size={30} />
-            <span style={spanStyle}>Twitter</span>
-          </a>
-          <a
             href="https://pinterest.com/lingocommand/"
             style={aTagStyle}
           >
