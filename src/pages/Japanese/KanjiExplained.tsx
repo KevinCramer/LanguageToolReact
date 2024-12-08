@@ -1,8 +1,13 @@
 import './Japanese.scss'
 import { languages as allLanguages } from '../../data/structured-data/words';
 import { useProtectedLink } from '../../helpers/use-protected-link';
-
+import { useAuth } from '../../contexts/AuthContext';
+import { lingoCommandIsLocked } from '../../constants';
+import LockIcon from '@mui/icons-material/Lock';
 const KanjiExplained = () => { 
+  //@ts-ignore
+  const { currentUser } = useAuth();
+  const userIsLoggedIn = currentUser && currentUser.email
   const handleProtectedClick = useProtectedLink();
 
   const japaneseWritingSystems = (allLanguages as any[]).find((l: any) => {
@@ -22,6 +27,7 @@ const KanjiExplained = () => {
             < a onClick={handleProtectedClick(firstGradeKanjiWritingSystem )} 
               href="/japanese/writing-systems?s=kanji_grade1-T0TFT">
               {firstGradeKanjiWritingSystem?.name.toLocaleLowerCase()}{firstGradeKanjiWritingSystem?.isLocked ? '*' : ''}
+              {lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px' }}></LockIcon> : ''}
             </a> 
           </div>
         </div>
