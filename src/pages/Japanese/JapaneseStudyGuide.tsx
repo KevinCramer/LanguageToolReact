@@ -36,14 +36,10 @@ const JapaneseStudyGuide = () => {
            l.topics.some((topic: any) => topic.isAlphabet);
   });
 
-  const hiraganaBasicWritingSystem = japaneseWritingSystems?.topics
-    .find((t: any)=> t.slugName === 'hir')
-  const hiraganaDakutenWritingSystem = japaneseWritingSystems?.topics
-    .find((t: any)=> t.slugName === 'hirdak')
-  const hiraganaYoonWritingSystem = japaneseWritingSystems?.topics
-    .find((t: any)=> t.slugName === 'hiryoon')
-  const katakanaBasicWritingSystem = japaneseWritingSystems?.topics
-    .find((t: any)=> t.slugName === 'kat')
+  const hiraganaBasicWritingSystem = japaneseWritingSystems?.topics.find((t: any)=> t.slugName === 'hir')
+  const hiraganaDakutenWritingSystem = japaneseWritingSystems?.topics.find((t: any)=> t.slugName === 'hirdak')
+  const hiraganaYoonWritingSystem = japaneseWritingSystems?.topics.find((t: any)=> t.slugName === 'hiryoon')
+  const katakanaBasicWritingSystem = japaneseWritingSystems?.topics.find((t: any)=> t.slugName === 'kat')
 
   console.log('hiraganaBasicWritingSystem: ', (hiraganaBasicWritingSystem || {}).slugName)
  
