@@ -42,7 +42,8 @@ const App = ()=> {
   // @ts-ignore
   const { currentUser } = useAuth();
   const pathWithBackground = location.pathname === '/' || location.pathname === '/contact' || location.pathname === '/account'
-
+  
+  const userIsLoggedIn = currentUser && currentUser.email
   useEffect(() => {
     if (currentUser && currentUser.email) {
       dispatch(hideModal());
@@ -116,7 +117,7 @@ const App = ()=> {
           </Container>
         </Modal.Body>
       </Modal>
-      <Modal show ={reduxLock.permissionDenied}
+      <Modal show ={reduxLock.permissionDenied && !userIsLoggedIn}
         onHide={() => dispatch(resetPermission())}>
         <Modal.Header closeButton>
         </Modal.Header>
