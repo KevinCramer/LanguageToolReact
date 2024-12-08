@@ -61,7 +61,7 @@ const SpanishStudyGuide = () => {
                     )
                   }>
                   {clothesVocabTopic?.name.toLocaleLowerCase()}
-                  {clothesVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
+                  {clothesVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon ></LockIcon> : ''}
                 </a>
               </li>
               <li>
@@ -74,7 +74,7 @@ const SpanishStudyGuide = () => {
                     )
                   }>
                   {numbersVocabTopic?.name.toLocaleLowerCase()}
-                  {numbersVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
+                  {numbersVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px' }}></LockIcon> : ''}
                 </a>
               </li>
               <li>
@@ -87,7 +87,7 @@ const SpanishStudyGuide = () => {
                     )
                   }>
                   {bodyVocabTopic?.name.toLocaleLowerCase()}
-                  {bodyVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
+                  {bodyVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px' }}></LockIcon> : ''}
                 </a>
               </li>
               <li>
@@ -100,7 +100,7 @@ const SpanishStudyGuide = () => {
                     )
                   }>
                   {coloursVocabTopic?.name.toLocaleLowerCase()}
-                  {coloursVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
+                  {coloursVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px' }}></LockIcon> : ''}
                 </a>
               </li>
               <li>
@@ -113,7 +113,7 @@ const SpanishStudyGuide = () => {
                     )
                   }>
                   {foodVocabTopic?.name.toLocaleLowerCase()}
-                  {foodVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
+                  {foodVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px' }}></LockIcon> : ''}
                 </a>
               </li>
               <li>
@@ -126,7 +126,7 @@ const SpanishStudyGuide = () => {
                     )
                   }>
                   {homeVocabTopic?.name.toLocaleLowerCase()}
-                  {homeVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
+                  {homeVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px' }}></LockIcon> : ''}
                 </a>
               </li>
               
@@ -140,7 +140,7 @@ const SpanishStudyGuide = () => {
                     )
                   }>
                   {locationsVocabTopic?.name.toLocaleLowerCase()}
-                  {locationsVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
+                  {locationsVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px' }}></LockIcon> : ''}
                 </a>
               </li>
              
@@ -162,7 +162,7 @@ const SpanishStudyGuide = () => {
                     )
                   }>
                   {conjunctionsVocabTopic?.name.toLocaleLowerCase()}
-                  {conjunctionsVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
+                  {conjunctionsVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px' }}></LockIcon> : ''}
                 </a>
               </li>
               <li>
@@ -175,7 +175,7 @@ const SpanishStudyGuide = () => {
                     )
                   }>
                   {pronounsVocabTopic?.name.toLocaleLowerCase()}
-                  {pronounsVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
+                  {pronounsVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px' }}></LockIcon> : ''}
                 </a>
               </li>
               <li>
@@ -188,7 +188,7 @@ const SpanishStudyGuide = () => {
                     )
                   }>
                   {questionWordsVocabTopic?.name.toLocaleLowerCase()}
-                  {questionWordsVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
+                  {questionWordsVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px' }}></LockIcon> : ''}
                 </a>
               </li>
             </ul>
@@ -208,7 +208,7 @@ const SpanishStudyGuide = () => {
                     )
                   }>
                   {definiteArticleGrammarTopic?.name.toLocaleLowerCase()}
-                  {definiteArticleGrammarTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
+                  {definiteArticleGrammarTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px' }}></LockIcon> : ''}
                 </a>
               </li>
               <li>
@@ -222,7 +222,7 @@ const SpanishStudyGuide = () => {
                     )
                   }>
                   {indefiniteArticleGrammarTopic?.name.toLocaleLowerCase()}
-                  {indefiniteArticleGrammarTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
+                  {indefiniteArticleGrammarTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px' }}></LockIcon> : ''}
                 </a>
               </li>
               <li>
@@ -236,7 +236,7 @@ const SpanishStudyGuide = () => {
                     )
                   }>
                   {nounsGrammarTopic?.name.toLocaleLowerCase()}
-                  {nounsGrammarTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
+                  {nounsGrammarTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px' }}></LockIcon> : ''}
                 </a>
               </li>
               <li>
@@ -250,7 +250,7 @@ const SpanishStudyGuide = () => {
                     )
                   }>
                   {adjectivesGrammarTopic?.name.toLocaleLowerCase()}
-                  {adjectivesGrammarTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
+                  {adjectivesGrammarTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px' }}></LockIcon> : ''}
                 </a>
               </li>
               <li>
@@ -264,7 +264,7 @@ const SpanishStudyGuide = () => {
                     )
                   }>
                   {verbsGrammarTopic?.name.toLocaleLowerCase()}
-                  {verbsGrammarTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
+                  {verbsGrammarTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px' }}></LockIcon> : ''}
                 </a>
               </li>
             </ol>
@@ -280,7 +280,7 @@ const SpanishStudyGuide = () => {
                 )
               }>
               {verbsVocabTopic?.name.toLocaleLowerCase()}
-              {verbsVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
+              {verbsVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px' }}></LockIcon> : ''}
             </a>,
              1/3 of time learning <a href="/spanish/vocabulary?s=clo-T0TFT">vocabulary</a>, 1/3 of time doing <a href="/spanish/comprehension/shopping-for-family-meals?eng=F&L=WritingSystem1&R=English">reading and listening comprehension</a>.
           </div> 

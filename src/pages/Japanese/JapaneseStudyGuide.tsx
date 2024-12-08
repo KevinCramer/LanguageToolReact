@@ -6,7 +6,6 @@ import { lingoCommandIsLocked } from '../../constants';
 import LockIcon from '@mui/icons-material/Lock';
 import { useAuth } from '../../contexts/AuthContext';
 import { useProtectedLink } from '../../helpers/use-protected-link';
-import { VocabLanguage } from '../../../types/learningSections/VocabTypes';
 
 const JapaneseStudyGuide = () => { 
 
@@ -79,7 +78,7 @@ const JapaneseStudyGuide = () => {
 
                    25 hiragana with dakuten and han-dakuten
                     {hiraganaDakutenWritingSystem?.isLocked &&
-                     lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
+                     lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px' }}></LockIcon> : ''}
                   </a>
                 </li>
                 <li>
@@ -92,7 +91,7 @@ const JapaneseStudyGuide = () => {
                     }>
                       36 Hiragana Yōon combinations
                     {hiraganaYoonWritingSystem?.isLocked &&
-                     lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
+                     lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px' }}></LockIcon> : ''}
                   </a>
                 </li>
               </ul>
@@ -112,7 +111,7 @@ const JapaneseStudyGuide = () => {
                   }>  
                     46 basic katakana
                   {katakanaBasicWritingSystem?.isLocked &&
-                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
+                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px' }}></LockIcon> : ''}
                 </a>
               </li>
               <li>
@@ -136,7 +135,7 @@ const JapaneseStudyGuide = () => {
                     )
                   }>                    {clothesVocabTopic?.name.toLocaleLowerCase()}
                   {clothesVocabTopic?.isLocked &&
-                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
+                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px' }}></LockIcon> : ''}
                 </a>
               </li>
               <li>
@@ -150,7 +149,7 @@ const JapaneseStudyGuide = () => {
                   }>
                   {coloursVocabTopic?.name.toLocaleLowerCase()}
                   {coloursVocabTopic?.isLocked &&
-                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
+                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px' }}></LockIcon> : ''}
                 </a>
               </li>
               <li>
@@ -164,7 +163,7 @@ const JapaneseStudyGuide = () => {
                   }>
                   {numbersVocabTopic?.name.toLocaleLowerCase()}
                   {numbersVocabTopic?.isLocked &&
-                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
+                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px' }}></LockIcon> : ''}
                 </a>
               </li>
               <li>
@@ -178,7 +177,7 @@ const JapaneseStudyGuide = () => {
                   }>
                   {animalsVocabTopic?.name.toLocaleLowerCase()}
                   {animalsVocabTopic?.isLocked &&
-                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
+                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px' }}></LockIcon> : ''}
                 </a>
               </li>
               <li>
@@ -192,7 +191,7 @@ const JapaneseStudyGuide = () => {
                   }>
                   {bodyVocabTopic?.name.toLocaleLowerCase()}
                   {bodyVocabTopic?.isLocked &&
-                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
+                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px' }}></LockIcon> : ''}
                 </a>
               </li>
               <li>
@@ -205,7 +204,7 @@ const JapaneseStudyGuide = () => {
                     )
                   }>                  {daysOfWeekVocabTopic?.name.toLocaleLowerCase()}
                   {daysOfWeekVocabTopic?.isLocked &&
-                  lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
+                  lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px' }}></LockIcon> : ''}
                 </a>
               </li>
               <li>
@@ -218,7 +217,7 @@ const JapaneseStudyGuide = () => {
                     )
                   }>                  {foodsVocabTopic?.name.toLocaleLowerCase()}
                   {foodsVocabTopic?.isLocked &&
-                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
+                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px' }}></LockIcon> : ''}
                 </a>
               </li>
               <li>
@@ -232,7 +231,7 @@ const JapaneseStudyGuide = () => {
                   }>            
                   {irregularAdjectivesVocabTopic?.name.toLocaleLowerCase()}
                   {irregularAdjectivesVocabTopic?.isLocked && 
-                  lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
+                  lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px' }}></LockIcon> : ''}
                 </a> 
               </li>
               <li>
@@ -246,7 +245,7 @@ const JapaneseStudyGuide = () => {
                   }>
                   {locationVocabTopic?.name.toLocaleLowerCase()}
                   {locationVocabTopic?.isLocked && 
-                  lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
+                  lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px' }}></LockIcon> : ''}
                 </a>
               </li>
               <li>
@@ -260,7 +259,7 @@ const JapaneseStudyGuide = () => {
                   }>
                   {monthsOfYearVocabTopic?.name.toLocaleLowerCase()}
                   {monthsOfYearVocabTopic?.isLocked &&
-                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
+                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px' }}></LockIcon> : ''}
                 </a> 
               </li>
               <li>
@@ -274,7 +273,7 @@ const JapaneseStudyGuide = () => {
                   }>
                   {regularAdjectivesVocabTopic?.name.toLocaleLowerCase()}
                   {regularAdjectivesVocabTopic?.isLocked 
-                  && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
+                  && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px' }}></LockIcon> : ''}
                 </a> 
               </li>
             </ul>
