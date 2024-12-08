@@ -31,17 +31,19 @@ const JapaneseStudyGuide = () => {
   const monthsOfYearVocabTopic = japaneseVocab?.topics.find((t: any)=> t.slugName === 'mon')
   const regularAdjectivesVocabTopic = japaneseVocab?.topics.find((t: any)=> t.slugName === 'adj1')
 
-  const japaneseWritingSystems = (languagesVocab as VocabLanguage[]).find((l: any) => {
+  const japaneseWritingSystems = (languagesVocab as any[]).find((l: any) => {
     return l.languageName === 'Japanese' && 
            l.topics.some((topic: any) => topic.isAlphabet);
   });
 
-  const hiraganaBasicWritingSystem = japaneseWritingSystems?.topics.find((t: any)=> t.slugName === 'hir')
-  const hiraganaDakutenWritingSystem = japaneseWritingSystems?.topics.find((t: any)=> t.slugName === 'hirdak')
-  const hiraganaYoonWritingSystem = japaneseWritingSystems?.topics.find((t: any)=> t.slugName === 'hiryoon')
-  const katakanaBasicWritingSystem = japaneseWritingSystems?.topics.find((t: any)=> t.slugName === 'kat')
-
-  console.log('hiraganaBasicWritingSystem: ', (hiraganaBasicWritingSystem || {}).slugName)
+  const hiraganaBasicWritingSystem = japaneseWritingSystems?.topics
+    .find((t: any)=> t.slugName === 'hir')
+  const hiraganaDakutenWritingSystem = japaneseWritingSystems?.topics
+    .find((t: any)=> t.slugName === 'hirdak')
+  const hiraganaYoonWritingSystem = japaneseWritingSystems?.topics
+    .find((t: any)=> t.slugName === 'hiryoon')
+  const katakanaBasicWritingSystem = japaneseWritingSystems?.topics
+    .find((t: any)=> t.slugName === 'kat')
  
   return (
     <>
