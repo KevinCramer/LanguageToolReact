@@ -10,17 +10,17 @@ const JapaneseStudyGuide = () => {
     return l.languageName === 'Japanese' && 
            l.topics.some((topic: any) => !topic.isAlphabet);
   });
-  const clothesVocabTopic = japaneseVocab?.topics.find(t => t.slugName === 'clo')
-  const coloursVocabTopic = japaneseVocab?.topics.find(t => t.slugName === 'col')
-  const numbersVocabTopic = japaneseVocab?.topics.find(t => t.slugName === 'num')
-  const animalsVocabTopic = japaneseVocab?.topics.find(t => t.slugName === 'animals')
-  const bodyVocabTopic = japaneseVocab?.topics.find(t => t.slugName === 'body')
-  const daysOfWeekVocabTopic = japaneseVocab?.topics.find(t => t.slugName === 'day')
-  const foodsVocabTopic = japaneseVocab?.topics.find(t => t.slugName === 'food')
-  const irregularAdjectivesVocabTopic = japaneseVocab?.topics.find(t => t.slugName === 'adj2')
-  const locationVocabTopic = japaneseVocab?.topics.find(t => t.slugName === 'locations')
-  const monthsOfYearVocabTopic = japaneseVocab?.topics.find(t => t.slugName === 'mon')
-  const regularAdjectivesVocabTopic = japaneseVocab?.topics.find(t => t.slugName === 'adj1')
+  const clothesVocabTopic = japaneseVocab?.topics.find((t: any)=> t.slugName === 'clo')
+  const coloursVocabTopic = japaneseVocab?.topics.find((t: any)=> t.slugName === 'col')
+  const numbersVocabTopic = japaneseVocab?.topics.find((t: any)=> t.slugName === 'num')
+  const animalsVocabTopic = japaneseVocab?.topics.find((t: any)=> t.slugName === 'animals')
+  const bodyVocabTopic = japaneseVocab?.topics.find((t: any)=> t.slugName === 'body')
+  const daysOfWeekVocabTopic = japaneseVocab?.topics.find((t: any)=> t.slugName === 'day')
+  const foodsVocabTopic = japaneseVocab?.topics.find((t: any)=> t.slugName === 'food')
+  const irregularAdjectivesVocabTopic = japaneseVocab?.topics.find((t: any)=> t.slugName === 'adj2')
+  const locationVocabTopic = japaneseVocab?.topics.find((t: any)=> t.slugName === 'locations')
+  const monthsOfYearVocabTopic = japaneseVocab?.topics.find((t: any)=> t.slugName === 'mon')
+  const regularAdjectivesVocabTopic = japaneseVocab?.topics.find((t: any)=> t.slugName === 'adj1')
 
   const japaneseWritingSystems = allLanguages.find((l: any) => {
     return l.languageName === 'Japanese' && 
@@ -28,13 +28,13 @@ const JapaneseStudyGuide = () => {
   });
 
   const hiraganaBasicWritingSystem = japaneseWritingSystems?.topics
-    .find(t => t.slugName === 'hir')
+    .find((t: any)=> t.slugName === 'hir')
   const hiraganaDakutenWritingSystem = japaneseWritingSystems?.topics
-    .find(t => t.slugName === 'hirdak')
+    .find((t: any)=> t.slugName === 'hirdak')
   const hiraganaYoonWritingSystem = japaneseWritingSystems?.topics
-    .find(t => t.slugName === 'hiryoon')
+    .find((t: any)=> t.slugName === 'hiryoon')
   const katakanaBasicWritingSystem = japaneseWritingSystems?.topics
-    .find(t => t.slugName === 'kat')
+    .find((t: any)=> t.slugName === 'kat')
  
   return (
     <>

@@ -9,30 +9,30 @@ const SpanishStudyGuide = () => {
 
   const SpanishVocab = languagesVocab.find(l => l.languageName === 'Spanish')
   ////
-  const clothesVocabTopic = SpanishVocab?.topics.find(t => t.slugName === 'clo')
-  const numbersVocabTopic = SpanishVocab?.topics.find(t => t.slugName === 'num')
-  const foodVocabTopic = SpanishVocab?.topics.find(t => t.slugName === 'foo')
-  const homeVocabTopic = SpanishVocab?.topics.find(t => t.slugName === 'hom')
-  const bodyVocabTopic = SpanishVocab?.topics.find(t => t.slugName === 'bod')
-  const locationsVocabTopic = SpanishVocab?.topics.find(t => t.slugName === 'loc')
-  const coloursVocabTopic = SpanishVocab?.topics.find(t => t.slugName === 'col')
+  const clothesVocabTopic = SpanishVocab?.topics.find((t: any)=> t.slugName === 'clo')
+  const numbersVocabTopic = SpanishVocab?.topics.find((t: any)=> t.slugName === 'num')
+  const foodVocabTopic = SpanishVocab?.topics.find((t: any)=> t.slugName === 'foo')
+  const homeVocabTopic = SpanishVocab?.topics.find((t: any)=> t.slugName === 'hom')
+  const bodyVocabTopic = SpanishVocab?.topics.find((t: any)=> t.slugName === 'bod')
+  const locationsVocabTopic = SpanishVocab?.topics.find((t: any)=> t.slugName === 'loc')
+  const coloursVocabTopic = SpanishVocab?.topics.find((t: any)=> t.slugName === 'col')
   //
-  const pronounsVocabTopic = SpanishVocab?.topics.find(t => t.slugName === 'pro')
-  const questionWordsVocabTopic = SpanishVocab?.topics.find(t => t.slugName === 'que')
-  const conjunctionsVocabTopic = SpanishVocab?.topics.find(t => t.slugName === 'con')
+  const pronounsVocabTopic = SpanishVocab?.topics.find((t: any)=> t.slugName === 'pro')
+  const questionWordsVocabTopic = SpanishVocab?.topics.find((t: any)=> t.slugName === 'que')
+  const conjunctionsVocabTopic = SpanishVocab?.topics.find((t: any)=> t.slugName === 'con')
   //
-  const verbsVocabTopic = SpanishVocab?.topics.find(t => t.slugName === 'ver')
+  const verbsVocabTopic = SpanishVocab?.topics.find((t: any)=> t.slugName === 'ver')
 
   const SpanishGrammar = languagesGrammar.find(l => l.languageName === 'Spanish')
   ////
   const definiteArticleGrammarTopic = SpanishGrammar?.topics
-    .find(t => t.slugName === 'definite-article')
+    .find((t: any)=> t.slugName === 'definite-article')
   const indefiniteArticleGrammarTopic = SpanishGrammar?.topics
-    .find(t => t.slugName === 'indefinite-article')
-  const nounsGrammarTopic = SpanishGrammar?.topics.find(t => t.slugName === 'nouns')
+    .find((t: any)=> t.slugName === 'indefinite-article')
+  const nounsGrammarTopic = SpanishGrammar?.topics.find((t: any)=> t.slugName === 'nouns')
   const adjectivesGrammarTopic = SpanishGrammar?.topics
-    .find(t => t.slugName === 'adjectives')
-  const verbsGrammarTopic = SpanishGrammar?.topics.find(t => t.slugName === 'verbs')
+    .find((t: any)=> t.slugName === 'adjectives')
+  const verbsGrammarTopic = SpanishGrammar?.topics.find((t: any)=> t.slugName === 'verbs')
 
   return (
     <>
