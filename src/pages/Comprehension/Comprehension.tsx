@@ -7,13 +7,24 @@ import { languages as allLanguages } from '../../data/structured-data/comprehens
 import AudioPlayer from '../../components/atoms/CustomAudioPlayer/CustomAudioPlayer';
 import CustomDropDownButton from '../../components/atoms/CustomDropDownButton/CustomDropDownButton';
 import Dropdown from 'react-bootstrap/Dropdown';
-import { lightGrey, mobileBreakPoint } from '../../constants';
+import { lightGrey, lingoCommandIsLocked, mobileBreakPoint } from '../../constants';
 import CustomButton from '../../components/atoms/CustomButton/CustomButton';
 import CustomDropDownButtonWhite from '../../components/atoms/CustomDropDownButtonWhite/CustomDropDownButtonWhite';
 import CustomSwitch from '../../components/atoms/CustomSwitch/CustomSwitch';
 import RenderTableCell from '../../components/molecules/RenderTableCell/RenderTableCell';
+import LockIcon from '@mui/icons-material/Lock';
+import { useAuth } from '../../contexts/AuthContext';
+import { useDispatch } from 'react-redux';
+import { denyPermission } from '../../redux-store/lock';
 
 const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?: any }) => {
+  const dispatch = useDispatch();
+
+  //@ts-ignore
+  const { currentUser } = useAuth();
+  
+  const userIsLoggedIn = currentUser && currentUser.email
+
   const navigate = useNavigate();
   const { topicSlug } = useParams();
   const location = useLocation();
@@ -49,6 +60,17 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
 
   const [currentAudioTranscription, setCurrentAudioTranscription] =
     useState<AudioTranscription>(initialAudioTranscription);
+
+  const changeTranscription = (topic: AudioTranscription) => {
+    if(topic.isLocked && lingoCommandIsLocked && !userIsLoggedIn ){
+      dispatch(denyPermission());
+    }
+    else{
+      navigate(`/${currentLanguage.languageName.toLowerCase()}/comprehension/${topic.slugName}`, { replace: true });
+      return setCurrentAudioTranscription(topic);}
+  
+  }
+  
   const [transcriptionInEnglish, setTranscriptionInEnglish] = useState(initialTranscriptionInEnglish);
   const [currentAlphabet, setCurrentAlphabet] = useState(initialAlphabet);
   const [granularity, setGranularity] = useState(initialGranularity); // Granularity state
@@ -235,9 +257,15 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
                           ? lightGrey
                           : '',
                     }}
-                    onClick={() => setCurrentAudioTranscription(topic)}
+                    onClick={() => changeTranscription(topic)}
                   >
-                    {topic.name}
+                    <div className="topic-container">
+                      {topic.name} {
+                        topic.isLocked 
+                          && lingoCommandIsLocked 
+                          && !userIsLoggedIn
+                          && <LockIcon style={{ fontSize: '20px' }}/>}
+                    </div>
                   </Dropdown.Item>
                 ))}
               </CustomDropDownButton>

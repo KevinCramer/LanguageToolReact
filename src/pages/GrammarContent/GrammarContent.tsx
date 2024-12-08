@@ -7,7 +7,11 @@ import { useNavigate, useParams } from 'react-router-dom';
 import CustomDropDownButton from '../../components/atoms/CustomDropDownButton/CustomDropDownButton';
 import Dropdown from 'react-bootstrap/Dropdown';
 import { languages } from '../../data/structured-data/grammar';
-import { lightGrey } from '../../constants';
+import { lightGrey, lingoCommandIsLocked } from '../../constants';
+import LockIcon from '@mui/icons-material/Lock';
+import { useAuth } from '../../contexts/AuthContext';
+import { useDispatch } from 'react-redux';
+import { denyPermission } from '../../redux-store/lock';
 
 const GrammarContent = (
   props: {
@@ -15,6 +19,12 @@ const GrammarContent = (
     }) => {
   const navigate = useNavigate();
   const { topicSlug } = useParams(); // Extract the topicSlug from the URL
+  const dispatch = useDispatch();
+
+  //@ts-ignore
+  const { currentUser } = useAuth();
+  
+  const userIsLoggedIn = currentUser && currentUser.email
 
   var currentLanguage: Language = languages[props.languageNumber]
 
@@ -23,8 +33,14 @@ const GrammarContent = (
   var [currentTopic,setCurrentTopic] = useState(currentTopic)
 
   const changeCurrentTopic = (topic: Topic) => {
-    navigate(`/${currentLanguage.languageName.toLowerCase()}/grammar/${topic.slugName}`, { replace: true });
-    return setCurrentTopic(topic);}
+    if(topic.isLocked && lingoCommandIsLocked && !userIsLoggedIn ){
+      dispatch(denyPermission());
+    }
+    else{
+      navigate(`/${currentLanguage.languageName.toLowerCase()}/grammar/${topic.slugName}`, { replace: true });
+      return setCurrentTopic(topic);}
+
+  }
 
   useEffect(() => {
     const settings = [
@@ -60,7 +76,15 @@ const GrammarContent = (
                       <Dropdown.Item key = {index} 
                         style={{ backgroundColor: index === languages[props.languageNumber].topics.findIndex(item => item.name === currentTopic.name) ? lightGrey : '' }}
                         onClick = {() => 
-                          changeCurrentTopic(topic)}>{topic.name}</Dropdown.Item>)}
+                          changeCurrentTopic(topic)}>
+                        <div className="topic-container">
+                          {topic.name} {
+                            topic.isLocked 
+                          && lingoCommandIsLocked 
+                          && !userIsLoggedIn
+                          && <LockIcon style={{ fontSize: '20px' }}/>}
+                        </div>
+                      </Dropdown.Item>)}
                   </CustomDropDownButton>
                 </div>
               </Container>

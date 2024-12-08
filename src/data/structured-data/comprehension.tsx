@@ -161,7 +161,8 @@ const japaneseAudioTranscriptions: AudioTranscriptionWithFourAlphabet[] = [
         ],
         audioFile: aikosBookSanctuaryParagraph3
       }
-    ] 
+    ],
+    isLocked: false
   },
   {
     name:'Rai Plays Tennis', slugName: 'rai-plays-tennis', contents: [
@@ -207,7 +208,8 @@ const japaneseAudioTranscriptions: AudioTranscriptionWithFourAlphabet[] = [
       ],
       audioFile: aikosBookSanctuaryParagraph1
       },
-    ] 
+    ],
+    isLocked: true
   },
 ] 
 const spanishAudioTranscriptions: AudioTranscriptionWithOneAlphabet[] = [
@@ -324,7 +326,8 @@ const spanishAudioTranscriptions: AudioTranscriptionWithOneAlphabet[] = [
         ],
         audioFile: shoppingForFamilyMealsParagraph3
       },
-    ] 
+    ],
+    isLocked: false
   },
 ]
 
