@@ -1,6 +1,8 @@
-import { useProtectedLink } from '../../helpers/use-protected-link';
 import './Japanese.scss'
+
 import { languages as allLanguages } from '../../data/structured-data/words';
+import LockIcon from '@mui/icons-material/Lock';
+import { useProtectedLink } from '../../helpers/use-protected-link';
 
 const JapaneseStudyGuide = () => { 
   const handleProtectedClick = useProtectedLink();
@@ -48,14 +50,14 @@ const JapaneseStudyGuide = () => {
                 <li>
                   <a onClick={handleProtectedClick(hiraganaDakutenWritingSystem)} href="/japanese/writing-systems?s=hirdak-T0TFT">
                    25 hiragana with dakuten and han-dakuten
-                    {hiraganaDakutenWritingSystem?.isLocked ? '*' : ''}
+                    {hiraganaDakutenWritingSystem?.isLocked ? <LockIcon></LockIcon> : ''}
                   </a>
                 </li>
                 <li>
                   <a onClick={handleProtectedClick(hiraganaYoonWritingSystem)} href="/japanese/writing-systems?s=hiryoon-T0TFT">
                   36 Hiragana Yōon combinations
-                    {hiraganaYoonWritingSystem?.isLocked ? '*' : ''}
-                  </a>.
+                    {hiraganaYoonWritingSystem?.isLocked ? <LockIcon></LockIcon> : ''}
+                  </a>
                 </li>
               </ul>
             </div>
@@ -66,7 +68,7 @@ const JapaneseStudyGuide = () => {
               <li>
                 <a onClick={handleProtectedClick(katakanaBasicWritingSystem)}href="/japanese/writing-systems?s=kat-T0TFT">
                 46 basic katakana
-                  {katakanaBasicWritingSystem?.isLocked ? '*' : ''}
+                  {katakanaBasicWritingSystem?.isLocked ? <LockIcon></LockIcon> : ''}
                 </a>
               </li>
               <li>
@@ -83,58 +85,58 @@ const JapaneseStudyGuide = () => {
               <li>
                 <a onClick={handleProtectedClick(clothesVocabTopic)}
                   href="/japanese/vocabulary?s=clo-T0TFT">
-                  {clothesVocabTopic?.name.toLocaleLowerCase()}{clothesVocabTopic?.isLocked ? '*' : ''}
+                  {clothesVocabTopic?.name.toLocaleLowerCase()}{clothesVocabTopic?.isLocked ? <LockIcon></LockIcon> : ''}
                 </a>
               </li>
               <li>
                 < a onClick={handleProtectedClick(coloursVocabTopic )} href="/japanese/vocabulary?s=col-T0TFT">
-                  {coloursVocabTopic?.name.toLocaleLowerCase()}{coloursVocabTopic?.isLocked ? '*' : ''}
+                  {coloursVocabTopic?.name.toLocaleLowerCase()}{coloursVocabTopic?.isLocked ? <LockIcon></LockIcon> : ''}
                 </a>
               </li>
               <li>
                 < a onClick={handleProtectedClick(numbersVocabTopic)} href="/japanese/vocabulary?s=num-T0TFT">
-                  {numbersVocabTopic?.name.toLocaleLowerCase()}{numbersVocabTopic?.isLocked ? '*' : ''}
+                  {numbersVocabTopic?.name.toLocaleLowerCase()}{numbersVocabTopic?.isLocked ? <LockIcon></LockIcon> : ''}
                 </a>
               </li>
               <li>
                 <a onClick={handleProtectedClick(animalsVocabTopic)}
                   href="/japanese/vocabulary?s=ani-T0TFT">
-                  {animalsVocabTopic?.name.toLocaleLowerCase()}{animalsVocabTopic?.isLocked ? '*' : ''}
+                  {animalsVocabTopic?.name.toLocaleLowerCase()}{animalsVocabTopic?.isLocked ? <LockIcon></LockIcon> : ''}
                 </a>
               </li>
               <li>
-                < a onClick={handleProtectedClick(bodyVocabTopic?.isLocked || true )} href="/japanese/vocabulary?s=bod-T0TFT">
-                  {bodyVocabTopic?.name.toLocaleLowerCase()}{bodyVocabTopic?.isLocked ? '*' : ''}
+                < a onClick={handleProtectedClick(bodyVocabTopic )} href="/japanese/vocabulary?s=bod-T0TFT">
+                  {bodyVocabTopic?.name.toLocaleLowerCase()}{bodyVocabTopic?.isLocked ? <LockIcon></LockIcon> : ''}
                 </a>
               </li>
               <li>
-                < a onClick={handleProtectedClick(daysOfWeekVocabTopic?.isLocked || true )} href="/japanese/vocabulary?s=day-T0TFT">
-                  {daysOfWeekVocabTopic?.name.toLocaleLowerCase()}{daysOfWeekVocabTopic?.isLocked ? '*' : ''}
+                < a onClick={handleProtectedClick(daysOfWeekVocabTopic )} href="/japanese/vocabulary?s=day-T0TFT">
+                  {daysOfWeekVocabTopic?.name.toLocaleLowerCase()}{daysOfWeekVocabTopic?.isLocked ? <LockIcon></LockIcon> : ''}
                 </a>
               </li>
               <li>
-                < a onClick={handleProtectedClick(foodsVocabTopic?.isLocked || true )} href="/japanese/vocabulary?s=foo-T0TFT">
-                  {foodsVocabTopic?.name.toLocaleLowerCase()}{foodsVocabTopic?.isLocked ? '*' : ''}
+                < a onClick={handleProtectedClick(foodsVocabTopic)} href="/japanese/vocabulary?s=foo-T0TFT">
+                  {foodsVocabTopic?.name.toLocaleLowerCase()}{foodsVocabTopic?.isLocked ? <LockIcon></LockIcon> : ''}
                 </a>
               </li>
               <li>
-                < a onClick={handleProtectedClick(irregularAdjectivesVocabTopic?.isLocked || true )} href="/japanese/vocabulary?s=adj2-T0TFT">
-                  {irregularAdjectivesVocabTopic?.name.toLocaleLowerCase()}{irregularAdjectivesVocabTopic?.isLocked ? '*' : ''}
+                < a onClick={handleProtectedClick(irregularAdjectivesVocabTopic)} href="/japanese/vocabulary?s=adj2-T0TFT">
+                  {irregularAdjectivesVocabTopic?.name.toLocaleLowerCase()}{irregularAdjectivesVocabTopic?.isLocked ? <LockIcon></LockIcon> : ''}
                 </a> 
               </li>
               <li>
-                < a onClick={handleProtectedClick(locationVocabTopic?.isLocked || true )} href="/japanese/vocabulary?s=loc-T0TFT">
-                  {locationVocabTopic?.name.toLocaleLowerCase()}{locationVocabTopic?.isLocked ? '*' : ''}
+                < a onClick={handleProtectedClick(locationVocabTopic)} href="/japanese/vocabulary?s=loc-T0TFT">
+                  {locationVocabTopic?.name.toLocaleLowerCase()}{locationVocabTopic?.isLocked ? <LockIcon></LockIcon> : ''}
                 </a>
               </li>
               <li>
                 < a onClick={handleProtectedClick(monthsOfYearVocabTopic )} href="/japanese/vocabulary?s=mon-T0TFT">
-                  {monthsOfYearVocabTopic?.name.toLocaleLowerCase()}{monthsOfYearVocabTopic?.isLocked ? '*' : ''}
+                  {monthsOfYearVocabTopic?.name.toLocaleLowerCase()}{monthsOfYearVocabTopic?.isLocked ? <LockIcon></LockIcon> : ''}
                 </a> 
               </li>
               <li>
                 < a onClick={handleProtectedClick(regularAdjectivesVocabTopic )} href="/japanese/vocabulary?s=adj1-T0TFT">
-                  {regularAdjectivesVocabTopic?.name.toLocaleLowerCase()}{regularAdjectivesVocabTopic?.isLocked ? '*' : ''}
+                  {regularAdjectivesVocabTopic?.name.toLocaleLowerCase()}{regularAdjectivesVocabTopic?.isLocked ? <LockIcon></LockIcon> : ''}
                 </a> 
               </li>
             </ul>
