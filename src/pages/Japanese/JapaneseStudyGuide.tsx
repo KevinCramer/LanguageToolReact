@@ -121,14 +121,14 @@ const JapaneseStudyGuide = () => {
               </li>
               <li>
                 <a onClick={handleProtectedClick(animalsVocabTopic)}
-                  href="/japanese/vocabulary?s=ani-T0TFT">
+                  href="/japanese/vocabulary?s=animals-T0TFT">
                   {animalsVocabTopic?.name.toLocaleLowerCase()}
                   {animalsVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
                 </a>
               </li>
               <li>
                 < a onClick={handleProtectedClick(bodyVocabTopic )}
-                  href="/japanese/vocabulary?s=bod-T0TFT">
+                  href="/japanese/vocabulary?s=body-T0TFT">
                   {bodyVocabTopic?.name.toLocaleLowerCase()}
                   {bodyVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
                 </a>
@@ -142,7 +142,7 @@ const JapaneseStudyGuide = () => {
               </li>
               <li>
                 < a onClick={handleProtectedClick(foodsVocabTopic)}
-                  href="/japanese/vocabulary?s=foo-T0TFT">
+                  href="/japanese/vocabulary?s=food-T0TFT">
                   {foodsVocabTopic?.name.toLocaleLowerCase()}
                   {foodsVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
                 </a>
@@ -156,7 +156,7 @@ const JapaneseStudyGuide = () => {
               </li>
               <li>
                 < a onClick={handleProtectedClick(locationVocabTopic)}
-                  href="/japanese/vocabulary?s=loc-T0TFT">
+                  href="/japanese/vocabulary?s=locations-T0TFT">
                   {locationVocabTopic?.name.toLocaleLowerCase()}
                   {locationVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
                 </a>

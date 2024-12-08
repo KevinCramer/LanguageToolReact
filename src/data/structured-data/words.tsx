@@ -468,10 +468,7 @@ import hiraganaVideoWa from '../raw-data/writing-system-videos/japanese/hiragana
 import hiraganaVideoWo from '../raw-data/writing-system-videos/japanese/hiragana/wo.mp4'
 import hiraganaVideoN from '../raw-data/writing-system-videos/japanese/hiragana/n.mp4'
 
-import { sortTopics } from '../../helpers/words-data-helper';
 import { Language, VerbConjugationEnglish, TopicWithOneAlphabet, TopicWithTwoAlphabets, TopicWithThreeAlphabets } from '../../../types/vocabTypes';
-import { useAccordionButton } from 'react-bootstrap';
-import { useAuth } from '../../contexts/AuthContext';
 
 export const englishVerbs: { [key: string]: VerbConjugationEnglish } = {
   'to call': {
@@ -2496,17 +2493,17 @@ const greekTopics: TopicWithTwoAlphabets[] = [
 export const languages: Language[] = 
         [
           { languageName: 'Spanish', topics: spanishTopics, pronouns: spanishPronouns, numForeignAlphabets: 1 },
-          // { languageName: 'French', topics: sortTopics(frenchTopics), pronouns: [], numForeignAlphabets: 1 },
-          // { languageName: 'German', topics: sortTopics(germanTopics), pronouns: [], numForeignAlphabets: 1 },
-          // { languageName: 'Italian', topics: sortTopics(italianTopics), pronouns: [], numForeignAlphabets: 1 },
+          // { languageName: 'French', topics: frenchTopics, pronouns: [], numForeignAlphabets: 1 },
+          // { languageName: 'German', topics: germanTopics, pronouns: [], numForeignAlphabets: 1 },
+          // { languageName: 'Italian', topics: italianTopics, pronouns: [], numForeignAlphabets: 1 },
           { languageName: 'Japanese', topics: japaneseTopics.filter(topic => !topic.isAlphabet), pronouns: [], numForeignAlphabets: 3 },
           { languageName: 'Japanese', topics: japaneseTopics.filter(topic => topic.isAlphabet), pronouns: [], numForeignAlphabets: 3 },
-          // { languageName: 'Mandarin', topics: sortTopics(mandarinTopics), pronouns: [], numForeignAlphabets: 2 },
-          // { languageName: 'Korean', topics: sortTopics(koreanTopics), pronouns: [], numForeignAlphabets: 2 },
-          // { languageName: 'Arabic', topics: sortTopics(arabicTopics), pronouns: [], numForeignAlphabets: 2 },
-          // { languageName: 'Portuguese', topics: sortTopics(portugueseTopics), pronouns: [], numForeignAlphabets: 1 },
-          // { languageName: 'Russian', topics: sortTopics(russianTopics), pronouns: [], numForeignAlphabets: 2 },
-          // { languageName: 'Greek', topics: sortTopics(greekTopics), pronouns: [], numForeignAlphabets: 2 },
-          // { languageName: 'Dutch', topics: sortTopics(dutchTopics), pronouns: [], numForeignAlphabets: 1 },
+          // { languageName: 'Mandarin', topics: mandarinTopics, pronouns: [], numForeignAlphabets: 2 },
+          // { languageName: 'Korean', topics: koreanTopics, pronouns: [], numForeignAlphabets: 2 },
+          // { languageName: 'Arabic', topics: arabicTopics, pronouns: [], numForeignAlphabets: 2 },
+          // { languageName: 'Portuguese', topics: portugueseTopics, pronouns: [], numForeignAlphabets: 1 },
+          // { languageName: 'Russian', topics: russianTopics, pronouns: [], numForeignAlphabets: 2 },
+          // { languageName: 'Greek', topics: greekTopics, pronouns: [], numForeignAlphabets: 2 },
+          // { languageName: 'Dutch', topics: dutchTopics, pronouns: [], numForeignAlphabets: 1 },
         ]
       
