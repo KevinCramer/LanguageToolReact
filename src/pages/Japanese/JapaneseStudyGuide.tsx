@@ -15,29 +15,65 @@ const JapaneseStudyGuide = () => {
           <div style={{ paddingTop:'20px' }}>
             <b>Phase 2:</b> Study <a href="/japanese/hiragana-explained">hiragana</a>. That includes mastering all: 
             <div>
-              1. <a href="/japanese/writing-systems?s=hir-T0TFT"> 46 basic hiragana</a>
-            </div>
-            <div>
-              2. <a onClick={handleProtectedClick} href="/japanese/writing-systems?s=hirdak-T0TFT"> 25 hiragana with dakuten and han-dakuten</a>
-            </div>
-            <div>
-              3. <a onClick={handleProtectedClick} href="/japanese/writing-systems?s=hiryoon-T0TFT">36 Hiragana Yōon combinations</a>.
+              <ul>
+                <li>
+                  <a href="/japanese/writing-systems?s=hir-T0TFT"> 46 basic hiragana</a>
+                </li>
+                <li>
+                  <a onClick={handleProtectedClick} href="/japanese/writing-systems?s=hirdak-T0TFT"> 25 hiragana with dakuten and han-dakuten</a>
+                </li>
+                <li>
+                  <a onClick={handleProtectedClick} href="/japanese/writing-systems?s=hiryoon-T0TFT">36 Hiragana Yōon combinations</a>.
+                </li>
+              </ul>
             </div>
           </div>
           <div style={{ paddingTop:'20px' }}>
             <b>Phase 3:</b> Study <a href="/japanese/katakana-explained">katakana</a>. That includes mastering all:
-            <div>
-              1. <a href="/japanese/writing-systems?s=kat-T0TFT"> 46 basic katakana</a>
-            </div>
-            <div>
-              2. 25 katakana with dakuten and han-dakuten
-            </div>
-            <div>
-              3. 36 katakaan Yōon combinations
-            </div>
+            <ul>
+              <li>
+                <a href="/japanese/writing-systems?s=kat-T0TFT"> 46 basic katakana</a>
+              </li>
+              <li>
+                25 katakana with dakuten and han-dakuten
+              </li>
+              <li>
+                36 katakana Yōon combinations
+              </li>
+            </ul>
           </div>
           <div style={{ paddingTop:'20px' }}>
-            <b>Phase 4:</b> Study the vocabulary for these topics: <a href="/japanese/vocabulary?s=clo-T0TFT">clothes</a>, <a href="/japanese/vocabulary?s=num-T0TFT">numbers</a>, <a href="/japanese/vocabulary?s=col-T0TFT">colours</a>, <a onClick={handleProtectedClick} href="/japanese/vocabulary?s=foo-T0TFT">food</a>, <a onClick={handleProtectedClick} href="/japanese/vocabulary?s=bod-T0TFT">body</a>, <a onClick={handleProtectedClick} href="/japanese/vocabulary?s=loc-T0TFT">locations</a>, <a onClick={handleProtectedClick} href="/japanese/vocabulary?s=ani-T0TFT">animals</a>, <a onClick={handleProtectedClick} href="/japanese/vocabulary?s=day-T0TFT">days of the week</a>, <a onClick={handleProtectedClick} href="/japanese/vocabulary?s=mon-T0TFT">months of the year</a>. 
+            <b>Phase 4:</b> Study the vocabulary for these topics: 
+            <ul>
+              <li>
+                <a href="/japanese/vocabulary?s=clo-T0TFT">clothes</a>
+              </li>
+              <li>
+                <a href="/japanese/vocabulary?s=num-T0TFT">numbers</a>
+              </li>
+              <li>
+                <a href="/japanese/vocabulary?s=col-T0TFT">colours</a>
+              </li>
+              <li>
+                <a onClick={handleProtectedClick} href="/japanese/vocabulary?s=foo-T0TFT">food</a>
+              </li>
+              <li>
+                <a onClick={handleProtectedClick} href="/japanese/vocabulary?s=bod-T0TFT">body</a>
+              </li>
+              <li>
+                <a onClick={handleProtectedClick} href="/japanese/vocabulary?s=loc-T0TFT">locations</a>
+              </li>
+              <li>
+                <a onClick={handleProtectedClick} href="/japanese/vocabulary?s=ani-T0TFT">animals</a>
+              </li>
+              <li>
+                <a onClick={handleProtectedClick} href="/japanese/vocabulary?s=day-T0TFT">days of the week</a>
+              </li>
+              <li>
+                <a onClick={handleProtectedClick} href="/japanese/vocabulary?s=mon-T0TFT">months of the year</a> 
+              </li>
+
+            </ul>
             We recommend you spend no more than 15 minutes studying a topic’s vocabulary before taking a quiz. Then if the grade is below 90% which is completely normal go back and do another round of 15 minutes of studying. Make sure to take breaks, and you can also switch between studying a few topics to mix things up. 
           (If you get 90% or higher  for each quiz without studying the topic in the last 24 hours you are ready to move to phase 2).           </div>
           <div style={{ paddingTop:'20px' }}>
