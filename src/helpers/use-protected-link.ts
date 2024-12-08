@@ -11,8 +11,8 @@ export const useProtectedLink = () => {
 
   const userIsLoggedIn = currentUser && currentUser.email;
 
-  const handleProtectedClick = (e: MouseEvent<HTMLAnchorElement>) => {
-    if (!userIsLoggedIn) {
+  const handleProtectedClick = (topic: any) => (e: MouseEvent<HTMLAnchorElement>) => {
+    if (!userIsLoggedIn && topic.isLocked) {
       e.preventDefault(); // Prevent navigation
       dispatch(denyPermission()); // Dispatch the denyPermission action
     }

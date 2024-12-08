@@ -1,8 +1,34 @@
 import { useProtectedLink } from '../../helpers/use-protected-link';
 import './Japanese.scss'
+import { languages as allLanguages } from '../../data/structured-data/words';
 
 const JapaneseStudyGuide = () => { 
   const handleProtectedClick = useProtectedLink();
+  const japaneseVocab = allLanguages.find((l: any) => {
+    return l.languageName === 'Japanese' && 
+           l.topics.some((topic: any) => !topic.isAlphabet);
+  });
+  const clothesVocabTopic = japaneseVocab?.topics.find(t => t.slugName === 'clo')
+  const coloursVocabTopic = japaneseVocab?.topics.find(t => t.slugName === 'col')
+  const numbersVocabTopic = japaneseVocab?.topics.find(t => t.slugName === 'num')
+  const animalsVocabTopic = japaneseVocab?.topics.find(t => t.slugName === 'animals')
+  const bodyVocabTopic = japaneseVocab?.topics.find(t => t.slugName === 'body')
+  const daysOfWeekVocabTopic = japaneseVocab?.topics.find(t => t.slugName === 'day')
+  const foodsVocabTopic = japaneseVocab?.topics.find(t => t.slugName === 'food')
+  const irregularAdjectivesVocabTopic = japaneseVocab?.topics.find(t => t.slugName === 'adj2')
+  const locationVocabTopic = japaneseVocab?.topics.find(t => t.slugName === 'locations')
+  const monthsOfYearVocabTopic = japaneseVocab?.topics.find(t => t.slugName === 'mon')
+  const regularAdjectivesVocabTopic = japaneseVocab?.topics.find(t => t.slugName === 'adj1')
+
+  const japaneseWritingSystems = allLanguages.find((l: any) => {
+    return l.languageName === 'Japanese' && 
+           l.topics.some((topic: any) => topic.isAlphabet);
+  });
+
+  const hiraganaBasicWritingSystem = japaneseWritingSystems?.topics.find(t => t.slugName === 'hir')
+  const hiraganaDakutenWritingSystem = japaneseWritingSystems?.topics.find(t => t.slugName === 'hirdak')
+  const hiraganaYoonWritingSystem = japaneseWritingSystems?.topics.find(t => t.slugName === 'hiryoon')
+  const katakanaBasicWritingSystem = japaneseWritingSystems?.topics.find(t => t.slugName === 'kat')
  
   return (
     <>
@@ -17,13 +43,19 @@ const JapaneseStudyGuide = () => {
             <div>
               <ul>
                 <li>
-                  <a href="/japanese/writing-systems?s=hir-T0TFT"> 46 basic hiragana</a>
+                  <a onClick={handleProtectedClick(hiraganaBasicWritingSystem)}href="/japanese/writing-systems?s=hir-T0TFT"> 46 basic hiragana</a>
                 </li>
                 <li>
-                  <a onClick={handleProtectedClick} href="/japanese/writing-systems?s=hirdak-T0TFT"> 25 hiragana with dakuten and han-dakuten</a>
+                  <a onClick={handleProtectedClick(hiraganaDakutenWritingSystem)} href="/japanese/writing-systems?s=hirdak-T0TFT">
+                   25 hiragana with dakuten and han-dakuten
+                    {hiraganaDakutenWritingSystem?.isLocked ? '*' : ''}
+                  </a>
                 </li>
                 <li>
-                  <a onClick={handleProtectedClick} href="/japanese/writing-systems?s=hiryoon-T0TFT">36 Hiragana Yōon combinations</a>.
+                  <a onClick={handleProtectedClick(hiraganaYoonWritingSystem)} href="/japanese/writing-systems?s=hiryoon-T0TFT">
+                  36 Hiragana Yōon combinations
+                    {hiraganaYoonWritingSystem?.isLocked ? '*' : ''}
+                  </a>.
                 </li>
               </ul>
             </div>
@@ -32,7 +64,10 @@ const JapaneseStudyGuide = () => {
             <b>Phase 3:</b> Study <a href="/japanese/katakana-explained">katakana</a>. That includes mastering all:
             <ul>
               <li>
-                <a href="/japanese/writing-systems?s=kat-T0TFT"> 46 basic katakana</a>
+                <a onClick={handleProtectedClick(katakanaBasicWritingSystem)}href="/japanese/writing-systems?s=kat-T0TFT">
+                46 basic katakana
+                  {katakanaBasicWritingSystem?.isLocked ? '*' : ''}
+                </a>
               </li>
               <li>
                 25 katakana with dakuten and han-dakuten
@@ -46,34 +81,64 @@ const JapaneseStudyGuide = () => {
             <b>Phase 4:</b> Study the vocabulary for these topics: 
             <ul>
               <li>
-                <a href="/japanese/vocabulary?s=clo-T0TFT">clothes</a>
+                <a onClick={handleProtectedClick(clothesVocabTopic)}
+                  href="/japanese/vocabulary?s=clo-T0TFT">
+                  {clothesVocabTopic?.name.toLocaleLowerCase()}{clothesVocabTopic?.isLocked ? '*' : ''}
+                </a>
               </li>
               <li>
-                <a href="/japanese/vocabulary?s=num-T0TFT">numbers</a>
+                < a onClick={handleProtectedClick(coloursVocabTopic )} href="/japanese/vocabulary?s=col-T0TFT">
+                  {coloursVocabTopic?.name.toLocaleLowerCase()}{coloursVocabTopic?.isLocked ? '*' : ''}
+                </a>
               </li>
               <li>
-                <a href="/japanese/vocabulary?s=col-T0TFT">colours</a>
+                < a onClick={handleProtectedClick(numbersVocabTopic)} href="/japanese/vocabulary?s=num-T0TFT">
+                  {numbersVocabTopic?.name.toLocaleLowerCase()}{numbersVocabTopic?.isLocked ? '*' : ''}
+                </a>
               </li>
               <li>
-                <a onClick={handleProtectedClick} href="/japanese/vocabulary?s=foo-T0TFT">food</a>
+                <a onClick={handleProtectedClick(animalsVocabTopic)}
+                  href="/japanese/vocabulary?s=ani-T0TFT">
+                  {animalsVocabTopic?.name.toLocaleLowerCase()}{animalsVocabTopic?.isLocked ? '*' : ''}
+                </a>
               </li>
               <li>
-                <a onClick={handleProtectedClick} href="/japanese/vocabulary?s=bod-T0TFT">body</a>
+                < a onClick={handleProtectedClick(bodyVocabTopic?.isLocked || true )} href="/japanese/vocabulary?s=bod-T0TFT">
+                  {bodyVocabTopic?.name.toLocaleLowerCase()}{bodyVocabTopic?.isLocked ? '*' : ''}
+                </a>
               </li>
               <li>
-                <a onClick={handleProtectedClick} href="/japanese/vocabulary?s=loc-T0TFT">locations</a>
+                < a onClick={handleProtectedClick(daysOfWeekVocabTopic?.isLocked || true )} href="/japanese/vocabulary?s=day-T0TFT">
+                  {daysOfWeekVocabTopic?.name.toLocaleLowerCase()}{daysOfWeekVocabTopic?.isLocked ? '*' : ''}
+                </a>
               </li>
               <li>
-                <a onClick={handleProtectedClick} href="/japanese/vocabulary?s=ani-T0TFT">animals</a>
+                < a onClick={handleProtectedClick(foodsVocabTopic?.isLocked || true )} href="/japanese/vocabulary?s=foo-T0TFT">
+                  {foodsVocabTopic?.name.toLocaleLowerCase()}{foodsVocabTopic?.isLocked ? '*' : ''}
+                </a>
               </li>
               <li>
-                <a onClick={handleProtectedClick} href="/japanese/vocabulary?s=day-T0TFT">days of the week</a>
+                < a onClick={handleProtectedClick(irregularAdjectivesVocabTopic?.isLocked || true )} href="/japanese/vocabulary?s=adj2-T0TFT">
+                  {irregularAdjectivesVocabTopic?.name.toLocaleLowerCase()}{irregularAdjectivesVocabTopic?.isLocked ? '*' : ''}
+                </a> 
               </li>
               <li>
-                <a onClick={handleProtectedClick} href="/japanese/vocabulary?s=mon-T0TFT">months of the year</a> 
+                < a onClick={handleProtectedClick(locationVocabTopic?.isLocked || true )} href="/japanese/vocabulary?s=loc-T0TFT">
+                  {locationVocabTopic?.name.toLocaleLowerCase()}{locationVocabTopic?.isLocked ? '*' : ''}
+                </a>
               </li>
-
+              <li>
+                < a onClick={handleProtectedClick(monthsOfYearVocabTopic )} href="/japanese/vocabulary?s=mon-T0TFT">
+                  {monthsOfYearVocabTopic?.name.toLocaleLowerCase()}{monthsOfYearVocabTopic?.isLocked ? '*' : ''}
+                </a> 
+              </li>
+              <li>
+                < a onClick={handleProtectedClick(regularAdjectivesVocabTopic )} href="/japanese/vocabulary?s=adj1-T0TFT">
+                  {regularAdjectivesVocabTopic?.name.toLocaleLowerCase()}{regularAdjectivesVocabTopic?.isLocked ? '*' : ''}
+                </a> 
+              </li>
             </ul>
+
             We recommend you spend no more than 15 minutes studying a topic’s vocabulary before taking a quiz. Then if the grade is below 90% which is completely normal go back and do another round of 15 minutes of studying. Make sure to take breaks, and you can also switch between studying a few topics to mix things up. 
           (If you get 90% or higher  for each quiz without studying the topic in the last 24 hours you are ready to move to phase 2).           </div>
           <div style={{ paddingTop:'20px' }}>
