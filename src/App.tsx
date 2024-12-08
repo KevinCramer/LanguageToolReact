@@ -19,7 +19,7 @@ import HiraganaExplained from './pages/Japanese/HiraganaExplained'
 import KatakanaExplained from './pages/Japanese/KatakanaExplained'
 import KanjiExplained from './pages/Japanese/KanjiExplained'
 import Comprehension from './pages/Comprehension/Comprehension'
-import LockedContent from './components/atoms/LockedContent/LockedContent'
+import PremiumContent from './components/atoms/PremiumContent/PremiumContent'
 import Login from './components/molecules/Login/Login'
 import Navbar from './components/atoms/Navbar/Navbar'
 import Signup from './components/molecules/Signup/Signup'
@@ -125,7 +125,7 @@ const App = ()=> {
           <Container className='d-flex align-items-center justify-content-center'
             style={{ minHeight: '60vh' }}>
             <div className='w-100' style={{ maxWidth: '400px' }}>
-              <LockedContent/>
+              <PremiumContent/>
             </div>
           </Container>
         </Modal.Body>
