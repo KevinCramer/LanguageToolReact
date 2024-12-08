@@ -1,12 +1,12 @@
 import './Japanese.scss'
 
-import { languages as allLanguages } from '../../data/structured-data/words';
+import { languages as languagesVocab } from '../../data/structured-data/words';
 import LockIcon from '@mui/icons-material/Lock';
 import { useProtectedLink } from '../../helpers/use-protected-link';
 
 const JapaneseStudyGuide = () => { 
   const handleProtectedClick = useProtectedLink();
-  const japaneseVocab = allLanguages.find((l: any) => {
+  const japaneseVocab = (languagesVocab as any[]).find((l: any) => {
     return l.languageName === 'Japanese' && 
            l.topics.some((topic: any) => !topic.isAlphabet);
   });
@@ -22,7 +22,7 @@ const JapaneseStudyGuide = () => {
   const monthsOfYearVocabTopic = japaneseVocab?.topics.find((t: any)=> t.slugName === 'mon')
   const regularAdjectivesVocabTopic = japaneseVocab?.topics.find((t: any)=> t.slugName === 'adj1')
 
-  const japaneseWritingSystems = allLanguages.find((l: any) => {
+  const japaneseWritingSystems = (languagesVocab as any[]).find((l: any) => {
     return l.languageName === 'Japanese' && 
            l.topics.some((topic: any) => topic.isAlphabet);
   });

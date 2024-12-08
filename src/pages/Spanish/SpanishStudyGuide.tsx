@@ -7,7 +7,7 @@ import { useProtectedLink } from '../../helpers/use-protected-link';
 const SpanishStudyGuide = () => { 
   const handleProtectedClick = useProtectedLink(); 
 
-  const SpanishVocab = languagesVocab.find(l => l.languageName === 'Spanish')
+  const SpanishVocab = (languagesVocab as any[]).find(l => l.languageName === 'Spanish')
   ////
   const clothesVocabTopic = SpanishVocab?.topics.find((t: any)=> t.slugName === 'clo')
   const numbersVocabTopic = SpanishVocab?.topics.find((t: any)=> t.slugName === 'num')
@@ -23,7 +23,7 @@ const SpanishStudyGuide = () => {
   //
   const verbsVocabTopic = SpanishVocab?.topics.find((t: any)=> t.slugName === 'ver')
 
-  const SpanishGrammar = languagesGrammar.find(l => l.languageName === 'Spanish')
+  const SpanishGrammar = (languagesGrammar as any[]).find(l => l.languageName === 'Spanish')
   ////
   const definiteArticleGrammarTopic = SpanishGrammar?.topics
     .find((t: any)=> t.slugName === 'definite-article')
