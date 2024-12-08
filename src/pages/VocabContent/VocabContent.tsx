@@ -26,13 +26,23 @@ import { scramble } from '../../helpers/vocab-content-helpers';
 import StudyElement from '../../components/molecules/StudyElement/StudyElement';
 import { useAuth } from '../../contexts/AuthContext'
 import { useDispatch } from 'react-redux';
+import { sortTopics } from '../../helpers/words-data-helper';
 
 const VocabContent = (
   props: {
     languageNumber: number
     isWritingSystem?: boolean
     }) => {
-  let languages = allLanguages;
+      
+  //@ts-ignore
+  const { currentUser } = useAuth();
+  
+  const userIsLoggedIn = currentUser && currentUser.email
+
+  let languages = allLanguages.map(language => ({
+    ...language, // Spread the existing language properties
+    topics: sortTopics(language.topics, userIsLoggedIn), // Replace topics with sorted ones
+  }));
   const dispatch = useDispatch();
 
   const navigate = useNavigate();
@@ -51,9 +61,6 @@ const VocabContent = (
   useEffect(() => {
     checkIfMobile();
   }, []);
-
-  //@ts-ignore
-  const { currentUser } = useAuth();
 
   var urlSearchParams = new URLSearchParams(useLocation().search);
   const urlSettings = JSON.parse(
@@ -102,9 +109,8 @@ const VocabContent = (
   var [showTrueOrder,setShowTrueOrder] = useState(showTrueOrder)
   const changeOrder = () => { return setShowTrueOrder(!showTrueOrder)}
 
-  const userIsLoggedIn = currentUser && currentUser.email
   const changeCurrentTopic = (topic: Topic) => {
-    if(topic.isLocked && lingoCommandIsLocked ){
+    if(topic.isLocked && lingoCommandIsLocked && !userIsLoggedIn ){
       dispatch(denyPermission());
     }
     else {
@@ -292,6 +298,7 @@ const VocabContent = (
                           {topic.name} {
                             topic.isLocked 
                           && lingoCommandIsLocked 
+                          && !userIsLoggedIn
                           && <LockIcon style={{ fontSize: '20px' }}/>}
                         </div>
                       </Dropdown.Item>)}

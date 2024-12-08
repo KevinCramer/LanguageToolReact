@@ -7,10 +7,11 @@ import {
 import { lingoCommandIsLocked } from '../constants';
 
 export const sortTopics = (
-  topics: TopicWithOneAlphabet[] | TopicWithTwoAlphabets[] | TopicWithThreeAlphabets[]
+  topics: TopicWithOneAlphabet[] | TopicWithTwoAlphabets[] | TopicWithThreeAlphabets[],
+  userIsLoggedIn: boolean,
 ) => {
   return topics.sort((a: Topic, b: Topic) => {
-    if(lingoCommandIsLocked){
+    if(lingoCommandIsLocked && !userIsLoggedIn){
       if (a.isLocked === b.isLocked) {
         return a.name < b.name ? -1 : 1;
       }

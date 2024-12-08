@@ -470,6 +470,8 @@ import hiraganaVideoN from '../raw-data/writing-system-videos/japanese/hiragana/
 
 import { sortTopics } from '../../helpers/words-data-helper';
 import { Language, VerbConjugationEnglish, TopicWithOneAlphabet, TopicWithTwoAlphabets, TopicWithThreeAlphabets } from '../../../types/vocabTypes';
+import { useAccordionButton } from 'react-bootstrap';
+import { useAuth } from '../../contexts/AuthContext';
 
 export const englishVerbs: { [key: string]: VerbConjugationEnglish } = {
   'to call': {
@@ -2490,14 +2492,15 @@ const greekTopics: TopicWithTwoAlphabets[] = [
     { englishWord: 'scarf', foreignWord: ['kaskol', 'κασκόλ'], foreignAudio: '' }
   ] }
 ];
+
 export const languages: Language[] = 
         [
-          { languageName: 'Spanish', topics: sortTopics(spanishTopics), pronouns: spanishPronouns, numForeignAlphabets: 1 },
+          { languageName: 'Spanish', topics: spanishTopics, pronouns: spanishPronouns, numForeignAlphabets: 1 },
           // { languageName: 'French', topics: sortTopics(frenchTopics), pronouns: [], numForeignAlphabets: 1 },
           // { languageName: 'German', topics: sortTopics(germanTopics), pronouns: [], numForeignAlphabets: 1 },
           // { languageName: 'Italian', topics: sortTopics(italianTopics), pronouns: [], numForeignAlphabets: 1 },
-          { languageName: 'Japanese', topics: sortTopics(japaneseTopics.filter(topic => !topic.isAlphabet)), pronouns: [], numForeignAlphabets: 3 },
-          { languageName: 'Japanese', topics: sortTopics(japaneseTopics.filter(topic => topic.isAlphabet)), pronouns: [], numForeignAlphabets: 3 },
+          { languageName: 'Japanese', topics: japaneseTopics.filter(topic => !topic.isAlphabet), pronouns: [], numForeignAlphabets: 3 },
+          { languageName: 'Japanese', topics: japaneseTopics.filter(topic => topic.isAlphabet), pronouns: [], numForeignAlphabets: 3 },
           // { languageName: 'Mandarin', topics: sortTopics(mandarinTopics), pronouns: [], numForeignAlphabets: 2 },
           // { languageName: 'Korean', topics: sortTopics(koreanTopics), pronouns: [], numForeignAlphabets: 2 },
           // { languageName: 'Arabic', topics: sortTopics(arabicTopics), pronouns: [], numForeignAlphabets: 2 },
