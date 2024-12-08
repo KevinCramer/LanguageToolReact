@@ -3,8 +3,15 @@ import { languages as languagesGrammar } from '../../data/structured-data/gramma
 import { languages as languagesVocab } from '../../data/structured-data/words';
 import LockIcon from '@mui/icons-material/Lock';
 import { useProtectedLink } from '../../helpers/use-protected-link';
+import { lingoCommandIsLocked } from '../../constants';
+import { useAuth } from '../../contexts/AuthContext';
 
 const SpanishStudyGuide = () => { 
+
+  //@ts-ignore
+  const { currentUser } = useAuth();
+  
+  const userIsLoggedIn = currentUser && currentUser.email
   const handleProtectedClick = useProtectedLink(); 
 
   const SpanishVocab = (languagesVocab as any[]).find(l => l.languageName === 'Spanish')
@@ -46,42 +53,42 @@ const SpanishStudyGuide = () => {
                 <a onClick={handleProtectedClick(clothesVocabTopic)} 
                   href="/spanish/vocabulary?s=clo-T0TFT">
                   {clothesVocabTopic?.name.toLocaleLowerCase()}
-                  {clothesVocabTopic?.isLocked ? <LockIcon></LockIcon> : ''}
+                  {clothesVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
                 </a>
               </li>
               <li>
                 <a onClick={handleProtectedClick(numbersVocabTopic)}
                   href="/spanish/vocabulary?s=num-T0TFT">
                   {numbersVocabTopic?.name.toLocaleLowerCase()}
-                  {numbersVocabTopic?.isLocked ? <LockIcon></LockIcon> : ''}
+                  {numbersVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
                 </a>
               </li>
               <li>
                 <a onClick={handleProtectedClick(bodyVocabTopic)}
                   href="/spanish/vocabulary?s=bod-T0TFT">
                   {bodyVocabTopic?.name.toLocaleLowerCase()}
-                  {bodyVocabTopic?.isLocked ? <LockIcon></LockIcon> : ''}
+                  {bodyVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
                 </a>
               </li>
               <li>
                 <a onClick={handleProtectedClick(coloursVocabTopic)}
                   href="/spanish/vocabulary?s=col-T0TFT">
                   {coloursVocabTopic?.name.toLocaleLowerCase()}
-                  {coloursVocabTopic?.isLocked ? <LockIcon></LockIcon> : ''}
+                  {coloursVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
                 </a>
               </li>
               <li>
                 <a onClick={handleProtectedClick(foodVocabTopic)}
                   href="/spanish/vocabulary?s=foo-T0TFT">
                   {foodVocabTopic?.name.toLocaleLowerCase()}
-                  {foodVocabTopic?.isLocked ? <LockIcon></LockIcon> : ''}
+                  {foodVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
                 </a>
               </li>
               <li>
                 <a onClick={handleProtectedClick(homeVocabTopic)}
                   href="/spanish/vocabulary?s=hom-T0TFT">
                   {homeVocabTopic?.name.toLocaleLowerCase()}
-                  {homeVocabTopic?.isLocked ? <LockIcon></LockIcon> : ''}
+                  {homeVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
                 </a>
               </li>
               
@@ -89,7 +96,7 @@ const SpanishStudyGuide = () => {
                 <a onClick={handleProtectedClick(locationsVocabTopic)}
                   href="/spanish/vocabulary?s=loc-T0TFT">
                   {locationsVocabTopic?.name.toLocaleLowerCase()}
-                  {locationsVocabTopic?.isLocked ? <LockIcon></LockIcon> : ''}
+                  {locationsVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
                 </a>
               </li>
              
@@ -105,21 +112,21 @@ const SpanishStudyGuide = () => {
                 <a onClick={handleProtectedClick(conjunctionsVocabTopic)}
                   href="/spanish/vocabulary?s=con-T0TFT">
                   {conjunctionsVocabTopic?.name.toLocaleLowerCase()}
-                  {conjunctionsVocabTopic?.isLocked ? <LockIcon></LockIcon> : ''}
+                  {conjunctionsVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
                 </a>
               </li>
               <li>
                 <a onClick={handleProtectedClick(pronounsVocabTopic)}
                   href="/spanish/vocabulary?s=pro-T0TFT">
                   {pronounsVocabTopic?.name.toLocaleLowerCase()}
-                  {pronounsVocabTopic?.isLocked ? <LockIcon></LockIcon> : ''}
+                  {pronounsVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
                 </a>
               </li>
               <li>
                 <a onClick={handleProtectedClick(questionWordsVocabTopic)}
                   href="/spanish/vocabulary?s=que-T0TFT">
                   {questionWordsVocabTopic?.name.toLocaleLowerCase()}
-                  {questionWordsVocabTopic?.isLocked ? <LockIcon></LockIcon> : ''}
+                  {questionWordsVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
                 </a>
               </li>
             </ul>
@@ -132,45 +139,44 @@ const SpanishStudyGuide = () => {
                 <a onClick={handleProtectedClick(definiteArticleGrammarTopic)}
                   href="/spanish/grammar/definite-article">
                   {definiteArticleGrammarTopic?.name.toLocaleLowerCase()}
-                  {definiteArticleGrammarTopic?.isLocked ? <LockIcon></LockIcon> : ''}
+                  {definiteArticleGrammarTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
                 </a>
               </li>
               <li>
                 <a onClick={handleProtectedClick(indefiniteArticleGrammarTopic)}
                   href="/spanish/grammar/indefinite-article">
                   {indefiniteArticleGrammarTopic?.name.toLocaleLowerCase()}
-                  {indefiniteArticleGrammarTopic?.isLocked ? <LockIcon></LockIcon> : ''}
+                  {indefiniteArticleGrammarTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
                 </a>
               </li>
               <li>
                 <a onClick={handleProtectedClick(nounsGrammarTopic)}
                   href="/spanish/grammar/nouns">
                   {nounsGrammarTopic?.name.toLocaleLowerCase()}
-                  {nounsGrammarTopic?.isLocked ? <LockIcon></LockIcon> : ''}
+                  {nounsGrammarTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
                 </a>
               </li>
               <li>
                 <a onClick={handleProtectedClick(adjectivesGrammarTopic)}
                   href="/spanish/grammar/adjectives">
                   {adjectivesGrammarTopic?.name.toLocaleLowerCase()}
-                  {adjectivesGrammarTopic?.isLocked ? <LockIcon></LockIcon> : ''}
+                  {adjectivesGrammarTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
                 </a>
               </li>
               <li>
                 <a onClick={handleProtectedClick(verbsGrammarTopic)}
                   href="/spanish/grammar/verbs">
                   {verbsGrammarTopic?.name.toLocaleLowerCase()}
-                  {verbsGrammarTopic?.isLocked ? <LockIcon></LockIcon> : ''}
+                  {verbsGrammarTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
                 </a>
               </li>
             </ol>
           </div> 
           <div style={{ paddingTop:'20px' }}>
-            <b>Phase 4:</b> Spend 1/3rd of time learning 
-            <a onClick={handleProtectedClick(verbsVocabTopic)}
+            <b>Phase 4:</b> Spend 1/3rd of time learning <a onClick={handleProtectedClick(verbsVocabTopic)}
               href="/spanish/vocabulary?s=ver-T0TFT">
               {verbsVocabTopic?.name.toLocaleLowerCase()}
-              {verbsVocabTopic?.isLocked ? <LockIcon></LockIcon> : ''}
+              {verbsVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
             </a>,
              1/3 of time learning <a href="/spanish/vocabulary?s=clo-T0TFT">vocabulary</a>, 1/3 of time doing <a href="/spanish/comprehension/shopping-for-family-meals?eng=F&L=WritingSystem1&R=English">reading and listening comprehension</a>.
           </div> 
