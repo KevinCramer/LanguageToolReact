@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Paragraph, SentenceWithNumAlphabets, TranscriptionType } from '../../../../types/Comprehension';
+import { Paragraph, SentenceWithNumAlphabets, TranscriptionType } from '../../../../types/learningSections/ComprehensionTypes';
 import AudioPlayer from '../../atoms/CustomAudioPlayer/CustomAudioPlayer';
 
 const RenderTableCell = ({

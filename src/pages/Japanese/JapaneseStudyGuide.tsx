@@ -1,10 +1,12 @@
 import './Japanese.scss'
-
+import { LanguageNames, LearningSections } from '../../../types/LearningSectionsTypes'
+import { createURL } from '../../helpers/createURL';
 import { languages as languagesVocab } from '../../data/structured-data/words';
-import LockIcon from '@mui/icons-material/Lock';
-import { useProtectedLink } from '../../helpers/use-protected-link';
 import { lingoCommandIsLocked } from '../../constants';
+import LockIcon from '@mui/icons-material/Lock';
 import { useAuth } from '../../contexts/AuthContext';
+import { useProtectedLink } from '../../helpers/use-protected-link';
+import { VocabLanguage } from '../../../types/learningSections/VocabTypes';
 
 const JapaneseStudyGuide = () => { 
 
@@ -29,7 +31,7 @@ const JapaneseStudyGuide = () => {
   const monthsOfYearVocabTopic = japaneseVocab?.topics.find((t: any)=> t.slugName === 'mon')
   const regularAdjectivesVocabTopic = japaneseVocab?.topics.find((t: any)=> t.slugName === 'adj1')
 
-  const japaneseWritingSystems = (languagesVocab as any[]).find((l: any) => {
+  const japaneseWritingSystems = (languagesVocab as VocabLanguage[]).find((l: any) => {
     return l.languageName === 'Japanese' && 
            l.topics.some((topic: any) => topic.isAlphabet);
   });
@@ -42,6 +44,8 @@ const JapaneseStudyGuide = () => {
     .find((t: any)=> t.slugName === 'hiryoon')
   const katakanaBasicWritingSystem = japaneseWritingSystems?.topics
     .find((t: any)=> t.slugName === 'kat')
+
+  console.log('hiraganaBasicWritingSystem: ', (hiraganaBasicWritingSystem || {}).slugName)
  
   return (
     <>
@@ -57,20 +61,40 @@ const JapaneseStudyGuide = () => {
               <ul>
                 <li>
                   <a onClick={handleProtectedClick(hiraganaBasicWritingSystem)}
-                    href="/japanese/writing-systems?s=hir-T0TFT"> 46 basic hiragana</a>
+                    href={
+                      createURL(
+                        LanguageNames.Japanese,
+                        LearningSections.WritingSystem,
+                        hiraganaBasicWritingSystem)
+                    }>
+                       46 basic hiragana
+                  </a>
                 </li>
                 <li>
                   <a onClick={handleProtectedClick(hiraganaDakutenWritingSystem)}
-                    href="/japanese/writing-systems?s=hirdak-T0TFT">
+                    href={
+                      createURL(
+                        LanguageNames.Japanese,
+                        LearningSections.WritingSystem,
+                        hiraganaDakutenWritingSystem)
+                    }>
+
                    25 hiragana with dakuten and han-dakuten
-                    {hiraganaDakutenWritingSystem?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
+                    {hiraganaDakutenWritingSystem?.isLocked &&
+                     lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
                   </a>
                 </li>
                 <li>
                   <a onClick={handleProtectedClick(hiraganaYoonWritingSystem)}
-                    href="/japanese/writing-systems?s=hiryoon-T0TFT">
-                  36 Hiragana Yōon combinations
-                    {hiraganaYoonWritingSystem?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
+                    href={
+                      createURL(
+                        LanguageNames.Japanese,
+                        LearningSections.WritingSystem,
+                        hiraganaYoonWritingSystem)
+                    }>
+                      36 Hiragana Yōon combinations
+                    {hiraganaYoonWritingSystem?.isLocked &&
+                     lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
                   </a>
                 </li>
               </ul>
@@ -82,9 +106,15 @@ const JapaneseStudyGuide = () => {
             <ul>
               <li>
                 <a onClick={handleProtectedClick(katakanaBasicWritingSystem)}
-                  href="/japanese/writing-systems?s=kat-T0TFT">
-                46 basic katakana
-                  {katakanaBasicWritingSystem?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
+                  href={
+                    createURL(
+                      LanguageNames.Japanese,
+                      LearningSections.WritingSystem,
+                      katakanaBasicWritingSystem)
+                  }>  
+                    46 basic katakana
+                  {katakanaBasicWritingSystem?.isLocked &&
+                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
                 </a>
               </li>
               <li>
@@ -100,79 +130,153 @@ const JapaneseStudyGuide = () => {
             <ul>
               <li>
                 <a onClick={handleProtectedClick(clothesVocabTopic)}
-                  href="/japanese/vocabulary?s=clo-T0TFT">
-                  {clothesVocabTopic?.name.toLocaleLowerCase()}
-                  {clothesVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
+                  href={
+                    createURL(
+                      LanguageNames.Japanese,
+                      LearningSections.Vocab,
+                      clothesVocabTopic
+                    )
+                  }>                    {clothesVocabTopic?.name.toLocaleLowerCase()}
+                  {clothesVocabTopic?.isLocked &&
+                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
                 </a>
               </li>
               <li>
                 < a onClick={handleProtectedClick(coloursVocabTopic )}
-                  href="/japanese/vocabulary?s=col-T0TFT">
+                  href={
+                    createURL(
+                      LanguageNames.Japanese,
+                      LearningSections.Vocab,
+                      coloursVocabTopic
+                    )
+                  }>
                   {coloursVocabTopic?.name.toLocaleLowerCase()}
-                  {coloursVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
+                  {coloursVocabTopic?.isLocked &&
+                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
                 </a>
               </li>
               <li>
                 < a onClick={handleProtectedClick(numbersVocabTopic)}
-                  href="/japanese/vocabulary?s=num-T0TFT">
+                  href={
+                    createURL(
+                      LanguageNames.Japanese,
+                      LearningSections.Vocab,
+                      numbersVocabTopic
+                    )
+                  }>
                   {numbersVocabTopic?.name.toLocaleLowerCase()}
-                  {numbersVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
+                  {numbersVocabTopic?.isLocked &&
+                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
                 </a>
               </li>
               <li>
                 <a onClick={handleProtectedClick(animalsVocabTopic)}
-                  href="/japanese/vocabulary?s=animals-T0TFT">
+                  href={
+                    createURL(
+                      LanguageNames.Japanese,
+                      LearningSections.Vocab,
+                      animalsVocabTopic
+                    )
+                  }>
                   {animalsVocabTopic?.name.toLocaleLowerCase()}
-                  {animalsVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
+                  {animalsVocabTopic?.isLocked &&
+                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
                 </a>
               </li>
               <li>
                 < a onClick={handleProtectedClick(bodyVocabTopic )}
-                  href="/japanese/vocabulary?s=body-T0TFT">
+                  href={
+                    createURL(
+                      LanguageNames.Japanese,
+                      LearningSections.Vocab,
+                      bodyVocabTopic
+                    )
+                  }>
                   {bodyVocabTopic?.name.toLocaleLowerCase()}
-                  {bodyVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
+                  {bodyVocabTopic?.isLocked &&
+                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
                 </a>
               </li>
               <li>
                 < a onClick={handleProtectedClick(daysOfWeekVocabTopic )}
-                  href="/japanese/vocabulary?s=day-T0TFT">
-                  {daysOfWeekVocabTopic?.name.toLocaleLowerCase()}
-                  {daysOfWeekVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
+                  href={
+                    createURL(
+                      LanguageNames.Japanese,
+                      LearningSections.Vocab,
+                      daysOfWeekVocabTopic
+                    )
+                  }>                  {daysOfWeekVocabTopic?.name.toLocaleLowerCase()}
+                  {daysOfWeekVocabTopic?.isLocked &&
+                  lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
                 </a>
               </li>
               <li>
                 < a onClick={handleProtectedClick(foodsVocabTopic)}
-                  href="/japanese/vocabulary?s=food-T0TFT">
-                  {foodsVocabTopic?.name.toLocaleLowerCase()}
-                  {foodsVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
+                  href={
+                    createURL(
+                      LanguageNames.Japanese,
+                      LearningSections.Vocab,
+                      foodsVocabTopic
+                    )
+                  }>                  {foodsVocabTopic?.name.toLocaleLowerCase()}
+                  {foodsVocabTopic?.isLocked &&
+                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
                 </a>
               </li>
               <li>
                 < a onClick={handleProtectedClick(irregularAdjectivesVocabTopic)}
-                  href="/japanese/vocabulary?s=adj2-T0TFT">
+                  href={
+                    createURL(
+                      LanguageNames.Japanese,
+                      LearningSections.Vocab,
+                      irregularAdjectivesVocabTopic
+                    )
+                  }>            
                   {irregularAdjectivesVocabTopic?.name.toLocaleLowerCase()}
-                  {irregularAdjectivesVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
+                  {irregularAdjectivesVocabTopic?.isLocked && 
+                  lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
                 </a> 
               </li>
               <li>
                 < a onClick={handleProtectedClick(locationVocabTopic)}
-                  href="/japanese/vocabulary?s=locations-T0TFT">
+                  href={
+                    createURL(
+                      LanguageNames.Japanese,
+                      LearningSections.Vocab,
+                      locationVocabTopic
+                    )
+                  }>
                   {locationVocabTopic?.name.toLocaleLowerCase()}
-                  {locationVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
+                  {locationVocabTopic?.isLocked && 
+                  lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
                 </a>
               </li>
               <li>
                 < a onClick={handleProtectedClick(monthsOfYearVocabTopic )}
-                  href="/japanese/vocabulary?s=mon-T0TFT">
+                  href={
+                    createURL(
+                      LanguageNames.Japanese,
+                      LearningSections.Vocab,
+                      monthsOfYearVocabTopic
+                    )
+                  }>
                   {monthsOfYearVocabTopic?.name.toLocaleLowerCase()}
-                  {monthsOfYearVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
+                  {monthsOfYearVocabTopic?.isLocked &&
+                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
                 </a> 
               </li>
               <li>
                 < a onClick={handleProtectedClick(regularAdjectivesVocabTopic )}
-                  href="/japanese/vocabulary?s=adj1-T0TFT">
+                  href={
+                    createURL(
+                      LanguageNames.Japanese,
+                      LearningSections.Vocab,
+                      regularAdjectivesVocabTopic
+                    )
+                  }>
                   {regularAdjectivesVocabTopic?.name.toLocaleLowerCase()}
-                  {regularAdjectivesVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
+                  {regularAdjectivesVocabTopic?.isLocked 
+                  && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
                 </a> 
               </li>
             </ul>

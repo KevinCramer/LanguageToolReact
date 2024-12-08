@@ -5,7 +5,7 @@ export type Topic = {
     isLocked: boolean;
 }
 
-export type Language = {
+export type GrammarLanguage = {
     languageName: string;
     topics: Topic[];
 }

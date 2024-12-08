@@ -468,7 +468,7 @@ import hiraganaVideoWa from '../raw-data/writing-system-videos/japanese/hiragana
 import hiraganaVideoWo from '../raw-data/writing-system-videos/japanese/hiragana/wo.mp4'
 import hiraganaVideoN from '../raw-data/writing-system-videos/japanese/hiragana/n.mp4'
 
-import { Language, VerbConjugationEnglish, TopicWithOneAlphabet, TopicWithTwoAlphabets, TopicWithThreeAlphabets } from '../../../types/vocabTypes';
+import { VocabLanguage, VerbConjugationEnglish, TopicWithOneAlphabet, TopicWithTwoAlphabets, TopicWithThreeAlphabets } from '../../../types/learningSections/VocabTypes';
 
 export const englishVerbs: { [key: string]: VerbConjugationEnglish } = {
   'to call': {
@@ -2490,7 +2490,7 @@ const greekTopics: TopicWithTwoAlphabets[] = [
   ] }
 ];
 
-export const languages: Language[] = 
+export const languages: VocabLanguage[] = 
         [
           { languageName: 'Spanish', topics: spanishTopics, pronouns: spanishPronouns, numForeignAlphabets: 1 },
           // { languageName: 'French', topics: frenchTopics, pronouns: [], numForeignAlphabets: 1 },

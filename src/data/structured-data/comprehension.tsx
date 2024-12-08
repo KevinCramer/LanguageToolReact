@@ -1,4 +1,4 @@
-import { AudioTranscriptionWithFourAlphabet, AudioTranscriptionWithOneAlphabet, Language } from '../../../types/Comprehension'
+import { AudioTranscriptionWithFourAlphabet, AudioTranscriptionWithOneAlphabet, ComprehensionLanguage } from '../../../types/learningSections/ComprehensionTypes'
 
 import shoppingForFamilyMealsParagraph1 from '../raw-data/listening-comprehension//spanish/shopping-for-family-meals-paragraph1.mp3'
 import shoppingForFamilyMealsParagraph2 from '../raw-data/listening-comprehension//spanish/shopping-for-family-meals-paragraph2.mp3'
@@ -332,7 +332,7 @@ const spanishAudioTranscriptions: AudioTranscriptionWithOneAlphabet[] = [
 ]
 
 export const 
-  languages: Language[] = 
+  languages: ComprehensionLanguage[] = 
         [
           { languageName: 'Spanish', audioTranscriptions: (spanishAudioTranscriptions), numForeignAlphabets: 1 },
           { languageName: 'Japanese', audioTranscriptions: (japaneseAudioTranscriptions), numForeignAlphabets: 4 },

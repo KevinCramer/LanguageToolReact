@@ -1,14 +1,12 @@
 import './Comprehension.scss';
-import { AudioTranscription, Language, Paragraph, SentenceWithNumAlphabets, TranscriptionType } from '../../../types/Comprehension';
+import { AudioTranscription, ComprehensionLanguage, TranscriptionType } from '../../../types/learningSections/ComprehensionTypes';
 import { Container, DropdownItem, Modal, Navbar as NavbarBs, Table } from 'react-bootstrap';
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { languages as allLanguages } from '../../data/structured-data/comprehension';
-import AudioPlayer from '../../components/atoms/CustomAudioPlayer/CustomAudioPlayer';
 import CustomDropDownButton from '../../components/atoms/CustomDropDownButton/CustomDropDownButton';
 import Dropdown from 'react-bootstrap/Dropdown';
 import { lightGrey, lingoCommandIsLocked, mobileBreakPoint } from '../../constants';
-import CustomButton from '../../components/atoms/CustomButton/CustomButton';
 import CustomDropDownButtonWhite from '../../components/atoms/CustomDropDownButtonWhite/CustomDropDownButtonWhite';
 import CustomSwitch from '../../components/atoms/CustomSwitch/CustomSwitch';
 import RenderTableCell from '../../components/molecules/RenderTableCell/RenderTableCell';
@@ -44,7 +42,7 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
     checkIfMobile();
   }, []);
 
-  const currentLanguage: Language = allLanguages[props.languageNumber];
+  const currentLanguage: ComprehensionLanguage = allLanguages[props.languageNumber];
 
   const initialAudioTranscription =
     currentLanguage.audioTranscriptions.find((t) => t.slugName === topicSlug) || currentLanguage.audioTranscriptions[0];

@@ -5,6 +5,8 @@ import LockIcon from '@mui/icons-material/Lock';
 import { useProtectedLink } from '../../helpers/use-protected-link';
 import { lingoCommandIsLocked } from '../../constants';
 import { useAuth } from '../../contexts/AuthContext';
+import { LanguageNames, LearningSections } from '../../../types/LearningSectionsTypes';
+import { createURL } from '../../helpers/createURL';
 
 const SpanishStudyGuide = () => { 
 
@@ -51,42 +53,78 @@ const SpanishStudyGuide = () => {
             <ul>
               <li>
                 <a onClick={handleProtectedClick(clothesVocabTopic)} 
-                  href="/spanish/vocabulary?s=clo-T0TFT">
+                  href={
+                    createURL(
+                      LanguageNames.Spanish,
+                      LearningSections.Vocab,
+                      clothesVocabTopic
+                    )
+                  }>
                   {clothesVocabTopic?.name.toLocaleLowerCase()}
                   {clothesVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
                 </a>
               </li>
               <li>
                 <a onClick={handleProtectedClick(numbersVocabTopic)}
-                  href="/spanish/vocabulary?s=num-T0TFT">
+                  href={
+                    createURL(
+                      LanguageNames.Spanish,
+                      LearningSections.Vocab,
+                      numbersVocabTopic
+                    )
+                  }>
                   {numbersVocabTopic?.name.toLocaleLowerCase()}
                   {numbersVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
                 </a>
               </li>
               <li>
                 <a onClick={handleProtectedClick(bodyVocabTopic)}
-                  href="/spanish/vocabulary?s=bod-T0TFT">
+                  href={
+                    createURL(
+                      LanguageNames.Spanish,
+                      LearningSections.Vocab,
+                      bodyVocabTopic
+                    )
+                  }>
                   {bodyVocabTopic?.name.toLocaleLowerCase()}
                   {bodyVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
                 </a>
               </li>
               <li>
                 <a onClick={handleProtectedClick(coloursVocabTopic)}
-                  href="/spanish/vocabulary?s=col-T0TFT">
+                  href={
+                    createURL(
+                      LanguageNames.Spanish,
+                      LearningSections.Vocab,
+                      coloursVocabTopic
+                    )
+                  }>
                   {coloursVocabTopic?.name.toLocaleLowerCase()}
                   {coloursVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
                 </a>
               </li>
               <li>
                 <a onClick={handleProtectedClick(foodVocabTopic)}
-                  href="/spanish/vocabulary?s=foo-T0TFT">
+                  href={
+                    createURL(
+                      LanguageNames.Spanish,
+                      LearningSections.Vocab,
+                      foodVocabTopic
+                    )
+                  }>
                   {foodVocabTopic?.name.toLocaleLowerCase()}
                   {foodVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
                 </a>
               </li>
               <li>
                 <a onClick={handleProtectedClick(homeVocabTopic)}
-                  href="/spanish/vocabulary?s=hom-T0TFT">
+                  href={
+                    createURL(
+                      LanguageNames.Spanish,
+                      LearningSections.Vocab,
+                      homeVocabTopic
+                    )
+                  }>
                   {homeVocabTopic?.name.toLocaleLowerCase()}
                   {homeVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
                 </a>
@@ -94,7 +132,13 @@ const SpanishStudyGuide = () => {
               
               <li>
                 <a onClick={handleProtectedClick(locationsVocabTopic)}
-                  href="/spanish/vocabulary?s=loc-T0TFT">
+                  href={
+                    createURL(
+                      LanguageNames.Spanish,
+                      LearningSections.Vocab,
+                      locationsVocabTopic
+                    )
+                  }>
                   {locationsVocabTopic?.name.toLocaleLowerCase()}
                   {locationsVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
                 </a>
@@ -110,21 +154,39 @@ const SpanishStudyGuide = () => {
             <ul>  
               <li>
                 <a onClick={handleProtectedClick(conjunctionsVocabTopic)}
-                  href="/spanish/vocabulary?s=con-T0TFT">
+                  href={
+                    createURL(
+                      LanguageNames.Spanish,
+                      LearningSections.Vocab,
+                      conjunctionsVocabTopic
+                    )
+                  }>
                   {conjunctionsVocabTopic?.name.toLocaleLowerCase()}
                   {conjunctionsVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
                 </a>
               </li>
               <li>
                 <a onClick={handleProtectedClick(pronounsVocabTopic)}
-                  href="/spanish/vocabulary?s=pro-T0TFT">
+                  href={
+                    createURL(
+                      LanguageNames.Spanish,
+                      LearningSections.Vocab,
+                      pronounsVocabTopic
+                    )
+                  }>
                   {pronounsVocabTopic?.name.toLocaleLowerCase()}
                   {pronounsVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
                 </a>
               </li>
               <li>
                 <a onClick={handleProtectedClick(questionWordsVocabTopic)}
-                  href="/spanish/vocabulary?s=que-T0TFT">
+                  href={
+                    createURL(
+                      LanguageNames.Spanish,
+                      LearningSections.Vocab,
+                      questionWordsVocabTopic
+                    )
+                  }>
                   {questionWordsVocabTopic?.name.toLocaleLowerCase()}
                   {questionWordsVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
                 </a>
@@ -137,35 +199,70 @@ const SpanishStudyGuide = () => {
             <ol>
               <li>
                 <a onClick={handleProtectedClick(definiteArticleGrammarTopic)}
-                  href="/spanish/grammar/definite-article">
+                  href={
+                    createURL(
+                      LanguageNames.Spanish,
+                      LearningSections.Grammar,
+                      definiteArticleGrammarTopic,
+                      true
+                    )
+                  }>
                   {definiteArticleGrammarTopic?.name.toLocaleLowerCase()}
                   {definiteArticleGrammarTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
                 </a>
               </li>
               <li>
                 <a onClick={handleProtectedClick(indefiniteArticleGrammarTopic)}
-                  href="/spanish/grammar/indefinite-article">
+                  href={
+                    createURL(
+                      LanguageNames.Spanish,
+                      LearningSections.Grammar,
+                      indefiniteArticleGrammarTopic,
+                      true
+                    )
+                  }>
                   {indefiniteArticleGrammarTopic?.name.toLocaleLowerCase()}
                   {indefiniteArticleGrammarTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
                 </a>
               </li>
               <li>
                 <a onClick={handleProtectedClick(nounsGrammarTopic)}
-                  href="/spanish/grammar/nouns">
+                  href={
+                    createURL(
+                      LanguageNames.Spanish,
+                      LearningSections.Grammar,
+                      nounsGrammarTopic,
+                      true
+                    )
+                  }>
                   {nounsGrammarTopic?.name.toLocaleLowerCase()}
                   {nounsGrammarTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
                 </a>
               </li>
               <li>
                 <a onClick={handleProtectedClick(adjectivesGrammarTopic)}
-                  href="/spanish/grammar/adjectives">
+                  href={
+                    createURL(
+                      LanguageNames.Spanish,
+                      LearningSections.Grammar,
+                      adjectivesGrammarTopic,
+                      true
+                    )
+                  }>
                   {adjectivesGrammarTopic?.name.toLocaleLowerCase()}
                   {adjectivesGrammarTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
                 </a>
               </li>
               <li>
                 <a onClick={handleProtectedClick(verbsGrammarTopic)}
-                  href="/spanish/grammar/verbs">
+                  href={
+                    createURL(
+                      LanguageNames.Spanish,
+                      LearningSections.Grammar,
+                      verbsGrammarTopic,
+                      true
+                    )
+                  }>
                   {verbsGrammarTopic?.name.toLocaleLowerCase()}
                   {verbsGrammarTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
                 </a>
@@ -174,7 +271,14 @@ const SpanishStudyGuide = () => {
           </div> 
           <div style={{ paddingTop:'20px' }}>
             <b>Phase 4:</b> Spend 1/3rd of time learning <a onClick={handleProtectedClick(verbsVocabTopic)}
-              href="/spanish/vocabulary?s=ver-T0TFT">
+              href={
+                createURL(
+                  LanguageNames.Spanish,
+                  LearningSections.Vocab,
+                  verbsVocabTopic,
+                  true
+                )
+              }>
               {verbsVocabTopic?.name.toLocaleLowerCase()}
               {verbsVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon></LockIcon> : ''}
             </a>,

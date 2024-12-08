@@ -1,7 +1,7 @@
 /* eslint-disable @stylistic/js/max-len */
 // source for all these grammar rules: 
 
-import { Language, Topic } from '../../../types/grammarTypes'
+import { GrammarLanguage, Topic } from '../../../types/learningSections/GrammarTypes'
 
 // https://www.spanish.academy/blog/spanish-grammar-for-beginners-8-parts-of-speech/
 const japaneseTopics: Topic[] = [
@@ -49,7 +49,7 @@ const spanishTopics: Topic[] = [
 
 ]
 
-export const languages: Language[] = 
+export const languages: GrammarLanguage[] = 
         [
           { languageName: 'Spanish', topics: (spanishTopics) },
           { languageName: 'Japanese', topics: (japaneseTopics) },

@@ -1,7 +1,7 @@
 
 import './GrammarContent.scss'
 import { Container, Navbar as NavbarBs } from 'react-bootstrap';
-import { Language, Topic } from '../../../types/grammarTypes';
+import { GrammarLanguage, Topic } from '../../../types/learningSections/GrammarTypes';
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import CustomDropDownButton from '../../components/atoms/CustomDropDownButton/CustomDropDownButton';
@@ -26,7 +26,7 @@ const GrammarContent = (
   
   const userIsLoggedIn = currentUser && currentUser.email
 
-  var currentLanguage: Language = languages[props.languageNumber]
+  var currentLanguage: GrammarLanguage = languages[props.languageNumber]
 
   var currentTopic = (currentLanguage.topics as Topic[])
     .find(t => t.slugName === topicSlug) || currentLanguage.topics[0]

@@ -67,7 +67,7 @@ export type TopicWithThreeAlphabets = {
 
 export type Topic = TopicWithOneAlphabet | TopicWithTwoAlphabets | TopicWithThreeAlphabets;
 
-export type Language = {
+export type VocabLanguage = {
     languageName: string;
     topics: TopicWithOneAlphabet[] | TopicWithTwoAlphabets[] | TopicWithThreeAlphabets[];
     pronouns: string[];

@@ -3,7 +3,7 @@ import {
   TopicWithOneAlphabet,
   TopicWithThreeAlphabets,
   TopicWithTwoAlphabets
-} from '../../types/vocabTypes';
+} from '../../types/learningSections/VocabTypes';
 import { lingoCommandIsLocked } from '../constants';
 
 export const sortTopics = (

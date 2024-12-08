@@ -2,14 +2,14 @@ import '../../components/atoms/CustomDropDownButton/CustomDropDownButton.scss'
 import './VocabContent.scss'
 import { Container, Modal, Navbar as NavbarBs, Table } from 'react-bootstrap';
 import {
-  Language,
-  Topic, 
-  VerbConjugationEnglish,
+  Topic,
+  VerbConjugationEnglish, 
+  VocabLanguage,
   Word,
   WordWithOneAlphabet, 
   WordWithThreeAlphabets, 
   WordWithTwoAlphabets 
-} from '../../../types/vocabTypes'
+} from '../../../types/learningSections/VocabTypes'
 import { queryParamCompress, queryParamDecompress } from '../../helpers/query-param-helpers'
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -67,7 +67,7 @@ const VocabContent = (
     queryParamDecompress(urlSearchParams.get('s') as string) as string
   ) || []
   const urlLanguage = urlSettings[0]
-  var currentLanguage: Language = languages
+  var currentLanguage: VocabLanguage = languages
     .find(l => languageToSlugs[l.languageName] === urlLanguage) || languages[props.languageNumber]
   var [currentLanguage,setLanguage] = useState(currentLanguage);
  
