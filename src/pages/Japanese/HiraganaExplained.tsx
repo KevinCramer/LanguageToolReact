@@ -1,7 +1,9 @@
+import { useProtectedLink } from '../../helpers/use-protected-link';
 import './Japanese.scss'
 
 const HiraganaExplained = () => { 
- 
+  const handleProtectedClick = useProtectedLink();
+
   return (
     <>
       <div className="page-container">
@@ -14,7 +16,7 @@ const HiraganaExplained = () => {
             <b>Basic Hiragana</b>  has <a href="/japanese/writing-systems?s=hir-T0TFT">46 sounds</a>.
           </div>
           <div style={{ paddingTop:'20px' }}>
-            <b>Dakuten and Han-Dakuten</b> create another <a href="/japanese/writing-systems?s=hirdak-T0TFT">25 hiragana variations</a>. <br></br>
+            <b>Dakuten and Han-Dakuten</b> create another <a onClick={handleProtectedClick} href="/japanese/writing-systems?s=hirdak-T0TFT">25 hiragana variations</a>. <br></br>
             Dakuten and han-dakuten are marks added on top of hiragana that alter pronunciation. 
             <div style={{ height: '0px' }}>
 
@@ -30,7 +32,7 @@ const HiraganaExplained = () => {
             </div>      
           </div>
           <div style={{ paddingTop:'0px' }}>
-            <b>Yōon</b>  creates an additional <a href="/japanese/writing-systems?s=hiryoon-T0TFT">36 hiragana combinations</a>. <div></div>
+            <b>Yōon</b>  creates an additional <a onClick={handleProtectedClick} href="/japanese/writing-systems?s=hiryoon-T0TFT">36 hiragana combinations</a>. <div></div>
             Some hiragana combine to form Yōon sounds. In these combinations,
               the first character remains full-sized, while the second is smaller.
               Examples like <b>きゃ(kya) </b>and <b>しょ(sho)</b> represent single, blended 
