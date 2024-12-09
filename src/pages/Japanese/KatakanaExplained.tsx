@@ -57,14 +57,14 @@ const KatakanaExplained = () => {
       <tr style={{ height: '40px' }}>
         <td>キ (ki) → ギ (gi)</td>
         <td>シ (shi) → ジ (ji)</td>
-        <td>チ (chi) → ヂ (di)*</td>
+        <td>チ (chi) → <b>ヂ (di)¹</b></td>
         <td>ヒ (hi) → ビ (bi)</td>
         <td>ヒ (hi) → ピ (pi)</td>
       </tr>
       <tr style={{ height: '40px' }}>
         <td>ク (ku) → グ (gu)</td>
         <td>ス (su) → ズ (zu)</td>
-        <td>ツ (tsu) → ヅ (du)*</td>
+        <td>ツ (tsu) → <b>ヅ (du)²</b></td>
         <td>フ (fu) → ブ (bu)</td>
         <td>フ (fu) → プ (pu)</td>
       </tr>
@@ -91,7 +91,7 @@ const KatakanaExplained = () => {
         <div className="central-container">
           <h4 style={{ paddingBottom: '30px' }}>Katakana Explained</h4>
           <div>
-          Learning katakana is the second step to learning japanese. By learning all 5 concepts below you will learn the basics of pronouncing Japanese loan words. 
+          Katakana is mainly used to write japanese loan words. For example in Japanese the word for 'camera' is <b>カメラ (kamera)</b>. By learning all 5 concepts below you will learn the basics of pronouncing such loan words.
           </div>
           <div style={{ paddingTop:'30px' }}>
             <b style={{ fontSize:'20px' }}>Basic Katakana</b>  has <a onClick={handleProtectedClick(katakanaBasicWritingSystem)}
@@ -156,10 +156,10 @@ const KatakanaExplained = () => {
                     </div>
                     {dakutenTable}
                     <div style={{ marginTop: '20px' }}>
-                    チ is written in romaji as <b>di</b> but is pronounced <b>ji</b>.
+                    (1) ヂ is written in romaji as <b>di</b> but is pronounced <b>ji</b>.
                     </div>
                     <div style={{ marginTop: '10px' }}>
-                    ツ is written in romaji as <b>du</b> but is pronounced <b>zu</b>.
+                    (2) ヅ is written in romaji as <b>du</b> but is pronounced <b>zu</b>.
                     </div>
                   </div>
                 )}
