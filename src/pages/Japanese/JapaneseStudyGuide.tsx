@@ -55,7 +55,7 @@ const JapaneseStudyGuide = () => {
       <div className="page-container">
         <div className="central-container">
           <h4 style={{ paddingBottom: '30px' }}>Japanese Study Guide</h4>
-          <div style={{ display:'flex', justifyContent: 'center' }}>
+          {false && <div style={{ display:'flex', justifyContent: 'center' }}>
 
           I want to learn  &nbsp;
             <select 
@@ -73,7 +73,7 @@ const JapaneseStudyGuide = () => {
               <option value="1">intermediate</option>
               <option value="2">advanced</option>
             </select> &nbsp;Japanese
-          </div>
+          </div>}
           <div style={{ height: '40px' }}></div>
           <div>
             <b>Phase 1:</b> Spend a few minutes reading about <a href="/japanese/writing-systems-explained">Japanese writing systems</a>.
