@@ -149,6 +149,11 @@ const KatakanaExplained = () => {
                       zIndex: 1000,
                     }}
                   >
+                    <div style={{ width: '100%', display: 'flex', justifyContent: 'right', marginBottom: '10px' }}>
+                      <button onClick={toggleModal} style={{ marginTop: '10px' }}>
+                        Close
+                      </button>
+                    </div>
                     {dakutenTable}
                     <div style={{ marginTop: '20px' }}>
                     チ is written in romaji as <b>di</b> but is pronounced <b>ji</b>.
@@ -156,9 +161,6 @@ const KatakanaExplained = () => {
                     <div style={{ marginTop: '10px' }}>
                     ツ is written in romaji as <b>du</b> but is pronounced <b>zu</b>.
                     </div>
-                    <button onClick={toggleModal} style={{ marginTop: '10px' }}>
-            Close
-                    </button>
                   </div>
                 )}
 
