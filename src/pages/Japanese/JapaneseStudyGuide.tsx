@@ -43,6 +43,12 @@ const JapaneseStudyGuide = () => {
     .find((t: any)=> t.slugName === 'hiryoon')
   const katakanaBasicWritingSystem = japaneseWritingSystems?.topics
     .find((t: any)=> t.slugName === 'kat')
+  const katakanaDakutenWritingSystem = japaneseWritingSystems?.topics
+    .find((t: any)=> t.slugName === 'katdak')
+  const katakanaYoonWritingSystem = japaneseWritingSystems?.topics
+    .find((t: any)=> t.slugName === 'katyoon')
+  const katakanaSpecialYoonWritingSystem = japaneseWritingSystems?.topics
+    .find((t: any)=> t.slugName === 'katspecyoon')
  
   return (
     <>
@@ -108,27 +114,70 @@ const JapaneseStudyGuide = () => {
           <div style={{ paddingTop:'20px' }}>
             <b>Phase 3:</b> Study <a href="/japanese/katakana-explained">katakana</a>.
              That includes mastering all:
-            <ul>
-              <li>
-                <a onClick={handleProtectedClick(katakanaBasicWritingSystem)}
-                  href={
-                    createURL(
-                      LanguageNames.Japanese,
-                      LearningSections.WritingSystem,
-                      katakanaBasicWritingSystem)
-                  }>  
+            <div style={{ display: 'flex' }}>
+              <ul>
+                <li>
+                  <a onClick={handleProtectedClick(katakanaBasicWritingSystem)}
+                    href={
+                      createURL(
+                        LanguageNames.Japanese,
+                        LearningSections.WritingSystem,
+                        katakanaBasicWritingSystem)
+                    }
+                    style={{ display:'flex',alignItems: 'center', justifyContent: 'space-between' }}
+                  >  
                     46 basic katakana
-                  {katakanaBasicWritingSystem?.isLocked &&
+                    {katakanaBasicWritingSystem?.isLocked &&
                    lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px', marginLeft: '5px' }}/> : ''}
-                </a>
-              </li>
-              <li>
-                25 katakana with dakuten and han-dakuten
-              </li>
-              <li>
-                36 katakana Yōon combinations
-              </li>
-            </ul>
+                  </a>
+                </li>
+                <li>
+                  <a onClick={handleProtectedClick(katakanaDakutenWritingSystem)}
+                    href={
+                      createURL(
+                        LanguageNames.Japanese,
+                        LearningSections.WritingSystem,
+                        katakanaDakutenWritingSystem)
+                    }
+                    style={{ display:'flex',alignItems: 'center', justifyContent: 'space-between' }}
+                  >  
+                    25 katakana with dakuten and han-dakuten
+                    {katakanaDakutenWritingSystem?.isLocked &&
+                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px', marginLeft: '5px' }}/> : ''}
+                  </a>
+                </li>
+                <li>
+                  <a onClick={handleProtectedClick(katakanaYoonWritingSystem)}
+                    href={
+                      createURL(
+                        LanguageNames.Japanese,
+                        LearningSections.WritingSystem,
+                        katakanaYoonWritingSystem)
+                    }
+                    style={{ display:'flex',alignItems: 'center', justifyContent: 'space-between' }}
+                  >  
+                    36 native katakana yōon combinations
+                    {katakanaYoonWritingSystem?.isLocked &&
+                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px', marginLeft: '5px' }}/> : ''}
+                  </a>
+                </li>
+                <li>
+                  <a onClick={handleProtectedClick(katakanaSpecialYoonWritingSystem)}
+                    href={
+                      createURL(
+                        LanguageNames.Japanese,
+                        LearningSections.WritingSystem,
+                        katakanaSpecialYoonWritingSystem)
+                    }
+                    style={{ display:'flex',alignItems: 'center', justifyContent: 'space-between' }}
+                  >  
+                    22 foreign katakana yōon combinations
+                    {katakanaSpecialYoonWritingSystem?.isLocked &&
+                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px', marginLeft: '5px' }}/> : ''}
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
           <div style={{ paddingTop:'20px' }}>
             <b>Phase 4:</b> Study the vocabulary for these topics:
