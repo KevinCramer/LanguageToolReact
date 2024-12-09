@@ -26,8 +26,8 @@ const KanjiExplained = () => {
 
             < a onClick={handleProtectedClick(firstGradeKanjiWritingSystem )} 
               href="/japanese/writing-systems?s=kanji_grade1-T0TFT">
-              {firstGradeKanjiWritingSystem?.name.toLocaleLowerCase()}{firstGradeKanjiWritingSystem?.isLocked ? '*' : ''}
-              {lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px' }}></LockIcon> : ''}
+              {firstGradeKanjiWritingSystem?.name.toLocaleLowerCase()}
+              {lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px', marginLeft:'5px' }}/> : ''}
             </a> 
           </div>
         </div>

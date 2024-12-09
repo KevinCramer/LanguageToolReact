@@ -1891,7 +1891,7 @@ const japaneseTopics: TopicWithThreeAlphabets[] = [
     { englishWord: 'n', foreignWord: ['ン','ン','ン'], foreignAudio: japaneseAudioN, order: 46 }
   ] },
   {
-    name: 'First Grade Kanji (80)',
+    name: 'First Grade Kanji',
     slugName: 'kanji_grade1',
     hasOrdering: true,
     isLocked: true,

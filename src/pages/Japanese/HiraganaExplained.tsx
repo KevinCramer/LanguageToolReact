@@ -45,7 +45,7 @@ const HiraganaExplained = () => {
                       46 sounds</a>.
           </div>
           <div style={{ paddingTop:'20px' }}>
-            <b>Dakuten and Han-Dakuten</b> create another <a onClick={handleProtectedClick(hiraganaDakutenWritingSystem)} 
+            <b>Dakuten and Han-Dakuten</b> lead to another <a onClick={handleProtectedClick(hiraganaDakutenWritingSystem)} 
               href={
                 createURL(
                   LanguageNames.Japanese,
@@ -53,7 +53,7 @@ const HiraganaExplained = () => {
                   hiraganaDakutenWritingSystem)
               }>25 hiragana variations
               {hiraganaDakutenWritingSystem?.isLocked &&
-                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px' }}></LockIcon> : ''}
+                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px', marginLeft:'5px' }}/> : ''}
             </a>. <br></br>
             Dakuten and han-dakuten are marks added on top of hiragana that alter pronunciation. 
             <div style={{ height: '0px' }}>
@@ -70,7 +70,7 @@ const HiraganaExplained = () => {
             </div>      
           </div>
           <div style={{ paddingTop:'0px' }}>
-            <b>Yōon</b>  creates an additional <a onClick={handleProtectedClick(hiraganaYoonWritingSystem)} 
+            <b>Yōon</b>  leads to an additional <a onClick={handleProtectedClick(hiraganaYoonWritingSystem)} 
               href={
                 createURL(
                   LanguageNames.Japanese,
@@ -79,7 +79,7 @@ const HiraganaExplained = () => {
               }>
                 36 hiragana combinations
               {hiraganaYoonWritingSystem?.isLocked &&
-                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px' }}></LockIcon> : ''}
+                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px', marginLeft:'5px' }}/> : ''}
             </a>
                 . <div></div>
             Some hiragana combine to form Yōon sounds. In these combinations,
