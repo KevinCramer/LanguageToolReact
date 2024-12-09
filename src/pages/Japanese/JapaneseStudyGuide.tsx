@@ -1,7 +1,7 @@
 import './Japanese.scss'
 import { LanguageNames, LearningSections } from '../../../types/LearningSectionsTypes'
 import { createURL } from '../../helpers/createURL';
-import { languages as languagesVocab } from '../../data/structured-data/words';
+import { japaneseVocabTopicSlugNames, languages as languagesVocab } from '../../data/structured-data/words';
 import { lingoCommandIsLocked, lockIconStyle, protectedLinkStyle } from '../../constants';
 import LockIcon from '@mui/icons-material/Lock';
 import { useAuth } from '../../contexts/AuthContext';
@@ -18,17 +18,17 @@ const JapaneseStudyGuide = () => {
     return l.languageName === 'Japanese' && 
            l.topics.some((topic: any) => !topic.isAlphabet);
   });
-  const clothesVocabTopic = japaneseVocab?.topics.find((t: any)=> t.slugName === 'clo')
-  const coloursVocabTopic = japaneseVocab?.topics.find((t: any)=> t.slugName === 'col')
-  const numbersVocabTopic = japaneseVocab?.topics.find((t: any)=> t.slugName === 'num')
-  const animalsVocabTopic = japaneseVocab?.topics.find((t: any)=> t.slugName === 'animals')
-  const bodyVocabTopic = japaneseVocab?.topics.find((t: any)=> t.slugName === 'body')
-  const daysOfWeekVocabTopic = japaneseVocab?.topics.find((t: any)=> t.slugName === 'day')
-  const foodsVocabTopic = japaneseVocab?.topics.find((t: any)=> t.slugName === 'food')
-  const irregularAdjectivesVocabTopic = japaneseVocab?.topics.find((t: any)=> t.slugName === 'adj2')
-  const locationVocabTopic = japaneseVocab?.topics.find((t: any)=> t.slugName === 'locations')
-  const monthsOfYearVocabTopic = japaneseVocab?.topics.find((t: any)=> t.slugName === 'mon')
-  const regularAdjectivesVocabTopic = japaneseVocab?.topics.find((t: any)=> t.slugName === 'adj1')
+  const clothesVocabTopic = japaneseVocab?.topics.find((t: any)=> t.slugName === japaneseVocabTopicSlugNames.clothes)
+  const coloursVocabTopic = japaneseVocab?.topics.find((t: any)=> t.slugName === japaneseVocabTopicSlugNames.colours)
+  const numbersVocabTopic = japaneseVocab?.topics.find((t: any)=> t.slugName === japaneseVocabTopicSlugNames.numbers)
+  const animalsVocabTopic = japaneseVocab?.topics.find((t: any)=> t.slugName === japaneseVocabTopicSlugNames.animals)
+  const bodyVocabTopic = japaneseVocab?.topics.find((t: any)=> t.slugName === japaneseVocabTopicSlugNames.body)
+  const daysOfWeekVocabTopic = japaneseVocab?.topics.find((t: any)=> t.slugName === japaneseVocabTopicSlugNames.daysOfWeek)
+  const foodsVocabTopic = japaneseVocab?.topics.find((t: any)=> t.slugName === japaneseVocabTopicSlugNames.food)
+  const irregularAdjectivesVocabTopic = japaneseVocab?.topics.find((t: any)=> t.slugName === japaneseVocabTopicSlugNames.irregularAdjectives)
+  const locationVocabTopic = japaneseVocab?.topics.find((t: any)=> t.slugName === japaneseVocabTopicSlugNames.locations)
+  const monthsOfYearVocabTopic = japaneseVocab?.topics.find((t: any)=> t.slugName === japaneseVocabTopicSlugNames.monthsOfYear)
+  const regularAdjectivesVocabTopic = japaneseVocab?.topics.find((t: any)=> t.slugName === japaneseVocabTopicSlugNames.regularAdjectives)
 
   const japaneseWritingSystems = (languagesVocab as any[]).find((l: any) => {
     return l.languageName === 'Japanese' && 
@@ -36,19 +36,19 @@ const JapaneseStudyGuide = () => {
   });
 
   const hiraganaBasicWritingSystem = japaneseWritingSystems?.topics
-    .find((t: any)=> t.slugName === 'hir')
+    .find((t: any)=> t.slugName === japaneseVocabTopicSlugNames.basicHiragana)
   const hiraganaDakutenWritingSystem = japaneseWritingSystems?.topics
-    .find((t: any)=> t.slugName === 'hirdak')
+    .find((t: any)=> t.slugName === japaneseVocabTopicSlugNames.hiraganaDakuten)
   const hiraganaYoonWritingSystem = japaneseWritingSystems?.topics
-    .find((t: any)=> t.slugName === 'hiryoon')
+    .find((t: any)=> t.slugName === japaneseVocabTopicSlugNames.hiraganaYoon)
   const katakanaBasicWritingSystem = japaneseWritingSystems?.topics
-    .find((t: any)=> t.slugName === 'kat')
+    .find((t: any)=> t.slugName === japaneseVocabTopicSlugNames.basicKatakana)
   const katakanaDakutenWritingSystem = japaneseWritingSystems?.topics
-    .find((t: any)=> t.slugName === 'katdak')
+    .find((t: any)=> t.slugName === japaneseVocabTopicSlugNames.katakanaDakuten)
   const katakanaYoonWritingSystem = japaneseWritingSystems?.topics
-    .find((t: any)=> t.slugName === 'katyoon')
+    .find((t: any)=> t.slugName === japaneseVocabTopicSlugNames.katakanaYoon)
   const katakanaSpecialYoonWritingSystem = japaneseWritingSystems?.topics
-    .find((t: any)=> t.slugName === 'katspecyoon')
+    .find((t: any)=> t.slugName === japaneseVocabTopicSlugNames.katakanaSpecialYoon)
  
   return (
     <>

@@ -1,5 +1,5 @@
 import './Japanese.scss'
-import { languages as allLanguages } from '../../data/structured-data/words';
+import { languages as allLanguages, japaneseVocabTopicSlugNames } from '../../data/structured-data/words';
 import { useProtectedLink } from '../../helpers/use-protected-link';
 import { useAuth } from '../../contexts/AuthContext';
 import { lingoCommandIsLocked } from '../../constants';
@@ -15,7 +15,7 @@ const KanjiExplained = () => {
            l.topics.some((topic: any) => topic.isAlphabet);
   });
 
-  const firstGradeKanjiWritingSystem = japaneseWritingSystems?.topics.find((t: any) => t.slugName === 'kanji_grade1')
+  const firstGradeKanjiWritingSystem = japaneseWritingSystems?.topics.find((t: any) => t.slugName === japaneseVocabTopicSlugNames.firstGradeKanji)
 
   return (
     <>

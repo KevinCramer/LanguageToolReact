@@ -44,9 +44,12 @@ import aikosBookSanctuaryParagraph3Sentence2 from '../raw-data/listening-compreh
 import aikosBookSanctuaryParagraph3Sentence3 from '../raw-data/listening-comprehension/japanese/aiko-book-sanctuary-paragraph3-sentence3.mp3'
 
 /* eslint-disable @stylistic/js/max-len */
+const japaneseComprehensionTopicSlugNames = {
+  aikosBookSanctuary: 'aikos-book-sanctuary'
+}
 const japaneseAudioTranscriptions: AudioTranscriptionWithFourAlphabet[] = [
   {
-    name:'Aiko’s Book Sanctuary', slugName: 'aikos-book-sanctuary-sentence', contents: [
+    name:'Aiko’s Book Sanctuary', slugName: japaneseComprehensionTopicSlugNames.aikosBookSanctuary, contents: [
       { sentences: [
         { 
           englishText: 'Aiko loves reading books and finds comfort and excitement at her local library.',
@@ -212,10 +215,14 @@ const japaneseAudioTranscriptions: AudioTranscriptionWithFourAlphabet[] = [
     isLocked: true
   },
 ] 
+
+const spanishComprehensionTopicSlugNames = {
+  shoppingForFamilyMeals: 'shopping-for-family-meals'
+}
 const spanishAudioTranscriptions: AudioTranscriptionWithOneAlphabet[] = [
   // https://snappyspanish.com/beginner-spanish-story-the-feeling-of-winning/
   {
-    name:'Shopping for Family Meals', slugName: 'shopping-for-family-meals', contents: [
+    name:'Shopping for Family Meals', slugName: spanishComprehensionTopicSlugNames.shoppingForFamilyMeals, contents: [
       { 
         sentences: [
           { 

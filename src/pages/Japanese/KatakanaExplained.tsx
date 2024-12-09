@@ -1,6 +1,6 @@
 import { LanguageNames, LearningSections } from '../../../types/LearningSectionsTypes';
 import { createURL } from '../../helpers/createURL';
-import { languages as languagesVocab } from '../../data/structured-data/words';
+import { japaneseVocabTopicSlugNames, languages as languagesVocab } from '../../data/structured-data/words';
 
 import { useProtectedLink } from '../../helpers/use-protected-link';
 import './Japanese.scss'
@@ -21,11 +21,14 @@ const KatakanaExplained = () => {
   });
 
   const katakanaBasicWritingSystem = japaneseWritingSystems?.topics
-    .find((t: any)=> t.slugName === 'kat')
+    .find((t: any)=> t.slugName === japaneseVocabTopicSlugNames.basicKatakana)
   const katakanaDakutenWritingSystem = japaneseWritingSystems?.topics
-    .find((t: any)=> t.slugName === 'katdak')
+    .find((t: any)=> t.slugName === japaneseVocabTopicSlugNames.katakanaDakuten)
   const katakanaYoonWritingSystem = japaneseWritingSystems?.topics
-    .find((t: any)=> t.slugName === 'katyoon')
+    .find((t: any)=> t.slugName === japaneseVocabTopicSlugNames.katakanaYoon)
+
+  const katakanaSpecialYoonWritingSystem = japaneseWritingSystems?.topics
+    .find((t: any)=> t.slugName === japaneseVocabTopicSlugNames.katakanaSpecialYoon)
 
   const [isModalOpen, setModalOpen] = useState(false);
 
@@ -208,15 +211,15 @@ const KatakanaExplained = () => {
               </ul>
             </div>
             <div style={{ paddingTop: '30px' }}>
-              <b style={{ fontSize:'20px' }}>Foreign Yōon sounds</b>  leads to an additional: <a onClick={handleProtectedClick(katakanaYoonWritingSystem)} 
+              <b style={{ fontSize:'20px' }}>Foreign Yōon sounds</b>  leads to an additional: <a onClick={handleProtectedClick(katakanaSpecialYoonWritingSystem)} 
                 href={
                   createURL(
                     LanguageNames.Japanese,
                     LearningSections.WritingSystem,
-                    katakanaYoonWritingSystem)
+                    katakanaSpecialYoonWritingSystem)
                 }>
                 22 katakana combinations
-                {katakanaYoonWritingSystem?.isLocked &&
+                {katakanaSpecialYoonWritingSystem?.isLocked &&
                    lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px', marginLeft:'5px' }}/> : ''}
               </a>
               <div>

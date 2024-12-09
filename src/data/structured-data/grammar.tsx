@@ -3,9 +3,14 @@
 
 import { GrammarLanguage, Topic } from '../../../types/learningSections/GrammarTypes'
 
+const japaneseGrammarTopicSlugNames = {
+  keigo: 'keigo',
+  adjectives: 'adjectives',
+}
+
 // https://www.spanish.academy/blog/spanish-grammar-for-beginners-8-parts-of-speech/
 const japaneseTopics: Topic[] = [
-  { name:'Keigo', slugName: 'keigo', contents: ['Keigo (敬語) is the Japanese system of polite or honorific language, used to show respect and social hierarchy. Essential in formal settings, it’s divided into three main types:','\0',
+  { name:'Keigo', slugName: japaneseGrammarTopicSlugNames.keigo, contents: ['Keigo (敬語) is the Japanese system of polite or honorific language, used to show respect and social hierarchy. Essential in formal settings, it’s divided into three main types:','\0',
     'Sonkeigo (尊敬語) – Respectful Language: Used to elevate the status of the person you’re speaking about. Common in business or when speaking about superiors. For example, 行く (iku - to go) becomes いらっしゃる (irassharu).','\0',
     'Kenjougo (謙譲語) – Humble Language: Used to lower oneself, showing humility when talking about your own actions or those of your group. For instance, する (suru - to do) becomes いたす (itasu).','\0',
     'Teineigo (丁寧語) – Polite Language: Adds a general level of formality, often ending with -ます (masu) and -です (desu). It’s commonly used in everyday polite conversation.','\0',
@@ -14,7 +19,7 @@ const japaneseTopics: Topic[] = [
   isLocked: false
   }, 
   {
-    name: 'Adjectives', slugName: 'adjectives',
+    name: 'Adjectives', slugName: japaneseGrammarTopicSlugNames.adjectives,
     contents: ['Adjectives come in two forms. Regular adjectives called a i-adjectives and irregular adjectives called na-adjectives.'
     ],
     isLocked: true
@@ -22,27 +27,34 @@ const japaneseTopics: Topic[] = [
   
 ]
 
+export const spanishGrammarTopicSlugNames = {
+  definiteArticle: 'definite-article',
+  indefiniteArticle: 'indefinite-article',
+  nouns: 'nouns',
+  adjectives: 'adjectives',
+  verbs: 'verbs'
+}
 // https://www.spanish.academy/blog/spanish-grammar-for-beginners-8-parts-of-speech/
 const spanishTopics: Topic[] = [
-  { name:'definite article', slugName: 'definite-article', contents: [' The definite article specificies which object, person, or place is being talked about. English only has one definite article, namely the word "the". For example we say "the car", or "the city" in English. Spanish on the other hand has 4 definite articles:','\0', '1) Masculine singular: el','2) Masculine plural: los', '3) Feminine singular: la', '4) Feminine plural: las','\0', 'For example the word for hand in Spanish is mano. Mano is a feminine noun in Spanish. Thus "the hand" is in Spanish "la mano".'
+  { name:'definite article', slugName: spanishGrammarTopicSlugNames.definiteArticle, contents: [' The definite article specificies which object, person, or place is being talked about. English only has one definite article, namely the word "the". For example we say "the car", or "the city" in English. Spanish on the other hand has 4 definite articles:','\0', '1) Masculine singular: el','2) Masculine plural: los', '3) Feminine singular: la', '4) Feminine plural: las','\0', 'For example the word for hand in Spanish is mano. Mano is a feminine noun in Spanish. Thus "the hand" is in Spanish "la mano".'
   ],
   isLocked: false
   }, 
-  { name:'indefinite article', slugName: 'indefinite-article', contents: [' The indefinite article is a non specific way to refer to a noun. English has two indefinite articles, namely "a" and "an". Spanish has 4 indefinite articles: ','\0', '1) Masculine singular: un', '2) Masculine plural: unos', '3) Feminine singular: una', '4) Feminine plural: unas', '\0', 'For example the word for eye in Spanish is ojo. Ojo is a masculine noun in Spanish. Thus "an eye" is in Spanish "un ojo".'
+  { name:'indefinite article', slugName: spanishGrammarTopicSlugNames.indefiniteArticle, contents: [' The indefinite article is a non specific way to refer to a noun. English has two indefinite articles, namely "a" and "an". Spanish has 4 indefinite articles: ','\0', '1) Masculine singular: un', '2) Masculine plural: unos', '3) Feminine singular: una', '4) Feminine plural: unas', '\0', 'For example the word for eye in Spanish is ojo. Ojo is a masculine noun in Spanish. Thus "an eye" is in Spanish "un ojo".'
   ],
   isLocked: false
   },
-  { name:'nouns', slugName: 'nouns', contents: ['In English a noun is a person, place, or thing. This is the same for Spanish. The only difference is that Spanish nouns also have a gender, i.e masculine or feminine. So whenever you learn a noun in Spanish it helps to learn what the gender of that noun is. Moreover Many Spanish words have a specific ending that tells you that the word is a noun.',
+  { name:'nouns', slugName: spanishGrammarTopicSlugNames.nouns, contents: ['In English a noun is a person, place, or thing. This is the same for Spanish. The only difference is that Spanish nouns also have a gender, i.e masculine or feminine. So whenever you learn a noun in Spanish it helps to learn what the gender of that noun is. Moreover Many Spanish words have a specific ending that tells you that the word is a noun.',
     '\0', 'Spanish Noun Ending:','\0', '-ción/-ión', '1) canción - song  ', '2) transición - transition', '3) aprobación - approval' , '\0', '-idad', '1) unidad - unity', '2) profundidad - depth', '3) hermandad - brother/sisterhood' , '\0', '-ez', '1) sencillez - simplicity', '2) fluidez - fluidity', '3) diez - ten' 
   ],
   isLocked: true
 
   },
-  { name:'adjectives',slugName: 'adjectives', contents: ['An adjective describes a noun, i.e it describes a person, place, or thing. In Spanish the adjective comes before the noun, and the adjective is modified depending on the gender and plurality of the noun it describes. Here are some examples:','\0', 'Alto hombre = tall man (masculine singular)', 'Alta mujer = tall woman (feminine singular)','Altos niños =  tall children (masculine plural)', 'Atlas niñas = tall girls (feminine plural)' 
+  { name:'adjectives',slugName: spanishGrammarTopicSlugNames.adjectives, contents: ['An adjective describes a noun, i.e it describes a person, place, or thing. In Spanish the adjective comes before the noun, and the adjective is modified depending on the gender and plurality of the noun it describes. Here are some examples:','\0', 'Alto hombre = tall man (masculine singular)', 'Alta mujer = tall woman (feminine singular)','Altos niños =  tall children (masculine plural)', 'Atlas niñas = tall girls (feminine plural)' 
   ],
   isLocked:true
   },
-  { name:'verbs', slugName: 'verbs', contents: ['Verbs describe an action or state of being, and every sentence has a verb. Verbs have a neutral state called the infinitive. However most sentences do not use the infinitive form of a verb. Instead they use a conjugated form of the verb. Which indicates whether the action or state of being is in the past, present, or future, as well as who is doing the state of being. Their are AR, ER, IR verbs as well as irregular verbs in Spanish.' 
+  { name:'verbs', slugName: spanishGrammarTopicSlugNames.verbs, contents: ['Verbs describe an action or state of being, and every sentence has a verb. Verbs have a neutral state called the infinitive. However most sentences do not use the infinitive form of a verb. Instead they use a conjugated form of the verb. Which indicates whether the action or state of being is in the past, present, or future, as well as who is doing the state of being. Their are AR, ER, IR verbs as well as irregular verbs in Spanish.' 
   ],
   isLocked: true
   },

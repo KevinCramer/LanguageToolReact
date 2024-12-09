@@ -1,6 +1,6 @@
 import { LanguageNames, LearningSections } from '../../../types/LearningSectionsTypes';
 import { createURL } from '../../helpers/createURL';
-import { languages as languagesVocab } from '../../data/structured-data/words';
+import { japaneseVocabTopicSlugNames, languages as languagesVocab } from '../../data/structured-data/words';
 
 import { useProtectedLink } from '../../helpers/use-protected-link';
 import './Japanese.scss'
@@ -21,11 +21,11 @@ const HiraganaExplained = () => {
   });
 
   const hiraganaBasicWritingSystem = japaneseWritingSystems?.topics
-    .find((t: any)=> t.slugName === 'hir')
+    .find((t: any)=> t.slugName === japaneseVocabTopicSlugNames.basicHiragana)
   const hiraganaDakutenWritingSystem = japaneseWritingSystems?.topics
-    .find((t: any)=> t.slugName === 'hirdak')
+    .find((t: any)=> t.slugName === japaneseVocabTopicSlugNames.hiraganaDakuten)
   const hiraganaYoonWritingSystem = japaneseWritingSystems?.topics
-    .find((t: any)=> t.slugName === 'hiryoon')
+    .find((t: any)=> t.slugName === japaneseVocabTopicSlugNames.hiraganaYoon)
 
   const dakutenTable = <table style={{ border:'1' , borderCollapse: 'collapse', textAlign: 'center' }}>
     <thead>
