@@ -54,7 +54,7 @@ const JapaneseStudyGuide = () => {
           </div>
           <div style={{ paddingTop:'20px' }}>
             <b>Phase 2:</b> Study <a href="/japanese/hiragana-explained">hiragana</a>. That includes mastering all: 
-            <div>
+            <div style={{ display: 'flex' }}>
               <ul>
                 <li>
                   <a onClick={handleProtectedClick(hiraganaBasicWritingSystem)}
@@ -63,8 +63,12 @@ const JapaneseStudyGuide = () => {
                         LanguageNames.Japanese,
                         LearningSections.WritingSystem,
                         hiraganaBasicWritingSystem)
-                    }>
+                    }
+                    style={{ display:'flex',alignItems: 'center', justifyContent: 'space-between' }}
+                  >
                        46 basic hiragana
+                    {hiraganaBasicWritingSystem?.isLocked &&
+                     lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px', marginLeft: '5px' }}></LockIcon> : ''}
                   </a>
                 </li>
                 <li>
@@ -74,11 +78,13 @@ const JapaneseStudyGuide = () => {
                         LanguageNames.Japanese,
                         LearningSections.WritingSystem,
                         hiraganaDakutenWritingSystem)
-                    }>
+                    }
+                    style={{ display:'flex',alignItems: 'center', justifyContent: 'space-between' }}
+                  >
 
                    25 hiragana with dakuten and han-dakuten
                     {hiraganaDakutenWritingSystem?.isLocked &&
-                     lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px' }}></LockIcon> : ''}
+                     lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px', marginLeft: '5px' }}></LockIcon> : ''}
                   </a>
                 </li>
                 <li>
@@ -88,10 +94,12 @@ const JapaneseStudyGuide = () => {
                         LanguageNames.Japanese,
                         LearningSections.WritingSystem,
                         hiraganaYoonWritingSystem)
-                    }>
+                    }
+                    style={{ display:'flex',alignItems: 'center', justifyContent: 'space-between' }}
+                  >
                       36 Hiragana Yōon combinations
                     {hiraganaYoonWritingSystem?.isLocked &&
-                     lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px' }}></LockIcon> : ''}
+                     lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px', marginLeft: '5px' }}></LockIcon> : ''}
                   </a>
                 </li>
               </ul>
@@ -111,7 +119,7 @@ const JapaneseStudyGuide = () => {
                   }>  
                     46 basic katakana
                   {katakanaBasicWritingSystem?.isLocked &&
-                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px' }}></LockIcon> : ''}
+                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px', marginLeft: '5px' }}></LockIcon> : ''}
                 </a>
               </li>
               <li>
@@ -123,161 +131,187 @@ const JapaneseStudyGuide = () => {
             </ul>
           </div>
           <div style={{ paddingTop:'20px' }}>
-            <b>Phase 4:</b> Study the vocabulary for these topics: 
-            <ul>
-              <li>
-                <a onClick={handleProtectedClick(clothesVocabTopic)}
-                  href={
-                    createURL(
-                      LanguageNames.Japanese,
-                      LearningSections.Vocab,
-                      clothesVocabTopic
-                    )
-                  }>                    {clothesVocabTopic?.name.toLocaleLowerCase()}
-                  {clothesVocabTopic?.isLocked &&
-                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px' }}></LockIcon> : ''}
-                </a>
-              </li>
-              <li>
-                < a onClick={handleProtectedClick(coloursVocabTopic )}
-                  href={
-                    createURL(
-                      LanguageNames.Japanese,
-                      LearningSections.Vocab,
-                      coloursVocabTopic
-                    )
-                  }>
-                  {coloursVocabTopic?.name.toLocaleLowerCase()}
-                  {coloursVocabTopic?.isLocked &&
-                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px' }}></LockIcon> : ''}
-                </a>
-              </li>
-              <li>
-                < a onClick={handleProtectedClick(numbersVocabTopic)}
-                  href={
-                    createURL(
-                      LanguageNames.Japanese,
-                      LearningSections.Vocab,
-                      numbersVocabTopic
-                    )
-                  }>
-                  {numbersVocabTopic?.name.toLocaleLowerCase()}
-                  {numbersVocabTopic?.isLocked &&
-                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px' }}></LockIcon> : ''}
-                </a>
-              </li>
-              <li>
-                <a onClick={handleProtectedClick(animalsVocabTopic)}
-                  href={
-                    createURL(
-                      LanguageNames.Japanese,
-                      LearningSections.Vocab,
-                      animalsVocabTopic
-                    )
-                  }>
-                  {animalsVocabTopic?.name.toLocaleLowerCase()}
-                  {animalsVocabTopic?.isLocked &&
-                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px' }}></LockIcon> : ''}
-                </a>
-              </li>
-              <li>
-                < a onClick={handleProtectedClick(bodyVocabTopic )}
-                  href={
-                    createURL(
-                      LanguageNames.Japanese,
-                      LearningSections.Vocab,
-                      bodyVocabTopic
-                    )
-                  }>
-                  {bodyVocabTopic?.name.toLocaleLowerCase()}
-                  {bodyVocabTopic?.isLocked &&
-                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px' }}></LockIcon> : ''}
-                </a>
-              </li>
-              <li>
-                < a onClick={handleProtectedClick(daysOfWeekVocabTopic )}
-                  href={
-                    createURL(
-                      LanguageNames.Japanese,
-                      LearningSections.Vocab,
-                      daysOfWeekVocabTopic
-                    )
-                  }>                  {daysOfWeekVocabTopic?.name.toLocaleLowerCase()}
-                  {daysOfWeekVocabTopic?.isLocked &&
-                  lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px' }}></LockIcon> : ''}
-                </a>
-              </li>
-              <li>
-                < a onClick={handleProtectedClick(foodsVocabTopic)}
-                  href={
-                    createURL(
-                      LanguageNames.Japanese,
-                      LearningSections.Vocab,
-                      foodsVocabTopic
-                    )
-                  }>                  {foodsVocabTopic?.name.toLocaleLowerCase()}
-                  {foodsVocabTopic?.isLocked &&
-                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px' }}></LockIcon> : ''}
-                </a>
-              </li>
-              <li>
-                < a onClick={handleProtectedClick(irregularAdjectivesVocabTopic)}
-                  href={
-                    createURL(
-                      LanguageNames.Japanese,
-                      LearningSections.Vocab,
-                      irregularAdjectivesVocabTopic
-                    )
-                  }>            
-                  {irregularAdjectivesVocabTopic?.name.toLocaleLowerCase()}
-                  {irregularAdjectivesVocabTopic?.isLocked && 
-                  lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px' }}></LockIcon> : ''}
-                </a> 
-              </li>
-              <li>
-                < a onClick={handleProtectedClick(locationVocabTopic)}
-                  href={
-                    createURL(
-                      LanguageNames.Japanese,
-                      LearningSections.Vocab,
-                      locationVocabTopic
-                    )
-                  }>
-                  {locationVocabTopic?.name.toLocaleLowerCase()}
-                  {locationVocabTopic?.isLocked && 
-                  lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px' }}></LockIcon> : ''}
-                </a>
-              </li>
-              <li>
-                < a onClick={handleProtectedClick(monthsOfYearVocabTopic )}
-                  href={
-                    createURL(
-                      LanguageNames.Japanese,
-                      LearningSections.Vocab,
-                      monthsOfYearVocabTopic
-                    )
-                  }>
-                  {monthsOfYearVocabTopic?.name.toLocaleLowerCase()}
-                  {monthsOfYearVocabTopic?.isLocked &&
-                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px' }}></LockIcon> : ''}
-                </a> 
-              </li>
-              <li>
-                < a onClick={handleProtectedClick(regularAdjectivesVocabTopic )}
-                  href={
-                    createURL(
-                      LanguageNames.Japanese,
-                      LearningSections.Vocab,
-                      regularAdjectivesVocabTopic
-                    )
-                  }>
-                  {regularAdjectivesVocabTopic?.name.toLocaleLowerCase()}
-                  {regularAdjectivesVocabTopic?.isLocked 
-                  && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px' }}></LockIcon> : ''}
-                </a> 
-              </li>
-            </ul>
-
+            <b>Phase 4:</b> Study the vocabulary for these topics:
+            <div style={{ display: 'flex' }}> 
+              <ul>
+                <li>
+                  <a onClick={handleProtectedClick(clothesVocabTopic)}
+                    href={
+                      createURL(
+                        LanguageNames.Japanese,
+                        LearningSections.Vocab,
+                        clothesVocabTopic
+                      )
+                    }
+                    style={{ display:'flex',alignItems: 'center', justifyContent: 'space-between' }}
+                  >                    
+                    {clothesVocabTopic?.name.toLocaleLowerCase()}
+                    {clothesVocabTopic?.isLocked &&
+                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px', marginLeft: '5px' }}></LockIcon> : ''}
+                  </a>
+                </li>
+                <li>
+                  < a onClick={handleProtectedClick(coloursVocabTopic )}
+                    href={
+                      createURL(
+                        LanguageNames.Japanese,
+                        LearningSections.Vocab,
+                        coloursVocabTopic
+                      )
+                    }
+                    style={{ display:'flex',alignItems: 'center', justifyContent: 'space-between' }}
+                  >
+                    {coloursVocabTopic?.name.toLocaleLowerCase()}
+                    {coloursVocabTopic?.isLocked &&
+                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px', marginLeft: '5px' }}></LockIcon> : ''}
+                  </a>
+                </li>
+                <li>
+                  < a onClick={handleProtectedClick(numbersVocabTopic)}
+                    href={
+                      createURL(
+                        LanguageNames.Japanese,
+                        LearningSections.Vocab,
+                        numbersVocabTopic
+                      )
+                    }
+                    style={{ display:'flex',alignItems: 'center', justifyContent: 'space-between' }}
+                  >
+                    {numbersVocabTopic?.name.toLocaleLowerCase()}
+                    {numbersVocabTopic?.isLocked &&
+                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px', marginLeft: '5px' }}></LockIcon> : ''}
+                  </a>
+                </li>
+                <li>
+                  <a onClick={handleProtectedClick(animalsVocabTopic)}
+                    href={
+                      createURL(
+                        LanguageNames.Japanese,
+                        LearningSections.Vocab,
+                        animalsVocabTopic
+                      )
+                    }
+                    style={{ display:'flex',alignItems: 'center', justifyContent: 'space-between' }}
+                  >
+                    {animalsVocabTopic?.name.toLocaleLowerCase()}
+                    {animalsVocabTopic?.isLocked &&
+                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px', marginLeft: '5px' }}></LockIcon> : ''}
+                  </a>
+                </li>
+                <li>
+                  < a onClick={handleProtectedClick(bodyVocabTopic )}
+                    href={
+                      createURL(
+                        LanguageNames.Japanese,
+                        LearningSections.Vocab,
+                        bodyVocabTopic
+                      )
+                    }
+                    style={{ display:'flex',alignItems: 'center', justifyContent: 'space-between' }}
+                  >
+                    {bodyVocabTopic?.name.toLocaleLowerCase()}
+                    {bodyVocabTopic?.isLocked &&
+                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px', marginLeft: '5px' }}></LockIcon> : ''}
+                  </a>
+                </li>
+                <li>
+                  < a onClick={handleProtectedClick(daysOfWeekVocabTopic )}
+                    href={
+                      createURL(
+                        LanguageNames.Japanese,
+                        LearningSections.Vocab,
+                        daysOfWeekVocabTopic
+                      )
+                    }
+                    style={{ display:'flex',alignItems: 'center', justifyContent: 'space-between' }}
+                  >              
+                    {daysOfWeekVocabTopic?.name.toLocaleLowerCase()}
+                    {daysOfWeekVocabTopic?.isLocked &&
+                  lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px', marginLeft: '5px' }}></LockIcon> : ''}
+                  </a>
+                </li>
+                <li>
+                  < a onClick={handleProtectedClick(foodsVocabTopic)}
+                    href={
+                      createURL(
+                        LanguageNames.Japanese,
+                        LearningSections.Vocab,
+                        foodsVocabTopic
+                      )
+                    }
+                    style={{ display:'flex',alignItems: 'center', justifyContent: 'space-between' }}
+                  >    
+                    {foodsVocabTopic?.name.toLocaleLowerCase()}
+                    {foodsVocabTopic?.isLocked &&
+                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px', marginLeft: '5px' }}></LockIcon> : ''}
+                  </a>
+                </li>
+                <li>
+                  < a onClick={handleProtectedClick(irregularAdjectivesVocabTopic)}
+                    href={
+                      createURL(
+                        LanguageNames.Japanese,
+                        LearningSections.Vocab,
+                        irregularAdjectivesVocabTopic
+                      )
+                    }
+                    style={{ display:'flex',alignItems: 'center', justifyContent: 'space-between' }}
+                  >            
+                    {irregularAdjectivesVocabTopic?.name.toLocaleLowerCase()}
+                    {irregularAdjectivesVocabTopic?.isLocked && 
+                  lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px', marginLeft: '5px' }}></LockIcon> : ''}
+                  </a> 
+                </li>
+                <li>
+                  < a onClick={handleProtectedClick(locationVocabTopic)}
+                    href={
+                      createURL(
+                        LanguageNames.Japanese,
+                        LearningSections.Vocab,
+                        locationVocabTopic
+                      )
+                    }
+                    style={{ display:'flex',alignItems: 'center', justifyContent: 'space-between' }}
+                  >
+                    {locationVocabTopic?.name.toLocaleLowerCase()}
+                    {locationVocabTopic?.isLocked && 
+                  lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px', marginLeft: '5px' }}></LockIcon> : ''}
+                  </a>
+                </li>
+                <li>
+                  < a onClick={handleProtectedClick(monthsOfYearVocabTopic )}
+                    href={
+                      createURL(
+                        LanguageNames.Japanese,
+                        LearningSections.Vocab,
+                        monthsOfYearVocabTopic
+                      )
+                    }
+                    style={{ display:'flex',alignItems: 'center', justifyContent: 'space-between' }}
+                  >
+                    {monthsOfYearVocabTopic?.name.toLocaleLowerCase()}
+                    {monthsOfYearVocabTopic?.isLocked &&
+                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px', marginLeft: '5px' }}></LockIcon> : ''}
+                  </a> 
+                </li>
+                <li>
+                  < a onClick={handleProtectedClick(regularAdjectivesVocabTopic )}
+                    href={
+                      createURL(
+                        LanguageNames.Japanese,
+                        LearningSections.Vocab,
+                        regularAdjectivesVocabTopic
+                      )
+                    }
+                    style={{ display:'flex',alignItems: 'center', justifyContent: 'space-between' }}
+                  >
+                    {regularAdjectivesVocabTopic?.name.toLocaleLowerCase()}
+                    {regularAdjectivesVocabTopic?.isLocked 
+                  && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px', marginLeft: '5px' }}></LockIcon> : ''}
+                  </a> 
+                </li>
+              </ul>
+            </div>
             We recommend you spend no more than 15 minutes studying a topic’s vocabulary before taking a quiz. Then if the grade is below 90% which is completely normal go back and do another round of 15 minutes of studying. Make sure to take breaks, and you can also switch between studying a few topics to mix things up. 
           (If you get 90% or higher  for each quiz without studying the topic in the last 24 hours you are ready to move to phase 2).           </div>
           <div style={{ paddingTop:'20px' }}>
