@@ -102,13 +102,12 @@ const KatakanaExplained = () => {
                   katakanaBasicWritingSystem)
               }>
                       46 sounds</a>. 
-            <ul>
-              <li>
-                <i style={{ fontSize:'15px' }}>
-                  Each basic katakana has a matching basic hiragana that produces the same sound. Diagram coming soon.
-                </i>
-              </li>
-            </ul>
+            <div>
+              <i style={{ fontSize:'15px' }}>
+                  Note - Each basic katakana has a matching basic hiragana that produces the same sound. Diagram coming soon.
+              </i>
+            </div>
+             
           </div>
           <div style={{ paddingTop:'30px' }}>
             <b style={{ fontSize:'20px' }}>Dakuten and Han-Dakuten</b> lead to another <a onClick={handleProtectedClick(katakanaDakutenWritingSystem)} 
@@ -129,62 +128,60 @@ const KatakanaExplained = () => {
             The han-dakuten mark is <b>( ゜)</b>. There are 5 variations. For example: <b style={{ whiteSpace: 'nowrap' }}>ハ (ha) → パ (pa)</b>.
             <div style={{ height:'10px' }}>
             </div>
-            <ul>
-              <li>
-                <i style={{ fontSize:'15px' }}>
-                  See this useful <a
-                    style={{ color: 'rgb(13, 110,253)', textDecoration: 'underline', cursor: 'pointer' }}
-                    onClick={toggleModal}
-                  >
+            <div>
+              <i style={{ fontSize:'15px' }}>
+                  Note 1 - See this useful <a
+                  style={{ color: 'rgb(13, 110,253)', textDecoration: 'underline', cursor: 'pointer' }}
+                  onClick={toggleModal}
+                >
           diagram
-                  </a> for the general pattern.
-                </i>
-                {isModalOpen && (
-                  <div
-                    style={{
-                      position: 'fixed',
-                      backgroundColor: 'white',
-                      padding: '20px',
-                      boxShadow: '0 0 10px rgba(0, 0, 0, 0.5)',
-                      zIndex: 1000,
-                    }}
-                  >
-                    <div style={{ width: '100%', display: 'flex', justifyContent: 'right', marginBottom: '10px' }}>
-                      <button onClick={toggleModal} style={{ marginTop: '10px' }}>
+                </a> for the general pattern.
+              </i>
+              {isModalOpen && (
+                <div
+                  style={{
+                    position: 'fixed',
+                    backgroundColor: 'white',
+                    padding: '20px',
+                    boxShadow: '0 0 10px rgba(0, 0, 0, 0.5)',
+                    zIndex: 1000,
+                  }}
+                >
+                  <div style={{ width: '100%', display: 'flex', justifyContent: 'right', marginBottom: '10px' }}>
+                    <button onClick={toggleModal} style={{ marginTop: '10px' }}>
                         Close
-                      </button>
-                    </div>
-                    {dakutenTable}
-                    <div style={{ marginTop: '20px' }}>
-                    (1) ヂ is written in romaji as <b>di</b> but is pronounced <b>ji</b>.
-                    </div>
-                    <div style={{ marginTop: '10px' }}>
-                    (2) ヅ is written in romaji as <b>du</b> but is pronounced <b>zu</b>.
-                    </div>
+                    </button>
                   </div>
-                )}
+                  {dakutenTable}
+                  <div style={{ marginTop: '20px' }}>
+                    (1) ヂ is written in romaji as <b>di</b> but is pronounced <b>ji</b>.
+                  </div>
+                  <div style={{ marginTop: '10px' }}>
+                    (2) ヅ is written in romaji as <b>du</b> but is pronounced <b>zu</b>.
+                  </div>
+                </div>
+              )}
 
-                {isModalOpen && (
-                  <div
-                    style={{
-                      position: 'fixed',
-                      top: 0,
-                      left: 0,
-                      width: '100%',
-                      height: '100%',
-                      backgroundColor: 'rgba(255, 255, 255, 0.8)',
-                      zIndex: 999,
-                    }}
-                    onClick={toggleModal}
-                  />
-                )}
-              </li>
-              <li>
-                <i style={{ fontSize:'15px' }}>
-              Also each dakuten/han-dakuten katakana has a matching dakuten/han-dakuten hiragana that produces the same sound. Diagram coming soon.
-                </i>
-              </li>
-            </ul>
+              {isModalOpen && (
+                <div
+                  style={{
+                    position: 'fixed',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: '100%',
+                    backgroundColor: 'rgba(255, 255, 255, 0.8)',
+                    zIndex: 999,
+                  }}
+                  onClick={toggleModal}
+                />
+              )}
+            </div>
+            <div>
+              <i style={{ fontSize:'15px' }}>
+ Note 2 - Also each dakuten/han-dakuten katakana has a matching dakuten/han-dakuten hiragana that produces the same sound. Diagram coming soon.
+              </i>
+            </div>
           </div>
           <div style={{ paddingTop:'30px' }}>
             <b style={{ fontSize:'20px' }}>Native Yōon sounds</b>  leads to an additional: <a onClick={handleProtectedClick(katakanaYoonWritingSystem)} 
@@ -204,13 +201,11 @@ const KatakanaExplained = () => {
             Examples like <b>キャ (kya) </b>and <b>ミュ (myu)</b> represent single, blended 
             syllables rather than separate sounds. This blending is crucial in words like <br/>
               <b>キャリア (kyaria, career)</b> and <b>ミュージック (myūjikku, music)</b>. 
-              <ul>
-                <li>
-                  <i style={{ fontSize:'15px' }}>
-                    Each native yōon katakana has a matching yōon hiragana that produces the same sound. Diagram coming soon.
-                  </i>
-                </li>
-              </ul>
+              <div>
+                <i style={{ fontSize:'15px' }}>
+                    Note - Each native yōon katakana has a matching yōon hiragana that produces the same sound. Diagram coming soon.
+                </i>
+              </div>
             </div>
             <div style={{ paddingTop: '30px' }}>
               <b style={{ fontSize:'20px' }}>Foreign Yōon sounds</b>  leads to an additional: <a onClick={handleProtectedClick(katakanaSpecialYoonWritingSystem)} 

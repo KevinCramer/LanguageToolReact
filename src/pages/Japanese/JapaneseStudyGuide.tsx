@@ -55,6 +55,26 @@ const JapaneseStudyGuide = () => {
       <div className="page-container">
         <div className="central-container">
           <h4 style={{ paddingBottom: '30px' }}>Japanese Study Guide</h4>
+          <div style={{ display:'flex', justifyContent: 'center' }}>
+
+          I want to learn  &nbsp;
+            <select 
+              name="alphabets" 
+              id="alphabets" 
+              onChange={() => {}} 
+              onClick={() => {}} // Prevent dropdown from closing
+              style={{
+                width: 'auto', // Make the select element only as wide as the content
+                display: 'inline-block', // Allow the select element to shrink to fit content
+                padding: '5px', // Add some padding for visual spacing
+              }}
+            >
+              <option value='0'>basic</option>
+              <option value="1">intermediate</option>
+              <option value="2">advanced</option>
+            </select> &nbsp;Japanese
+          </div>
+          <div style={{ height: '40px' }}></div>
           <div>
             <b>Phase 1:</b> Spend a few minutes reading about <a href="/japanese/writing-systems-explained">Japanese writing systems</a>.
           </div>
