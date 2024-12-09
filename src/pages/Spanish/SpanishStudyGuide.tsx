@@ -50,224 +50,261 @@ const SpanishStudyGuide = () => {
           <h4 style={{ paddingBottom: '30px' }}>Spanish Study Guide</h4>
           <div>
             <b>Phase 1:</b> Study the vocabulary for these topics:
-            <ul>
-              <li>
-                <a onClick={handleProtectedClick(clothesVocabTopic)} 
-                  href={
-                    createURL(
-                      LanguageNames.Spanish,
-                      LearningSections.Vocab,
-                      clothesVocabTopic
-                    )
-                  }>
-                  {clothesVocabTopic?.name.toLocaleLowerCase()}
-                  {clothesVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon ></LockIcon> : ''}
-                </a>
-              </li>
-              <li>
-                <a onClick={handleProtectedClick(numbersVocabTopic)}
-                  href={
-                    createURL(
-                      LanguageNames.Spanish,
-                      LearningSections.Vocab,
-                      numbersVocabTopic
-                    )
-                  }>
-                  {numbersVocabTopic?.name.toLocaleLowerCase()}
-                  {numbersVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px' }}></LockIcon> : ''}
-                </a>
-              </li>
-              <li>
-                <a onClick={handleProtectedClick(bodyVocabTopic)}
-                  href={
-                    createURL(
-                      LanguageNames.Spanish,
-                      LearningSections.Vocab,
-                      bodyVocabTopic
-                    )
-                  }>
-                  {bodyVocabTopic?.name.toLocaleLowerCase()}
-                  {bodyVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px' }}></LockIcon> : ''}
-                </a>
-              </li>
-              <li>
-                <a onClick={handleProtectedClick(coloursVocabTopic)}
-                  href={
-                    createURL(
-                      LanguageNames.Spanish,
-                      LearningSections.Vocab,
-                      coloursVocabTopic
-                    )
-                  }>
-                  {coloursVocabTopic?.name.toLocaleLowerCase()}
-                  {coloursVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px' }}></LockIcon> : ''}
-                </a>
-              </li>
-              <li>
-                <a onClick={handleProtectedClick(foodVocabTopic)}
-                  href={
-                    createURL(
-                      LanguageNames.Spanish,
-                      LearningSections.Vocab,
-                      foodVocabTopic
-                    )
-                  }>
-                  {foodVocabTopic?.name.toLocaleLowerCase()}
-                  {foodVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px' }}></LockIcon> : ''}
-                </a>
-              </li>
-              <li>
-                <a onClick={handleProtectedClick(homeVocabTopic)}
-                  href={
-                    createURL(
-                      LanguageNames.Spanish,
-                      LearningSections.Vocab,
-                      homeVocabTopic
-                    )
-                  }>
-                  {homeVocabTopic?.name.toLocaleLowerCase()}
-                  {homeVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px' }}></LockIcon> : ''}
-                </a>
-              </li>
+            <div style={{ display:'flex' }}>
+              <ul>
+                <li>
+                  <a onClick={handleProtectedClick(clothesVocabTopic)} 
+                    href={
+                      createURL(
+                        LanguageNames.Spanish,
+                        LearningSections.Vocab,
+                        clothesVocabTopic
+                      )
+                    }
+                    style={{ display:'flex',alignItems: 'center', justifyContent: 'space-between' }}
+                  >
+                    {clothesVocabTopic?.name.toLocaleLowerCase()}
+                    {clothesVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon /> : ''}
+                  </a>
+                </li>
+                <li>
+                  <a onClick={handleProtectedClick(numbersVocabTopic)}
+                    href={
+                      createURL(
+                        LanguageNames.Spanish,
+                        LearningSections.Vocab,
+                        numbersVocabTopic
+                      )
+                    }
+                    style={{ display:'flex',alignItems: 'center', justifyContent: 'space-between' }}
+                  >
+                    {numbersVocabTopic?.name.toLocaleLowerCase()}
+                    {numbersVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px', marginLeft: '5px' }}/> : ''}
+                  </a>
+                </li>
+                <li>
+                  <a onClick={handleProtectedClick(bodyVocabTopic)}
+                    href={
+                      createURL(
+                        LanguageNames.Spanish,
+                        LearningSections.Vocab,
+                        bodyVocabTopic
+                      )
+                    }
+                    style={{ display:'flex',alignItems: 'center', justifyContent: 'space-between' }}
+                  >
+                    {bodyVocabTopic?.name.toLocaleLowerCase()}
+                    {bodyVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px', marginLeft: '5px' }}/> : ''}
+                  </a>
+                </li>
+                <li>
+                  <a onClick={handleProtectedClick(coloursVocabTopic)}
+                    href={
+                      createURL(
+                        LanguageNames.Spanish,
+                        LearningSections.Vocab,
+                        coloursVocabTopic
+                      )
+                    }
+                    style={{ display:'flex',alignItems: 'center', justifyContent: 'space-between' }}
+                  >
+                    {coloursVocabTopic?.name.toLocaleLowerCase()}
+                    {coloursVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px', marginLeft: '5px' }}/> : ''}
+                  </a>
+                </li>
+                <li>
+                  <a onClick={handleProtectedClick(foodVocabTopic)}
+                    href={
+                      createURL(
+                        LanguageNames.Spanish,
+                        LearningSections.Vocab,
+                        foodVocabTopic
+                      )
+                    }
+                    style={{ display:'flex',alignItems: 'center', justifyContent: 'space-between' }}
+                  >
+                    {foodVocabTopic?.name.toLocaleLowerCase()}
+                    {foodVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px', marginLeft: '5px' }}/> : ''}
+                  </a>
+                </li>
+                <li>
+                  <a onClick={handleProtectedClick(homeVocabTopic)}
+                    href={
+                      createURL(
+                        LanguageNames.Spanish,
+                        LearningSections.Vocab,
+                        homeVocabTopic
+                      )
+                    }
+                    style={{ display:'flex',alignItems: 'center', justifyContent: 'space-between' }}
+                  >
+                    {homeVocabTopic?.name.toLocaleLowerCase()}
+                    {homeVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px', marginLeft: '5px' }}/> : ''}
+                  </a>
+                </li>
               
-              <li>
-                <a onClick={handleProtectedClick(locationsVocabTopic)}
-                  href={
-                    createURL(
-                      LanguageNames.Spanish,
-                      LearningSections.Vocab,
-                      locationsVocabTopic
-                    )
-                  }>
-                  {locationsVocabTopic?.name.toLocaleLowerCase()}
-                  {locationsVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px' }}></LockIcon> : ''}
-                </a>
-              </li>
-             
-            </ul>
-
+                <li>
+                  <a onClick={handleProtectedClick(locationsVocabTopic)}
+                    href={
+                      createURL(
+                        LanguageNames.Spanish,
+                        LearningSections.Vocab,
+                        locationsVocabTopic
+                      )
+                    }
+                    style={{ display:'flex',alignItems: 'center', justifyContent: 'space-between' }}
+                  >
+                    {locationsVocabTopic?.name.toLocaleLowerCase()}
+                    {locationsVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px', marginLeft: '5px' }}/> : ''}
+                  </a>
+                </li>
+              </ul>
+            </div>
             < br />We recommend you spend no more than 15 minutes studying a topic’s vocabulary before taking a quiz. Then if the grade is below 90% which is completely normal go back and do another round of 15 minutes of studying. Make sure to take breaks, and you can also switch between studying a few topics to mix things up. 
           (If you get 90% or higher  for each quiz without studying the topic in the last 24 hours you are ready to move to phase 2). 
           </div>
           <div style={{ paddingTop:'20px' }}>
             <b>Phase 2:</b> Study the vocabulary for these topics until you get 90% accuracy taking the quiz: 
-            <ul>  
-              <li>
-                <a onClick={handleProtectedClick(conjunctionsVocabTopic)}
-                  href={
-                    createURL(
-                      LanguageNames.Spanish,
-                      LearningSections.Vocab,
-                      conjunctionsVocabTopic
-                    )
-                  }>
-                  {conjunctionsVocabTopic?.name.toLocaleLowerCase()}
-                  {conjunctionsVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px' }}></LockIcon> : ''}
-                </a>
-              </li>
-              <li>
-                <a onClick={handleProtectedClick(pronounsVocabTopic)}
-                  href={
-                    createURL(
-                      LanguageNames.Spanish,
-                      LearningSections.Vocab,
-                      pronounsVocabTopic
-                    )
-                  }>
-                  {pronounsVocabTopic?.name.toLocaleLowerCase()}
-                  {pronounsVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px' }}></LockIcon> : ''}
-                </a>
-              </li>
-              <li>
-                <a onClick={handleProtectedClick(questionWordsVocabTopic)}
-                  href={
-                    createURL(
-                      LanguageNames.Spanish,
-                      LearningSections.Vocab,
-                      questionWordsVocabTopic
-                    )
-                  }>
-                  {questionWordsVocabTopic?.name.toLocaleLowerCase()}
-                  {questionWordsVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px' }}></LockIcon> : ''}
-                </a>
-              </li>
-            </ul>
+            <div style={{ display:'flex' }}>
+              <ul>  
+                <li>
+                  <a onClick={handleProtectedClick(conjunctionsVocabTopic)}
+                    href={
+                      createURL(
+                        LanguageNames.Spanish,
+                        LearningSections.Vocab,
+                        conjunctionsVocabTopic
+                      )
+                    }
+                    style={{ display:'flex',alignItems: 'center', justifyContent: 'space-between' }}
+                  >
+                    {conjunctionsVocabTopic?.name.toLocaleLowerCase()}
+                    {conjunctionsVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px', marginLeft: '5px' }}/> : ''}
+                  </a>
+                </li>
+                <li>
+                  <a onClick={handleProtectedClick(pronounsVocabTopic)}
+                    href={
+                      createURL(
+                        LanguageNames.Spanish,
+                        LearningSections.Vocab,
+                        pronounsVocabTopic
+                      )
+                    }
+                    style={{ display:'flex',alignItems: 'center', justifyContent: 'space-between' }}
+                  >
+                    {pronounsVocabTopic?.name.toLocaleLowerCase()}
+                    {pronounsVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px', marginLeft: '5px' }}/> : ''}
+                  </a>
+                </li>
+                <li>
+                  <a onClick={handleProtectedClick(questionWordsVocabTopic)}
+                    href={
+                      createURL(
+                        LanguageNames.Spanish,
+                        LearningSections.Vocab,
+                        questionWordsVocabTopic
+                      )
+                    }
+                    style={{ display:'flex',alignItems: 'center', justifyContent: 'space-between' }}
+                  >
+                    {questionWordsVocabTopic?.name.toLocaleLowerCase()}
+                    {questionWordsVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px', marginLeft: '5px' }}/> : ''}
+                  </a>
+                </li>
+              </ul>
+            </div>
             < br /> Use same approach as phase 1. 
           </div>
           <div style={{ paddingTop:'20px' }}>
             <b>Phase 3:</b> Study the first five grammar lessons: 
-            <ol>
-              <li>
-                <a onClick={handleProtectedClick(definiteArticleGrammarTopic)}
-                  href={
-                    createURL(
-                      LanguageNames.Spanish,
-                      LearningSections.Grammar,
-                      definiteArticleGrammarTopic,
-                      true
-                    )
-                  }>
-                  {definiteArticleGrammarTopic?.name.toLocaleLowerCase()}
-                  {definiteArticleGrammarTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px' }}></LockIcon> : ''}
-                </a>
-              </li>
-              <li>
-                <a onClick={handleProtectedClick(indefiniteArticleGrammarTopic)}
-                  href={
-                    createURL(
-                      LanguageNames.Spanish,
-                      LearningSections.Grammar,
-                      indefiniteArticleGrammarTopic,
-                      true
-                    )
-                  }>
-                  {indefiniteArticleGrammarTopic?.name.toLocaleLowerCase()}
-                  {indefiniteArticleGrammarTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px' }}></LockIcon> : ''}
-                </a>
-              </li>
-              <li>
-                <a onClick={handleProtectedClick(nounsGrammarTopic)}
-                  href={
-                    createURL(
-                      LanguageNames.Spanish,
-                      LearningSections.Grammar,
-                      nounsGrammarTopic,
-                      true
-                    )
-                  }>
-                  {nounsGrammarTopic?.name.toLocaleLowerCase()}
-                  {nounsGrammarTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px' }}></LockIcon> : ''}
-                </a>
-              </li>
-              <li>
-                <a onClick={handleProtectedClick(adjectivesGrammarTopic)}
-                  href={
-                    createURL(
-                      LanguageNames.Spanish,
-                      LearningSections.Grammar,
-                      adjectivesGrammarTopic,
-                      true
-                    )
-                  }>
-                  {adjectivesGrammarTopic?.name.toLocaleLowerCase()}
-                  {adjectivesGrammarTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px' }}></LockIcon> : ''}
-                </a>
-              </li>
-              <li>
-                <a onClick={handleProtectedClick(verbsGrammarTopic)}
-                  href={
-                    createURL(
-                      LanguageNames.Spanish,
-                      LearningSections.Grammar,
-                      verbsGrammarTopic,
-                      true
-                    )
-                  }>
-                  {verbsGrammarTopic?.name.toLocaleLowerCase()}
-                  {verbsGrammarTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px' }}></LockIcon> : ''}
-                </a>
-              </li>
-            </ol>
+            <div style={{ display:'flex' }}>
+              <ol>
+                <li>
+                  <a onClick={handleProtectedClick(definiteArticleGrammarTopic)}
+                    href={
+                      createURL(
+                        LanguageNames.Spanish,
+                        LearningSections.Grammar,
+                        definiteArticleGrammarTopic,
+                        true
+                      )
+                    }
+                    style={{ display:'flex',alignItems: 'center', justifyContent: 'space-between' }}
+                  >
+                    {definiteArticleGrammarTopic?.name.toLocaleLowerCase()}
+                    {definiteArticleGrammarTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px', marginLeft: '5px' }}/> : ''}
+                  </a>
+                </li>
+                <li>
+                  <a onClick={handleProtectedClick(indefiniteArticleGrammarTopic)}
+                    href={
+                      createURL(
+                        LanguageNames.Spanish,
+                        LearningSections.Grammar,
+                        indefiniteArticleGrammarTopic,
+                        true
+                      )
+                    }
+                    style={{ display:'flex',alignItems: 'center', justifyContent: 'space-between' }}
+                  >
+                    {indefiniteArticleGrammarTopic?.name.toLocaleLowerCase()}
+                    {indefiniteArticleGrammarTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px', marginLeft: '5px' }}/> 
+                    /*  line below is hack to ensure that locks are aligned to the right of grammar
+                        topic with the longest name which is this 'indefinite article' topic.     */
+                      : <LockIcon style={{ fontSize: '16px', marginLeft: '5px', color: 'white' }}/>}
+                  </a>
+                </li>
+                <li>
+                  <a onClick={handleProtectedClick(nounsGrammarTopic)}
+                    href={
+                      createURL(
+                        LanguageNames.Spanish,
+                        LearningSections.Grammar,
+                        nounsGrammarTopic,
+                        true
+                      )
+                    }
+                    style={{ display:'flex',alignItems: 'center', justifyContent: 'space-between' }}
+                  >
+                    {nounsGrammarTopic?.name.toLocaleLowerCase()}
+                    {nounsGrammarTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px', marginLeft: '5px' }}/> : ''}
+                  </a>
+                </li>
+                <li>
+                  <a onClick={handleProtectedClick(adjectivesGrammarTopic)}
+                    href={
+                      createURL(
+                        LanguageNames.Spanish,
+                        LearningSections.Grammar,
+                        adjectivesGrammarTopic,
+                        true
+                      )
+                    }
+                    style={{ display:'flex',alignItems: 'center', justifyContent: 'space-between' }}
+                  >
+                    {adjectivesGrammarTopic?.name.toLocaleLowerCase()}
+                    {adjectivesGrammarTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px', marginLeft: '5px' }}/> : ''}
+                  </a>
+                </li>
+                <li>
+                  <a onClick={handleProtectedClick(verbsGrammarTopic)}
+                    href={
+                      createURL(
+                        LanguageNames.Spanish,
+                        LearningSections.Grammar,
+                        verbsGrammarTopic,
+                        true
+                      )
+                    }
+                    style={{ display:'flex',alignItems: 'center', justifyContent: 'space-between' }}
+                  >
+                    {verbsGrammarTopic?.name.toLocaleLowerCase()}
+                    {verbsGrammarTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px', marginLeft: '5px' }}/> : ''}
+                  </a>
+                </li>
+              </ol>
+            </div>
           </div> 
           <div style={{ paddingTop:'20px' }}>
             <b>Phase 4:</b> Spend 1/3rd of time learning <a onClick={handleProtectedClick(verbsVocabTopic)}
@@ -280,7 +317,7 @@ const SpanishStudyGuide = () => {
                 )
               }>
               {verbsVocabTopic?.name.toLocaleLowerCase()}
-              {verbsVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px' }}></LockIcon> : ''}
+              {verbsVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px', marginLeft: '5px' }}/> : ''}
             </a>,
              1/3 of time learning <a href="/spanish/vocabulary?s=clo-T0TFT">vocabulary</a>, 1/3 of time doing <a href="/spanish/comprehension/shopping-for-family-meals?eng=F&L=WritingSystem1&R=English">reading and listening comprehension</a>.
           </div> 
