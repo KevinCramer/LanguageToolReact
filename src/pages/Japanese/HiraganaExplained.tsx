@@ -35,7 +35,7 @@ const HiraganaExplained = () => {
           Learning hiragana is the first step to learning japanese. By learning all 3 concepts below you will learn the basics of Japanese pronunciation. 
           </div>
           <div style={{ paddingTop:'20px' }}>
-            <b>Basic Hiragana</b>  has <a onClick={handleProtectedClick(hiraganaBasicWritingSystem)}
+            <b style={{ fontSize: '20px' }}>Basic Hiragana</b>  has <a onClick={handleProtectedClick(hiraganaBasicWritingSystem)}
               href={
                 createURL(
                   LanguageNames.Japanese,
@@ -45,7 +45,7 @@ const HiraganaExplained = () => {
                       46 sounds</a>.
           </div>
           <div style={{ paddingTop:'20px' }}>
-            <b>Dakuten and Han-Dakuten</b> lead to another <a onClick={handleProtectedClick(hiraganaDakutenWritingSystem)} 
+            <b style={{ fontSize: '20px' }}>Dakuten and Han-Dakuten</b> lead to another <a onClick={handleProtectedClick(hiraganaDakutenWritingSystem)} 
               href={
                 createURL(
                   LanguageNames.Japanese,
@@ -59,18 +59,22 @@ const HiraganaExplained = () => {
             <div style={{ height: '0px' }}>
 
             </div>
-            The dakuten mark is <b>( ゛)</b>. It adds a <i>voiced</i> sound. There are 20 dakuten variations. <br></br>
-            For example: <b>か (ka) → が (ga)</b>. <br></br> 
+            The dakuten mark is <b>( ゛)</b>. There are 20 dakuten variations. For example: <b style={{ whiteSpace: 'nowrap' }}>か (ka) → が (ga)</b>. <br></br> 
             <div style={{ height: '0px' }}>
 
             </div>
-            The han-dakuten mark is <b>( ゜)</b>. It creates a  "p" sound. There are 5 variations. <br></br> For example: <b>は (ha) → ぱ (pa)</b>.
+            The han-dakuten mark is <b>( ゜)</b>. There are 5 variations.  For example: <b style={{ whiteSpace: 'nowrap' }}>は (ha) → ぱ (pa)</b>.
+            <div>
+              <i style={{ fontSize:'15px' }}>
+                  See this useful diagram for the general pattern.
+              </i>
+            </div>
             <div style={{ height: '20px' }}>
 
             </div>      
           </div>
           <div style={{ paddingTop:'0px' }}>
-            <b>Yōon</b>  leads to an additional <a onClick={handleProtectedClick(hiraganaYoonWritingSystem)} 
+            <b style={{ fontSize: '20px' }}>Yōon</b>  leads to an additional <a onClick={handleProtectedClick(hiraganaYoonWritingSystem)} 
               href={
                 createURL(
                   LanguageNames.Japanese,
@@ -84,10 +88,10 @@ const HiraganaExplained = () => {
                 . <div></div>
             Some hiragana combine to form Yōon sounds. In these combinations,
               the first character remains full-sized, while the second is smaller.
-              Examples like <b>きゃ(kya) </b>and <b>しょ(sho)</b> represent single, blended 
+              Examples like <b style={{ whiteSpace: 'nowrap' }}>きゃ(kya) </b>and <b style={{ whiteSpace: 'nowrap' }}>しょ(sho)</b> represent single, blended 
               syllables rather than separate sounds. This blending is crucial in words 
               like <br></br><b>きょう(kyou, today)</b> and <b>しょうがっこう(shougakkou, elementary school)</b>. 
-          </div>
+          </div>        
         </div>
       </div>
     </>
