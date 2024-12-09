@@ -7,6 +7,7 @@ import './Japanese.scss'
 import { lingoCommandIsLocked } from '../../constants';
 import LockIcon from '@mui/icons-material/Lock';
 import { useAuth } from '../../contexts/AuthContext';
+import { useState } from 'react';
 
 const KatakanaExplained = () => { 
   //@ts-ignore
@@ -25,6 +26,61 @@ const KatakanaExplained = () => {
     .find((t: any)=> t.slugName === 'katdak')
   const katakanaYoonWritingSystem = japaneseWritingSystems?.topics
     .find((t: any)=> t.slugName === 'katyoon')
+
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  const toggleModal = () => {
+    setModalOpen(!isModalOpen);
+  };
+
+  const dakutenTable = <table style={{ border:'1' , borderCollapse: 'collapse', textAlign: 'center' }}>
+    <thead>
+      <tr>
+        <th>K → G</th>
+        <th>S → Z</th>
+        <th>T → D</th>
+        <th>H → B</th>
+        <th>H → P</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>カ (ka) → ガ (ga)</td>
+        <td>サ (sa) → ザ (za)</td>
+        <td>タ (ta) → ダ (da)</td>
+        <td>ハ (ha) → バ (ba)</td>
+        <td>ハ (ha) → パ (pa)</td>
+      </tr>
+      <tr>
+        <td>キ (ki) → ギ (gi)</td>
+        <td>シ (shi) → ジ (ji)</td>
+        <td>チ (chi) → ヂ (ji, type di)</td>
+        <td>ヒ (hi) → ビ (bi)</td>
+        <td>ヒ (hi) → ピ (pi)</td>
+      </tr>
+      <tr>
+        <td>ク (ku) → グ (gu)</td>
+        <td>ス (su) → ズ (zu)</td>
+        <td>ツ (tsu) → ヅ (zu, type du)</td>
+        <td>フ (fu) → ブ (bu)</td>
+        <td>フ (fu) → プ (pu)</td>
+      </tr>
+      <tr>
+        <td>ケ (ke) → ゲ (ge)</td>
+        <td>セ (se) → ゼ (ze)</td>
+        <td>テ (te) → デ (de)</td>
+        <td>ヘ (he) → ベ (be)</td>
+        <td>ヘ (he) → ペ (pe)</td>
+      </tr>
+      <tr>
+        <td>コ (ko) → ゴ (go)</td>
+        <td>ソ (so) → ゾ (zo)</td>
+        <td>ト (to) → ド (do)</td>
+        <td>ホ (ho) → ボ (bo)</td>
+        <td>ホ (ho) → ポ (po)</td>
+      </tr>
+    </tbody>
+  </table>
 
   return (
     <>
@@ -46,7 +102,7 @@ const KatakanaExplained = () => {
             <ul>
               <li>
                 <i style={{ fontSize:'15px' }}>
-                  Each basic katakana has a matching basic hiragana that produces the same sound. See diagram.
+                  Each basic katakana has a matching basic hiragana that produces the same sound. Diagram coming soon.
                 </i>
               </li>
             </ul>
@@ -73,12 +129,48 @@ const KatakanaExplained = () => {
             <ul>
               <li>
                 <i style={{ fontSize:'15px' }}>
-                  See this useful diagram for the general pattern.
+                  See this useful <a
+                    style={{ color: 'rgb(13, 110,253)', textDecoration: 'underline', cursor: 'pointer' }}
+                    onClick={toggleModal}
+                  >
+          diagram
+                  </a> for the general pattern.
                 </i>
+                {isModalOpen && (
+                  <div
+                    style={{
+                      position: 'fixed',
+                      backgroundColor: 'white',
+                      padding: '20px',
+                      boxShadow: '0 0 10px rgba(0, 0, 0, 0.5)',
+                      zIndex: 1000,
+                    }}
+                  >
+                    {dakutenTable}
+                    <button onClick={toggleModal} style={{ marginTop: '10px' }}>
+            Close
+                    </button>
+                  </div>
+                )}
+
+                {isModalOpen && (
+                  <div
+                    style={{
+                      position: 'fixed',
+                      top: 0,
+                      left: 0,
+                      width: '100%',
+                      height: '100%',
+                      backgroundColor: 'rgba(255, 255, 255, 0.8)',
+                      zIndex: 999,
+                    }}
+                    onClick={toggleModal}
+                  />
+                )}
               </li>
               <li>
                 <i style={{ fontSize:'15px' }}>
-              Also each dakuten/han-dakuten katakana has a matching dakuten/han-dakuten hiragana that produces the same sound. See diagram.
+              Also each dakuten/han-dakuten katakana has a matching dakuten/han-dakuten hiragana that produces the same sound. Diagram coming soon.
                 </i>
               </li>
             </ul>
@@ -104,7 +196,7 @@ const KatakanaExplained = () => {
               <ul>
                 <li>
                   <i style={{ fontSize:'15px' }}>
-                    Each native yōon katakana has a matching yōon hiragana that produces the same sound. See diagram.
+                    Each native yōon katakana has a matching yōon hiragana that produces the same sound. Diagram coming soon.
                   </i>
                 </li>
               </ul>
