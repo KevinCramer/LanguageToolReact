@@ -48,14 +48,14 @@ const HiraganaExplained = () => {
       <tr style={{ height: '40px' }}>
         <td>き (ki) → ぎ (gi)</td>
         <td>し (shi) → じ (ji)</td>
-        <td>ち (chi) → ぢ(di*)</td>
+        <td>ち (chi) → ぢ(di)*</td>
         <td>ひ (hi) → び (bi)</td>
         <td>ひ (hi) → ぴ (pi)</td>
       </tr>
       <tr style={{ height: '40px' }}>
         <td>く (ku) → ぐ (gu)</td>
         <td>す (su) → ず (zu)</td>
-        <td>つ (tsu) → づ (du*)</td>
+        <td>つ (tsu) → づ (du)*</td>
         <td>ふ (fu) → ぶ (bu)</td>
         <td>ふ (fu) → ぷ (pu)</td>
       </tr>
@@ -149,10 +149,10 @@ const HiraganaExplained = () => {
                   {dakutenTable}
 
                   <div style={{ marginTop: '20px' }}>
-                    ぢ is written in romaji as <b>di</b> but is pronounced <b>ji</b>
+                    ぢ is written in romaji as <b>di</b> but is pronounced <b>ji</b>.
                   </div>
                   <div style={{ marginTop: '10px' }}>
-                    づ is written in romaji as <b>du</b> but is pronounced <b>zu</b>
+                    づ is written in romaji as <b>du</b> but is pronounced <b>zu</b>.
                   </div>
                   
                 </div>

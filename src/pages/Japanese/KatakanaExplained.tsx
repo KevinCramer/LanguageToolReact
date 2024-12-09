@@ -54,14 +54,14 @@ const KatakanaExplained = () => {
       <tr style={{ height: '40px' }}>
         <td>キ (ki) → ギ (gi)</td>
         <td>シ (shi) → ジ (ji)</td>
-        <td>チ (chi) → ヂ (di*)</td>
+        <td>チ (chi) → ヂ (di)*</td>
         <td>ヒ (hi) → ビ (bi)</td>
         <td>ヒ (hi) → ピ (pi)</td>
       </tr>
       <tr style={{ height: '40px' }}>
         <td>ク (ku) → グ (gu)</td>
         <td>ス (su) → ズ (zu)</td>
-        <td>ツ (tsu) → ヅ (du*)</td>
+        <td>ツ (tsu) → ヅ (du)*</td>
         <td>フ (fu) → ブ (bu)</td>
         <td>フ (fu) → プ (pu)</td>
       </tr>
@@ -148,10 +148,10 @@ const KatakanaExplained = () => {
                   >
                     {dakutenTable}
                     <div style={{ marginTop: '20px' }}>
-                    チ is written in romaji as <b>di</b> but is pronounced <b>ji</b>
+                    チ is written in romaji as <b>di</b> but is pronounced <b>ji</b>.
                     </div>
                     <div style={{ marginTop: '10px' }}>
-                    ツ is written in romaji as <b>du</b> but is pronounced <b>zu</b>
+                    ツ is written in romaji as <b>du</b> but is pronounced <b>zu</b>.
                     </div>
                     <button onClick={toggleModal} style={{ marginTop: '10px' }}>
             Close
