@@ -29,7 +29,7 @@ const HiraganaExplained = () => {
 
   const dakutenTable = <table style={{ border:'1' , borderCollapse: 'collapse', textAlign: 'center' }}>
     <thead>
-      <tr>
+      <tr style={{ height: '40px' }}>
         <th>K → G</th>
         <th>S → Z</th>
         <th>T → D</th>
@@ -38,35 +38,35 @@ const HiraganaExplained = () => {
       </tr>
     </thead>
     <tbody>
-      <tr>
+      <tr style={{ height: '40px' }}>
         <td>か (ka) → が (ga)</td>
         <td>さ (sa) → ざ (za)</td>
         <td>た (ta) → だ (da)</td>
         <td>は (ha) → ば (ba)</td>
         <td>は (ha) → ぱ (pa)</td>
       </tr>
-      <tr>
+      <tr style={{ height: '40px' }}>
         <td>き (ki) → ぎ (gi)</td>
         <td>し (shi) → じ (ji)</td>
-        <td>ち (chi) → ぢ (ji, type di)</td>
+        <td>ち (chi) → ぢ(di*)</td>
         <td>ひ (hi) → び (bi)</td>
         <td>ひ (hi) → ぴ (pi)</td>
       </tr>
-      <tr>
+      <tr style={{ height: '40px' }}>
         <td>く (ku) → ぐ (gu)</td>
         <td>す (su) → ず (zu)</td>
-        <td>つ (tsu) → づ (zu, type du)</td>
+        <td>つ (tsu) → づ (du*)</td>
         <td>ふ (fu) → ぶ (bu)</td>
         <td>ふ (fu) → ぷ (pu)</td>
       </tr>
-      <tr>
+      <tr style={{ height: '40px' }}>
         <td>け (ke) → げ (ge)</td>
         <td>せ (se) → ぜ (ze)</td>
         <td>て (te) → で (de)</td>
         <td>へ (he) → べ (be)</td>
         <td>へ (he) → ぺ (pe)</td>
       </tr>
-      <tr>
+      <tr style={{ height: '40px' }}>
         <td>こ (ko) → ご (go)</td>
         <td>そ (so) → ぞ (zo)</td>
         <td>と (to) → ど (do)</td>
@@ -140,10 +140,21 @@ const HiraganaExplained = () => {
                     zIndex: 1000,
                   }}
                 >
-                  {dakutenTable}
-                  <button onClick={toggleModal} style={{ marginTop: '10px' }}>
+                  <div style={{ width: '100%', display: 'flex', justifyContent: 'right', marginBottom: '10px' }}>
+                    <button onClick={toggleModal} style={{ marginBottom: '10px', 
+                    }}>
             Close
-                  </button>
+                    </button>
+                  </div>
+                  {dakutenTable}
+
+                  <div style={{ marginTop: '20px' }}>
+                    ぢ is written in romaji as <b>di</b> but is pronounced <b>ji</b>
+                  </div>
+                  <div style={{ marginTop: '10px' }}>
+                    づ is written in romaji as <b>du</b> but is pronounced <b>zu</b>
+                  </div>
+                  
                 </div>
               )}
 

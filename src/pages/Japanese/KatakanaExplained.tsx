@@ -35,7 +35,7 @@ const KatakanaExplained = () => {
 
   const dakutenTable = <table style={{ border:'1' , borderCollapse: 'collapse', textAlign: 'center' }}>
     <thead>
-      <tr>
+      <tr style={{ height: '40px' }}>
         <th>K → G</th>
         <th>S → Z</th>
         <th>T → D</th>
@@ -44,35 +44,35 @@ const KatakanaExplained = () => {
       </tr>
     </thead>
     <tbody>
-      <tr>
+      <tr style={{ height: '40px' }}>
         <td>カ (ka) → ガ (ga)</td>
         <td>サ (sa) → ザ (za)</td>
         <td>タ (ta) → ダ (da)</td>
         <td>ハ (ha) → バ (ba)</td>
         <td>ハ (ha) → パ (pa)</td>
       </tr>
-      <tr>
+      <tr style={{ height: '40px' }}>
         <td>キ (ki) → ギ (gi)</td>
         <td>シ (shi) → ジ (ji)</td>
-        <td>チ (chi) → ヂ (ji, type di)</td>
+        <td>チ (chi) → ヂ (di*)</td>
         <td>ヒ (hi) → ビ (bi)</td>
         <td>ヒ (hi) → ピ (pi)</td>
       </tr>
-      <tr>
+      <tr style={{ height: '40px' }}>
         <td>ク (ku) → グ (gu)</td>
         <td>ス (su) → ズ (zu)</td>
-        <td>ツ (tsu) → ヅ (zu, type du)</td>
+        <td>ツ (tsu) → ヅ (du*)</td>
         <td>フ (fu) → ブ (bu)</td>
         <td>フ (fu) → プ (pu)</td>
       </tr>
-      <tr>
+      <tr style={{ height: '40px' }}>
         <td>ケ (ke) → ゲ (ge)</td>
         <td>セ (se) → ゼ (ze)</td>
         <td>テ (te) → デ (de)</td>
         <td>ヘ (he) → ベ (be)</td>
         <td>ヘ (he) → ペ (pe)</td>
       </tr>
-      <tr>
+      <tr style={{ height: '40px' }}>
         <td>コ (ko) → ゴ (go)</td>
         <td>ソ (so) → ゾ (zo)</td>
         <td>ト (to) → ド (do)</td>
@@ -147,6 +147,12 @@ const KatakanaExplained = () => {
                     }}
                   >
                     {dakutenTable}
+                    <div style={{ marginTop: '20px' }}>
+                    チ is written in romaji as <b>di</b> but is pronounced <b>ji</b>
+                    </div>
+                    <div style={{ marginTop: '10px' }}>
+                    ツ is written in romaji as <b>du</b> but is pronounced <b>zu</b>
+                    </div>
                     <button onClick={toggleModal} style={{ marginTop: '10px' }}>
             Close
                     </button>
