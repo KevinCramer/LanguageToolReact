@@ -3,7 +3,7 @@ import { languages as languagesGrammar } from '../../data/structured-data/gramma
 import { languages as languagesVocab } from '../../data/structured-data/words';
 import LockIcon from '@mui/icons-material/Lock';
 import { useProtectedLink } from '../../helpers/use-protected-link';
-import { lingoCommandIsLocked } from '../../constants';
+import { lingoCommandIsLocked, lockIconStyle, protectedLinkStyle } from '../../constants';
 import { useAuth } from '../../contexts/AuthContext';
 import { LanguageNames, LearningSections } from '../../../types/LearningSectionsTypes';
 import { createURL } from '../../helpers/createURL';
@@ -61,7 +61,7 @@ const SpanishStudyGuide = () => {
                         clothesVocabTopic
                       )
                     }
-                    style={{ display:'flex',alignItems: 'center', justifyContent: 'space-between' }}
+                    style={protectedLinkStyle}
                   >
                     {clothesVocabTopic?.name.toLocaleLowerCase()}
                     {clothesVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon /> : ''}
@@ -76,10 +76,10 @@ const SpanishStudyGuide = () => {
                         numbersVocabTopic
                       )
                     }
-                    style={{ display:'flex',alignItems: 'center', justifyContent: 'space-between' }}
+                    style={protectedLinkStyle}
                   >
                     {numbersVocabTopic?.name.toLocaleLowerCase()}
-                    {numbersVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px', marginLeft: '5px' }}/> : ''}
+                    {numbersVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style= {lockIconStyle} /> : ''}
                   </a>
                 </li>
                 <li>
@@ -91,10 +91,10 @@ const SpanishStudyGuide = () => {
                         bodyVocabTopic
                       )
                     }
-                    style={{ display:'flex',alignItems: 'center', justifyContent: 'space-between' }}
+                    style={protectedLinkStyle}
                   >
                     {bodyVocabTopic?.name.toLocaleLowerCase()}
-                    {bodyVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px', marginLeft: '5px' }}/> : ''}
+                    {bodyVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style= {lockIconStyle} /> : ''}
                   </a>
                 </li>
                 <li>
@@ -106,10 +106,10 @@ const SpanishStudyGuide = () => {
                         coloursVocabTopic
                       )
                     }
-                    style={{ display:'flex',alignItems: 'center', justifyContent: 'space-between' }}
+                    style={protectedLinkStyle}
                   >
                     {coloursVocabTopic?.name.toLocaleLowerCase()}
-                    {coloursVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px', marginLeft: '5px' }}/> : ''}
+                    {coloursVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style= {lockIconStyle} /> : ''}
                   </a>
                 </li>
                 <li>
@@ -121,10 +121,10 @@ const SpanishStudyGuide = () => {
                         foodVocabTopic
                       )
                     }
-                    style={{ display:'flex',alignItems: 'center', justifyContent: 'space-between' }}
+                    style={protectedLinkStyle}
                   >
                     {foodVocabTopic?.name.toLocaleLowerCase()}
-                    {foodVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px', marginLeft: '5px' }}/> : ''}
+                    {foodVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style= {lockIconStyle} /> : ''}
                   </a>
                 </li>
                 <li>
@@ -136,10 +136,10 @@ const SpanishStudyGuide = () => {
                         homeVocabTopic
                       )
                     }
-                    style={{ display:'flex',alignItems: 'center', justifyContent: 'space-between' }}
+                    style={protectedLinkStyle}
                   >
                     {homeVocabTopic?.name.toLocaleLowerCase()}
-                    {homeVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px', marginLeft: '5px' }}/> : ''}
+                    {homeVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style= {lockIconStyle} /> : ''}
                   </a>
                 </li>
               
@@ -152,10 +152,10 @@ const SpanishStudyGuide = () => {
                         locationsVocabTopic
                       )
                     }
-                    style={{ display:'flex',alignItems: 'center', justifyContent: 'space-between' }}
+                    style={protectedLinkStyle}
                   >
                     {locationsVocabTopic?.name.toLocaleLowerCase()}
-                    {locationsVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px', marginLeft: '5px' }}/> : ''}
+                    {locationsVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style= {lockIconStyle} /> : ''}
                   </a>
                 </li>
               </ul>
@@ -176,10 +176,10 @@ const SpanishStudyGuide = () => {
                         conjunctionsVocabTopic
                       )
                     }
-                    style={{ display:'flex',alignItems: 'center', justifyContent: 'space-between' }}
+                    style={protectedLinkStyle}
                   >
                     {conjunctionsVocabTopic?.name.toLocaleLowerCase()}
-                    {conjunctionsVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px', marginLeft: '5px' }}/> : ''}
+                    {conjunctionsVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style= {lockIconStyle} /> : ''}
                   </a>
                 </li>
                 <li>
@@ -191,10 +191,10 @@ const SpanishStudyGuide = () => {
                         pronounsVocabTopic
                       )
                     }
-                    style={{ display:'flex',alignItems: 'center', justifyContent: 'space-between' }}
+                    style={protectedLinkStyle}
                   >
                     {pronounsVocabTopic?.name.toLocaleLowerCase()}
-                    {pronounsVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px', marginLeft: '5px' }}/> : ''}
+                    {pronounsVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style= {lockIconStyle} /> : ''}
                   </a>
                 </li>
                 <li>
@@ -206,10 +206,10 @@ const SpanishStudyGuide = () => {
                         questionWordsVocabTopic
                       )
                     }
-                    style={{ display:'flex',alignItems: 'center', justifyContent: 'space-between' }}
+                    style={protectedLinkStyle}
                   >
                     {questionWordsVocabTopic?.name.toLocaleLowerCase()}
-                    {questionWordsVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px', marginLeft: '5px' }}/> : ''}
+                    {questionWordsVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style= {lockIconStyle} /> : ''}
                   </a>
                 </li>
               </ul>
@@ -230,10 +230,10 @@ const SpanishStudyGuide = () => {
                         true
                       )
                     }
-                    style={{ display:'flex',alignItems: 'center', justifyContent: 'space-between' }}
+                    style={protectedLinkStyle}
                   >
                     {definiteArticleGrammarTopic?.name.toLocaleLowerCase()}
-                    {definiteArticleGrammarTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px', marginLeft: '5px' }}/> : ''}
+                    {definiteArticleGrammarTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style= {lockIconStyle} /> : ''}
                   </a>
                 </li>
                 <li>
@@ -246,10 +246,10 @@ const SpanishStudyGuide = () => {
                         true
                       )
                     }
-                    style={{ display:'flex',alignItems: 'center', justifyContent: 'space-between' }}
+                    style={protectedLinkStyle}
                   >
                     {indefiniteArticleGrammarTopic?.name.toLocaleLowerCase()}
-                    {indefiniteArticleGrammarTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px', marginLeft: '5px' }}/> 
+                    {indefiniteArticleGrammarTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style= {lockIconStyle} /> 
                     /*  line below is hack to ensure that locks are aligned to the right of grammar
                         topic with the longest name which is this 'indefinite article' topic.     */
                       : <LockIcon style={{ fontSize: '16px', marginLeft: '5px', color: 'white' }}/>}
@@ -265,10 +265,10 @@ const SpanishStudyGuide = () => {
                         true
                       )
                     }
-                    style={{ display:'flex',alignItems: 'center', justifyContent: 'space-between' }}
+                    style={protectedLinkStyle}
                   >
                     {nounsGrammarTopic?.name.toLocaleLowerCase()}
-                    {nounsGrammarTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px', marginLeft: '5px' }}/> : ''}
+                    {nounsGrammarTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style= {lockIconStyle} /> : ''}
                   </a>
                 </li>
                 <li>
@@ -281,10 +281,10 @@ const SpanishStudyGuide = () => {
                         true
                       )
                     }
-                    style={{ display:'flex',alignItems: 'center', justifyContent: 'space-between' }}
+                    style={protectedLinkStyle}
                   >
                     {adjectivesGrammarTopic?.name.toLocaleLowerCase()}
-                    {adjectivesGrammarTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px', marginLeft: '5px' }}/> : ''}
+                    {adjectivesGrammarTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style= {lockIconStyle} /> : ''}
                   </a>
                 </li>
                 <li>
@@ -297,10 +297,10 @@ const SpanishStudyGuide = () => {
                         true
                       )
                     }
-                    style={{ display:'flex',alignItems: 'center', justifyContent: 'space-between' }}
+                    style={protectedLinkStyle}
                   >
                     {verbsGrammarTopic?.name.toLocaleLowerCase()}
-                    {verbsGrammarTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px', marginLeft: '5px' }}/> : ''}
+                    {verbsGrammarTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style= {lockIconStyle} /> : ''}
                   </a>
                 </li>
               </ol>
@@ -317,7 +317,7 @@ const SpanishStudyGuide = () => {
                 )
               }>
               {verbsVocabTopic?.name.toLocaleLowerCase()}
-              {verbsVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px', marginLeft: '5px' }}/> : ''}
+              {verbsVocabTopic?.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style= {lockIconStyle} /> : ''}
             </a>,
              1/3 of time learning <a href="/spanish/vocabulary?s=clo-T0TFT">vocabulary</a>, 1/3 of time doing <a href="/spanish/comprehension/shopping-for-family-meals?eng=F&L=WritingSystem1&R=English">reading and listening comprehension</a>.
           </div> 

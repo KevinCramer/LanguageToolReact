@@ -2,7 +2,7 @@ import './Japanese.scss'
 import { LanguageNames, LearningSections } from '../../../types/LearningSectionsTypes'
 import { createURL } from '../../helpers/createURL';
 import { languages as languagesVocab } from '../../data/structured-data/words';
-import { lingoCommandIsLocked } from '../../constants';
+import { lingoCommandIsLocked, lockIconStyle, protectedLinkStyle } from '../../constants';
 import LockIcon from '@mui/icons-material/Lock';
 import { useAuth } from '../../contexts/AuthContext';
 import { useProtectedLink } from '../../helpers/use-protected-link';
@@ -70,11 +70,11 @@ const JapaneseStudyGuide = () => {
                         LearningSections.WritingSystem,
                         hiraganaBasicWritingSystem)
                     }
-                    style={{ display:'flex',alignItems: 'center', justifyContent: 'space-between' }}
+                    style = {protectedLinkStyle}
                   >
                        46 basic hiragana
                     {hiraganaBasicWritingSystem?.isLocked &&
-                     lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px', marginLeft: '5px' }}/> : ''}
+                     lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style = {lockIconStyle}/> : ''}
                   </a>
                 </li>
                 <li>
@@ -85,12 +85,12 @@ const JapaneseStudyGuide = () => {
                         LearningSections.WritingSystem,
                         hiraganaDakutenWritingSystem)
                     }
-                    style={{ display:'flex',alignItems: 'center', justifyContent: 'space-between' }}
+                    style = {protectedLinkStyle}
                   >
 
                    25 hiragana with dakuten and han-dakuten
                     {hiraganaDakutenWritingSystem?.isLocked &&
-                     lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px', marginLeft: '5px' }}/> : ''}
+                     lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style = {lockIconStyle}/> : ''}
                   </a>
                 </li>
                 <li>
@@ -101,11 +101,11 @@ const JapaneseStudyGuide = () => {
                         LearningSections.WritingSystem,
                         hiraganaYoonWritingSystem)
                     }
-                    style={{ display:'flex',alignItems: 'center', justifyContent: 'space-between' }}
+                    style = {protectedLinkStyle}
                   >
                       36 Hiragana Yōon combinations
                     {hiraganaYoonWritingSystem?.isLocked &&
-                     lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px', marginLeft: '5px' }}/> : ''}
+                     lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style = {lockIconStyle}/> : ''}
                   </a>
                 </li>
               </ul>
@@ -124,11 +124,11 @@ const JapaneseStudyGuide = () => {
                         LearningSections.WritingSystem,
                         katakanaBasicWritingSystem)
                     }
-                    style={{ display:'flex',alignItems: 'center', justifyContent: 'space-between' }}
+                    style = {protectedLinkStyle}
                   >  
                     46 basic katakana
                     {katakanaBasicWritingSystem?.isLocked &&
-                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px', marginLeft: '5px' }}/> : ''}
+                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style = {lockIconStyle}/> : ''}
                   </a>
                 </li>
                 <li>
@@ -139,11 +139,11 @@ const JapaneseStudyGuide = () => {
                         LearningSections.WritingSystem,
                         katakanaDakutenWritingSystem)
                     }
-                    style={{ display:'flex',alignItems: 'center', justifyContent: 'space-between' }}
+                    style = {protectedLinkStyle}
                   >  
                     25 katakana with dakuten and han-dakuten
                     {katakanaDakutenWritingSystem?.isLocked &&
-                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px', marginLeft: '5px' }}/> : ''}
+                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style = {lockIconStyle}/> : ''}
                   </a>
                 </li>
                 <li>
@@ -154,11 +154,11 @@ const JapaneseStudyGuide = () => {
                         LearningSections.WritingSystem,
                         katakanaYoonWritingSystem)
                     }
-                    style={{ display:'flex',alignItems: 'center', justifyContent: 'space-between' }}
+                    style = {protectedLinkStyle}
                   >  
                     36 native katakana yōon combinations
                     {katakanaYoonWritingSystem?.isLocked &&
-                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px', marginLeft: '5px' }}/> : ''}
+                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style = {lockIconStyle}/> : ''}
                   </a>
                 </li>
                 <li>
@@ -169,11 +169,11 @@ const JapaneseStudyGuide = () => {
                         LearningSections.WritingSystem,
                         katakanaSpecialYoonWritingSystem)
                     }
-                    style={{ display:'flex',alignItems: 'center', justifyContent: 'space-between' }}
+                    style = {protectedLinkStyle}
                   >  
                     22 foreign katakana yōon combinations
                     {katakanaSpecialYoonWritingSystem?.isLocked &&
-                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px', marginLeft: '5px' }}/> : ''}
+                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style = {lockIconStyle}/> : ''}
                   </a>
                 </li>
               </ul>
@@ -192,11 +192,11 @@ const JapaneseStudyGuide = () => {
                         clothesVocabTopic
                       )
                     }
-                    style={{ display:'flex',alignItems: 'center', justifyContent: 'space-between' }}
+                    style = {protectedLinkStyle}
                   >                    
                     {clothesVocabTopic?.name.toLocaleLowerCase()}
                     {clothesVocabTopic?.isLocked &&
-                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px', marginLeft: '5px' }}/> : ''}
+                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style = {lockIconStyle}/> : ''}
                   </a>
                 </li>
                 <li>
@@ -208,11 +208,11 @@ const JapaneseStudyGuide = () => {
                         coloursVocabTopic
                       )
                     }
-                    style={{ display:'flex',alignItems: 'center', justifyContent: 'space-between' }}
+                    style = {protectedLinkStyle}
                   >
                     {coloursVocabTopic?.name.toLocaleLowerCase()}
                     {coloursVocabTopic?.isLocked &&
-                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px', marginLeft: '5px' }}/> : ''}
+                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style = {lockIconStyle}/> : ''}
                   </a>
                 </li>
                 <li>
@@ -224,11 +224,11 @@ const JapaneseStudyGuide = () => {
                         numbersVocabTopic
                       )
                     }
-                    style={{ display:'flex',alignItems: 'center', justifyContent: 'space-between' }}
+                    style = {protectedLinkStyle}
                   >
                     {numbersVocabTopic?.name.toLocaleLowerCase()}
                     {numbersVocabTopic?.isLocked &&
-                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px', marginLeft: '5px' }}/> : ''}
+                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style = {lockIconStyle}/> : ''}
                   </a>
                 </li>
                 <li>
@@ -240,11 +240,11 @@ const JapaneseStudyGuide = () => {
                         animalsVocabTopic
                       )
                     }
-                    style={{ display:'flex',alignItems: 'center', justifyContent: 'space-between' }}
+                    style = {protectedLinkStyle}
                   >
                     {animalsVocabTopic?.name.toLocaleLowerCase()}
                     {animalsVocabTopic?.isLocked &&
-                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px', marginLeft: '5px' }}/> : ''}
+                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style = {lockIconStyle}/> : ''}
                   </a>
                 </li>
                 <li>
@@ -256,11 +256,11 @@ const JapaneseStudyGuide = () => {
                         bodyVocabTopic
                       )
                     }
-                    style={{ display:'flex',alignItems: 'center', justifyContent: 'space-between' }}
+                    style = {protectedLinkStyle}
                   >
                     {bodyVocabTopic?.name.toLocaleLowerCase()}
                     {bodyVocabTopic?.isLocked &&
-                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px', marginLeft: '5px' }}/> : ''}
+                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style = {lockIconStyle}/> : ''}
                   </a>
                 </li>
                 <li>
@@ -272,11 +272,11 @@ const JapaneseStudyGuide = () => {
                         daysOfWeekVocabTopic
                       )
                     }
-                    style={{ display:'flex',alignItems: 'center', justifyContent: 'space-between' }}
+                    style = {protectedLinkStyle}
                   >              
                     {daysOfWeekVocabTopic?.name.toLocaleLowerCase()}
                     {daysOfWeekVocabTopic?.isLocked &&
-                  lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px', marginLeft: '5px' }}/> : ''}
+                  lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style = {lockIconStyle}/> : ''}
                   </a>
                 </li>
                 <li>
@@ -288,11 +288,11 @@ const JapaneseStudyGuide = () => {
                         foodsVocabTopic
                       )
                     }
-                    style={{ display:'flex',alignItems: 'center', justifyContent: 'space-between' }}
+                    style = {protectedLinkStyle}
                   >    
                     {foodsVocabTopic?.name.toLocaleLowerCase()}
                     {foodsVocabTopic?.isLocked &&
-                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px', marginLeft: '5px' }}/> : ''}
+                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style = {lockIconStyle}/> : ''}
                   </a>
                 </li>
                 <li>
@@ -304,11 +304,11 @@ const JapaneseStudyGuide = () => {
                         irregularAdjectivesVocabTopic
                       )
                     }
-                    style={{ display:'flex',alignItems: 'center', justifyContent: 'space-between' }}
+                    style = {protectedLinkStyle}
                   >            
                     {irregularAdjectivesVocabTopic?.name.toLocaleLowerCase()}
                     {irregularAdjectivesVocabTopic?.isLocked && 
-                  lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px', marginLeft: '5px' }}/> : ''}
+                  lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style = {lockIconStyle}/> : ''}
                   </a> 
                 </li>
                 <li>
@@ -320,11 +320,11 @@ const JapaneseStudyGuide = () => {
                         locationVocabTopic
                       )
                     }
-                    style={{ display:'flex',alignItems: 'center', justifyContent: 'space-between' }}
+                    style = {protectedLinkStyle}
                   >
                     {locationVocabTopic?.name.toLocaleLowerCase()}
                     {locationVocabTopic?.isLocked && 
-                  lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px', marginLeft: '5px' }}/> : ''}
+                  lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style = {lockIconStyle}/> : ''}
                   </a>
                 </li>
                 <li>
@@ -336,11 +336,11 @@ const JapaneseStudyGuide = () => {
                         monthsOfYearVocabTopic
                       )
                     }
-                    style={{ display:'flex',alignItems: 'center', justifyContent: 'space-between' }}
+                    style = {protectedLinkStyle}
                   >
                     {monthsOfYearVocabTopic?.name.toLocaleLowerCase()}
                     {monthsOfYearVocabTopic?.isLocked &&
-                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px', marginLeft: '5px' }}/> : ''}
+                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style = {lockIconStyle}/> : ''}
                   </a> 
                 </li>
                 <li>
@@ -352,11 +352,11 @@ const JapaneseStudyGuide = () => {
                         regularAdjectivesVocabTopic
                       )
                     }
-                    style={{ display:'flex',alignItems: 'center', justifyContent: 'space-between' }}
+                    style = {protectedLinkStyle}
                   >
                     {regularAdjectivesVocabTopic?.name.toLocaleLowerCase()}
                     {regularAdjectivesVocabTopic?.isLocked 
-                  && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px', marginLeft: '5px' }}/> : ''}
+                  && lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style = {lockIconStyle}/> : ''}
                   </a> 
                 </li>
               </ul>
