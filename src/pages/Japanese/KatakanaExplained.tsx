@@ -91,7 +91,7 @@ const KatakanaExplained = () => {
         <div className="central-container">
           <h4 style={{ paddingBottom: '30px' }}>Katakana Explained</h4>
           <div>
-          Katakana is mainly used to write japanese loan words. For example in Japanese the word for 'camera' is <b>カメラ (kamera)</b>. By learning all 5 concepts below you will learn the basics of pronouncing such loan words.
+          Katakana is mainly used to write Japanese loan words. For example in Japanese the word for 'camera' is <b>カメラ (kamera)</b>. Learning all 5 concepts below is essential to learning Japanese.
           </div>
           <div style={{ paddingTop:'30px' }}>
             <b style={{ fontSize:'20px' }}>Basic Katakana</b>  has <a onClick={handleProtectedClick(katakanaBasicWritingSystem)}
