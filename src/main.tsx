@@ -13,7 +13,7 @@ const routesMeta = {
   '/': {
     title: 'Home Page',
     meta: [
-      { name: 'description', content: 'Learn foreign languages faster. Start Now.' },
+      { name: 'description', content: 'Learn foreign languages faster. Start now.' },
       { name: 'keywords', content: 'language learning, foreign languages, learn languages, language study tools, fast language learning, online language courses, language practice, multilingual, language learning platform' },
     ],
   },
