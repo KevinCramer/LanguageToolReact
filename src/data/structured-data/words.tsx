@@ -373,52 +373,52 @@ import japaneseAudioTall from '../raw-data/audio_vocab/japanese/regular-adjectiv
 import japaneseAudioUgly from '../raw-data/audio_vocab/japanese/regular-adjectives/ugly.mp3'
 import japaneseAudioWindy from '../raw-data/audio_vocab/japanese/regular-adjectives/windy.mp3'
 
-import japaneseAudioA from '../raw-data/audio_vocab/japanese/hiragana/a.mp3'
-import japaneseAudioI from '../raw-data/audio_vocab/japanese/hiragana/i.mp3'
-import japaneseAudioU from '../raw-data/audio_vocab/japanese/hiragana/u.mp3'
-import japaneseAudioE from '../raw-data/audio_vocab/japanese/hiragana/e.mp3'
-import japaneseAudioO from '../raw-data/audio_vocab/japanese/hiragana/o.mp3'
-import japaneseAudioKa from '../raw-data/audio_vocab/japanese/hiragana/ka.mp3'
-import japaneseAudioKi from '../raw-data/audio_vocab/japanese/hiragana/ki.mp3'
-import japaneseAudioKu from '../raw-data/audio_vocab/japanese/hiragana/ku.mp3'
-import japaneseAudioKe from '../raw-data/audio_vocab/japanese/hiragana/ke.mp3'
-import japaneseAudioKo from '../raw-data/audio_vocab/japanese/hiragana/ko.mp3'
-import japaneseAudioSa from '../raw-data/audio_vocab/japanese/hiragana/sa.mp3'
-import japaneseAudioShi from '../raw-data/audio_vocab/japanese/hiragana/shi.mp3'
-import japaneseAudioSu from '../raw-data/audio_vocab/japanese/hiragana/su.mp3'
-import japaneseAudioSe from '../raw-data/audio_vocab/japanese/hiragana/se.mp3'
-import japaneseAudioSo from '../raw-data/audio_vocab/japanese/hiragana/so.mp3'
-import japaneseAudioTa from '../raw-data/audio_vocab/japanese/hiragana/ta.mp3'
-import japaneseAudioChi from '../raw-data/audio_vocab/japanese/hiragana/chi.mp3'
-import japaneseAudioTsu from '../raw-data/audio_vocab/japanese/hiragana/tsu.mp3'
-import japaneseAudioTe from '../raw-data/audio_vocab/japanese/hiragana/te.mp3'
-import japaneseAudioTo from '../raw-data/audio_vocab/japanese/hiragana/to.mp3'
-import japaneseAudioNa from '../raw-data/audio_vocab/japanese/hiragana/na.mp3'
-import japaneseAudioNi from '../raw-data/audio_vocab/japanese/hiragana/ni.mp3'
-import japaneseAudioNu from '../raw-data/audio_vocab/japanese/hiragana/nu.mp3'
-import japaneseAudioNe from '../raw-data/audio_vocab/japanese/hiragana/ne.mp3'
-import japaneseAudioNo from '../raw-data/audio_vocab/japanese/hiragana/no.mp3'
-import japaneseAudioHa from '../raw-data/audio_vocab/japanese/hiragana/ha.mp3'
-import japaneseAudioHi from '../raw-data/audio_vocab/japanese/hiragana/hi.mp3'
-import japaneseAudioFu from '../raw-data/audio_vocab/japanese/hiragana/fu.mp3'
-import japaneseAudioHe from '../raw-data/audio_vocab/japanese/hiragana/he.mp3'
-import japaneseAudioHo from '../raw-data/audio_vocab/japanese/hiragana/ho.mp3'
-import japaneseAudioMa from '../raw-data/audio_vocab/japanese/hiragana/ma.mp3'
-import japaneseAudioMi from '../raw-data/audio_vocab/japanese/hiragana/mi.mp3'
-import japaneseAudioMu from '../raw-data/audio_vocab/japanese/hiragana/mu.mp3'
-import japaneseAudioMe from '../raw-data/audio_vocab/japanese/hiragana/me.mp3'
-import japaneseAudioMo from '../raw-data/audio_vocab/japanese/hiragana/mo.mp3'
-import japaneseAudioYa from '../raw-data/audio_vocab/japanese/hiragana/ya.mp3'
-import japaneseAudioYu from '../raw-data/audio_vocab/japanese/hiragana/yu.mp3'
-import japaneseAudioYo from '../raw-data/audio_vocab/japanese/hiragana/yo.mp3'
-import japaneseAudioRa from '../raw-data/audio_vocab/japanese/hiragana/ra.mp3'
-import japaneseAudioRi from '../raw-data/audio_vocab/japanese/hiragana/ri.mp3'
-import japaneseAudioRu from '../raw-data/audio_vocab/japanese/hiragana/ru.mp3'
-import japaneseAudioRe from '../raw-data/audio_vocab/japanese/hiragana/re.mp3'
-import japaneseAudioRo from '../raw-data/audio_vocab/japanese/hiragana/ro.mp3'
-import japaneseAudioWa from '../raw-data/audio_vocab/japanese/hiragana/wa.mp3'
-import japaneseAudioWo from '../raw-data/audio_vocab/japanese/hiragana/wo.mp3'
-import japaneseAudioN from '../raw-data/audio_vocab/japanese/hiragana/n.mp3'
+import hiraganaAudioA from '../raw-data/audio_vocab/japanese/hiragana/a.mp3'
+import hiraganaAudioI from '../raw-data/audio_vocab/japanese/hiragana/i.mp3'
+import hiraganaAudioU from '../raw-data/audio_vocab/japanese/hiragana/u.mp3'
+import hiraganaAudioE from '../raw-data/audio_vocab/japanese/hiragana/e.mp3'
+import hiraganaAudioO from '../raw-data/audio_vocab/japanese/hiragana/o.mp3'
+import hiraganaAudioKa from '../raw-data/audio_vocab/japanese/hiragana/ka.mp3'
+import hiraganaAudioKi from '../raw-data/audio_vocab/japanese/hiragana/ki.mp3'
+import hiraganaAudioKu from '../raw-data/audio_vocab/japanese/hiragana/ku.mp3'
+import hiraganaAudioKe from '../raw-data/audio_vocab/japanese/hiragana/ke.mp3'
+import hiraganaAudioKo from '../raw-data/audio_vocab/japanese/hiragana/ko.mp3'
+import hiraganaAudioSa from '../raw-data/audio_vocab/japanese/hiragana/sa.mp3'
+import hiraganaAudioShi from '../raw-data/audio_vocab/japanese/hiragana/shi.mp3'
+import hiraganaAudioSu from '../raw-data/audio_vocab/japanese/hiragana/su.mp3'
+import hiraganaAudioSe from '../raw-data/audio_vocab/japanese/hiragana/se.mp3'
+import hiraganaAudioSo from '../raw-data/audio_vocab/japanese/hiragana/so.mp3'
+import hiraganaAudioTa from '../raw-data/audio_vocab/japanese/hiragana/ta.mp3'
+import hiraganaAudioChi from '../raw-data/audio_vocab/japanese/hiragana/chi.mp3'
+import hiraganaAudioTsu from '../raw-data/audio_vocab/japanese/hiragana/tsu.mp3'
+import hiraganaAudioTe from '../raw-data/audio_vocab/japanese/hiragana/te.mp3'
+import hiraganaAudioTo from '../raw-data/audio_vocab/japanese/hiragana/to.mp3'
+import hiraganaAudioNa from '../raw-data/audio_vocab/japanese/hiragana/na.mp3'
+import hiraganaAudioNi from '../raw-data/audio_vocab/japanese/hiragana/ni.mp3'
+import hiraganaAudioNu from '../raw-data/audio_vocab/japanese/hiragana/nu.mp3'
+import hiraganaAudioNe from '../raw-data/audio_vocab/japanese/hiragana/ne.mp3'
+import hiraganaAudioNo from '../raw-data/audio_vocab/japanese/hiragana/no.mp3'
+import hiraganaAudioHa from '../raw-data/audio_vocab/japanese/hiragana/ha.mp3'
+import hiraganaAudioHi from '../raw-data/audio_vocab/japanese/hiragana/hi.mp3'
+import hiraganaAudioFu from '../raw-data/audio_vocab/japanese/hiragana/fu.mp3'
+import hiraganaAudioHe from '../raw-data/audio_vocab/japanese/hiragana/he.mp3'
+import hiraganaAudioHo from '../raw-data/audio_vocab/japanese/hiragana/ho.mp3'
+import hiraganaAudioMa from '../raw-data/audio_vocab/japanese/hiragana/ma.mp3'
+import hiraganaAudioMi from '../raw-data/audio_vocab/japanese/hiragana/mi.mp3'
+import hiraganaAudioMu from '../raw-data/audio_vocab/japanese/hiragana/mu.mp3'
+import hiraganaAudioMe from '../raw-data/audio_vocab/japanese/hiragana/me.mp3'
+import hiraganaAudioMo from '../raw-data/audio_vocab/japanese/hiragana/mo.mp3'
+import hiraganaAudioYa from '../raw-data/audio_vocab/japanese/hiragana/ya.mp3'
+import hiraganaAudioYu from '../raw-data/audio_vocab/japanese/hiragana/yu.mp3'
+import hiraganaAudioYo from '../raw-data/audio_vocab/japanese/hiragana/yo.mp3'
+import hiraganaAudioRa from '../raw-data/audio_vocab/japanese/hiragana/ra.mp3'
+import hiraganaAudioRi from '../raw-data/audio_vocab/japanese/hiragana/ri.mp3'
+import hiraganaAudioRu from '../raw-data/audio_vocab/japanese/hiragana/ru.mp3'
+import hiraganaAudioRe from '../raw-data/audio_vocab/japanese/hiragana/re.mp3'
+import hiraganaAudioRo from '../raw-data/audio_vocab/japanese/hiragana/ro.mp3'
+import hiraganaAudioWa from '../raw-data/audio_vocab/japanese/hiragana/wa.mp3'
+import hiraganaAudioWo from '../raw-data/audio_vocab/japanese/hiragana/wo.mp3'
+import hiraganaAudioN from '../raw-data/audio_vocab/japanese/hiragana/n.mp3'
 
 import hiraganaVideoA from '../raw-data/writing-system-videos/japanese/hiragana/a.mp4'
 import hiraganaVideoI from '../raw-data/writing-system-videos/japanese/hiragana/i.mp4'
@@ -1807,52 +1807,52 @@ export const japaneseVocabTopicSlugNames = {
 }
 const japaneseTopics: TopicWithThreeAlphabets[] = [
   { name:'Basic Hiragana', slugName: japaneseVocabTopicSlugNames.basicHiragana, hasOrdering:true, isLocked: false, isAlphabet: true, words: [
-    { englishWord: 'a', foreignWord: ['あ','あ','あ'], foreignAudio: japaneseAudioA, order: 1, strokeOrderVideo: hiraganaVideoA },
-    { englishWord: 'i', foreignWord: ['い','い','い'], foreignAudio: japaneseAudioI, order: 2, strokeOrderVideo: hiraganaVideoI },
-    { englishWord: 'u', foreignWord: ['う','う','う'], foreignAudio: japaneseAudioU, order: 3, strokeOrderVideo: hiraganaVideoU },
-    { englishWord: 'e', foreignWord: ['え','え','え'], foreignAudio: japaneseAudioE, order: 4, strokeOrderVideo: hiraganaVideoE },
-    { englishWord: 'o', foreignWord: ['お','お','お'], foreignAudio: japaneseAudioO, order: 5, strokeOrderVideo: hiraganaVideoO },
-    { englishWord: 'ka', foreignWord: ['か','か','か'], foreignAudio: japaneseAudioKa, order: 6, strokeOrderVideo: hiraganaVideoKa },
-    { englishWord: 'ki', foreignWord: ['き','き','き'], foreignAudio: japaneseAudioKi, order: 7, strokeOrderVideo: hiraganaVideoKi },
-    { englishWord: 'ku', foreignWord: ['く','く','く'], foreignAudio: japaneseAudioKu, order: 8, strokeOrderVideo: hiraganaVideoKu },
-    { englishWord: 'ke', foreignWord: ['け','け','け'], foreignAudio: japaneseAudioKe, order: 9, strokeOrderVideo: hiraganaVideoKe },
-    { englishWord: 'ko', foreignWord: ['こ','こ','こ'], foreignAudio: japaneseAudioKo, order: 10, strokeOrderVideo: hiraganaVideoKo },
-    { englishWord: 'sa', foreignWord: ['さ','さ','さ'], foreignAudio: japaneseAudioSa, order: 11, strokeOrderVideo: hiraganaVideoSa },
-    { englishWord: 'shi', foreignWord: ['し','し','し'], foreignAudio: japaneseAudioShi, order: 12, strokeOrderVideo: hiraganaVideoShi },
-    { englishWord: 'su', foreignWord: ['す','す','す'], foreignAudio: japaneseAudioSu, order: 13, strokeOrderVideo: hiraganaVideoSu },
-    { englishWord: 'se', foreignWord: ['せ','せ','せ'], foreignAudio: japaneseAudioSe, order: 14, strokeOrderVideo: hiraganaVideoSe },
-    { englishWord: 'so', foreignWord: ['そ','そ','そ'], foreignAudio: japaneseAudioSo, order: 15, strokeOrderVideo: hiraganaVideoSo },
-    { englishWord: 'ta', foreignWord: ['た','た','た'], foreignAudio: japaneseAudioTa, order: 16, strokeOrderVideo: hiraganaVideoTa },
-    { englishWord: 'chi', foreignWord: ['ち','ち','ち'], foreignAudio: japaneseAudioChi, order: 17, strokeOrderVideo: hiraganaVideoChi },
-    { englishWord: 'tsu', foreignWord: ['つ','つ','つ'], foreignAudio: japaneseAudioTsu, order: 18, strokeOrderVideo: hiraganaVideoTsu },
-    { englishWord: 'te', foreignWord: ['て','て','て'], foreignAudio: japaneseAudioTe, order: 19, strokeOrderVideo: hiraganaVideoTe },
-    { englishWord: 'to', foreignWord: ['と','と','と'], foreignAudio: japaneseAudioTo, order: 20, strokeOrderVideo: hiraganaVideoTo },
-    { englishWord: 'na', foreignWord: ['な','な','な'], foreignAudio: japaneseAudioNa, order: 21, strokeOrderVideo: hiraganaVideoNa },
-    { englishWord: 'ni', foreignWord: ['に','に','に'], foreignAudio: japaneseAudioNi, order: 22, strokeOrderVideo: hiraganaVideoNi },
-    { englishWord: 'nu', foreignWord: ['ぬ','ぬ','ぬ'], foreignAudio: japaneseAudioNu, order: 23, strokeOrderVideo: hiraganaVideoNu },
-    { englishWord: 'ne', foreignWord: ['ね','ね','ね'], foreignAudio: japaneseAudioNe, order: 24, strokeOrderVideo: hiraganaVideoNe },
-    { englishWord: 'no', foreignWord: ['の','の','の'], foreignAudio: japaneseAudioNo, order: 25, strokeOrderVideo: hiraganaVideoNo },
-    { englishWord: 'ha', foreignWord: ['は','は','は'], foreignAudio: japaneseAudioHa, order: 26, strokeOrderVideo: hiraganaVideoHa },
-    { englishWord: 'hi', foreignWord: ['ひ','ひ','ひ'], foreignAudio: japaneseAudioHi, order: 27, strokeOrderVideo: hiraganaVideoHi },
-    { englishWord: 'fu', foreignWord: ['ふ','ふ','ふ'], foreignAudio: japaneseAudioFu, order: 28, strokeOrderVideo: hiraganaVideoFu },
-    { englishWord: 'he', foreignWord: ['へ','へ','へ'], foreignAudio: japaneseAudioHe, order: 29, strokeOrderVideo: hiraganaVideoHe },
-    { englishWord: 'ho', foreignWord: ['ほ','ほ','ほ'], foreignAudio: japaneseAudioHo, order: 30, strokeOrderVideo: hiraganaVideoHo },
-    { englishWord: 'ma', foreignWord: ['ま','ま','ま'], foreignAudio: japaneseAudioMa, order: 31, strokeOrderVideo: hiraganaVideoMa },
-    { englishWord: 'mi', foreignWord: ['み','み','み'], foreignAudio: japaneseAudioMi, order: 32, strokeOrderVideo: hiraganaVideoMi },
-    { englishWord: 'mu', foreignWord: ['む','む','む'], foreignAudio: japaneseAudioMu, order: 33, strokeOrderVideo: hiraganaVideoMu },
-    { englishWord: 'me', foreignWord: ['め','め','め'], foreignAudio: japaneseAudioMe, order: 34, strokeOrderVideo: hiraganaVideoMe },
-    { englishWord: 'mo', foreignWord: ['も','も','も'], foreignAudio: japaneseAudioMo, order: 35, strokeOrderVideo: hiraganaVideoMo },
-    { englishWord: 'ya', foreignWord: ['や','や','や'], foreignAudio: japaneseAudioYa, order: 36, strokeOrderVideo: hiraganaVideoYa },
-    { englishWord: 'yu', foreignWord: ['ゆ','ゆ','ゆ'], foreignAudio: japaneseAudioYu, order: 37, strokeOrderVideo: hiraganaVideoYu },
-    { englishWord: 'yo', foreignWord: ['よ','よ','よ'], foreignAudio: japaneseAudioYo, order: 38, strokeOrderVideo: hiraganaVideoYo },
-    { englishWord: 'ra', foreignWord: ['ら','ら','ら'], foreignAudio: japaneseAudioRa, order: 39, strokeOrderVideo: hiraganaVideoRa },
-    { englishWord: 'ri', foreignWord: ['り','り','り'], foreignAudio: japaneseAudioRi, order: 40, strokeOrderVideo: hiraganaVideoRi },
-    { englishWord: 'ru', foreignWord: ['る','る','る'], foreignAudio: japaneseAudioRu, order: 41, strokeOrderVideo: hiraganaVideoRu },
-    { englishWord: 're', foreignWord: ['れ','れ','れ'], foreignAudio: japaneseAudioRe, order: 42, strokeOrderVideo: hiraganaVideoRe },
-    { englishWord: 'ro', foreignWord: ['ろ','ろ','ろ'], foreignAudio: japaneseAudioRo, order: 43, strokeOrderVideo: hiraganaVideoRo },
-    { englishWord: 'wa', foreignWord: ['わ','わ','わ'], foreignAudio: japaneseAudioWa, order: 44, strokeOrderVideo: hiraganaVideoWa },
-    { englishWord: 'wo (pronounced o)', foreignWord: ['を','を','を'], foreignAudio: japaneseAudioWo, order: 45, strokeOrderVideo: hiraganaVideoWo },
-    { englishWord: 'n', foreignWord: ['ん','ん','ん'], foreignAudio: japaneseAudioN, order: 46, strokeOrderVideo: hiraganaVideoN },
+    { englishWord: 'a', foreignWord: ['あ','あ','あ'], foreignAudio: hiraganaAudioA, order: 1, strokeOrderVideo: hiraganaVideoA },
+    { englishWord: 'i', foreignWord: ['い','い','い'], foreignAudio: hiraganaAudioI, order: 2, strokeOrderVideo: hiraganaVideoI },
+    { englishWord: 'u', foreignWord: ['う','う','う'], foreignAudio: hiraganaAudioU, order: 3, strokeOrderVideo: hiraganaVideoU },
+    { englishWord: 'e', foreignWord: ['え','え','え'], foreignAudio: hiraganaAudioE, order: 4, strokeOrderVideo: hiraganaVideoE },
+    { englishWord: 'o', foreignWord: ['お','お','お'], foreignAudio: hiraganaAudioO, order: 5, strokeOrderVideo: hiraganaVideoO },
+    { englishWord: 'ka', foreignWord: ['か','か','か'], foreignAudio: hiraganaAudioKa, order: 6, strokeOrderVideo: hiraganaVideoKa },
+    { englishWord: 'ki', foreignWord: ['き','き','き'], foreignAudio: hiraganaAudioKi, order: 7, strokeOrderVideo: hiraganaVideoKi },
+    { englishWord: 'ku', foreignWord: ['く','く','く'], foreignAudio: hiraganaAudioKu, order: 8, strokeOrderVideo: hiraganaVideoKu },
+    { englishWord: 'ke', foreignWord: ['け','け','け'], foreignAudio: hiraganaAudioKe, order: 9, strokeOrderVideo: hiraganaVideoKe },
+    { englishWord: 'ko', foreignWord: ['こ','こ','こ'], foreignAudio: hiraganaAudioKo, order: 10, strokeOrderVideo: hiraganaVideoKo },
+    { englishWord: 'sa', foreignWord: ['さ','さ','さ'], foreignAudio: hiraganaAudioSa, order: 11, strokeOrderVideo: hiraganaVideoSa },
+    { englishWord: 'shi', foreignWord: ['し','し','し'], foreignAudio: hiraganaAudioShi, order: 12, strokeOrderVideo: hiraganaVideoShi },
+    { englishWord: 'su', foreignWord: ['す','す','す'], foreignAudio: hiraganaAudioSu, order: 13, strokeOrderVideo: hiraganaVideoSu },
+    { englishWord: 'se', foreignWord: ['せ','せ','せ'], foreignAudio: hiraganaAudioSe, order: 14, strokeOrderVideo: hiraganaVideoSe },
+    { englishWord: 'so', foreignWord: ['そ','そ','そ'], foreignAudio: hiraganaAudioSo, order: 15, strokeOrderVideo: hiraganaVideoSo },
+    { englishWord: 'ta', foreignWord: ['た','た','た'], foreignAudio: hiraganaAudioTa, order: 16, strokeOrderVideo: hiraganaVideoTa },
+    { englishWord: 'chi', foreignWord: ['ち','ち','ち'], foreignAudio: hiraganaAudioChi, order: 17, strokeOrderVideo: hiraganaVideoChi },
+    { englishWord: 'tsu', foreignWord: ['つ','つ','つ'], foreignAudio: hiraganaAudioTsu, order: 18, strokeOrderVideo: hiraganaVideoTsu },
+    { englishWord: 'te', foreignWord: ['て','て','て'], foreignAudio: hiraganaAudioTe, order: 19, strokeOrderVideo: hiraganaVideoTe },
+    { englishWord: 'to', foreignWord: ['と','と','と'], foreignAudio: hiraganaAudioTo, order: 20, strokeOrderVideo: hiraganaVideoTo },
+    { englishWord: 'na', foreignWord: ['な','な','な'], foreignAudio: hiraganaAudioNa, order: 21, strokeOrderVideo: hiraganaVideoNa },
+    { englishWord: 'ni', foreignWord: ['に','に','に'], foreignAudio: hiraganaAudioNi, order: 22, strokeOrderVideo: hiraganaVideoNi },
+    { englishWord: 'nu', foreignWord: ['ぬ','ぬ','ぬ'], foreignAudio: hiraganaAudioNu, order: 23, strokeOrderVideo: hiraganaVideoNu },
+    { englishWord: 'ne', foreignWord: ['ね','ね','ね'], foreignAudio: hiraganaAudioNe, order: 24, strokeOrderVideo: hiraganaVideoNe },
+    { englishWord: 'no', foreignWord: ['の','の','の'], foreignAudio: hiraganaAudioNo, order: 25, strokeOrderVideo: hiraganaVideoNo },
+    { englishWord: 'ha', foreignWord: ['は','は','は'], foreignAudio: hiraganaAudioHa, order: 26, strokeOrderVideo: hiraganaVideoHa },
+    { englishWord: 'hi', foreignWord: ['ひ','ひ','ひ'], foreignAudio: hiraganaAudioHi, order: 27, strokeOrderVideo: hiraganaVideoHi },
+    { englishWord: 'fu', foreignWord: ['ふ','ふ','ふ'], foreignAudio: hiraganaAudioFu, order: 28, strokeOrderVideo: hiraganaVideoFu },
+    { englishWord: 'he', foreignWord: ['へ','へ','へ'], foreignAudio: hiraganaAudioHe, order: 29, strokeOrderVideo: hiraganaVideoHe },
+    { englishWord: 'ho', foreignWord: ['ほ','ほ','ほ'], foreignAudio: hiraganaAudioHo, order: 30, strokeOrderVideo: hiraganaVideoHo },
+    { englishWord: 'ma', foreignWord: ['ま','ま','ま'], foreignAudio: hiraganaAudioMa, order: 31, strokeOrderVideo: hiraganaVideoMa },
+    { englishWord: 'mi', foreignWord: ['み','み','み'], foreignAudio: hiraganaAudioMi, order: 32, strokeOrderVideo: hiraganaVideoMi },
+    { englishWord: 'mu', foreignWord: ['む','む','む'], foreignAudio: hiraganaAudioMu, order: 33, strokeOrderVideo: hiraganaVideoMu },
+    { englishWord: 'me', foreignWord: ['め','め','め'], foreignAudio: hiraganaAudioMe, order: 34, strokeOrderVideo: hiraganaVideoMe },
+    { englishWord: 'mo', foreignWord: ['も','も','も'], foreignAudio: hiraganaAudioMo, order: 35, strokeOrderVideo: hiraganaVideoMo },
+    { englishWord: 'ya', foreignWord: ['や','や','や'], foreignAudio: hiraganaAudioYa, order: 36, strokeOrderVideo: hiraganaVideoYa },
+    { englishWord: 'yu', foreignWord: ['ゆ','ゆ','ゆ'], foreignAudio: hiraganaAudioYu, order: 37, strokeOrderVideo: hiraganaVideoYu },
+    { englishWord: 'yo', foreignWord: ['よ','よ','よ'], foreignAudio: hiraganaAudioYo, order: 38, strokeOrderVideo: hiraganaVideoYo },
+    { englishWord: 'ra', foreignWord: ['ら','ら','ら'], foreignAudio: hiraganaAudioRa, order: 39, strokeOrderVideo: hiraganaVideoRa },
+    { englishWord: 'ri', foreignWord: ['り','り','り'], foreignAudio: hiraganaAudioRi, order: 40, strokeOrderVideo: hiraganaVideoRi },
+    { englishWord: 'ru', foreignWord: ['る','る','る'], foreignAudio: hiraganaAudioRu, order: 41, strokeOrderVideo: hiraganaVideoRu },
+    { englishWord: 're', foreignWord: ['れ','れ','れ'], foreignAudio: hiraganaAudioRe, order: 42, strokeOrderVideo: hiraganaVideoRe },
+    { englishWord: 'ro', foreignWord: ['ろ','ろ','ろ'], foreignAudio: hiraganaAudioRo, order: 43, strokeOrderVideo: hiraganaVideoRo },
+    { englishWord: 'wa', foreignWord: ['わ','わ','わ'], foreignAudio: hiraganaAudioWa, order: 44, strokeOrderVideo: hiraganaVideoWa },
+    { englishWord: 'wo (pronounced o)', foreignWord: ['を','を','を'], foreignAudio: hiraganaAudioWo, order: 45, strokeOrderVideo: hiraganaVideoWo },
+    { englishWord: 'n', foreignWord: ['ん','ん','ん'], foreignAudio: hiraganaAudioN, order: 46, strokeOrderVideo: hiraganaVideoN },
   ] },
   {
     name: 'Hiragana with Dakuten and Han-Dakuten', slugName: japaneseVocabTopicSlugNames.hiraganaDakuten, hasOrdering: true, isLocked: true, isAlphabet: true, words: [
@@ -1924,52 +1924,52 @@ const japaneseTopics: TopicWithThreeAlphabets[] = [
   },
   // see https://www.tofugu.com/japanese/learn-katakana/ for explanation
   { name:'Basic Katakana', slugName: japaneseVocabTopicSlugNames.basicKatakana, hasOrdering:true, isLocked: false, isAlphabet: true, words: [
-    { englishWord: 'a', foreignWord: ['ア','ア','ア'], foreignAudio: japaneseAudioA, order: 1 },
-    { englishWord: 'i', foreignWord: ['イ','イ','イ'], foreignAudio: japaneseAudioI, order: 2 },
-    { englishWord: 'u', foreignWord: ['ウ','ウ','ウ'], foreignAudio: japaneseAudioU, order: 3 },
-    { englishWord: 'e', foreignWord: ['エ','エ','エ'], foreignAudio: japaneseAudioE, order: 4 },
-    { englishWord: 'o', foreignWord: ['オ','オ','オ'], foreignAudio: japaneseAudioO, order: 5 },
-    { englishWord: 'ka', foreignWord: ['カ','カ','カ'], foreignAudio: japaneseAudioKa, order: 6 },
-    { englishWord: 'ki', foreignWord: ['キ','キ','キ'], foreignAudio: japaneseAudioKi, order: 7 },
-    { englishWord: 'ku', foreignWord: ['ク','ク','ク'], foreignAudio: japaneseAudioKu, order: 8 },
-    { englishWord: 'ke', foreignWord: ['ケ','ケ','ケ'], foreignAudio: japaneseAudioKe, order: 9 },
-    { englishWord: 'ko', foreignWord: ['コ','コ','コ'], foreignAudio: japaneseAudioKo, order: 10 },
-    { englishWord: 'sa', foreignWord: ['サ','サ','サ'], foreignAudio: japaneseAudioSa, order: 11 },
-    { englishWord: 'shi', foreignWord: ['シ','シ','シ'], foreignAudio: japaneseAudioShi, order: 12 },
-    { englishWord: 'su', foreignWord: ['ス','ス','ス'], foreignAudio: japaneseAudioSu, order: 13 },
-    { englishWord: 'se', foreignWord: ['セ','セ','セ'], foreignAudio: japaneseAudioSe, order: 14 },
-    { englishWord: 'so', foreignWord: ['ソ','ソ','ソ'], foreignAudio: japaneseAudioSo, order: 15 },
-    { englishWord: 'ta', foreignWord: ['タ','タ','タ'], foreignAudio: japaneseAudioTa, order: 16 },
-    { englishWord: 'chi', foreignWord: ['チ','チ','チ'], foreignAudio: japaneseAudioChi, order: 17 },
-    { englishWord: 'tsu', foreignWord: ['ツ','ツ','ツ'], foreignAudio: japaneseAudioTsu, order: 18 },
-    { englishWord: 'te', foreignWord: ['テ','テ','テ'], foreignAudio: japaneseAudioTe, order: 19 },
-    { englishWord: 'to', foreignWord: ['ト','ト','ト'], foreignAudio: japaneseAudioTo, order: 20 },
-    { englishWord: 'na', foreignWord: ['ナ','ナ','ナ'], foreignAudio: japaneseAudioNa, order: 21 },
-    { englishWord: 'ni', foreignWord: ['ニ','ニ','ニ'], foreignAudio: japaneseAudioNi, order: 22 },
-    { englishWord: 'nu', foreignWord: ['ヌ','ヌ','ヌ'], foreignAudio: japaneseAudioNu, order: 23 },
-    { englishWord: 'ne', foreignWord: ['ネ','ネ','ネ'], foreignAudio: japaneseAudioNe, order: 24 },
-    { englishWord: 'no', foreignWord: ['ノ','ノ','ノ'], foreignAudio: japaneseAudioNo, order: 25 },
-    { englishWord: 'ha', foreignWord: ['ハ','ハ','ハ'], foreignAudio: japaneseAudioHa, order: 26 },
-    { englishWord: 'hi', foreignWord: ['ヒ','ヒ','ヒ'], foreignAudio: japaneseAudioHi, order: 27 },
-    { englishWord: 'fu', foreignWord: ['フ','フ','フ'], foreignAudio: japaneseAudioFu, order: 28 },
-    { englishWord: 'he', foreignWord: ['ヘ','ヘ','ヘ'], foreignAudio: japaneseAudioHe, order: 29 },
-    { englishWord: 'ho', foreignWord: ['ホ','ホ','ホ'], foreignAudio: japaneseAudioHo, order: 30 },
-    { englishWord: 'ma', foreignWord: ['マ','マ','マ'], foreignAudio: japaneseAudioMa, order: 31 },
-    { englishWord: 'mi', foreignWord: ['ミ','ミ','ミ'], foreignAudio: japaneseAudioMi, order: 32 },
-    { englishWord: 'mu', foreignWord: ['ム','ム','ム'], foreignAudio: japaneseAudioMu, order: 33 },
-    { englishWord: 'me', foreignWord: ['メ','メ','メ'], foreignAudio: japaneseAudioMe, order: 34 },
-    { englishWord: 'mo', foreignWord: ['モ','モ','モ'], foreignAudio: japaneseAudioMo, order: 35 },
-    { englishWord: 'ya', foreignWord: ['ヤ','ヤ','ヤ'], foreignAudio: japaneseAudioYa, order: 36 },
-    { englishWord: 'yu', foreignWord: ['ユ','ユ','ユ'], foreignAudio: japaneseAudioYu, order: 37 },
-    { englishWord: 'yo', foreignWord: ['ヨ','ヨ','ヨ'], foreignAudio: japaneseAudioYo, order: 38 },
-    { englishWord: 'ra', foreignWord: ['ラ','ラ','ラ'], foreignAudio: japaneseAudioRa, order: 39 },
-    { englishWord: 'ri', foreignWord: ['リ','リ','リ'], foreignAudio: japaneseAudioRi, order: 40 },
-    { englishWord: 'ru', foreignWord: ['ル','ル','ル'], foreignAudio: japaneseAudioRu, order: 41 },
-    { englishWord: 're', foreignWord: ['レ','レ','レ'], foreignAudio: japaneseAudioRe, order: 42 },
-    { englishWord: 'ro', foreignWord: ['ロ','ロ','ロ'], foreignAudio: japaneseAudioRo, order: 43 },
-    { englishWord: 'wa', foreignWord: ['ワ','ワ','ワ'], foreignAudio: japaneseAudioWa, order: 44 },
-    { englishWord: 'wo', foreignWord: ['ヲ','ヲ','ヲ'], foreignAudio: japaneseAudioWo, order: 45 },
-    { englishWord: 'n', foreignWord: ['ン','ン','ン'], foreignAudio: japaneseAudioN, order: 46 }
+    { englishWord: 'a', foreignWord: ['ア','ア','ア'], foreignAudio: hiraganaAudioA, order: 1 },
+    { englishWord: 'i', foreignWord: ['イ','イ','イ'], foreignAudio: hiraganaAudioI, order: 2 },
+    { englishWord: 'u', foreignWord: ['ウ','ウ','ウ'], foreignAudio: hiraganaAudioU, order: 3 },
+    { englishWord: 'e', foreignWord: ['エ','エ','エ'], foreignAudio: hiraganaAudioE, order: 4 },
+    { englishWord: 'o', foreignWord: ['オ','オ','オ'], foreignAudio: hiraganaAudioO, order: 5 },
+    { englishWord: 'ka', foreignWord: ['カ','カ','カ'], foreignAudio: hiraganaAudioKa, order: 6 },
+    { englishWord: 'ki', foreignWord: ['キ','キ','キ'], foreignAudio: hiraganaAudioKi, order: 7 },
+    { englishWord: 'ku', foreignWord: ['ク','ク','ク'], foreignAudio: hiraganaAudioKu, order: 8 },
+    { englishWord: 'ke', foreignWord: ['ケ','ケ','ケ'], foreignAudio: hiraganaAudioKe, order: 9 },
+    { englishWord: 'ko', foreignWord: ['コ','コ','コ'], foreignAudio: hiraganaAudioKo, order: 10 },
+    { englishWord: 'sa', foreignWord: ['サ','サ','サ'], foreignAudio: hiraganaAudioSa, order: 11 },
+    { englishWord: 'shi', foreignWord: ['シ','シ','シ'], foreignAudio: hiraganaAudioShi, order: 12 },
+    { englishWord: 'su', foreignWord: ['ス','ス','ス'], foreignAudio: hiraganaAudioSu, order: 13 },
+    { englishWord: 'se', foreignWord: ['セ','セ','セ'], foreignAudio: hiraganaAudioSe, order: 14 },
+    { englishWord: 'so', foreignWord: ['ソ','ソ','ソ'], foreignAudio: hiraganaAudioSo, order: 15 },
+    { englishWord: 'ta', foreignWord: ['タ','タ','タ'], foreignAudio: hiraganaAudioTa, order: 16 },
+    { englishWord: 'chi', foreignWord: ['チ','チ','チ'], foreignAudio: hiraganaAudioChi, order: 17 },
+    { englishWord: 'tsu', foreignWord: ['ツ','ツ','ツ'], foreignAudio: hiraganaAudioTsu, order: 18 },
+    { englishWord: 'te', foreignWord: ['テ','テ','テ'], foreignAudio: hiraganaAudioTe, order: 19 },
+    { englishWord: 'to', foreignWord: ['ト','ト','ト'], foreignAudio: hiraganaAudioTo, order: 20 },
+    { englishWord: 'na', foreignWord: ['ナ','ナ','ナ'], foreignAudio: hiraganaAudioNa, order: 21 },
+    { englishWord: 'ni', foreignWord: ['ニ','ニ','ニ'], foreignAudio: hiraganaAudioNi, order: 22 },
+    { englishWord: 'nu', foreignWord: ['ヌ','ヌ','ヌ'], foreignAudio: hiraganaAudioNu, order: 23 },
+    { englishWord: 'ne', foreignWord: ['ネ','ネ','ネ'], foreignAudio: hiraganaAudioNe, order: 24 },
+    { englishWord: 'no', foreignWord: ['ノ','ノ','ノ'], foreignAudio: hiraganaAudioNo, order: 25 },
+    { englishWord: 'ha', foreignWord: ['ハ','ハ','ハ'], foreignAudio: hiraganaAudioHa, order: 26 },
+    { englishWord: 'hi', foreignWord: ['ヒ','ヒ','ヒ'], foreignAudio: hiraganaAudioHi, order: 27 },
+    { englishWord: 'fu', foreignWord: ['フ','フ','フ'], foreignAudio: hiraganaAudioFu, order: 28 },
+    { englishWord: 'he', foreignWord: ['ヘ','ヘ','ヘ'], foreignAudio: hiraganaAudioHe, order: 29 },
+    { englishWord: 'ho', foreignWord: ['ホ','ホ','ホ'], foreignAudio: hiraganaAudioHo, order: 30 },
+    { englishWord: 'ma', foreignWord: ['マ','マ','マ'], foreignAudio: hiraganaAudioMa, order: 31 },
+    { englishWord: 'mi', foreignWord: ['ミ','ミ','ミ'], foreignAudio: hiraganaAudioMi, order: 32 },
+    { englishWord: 'mu', foreignWord: ['ム','ム','ム'], foreignAudio: hiraganaAudioMu, order: 33 },
+    { englishWord: 'me', foreignWord: ['メ','メ','メ'], foreignAudio: hiraganaAudioMe, order: 34 },
+    { englishWord: 'mo', foreignWord: ['モ','モ','モ'], foreignAudio: hiraganaAudioMo, order: 35 },
+    { englishWord: 'ya', foreignWord: ['ヤ','ヤ','ヤ'], foreignAudio: hiraganaAudioYa, order: 36 },
+    { englishWord: 'yu', foreignWord: ['ユ','ユ','ユ'], foreignAudio: hiraganaAudioYu, order: 37 },
+    { englishWord: 'yo', foreignWord: ['ヨ','ヨ','ヨ'], foreignAudio: hiraganaAudioYo, order: 38 },
+    { englishWord: 'ra', foreignWord: ['ラ','ラ','ラ'], foreignAudio: hiraganaAudioRa, order: 39 },
+    { englishWord: 'ri', foreignWord: ['リ','リ','リ'], foreignAudio: hiraganaAudioRi, order: 40 },
+    { englishWord: 'ru', foreignWord: ['ル','ル','ル'], foreignAudio: hiraganaAudioRu, order: 41 },
+    { englishWord: 're', foreignWord: ['レ','レ','レ'], foreignAudio: hiraganaAudioRe, order: 42 },
+    { englishWord: 'ro', foreignWord: ['ロ','ロ','ロ'], foreignAudio: hiraganaAudioRo, order: 43 },
+    { englishWord: 'wa', foreignWord: ['ワ','ワ','ワ'], foreignAudio: hiraganaAudioWa, order: 44 },
+    { englishWord: 'wo', foreignWord: ['ヲ','ヲ','ヲ'], foreignAudio: hiraganaAudioWo, order: 45 },
+    { englishWord: 'n', foreignWord: ['ン','ン','ン'], foreignAudio: hiraganaAudioN, order: 46 }
   ] },
   {
     // see https://www.tofugu.com/japanese/learn-katakana/ for explanation
