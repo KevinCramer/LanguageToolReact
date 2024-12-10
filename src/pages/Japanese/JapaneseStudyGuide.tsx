@@ -200,7 +200,10 @@ const JapaneseStudyGuide = () => {
             </div>
           </div>
           <div style={{ paddingTop:'20px' }}>
-            <b>Phase 4:</b> Study the vocabulary for these topics:
+            <b>Phase 4:</b> Watch this short video about learning <a href="/japanese/kanji-explained">kanji</a>.
+          </div>
+          <div style={{ paddingTop:'20px' }}>
+            <b>Phase 5:</b> Study the vocabulary for these topics:
             <div style={{ display: 'flex' }}> 
               <ul>
                 <li>
@@ -384,10 +387,7 @@ const JapaneseStudyGuide = () => {
             We recommend you spend no more than 15 minutes studying a topic’s vocabulary before taking a quiz. Then if the grade is below 90% which is completely normal go back and do another round of 15 minutes of studying. Make sure to take breaks, and you can also switch between studying a few topics to mix things up. 
           (If you get 90% or higher  for each quiz without studying the topic in the last 24 hours you are ready to move to phase 2).           </div>
           <div style={{ paddingTop:'20px' }}>
-            <b>Phase 5:</b> practice <a href="/japanese/comprehension/aikos-book-sanctuary?eng=F">reading and listening comprehension</a>.
-          </div>
-          <div style={{ paddingTop:'20px' }}>
-            <b>Phase 6:</b> learn <a href="/japanese/kanji-explained">kanji</a>.
+            <b>Phase 6:</b> practice <a href="/japanese/comprehension/aikos-book-sanctuary?eng=F">reading and listening comprehension</a>.
           </div>
           <div style={{ height: '30px' }}></div>
           <i style={{ fontSize:'16px', paddingBottom: '30px' }}>

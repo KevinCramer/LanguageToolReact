@@ -2175,6 +2175,7 @@ const japaneseTopics: TopicWithThreeAlphabets[] = [
 
     ]
   },
+  /*
   {
     name: 'First Grade Kanji',
     slugName: japaneseVocabTopicSlugNames.firstGradeKanji,
@@ -2264,6 +2265,7 @@ const japaneseTopics: TopicWithThreeAlphabets[] = [
       { englishWord: 'white', foreignWord: ['白', '白', '白'], foreignAudio: '', order: 80 },
     ]
   },
+  */
   { name:'Numbers',slugName: japaneseVocabTopicSlugNames.numbers, hasOrdering:true, isLocked: false, isAlphabet: false, words: [
     { englishWord: 'one', foreignWord: ['ichi', 'いち','一'], foreignAudio: japaneseAudioOne, order:1 },
     { englishWord: 'two', foreignWord: ['ni', 'に','二'], foreignAudio: japaneseAudioTwo, order:2 },
