@@ -335,25 +335,18 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
           <Modal.Header closeButton>
             <Modal.Title style={{ textAlign: 'center', width: '100%' }}>How to Guide</Modal.Title>
           </Modal.Header>
-          {false && <Modal.Body>
+          <Modal.Body>
             {currentLanguage.languageName === 'Japanese' ? (
-              <div className="embed-responsive embed-responsive-16by9">
-                <iframe
-                  className="embed-responsive-item"
-                  src="https://www.youtube.com/embed/pTazGqK7Rms"
-                  allowFullScreen
-                ></iframe>
+              <div style={{ borderLeft: '1px solid black', borderBottom: '1px solid black', borderRight: '1px solid black' }}>
+                <video
+                  style={{ margin: '0 auto', display: 'block', maxWidth: '100%' }}
+                  controls
+                  src={props.howToGuideVideo}
+                />
               </div>
             ) : (
-              <video
-                style={{ margin: '0 auto', display: 'block', maxWidth: '100%' }}
-                controls
-                src={props.howToGuideVideo}
-              />
+              <div>Video coming soon</div>
             )}
-          </Modal.Body>}
-          <Modal.Body>
-            Video coming soon
           </Modal.Body>
         </Modal>
       </Container>
