@@ -17,7 +17,7 @@ const Account = () => {
       <div style={{ height:'100px' }}>
 
       </div>
-      <h4 style={{ color:'white' }}>Account</h4>
+      <h4 style={{ color:'white' }}>Account Settings</h4>
       <CustomLink isWhite={true} onClick={() => dispatch(displayUpdateAccount())}>
         Reset Password
       </CustomLink>

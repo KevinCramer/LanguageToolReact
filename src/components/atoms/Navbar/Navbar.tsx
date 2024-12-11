@@ -9,6 +9,7 @@ import { useEffect, useState } from 'react';
 import lingoCommandLogo from '../../../assets/lingoCommandLogo.svg';
 import './Navbar.scss';
 import { mobileBreakPoint } from '../../../constants';
+import { BsPerson } from 'react-icons/bs';
 
 const Navbar = () => {
   const dispatch = useDispatch();
@@ -169,61 +170,113 @@ const Navbar = () => {
         >
           Contact
         </Nav.Link>
-
-        {currentUser && currentUser.email && (
-          <Nav.Link
-            to="/account"
-            as={NavLink}
+        {!(currentUser && currentUser.email) && (
+          <div
             style={{
               color: isOnLanguagesPage ? 'black' : 'white',
               textDecoration: 'none',
               whiteSpace: 'nowrap',
-              position: 'relative',
+              cursor: 'pointer',
               fontSize: isMobile ? '18px' : '20px',
               letterSpacing: isMobile ? '' : '0.25rem',
             }}
-          >
-            Account
-          </Nav.Link>
-        )}
-
-        <div
-          style={{
-            color: isOnLanguagesPage ? 'black' : 'white',
-            textDecoration: 'none',
-            whiteSpace: 'nowrap',
-            cursor: 'pointer',
-            fontSize: isMobile ? '18px' : '20px',
-            letterSpacing: isMobile ? '' : '0.25rem',
-          }}
-          onClick={async () => {
-            if (currentUser && currentUser.email) {
-              try {
-                await logout();
-                if (location.pathname === '/account') {
-                  navigate('/');
+            onClick={async () => {
+              if (currentUser && currentUser.email) {
+                try {
+                  await logout();
+                  if (location.pathname === '/account') {
+                    navigate('/');
+                  }
+                } catch (error) {
+                  console.error('Failed to log out', error);
                 }
-              } catch (error) {
-                console.error('Failed to log out', error);
+              } else {
+                dispatch(displayLogin());
               }
-            } else {
-              dispatch(displayLogin());
-            }
-          }}
-        >
-          {currentUser && currentUser.email ? 'Log Out' : 'Log In'}
-        </div>
+            }}
+          >
+            {currentUser && currentUser.email ? 'Log Out' : 'Log In'}
+          </div>
+
+        )}
+        {currentUser && currentUser.email && (
+          <>
+            <NavDropdown
+              title={
+                <span
+                  style={{
+                    color: isOnLanguagesPage ? 'black' : 'white',
+                    whiteSpace: 'nowrap',
+                    textDecoration: 'none',
+                    position: 'relative',
+                    letterSpacing: isMobile ? '' : '0.25rem',
+                    fontSize: isMobile ? '18px' : '20px', 
+                  }}
+                >
+                  <BsPerson size={isMobile ? 30 : 40}/>
+                </span>
+              }
+              id="study-dropdown"
+              onToggle={handleDropdownToggle}
+              align="end"
+              style={{
+              }}
+              className={isOnLanguagesPage ? 'dropdown-language-page' : 'dropdown-other-page'}
+
+            >
+              <NavDropdown.Item
+                to="/account"
+                as={NavLink}
+                style={{
+                  whiteSpace: 'nowrap',
+                  color: 'black',
+                  fontSize:'18px', 
+                }}
+              >
+            Account Settings
+              </NavDropdown.Item>
+              <div
+                style={{
+                  color: 'black',
+                  textDecoration: 'none',
+                  whiteSpace: 'nowrap',
+                  cursor: 'pointer',
+                  fontSize: '18px',
+                  paddingLeft:'15px'
+                }}
+                onClick={async () => {
+                  if (currentUser && currentUser.email) {
+                    try {
+                      await logout();
+                      if (location.pathname === '/account') {
+                        navigate('/');
+                      }
+                    } catch (error) {
+                      console.error('Failed to log out', error);
+                    }
+                  } else {
+                    dispatch(displayLogin());
+                  }
+                }}
+              >
+          Log Out
+              </div>
+            </NavDropdown>
+            <hr
+              style={{
+                position: 'absolute',
+                bottom: 0,
+                width: '100%',
+                border: 'none',
+                borderTop: `2px solid ${isOnLanguagesPage ? 'black' : 'white'}`,
+                margin: 0,
+              }}
+            />
+          </>
+        )}
+        
       </Nav>
-      <hr
-        style={{
-          position: 'absolute',
-          bottom: 0,
-          width: '100%',
-          border: 'none',
-          borderTop: `2px solid ${isOnLanguagesPage ? 'black' : 'white'}`,
-          margin: 0,
-        }}
-      />
+
     </NavbarBs>
   );
 };

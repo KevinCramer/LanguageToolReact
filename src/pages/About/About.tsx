@@ -1,27 +1,38 @@
+import { useEffect, useState } from 'react';
+import { mobileBreakPoint } from '../../constants';
 import './About.scss';
-import {
-  FaFacebook,
-  FaInstagram,
-  FaLinkedin,
-  FaPinterest,
-  FaTiktok,
-  FaYoutube,
-} from 'react-icons/fa';
 
 const About = () => {
-  const aTagStyle = {
-    color: 'white',
-    display: 'flex',
-    alignItems: 'center',
-    marginBottom:'15px'
-  }
 
-  const spanStyle = { marginLeft: '20px' }
+  const useWindowWidth = () => {
+    const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
+
+    useEffect(() => {
+      // Update the windowWidth state when the window is resized
+      const handleResize = () => {
+        setWindowWidth(window.innerWidth);
+      };
+  
+      // Add event listener to handle window resizing
+      window.addEventListener('resize', handleResize);
+  
+      // Cleanup event listener when the component unmounts
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }, []);
+  
+    return windowWidth;
+  };
+
+  const width = useWindowWidth(); // Get the current window width
+
+  const isMobile = width < mobileBreakPoint; 
   return (
     <>
       <div className="contact-us-container">
-        <div style={{ color: 'black', backgroundColor: 'white', padding:'5px', borderRadius: '10px', maxWidth: '820px', fontSize: '22px', marginTop:'100px' }}>
-          <div style={{ fontSize: '22px', marginTop:'10px' }}>
+        <div style={{ color: 'black', backgroundColor: 'white', padding:'10px', borderRadius: '10px', maxWidth: '820px', fontSize: isMobile ? '16px' : '20px', }}>
+          <div style={{ marginTop:'10px' }}>
           LingoCommand is an educational platform for foreign language learning. It boosts language learning by combining these key principles:
           </div>
           <ul> 

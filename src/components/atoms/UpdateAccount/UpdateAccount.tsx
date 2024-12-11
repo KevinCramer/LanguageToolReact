@@ -6,8 +6,8 @@ import { useDispatch } from 'react-redux'
 
 export default function UpdateAccount() {
   const dispatch = useDispatch();
-  const passwordRef = useRef()
-  const passwordConfirmRef = useRef()
+  const passwordRef = useRef<HTMLInputElement>(null);
+  const passwordConfirmRef = useRef<HTMLInputElement>(null);
   // @ts-ignore
   const { updatePassword } = useAuth()
   const [error, setError] = useState('')
@@ -17,10 +17,15 @@ export default function UpdateAccount() {
   function handleSubmit(e) {
     e.preventDefault()
     // @ts-ignore
+    if (!passwordRef.current || !passwordConfirmRef.current) {
+      return setError('Password fields are not filled in');
+    }
     if (passwordRef.current.value !== passwordConfirmRef.current.value) {
       return setError('Passwords do not match')
     }
-
+    if (passwordRef.current.value.length < 8) {
+      return setError('Password should be at least 8 characters long')
+    }
     const promises = []
     setLoading(true)
     setError('')
@@ -51,21 +56,19 @@ export default function UpdateAccount() {
           {error && <Alert variant="danger">{error}</Alert>}
           <Form onSubmit={handleSubmit}>
             <Form.Group id="password">
-              <Form.Label>Password</Form.Label>
+              <Form.Label>New Password</Form.Label>
               <Form.Control
                 type="password"
                 // @ts-ignore
                 ref={passwordRef}
-                placeholder="Leave blank to keep the same"
               />
             </Form.Group>
             <Form.Group id="password-confirm">
-              <Form.Label>Password Confirmation</Form.Label>
+              <Form.Label>New Password Confirmation</Form.Label>
               <Form.Control
                 type="password"
                 // @ts-ignore
                 ref={passwordConfirmRef}
-                placeholder="Leave blank to keep the same"
               />
             </Form.Group>
             <Button disabled={loading} className="w-100 btn-auth" type="submit">
