@@ -337,7 +337,7 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
           </Modal.Header>
           <Modal.Body>
             {currentLanguage.languageName === 'Japanese' ? (
-              <div style={{ borderLeft: '1px solid black', borderBottom: '1px solid black', borderRight: '1px solid black' }}>
+              <div style={{ borderLeft: '1px solid black', borderBottom: '1px solid black', borderRight: '1px solid black', borderTop: isMobileDevice ? '1px solid black' : '' }}>
                 <video
                   style={{ margin: '0 auto', display: 'block', maxWidth: '100%' }}
                   controls

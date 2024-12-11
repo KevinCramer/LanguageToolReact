@@ -167,6 +167,7 @@ const japaneseAudioTranscriptions: AudioTranscriptionWithFourAlphabet[] = [
     ],
     isLocked: false
   },
+  /*
   {
     name:'Rai Plays Tennis', slugName: 'rai-plays-tennis', contents: [
       { sentences:[
@@ -214,6 +215,7 @@ const japaneseAudioTranscriptions: AudioTranscriptionWithFourAlphabet[] = [
     ],
     isLocked: true
   },
+  */
 ] 
 
 const spanishComprehensionTopicSlugNames = {
