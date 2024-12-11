@@ -229,7 +229,7 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
           }}
           onClick={() => setShowPopUp(true)}
         >
-          How to Guide
+          How to Guide (Video)
         </button>
       </div>
       <Container>

@@ -394,7 +394,7 @@ const VocabContent = (
           <Modal show ={showPopUp} onHide={hidePopUp}>
             <Modal.Header closeButton>
               <Modal.Title id="contained-modal-title-vleft" style={{ textAlign: 'center', width: '100%' }}>
-              How to Guide
+              How to Guide (Video)
               </Modal.Title>
             </Modal.Header>
             <Modal.Body>
