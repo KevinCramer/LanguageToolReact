@@ -82,7 +82,7 @@ const Navbar = () => {
             whiteSpace: 'nowrap',
             position: 'relative',
             letterSpacing: isMobile ? '' : '0.25rem',
-            fontSize: isMobile ? '16px' : '20px', 
+            fontSize: isMobile ? '18px' : '20px', 
           }}
           onClick={() => dispatch(backHome())}
         >
@@ -104,7 +104,7 @@ const Navbar = () => {
                 textDecoration: 'none',
                 position: 'relative',
                 letterSpacing: isMobile ? '' : '0.25rem',
-                fontSize: isMobile ? '16px' : '20px', 
+                fontSize: isMobile ? '18px' : '20px', 
               }}
             >
               Languages
@@ -123,7 +123,7 @@ const Navbar = () => {
             style={{
               whiteSpace: 'nowrap',
               color: 'black',
-              fontSize: isMobile ? '16px' : '18px', 
+              fontSize: isMobile ? '18px' : '18px', 
             }}
           >
             Spanish
@@ -134,7 +134,7 @@ const Navbar = () => {
             style={{
               whiteSpace: 'nowrap',
               color: 'black',
-              fontSize: isMobile ? '16px' : '18px', 
+              fontSize: isMobile ? '18px' : '18px', 
             }}
           >
             Japanese
@@ -148,7 +148,7 @@ const Navbar = () => {
             textDecoration: 'none',
             whiteSpace: 'nowrap',
             position: 'relative',
-            fontSize: isMobile ? '16px' : '20px', 
+            fontSize: isMobile ? '18px' : '20px', 
             letterSpacing: isMobile ? '' : '0.25rem',
           }}
         >
@@ -163,11 +163,11 @@ const Navbar = () => {
             textDecoration: 'none',
             whiteSpace: 'nowrap',
             position: 'relative',
-            fontSize: isMobile ? '16px' : '20px', 
+            fontSize: isMobile ? '18px' : '20px', 
             letterSpacing: isMobile ? '' : '0.25rem',
           }}
         >
-          Contact Us
+          Contact
         </Nav.Link>
 
         {currentUser && currentUser.email && (
@@ -179,7 +179,7 @@ const Navbar = () => {
               textDecoration: 'none',
               whiteSpace: 'nowrap',
               position: 'relative',
-              fontSize: isMobile ? '16px' : '20px',
+              fontSize: isMobile ? '18px' : '20px',
               letterSpacing: isMobile ? '' : '0.25rem',
             }}
           >
@@ -193,7 +193,7 @@ const Navbar = () => {
             textDecoration: 'none',
             whiteSpace: 'nowrap',
             cursor: 'pointer',
-            fontSize: isMobile ? '16px' : '20px',
+            fontSize: isMobile ? '18px' : '20px',
             letterSpacing: isMobile ? '' : '0.25rem',
           }}
           onClick={async () => {

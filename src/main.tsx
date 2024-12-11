@@ -18,7 +18,7 @@ const routesMeta = {
     ],
   },
   '/contact': {
-    title: 'LingoCommand Contact Us',
+    title: 'LingoCommand Contact',
     meta: [
       { name: 'description', content: 'You can reach out to us at contact@lingocommand.com' },
       { name: 'keywords', content: 'contact us, LingoCommand support, customer support, language learning help, language app support, contact language platform, reach out, LingoCommand inquiries, contact page' },
