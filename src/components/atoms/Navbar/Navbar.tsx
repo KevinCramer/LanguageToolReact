@@ -262,20 +262,22 @@ const Navbar = () => {
           Log Out
               </div>
             </NavDropdown>
-            <hr
-              style={{
-                position: 'absolute',
-                bottom: 0,
-                width: '100%',
-                border: 'none',
-                borderTop: `2px solid ${isOnLanguagesPage ? 'black' : 'white'}`,
-                margin: 0,
-              }}
-            />
+            
           </>
+          
         )}
         
       </Nav>
+      <hr
+        style={{
+          position: 'absolute',
+          bottom: 0,
+          width: '100%',
+          border: 'none',
+          borderTop: `2px solid ${isOnLanguagesPage ? 'black' : 'white'}`,
+          margin: 0,
+        }}
+      />
 
     </NavbarBs>
   );
