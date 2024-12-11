@@ -43,7 +43,7 @@ const About = () => {
               <b>Repeated Exposure</b>: Master your target language naturally through repeated exposure to conversations in your target language, supported by focused reading and listening exercises.
             </li>
             <li style={{ marginTop: '20px' }}>
-              <b>Customisable Settings</b>: Use our highly customisable language learning exercises to tailor your learning experience to match your needs exactly.
+              <b>Customisable Settings</b>: Use our highly customisable language learning exercises to tailor your learning to match your needs exactly.
             </li>
           </ul>
         </div>
