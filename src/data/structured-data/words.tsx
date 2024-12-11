@@ -1644,7 +1644,7 @@ const spanishTopics: TopicWithOneAlphabet[] = [
     { englishWord: '(the) university', foreignWord: ['(la) universidad'], foreignAudio: spanishAudioUniversity },
 
   ] },
-  { name:'Home', slugName: spanishVocabTopicSlugNames.locations, hasOrdering:false, isLocked: true, isAlphabet: false, words: [
+  { name:'Home', slugName: spanishVocabTopicSlugNames.home, hasOrdering:false, isLocked: true, isAlphabet: false, words: [
     { englishWord: '(the) window', foreignWord: ['(la) ventana'], foreignAudio: spanishAudioWindow },
     { englishWord: '(the) bedroom', foreignWord: ['(el) dormitorio'], foreignAudio: spanishAudioBedRoom },
     { englishWord: '(the) kitchen', foreignWord: ['(la) cocina'], foreignAudio: spanishAudioKitchen },
