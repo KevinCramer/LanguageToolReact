@@ -113,7 +113,6 @@ const Navbar = () => {
           id="study-dropdown"
           onToggle={handleDropdownToggle}
           style={{
-            padding: '0.5rem 1rem',
           }}
           className={isOnLanguagesPage ? 'dropdown-language-page' : 'dropdown-other-page'}
 
@@ -141,6 +140,20 @@ const Navbar = () => {
             Japanese
           </NavDropdown.Item>
         </NavDropdown>
+        <Nav.Link
+          to="/about"
+          as={NavLink}
+          style={{
+            color: isOnLanguagesPage ? 'black' : 'white',
+            textDecoration: 'none',
+            whiteSpace: 'nowrap',
+            position: 'relative',
+            fontSize: isMobile ? '18px' : '20px', 
+            letterSpacing: isMobile ? '' : '0.25rem',
+          }}
+        >
+          About
+        </Nav.Link>
 
         <Nav.Link
           to="/contact"
@@ -149,7 +162,6 @@ const Navbar = () => {
             color: isOnLanguagesPage ? 'black' : 'white',
             textDecoration: 'none',
             whiteSpace: 'nowrap',
-            padding: '0.5rem 1rem',
             position: 'relative',
             fontSize: isMobile ? '18px' : '20px', 
             letterSpacing: isMobile ? '' : '0.25rem',
@@ -166,7 +178,6 @@ const Navbar = () => {
               color: isOnLanguagesPage ? 'black' : 'white',
               textDecoration: 'none',
               whiteSpace: 'nowrap',
-              padding: '0.5rem 1rem',
               position: 'relative',
               fontSize: isMobile ? '18px' : '20px',
               letterSpacing: isMobile ? '' : '0.25rem',
@@ -182,7 +193,6 @@ const Navbar = () => {
             textDecoration: 'none',
             whiteSpace: 'nowrap',
             cursor: 'pointer',
-            padding: '0.5rem 1rem',
             fontSize: isMobile ? '18px' : '20px',
             letterSpacing: isMobile ? '' : '0.25rem',
           }}

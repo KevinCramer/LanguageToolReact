@@ -7,6 +7,7 @@ import { Route, Routes, useLocation } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
 import Account from './pages/Account/Account'
 import ContactUs from './pages/ContactUs/ContactUs'
+import About from './pages/About/About'
 import Custom404Error from './pages/Custom404Error/Custom404Error'
 import DeleteAccount from './components/atoms/DeleteAccount/DeleteAccount'
 import ForgotPassword from './components/molecules/ForgotPassword/ForgotPassword'
@@ -41,7 +42,7 @@ const App = ()=> {
   const reduxLock = useSelector((state: RootStateLock) => state.lock);
   // @ts-ignore
   const { currentUser } = useAuth();
-  const pathWithBackground = location.pathname === '/' || location.pathname === '/contact' || location.pathname === '/account'
+  const pathWithBackground = location.pathname === '/' || location.pathname === '/contact' || location.pathname === '/account' || location.pathname === '/about'
   
   const userIsLoggedIn = currentUser && currentUser.email
   useEffect(() => {
@@ -56,6 +57,7 @@ const App = ()=> {
         <Navbar />
         <Routes>
           <Route path="/" element={ <div className='home-container'> <Home /></div>} />
+          <Route path="/about" element={<About />} />
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/account" element={<Account />} />
           <Route path="/spanish" element={<Spanish/>} />
@@ -80,6 +82,7 @@ const App = ()=> {
         <Navbar/>
         <Routes>
           <Route path="/" element={ <div className='home-container'> <Home /></div>} />
+          <Route path="/about" element={<About />} />
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/account" element={<Account />} />
           <Route path="/spanish" element={<Spanish/>} />
