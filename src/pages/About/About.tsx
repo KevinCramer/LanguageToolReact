@@ -37,13 +37,13 @@ const About = () => {
           </div>
           <ul> 
             <li style={{ marginTop: '20px' }}>
+              <b>Customisable Exercises</b>: Create study sessions that perfectly match your learning style and goals with our highly customisable exercises.
+            </li>
+            <li style={{ marginTop: '20px' }}>
               <b>Active Recall</b>: Enhance your language retention through consistent memory exercises.
             </li>
             <li style={{ marginTop: '20px' }}>
               <b>Repeated Exposure</b>: Develop your skills through repeated exposure to conversations in your target language, complemented by targeted reading and listening exercises.
-            </li>
-            <li style={{ marginTop: '20px' }}>
-              <b>Customisable Settings</b>: Tailor your learning experience with highly customisable exercises to suit your specific needs.
             </li>
           </ul>
         </div>
