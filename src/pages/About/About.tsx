@@ -37,7 +37,7 @@ const About = () => {
           </div>
           <ul> 
             <li style={{ marginTop: '20px' }}>
-              <b>Customisable Exercises</b>: Create study sessions that perfectly match your learning style and goals with our highly customisable exercises.
+              <b>Customisable Exercises</b>: Create your own study sessions that perfectly match your learning style and goals with our highly adjustable exercises.
             </li>
             <li style={{ marginTop: '20px' }}>
               <b>Active Recall</b>: Enhance your language retention through consistent memory exercises.
