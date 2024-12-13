@@ -33,7 +33,7 @@ const About = () => {
       <div className="contact-us-container">
         <div style={{ color: 'black', backgroundColor: 'white', padding:'10px', borderRadius: '10px', maxWidth: '820px', fontSize: isMobile ? '16px' : '20px', }}>
           <div style={{ marginTop:'10px' }}>
-          LingoCommand is an educational platform for foreign language learning. It accelerates progress by combining these three key principles:
+          LingoCommand is an educational platform for learning foreign languages. It accelerates progress by combining these three key principles:
           </div>
           <ul> 
             <li style={{ marginTop: '20px' }}>
