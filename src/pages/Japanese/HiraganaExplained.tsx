@@ -76,10 +76,100 @@ const HiraganaExplained = () => {
     </tbody>
   </table>
 
-  const [isModalOpen, setModalOpen] = useState(false);
+  const basicHiraganaTable = <table style={{ border: '1px solid', borderCollapse: 'collapse', textAlign: 'center' }}>
+    <thead>
+      <tr style={{ height: '40px' }}>
+        <th>A</th>
+        <th>I</th>
+        <th>U</th>
+        <th>E</th>
+        <th>O</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style={{ height: '40px' }}>
+        <td>あ (a)</td>
+        <td>い (i)</td>
+        <td>う (u)</td>
+        <td>え (e)</td>
+        <td>お (o)</td>
+      </tr>
+      <tr style={{ height: '40px' }}>
+        <td>か (ka)</td>
+        <td>き (ki)</td>
+        <td>く (ku)</td>
+        <td>け (ke)</td>
+        <td>こ (ko)</td>
+      </tr>
+      <tr style={{ height: '40px' }}>
+        <td>さ (sa)</td>
+        <td>し (shi)</td>
+        <td>す (su)</td>
+        <td>せ (se)</td>
+        <td>そ (so)</td>
+      </tr>
+      <tr style={{ height: '40px' }}>
+        <td>た (ta)</td>
+        <td>ち (chi)</td>
+        <td>つ (tsu)</td>
+        <td>て (te)</td>
+        <td>と (to)</td>
+      </tr>
+      <tr style={{ height: '40px' }}>
+        <td>な (na)</td>
+        <td>に (ni)</td>
+        <td>ぬ (nu)</td>
+        <td>ね (ne)</td>
+        <td>の (no)</td>
+      </tr>
+      <tr style={{ height: '40px' }}>
+        <td>は (ha)</td>
+        <td>ひ (hi)</td>
+        <td>ふ (fu)</td>
+        <td>へ (he)</td>
+        <td>ほ (ho)</td>
+      </tr>
+      <tr style={{ height: '40px' }}>
+        <td>ま (ma)</td>
+        <td>み (mi)</td>
+        <td>む (mu)</td>
+        <td>め (me)</td>
+        <td>も (mo)</td>
+      </tr>
+      <tr style={{ height: '40px' }}>
+        <td>や (ya)</td>
+        <td></td>
+        <td>ゆ (yu)</td>
+        <td></td>
+        <td>よ (yo)</td>
+      </tr>
+      <tr style={{ height: '40px' }}>
+        <td>ら (ra)</td>
+        <td>り (ri)</td>
+        <td>る (ru)</td>
+        <td>れ (re)</td>
+        <td>ろ (ro)</td>
+      </tr>
+      <tr style={{ height: '40px' }}>
+        <td>わ (wa)</td>
+        <td></td>
+        <td>を (wo)</td>
+        <td></td>
+        <td>ん (n)</td>
+      </tr>
+    </tbody>
+  </table>
 
-  const toggleModal = () => {
-    setModalOpen(!isModalOpen);
+  const [isDakutenModalOpen, setDakutenModalOpen] = useState(false);
+
+  const toggleDakutenModal = () => {
+    setDakutenModalOpen(!isDakutenModalOpen);
+  };
+
+  const [isBasicHiraganaModalOpen, setBasicHiraganaModalOpen] = useState(false);
+
+  const toggleBasicHiraganaModal = () => {
+    setBasicHiraganaModalOpen(!isBasicHiraganaModalOpen);
   };
 
   return (
@@ -98,7 +188,53 @@ const HiraganaExplained = () => {
                   LearningSections.WritingSystem,
                   hiraganaBasicWritingSystem)
               }>
-                      46 sounds</a>.
+                      46 sounds</a>. See this table for the basic <a
+              style={{ color: 'rgb(13, 110,253)', textDecoration: 'underline', cursor: 'pointer' }}
+              onClick={toggleBasicHiraganaModal}
+            >
+          pattern
+            </a>
+            {isBasicHiraganaModalOpen && (
+              <div
+                style={{
+                  position: 'fixed',
+                  backgroundColor: 'white',
+                  transform: 'translate(0%, -20%)',
+                  padding: '20px',
+                  boxShadow: '0 0 10px rgba(0, 0, 0, 0.5)',
+                  zIndex: 1000,
+                }}
+              >
+                <div style={{ width: '100%', display: 'flex', justifyContent: 'right', marginBottom: '10px' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
+                    <h3 style={{ margin: 0, textAlign: 'center', flex: 1 }}>Hiragana Chart</h3>
+                    <button 
+                      onClick={toggleBasicHiraganaModal} 
+                      style={{ marginBottom: '10px', marginLeft: 'auto' }}
+                    >
+    Close
+                    </button>
+                  </div>
+             
+                </div>
+                {basicHiraganaTable}                  
+              </div>
+            )}
+
+            {isBasicHiraganaModalOpen && (
+              <div
+                style={{
+                  position: 'fixed',
+                  top: 0,
+                  left: 0,
+                  width: '100%',
+                  height: '100%',
+                  backgroundColor: 'rgba(255, 255, 255, 0.8)',
+                  zIndex: 999,
+                }}
+                onClick={toggleBasicHiraganaModal}
+              />
+            )}
           </div>
           <div style={{ paddingTop:'20px' }}>
             <b style={{ fontSize: '20px' }}>Dakuten and Han-Dakuten</b> lead to another <a onClick={handleProtectedClick(hiraganaDakutenWritingSystem)} 
@@ -124,12 +260,12 @@ const HiraganaExplained = () => {
               <i style={{ fontSize:'15px' }}>
                   See this useful <a
                   style={{ color: 'rgb(13, 110,253)', textDecoration: 'underline', cursor: 'pointer' }}
-                  onClick={toggleModal}
+                  onClick={toggleDakutenModal}
                 >
           diagram
                 </a> for the general pattern.
               </i>
-              {isModalOpen && (
+              {isDakutenModalOpen && (
                 <div
                   style={{
                     position: 'fixed',
@@ -141,7 +277,7 @@ const HiraganaExplained = () => {
                   }}
                 >
                   <div style={{ width: '100%', display: 'flex', justifyContent: 'right', marginBottom: '10px' }}>
-                    <button onClick={toggleModal} style={{ marginBottom: '10px', 
+                    <button onClick={toggleDakutenModal} style={{ marginBottom: '10px', 
                     }}>
             Close
                     </button>
@@ -158,7 +294,7 @@ const HiraganaExplained = () => {
                 </div>
               )}
 
-              {isModalOpen && (
+              {isDakutenModalOpen && (
                 <div
                   style={{
                     position: 'fixed',
@@ -169,7 +305,7 @@ const HiraganaExplained = () => {
                     backgroundColor: 'rgba(255, 255, 255, 0.8)',
                     zIndex: 999,
                   }}
-                  onClick={toggleModal}
+                  onClick={toggleDakutenModal}
                 />
               )}
             </div>

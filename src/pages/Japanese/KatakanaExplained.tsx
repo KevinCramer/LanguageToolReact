@@ -30,6 +30,12 @@ const KatakanaExplained = () => {
   const katakanaSpecialYoonWritingSystem = japaneseWritingSystems?.topics
     .find((t: any)=> t.slugName === japaneseVocabTopicSlugNames.katakanaSpecialYoon)
 
+  const [isBasicKatakanaModalOpen, setBasicKatakanaModalOpen] = useState(false);
+
+  const toggleBasicKatakanaModal = () => {
+    setBasicKatakanaModalOpen(!isBasicKatakanaModalOpen);
+  };
+
   const [isDakutenModalOpen, setDakutenModalOpen] = useState(false);
 
   const toggleDakutenModal = () => {
@@ -41,7 +47,7 @@ const KatakanaExplained = () => {
   const toggleBasicConversionModal = () => {
     setBasicConversionModalOpen(!isBasicConversionModalOpen);
   };
-
+ 
   const [isDakutenConversionModalOpen, setDakutenConversionModalOpen] = useState(false);
 
   const toggleDakutenConversionModal = () => {
@@ -54,6 +60,92 @@ const KatakanaExplained = () => {
     setYoonConversionModalOpen(!isYoonConversionModalOpen);
   };
 
+  const basicKatakanaTable = (
+    <table style={{ border: '1px solid', borderCollapse: 'collapse', textAlign: 'center' }}>
+      <thead>
+        <tr style={{ height: '40px' }}>
+          <th>A</th>
+          <th>I</th>
+          <th>U</th>
+          <th>E</th>
+          <th>O</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style={{ height: '40px' }}>
+          <td>ア (a)</td>
+          <td>イ (i)</td>
+          <td>ウ (u)</td>
+          <td>エ (e)</td>
+          <td>オ (o)</td>
+        </tr>
+        <tr style={{ height: '40px' }}>
+          <td>カ (ka)</td>
+          <td>キ (ki)</td>
+          <td>ク (ku)</td>
+          <td>ケ (ke)</td>
+          <td>コ (ko)</td>
+        </tr>
+        <tr style={{ height: '40px' }}>
+          <td>サ (sa)</td>
+          <td>シ (shi)</td>
+          <td>ス (su)</td>
+          <td>セ (se)</td>
+          <td>ソ (so)</td>
+        </tr>
+        <tr style={{ height: '40px' }}>
+          <td>タ (ta)</td>
+          <td>チ (chi)</td>
+          <td>ツ (tsu)</td>
+          <td>テ (te)</td>
+          <td>ト (to)</td>
+        </tr>
+        <tr style={{ height: '40px' }}>
+          <td>ナ (na)</td>
+          <td>ニ (ni)</td>
+          <td>ヌ (nu)</td>
+          <td>ネ (ne)</td>
+          <td>ノ (no)</td>
+        </tr>
+        <tr style={{ height: '40px' }}>
+          <td>ハ (ha)</td>
+          <td>ヒ (hi)</td>
+          <td>フ (fu)</td>
+          <td>ヘ (he)</td>
+          <td>ホ (ho)</td>
+        </tr>
+        <tr style={{ height: '40px' }}>
+          <td>マ (ma)</td>
+          <td>ミ (mi)</td>
+          <td>ム (mu)</td>
+          <td>メ (me)</td>
+          <td>モ (mo)</td>
+        </tr>
+        <tr style={{ height: '40px' }}>
+          <td>ヤ (ya)</td>
+          <td></td>
+          <td>ユ (yu)</td>
+          <td></td>
+          <td>ヨ (yo)</td>
+        </tr>
+        <tr style={{ height: '40px' }}>
+          <td>ラ (ra)</td>
+          <td>リ (ri)</td>
+          <td>ル (ru)</td>
+          <td>レ (re)</td>
+          <td>ロ (ro)</td>
+        </tr>
+        <tr style={{ height: '40px' }}>
+          <td>ワ (wa)</td>
+          <td></td>
+          <td>ヲ (wo)</td>
+          <td></td>
+          <td>ン (n)</td>
+        </tr>
+      </tbody>
+    </table>
+  );
+  
   const basicHiraganaToKatakanaTable = <table style={{ border: '1px solid black', borderCollapse: 'collapse', textAlign: 'center', width: '100%' }}>
     <thead>
       <tr style={{ height: '40px', backgroundColor: '#f0f0f0' }}>
@@ -583,7 +675,55 @@ const KatakanaExplained = () => {
                       46 sounds</a>. 
             <div>
               <i style={{ fontSize:'15px' }}>
-                  Note - Each basic katakana has a matching basic hiragana that produces the same sound. See <a
+                  Note 1 - See this diagram for basic <a
+                  style={{ color: 'rgb(13, 110,253)', textDecoration: 'underline', cursor: 'pointer' }}
+                  onClick={toggleBasicKatakanaModal}
+                >
+          pattern
+                </a>.
+              </i>
+              {isBasicKatakanaModalOpen && (
+                <div
+                  style={{
+                    position: 'fixed',
+                    backgroundColor: 'white',
+                    padding: '20px',
+                    boxShadow: '0 0 10px rgba(0, 0, 0, 0.5)',
+                    zIndex: 1000,
+                  }}
+                >
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
+                    <h3 style={{ margin: 0, textAlign: 'center', flex: 1 }}>Katakana Chart</h3>
+                    <button 
+                      onClick={toggleBasicKatakanaModal} 
+                      style={{ marginBottom: '10px', marginLeft: 'auto' }}
+                    >
+                      Close
+                    </button>
+                  </div>
+             
+                  {basicKatakanaTable}
+                </div>
+              )}
+
+              {isBasicKatakanaModalOpen && (
+                <div
+                  style={{
+                    position: 'fixed',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: '100%',
+                    backgroundColor: 'rgba(255, 255, 255, 0.8)',
+                    zIndex: 999,
+                  }}
+                  onClick={toggleBasicKatakanaModal}
+                />
+              )}
+            </div>
+            <div>
+              <i style={{ fontSize:'15px' }}>
+                  Note 2 - Each basic katakana has a matching basic hiragana that produces the same sound. See <a
                   style={{ color: 'rgb(13, 110,253)', textDecoration: 'underline', cursor: 'pointer' }}
                   onClick={toggleBasicConversionModal}
                 >
