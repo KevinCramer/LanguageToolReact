@@ -203,7 +203,10 @@ const JapaneseStudyGuide = () => {
             <b>Phase 4:</b> Watch this short video about learning <a href="/japanese/kanji-explained">kanji</a>.
           </div>
           <div style={{ paddingTop:'20px' }}>
-            <b>Phase 5:</b> Study the vocabulary for these topics:
+            <b>Phase 5:</b> Learn how to type Japanese <a href="/japanese/how-to-type-japanese">here</a>.
+          </div>
+          <div style={{ paddingTop:'20px' }}>
+            <b>Phase 6:</b> Study the vocabulary for these topics:
             <div style={{ display: 'flex' }}> 
               <ul>
                 <li>

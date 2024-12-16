@@ -19,6 +19,7 @@ import JapaneseWritingSystems from './pages/Japanese/WritingSystems'
 import HiraganaExplained from './pages/Japanese/HiraganaExplained'
 import KatakanaExplained from './pages/Japanese/KatakanaExplained'
 import KanjiExplained from './pages/Japanese/KanjiExplained'
+import HowToTypeJapanese from './pages/Japanese/HowToTypeJapanese'
 import Comprehension from './pages/Comprehension/Comprehension'
 import PremiumContent from './components/atoms/PremiumContent/PremiumContent'
 import Login from './components/molecules/Login/Login'
@@ -72,6 +73,7 @@ const App = ()=> {
           <Route path="/japanese/hiragana-explained" element={<HiraganaExplained />} />
           <Route path="/japanese/katakana-explained" element={<KatakanaExplained />} />
           <Route path="/japanese/kanji-explained" element={<KanjiExplained />} />
+          <Route path="/japanese/how-to-type-japanese" element={<HowToTypeJapanese />} />
           <Route path="/japanese/writing-systems" element={<VocabContent languageNumber={2} isWritingSystem ={true} />} />
           <Route path="/japanese/study-guide" element={<JapaneseStudyGuide/>} />
           <Route path="/japanese/grammar/:topicSlug" element={<GrammarContent languageNumber={1} />} />
@@ -97,6 +99,7 @@ const App = ()=> {
           <Route path="/japanese/hiragana-explained" element={<HiraganaExplained />} />
           <Route path="/japanese/katakana-explained" element={<KatakanaExplained />} />
           <Route path="/japanese/kanji-explained" element={<KanjiExplained />} />
+          <Route path="/japanese/how-to-type-japanese" element={<HowToTypeJapanese />} />
           <Route path="/japanese/writing-systems" element={<VocabContent languageNumber={2} isWritingSystem ={true} />} />
           <Route path="/japanese/study-guide" element={<JapaneseStudyGuide/>} />
           <Route path="/japanese/grammar/:topicSlug" element={<GrammarContent languageNumber={1} />} />
