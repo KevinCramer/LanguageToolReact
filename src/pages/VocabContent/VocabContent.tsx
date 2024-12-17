@@ -32,7 +32,8 @@ const VocabContent = (
   props: {
     languageNumber: number
     isWritingSystem?: boolean
-    }) => {
+    howToGuideVideo?: any
+   }) => {
       
   //@ts-ignore
   const { currentUser } = useAuth();
@@ -398,7 +399,17 @@ const VocabContent = (
               </Modal.Title>
             </Modal.Header>
             <Modal.Body>
-            Video coming soon
+              {currentLanguage.languageName === 'Japanese' ? (
+                <div style={{ borderLeft: '1px solid black', borderBottom: '1px solid black', borderRight: '1px solid black', borderTop: isMobileDevice ? '1px solid black' : '' }}>
+                  <video
+                    style={{ margin: '0 auto', display: 'block', maxWidth: '100%' }}
+                    controls
+                    src={props.howToGuideVideo}
+                  />
+                </div>
+              ) : (
+                <div>Video coming soon</div>
+              )}
             </Modal.Body>
           </Modal>
         </Container>

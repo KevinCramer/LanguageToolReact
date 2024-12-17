@@ -32,6 +32,7 @@ import { useAuth } from './contexts/AuthContext'
 import { useEffect } from 'react'
 import VocabContent from './pages/VocabContent/VocabContent'
 import japaneseComprehensionVideo from './data/raw-data/tutorial-videos/japanese-comprehension-tutorial.mp4'
+import japaneseVocabGuideVideo from './data/raw-data/tutorial-videos/japanese-vocab-guide.mp4'
 
 const App = ()=> {
   const location = useLocation();
@@ -68,7 +69,7 @@ const App = ()=> {
           <Route path="/spanish/grammar/:topicSlug" element={<GrammarContent languageNumber={0} />} />
           <Route path="/spanish/comprehension/:topicSlug" element={<Comprehension languageNumber={0}/>} />
           <Route path="/japanese" element={<Japanese/>} />
-          <Route path="/japanese/vocabulary" element={<VocabContent languageNumber={1} />} />
+          <Route path="/japanese/vocabulary" element={<VocabContent languageNumber={1}howToGuideVideo={japaneseVocabGuideVideo} />} />
           <Route path="/japanese/writing-systems-explained" element={<JapaneseWritingSystems />} />
           <Route path="/japanese/hiragana-explained" element={<HiraganaExplained />} />
           <Route path="/japanese/katakana-explained" element={<KatakanaExplained />} />
@@ -94,7 +95,7 @@ const App = ()=> {
           <Route path="/spanish/grammar/:topicSlug" element={<GrammarContent languageNumber={0} />} />
           <Route path="/spanish/comprehension/:topicSlug" element={<Comprehension languageNumber={0}/>} />
           <Route path="/japanese" element={<Japanese/>} />
-          <Route path="/japanese/vocabulary" element={<VocabContent languageNumber={1} />} />
+          <Route path="/japanese/vocabulary" element={<VocabContent languageNumber={1} howToGuideVideo={japaneseVocabGuideVideo} />} />
           <Route path="/japanese/writing-systems-explained" element={<JapaneseWritingSystems />} />
           <Route path="/japanese/hiragana-explained" element={<HiraganaExplained />} />
           <Route path="/japanese/katakana-explained" element={<KatakanaExplained />} />
