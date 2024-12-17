@@ -287,7 +287,7 @@ const VocabContent = (
             <Container className='options-container'>
               <div className='div-options-container'>
                 <CustomDropDownButton title={'Topic: ' + currentTopic.name}>
-                  {(currentLanguage.topics as Topic[])
+                  {(currentLanguage.topics as Topic[]).sort((t1,t2) => ((t1.topicOrder || 0) < (t2.topicOrder || 0)) ? -1 : 1 )
                     .map((topic: Topic, index: number) =>
                       <Dropdown.Item 
                         style={{ backgroundColor: index === languages[props.languageNumber].topics

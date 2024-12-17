@@ -1892,7 +1892,7 @@ export const japaneseVocabTopicSlugNames = {
   food: 'food',
 }
 const japaneseTopics: TopicWithThreeAlphabets[] = [
-  { name:'Basic Hiragana', slugName: japaneseVocabTopicSlugNames.basicHiragana, hasOrdering:true, isLocked: false, isAlphabet: true, words: [
+  { name:'Basic Hiragana', slugName: japaneseVocabTopicSlugNames.basicHiragana, hasOrdering:true, topicOrder:1, isLocked: false, isAlphabet: true, words: [
     { englishWord: 'a', foreignWord: ['あ','あ','あ'], foreignAudio: hiraganaAudioA, order: 1, strokeOrderVideo: hiraganaVideoA },
     { englishWord: 'i', foreignWord: ['い','い','い'], foreignAudio: hiraganaAudioI, order: 2, strokeOrderVideo: hiraganaVideoI },
     { englishWord: 'u', foreignWord: ['う','う','う'], foreignAudio: hiraganaAudioU, order: 3, strokeOrderVideo: hiraganaVideoU },
@@ -1941,7 +1941,7 @@ const japaneseTopics: TopicWithThreeAlphabets[] = [
     { englishWord: 'n', foreignWord: ['ん','ん','ん'], foreignAudio: hiraganaAudioN, order: 46, strokeOrderVideo: hiraganaVideoN },
   ] },
   {
-    name: 'Hiragana with Dakuten and Han-Dakuten', slugName: japaneseVocabTopicSlugNames.hiraganaDakuten, hasOrdering: true, isLocked: true, isAlphabet: true, words: [
+    name: 'Hiragana with Dakuten and Han-Dakuten', slugName: japaneseVocabTopicSlugNames.hiraganaDakuten, hasOrdering: true, topicOrder:2, isLocked: true, isAlphabet: true, words: [
       { englishWord: 'ga', foreignWord: ['が','が','が'], foreignAudio: hiraganaDakutenAudioGa, order: 1 },
       { englishWord: 'gi', foreignWord: ['ぎ','ぎ','ぎ'], foreignAudio: hiraganaDakutenAudioGi, order: 2 },
       { englishWord: 'gu', foreignWord: ['ぐ','ぐ','ぐ'], foreignAudio: hiraganaDakutenAudioGu, order: 3 },
@@ -1969,7 +1969,7 @@ const japaneseTopics: TopicWithThreeAlphabets[] = [
       { englishWord: 'po', foreignWord: ['ぽ','ぽ','ぽ'], foreignAudio: hiraganaDakutenAudioPo, order: 25 },
     ]
   },
-  { name: 'Hiragana Yōon Combinations', slugName: japaneseVocabTopicSlugNames.hiraganaYoon, hasOrdering: true,isLocked: true, isAlphabet: true,words: [
+  { name: 'Hiragana Yōon Combinations', slugName: japaneseVocabTopicSlugNames.hiraganaYoon, hasOrdering: true, topicOrder:3, isLocked: true, isAlphabet: true,words: [
     { englishWord: 'kya', foreignWord: ['きゃ', 'きゃ', 'きゃ'], foreignAudio: hiraganaYoonAudioKya, order: 1 },
     { englishWord: 'kyu', foreignWord: ['きゅ', 'きゅ', 'きゅ'], foreignAudio: hiraganaYoonAudioKyu, order: 2 },
     { englishWord: 'kyo', foreignWord: ['きょ', 'きょ', 'きょ'], foreignAudio: hiraganaYoonAudioKyo, order: 3 },
@@ -2009,7 +2009,7 @@ const japaneseTopics: TopicWithThreeAlphabets[] = [
   ]
   },
   // see https://www.tofugu.com/japanese/learn-katakana/ for explanation
-  { name:'Basic Katakana', slugName: japaneseVocabTopicSlugNames.basicKatakana, hasOrdering:true, isLocked: false, isAlphabet: true, words: [
+  { name:'Basic Katakana', slugName: japaneseVocabTopicSlugNames.basicKatakana, hasOrdering:true, topicOrder:4, isLocked: false, isAlphabet: true, words: [
     { englishWord: 'a', foreignWord: ['ア','ア','ア'], foreignAudio: hiraganaAudioA, order: 1 },
     { englishWord: 'i', foreignWord: ['イ','イ','イ'], foreignAudio: hiraganaAudioI, order: 2 },
     { englishWord: 'u', foreignWord: ['ウ','ウ','ウ'], foreignAudio: hiraganaAudioU, order: 3 },
@@ -2063,6 +2063,7 @@ const japaneseTopics: TopicWithThreeAlphabets[] = [
     slugName: japaneseVocabTopicSlugNames.katakanaDakuten,
     hasOrdering: true,
     isLocked: true,
+    topicOrder:5, 
     isAlphabet: true,
     words: [
       { englishWord: 'ga', foreignWord: ['ガ', 'ガ', 'ガ'], foreignAudio: hiraganaDakutenAudioGa, order: 1 },
@@ -2098,6 +2099,7 @@ const japaneseTopics: TopicWithThreeAlphabets[] = [
     slugName: japaneseVocabTopicSlugNames.katakanaYoon,
     hasOrdering: true,
     isLocked: true,
+    topicOrder:6, 
     isAlphabet: true,
     words: [
       { englishWord: 'kya', foreignWord: ['キャ', 'キャ', 'キャ'], foreignAudio: hiraganaYoonAudioKya, order: 1 },
@@ -2145,6 +2147,7 @@ const japaneseTopics: TopicWithThreeAlphabets[] = [
     hasOrdering: true,
     isLocked: true,
     isAlphabet: true,
+    topicOrder:7, 
     words: [
       { englishWord: 'bwa', foreignWord: ['ヴァ', 'ヴァ', 'ヴァ'], foreignAudio: katakanaForeignYoonAudioBwa, order: 1 },
       { englishWord: 'bwi', foreignWord: ['ヴィ', 'ヴィ', 'ヴィ'], foreignAudio: katakanaForeignYoonAudioBwi, order: 2 },

@@ -45,6 +45,7 @@ export type TopicWithOneAlphabet = {
     words: WordWithOneAlphabet[];
     isAlphabet: boolean;
     isLocked: boolean;
+    topicOrder?: number;
 }
 
 export type TopicWithTwoAlphabets = {
@@ -54,6 +55,7 @@ export type TopicWithTwoAlphabets = {
     words: WordWithTwoAlphabets[];
     isAlphabet: boolean;
     isLocked: boolean;
+    topicOrder?: number;
 }
 
 export type TopicWithThreeAlphabets = {
@@ -63,6 +65,7 @@ export type TopicWithThreeAlphabets = {
     words: WordWithThreeAlphabets[];
     isAlphabet: boolean;
     isLocked: boolean;
+    topicOrder?: number;
 }
 
 export type Topic = TopicWithOneAlphabet | TopicWithTwoAlphabets | TopicWithThreeAlphabets;
