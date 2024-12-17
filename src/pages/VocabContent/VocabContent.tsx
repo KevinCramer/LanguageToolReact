@@ -281,7 +281,7 @@ const VocabContent = (
           <div style={{ display: 'flex', justifyContent: 'center', paddingBottom: '60px' }}>
             <button style= {{ color:'rgb(13, 110,253)', border: 'none', backgroundColor: 'white',
               textDecoration: 'underline', fontSize: '18px' }} 
-            onClick={displayPopUp}>How to Guide</button>
+            onClick={displayPopUp}>How to Guide (Video)</button>
           </div>
           <NavbarBs>
             <Container className='options-container'>
