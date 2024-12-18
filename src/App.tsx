@@ -32,6 +32,7 @@ import { useAuth } from './contexts/AuthContext'
 import { useEffect } from 'react'
 import VocabContent from './pages/VocabContent/VocabContent'
 import japaneseComprehensionVideo from './data/raw-data/tutorial-videos/japanese-comprehension-tutorial.mp4'
+import japaneseWritingSystemsVideo from './data/raw-data/tutorial-videos/japanese-writing-systems-tutorial.mp4'
 import japaneseVocabGuideVideo from './data/raw-data/tutorial-videos/japanese-vocab-guide.mp4'
 
 const App = ()=> {
@@ -75,7 +76,7 @@ const App = ()=> {
           <Route path="/japanese/katakana-explained" element={<KatakanaExplained />} />
           <Route path="/japanese/kanji-explained" element={<KanjiExplained />} />
           <Route path="/japanese/how-to-type-japanese" element={<HowToTypeJapanese />} />
-          <Route path="/japanese/writing-systems" element={<VocabContent languageNumber={2} isWritingSystem ={true} />} />
+          <Route path="/japanese/writing-systems" element={<VocabContent languageNumber={2} isWritingSystem ={true} howToGuideVideo={japaneseWritingSystemsVideo} />} />
           <Route path="/japanese/study-guide" element={<JapaneseStudyGuide/>} />
           <Route path="/japanese/grammar/:topicSlug" element={<GrammarContent languageNumber={1} />} />
           <Route path="/japanese/comprehension/:topicSlug" element={<Comprehension languageNumber={1} howToGuideVideo={japaneseComprehensionVideo}/>} />
@@ -101,7 +102,7 @@ const App = ()=> {
           <Route path="/japanese/katakana-explained" element={<KatakanaExplained />} />
           <Route path="/japanese/kanji-explained" element={<KanjiExplained />} />
           <Route path="/japanese/how-to-type-japanese" element={<HowToTypeJapanese />} />
-          <Route path="/japanese/writing-systems" element={<VocabContent languageNumber={2} isWritingSystem ={true} />} />
+          <Route path="/japanese/writing-systems" element={<VocabContent languageNumber={2} isWritingSystem ={true} howToGuideVideo={japaneseWritingSystemsVideo}/>} />
           <Route path="/japanese/study-guide" element={<JapaneseStudyGuide/>} />
           <Route path="/japanese/grammar/:topicSlug" element={<GrammarContent languageNumber={1} />} />
           <Route path="/japanese/comprehension/:topicSlug" element={<Comprehension languageNumber={1} howToGuideVideo={japaneseComprehensionVideo}/>} />
