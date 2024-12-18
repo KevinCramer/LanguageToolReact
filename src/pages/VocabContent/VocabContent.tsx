@@ -122,8 +122,21 @@ const VocabContent = (
   const urlQuiz = urlSettings[5]
   var quiz = !nullOrUndefined(urlQuiz) ? urlQuiz : false
   var [quiz,setQuiz] = useState(quiz)
+  // Add a new state variable to store the previous value of showBaseLanguage
+  const [previousShowBaseLanguage, setPreviousShowBaseLanguage] = useState(showBaseLanguage);
+
+  // Update the changeQuizState function to handle this logic
   const changeQuizState = () => {
-    return setQuiz((!quiz))}
+    if (!quiz && currentTopic.isAlphabet) {
+    // Save the current showBaseLanguage value before changing it
+      setPreviousShowBaseLanguage(showBaseLanguage);
+      setShowBaseLanguage(false); // Set showBaseLanguage to false
+    } else if (quiz && currentTopic.isAlphabet) {
+    // Restore the previous value when switching back to quiz=false
+      setShowBaseLanguage(previousShowBaseLanguage);
+    }
+    setQuiz(!quiz); // Toggle quiz state
+  };
 
   const urlAudio = urlSettings[6]
   var audioBool = !nullOrUndefined(urlAudio) ? urlAudio : true 
@@ -345,7 +358,7 @@ const VocabContent = (
                         width: '20px'
                       }} />
                     show audio</Dropdown.Item>}
-                  <Dropdown.Item onClick={(event) => {
+                  {((currentTopic.isAlphabet && !quiz) || !currentTopic.isAlphabet) && <Dropdown.Item onClick={(event) => {
                     changeBaseLanguage();
                     preventDropdownClose(event);
                   }}>
@@ -358,7 +371,7 @@ const VocabContent = (
                         marginRight: '10px', // Space between checkbox and text
                         width: '20px'
                       }} />
-                    swap columns</Dropdown.Item>
+                    swap columns</Dropdown.Item>}
                   <Dropdown.Item onClick={(event) => {
                     changeOrder();
                     preventDropdownClose(event);
