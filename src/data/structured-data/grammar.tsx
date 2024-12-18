@@ -18,13 +18,6 @@ const japaneseTopics: Topic[] = [
   ],
   isLocked: false
   }, 
-  {
-    name: 'Adjectives', slugName: japaneseGrammarTopicSlugNames.adjectives,
-    contents: ['Adjectives come in two forms. Regular adjectives called a i-adjectives and irregular adjectives called na-adjectives.'
-    ],
-    isLocked: true
-  },
-  
 ]
 
 export const spanishGrammarTopicSlugNames = {
