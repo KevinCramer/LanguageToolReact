@@ -75,17 +75,20 @@ const StudyElement = (
 
   const hidePopUp = () => { return setShowPopUp(false)}
   const displayPopUp = () => { return setShowPopUp(true)}
-  const baseLanguageLabel = <label className='base-language-label'>
+  const baseLanguageLabel = <label className= {(!showBaseLanguageFirst && strokeOrderVideo) ? 'foreign-language-label-stroke-order' : 'base-language-label'}
+    // this onClick function is a complicated mess. This while component needs massive refactor + e2e tests. 
+    onClick={ !isVerb && ((showBaseLanguageFirst && !strokeOrderVideo ) || (!showBaseLanguageFirst && strokeOrderVideo)) ? displayPopUp : ()=> {}}>
     <>{isVerb ? (showBaseLanguageFirst ? (BaseLanguageWord as VerbConjugation).infinitive :
       (ForeignLanguageWord as VerbConjugation).infinitive) : BaseLanguageWord}</> </label>
   const foreignLanguageLabelVerb = <label className='verb-label' onClick={displayPopUp}>
     { showBaseLanguageFirst ? (ForeignLanguageWord as VerbConjugation).infinitive : 
       (BaseLanguageWord as VerbConjugation).infinitive} </label>
-  const foreignLanguageLabelStrokeOrder = <label className='foreign-language-label-stroke-order'
-    onClick={displayPopUp}> <> {ForeignLanguageWord}</></label>
+  const foreignLanguageLabelStrokeOrder = <label className={ ((!showBaseLanguageFirst && strokeOrderVideo)) ? 'base-language-label' : 'foreign-language-label-stroke-order'}
+    onClick={showBaseLanguageFirst ? displayPopUp : ()=> {}}> <> {ForeignLanguageWord}</></label>
   const foreignLanguageLabelNoVerb = <label className='foreign-language-label-no-verb'>
     <> {ForeignLanguageWord}</></label>
   const foreignLanguageLabel = isVerb ? foreignLanguageLabelVerb : (strokeOrderVideo ? foreignLanguageLabelStrokeOrder : foreignLanguageLabelNoVerb)
+  console.log('BaseLanguageWord',BaseLanguageWord, 'showLeftLabel: ', showLeftLabel)
   return (
     <Navbar>
       { showLeftLabel ? (
