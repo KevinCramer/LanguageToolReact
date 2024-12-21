@@ -55,18 +55,13 @@ const App = ()=> {
     }
   }, [currentUser && currentUser.email]);
 
-  useEffect(() => {
-    // Detect TikTok's in-app browser
-    if (navigator.userAgent.includes('TikTok')) {
-      (document.body.style as any).zoom = '0.9'; // TypeScript ignores the type error
-    }
-  }, []); // Empty dependency array ensures this runs once when the component mounts
   return (
     <>
       {pathWithBackground && <div className="full-background">
         <Navbar />
         <Routes>
           <Route path="/" element={ <div className='home-container'> <Home /></div>} />
+          <Route path="/explore" element={ <div className='home-container'> <Home /></div>} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/account" element={<Account />} />
@@ -93,6 +88,7 @@ const App = ()=> {
         <Navbar/>
         <Routes>
           <Route path="/" element={ <div className='home-container'> <Home /></div>} />
+          <Route path="/explore" element={ <div className='home-container'> <Home /></div>} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/account" element={<Account />} />
