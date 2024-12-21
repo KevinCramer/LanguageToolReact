@@ -27,6 +27,11 @@ export const Home = () => {
         utm_medium: 'social',
         utm_campaign: 'homepage_campaign',
       },
+      'https://www.tiktok.com/link/v2?aid=1988&lang=en&scene=bio_url&target=https%3A%2F%2Flingocommand.com': {
+        utm_source: 'tiktok',
+        utm_medium: 'social',
+        utm_campaign: 'homepage_campaign',
+      },
       'facebook.com': {
         utm_source: 'facebook',
         utm_medium: 'social',
