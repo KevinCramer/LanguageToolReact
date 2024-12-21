@@ -23,6 +23,9 @@ const JapaneseWritingSystems = () => {
         The Japanese government has designated 2,136 characters as 'Jōyō kanji' ('daily use kanji').
         High school students are expected to be able to read and write these kanji by the time they graduate.
           </div>
+          <div style={{ paddingTop:'30px', fontFamily: '' }}>
+          P.S. Click <a href="/japanese/how-to-type-japanese">here</a> to learn how to type hiragana, katakana, and kanji.
+          </div>
         </div>
       </div>
     </>
