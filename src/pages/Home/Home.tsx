@@ -5,17 +5,83 @@ import spanishFlag from '../../assets/flag-icons/spanish-flag-icon.svg';
 import { backHome, RootStateNavbar, startNow } from '../../redux-store/navbar';
 import { useDispatch, useSelector } from 'react-redux';
 import { mobileBreakPoint } from '../../constants';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 export const Home = () => {
   const dispatch = useDispatch();
-
   const reduxNavbar = useSelector((state: RootStateNavbar) => state.navbar);
+
+  const navigate = useNavigate(); // React Router's navigation hook
+  const location = useLocation(); // React Router's location hook
 
   // Prevent toggleNavbar on flag clicks
   const handleFlagClick = (event: any) => {
     event.stopPropagation();
   };
 
+  // UTM tracking logic
+  useEffect(() => {
+    const referrerMap = {
+      'tiktok.com': {
+        utm_source: 'tiktok',
+        utm_medium: 'social',
+        utm_campaign: 'homepage_campaign',
+      },
+      'facebook.com': {
+        utm_source: 'facebook',
+        utm_medium: 'social',
+        utm_campaign: 'homepage_campaign',
+      },
+      'instagram.com': {
+        utm_source: 'instagram',
+        utm_medium: 'social',
+        utm_campaign: 'homepage_campaign',
+      },
+      'youtube.com': {
+        utm_source: 'youtube',
+        utm_medium: 'social',
+        utm_campaign: 'homepage_campaign',
+      },
+      'linkedin.com': {
+        utm_source: 'linkedin',
+        utm_medium: 'social',
+        utm_campaign: 'homepage_campaign',
+      },
+      'pinterest.com': {
+        utm_source: 'pinterest',
+        utm_medium: 'social',
+        utm_campaign: 'homepage_campaign',
+      },
+    };
+
+    const referrer = document.referrer;
+
+    if (referrer) {
+      const matchedSource = Object.keys(referrerMap).find((source) =>
+        referrer.includes(source)
+      );
+
+      if (matchedSource) {
+        const utmParams = referrerMap[matchedSource as keyof typeof referrerMap];
+        const currentSearchParams = new URLSearchParams(location.search);
+      
+        const hasUTMs = Object.keys(utmParams).every((key) =>
+          currentSearchParams.has(key)
+        );
+      
+        if (!hasUTMs) {
+          Object.entries(utmParams).forEach(([key, value]) => {
+            currentSearchParams.set(key, value);
+          });
+      
+          const updatedURL = `${location.pathname}?${currentSearchParams.toString()}`;
+          navigate(updatedURL, { replace: true });
+        }
+      }
+    }
+  }, [location, navigate]);
+
+  // Responsive width logic
   const useWindowWidth = () => {
     const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
 
