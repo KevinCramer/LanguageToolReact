@@ -55,6 +55,12 @@ const App = ()=> {
     }
   }, [currentUser && currentUser.email]);
 
+  useEffect(() => {
+    // Detect TikTok's in-app browser
+    if (navigator.userAgent.includes('TikTok')) {
+      document.body.style.zoom = '0.9'; // Adjust the zoom level as needed
+    }
+  }, []); // Empty dependency array ensures this runs once when the component mounts
   return (
     <>
       {pathWithBackground && <div className="full-background">
