@@ -40,7 +40,7 @@ const App = ()=> {
   // will log out user iff there is no lingocommand tab 
   // where the user was active in the last 30 minutes
   // useInactivityTimer(30 * msInMinute, 30 * msInMinute);
-  const dispatch = useDispatch();
+  const dispatch = useDispatch(); 
 
   const reduxAuth = useSelector((state: RootStateAuth) => state.auth);
   const reduxLock = useSelector((state: RootStateLock) => state.lock);
@@ -58,7 +58,7 @@ const App = ()=> {
   useEffect(() => {
     // Detect TikTok's in-app browser
     if (navigator.userAgent.includes('TikTok')) {
-      document.body.style.zoom = '0.9'; // Adjust the zoom level as needed
+      (document.body.style as any).zoom = '0.9'; // TypeScript ignores the type error
     }
   }, []); // Empty dependency array ensures this runs once when the component mounts
   return (
