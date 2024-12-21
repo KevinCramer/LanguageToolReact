@@ -3,6 +3,15 @@ import './Japanese.scss';
 import React, { useState } from 'react';
 import howToTypeJapaneseTutorial from '../../data/raw-data/tutorial-videos/how-to-type-japanese.mp4'
 
+import {
+  FaFacebook,
+  FaInstagram,
+  FaLinkedin,
+  FaPinterest,
+  FaTiktok,
+  FaYoutube,
+} from 'react-icons/fa';
+
 const HowToTypeJapanese = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -18,20 +27,17 @@ const HowToTypeJapanese = () => {
     <>
       <div className="page-container">
         <div className="central-container">
-          <h4 style={{ paddingBottom: '30px' }}>How to Type Japanese</h4>
-          <div style={{ paddingBottom: '20px' }}>
-            <a href="#" onClick={openModal} style={{ color: 'blue', textDecoration: 'underline' }}>
+          <h4 style={{ paddingBottom: '40px' }}>How to Type Japanese</h4>
+          <div style={{ paddingBottom: '50px', textAlign: 'center' }}>
+            <a href="#" onClick={openModal} style={{ color: 'rgb(13, 110,253)', textDecoration: 'underline' }}>
               How to Type Japanese on a Mac
             </a>
           </div>
-          <div style={{ paddingBottom: '20px' }}>
-            How to Type Japanese on Windows: video coming soon.
+          <div style={{ paddingTop: '50px',textAlign: 'center' }}>
+           Video Tutorials for Windows, iPhone
           </div>
-          <div style={{ paddingBottom: '20px' }}>
-            How to Type Japanese on an iPhone: video coming soon.
-          </div>
-          <div style={{ paddingBottom: '20px' }}>
-            How to Type Japanese on an Android: video coming soon.
+          <div style={{ textAlign: 'center' }}>
+          and Android coming soon.
           </div>
         </div>
       </div>

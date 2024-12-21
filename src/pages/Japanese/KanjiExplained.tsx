@@ -21,7 +21,7 @@ const KanjiExplained = () => {
               <b>Kun’yomi:</b> The native Japanese pronunciation.
             </div>
             <div style={{ marginTop: '30px' }}>
-              Take a look at this table for example: 
+              Here are some examples: 
               
               <table style={{ border:'1px solid black' }}>
                 <thead>
@@ -57,8 +57,8 @@ const KanjiExplained = () => {
 
           </div>
           <div style={{ marginTop: '20px' }}>
-            Having said that at LingoCommand we strongly recommend you avoid spending to much time studying kanji in isolation. Instead we suggest you learn japanese vocabulary 
-            and that way you will naturally gain familiarity with kanji over time.
+            Having said that at LingoCommand we strongly recommend you avoid spending too much time studying kanji in isolation. Instead we suggest you learn Japanese vocabulary 
+            which will allow you to naturally gain familiarity with kanji over time.
           </div>
          
         </div>
