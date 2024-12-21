@@ -5,7 +5,6 @@ import {
   FaLinkedin,
   FaPinterest,
   FaTiktok,
-  FaTwitter,
   FaYoutube,
 } from 'react-icons/fa';
 
@@ -28,7 +27,7 @@ const ContactUs = () => {
           contact@lingocommand.com
         </a>
         <div style={{ color: 'white', paddingTop: '50px', paddingBottom:'20px' }}>
-          social media:
+          Social media:
         </div>
         <div
           style={{

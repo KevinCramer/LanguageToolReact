@@ -28,7 +28,7 @@ const routesMeta = {
 
 // Dynamic Helmet Component
 const DynamicMeta = () => {
-  const location = useLocation();
+  const location = useLocation(); 
   const metaInfo = routesMeta[location.pathname as keyof typeof routesMeta] || {};
 
   return (
