@@ -506,53 +506,61 @@ import katakanaForeignYoonAudioThiPronouncedTi from '../raw-data/audio_vocab/jap
 import katakanaForeignYoonAudioDwu from '../raw-data/audio_vocab/japanese/katakanaForeignYoon/dwu.mp3'
 import katakanaForeignYoonAudioDhiPronouncedDi from '../raw-data/audio_vocab/japanese/katakanaForeignYoon/dhi_pronounced_di.mp3'
 
-import hiraganaVideoA from '../raw-data/writing-system-videos/japanese/hiragana/a.mp4'
-import hiraganaVideoI from '../raw-data/writing-system-videos/japanese/hiragana/i.mp4'
-import hiraganaVideoU from '../raw-data/writing-system-videos/japanese/hiragana/u.mp4'
-import hiraganaVideoE from '../raw-data/writing-system-videos/japanese/hiragana/e.mp4'
-import hiraganaVideoO from '../raw-data/writing-system-videos/japanese/hiragana/o.mp4'
-import hiraganaVideoKa from '../raw-data/writing-system-videos/japanese/hiragana/ka.mp4'
-import hiraganaVideoKi from '../raw-data/writing-system-videos/japanese/hiragana/ki.mp4'
-import hiraganaVideoKu from '../raw-data/writing-system-videos/japanese/hiragana/ku.mp4'
-import hiraganaVideoKe from '../raw-data/writing-system-videos/japanese/hiragana/ke.mp4'
-import hiraganaVideoKo from '../raw-data/writing-system-videos/japanese/hiragana/ko.mp4'
-import hiraganaVideoSa from '../raw-data/writing-system-videos/japanese/hiragana/sa.mp4'
-import hiraganaVideoShi from '../raw-data/writing-system-videos/japanese/hiragana/shi.mp4'
-import hiraganaVideoSu from '../raw-data/writing-system-videos/japanese/hiragana/su.mp4'
-import hiraganaVideoSe from '../raw-data/writing-system-videos/japanese/hiragana/se.mp4'
-import hiraganaVideoSo from '../raw-data/writing-system-videos/japanese/hiragana/so.mp4'
-import hiraganaVideoTa from '../raw-data/writing-system-videos/japanese/hiragana/ta.mp4'
-import hiraganaVideoChi from '../raw-data/writing-system-videos/japanese/hiragana/chi.mp4'
-import hiraganaVideoTsu from '../raw-data/writing-system-videos/japanese/hiragana/tsu.mp4'
-import hiraganaVideoTe from '../raw-data/writing-system-videos/japanese/hiragana/te.mp4'
-import hiraganaVideoTo from '../raw-data/writing-system-videos/japanese/hiragana/to.mp4'
-import hiraganaVideoNa from '../raw-data/writing-system-videos/japanese/hiragana/na.mp4'
-import hiraganaVideoNi from '../raw-data/writing-system-videos/japanese/hiragana/ni.mp4'
-import hiraganaVideoNu from '../raw-data/writing-system-videos/japanese/hiragana/nu.mp4'
-import hiraganaVideoNe from '../raw-data/writing-system-videos/japanese/hiragana/ne.mp4'
-import hiraganaVideoNo from '../raw-data/writing-system-videos/japanese/hiragana/no.mp4'
-import hiraganaVideoHa from '../raw-data/writing-system-videos/japanese/hiragana/ha.mp4'
-import hiraganaVideoHi from '../raw-data/writing-system-videos/japanese/hiragana/hi.mp4'
-import hiraganaVideoFu from '../raw-data/writing-system-videos/japanese/hiragana/fu.mp4'
-import hiraganaVideoHe from '../raw-data/writing-system-videos/japanese/hiragana/he.mp4'
-import hiraganaVideoHo from '../raw-data/writing-system-videos/japanese/hiragana/ho.mp4'
-import hiraganaVideoMa from '../raw-data/writing-system-videos/japanese/hiragana/ma.mp4'
-import hiraganaVideoMi from '../raw-data/writing-system-videos/japanese/hiragana/mi.mp4'
-import hiraganaVideoMu from '../raw-data/writing-system-videos/japanese/hiragana/mu.mp4'
+import hiraganaVideoA from '../raw-data/writing-system-videos/japanese/hiragana/basic/a.mp4'
+import hiraganaVideoI from '../raw-data/writing-system-videos/japanese/hiragana/basic/i.mp4'
+import hiraganaVideoU from '../raw-data/writing-system-videos/japanese/hiragana/basic/u.mp4'
+import hiraganaVideoE from '../raw-data/writing-system-videos/japanese/hiragana/basic/e.mp4'
+import hiraganaVideoO from '../raw-data/writing-system-videos/japanese/hiragana/basic/o.mp4'
+import hiraganaVideoKa from '../raw-data/writing-system-videos/japanese/hiragana/basic/ka.mp4'
+import hiraganaVideoKi from '../raw-data/writing-system-videos/japanese/hiragana/basic/ki.mp4'
+import hiraganaVideoKu from '../raw-data/writing-system-videos/japanese/hiragana/basic/ku.mp4'
+import hiraganaVideoKe from '../raw-data/writing-system-videos/japanese/hiragana/basic/ke.mp4'
+import hiraganaVideoKo from '../raw-data/writing-system-videos/japanese/hiragana/basic/ko.mp4'
+import hiraganaVideoSa from '../raw-data/writing-system-videos/japanese/hiragana/basic/sa.mp4'
+import hiraganaVideoShi from '../raw-data/writing-system-videos/japanese/hiragana/basic/shi.mp4'
+import hiraganaVideoSu from '../raw-data/writing-system-videos/japanese/hiragana/basic/su.mp4'
+import hiraganaVideoSe from '../raw-data/writing-system-videos/japanese/hiragana/basic/se.mp4'
+import hiraganaVideoSo from '../raw-data/writing-system-videos/japanese/hiragana/basic/so.mp4'
+import hiraganaVideoTa from '../raw-data/writing-system-videos/japanese/hiragana/basic/ta.mp4'
+import hiraganaVideoChi from '../raw-data/writing-system-videos/japanese/hiragana/basic/chi.mp4'
+import hiraganaVideoTsu from '../raw-data/writing-system-videos/japanese/hiragana/basic/tsu.mp4'
+import hiraganaVideoTe from '../raw-data/writing-system-videos/japanese/hiragana/basic/te.mp4'
+import hiraganaVideoTo from '../raw-data/writing-system-videos/japanese/hiragana/basic/to.mp4'
+import hiraganaVideoNa from '../raw-data/writing-system-videos/japanese/hiragana/basic/na.mp4'
+import hiraganaVideoNi from '../raw-data/writing-system-videos/japanese/hiragana/basic/ni.mp4'
+import hiraganaVideoNu from '../raw-data/writing-system-videos/japanese/hiragana/basic/nu.mp4'
+import hiraganaVideoNe from '../raw-data/writing-system-videos/japanese/hiragana/basic/ne.mp4'
+import hiraganaVideoNo from '../raw-data/writing-system-videos/japanese/hiragana/basic/no.mp4'
+import hiraganaVideoHa from '../raw-data/writing-system-videos/japanese/hiragana/basic/ha.mp4'
+import hiraganaVideoHi from '../raw-data/writing-system-videos/japanese/hiragana/basic/hi.mp4'
+import hiraganaVideoFu from '../raw-data/writing-system-videos/japanese/hiragana/basic/fu.mp4'
+import hiraganaVideoHe from '../raw-data/writing-system-videos/japanese/hiragana/basic/he.mp4'
+import hiraganaVideoHo from '../raw-data/writing-system-videos/japanese/hiragana/basic/ho.mp4'
+import hiraganaVideoMa from '../raw-data/writing-system-videos/japanese/hiragana/basic/ma.mp4'
+import hiraganaVideoMi from '../raw-data/writing-system-videos/japanese/hiragana/basic/mi.mp4'
+import hiraganaVideoMu from '../raw-data/writing-system-videos/japanese/hiragana/basic/mu.mp4'
+import hiraganaVideoMe from '../raw-data/writing-system-videos/japanese/hiragana/basic/me.mp4'
+import hiraganaVideoMo from '../raw-data/writing-system-videos/japanese/hiragana/basic/mo.mp4'
+import hiraganaVideoYa from '../raw-data/writing-system-videos/japanese/hiragana/basic/ya.mp4'
+import hiraganaVideoYu from '../raw-data/writing-system-videos/japanese/hiragana/basic/yu.mp4'
+import hiraganaVideoYo from '../raw-data/writing-system-videos/japanese/hiragana/basic/yo.mp4'
+import hiraganaVideoRa from '../raw-data/writing-system-videos/japanese/hiragana/basic/ra.mp4'
+import hiraganaVideoRi from '../raw-data/writing-system-videos/japanese/hiragana/basic/ri.mp4'
+import hiraganaVideoRu from '../raw-data/writing-system-videos/japanese/hiragana/basic/ru.mp4'
+import hiraganaVideoRe from '../raw-data/writing-system-videos/japanese/hiragana/basic/re.mp4'
+import hiraganaVideoRo from '../raw-data/writing-system-videos/japanese/hiragana/basic/ro.mp4'
+import hiraganaVideoWa from '../raw-data/writing-system-videos/japanese/hiragana/basic/wa.mp4'
+import hiraganaVideoWo from '../raw-data/writing-system-videos/japanese/hiragana/basic/wo.mp4'
+import hiraganaVideoN from '../raw-data/writing-system-videos/japanese/hiragana/basic/n.mp4'
 
-import hiraganaVideoMe from '../raw-data/writing-system-videos/japanese/hiragana/me.mp4'
-import hiraganaVideoMo from '../raw-data/writing-system-videos/japanese/hiragana/mo.mp4'
-import hiraganaVideoYa from '../raw-data/writing-system-videos/japanese/hiragana/ya.mp4'
-import hiraganaVideoYu from '../raw-data/writing-system-videos/japanese/hiragana/yu.mp4'
-import hiraganaVideoYo from '../raw-data/writing-system-videos/japanese/hiragana/yo.mp4'
-import hiraganaVideoRa from '../raw-data/writing-system-videos/japanese/hiragana/ra.mp4'
-import hiraganaVideoRi from '../raw-data/writing-system-videos/japanese/hiragana/ri.mp4'
-import hiraganaVideoRu from '../raw-data/writing-system-videos/japanese/hiragana/ru.mp4'
-import hiraganaVideoRe from '../raw-data/writing-system-videos/japanese/hiragana/re.mp4'
-import hiraganaVideoRo from '../raw-data/writing-system-videos/japanese/hiragana/ro.mp4'
-import hiraganaVideoWa from '../raw-data/writing-system-videos/japanese/hiragana/wa.mp4'
-import hiraganaVideoWo from '../raw-data/writing-system-videos/japanese/hiragana/wo.mp4'
-import hiraganaVideoN from '../raw-data/writing-system-videos/japanese/hiragana/n.mp4'
+import hiraganaDakutenVideoGa from '../raw-data/writing-system-videos/japanese/hiragana/dakuten-handakuten/ga.mp4'
+import hiraganaDakutenVideoGi from '../raw-data/writing-system-videos/japanese/hiragana/dakuten-handakuten/gi.mp4'
+import hiraganaDakutenVideoGu from '../raw-data/writing-system-videos/japanese/hiragana/dakuten-handakuten/gu.mp4'
+import hiraganaDakutenVideoGe from '../raw-data/writing-system-videos/japanese/hiragana/dakuten-handakuten/ge.mp4'
+import hiraganaDakutenVideoGo from '../raw-data/writing-system-videos/japanese/hiragana/dakuten-handakuten/go.mp4'
+import hiraganaDakutenVideoZa from '../raw-data/writing-system-videos/japanese/hiragana/dakuten-handakuten/za.mp4'
+import hiraganaDakutenVideoJi from '../raw-data/writing-system-videos/japanese/hiragana/dakuten-handakuten/ji.mp4'
+import hiraganaDakutenVideoZu from '../raw-data/writing-system-videos/japanese/hiragana/dakuten-handakuten/zu.mp4'
 
 import { VocabLanguage, VerbConjugationEnglish, TopicWithOneAlphabet, TopicWithTwoAlphabets, TopicWithThreeAlphabets } from '../../../types/learningSections/VocabTypes';
 
@@ -1942,14 +1950,14 @@ const japaneseTopics: TopicWithThreeAlphabets[] = [
   ] },
   {
     name: 'Hiragana with Dakuten and Han-Dakuten', slugName: japaneseVocabTopicSlugNames.hiraganaDakuten, hasOrdering: true, topicOrder:2, isLocked: true, isAlphabet: true, words: [
-      { englishWord: 'ga', foreignWord: ['が','が','が'], foreignAudio: hiraganaDakutenAudioGa, order: 1 },
-      { englishWord: 'gi', foreignWord: ['ぎ','ぎ','ぎ'], foreignAudio: hiraganaDakutenAudioGi, order: 2 },
-      { englishWord: 'gu', foreignWord: ['ぐ','ぐ','ぐ'], foreignAudio: hiraganaDakutenAudioGu, order: 3 },
-      { englishWord: 'ge', foreignWord: ['げ','げ','げ'], foreignAudio: hiraganaDakutenAudioGe, order: 4 },
-      { englishWord: 'go', foreignWord: ['ご','ご','ご'], foreignAudio: hiraganaDakutenAudioGo, order: 5 },
-      { englishWord: 'za', foreignWord: ['ざ','ざ','ざ'], foreignAudio: hiraganaDakutenAudioZa, order: 6 },
-      { englishWord: 'ji', foreignWord: ['じ','じ','じ'], foreignAudio: hiraganaDakutenAudioJi, order: 7 },
-      { englishWord: 'zu', foreignWord: ['ず','ず','ず'], foreignAudio: hiraganaDakutenAudioZu, order: 8 },
+      { englishWord: 'ga', foreignWord: ['が','が','が'], foreignAudio: hiraganaDakutenAudioGa, order: 1, strokeOrderVideo: hiraganaDakutenVideoGa },
+      { englishWord: 'gi', foreignWord: ['ぎ','ぎ','ぎ'], foreignAudio: hiraganaDakutenAudioGi, order: 2, strokeOrderVideo: hiraganaDakutenVideoGi },
+      { englishWord: 'gu', foreignWord: ['ぐ','ぐ','ぐ'], foreignAudio: hiraganaDakutenAudioGu, order: 3, strokeOrderVideo: hiraganaDakutenVideoGu },
+      { englishWord: 'ge', foreignWord: ['げ','げ','げ'], foreignAudio: hiraganaDakutenAudioGe, order: 4, strokeOrderVideo: hiraganaDakutenVideoGe },
+      { englishWord: 'go', foreignWord: ['ご','ご','ご'], foreignAudio: hiraganaDakutenAudioGo, order: 5, strokeOrderVideo: hiraganaDakutenVideoGo },
+      { englishWord: 'za', foreignWord: ['ざ','ざ','ざ'], foreignAudio: hiraganaDakutenAudioZa, order: 6, strokeOrderVideo: hiraganaDakutenVideoZa },
+      { englishWord: 'ji', foreignWord: ['じ','じ','じ'], foreignAudio: hiraganaDakutenAudioJi, order: 7, strokeOrderVideo: hiraganaDakutenVideoJi },
+      { englishWord: 'zu', foreignWord: ['ず','ず','ず'], foreignAudio: hiraganaDakutenAudioZu, order: 8, strokeOrderVideo: hiraganaDakutenVideoZu },
       { englishWord: 'ze', foreignWord: ['ぜ','ぜ','ぜ'], foreignAudio: hiraganaDakutenAudioZe, order: 9 },
       { englishWord: 'zo', foreignWord: ['ぞ','ぞ','ぞ'], foreignAudio: hiraganaDakutenAudioZo, order: 10 },
       { englishWord: 'da', foreignWord: ['だ','だ','だ'], foreignAudio: hiraganaDakutenAudioDa, order: 11 },
