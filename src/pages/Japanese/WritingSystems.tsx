@@ -24,7 +24,7 @@ const JapaneseWritingSystems = () => {
         High school students are expected to be able to read and write these kanji by the time they graduate.
           </div>
           <div style={{ paddingTop:'30px', fontFamily: '' }}>
-          P.S. Click <a href="/japanese/how-to-type-japanese">here</a> to learn how to type hiragana, katakana, and kanji.
+          P.S. Click here to learn <a href="/japanese/how-to-type-japanese">How to Type Japanese</a>.
           </div>
         </div>
       </div>
