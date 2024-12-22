@@ -23,7 +23,7 @@ export const Home = () => {
     // tiktok sets referrer to no-referrer so this hack is required to track traffic from TikTok
     if (window.location.pathname === '/explore') {
       window.location.replace(
-        'https://www.lingocommand.com/?utm_source=tiktok&utm_medium=social&utm_campaign=homepage_campaign'
+        'https://www.lingocommand.com/?utm_campaign=TikTok'
       );
     }
   }, []);
@@ -31,34 +31,19 @@ export const Home = () => {
   // UTM tracking logic
   useEffect(() => {
     const referrerMap = {
-      // 'tiktok.com': {
-      //   utm_source: 'tiktok',
-      //   utm_medium: 'social',
-      //   utm_campaign: 'homepage_campaign',
-      // },
       'facebook.com': {
-        utm_source: 'facebook',
-        utm_medium: 'social',
         utm_campaign: 'homepage_campaign',
       },
       'instagram.com': {
-        utm_source: 'instagram',
-        utm_medium: 'social',
         utm_campaign: 'homepage_campaign',
       },
       'youtube.com': {
-        utm_source: 'youtube',
-        utm_medium: 'social',
         utm_campaign: 'homepage_campaign',
       },
       'linkedin.com': {
-        utm_source: 'linkedin',
-        utm_medium: 'social',
         utm_campaign: 'homepage_campaign',
       },
       'pinterest.com': {
-        utm_source: 'pinterest',
-        utm_medium: 'social',
         utm_campaign: 'homepage_campaign',
       },
     };
