@@ -144,7 +144,7 @@ const japaneseAudioTranscriptions: AudioTranscriptionWithFourAlphabet[] = [
           { 
             englishText: 'She enjoys talking with the librarian, who suggests new books, and sometimes chats with other readers.', 
             foreignText: [
-              'Shishosan to hanashi o shite atarashii hon o oshiete morattari, tokidoki hoka no dokusho zuki to kaiwa o tanoshindari shimasu.',
+              'Shishosan to hanashi o shite atarashii hon o oshiete morattari, tokidoki hoka no dokushozuki to kaiwa o tanoshindari shimasu.',
               'ししょさんとはなしをしてあたらしいほんをおしえてもらったり、ときどきほかのどくしょずきとかいわをたのしんだりします。',
               'ししょさん と はなし を して あたらしい ほん を おしえて もらったり、 ときどき ほか の どくしょずき と かいわ を たのしんだり します。',
               '司書さんと話をして新しい本を教えてもらったり、時々ほかの読書好きと会話を楽しんだりします。'
@@ -202,7 +202,7 @@ const japaneseAudioTranscriptions: AudioTranscriptionWithFourAlphabet[] = [
         { 
           englishText: 'In the end, Rai won the tournament. Tears filled his eyes as he received the trophy, celebrating with his family and friends. Rai realized that through continued effort, he could overcome any challenge, and this victory strengthened his resolve to keep playing tennis in the future.',
           foreignText: [
-            'Toshokan de kanojo ga toku ni suki na no wa, soko de kanjiru komyuniti no fun’iki desu. Shishosan to hanashi o shite atarashii hon o oshiete morattari, tokidoki hoka no dokusho zuki to kaiwa o tanoshindari shimasu. Aiko-san ni totte, toshokan wa manabi to tsunagari no basho de ari, seichou deki, onajiku hon ga suki na hitobito to deairu tokubetsu na basho na no desu.',
+            'Toshokan de kanojo ga toku ni suki na no wa, soko de kanjiru komyuniti no fun’iki desu. Shishosan to hanashi o shite atarashii hon o oshiete morattari, tokidoki hoka no dokushozuki to kaiwa o tanoshindari shimasu. Aiko-san ni totte, toshokan wa manabi to tsunagari no basho de ari, seichou deki, onajiku hon ga suki na hitobito to deairu tokubetsu na basho na no desu.',
             'としょかんでかのじょがとくにすきなのは、そこでかんじるコミュニティのふんいきです。ししょさんとはなしをしてあたらしいほんをおしえてもらったり、ときどきほかのどくしょずきと会話をたのしんだりします。あいこさんにとって、としょかんはまなびとつながりのばしょであり、せいちょうでき、おなじくほんがすきなひとびととであえるとくべつなばしょなのです。',
             '',
             '最終的に、ライはその大会で優勝を果たした。彼は涙を浮かべながらトロフィーを手にし、家族や友達と一緒に喜びを分かち合った。ライは、努力を続ければどんな困難も乗り越えられることを実感し、これからもテニスを続けていく決意を新たにした。'
