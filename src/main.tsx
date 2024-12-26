@@ -11,14 +11,14 @@ import { Helmet } from 'react-helmet'
 // Meta Data Configuration
 const routesMeta = {
   '/': {
-    title: 'Home Page',
+    title: 'LingoCommand - Learn Foreign Languages Faster',
     meta: [
       { name: 'description', content: 'Learn foreign languages faster. Start now.' },
       { name: 'keywords', content: 'language learning, foreign languages, learn languages, language study tools, fast language learning, online language courses, language practice, multilingual, language learning platform' },
     ],
   },
   '/contact': {
-    title: 'LingoCommand Contact',
+    title: 'Contact',
     meta: [
       { name: 'description', content: 'You can reach out to us at contact@lingocommand.com. Social media: Youtube, TikTok, Instragram, Facebook, Linkedin, Pinterest.' },
       { name: 'keywords', content: 'contact us, LingoCommand support, customer support, language learning help, language app support, contact language platform, reach out, LingoCommand inquiries, contact page, social media, YouTube, TikTok, Instagram' },
