@@ -1949,7 +1949,7 @@ const japaneseTopics: TopicWithThreeAlphabets[] = [
     { englishWord: 'n', foreignWord: ['ん','ん','ん'], foreignAudio: hiraganaAudioN, order: 46, strokeOrderVideo: hiraganaVideoN },
   ] },
   {
-    name: 'Hiragana with Dakuten and Han-Dakuten', slugName: japaneseVocabTopicSlugNames.hiraganaDakuten, hasOrdering: true, topicOrder:2, isLocked: true, isAlphabet: true, words: [
+    name: 'Hiragana with Dakuten and Handakuten', slugName: japaneseVocabTopicSlugNames.hiraganaDakuten, hasOrdering: true, topicOrder:2, isLocked: true, isAlphabet: true, words: [
       { englishWord: 'ga', foreignWord: ['が','が','が'], foreignAudio: hiraganaDakutenAudioGa, order: 1, strokeOrderVideo: hiraganaDakutenVideoGa },
       { englishWord: 'gi', foreignWord: ['ぎ','ぎ','ぎ'], foreignAudio: hiraganaDakutenAudioGi, order: 2, strokeOrderVideo: hiraganaDakutenVideoGi },
       { englishWord: 'gu', foreignWord: ['ぐ','ぐ','ぐ'], foreignAudio: hiraganaDakutenAudioGu, order: 3, strokeOrderVideo: hiraganaDakutenVideoGu },
@@ -2067,7 +2067,7 @@ const japaneseTopics: TopicWithThreeAlphabets[] = [
   ] },
   {
     // see https://www.tofugu.com/japanese/learn-katakana/ for explanation
-    name: 'Katakana with Dakuten and Han-Dakuten',
+    name: 'Katakana with Dakuten and Handakuten',
     slugName: japaneseVocabTopicSlugNames.katakanaDakuten,
     hasOrdering: true,
     isLocked: true,

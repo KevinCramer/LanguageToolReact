@@ -237,7 +237,7 @@ const HiraganaExplained = () => {
             )}
           </div>
           <div style={{ paddingTop:'20px' }}>
-            <b style={{ fontSize: '20px' }}>Dakuten and Han-Dakuten</b> lead to another <a onClick={handleProtectedClick(hiraganaDakutenWritingSystem)} 
+            <b style={{ fontSize: '20px' }}>Dakuten and Handakuten</b> lead to another <a onClick={handleProtectedClick(hiraganaDakutenWritingSystem)} 
               href={
                 createURL(
                   LanguageNames.Japanese,
@@ -247,7 +247,7 @@ const HiraganaExplained = () => {
               {hiraganaDakutenWritingSystem?.isLocked &&
                    lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px', marginLeft:'5px' }}/> : ''}
             </a>. <br></br>
-            Dakuten and han-dakuten are marks added on top of hiragana that alter pronunciation. 
+            Dakuten and handakuten are marks added on top of hiragana that alter pronunciation. 
             <div style={{ height: '0px' }}>
 
             </div>
@@ -255,7 +255,7 @@ const HiraganaExplained = () => {
             <div style={{ height: '0px' }}>
 
             </div>
-            The han-dakuten mark is <b>( ゜)</b>. There are 5 variations.  For example: <b style={{ whiteSpace: 'nowrap' }}>は (ha) → ぱ (pa)</b>.
+            The handakuten mark is <b>( ゜)</b>. There are 5 variations.  For example: <b style={{ whiteSpace: 'nowrap' }}>は (ha) → ぱ (pa)</b>.
             <div>
               <i style={{ fontSize:'15px' }}>
                   See this useful <a

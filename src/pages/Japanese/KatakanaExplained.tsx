@@ -767,7 +767,7 @@ const KatakanaExplained = () => {
              
           </div>
           <div style={{ paddingTop:'30px' }}>
-            <b style={{ fontSize:'20px' }}>Dakuten and Han-Dakuten</b> lead to another <a onClick={handleProtectedClick(katakanaDakutenWritingSystem)} 
+            <b style={{ fontSize:'20px' }}>Dakuten and Handakuten</b> lead to another <a onClick={handleProtectedClick(katakanaDakutenWritingSystem)} 
               href={
                 createURL(
                   LanguageNames.Japanese,
@@ -777,12 +777,12 @@ const KatakanaExplained = () => {
               {katakanaDakutenWritingSystem?.isLocked &&
                    lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style={{ fontSize: '16px', marginLeft:'5px' }}/> : ''}
             </a>. <br></br>
-            Dakuten and han-dakuten are marks added on top of katakana that alter pronunciation. 
+            Dakuten and handakuten are marks added on top of katakana that alter pronunciation. 
             <div style={{ height: '0px' }}>
 
             </div>
             The dakuten mark is <b>( ゛)</b>. There are 20 dakuten variations. For example: <b style={{ whiteSpace: 'nowrap' }}>カ (ka) → ガ (ga)</b>. <br></br> 
-            The han-dakuten mark is <b>( ゜)</b>. There are 5 variations. For example: <b style={{ whiteSpace: 'nowrap' }}>ハ (ha) → パ (pa)</b>.
+            The handakuten mark is <b>( ゜)</b>. There are 5 variations. For example: <b style={{ whiteSpace: 'nowrap' }}>ハ (ha) → パ (pa)</b>.
             <div style={{ height:'10px' }}>
             </div>
             <div>
@@ -836,7 +836,7 @@ const KatakanaExplained = () => {
             </div>
             <div>
               <i style={{ fontSize:'15px' }}>
- Note 2 - Also each dakuten/han-dakuten katakana has a matching dakuten/han-dakuten hiragana that produces the same sound. See <a
+ Note 2 - Also each dakuten/handakuten katakana has a matching dakuten/hankuten hiragana that produces the same sound. See <a
                   style={{ color: 'rgb(13, 110,253)', textDecoration: 'underline', cursor: 'pointer' }}
                   onClick={toggleDakutenConversionModal}
                 >
