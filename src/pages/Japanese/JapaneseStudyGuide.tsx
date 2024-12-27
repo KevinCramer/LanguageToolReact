@@ -108,7 +108,7 @@ const JapaneseStudyGuide = () => {
                     style = {protectedLinkStyle}
                   >
 
-                   25 hiragana with dakuten and han-dakuten
+                   25 hiragana with dakuten and handakuten
                     {hiraganaDakutenWritingSystem?.isLocked &&
                      lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style = {lockIconStyle}/> : ''}
                   </a>
@@ -161,7 +161,7 @@ const JapaneseStudyGuide = () => {
                     }
                     style = {protectedLinkStyle}
                   >  
-                    25 katakana with dakuten and han-dakuten
+                    25 katakana with dakuten and handakuten
                     {katakanaDakutenWritingSystem?.isLocked &&
                    lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon style = {lockIconStyle}/> : ''}
                   </a>
