@@ -13,7 +13,7 @@ const routesMeta = {
   '/': {
     title: 'LingoCommand - Learn Foreign Languages Faster',
     meta: [
-      { name: 'description', content: 'Unlock your language potential with LingoCommand! Our customizable exercises let you design study sessions that match your learning style and goals exactly.' },
+      { name: 'description', content: 'Fast-track your language studies with LingoCommand! Our cutting-edge technology lets you customise study sessions to align with your goals and learning style.' },
       { name: 'keywords', content: 'language learning, foreign languages, learn languages, language study tools, fast language learning, online language courses, language practice, multilingual, language learning platform' },
     ],
   },
