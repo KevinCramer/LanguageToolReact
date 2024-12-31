@@ -328,7 +328,7 @@ const HiraganaExplained = () => {
                 . <div></div>
             Some hiragana combine to form Yōon sounds. In these combinations,
               the first character remains full-sized, while the second is smaller.
-              Examples like <b style={{ whiteSpace: 'nowrap' }}>きゃ(kya) </b>and <b style={{ whiteSpace: 'nowrap' }}>しょ(sho)</b> represent single, blended 
+              Examples like <b style={{ whiteSpace: 'nowrap' }}>きょ(kyo) </b>and <b style={{ whiteSpace: 'nowrap' }}>しょ(sho)</b> represent single, blended 
               syllables rather than separate sounds. This blending is crucial in words 
               like <br></br><b>きょう(kyou, today)</b> and <b>しょうがっこう(shougakkou, elementary school)</b>. 
           </div>
