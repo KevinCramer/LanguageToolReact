@@ -561,6 +561,23 @@ import hiraganaDakutenVideoGo from '../raw-data/writing-system-videos/japanese/h
 import hiraganaDakutenVideoZa from '../raw-data/writing-system-videos/japanese/hiragana/dakuten-handakuten/za.mp4'
 import hiraganaDakutenVideoJi from '../raw-data/writing-system-videos/japanese/hiragana/dakuten-handakuten/ji.mp4'
 import hiraganaDakutenVideoZu from '../raw-data/writing-system-videos/japanese/hiragana/dakuten-handakuten/zu.mp4'
+import hiraganaDakutenVideoZe from '../raw-data/writing-system-videos/japanese/hiragana/dakuten-handakuten/ze.mp4'
+import hiraganaDakutenVideoZo from '../raw-data/writing-system-videos/japanese/hiragana/dakuten-handakuten/zo.mp4'
+import hiraganaDakutenVideoDa from '../raw-data/writing-system-videos/japanese/hiragana/dakuten-handakuten/da.mp4'
+import hiraganaDakutenVideoDiPronouncedJi from '../raw-data/writing-system-videos/japanese/hiragana/dakuten-handakuten/di_pronounced_ji.mp4'
+import hiraganaDakutenVideoDuPronouncedZu from '../raw-data/writing-system-videos/japanese/hiragana/dakuten-handakuten/du_pronounced_zu.mp4'
+import hiraganaDakutenVideoDe from '../raw-data/writing-system-videos/japanese/hiragana/dakuten-handakuten/de.mp4'
+import hiraganaDakutenVideoDo from '../raw-data/writing-system-videos/japanese/hiragana/dakuten-handakuten/do.mp4'
+import hiraganaDakutenVideoBa from '../raw-data/writing-system-videos/japanese/hiragana/dakuten-handakuten/ba.mp4'
+import hiraganaDakutenVideoBi from '../raw-data/writing-system-videos/japanese/hiragana/dakuten-handakuten/bi.mp4'
+import hiraganaDakutenVideoBu from '../raw-data/writing-system-videos/japanese/hiragana/dakuten-handakuten/bu.mp4'
+import hiraganaDakutenVideoBe from '../raw-data/writing-system-videos/japanese/hiragana/dakuten-handakuten/be.mp4'
+import hiraganaDakutenVideoBo from '../raw-data/writing-system-videos/japanese/hiragana/dakuten-handakuten/bo.mp4'
+import hiraganaDakutenVideoPa from '../raw-data/writing-system-videos/japanese/hiragana/dakuten-handakuten/pa.mp4'
+import hiraganaDakutenVideoPi from '../raw-data/writing-system-videos/japanese/hiragana/dakuten-handakuten/pi.mp4'
+import hiraganaDakutenVideoPu from '../raw-data/writing-system-videos/japanese/hiragana/dakuten-handakuten/pu.mp4'
+import hiraganaDakutenVideoPe from '../raw-data/writing-system-videos/japanese/hiragana/dakuten-handakuten/pe.mp4'
+import hiraganaDakutenVideoPo from '../raw-data/writing-system-videos/japanese/hiragana/dakuten-handakuten/po.mp4'
 
 import { VocabLanguage, VerbConjugationEnglish, TopicWithOneAlphabet, TopicWithTwoAlphabets, TopicWithThreeAlphabets } from '../../../types/learningSections/VocabTypes';
 
@@ -1958,23 +1975,23 @@ const japaneseTopics: TopicWithThreeAlphabets[] = [
       { englishWord: 'za', foreignWord: ['ざ','ざ','ざ'], foreignAudio: hiraganaDakutenAudioZa, order: 6, strokeOrderVideo: hiraganaDakutenVideoZa },
       { englishWord: 'ji', foreignWord: ['じ','じ','じ'], foreignAudio: hiraganaDakutenAudioJi, order: 7, strokeOrderVideo: hiraganaDakutenVideoJi },
       { englishWord: 'zu', foreignWord: ['ず','ず','ず'], foreignAudio: hiraganaDakutenAudioZu, order: 8, strokeOrderVideo: hiraganaDakutenVideoZu },
-      { englishWord: 'ze', foreignWord: ['ぜ','ぜ','ぜ'], foreignAudio: hiraganaDakutenAudioZe, order: 9 },
-      { englishWord: 'zo', foreignWord: ['ぞ','ぞ','ぞ'], foreignAudio: hiraganaDakutenAudioZo, order: 10 },
-      { englishWord: 'da', foreignWord: ['だ','だ','だ'], foreignAudio: hiraganaDakutenAudioDa, order: 11 },
-      { englishWord: 'di (pronounced ji)', foreignWord: ['ぢ','ぢ','ぢ'], foreignAudio: hiraganaDakutenAudioDiPronouncedJi, order: 12 },
-      { englishWord: 'du (pronounced zu)', foreignWord: ['づ','づ','づ'], foreignAudio: hiraganaDakutenAudioDuPronouncedZu, order: 13 },
-      { englishWord: 'de', foreignWord: ['で','で','で'], foreignAudio: hiraganaDakutenAudioDe, order: 14 },
-      { englishWord: 'do', foreignWord: ['ど','ど','ど'], foreignAudio: hiraganaDakutenAudioDo, order: 15 },
-      { englishWord: 'ba', foreignWord: ['ば','ば','ば'], foreignAudio: hiraganaDakutenAudioBa, order: 16 },
-      { englishWord: 'bi', foreignWord: ['び','び','び'], foreignAudio: hiraganaDakutenAudioBi, order: 17 },
-      { englishWord: 'bu', foreignWord: ['ぶ','ぶ','ぶ'], foreignAudio: hiraganaDakutenAudioBu, order: 18 },
-      { englishWord: 'be', foreignWord: ['べ','べ','べ'], foreignAudio: hiraganaDakutenAudioBe, order: 19 },
-      { englishWord: 'bo', foreignWord: ['ぼ','ぼ','ぼ'], foreignAudio: hiraganaDakutenAudioBo, order: 20 },
-      { englishWord: 'pa', foreignWord: ['ぱ','ぱ','ぱ'], foreignAudio: hiraganaDakutenAudioPa, order: 21 },
-      { englishWord: 'pi', foreignWord: ['ぴ','ぴ','ぴ'], foreignAudio: hiraganaDakutenAudioPi, order: 22 },
-      { englishWord: 'pu', foreignWord: ['ぷ','ぷ','ぷ'], foreignAudio: hiraganaDakutenAudioPu, order: 23 },
-      { englishWord: 'pe', foreignWord: ['ぺ','ぺ','ぺ'], foreignAudio: hiraganaDakutenAudioPe, order: 24 },
-      { englishWord: 'po', foreignWord: ['ぽ','ぽ','ぽ'], foreignAudio: hiraganaDakutenAudioPo, order: 25 },
+      { englishWord: 'ze', foreignWord: ['ぜ','ぜ','ぜ'], foreignAudio: hiraganaDakutenAudioZe, order: 9, strokeOrderVideo: hiraganaDakutenVideoZe },
+      { englishWord: 'zo', foreignWord: ['ぞ','ぞ','ぞ'], foreignAudio: hiraganaDakutenAudioZo, order: 10, strokeOrderVideo: hiraganaDakutenVideoZo },
+      { englishWord: 'da', foreignWord: ['だ','だ','だ'], foreignAudio: hiraganaDakutenAudioDa, order: 11, strokeOrderVideo: hiraganaDakutenVideoDa },
+      { englishWord: 'di (pronounced ji)', foreignWord: ['ぢ','ぢ','ぢ'], foreignAudio: hiraganaDakutenAudioDiPronouncedJi, order: 12, strokeOrderVideo: hiraganaDakutenVideoDiPronouncedJi },
+      { englishWord: 'du (pronounced zu)', foreignWord: ['づ','づ','づ'], foreignAudio: hiraganaDakutenAudioDuPronouncedZu, order: 13, strokeOrderVideo: hiraganaDakutenVideoDuPronouncedZu },
+      { englishWord: 'de', foreignWord: ['で','で','で'], foreignAudio: hiraganaDakutenAudioDe, order: 14, strokeOrderVideo: hiraganaDakutenVideoDe },
+      { englishWord: 'do', foreignWord: ['ど','ど','ど'], foreignAudio: hiraganaDakutenAudioDo, order: 15, strokeOrderVideo: hiraganaDakutenVideoDo },
+      { englishWord: 'ba', foreignWord: ['ば','ば','ば'], foreignAudio: hiraganaDakutenAudioBa, order: 16, strokeOrderVideo: hiraganaDakutenVideoBa },
+      { englishWord: 'bi', foreignWord: ['び','び','び'], foreignAudio: hiraganaDakutenAudioBi, order: 17, strokeOrderVideo: hiraganaDakutenVideoBi },
+      { englishWord: 'bu', foreignWord: ['ぶ','ぶ','ぶ'], foreignAudio: hiraganaDakutenAudioBu, order: 18, strokeOrderVideo: hiraganaDakutenVideoBu },
+      { englishWord: 'be', foreignWord: ['べ','べ','べ'], foreignAudio: hiraganaDakutenAudioBe, order: 19, strokeOrderVideo: hiraganaDakutenVideoBe },
+      { englishWord: 'bo', foreignWord: ['ぼ','ぼ','ぼ'], foreignAudio: hiraganaDakutenAudioBo, order: 20, strokeOrderVideo: hiraganaDakutenVideoBo },
+      { englishWord: 'pa', foreignWord: ['ぱ','ぱ','ぱ'], foreignAudio: hiraganaDakutenAudioPa, order: 21, strokeOrderVideo: hiraganaDakutenVideoPa },
+      { englishWord: 'pi', foreignWord: ['ぴ','ぴ','ぴ'], foreignAudio: hiraganaDakutenAudioPi, order: 22, strokeOrderVideo: hiraganaDakutenVideoPi },
+      { englishWord: 'pu', foreignWord: ['ぷ','ぷ','ぷ'], foreignAudio: hiraganaDakutenAudioPu, order: 23, strokeOrderVideo: hiraganaDakutenVideoPu },
+      { englishWord: 'pe', foreignWord: ['ぺ','ぺ','ぺ'], foreignAudio: hiraganaDakutenAudioPe, order: 24, strokeOrderVideo: hiraganaDakutenVideoPe },
+      { englishWord: 'po', foreignWord: ['ぽ','ぽ','ぽ'], foreignAudio: hiraganaDakutenAudioPo, order: 25, strokeOrderVideo: hiraganaDakutenVideoPo },
     ]
   },
   { name: 'Hiragana Yōon Combinations', slugName: japaneseVocabTopicSlugNames.hiraganaYoon, hasOrdering: true, topicOrder:3, isLocked: true, isAlphabet: true,words: [
