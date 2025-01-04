@@ -156,61 +156,13 @@ export const Home = () => {
               e.currentTarget.style.transform = 'scale(1)';
             }}
             onClick={(event) => {
-              event.stopPropagation(); // Prevent toggleNavbar
-              dispatch(startNow())
+              navigate('/japanese'); // Navigate to the /japanese route
             }}
           >
           Start Now
           </button>
         </div>}
-        { !reduxNavbar.isHome && <div style={{ }}>
-
-          <a href="/japanese" style={{ margin:'30px', marginBottom: '100px', textDecorationColor: 'white' }} onClick={handleFlagClick}>
-            <div style={{ display:'flex', flexDirection:'row', alignItems: 'center' }}>
-              <img src={japaneseFlag} style ={{ width: '80px', height: '80px' }} alt="Japanese flag"/>
-              <div style={{ width: '20px' }}>
-              </div>
-              <div style={{ color:'white' }}>
-                            Japanese
-              </div>
-            </div> 
-          </a>
-          <div style={{ height:'40px' }}>
-
-          </div>
-          <button
-            style={{
-              marginTop: '10px',
-              marginBottom: '10px',
-              marginRight: '00px',
-              fontSize: '18px',
-              color: 'white',
-              backgroundColor: '#1e90ff',
-              border: 'none',
-              borderRadius: '5px',
-              padding: '10px 20px',
-              cursor: 'pointer',
-              boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.2)',
-              transition: 'all 0.3s ease',
-            }}
-            onMouseOver={(e) => {
-              e.currentTarget.style.backgroundColor = '#4682b4';
-              e.currentTarget.style.transform = 'scale(1.05)';
-            }}
-            onMouseOut={(e) => {
-              e.currentTarget.style.backgroundColor = '#1e90ff';
-              e.currentTarget.style.transform = 'scale(1)';
-            }}
-            onClick={(event) => {
-              event.stopPropagation(); // Prevent toggleNavbar
-              dispatch(backHome());
-            }}
-          >
-          Back Home
-          </button>
-        </div>}
       </div>
-
     </div>
   );
 };
