@@ -25,7 +25,7 @@ const Navbar = () => {
     setIsDropdownOpen(isOpen);
   };
 
-  const isOnLanguagesPage = location.pathname.startsWith('/spanish') || location.pathname.startsWith('/japanese');
+  const isOnLanguagesPage = location.pathname.startsWith('/japanese');
 
   const useWindowWidth = () => {
     const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
@@ -96,51 +96,21 @@ const Navbar = () => {
           </div>
         </Nav.Link>
 
-        <NavDropdown
-          title={
-            <span
-              style={{
-                color: isOnLanguagesPage ? 'black' : 'white',
-                whiteSpace: 'nowrap',
-                textDecoration: 'none',
-                position: 'relative',
-                letterSpacing: isMobile ? '' : '0.25rem',
-                fontSize: isMobile ? '18px' : '20px', 
-              }}
-            >
-              Languages
-            </span>
-          }
-          id="study-dropdown"
-          onToggle={handleDropdownToggle}
+        <Nav.Link
+          to="/japanese"
+          as={NavLink}
           style={{
+            color: isOnLanguagesPage ? 'black' : 'white',
+            textDecoration: 'none',
+            whiteSpace: 'nowrap',
+            position: 'relative',
+            fontSize: isMobile ? '18px' : '20px', 
+            letterSpacing: isMobile ? '' : '0.25rem',
           }}
-          className={isOnLanguagesPage ? 'dropdown-language-page' : 'dropdown-other-page'}
-
         >
-          <NavDropdown.Item
-            to="/spanish"
-            as={NavLink}
-            style={{
-              whiteSpace: 'nowrap',
-              color: 'black',
-              fontSize: isMobile ? '18px' : '18px', 
-            }}
-          >
-            Spanish
-          </NavDropdown.Item>
-          <NavDropdown.Item
-            to="/japanese"
-            as={NavLink}
-            style={{
-              whiteSpace: 'nowrap',
-              color: 'black',
-              fontSize: isMobile ? '18px' : '18px', 
-            }}
-          >
-            Japanese
-          </NavDropdown.Item>
-        </NavDropdown>
+          Japanese
+        </Nav.Link>
+         
         <Nav.Link
           to="/about"
           as={NavLink}

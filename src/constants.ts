@@ -5,19 +5,7 @@ export const modalTenses = [
 ]
 
 export const languageToSlugs: Record<string,string> = {
-  'Spanish': 'spa',
-  'French': 'fre',
-  'German': 'ger',
-  'Italian': 'ita',
   'Japanese': 'jap',
-  'Mandarin': 'man',
-  'Korean': 'kor',
-  'Arabic': 'ara',
-  'Portuguese': 'por',
-  'Russian': 'rus',
-  'Dutch': 'dut',
-  'Greek': 'grk'
-
 }
 
 export const lightGrey = 'rgb(230,230,230)'

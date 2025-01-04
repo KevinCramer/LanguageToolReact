@@ -25,8 +25,6 @@ import PremiumContent from './components/atoms/PremiumContent/PremiumContent'
 import Login from './components/molecules/Login/Login'
 import Navbar from './components/atoms/Navbar/Navbar'
 import Signup from './components/molecules/Signup/Signup'
-import Spanish from './pages/Spanish/Spanish'
-import SpanishStudyGuide from './pages/Spanish/SpanishStudyGuide'
 import UpdateAccount from './components/atoms/UpdateAccount/UpdateAccount'
 import { useAuth } from './contexts/AuthContext'
 import { useEffect } from 'react'
@@ -65,11 +63,6 @@ const App = ()=> {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/account" element={<Account />} />
-          <Route path="/spanish" element={<Spanish/>} />
-          <Route path="/spanish/vocabulary" element={<VocabContent languageNumber={0}/>} />
-          <Route path="/spanish/study-guide" element={<SpanishStudyGuide/>} />
-          <Route path="/spanish/grammar/:topicSlug" element={<GrammarContent languageNumber={0} />} />
-          <Route path="/spanish/comprehension/:topicSlug" element={<Comprehension languageNumber={0}/>} />
           <Route path="/japanese" element={<Japanese/>} />
           <Route path="/japanese/vocabulary" element={<VocabContent languageNumber={1}howToGuideVideo={japaneseVocabGuideVideo} />} />
           <Route path="/japanese/writing-systems-explained" element={<JapaneseWritingSystems />} />
@@ -92,11 +85,6 @@ const App = ()=> {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/account" element={<Account />} />
-          <Route path="/spanish" element={<Spanish/>} />
-          <Route path="/spanish/vocabulary" element={<VocabContent languageNumber={0}/>} />
-          <Route path="/spanish/study-guide" element={<SpanishStudyGuide/>} />
-          <Route path="/spanish/grammar/:topicSlug" element={<GrammarContent languageNumber={0} />} />
-          <Route path="/spanish/comprehension/:topicSlug" element={<Comprehension languageNumber={0}/>} />
           <Route path="/japanese" element={<Japanese/>} />
           <Route path="/japanese/vocabulary" element={<VocabContent languageNumber={1} howToGuideVideo={japaneseVocabGuideVideo} />} />
           <Route path="/japanese/writing-systems-explained" element={<JapaneseWritingSystems />} />

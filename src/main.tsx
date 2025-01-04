@@ -24,55 +24,6 @@ const routesMeta = {
       { name: 'keywords', content: 'contact us, LingoCommand support, customer support, language learning help, language app support, contact language platform, reach out, LingoCommand inquiries, contact page, social media, YouTube, TikTok, Instagram' },
     ],
   },
-  // '/spanish': {
-  //   title: 'LingoCommand Contact',
-  //   meta: [
-  //     { name: 'description', content: 'You can reach out to us at contact@lingocommand.com. Social media: Youtube, TikTok, Instragram, Facebook, Linkedin, Pinterest.' },
-  //     { name: 'keywords', content: 'contact us, LingoCommand support, customer support, language learning help, language app support, contact language platform, reach out, LingoCommand inquiries, contact page, social media, YouTube, TikTok, Instagram' },
-  //   ],
-  // },
-  // '/spanish/study-guide': {
-  //   title: 'LingoCommand Contact',
-  //   meta: [
-  //     { name: 'description', content: 'You can reach out to us at contact@lingocommand.com. Social media: Youtube, TikTok, Instragram, Facebook, Linkedin, Pinterest.' },
-  //     { name: 'keywords', content: 'contact us, LingoCommand support, customer support, language learning help, language app support, contact language platform, reach out, LingoCommand inquiries, contact page, social media, YouTube, TikTok, Instagram' },
-  //   ],
-  // },
-  // '/spanish/grammar/definite-article': {
-  //   title: 'LingoCommand Contact',
-  //   meta: [
-  //     { name: 'description', content: 'You can reach out to us at contact@lingocommand.com. Social media: Youtube, TikTok, Instragram, Facebook, Linkedin, Pinterest.' },
-  //     { name: 'keywords', content: 'contact us, LingoCommand support, customer support, language learning help, language app support, contact language platform, reach out, LingoCommand inquiries, contact page, social media, YouTube, TikTok, Instagram' },
-  //   ],
-  // },
-  // '/spanish/grammar/indefinite-article': {
-  //   title: 'LingoCommand Contact',
-  //   meta: [
-  //     { name: 'description', content: 'You can reach out to us at contact@lingocommand.com. Social media: Youtube, TikTok, Instragram, Facebook, Linkedin, Pinterest.' },
-  //     { name: 'keywords', content: 'contact us, LingoCommand support, customer support, language learning help, language app support, contact language platform, reach out, LingoCommand inquiries, contact page, social media, YouTube, TikTok, Instagram' },
-  //   ],
-  // },
-  // '/spanish/grammar/nouns': {
-  //   title: 'LingoCommand Contact',
-  //   meta: [
-  //     { name: 'description', content: 'You can reach out to us at contact@lingocommand.com. Social media: Youtube, TikTok, Instragram, Facebook, Linkedin, Pinterest.' },
-  //     { name: 'keywords', content: 'contact us, LingoCommand support, customer support, language learning help, language app support, contact language platform, reach out, LingoCommand inquiries, contact page, social media, YouTube, TikTok, Instagram' },
-  //   ],
-  // },
-  // '/spanish/grammar/adjectives': {
-  //   title: 'LingoCommand Contact',
-  //   meta: [
-  //     { name: 'description', content: 'You can reach out to us at contact@lingocommand.com. Social media: Youtube, TikTok, Instragram, Facebook, Linkedin, Pinterest.' },
-  //     { name: 'keywords', content: 'contact us, LingoCommand support, customer support, language learning help, language app support, contact language platform, reach out, LingoCommand inquiries, contact page, social media, YouTube, TikTok, Instagram' },
-  //   ],
-  // },
-  // '/spanish/grammar/verbs': {
-  //   title: 'LingoCommand Contact',
-  //   meta: [
-  //     { name: 'description', content: 'You can reach out to us at contact@lingocommand.com. Social media: Youtube, TikTok, Instragram, Facebook, Linkedin, Pinterest.' },
-  //     { name: 'keywords', content: 'contact us, LingoCommand support, customer support, language learning help, language app support, contact language platform, reach out, LingoCommand inquiries, contact page, social media, YouTube, TikTok, Instagram' },
-  //   ],
-  // },
   // '/japanese': {
   //   title: 'LingoCommand Contact',
   //   meta: [

@@ -1,7 +1,6 @@
 import './Home.scss';
 import { useEffect, useState } from 'react';
 import japaneseFlag from '../../assets/flag-icons/japanese-flag-icon.svg';
-import spanishFlag from '../../assets/flag-icons/spanish-flag-icon.svg';
 import { backHome, RootStateNavbar, startNow } from '../../redux-store/navbar';
 import { useDispatch, useSelector } from 'react-redux';
 import { mobileBreakPoint } from '../../constants';
@@ -126,7 +125,7 @@ export const Home = () => {
               letterSpacing: '0.25rem',
             }}
           >
-          Learn Foreign Languages Faster
+          Learn Japanese Faster
           </div>
           {!isMobile && <div style={{ width: '40px' }}>
           </div>}
@@ -165,16 +164,7 @@ export const Home = () => {
           </button>
         </div>}
         { !reduxNavbar.isHome && <div style={{ }}>
-          <a href="/spanish" style={{ margin:'30px', textDecorationColor: 'white' }} onClick={handleFlagClick}>
-            <div style={{ display:'flex', flexDirection:'row', alignItems: 'center' }}>
-              <img src={spanishFlag} style={{ width: '80px', height: '80px' }} alt="Spanish flag"/>
-              <div style={{ width: '20px' }}>
-              </div>
-              <div style={{ color:'white', }}>
-                            Spanish
-              </div> 
-            </div> 
-          </a>
+
           <a href="/japanese" style={{ margin:'30px', marginBottom: '100px', textDecorationColor: 'white' }} onClick={handleFlagClick}>
             <div style={{ display:'flex', flexDirection:'row', alignItems: 'center' }}>
               <img src={japaneseFlag} style ={{ width: '80px', height: '80px' }} alt="Japanese flag"/>

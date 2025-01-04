@@ -6,5 +6,4 @@ export enum LearningSections {
 
 export enum LanguageNames {
     Japanese = 'japanese',
-    Spanish = 'spanish',
 }
