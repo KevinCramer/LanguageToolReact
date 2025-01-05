@@ -64,16 +64,16 @@ const App = ()=> {
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/account" element={<Account />} />
           <Route path="/japanese" element={<Japanese/>} />
-          <Route path="/japanese/vocabulary" element={<VocabContent languageNumber={1}howToGuideVideo={japaneseVocabGuideVideo} />} />
+          <Route path="/japanese/vocabulary" element={<VocabContent languageNumber={0}howToGuideVideo={japaneseVocabGuideVideo} />} />
           <Route path="/japanese/writing-systems-explained" element={<JapaneseWritingSystems />} />
           <Route path="/japanese/hiragana-explained" element={<HiraganaExplained />} />
           <Route path="/japanese/katakana-explained" element={<KatakanaExplained />} />
           <Route path="/japanese/kanji-explained" element={<KanjiExplained />} />
           <Route path="/japanese/how-to-type-japanese" element={<HowToTypeJapanese />} />
-          <Route path="/japanese/writing-systems" element={<VocabContent languageNumber={2} isWritingSystem ={true} howToGuideVideo={japaneseWritingSystemsVideo} />} />
+          <Route path="/japanese/writing-systems" element={<VocabContent languageNumber={1} isWritingSystem ={true} howToGuideVideo={japaneseWritingSystemsVideo} />} />
           <Route path="/japanese/study-guide" element={<JapaneseStudyGuide/>} />
-          <Route path="/japanese/grammar/:topicSlug" element={<GrammarContent languageNumber={1} />} />
-          <Route path="/japanese/comprehension/:topicSlug" element={<Comprehension languageNumber={1} howToGuideVideo={japaneseComprehensionVideo}/>} />
+          <Route path="/japanese/grammar/:topicSlug" element={<GrammarContent languageNumber={0} />} />
+          <Route path="/japanese/comprehension/:topicSlug" element={<Comprehension languageNumber={0} howToGuideVideo={japaneseComprehensionVideo}/>} />
           <Route path="/*" element={<Custom404Error/>} />
         </Routes>
       </div>}
@@ -86,16 +86,16 @@ const App = ()=> {
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/account" element={<Account />} />
           <Route path="/japanese" element={<Japanese/>} />
-          <Route path="/japanese/vocabulary" element={<VocabContent languageNumber={1} howToGuideVideo={japaneseVocabGuideVideo} />} />
+          <Route path="/japanese/vocabulary" element={<VocabContent languageNumber={0} howToGuideVideo={japaneseVocabGuideVideo} />} />
           <Route path="/japanese/writing-systems-explained" element={<JapaneseWritingSystems />} />
           <Route path="/japanese/hiragana-explained" element={<HiraganaExplained />} />
           <Route path="/japanese/katakana-explained" element={<KatakanaExplained />} />
           <Route path="/japanese/kanji-explained" element={<KanjiExplained />} />
           <Route path="/japanese/how-to-type-japanese" element={<HowToTypeJapanese />} />
-          <Route path="/japanese/writing-systems" element={<VocabContent languageNumber={2} isWritingSystem ={true} howToGuideVideo={japaneseWritingSystemsVideo}/>} />
+          <Route path="/japanese/writing-systems" element={<VocabContent languageNumber={1} isWritingSystem ={true} howToGuideVideo={japaneseWritingSystemsVideo}/>} />
           <Route path="/japanese/study-guide" element={<JapaneseStudyGuide/>} />
-          <Route path="/japanese/grammar/:topicSlug" element={<GrammarContent languageNumber={1} />} />
-          <Route path="/japanese/comprehension/:topicSlug" element={<Comprehension languageNumber={1} howToGuideVideo={japaneseComprehensionVideo}/>} />
+          <Route path="/japanese/grammar/:topicSlug" element={<GrammarContent languageNumber={0} />} />
+          <Route path="/japanese/comprehension/:topicSlug" element={<Comprehension languageNumber={0} howToGuideVideo={japaneseComprehensionVideo}/>} />
           <Route path="/*" element={<Custom404Error/>} />
         </Routes>
       </div>}

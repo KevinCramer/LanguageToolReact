@@ -71,6 +71,7 @@ const VocabContent = (
   var currentLanguage: VocabLanguage = languages
     .find(l => languageToSlugs[l.languageName] === urlLanguage) || languages[props.languageNumber]
   var [currentLanguage,setLanguage] = useState(currentLanguage);
+  console.log('currentLanguage', currentLanguage)
  
   const urlTopic = urlSettings[1]
   var currentTopic: Topic = (currentLanguage.topics as Topic[])
