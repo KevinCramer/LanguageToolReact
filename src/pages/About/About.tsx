@@ -1,6 +1,6 @@
+import './About.scss';
 import { useEffect, useState } from 'react';
 import { mobileBreakPoint } from '../../constants';
-import './About.scss';
 
 const About = () => {
 

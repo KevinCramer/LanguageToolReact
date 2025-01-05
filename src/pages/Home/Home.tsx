@@ -1,27 +1,21 @@
 import './Home.scss';
 import { useEffect, useState } from 'react';
-import japaneseFlag from '../../assets/flag-icons/japanese-flag-icon.svg';
-import { backHome, RootStateNavbar, startNow } from '../../redux-store/navbar';
-import { useDispatch, useSelector } from 'react-redux';
-import { mobileBreakPoint } from '../../constants';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { mobileBreakPoint } from '../../constants';
+import { RootStateNavbar } from '../../redux-store/navbar';
+import { useSelector } from 'react-redux';
 
 export const Home = () => {
-  const dispatch = useDispatch();
   const reduxNavbar = useSelector((state: RootStateNavbar) => state.navbar);
 
   const navigate = useNavigate(); // React Router's navigation hook
   const location = useLocation(); // React Router's location hook
 
-  // Prevent toggleNavbar on flag clicks
-  const handleFlagClick = (event: any) => {
-    event.stopPropagation();
-  };
-
   useEffect(() => {
     // tiktok sets referrer to no-referrer so this hack is required to track traffic from TikTok
     if (window.location.pathname === '/explore') {
       window.location.replace(
+        // eslint-disable-next-line @stylistic/js/max-len
         'https://www.lingocommand.com/?utm_source=tiktok&utm_medium=social&utm_campaign=homepage_campaign'
       );
     }
@@ -115,7 +109,8 @@ export const Home = () => {
   return (
     <div>
       <div className="content2">
-        {reduxNavbar.isHome && <div style ={{ display:'flex', flexDirection: isMobile ? 'column' : 'row', alignItems: 'center' }}>  
+        {reduxNavbar.isHome && <div style = 
+          {{ display:'flex', flexDirection: isMobile ? 'column' : 'row', alignItems: 'center' }}>  
           <div
             style={{
               paddingTop: '10px',
@@ -156,7 +151,7 @@ export const Home = () => {
               e.currentTarget.style.transform = 'scale(1)';
             }}
             onClick={(event) => {
-              navigate('/japanese'); // Navigate to the /japanese route
+              navigate('/japanese'); 
             }}
           >
           Start Now
