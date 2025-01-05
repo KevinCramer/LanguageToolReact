@@ -1,4 +1,6 @@
 https://www.lingocommand.com/
+https://www.lingocommand.com/contact
+https://www.lingocommand.com/about
 https://www.lingocommand.com/japanese
 https://www.lingocommand.com/japanese/study-guide
 https://www.lingocommand.com/japanese/writing-systems-explained
@@ -10,13 +12,22 @@ https://www.lingocommand.com/japanese/writing-systems?s=hir-T0TFT
 https://www.lingocommand.com/japanese/writing-systems?s=hirdak-T0TFT
 https://www.lingocommand.com/japanese/writing-systems?s=hiryoon-T0TFT
 https://www.lingocommand.com/japanese/writing-systems?s=kat-T0TFT
-https://www.lingocommand.com/japanese/writing-systems?s=kanji_grade1-T0TFT
+https://www.lingocommand.com/japanese/writing-systems?s=katdak-T0TFT
+https://www.lingocommand.com/japanese/writing-systems?s=katyoon-T0TFT
+https://www.lingocommand.com/japanese/writing-systems?s=katspecyoon-T0TFT
+https://www.lingocommand.com/japanese/vocabulary?s=ani-T0TFT
+https://www.lingocommand.com/japanese/vocabulary?s=body-T0TFT
 https://www.lingocommand.com/japanese/vocabulary?s=clo-T0TFT
-https://www.lingocommand.com/japanese/vocabulary?s=num-T0TFT
 https://www.lingocommand.com/japanese/vocabulary?s=col-T0TFT
+https://www.lingocommand.com/japanese/vocabulary?s=day-T0TFT
+https://www.lingocommand.com/japanese/vocabulary?s=food-T0TFT
+https://www.lingocommand.com/japanese/vocabulary?s=adj2-T0TFT
+https://www.lingocommand.com/japanese/vocabulary?s=locations-T0TFT
+https://www.lingocommand.com/japanese/vocabulary?s=mon-T0TFT
+https://www.lingocommand.com/japanese/vocabulary?s=num-T0TFT
+https://www.lingocommand.com/japanese/vocabulary?s=adj1-T0TFT
 https://www.lingocommand.com/japanese/grammar/keigo
 https://www.lingocommand.com/japanese/comprehension/aikos-book-sanctuary?eng=F
-https://www.lingocommand.com/contact
-https://www.lingocommand.com/about
+
 
 

@@ -24,74 +24,200 @@ const routesMeta = {
       { name: 'keywords', content: 'contact us, LingoCommand support, customer support, japanese language learning help, japanese language app support, contact japanese language platform, reach out, LingoCommand inquiries, contact page, social media, YouTube, TikTok, Instagram' },
     ],
   },
-  // '/japanese': {
-  //   title: 'LingoCommand Contact',
+  // '/about': {
+  //   title: 'Contact',
   //   meta: [
   //     { name: 'description', content: 'You can reach out to us at contact@lingocommand.com. Social media: Youtube, TikTok, Instragram, Facebook, Linkedin, Pinterest.' },
-  //     { name: 'keywords', content: 'contact us, LingoCommand support, customer support, language learning help, language app support, contact language platform, reach out, LingoCommand inquiries, contact page, social media, YouTube, TikTok, Instagram' },
+  //     { name: 'keywords', content: 'contact us, LingoCommand support, customer support, japanese language learning help, japanese language app support, contact japanese language platform, reach out, LingoCommand inquiries, contact page, social media, YouTube, TikTok, Instagram' },
+  //   ],
+  // },
+  // '/japanese': {
+  //   title: 'Contact',
+  //   meta: [
+  //     { name: 'description', content: 'You can reach out to us at contact@lingocommand.com. Social media: Youtube, TikTok, Instragram, Facebook, Linkedin, Pinterest.' },
+  //     { name: 'keywords', content: 'contact us, LingoCommand support, customer support, japanese language learning help, japanese language app support, contact japanese language platform, reach out, LingoCommand inquiries, contact page, social media, YouTube, TikTok, Instagram' },
   //   ],
   // },
   // '/japanese/study-guide': {
-  //   title: 'LingoCommand Contact',
+  //   title: 'Contact',
   //   meta: [
   //     { name: 'description', content: 'You can reach out to us at contact@lingocommand.com. Social media: Youtube, TikTok, Instragram, Facebook, Linkedin, Pinterest.' },
-  //     { name: 'keywords', content: 'contact us, LingoCommand support, customer support, language learning help, language app support, contact language platform, reach out, LingoCommand inquiries, contact page, social media, YouTube, TikTok, Instagram' },
+  //     { name: 'keywords', content: 'contact us, LingoCommand support, customer support, japanese language learning help, japanese language app support, contact japanese language platform, reach out, LingoCommand inquiries, contact page, social media, YouTube, TikTok, Instagram' },
   //   ],
   // },
   // '/japanese/writing-systems-explained': {
-  //   title: 'LingoCommand Contact',
+  //   title: 'Contact',
   //   meta: [
   //     { name: 'description', content: 'You can reach out to us at contact@lingocommand.com. Social media: Youtube, TikTok, Instragram, Facebook, Linkedin, Pinterest.' },
-  //     { name: 'keywords', content: 'contact us, LingoCommand support, customer support, language learning help, language app support, contact language platform, reach out, LingoCommand inquiries, contact page, social media, YouTube, TikTok, Instagram' },
+  //     { name: 'keywords', content: 'contact us, LingoCommand support, customer support, japanese language learning help, japanese language app support, contact japanese language platform, reach out, LingoCommand inquiries, contact page, social media, YouTube, TikTok, Instagram' },
   //   ],
   // },
   // '/japanese/hiragana-explained': {
-  //   title: 'LingoCommand Contact',
+  //   title: 'Contact',
   //   meta: [
   //     { name: 'description', content: 'You can reach out to us at contact@lingocommand.com. Social media: Youtube, TikTok, Instragram, Facebook, Linkedin, Pinterest.' },
-  //     { name: 'keywords', content: 'contact us, LingoCommand support, customer support, language learning help, language app support, contact language platform, reach out, LingoCommand inquiries, contact page, social media, YouTube, TikTok, Instagram' },
+  //     { name: 'keywords', content: 'contact us, LingoCommand support, customer support, japanese language learning help, japanese language app support, contact japanese language platform, reach out, LingoCommand inquiries, contact page, social media, YouTube, TikTok, Instagram' },
   //   ],
   // },
   // '/japanese/katakana-explained': {
-  //   title: 'LingoCommand Contact',
+  //   title: 'Contact',
   //   meta: [
   //     { name: 'description', content: 'You can reach out to us at contact@lingocommand.com. Social media: Youtube, TikTok, Instragram, Facebook, Linkedin, Pinterest.' },
-  //     { name: 'keywords', content: 'contact us, LingoCommand support, customer support, language learning help, language app support, contact language platform, reach out, LingoCommand inquiries, contact page, social media, YouTube, TikTok, Instagram' },
+  //     { name: 'keywords', content: 'contact us, LingoCommand support, customer support, japanese language learning help, japanese language app support, contact japanese language platform, reach out, LingoCommand inquiries, contact page, social media, YouTube, TikTok, Instagram' },
   //   ],
   // },
   // '/japanese/kanji-explained': {
-  //   title: 'LingoCommand Contact',
+  //   title: 'Contact',
   //   meta: [
   //     { name: 'description', content: 'You can reach out to us at contact@lingocommand.com. Social media: Youtube, TikTok, Instragram, Facebook, Linkedin, Pinterest.' },
-  //     { name: 'keywords', content: 'contact us, LingoCommand support, customer support, language learning help, language app support, contact language platform, reach out, LingoCommand inquiries, contact page, social media, YouTube, TikTok, Instagram' },
+  //     { name: 'keywords', content: 'contact us, LingoCommand support, customer support, japanese language learning help, japanese language app support, contact japanese language platform, reach out, LingoCommand inquiries, contact page, social media, YouTube, TikTok, Instagram' },
   //   ],
   // },
-  // '/japanese/how-to-type-japanase': {
-  //   title: 'LingoCommand Contact',
+  // '/japanese/how-to-type-japanese': {
+  //   title: 'Contact',
   //   meta: [
   //     { name: 'description', content: 'You can reach out to us at contact@lingocommand.com. Social media: Youtube, TikTok, Instragram, Facebook, Linkedin, Pinterest.' },
-  //     { name: 'keywords', content: 'contact us, LingoCommand support, customer support, language learning help, language app support, contact language platform, reach out, LingoCommand inquiries, contact page, social media, YouTube, TikTok, Instagram' },
+  //     { name: 'keywords', content: 'contact us, LingoCommand support, customer support, japanese language learning help, japanese language app support, contact japanese language platform, reach out, LingoCommand inquiries, contact page, social media, YouTube, TikTok, Instagram' },
   //   ],
   // },
-  // '/japanese/contact': {
-  //   title: 'LingoCommand Contact',
+  // '/japanese/writing-systems?s=hir-T0TFT': {
+  //   title: 'Contact',
   //   meta: [
   //     { name: 'description', content: 'You can reach out to us at contact@lingocommand.com. Social media: Youtube, TikTok, Instragram, Facebook, Linkedin, Pinterest.' },
-  //     { name: 'keywords', content: 'contact us, LingoCommand support, customer support, language learning help, language app support, contact language platform, reach out, LingoCommand inquiries, contact page, social media, YouTube, TikTok, Instagram' },
+  //     { name: 'keywords', content: 'contact us, LingoCommand support, customer support, japanese language learning help, japanese language app support, contact japanese language platform, reach out, LingoCommand inquiries, contact page, social media, YouTube, TikTok, Instagram' },
   //   ],
   // },
-  // '/japanese/about': {
-  //   title: 'LingoCommand Contact',
+  // '/japanese/writing-systems?s=hirdak-T0TFT': {
+  //   title: 'Contact',
   //   meta: [
   //     { name: 'description', content: 'You can reach out to us at contact@lingocommand.com. Social media: Youtube, TikTok, Instragram, Facebook, Linkedin, Pinterest.' },
-  //     { name: 'keywords', content: 'contact us, LingoCommand support, customer support, language learning help, language app support, contact language platform, reach out, LingoCommand inquiries, contact page, social media, YouTube, TikTok, Instagram' },
+  //     { name: 'keywords', content: 'contact us, LingoCommand support, customer support, japanese language learning help, japanese language app support, contact japanese language platform, reach out, LingoCommand inquiries, contact page, social media, YouTube, TikTok, Instagram' },
+  //   ],
+  // },
+  // '/japanese/writing-systems?s=hiryoon-T0TFT': {
+  //   title: 'Contact',
+  //   meta: [
+  //     { name: 'description', content: 'You can reach out to us at contact@lingocommand.com. Social media: Youtube, TikTok, Instragram, Facebook, Linkedin, Pinterest.' },
+  //     { name: 'keywords', content: 'contact us, LingoCommand support, customer support, japanese language learning help, japanese language app support, contact japanese language platform, reach out, LingoCommand inquiries, contact page, social media, YouTube, TikTok, Instagram' },
+  //   ],
+  // },
+  // '/japanese/writing-systems?s=kat-T0TFT': {
+  //   title: 'Contact',
+  //   meta: [
+  //     { name: 'description', content: 'You can reach out to us at contact@lingocommand.com. Social media: Youtube, TikTok, Instragram, Facebook, Linkedin, Pinterest.' },
+  //     { name: 'keywords', content: 'contact us, LingoCommand support, customer support, japanese language learning help, japanese language app support, contact japanese language platform, reach out, LingoCommand inquiries, contact page, social media, YouTube, TikTok, Instagram' },
+  //   ],
+  // },
+  // '/japanese/writing-systems?s=katdak-T0TFT': {
+  //   title: 'Contact',
+  //   meta: [
+  //     { name: 'description', content: 'You can reach out to us at contact@lingocommand.com. Social media: Youtube, TikTok, Instragram, Facebook, Linkedin, Pinterest.' },
+  //     { name: 'keywords', content: 'contact us, LingoCommand support, customer support, japanese language learning help, japanese language app support, contact japanese language platform, reach out, LingoCommand inquiries, contact page, social media, YouTube, TikTok, Instagram' },
+  //   ],
+  // },
+  // '/japanese/writing-systems?s=katyoon-T0TFT': {
+  //   title: 'Contact',
+  //   meta: [
+  //     { name: 'description', content: 'You can reach out to us at contact@lingocommand.com. Social media: Youtube, TikTok, Instragram, Facebook, Linkedin, Pinterest.' },
+  //     { name: 'keywords', content: 'contact us, LingoCommand support, customer support, japanese language learning help, japanese language app support, contact japanese language platform, reach out, LingoCommand inquiries, contact page, social media, YouTube, TikTok, Instagram' },
+  //   ],
+  // },
+  // '/japanese/writing-systems?s=katspecyoon-T0TFT': {
+  //   title: 'Contact',
+  //   meta: [
+  //     { name: 'description', content: 'You can reach out to us at contact@lingocommand.com. Social media: Youtube, TikTok, Instragram, Facebook, Linkedin, Pinterest.' },
+  //     { name: 'keywords', content: 'contact us, LingoCommand support, customer support, japanese language learning help, japanese language app support, contact japanese language platform, reach out, LingoCommand inquiries, contact page, social media, YouTube, TikTok, Instagram' },
+  //   ],
+  // },
+  // '/japanese/vocabulary?s=ani-T0TFT': {
+  //   title: 'Contact',
+  //   meta: [
+  //     { name: 'description', content: 'You can reach out to us at contact@lingocommand.com. Social media: Youtube, TikTok, Instragram, Facebook, Linkedin, Pinterest.' },
+  //     { name: 'keywords', content: 'contact us, LingoCommand support, customer support, japanese language learning help, japanese language app support, contact japanese language platform, reach out, LingoCommand inquiries, contact page, social media, YouTube, TikTok, Instagram' },
+  //   ],
+  // },
+  // '/japanese/vocabulary?s=body-T0TFT': {
+  //   title: 'Contact',
+  //   meta: [
+  //     { name: 'description', content: 'You can reach out to us at contact@lingocommand.com. Social media: Youtube, TikTok, Instragram, Facebook, Linkedin, Pinterest.' },
+  //     { name: 'keywords', content: 'contact us, LingoCommand support, customer support, japanese language learning help, japanese language app support, contact japanese language platform, reach out, LingoCommand inquiries, contact page, social media, YouTube, TikTok, Instagram' },
+  //   ],
+  // },
+  // '/japanese/vocabulary?s=clo-T0TFT': {
+  //   title: 'Contact',
+  //   meta: [
+  //     { name: 'description', content: 'You can reach out to us at contact@lingocommand.com. Social media: Youtube, TikTok, Instragram, Facebook, Linkedin, Pinterest.' },
+  //     { name: 'keywords', content: 'contact us, LingoCommand support, customer support, japanese language learning help, japanese language app support, contact japanese language platform, reach out, LingoCommand inquiries, contact page, social media, YouTube, TikTok, Instagram' },
+  //   ],
+  // },
+  // '/japanese/vocabulary?s=col-T0TFT': {
+  //   title: 'Contact',
+  //   meta: [
+  //     { name: 'description', content: 'You can reach out to us at contact@lingocommand.com. Social media: Youtube, TikTok, Instragram, Facebook, Linkedin, Pinterest.' },
+  //     { name: 'keywords', content: 'contact us, LingoCommand support, customer support, japanese language learning help, japanese language app support, contact japanese language platform, reach out, LingoCommand inquiries, contact page, social media, YouTube, TikTok, Instagram' },
+  //   ],
+  // },
+  // '/japanese/vocabulary?s=day-T0TFT': {
+  //   title: 'Contact',
+  //   meta: [
+  //     { name: 'description', content: 'You can reach out to us at contact@lingocommand.com. Social media: Youtube, TikTok, Instragram, Facebook, Linkedin, Pinterest.' },
+  //     { name: 'keywords', content: 'contact us, LingoCommand support, customer support, japanese language learning help, japanese language app support, contact japanese language platform, reach out, LingoCommand inquiries, contact page, social media, YouTube, TikTok, Instagram' },
+  //   ],
+  // },
+  // '/japanese/vocabulary?s=food-T0TFT': {
+  //   title: 'Contact',
+  //   meta: [
+  //     { name: 'description', content: 'You can reach out to us at contact@lingocommand.com. Social media: Youtube, TikTok, Instragram, Facebook, Linkedin, Pinterest.' },
+  //     { name: 'keywords', content: 'contact us, LingoCommand support, customer support, japanese language learning help, japanese language app support, contact japanese language platform, reach out, LingoCommand inquiries, contact page, social media, YouTube, TikTok, Instagram' },
+  //   ],
+  // },
+  // '/japanese/vocabulary?s=adj2-T0TFT': {
+  //   title: 'Contact',
+  //   meta: [
+  //     { name: 'description', content: 'You can reach out to us at contact@lingocommand.com. Social media: Youtube, TikTok, Instragram, Facebook, Linkedin, Pinterest.' },
+  //     { name: 'keywords', content: 'contact us, LingoCommand support, customer support, japanese language learning help, japanese language app support, contact japanese language platform, reach out, LingoCommand inquiries, contact page, social media, YouTube, TikTok, Instagram' },
+  //   ],
+  // },
+  // '/japanese/vocabulary?s=locations-T0TFT': {
+  //   title: 'Contact',
+  //   meta: [
+  //     { name: 'description', content: 'You can reach out to us at contact@lingocommand.com. Social media: Youtube, TikTok, Instragram, Facebook, Linkedin, Pinterest.' },
+  //     { name: 'keywords', content: 'contact us, LingoCommand support, customer support, japanese language learning help, japanese language app support, contact japanese language platform, reach out, LingoCommand inquiries, contact page, social media, YouTube, TikTok, Instagram' },
+  //   ],
+  // },
+  // '/japanese/vocabulary?s=mon-T0TFT': {
+  //   title: 'Contact',
+  //   meta: [
+  //     { name: 'description', content: 'You can reach out to us at contact@lingocommand.com. Social media: Youtube, TikTok, Instragram, Facebook, Linkedin, Pinterest.' },
+  //     { name: 'keywords', content: 'contact us, LingoCommand support, customer support, japanese language learning help, japanese language app support, contact japanese language platform, reach out, LingoCommand inquiries, contact page, social media, YouTube, TikTok, Instagram' },
+  //   ],
+  // },
+  // '/japanese/vocabulary?s=num-T0TFT': {
+  //   title: 'Contact',
+  //   meta: [
+  //     { name: 'description', content: 'You can reach out to us at contact@lingocommand.com. Social media: Youtube, TikTok, Instragram, Facebook, Linkedin, Pinterest.' },
+  //     { name: 'keywords', content: 'contact us, LingoCommand support, customer support, japanese language learning help, japanese language app support, contact japanese language platform, reach out, LingoCommand inquiries, contact page, social media, YouTube, TikTok, Instagram' },
+  //   ],
+  // },
+  // '/japanese/vocabulary?s=adj1-T0TFT': {
+  //   title: 'Contact',
+  //   meta: [
+  //     { name: 'description', content: 'You can reach out to us at contact@lingocommand.com. Social media: Youtube, TikTok, Instragram, Facebook, Linkedin, Pinterest.' },
+  //     { name: 'keywords', content: 'contact us, LingoCommand support, customer support, japanese language learning help, japanese language app support, contact japanese language platform, reach out, LingoCommand inquiries, contact page, social media, YouTube, TikTok, Instagram' },
   //   ],
   // },
   // '/japanese/grammar/keigo': {
-  //   title: 'LingoCommand Contact',
+  //   title: 'Contact',
   //   meta: [
   //     { name: 'description', content: 'You can reach out to us at contact@lingocommand.com. Social media: Youtube, TikTok, Instragram, Facebook, Linkedin, Pinterest.' },
-  //     { name: 'keywords', content: 'contact us, LingoCommand support, customer support, language learning help, language app support, contact language platform, reach out, LingoCommand inquiries, contact page, social media, YouTube, TikTok, Instagram' },
+  //     { name: 'keywords', content: 'contact us, LingoCommand support, customer support, japanese language learning help, japanese language app support, contact japanese language platform, reach out, LingoCommand inquiries, contact page, social media, YouTube, TikTok, Instagram' },
+  //   ],
+  // },
+  // '/japanese/comprehension/aikos-book-sanctuary?eng=F': {
+  //   title: 'Contact',
+  //   meta: [
+  //     { name: 'description', content: 'You can reach out to us at contact@lingocommand.com. Social media: Youtube, TikTok, Instragram, Facebook, Linkedin, Pinterest.' },
+  //     { name: 'keywords', content: 'contact us, LingoCommand support, customer support, japanese language learning help, japanese language app support, contact japanese language platform, reach out, LingoCommand inquiries, contact page, social media, YouTube, TikTok, Instagram' },
   //   ],
   // },
 };
