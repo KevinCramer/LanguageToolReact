@@ -90,25 +90,26 @@ const Navbar = () => {
           Contact
         </Nav.Link>
         {!(currentUser && currentUser.email) && (
-          <div
-            onClick={async () => {
-              if (currentUser && currentUser.email) {
-                try {
-                  await logout();
-                  if (location.pathname === '/account') {
-                    navigate('/');
+          <Nav.Link>
+            <div
+              onClick={async () => {
+                if (currentUser && currentUser.email) {
+                  try {
+                    await logout();
+                    if (location.pathname === '/account') {
+                      navigate('/');
+                    }
+                  } catch (error) {
+                    console.error('Failed to log out', error);
                   }
-                } catch (error) {
-                  console.error('Failed to log out', error);
+                } else {
+                  dispatch(displayLogin());
                 }
-              } else {
-                dispatch(displayLogin());
-              }
-            }}
-          >
-            {currentUser && currentUser.email ? 'Log Out' : 'Log In'}
-          </div>
-
+              }}
+            >
+              {currentUser && currentUser.email ? 'Log Out' : 'Log In'}
+            </div>
+          </Nav.Link>
         )}
         {currentUser && currentUser.email && (
           <>
