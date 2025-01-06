@@ -927,7 +927,7 @@ const japaneseTopics: TopicWithThreeAlphabets[] = [
     words: [
       { englishWord: 'happy', foreignWord: ['ureshii', 'うれしい', '嬉しい'], foreignAudio: japaneseAudioHappy },
       { englishWord: 'sad', foreignWord: ['kanashii', 'かなしい', '悲しい'], foreignAudio: japaneseAudioSad },
-      { englishWord: 'angry', foreignWord: ['okotte iru', 'おこっている', '怒っている'], foreignAudio: japaneseAudioAngry },
+      { englishWord: 'angry', foreignWord: ['okotteiru', 'おこっている', '怒っている'], foreignAudio: japaneseAudioAngry },
       { englishWord: 'lonely', foreignWord: ['sabishii', 'さびしい', '寂しい'], foreignAudio: japaneseAudioLonely },
       { englishWord: 'sick', foreignWord: ['guai ga warui', 'ぐあいがわるい', '具合が悪い'], foreignAudio: japaneseAudioSick },
       { englishWord: 'clever', foreignWord: ['kashikoi', 'かしこい', '賢い'], foreignAudio: japaneseAudioClever },
