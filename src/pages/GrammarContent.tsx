@@ -1,16 +1,16 @@
 
 import { Container, Navbar as NavbarBs } from 'react-bootstrap';
-import { GrammarLanguage, Topic } from '../../../types/learningSections/GrammarTypes';
+import { GrammarLanguage, Topic } from '../../types/learningSections/GrammarTypes';
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import CustomDropDownButton from '../../components/atoms/CustomDropDownButton/CustomDropDownButton';
+import CustomDropDownButton from '../components/atoms/CustomDropDownButton';
 import Dropdown from 'react-bootstrap/Dropdown';
-import { languages } from '../../data/structured-data/grammar';
-import { lightGrey, lingoCommandIsLocked } from '../../constants';
+import { languages } from '../data/structured-data/grammar';
+import { lightGrey, lingoCommandIsLocked } from '../constants';
 import LockIcon from '@mui/icons-material/Lock';
-import { useAuth } from '../../contexts/AuthContext';
+import { useAuth } from '../contexts/AuthContext';
 import { useDispatch } from 'react-redux';
-import { denyPermission } from '../../redux-store/lock';
+import { denyPermission } from '../redux-store/lock';
 
 const GrammarContent = (
   props: {

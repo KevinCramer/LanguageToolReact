@@ -1,7 +1,7 @@
 import { Navbar } from 'react-bootstrap'
-import { roughlyEqual } from '../../../helpers/vocab-content-helpers'
+import { roughlyEqual } from '../../helpers/vocab-content-helpers'
 import { useState } from 'react'
-import { VerbConjugation } from '../../../../types/learningSections/VocabTypes'
+import { VerbConjugation } from '../../../types/learningSections/VocabTypes'
 
 const QuizElement = (
   props: {

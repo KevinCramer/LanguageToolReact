@@ -1,5 +1,5 @@
 import { pause, play } from 'ionicons/icons';
-import { timeElapsed, timeRemaining } from '../../../helpers/audio-player-helpers';
+import { timeElapsed, timeRemaining } from '../../helpers/audio-player-helpers';
 import { useRef, useState } from 'react';
 import { IonIcon } from '@ionic/react';
 

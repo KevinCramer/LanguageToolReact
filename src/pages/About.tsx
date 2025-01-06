@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { mobileBreakPoint } from '../../constants';
+import { mobileBreakPoint } from '../constants';
 
 const About = () => {
 

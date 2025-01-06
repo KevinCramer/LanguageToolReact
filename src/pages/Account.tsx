@@ -1,7 +1,7 @@
-import { displayDeleteAccount, displayUpdateAccount } from '../../redux-store/auth'
-import app from '../../firebase';
-import CustomLink from '../../components/atoms/CustomLink/CustomLink';
-import { getCheckoutUrl } from '../../stripePayment';
+import { displayDeleteAccount, displayUpdateAccount } from '../redux-store/auth'
+import app from '../firebase';
+import CustomLink from '../components/atoms/CustomLink';
+import { getCheckoutUrl } from '../stripePayment';
 import { useDispatch, } from 'react-redux';
 
 const Account = () => {

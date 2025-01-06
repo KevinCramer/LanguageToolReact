@@ -1,8 +1,8 @@
 import { Alert, Button, Card, Form } from 'react-bootstrap'
-import { displayLogin, hideModal } from '../../../redux-store/auth'
+import { displayLogin, hideModal } from '../../redux-store/auth'
 import { useRef, useState } from 'react'
-import CustomLink from '../../atoms/CustomLink/CustomLink'
-import { useAuth } from '../../../contexts/AuthContext'
+import CustomLink from '../atoms/CustomLink'
+import { useAuth } from '../../contexts/AuthContext'
 import { useDispatch } from 'react-redux'
 
 export default function Signup() {

@@ -1,6 +1,6 @@
 import { Alert, Button, Card, Form } from 'react-bootstrap'
-import { hideModal } from '../../../redux-store/auth';
-import { useAuth } from '../../../contexts/AuthContext'
+import { hideModal } from '../../redux-store/auth';
+import { useAuth } from '../../contexts/AuthContext'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react'

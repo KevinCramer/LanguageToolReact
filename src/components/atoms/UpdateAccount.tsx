@@ -1,7 +1,7 @@
 import { Alert, Button, Card, Form } from 'react-bootstrap'
 import { useRef, useState } from 'react'
-import { hideModal } from '../../../redux-store/auth';
-import { useAuth } from '../../../contexts/AuthContext'
+import { hideModal } from '../../redux-store/auth';
+import { useAuth } from '../../contexts/AuthContext'
 import { useDispatch } from 'react-redux'
 
 export default function UpdateAccount() {

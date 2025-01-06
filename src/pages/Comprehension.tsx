@@ -1,18 +1,18 @@
-import { AudioTranscription, ComprehensionLanguage, TranscriptionType } from '../../../types/learningSections/ComprehensionTypes';
+import { AudioTranscription, ComprehensionLanguage, TranscriptionType } from '../../types/learningSections/ComprehensionTypes';
 import { Container, DropdownItem, Modal, Navbar as NavbarBs, Table } from 'react-bootstrap';
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
-import { languages as allLanguages } from '../../data/structured-data/comprehension';
-import CustomDropDownButton from '../../components/atoms/CustomDropDownButton/CustomDropDownButton';
+import { languages as allLanguages } from '../data/structured-data/comprehension';
+import CustomDropDownButton from '../components/atoms/CustomDropDownButton';
 import Dropdown from 'react-bootstrap/Dropdown';
-import { lightGrey, lingoCommandIsLocked, mobileBreakPoint } from '../../constants';
-import CustomDropDownButtonWhite from '../../components/atoms/CustomDropDownButtonWhite/CustomDropDownButtonWhite';
-import CustomSwitch from '../../components/atoms/CustomSwitch/CustomSwitch';
-import RenderTableCell from '../../components/molecules/RenderTableCell/RenderTableCell';
+import { lightGrey, lingoCommandIsLocked, mobileBreakPoint } from '../constants';
+import CustomDropDownButtonWhite from '../components/atoms/CustomDropDownButtonWhite';
+import CustomSwitch from '../components/atoms/CustomSwitch';
+import RenderTableCell from '../components/molecules/RenderTableCell';
 import LockIcon from '@mui/icons-material/Lock';
-import { useAuth } from '../../contexts/AuthContext';
+import { useAuth } from '../contexts/AuthContext';
 import { useDispatch } from 'react-redux';
-import { denyPermission } from '../../redux-store/lock';
+import { denyPermission } from '../redux-store/lock';
 
 const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?: any }) => {
   const dispatch = useDispatch();

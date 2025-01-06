@@ -1,6 +1,6 @@
 import { Card } from 'react-bootstrap'
-import CustomLink from '../CustomLink/CustomLink'
-import { displayLogin } from '../../../redux-store/auth';
+import CustomLink from './CustomLink'
+import { displayLogin } from '../../redux-store/auth';
 import { useDispatch } from 'react-redux'
 
 export default function PremiumContent() {

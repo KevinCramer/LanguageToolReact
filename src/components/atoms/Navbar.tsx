@@ -1,12 +1,12 @@
-import { backHome } from '../../../redux-store/navbar';
+import { backHome } from '../../redux-store/navbar';
 import { Nav, Navbar as NavbarBs, NavDropdown } from 'react-bootstrap';
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { displayLogin } from '../../../redux-store/auth';
-import { useAuth } from '../../../contexts/AuthContext';
+import { displayLogin } from '../../redux-store/auth';
+import { useAuth } from '../../contexts/AuthContext';
 import { useEffect, useState } from 'react';
-import lingoCommandLogo from '../../../assets/lingoCommandLogo.svg';
-import { mobileBreakPoint } from '../../../constants';
+import lingoCommandLogo from '../../assets/lingoCommandLogo.svg';
+import { mobileBreakPoint } from '../../constants';
 import { BsPerson } from 'react-icons/bs';
 
 const Navbar = () => {

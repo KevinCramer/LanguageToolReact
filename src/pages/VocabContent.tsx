@@ -7,24 +7,24 @@ import {
   WordWithOneAlphabet, 
   WordWithThreeAlphabets, 
   WordWithTwoAlphabets 
-} from '../../../types/learningSections/VocabTypes'
-import { queryParamCompress, queryParamDecompress } from '../../helpers/query-param-helpers'
+} from '../../types/learningSections/VocabTypes'
+import { queryParamCompress, queryParamDecompress } from '../helpers/query-param-helpers'
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { languages as allLanguages } from '../../data/structured-data/words';
-import CustomDropDownButton from '../../components/atoms/CustomDropDownButton/CustomDropDownButton';
-import CustomSwitch from '../../components/atoms/CustomSwitch/CustomSwitch';
-import { denyPermission } from '../../redux-store/lock';
+import { languages as allLanguages } from '../data/structured-data/words';
+import CustomDropDownButton from '../components/atoms/CustomDropDownButton';
+import CustomSwitch from '../components/atoms/CustomSwitch';
+import { denyPermission } from '../redux-store/lock';
 import Dropdown from 'react-bootstrap/Dropdown';
-import { languageToSlugs, lightGrey, lingoCommandIsLocked } from '../../constants'
+import { languageToSlugs, lingoCommandIsLocked } from '../constants'
 import LockIcon from '@mui/icons-material/Lock';
-import { nullOrUndefined } from '../../helpers/audio-player-helpers'
-import QuizElement from '../../components/atoms/QuizElement/QuizElement';
-import { scramble } from '../../helpers/vocab-content-helpers';
-import StudyElement from '../../components/molecules/StudyElement/StudyElement';
-import { useAuth } from '../../contexts/AuthContext'
+import { nullOrUndefined } from '../helpers/audio-player-helpers'
+import QuizElement from '../components/atoms/QuizElement';
+import { scramble } from '../helpers/vocab-content-helpers';
+import StudyElement from '../components/molecules/StudyElement';
+import { useAuth } from '../contexts/AuthContext'
 import { useDispatch } from 'react-redux';
-import { sortTopics } from '../../helpers/words-data-helper';
+import { sortTopics } from '../helpers/words-data-helper';
 
 const VocabContent = (
   props: {

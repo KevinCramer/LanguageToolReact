@@ -16,6 +16,6 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": ["src", "types/learningSections/VocabTypes.ts", "types/learningSections/ComprehensionTypes.ts", "src/components/atoms/CustomDropDownButton/CustomDropDownButton.tsx"],
+  "include": ["src", "types/learningSections/VocabTypes.ts", "types/learningSections/ComprehensionTypes.ts", "src/components/atoms/CustomDropDownButton.tsx"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

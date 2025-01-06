@@ -4,10 +4,10 @@ import {
   VerbConjugation, 
   VerbConjugationEnglish,
   VerbConjugationForeign
-} from '../../../../types/learningSections/VocabTypes'
-import CustomButton from '../../atoms/CustomButton/CustomButton'
-import { englishPronouns } from '../../../data/structured-data/words'
-import { modalTenses } from '../../../constants'
+} from '../../../types/learningSections/VocabTypes'
+import CustomButton from '../atoms/CustomButton'
+import { englishPronouns } from '../../data/structured-data/words'
+import { modalTenses } from '../../constants'
 import { useEffect, useState } from 'react'
 import VolumeUpIcon from '@mui/icons-material/VolumeUp';
 import VolumeOffIcon from '@mui/icons-material/VolumeOff';

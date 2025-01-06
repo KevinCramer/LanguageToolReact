@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { mobileBreakPoint } from '../../constants';
-import { RootStateNavbar } from '../../redux-store/navbar';
+import { mobileBreakPoint } from '../constants';
+import { RootStateNavbar } from '../redux-store/navbar';
 import { useSelector } from 'react-redux';
 
 export const Home = () => {

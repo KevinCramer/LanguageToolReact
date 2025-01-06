@@ -1,9 +1,9 @@
 import { Alert, Button, Card, Form } from 'react-bootstrap'
-import { displayForgotPassword, displaySignup, hideModal } from '../../../redux-store/auth'
+import { displayForgotPassword, displaySignup, hideModal } from '../../redux-store/auth'
 import { useRef, useState } from 'react'
-import CustomLink from '../../atoms/CustomLink/CustomLink'
-import { resetPermission } from '../../../redux-store/lock'
-import { useAuth } from '../../../contexts/AuthContext'
+import CustomLink from '../atoms/CustomLink'
+import { resetPermission } from '../../redux-store/lock'
+import { useAuth } from '../../contexts/AuthContext'
 import { useDispatch } from 'react-redux'
 
 export default function Login() {
