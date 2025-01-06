@@ -49,9 +49,9 @@ const QuizElement = (
     }
     const myPlaceHolder = props.myCounter === 1 ? 'enter your answer here' : '';
     return (
-      <Navbar className='quiz-element-container'>
+      <Navbar>
         <div>
-          <div className='inner-quiz-element-container'>
+          <div>
             <form 
               onBlur={e => checkAnswer(
                 e as unknown as React.ChangeEvent<HTMLInputElement> ,
@@ -60,8 +60,8 @@ const QuizElement = (
                         e as unknown as React.ChangeEvent<HTMLInputElement> ,
                         formValues.answer, propsAnswerWord)}
             >
-              <div className="ui form">
-                <label className='question-label'>{propsQuestionWord} </label>
+              <div>
+                <label>{propsQuestionWord} </label>
                 <input 
                   type="text"
                   name="answer" 
@@ -79,7 +79,7 @@ const QuizElement = (
               */}
             <div></div>
             <div>
-              <div className='tick-mark-container'> {response === '✔' ? response : null}</div>
+              <div> {response === '✔' ? response : null}</div>
             </div>
           </div>
           <div> {response !== '✔' ? response : null}</div>

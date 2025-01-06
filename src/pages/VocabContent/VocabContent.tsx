@@ -185,9 +185,9 @@ const VocabContent = (
     }
     else {
       return (
-        <div className='table-container'>
+        <div>
           <title>{currentLanguage.languageName }Vocabulary</title>
-          <Table striped bordered hover size="sm" className="react-bootstrap-table scrollable-table">
+          <Table striped bordered hover size="sm">
             <thead>
               <tr>
                 <th>
@@ -198,7 +198,7 @@ const VocabContent = (
                 </th>
               </tr>
             </thead>
-            <div className="scrollable-tbody">
+            <div>
               <tbody>
                 {topicWords.map((pair: Word, index: number) => (
                   <tr key={index}>
@@ -276,7 +276,7 @@ const VocabContent = (
   }
   return (
     <>
-      <div className="page-container-no-padding-small-font">
+      <div>
         <h4> 
           {currentLanguage.languageName} {props.isWritingSystem ? 'Writing Systems' : 'Vocabulary'}
         </h4>
@@ -285,15 +285,15 @@ const VocabContent = (
             <button onClick={displayPopUp}>How to Guide (Video)</button>
           </div>
           <NavbarBs>
-            <Container className='options-container'>
-              <div className='div-options-container'>
+            <Container>
+              <div>
                 <CustomDropDownButton title={'Topic: ' + currentTopic.name}>
                   {(currentLanguage.topics as Topic[]).sort((t1,t2) => ((t1.topicOrder || 0) < (t2.topicOrder || 0)) ? -1 : 1 )
                     .map((topic: Topic, index: number) =>
                       <Dropdown.Item 
                         key = {index} onClick = {() => 
                           changeCurrentTopic(topic)}>
-                        <div className="topic-container">
+                        <div>
                           {topic.name} {
                             topic.isLocked 
                           && lingoCommandIsLocked 
@@ -358,8 +358,8 @@ const VocabContent = (
               </div>             
             </Container>
           </NavbarBs>
-          <Container className='switch-container'>
-            <div className='div-switch-container' style ={{ paddingTop: '20px' }}>
+          <Container>
+            <div>
               <div>
                 Study
               </div>

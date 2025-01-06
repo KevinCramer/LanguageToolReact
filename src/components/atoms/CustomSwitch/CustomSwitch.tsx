@@ -9,9 +9,9 @@ const CustomSwitch = ({ checked, onChange }: CustomSwitchProps) => {
   };
 
   return (
-    <label className="custom-switch">
+    <label>
       <input type="checkbox" checked={checked} onChange={handleChange} />
-      <span className="slider"></span>
+      <span></span>
     </label>
   );
 }

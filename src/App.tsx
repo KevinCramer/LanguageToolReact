@@ -54,11 +54,11 @@ const App = ()=> {
 
   return (
     <>
-      {pathWithBackground && <div className="full-background">
+      {pathWithBackground && <div>
         <Navbar />
         <Routes>
-          <Route path="/" element={ <div className='home-container'> <Home /></div>} />
-          <Route path="/explore" element={ <div className='home-container'> <Home /></div>} />
+          <Route path="/" element={ <div> <Home /></div>} />
+          <Route path="/explore" element={ <div> <Home /></div>} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/account" element={<Account />} />
@@ -76,11 +76,11 @@ const App = ()=> {
           <Route path="/*" element={<Custom404Error/>} />
         </Routes>
       </div>}
-      {!pathWithBackground && <div className="plain-background">
+      {!pathWithBackground && <div>
         <Navbar/>
         <Routes>
-          <Route path="/" element={ <div className='home-container'> <Home /></div>} />
-          <Route path="/explore" element={ <div className='home-container'> <Home /></div>} />
+          <Route path="/" element={ <div> <Home /></div>} />
+          <Route path="/explore" element={ <div> <Home /></div>} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/account" element={<Account />} />
@@ -103,8 +103,8 @@ const App = ()=> {
         <Modal.Header closeButton>
         </Modal.Header>
         <Modal.Body>
-          <Container className='d-flex align-items-center justify-content-center'>
-            <div className='w-100'>
+          <Container>
+            <div>
               {reduxAuth.modalToShow === authModalStates.signup && <Signup/>}
               {reduxAuth.modalToShow === authModalStates.login && <Login/>}
               {reduxAuth.modalToShow === authModalStates.forgotPassword && <ForgotPassword/>}
@@ -119,8 +119,8 @@ const App = ()=> {
         <Modal.Header closeButton>
         </Modal.Header>
         <Modal.Body>
-          <Container className='d-flex align-items-center justify-content-center'>
-            <div className='w-100'>
+          <Container>
+            <div>
               <PremiumContent/>
             </div>
           </Container>

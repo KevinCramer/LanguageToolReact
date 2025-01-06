@@ -29,7 +29,7 @@ const About = () => {
   const isMobile = width < mobileBreakPoint; 
   return (
     <>
-      <div className="contact-us-container">
+      <div>
         <div>
           <div>
           LingoCommand is an educational platform for learning Japanese. It accelerates progress by combining these three key principles:

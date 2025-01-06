@@ -24,8 +24,8 @@ const HowToTypeJapanese = () => {
 
   return (
     <>
-      <div className="page-container">
-        <div className="central-container">
+      <div>
+        <div>
           <h4>How to Type Japanese</h4>
           <div>
             <a href="#" onClick={openModal}>
@@ -42,8 +42,8 @@ const HowToTypeJapanese = () => {
       </div>
 
       {isModalOpen && (
-        <div className="modal-overlay">
-          <div className="modal-container">
+        <div>
+          <div>
             <Modal show={isModalOpen} onHide={() => setIsModalOpen(false)} size="lg" centered>
               <Modal.Header closeButton>
                 <Modal.Title>How to Guide</Modal.Title>

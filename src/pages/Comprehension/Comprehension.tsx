@@ -156,8 +156,8 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
       }));
   
     return (
-      <div className="inner-audio-player-and-table-container">
-        <Table striped bordered hover size="sm" className="react-bootstrap-table2 scrollable-table">
+      <div>
+        <Table striped bordered hover size="sm">
           <thead>
             <tr>
               {['Left', 'Right'].map((side) => (
@@ -179,7 +179,7 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
               ))}
             </tr>
           </thead>
-          <div className="scrollable-tbody">
+          <div>
             <tbody
             >
               {rowsToRender.map((row, index) => (
@@ -211,7 +211,7 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
   };
     
   return (
-    <div className="page-container-no-padding-small-font">
+    <div>
       <h4>{currentLanguage.languageName} Reading and Listening Comprehension</h4>
       <div>
         <button
@@ -223,8 +223,8 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
       </div>
       <Container>
         <NavbarBs>
-          <Container className="listening-comprehension-container">
-            <div className="inner-listening-comprehension-container">
+          <Container>
+            <div>
               <CustomDropDownButton
                 title={`Topic: ${
                   currentAudioTranscription.name.length > 25
@@ -237,7 +237,7 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
                     key={index}
                     onClick={() => changeTranscription(topic)}
                   >
-                    <div className="topic-container">
+                    <div>
                       {topic.name} {
                         topic.isLocked 
                           && lingoCommandIsLocked 
@@ -288,7 +288,7 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
             </div>
           </Container>
         </NavbarBs>
-        <div className='div-switch-container'>
+        <div>
           <div>
                 Paragraphs
           </div>
@@ -300,7 +300,7 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
                  Sentences
           </div>               
         </div>
-        <div className="audio-player-and-table-container">{renderComprehensionTopic()}</div>
+        <div>{renderComprehensionTopic()}</div>
         <Modal show={showPopUp} onHide={() => setShowPopUp(false)} size="lg" centered>
           <Modal.Header closeButton>
             <Modal.Title>How to Guide</Modal.Title>

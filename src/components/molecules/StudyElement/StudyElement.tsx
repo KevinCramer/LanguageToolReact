@@ -74,20 +74,19 @@ const StudyElement = (
 
   const hidePopUp = () => { return setShowPopUp(false)}
   const displayPopUp = () => { return setShowPopUp(true)}
-  const baseLanguageLabel = <label className= {(!showBaseLanguageFirst && strokeOrderVideo) ? 'foreign-language-label-stroke-order' : 'base-language-label'}
+  const baseLanguageLabel = <label
     // this onClick function is a complicated mess. This while component needs massive refactor + e2e tests. 
     onClick={ !isVerb && ((showBaseLanguageFirst && !strokeOrderVideo ) || (!showBaseLanguageFirst && strokeOrderVideo)) ? displayPopUp : ()=> {}}>
     <>{isVerb ? (showBaseLanguageFirst ? (BaseLanguageWord as VerbConjugation).infinitive :
       (ForeignLanguageWord as VerbConjugation).infinitive) : BaseLanguageWord}</> </label>
-  const foreignLanguageLabelVerb = <label className='verb-label' onClick={displayPopUp}>
+  const foreignLanguageLabelVerb = <label onClick={displayPopUp}>
     { showBaseLanguageFirst ? (ForeignLanguageWord as VerbConjugation).infinitive : 
       (BaseLanguageWord as VerbConjugation).infinitive} </label>
-  const foreignLanguageLabelStrokeOrder = <label className={ ((!showBaseLanguageFirst && strokeOrderVideo)) ? 'base-language-label' : 'foreign-language-label-stroke-order'}
+  const foreignLanguageLabelStrokeOrder = <label
     onClick={showBaseLanguageFirst ? displayPopUp : ()=> {}}> <> {ForeignLanguageWord}</></label>
-  const foreignLanguageLabelNoVerb = <label className='foreign-language-label-no-verb'>
+  const foreignLanguageLabelNoVerb = <label >
     <> {ForeignLanguageWord}</></label>
   const foreignLanguageLabel = isVerb ? foreignLanguageLabelVerb : (strokeOrderVideo ? foreignLanguageLabelStrokeOrder : foreignLanguageLabelNoVerb)
-  console.log('BaseLanguageWord',BaseLanguageWord, 'showLeftLabel: ', showLeftLabel)
   return (
     <Navbar>
       { showLeftLabel ? (
@@ -112,7 +111,7 @@ const StudyElement = (
         </Modal.Header>
         <Modal.Body>
           {modalTenses.map((obj, i) => (
-            <table key={i} className='verb-table'>
+            <table key={i}>
               {/* Top row with a single centered cell */}
               <tr>
                 <td colSpan={2}>
@@ -149,7 +148,7 @@ const StudyElement = (
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <div className="embed-responsive embed-responsive-16by9">
+          <div>
             <video width="100%" controls>
               <source src={strokeOrderVideo} type="video/mp4"/>
               Your browser does not support the video tag.

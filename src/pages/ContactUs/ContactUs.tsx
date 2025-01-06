@@ -8,17 +8,10 @@ import {
 } from 'react-icons/fa';
 
 const ContactUs = () => {
-  const aTagStyle = {
-    color: 'white',
-    display: 'flex',
-    alignItems: 'center',
-    marginBottom:'15px'
-  }
-
-  const spanStyle = { marginLeft: '20px' }
+  
   return (
     <>
-      <div className="contact-us-container">
+      <div>
         <div>
           You can reach out to us at&nbsp;
         </div>

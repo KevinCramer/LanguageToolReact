@@ -39,7 +39,7 @@ const RenderTableCell = ({
       },
     ];
 
-  const sentenceContent = <div className="table-cell">
+  const sentenceContent = <div>
     {displayContent.map((content, index) => (
       <div key={index}>
         {current === TranscriptionType.Audio && <AudioPlayer audioFile={content.audioFile || ''} />}
@@ -60,7 +60,7 @@ const RenderTableCell = ({
       </div>
     ))}
   </div>    
-  const paragraphContent = <div className="table-cell">
+  const paragraphContent = <div>
     {current === TranscriptionType.Audio && <AudioPlayer audioFile={displayContent[0].audioFile || ''} />}
     {current === TranscriptionType.English && <div>{displayContent[0].englishText}</div>}
     {current === TranscriptionType.WritingSystem1 && <div>{displayContent[0].foreignText[0]}</div>}

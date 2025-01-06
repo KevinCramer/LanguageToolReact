@@ -66,7 +66,7 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ audioFile, }) => {
   };
 
   return (
-    <div className="audio-player">
+    <div>
       <div>
         <div>
           {'speed:\u2002'}
@@ -74,7 +74,6 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ audioFile, }) => {
         <select
           value={playbackSpeed}
           onChange={handleSpeedChange}
-          className="speed-selector"
         >
           {playbackSpeedOptions.map((option) => (
             <option key={option.value} value={option.value}>
@@ -101,7 +100,7 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ audioFile, }) => {
         value={(currentSeconds / totalSeconds) * 100 || 0}
         onChange={handleSeek}
       />
-      <div className="timestamp-container">
+      <div>
         <div>{timeElapsed(currentSeconds)}</div>
         <div>{timeRemaining(currentSeconds, totalSeconds)}</div>
       </div>

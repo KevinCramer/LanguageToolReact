@@ -37,7 +37,7 @@ export default function Login() {
     <>
       <Card>
         <Card.Body>
-          <h2 className="text-center mb-4">Log In</h2>
+          <h2>Log In</h2>
           {error && <Alert variant="danger">{error}</Alert>}
           <Form onSubmit={handleSubmit}>
             <Form.Group id="email">
@@ -50,18 +50,18 @@ export default function Login() {
               {/* @ts-ignore */}
               <Form.Control type="password" ref={passwordRef} required />
             </Form.Group>
-            <Button disabled={loading} className="w-100 btn-auth" type="submit">
+            <Button disabled={loading} type="submit">
               Log In
             </Button>
           </Form>
-          <div className="w-100 text-center mt-3">
+          <div>
             <CustomLink onClick={() => dispatch(displayForgotPassword())}>
               Forgot Password?
             </CustomLink>
           </div>
         </Card.Body>
       </Card>
-      <div className="w-100 text-center mt-2">
+      <div>
         New to LingoCommand?&nbsp;<CustomLink onClick={() => dispatch(displaySignup())}>
         Create account
         </CustomLink>

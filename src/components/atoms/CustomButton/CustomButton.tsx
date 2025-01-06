@@ -13,7 +13,6 @@ type CustomButtonProps = {
 const CustomButton = ({ disabled, onClick, children, backgroundColor = '#F8F8F8', color = '#4A4A4A', size = 'sm' }: CustomButtonProps) => {
   return (
     <Button
-      className='my-custom-button'
       size={size as any}
       variant="secondary"
       aria-disabled={disabled}

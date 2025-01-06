@@ -51,7 +51,7 @@ const GrammarContent = (
     currentLanguage.languageName, topicSlug, currentTopic.slugName, navigate ]);
   function ShowGrammarExplanation(){
     return (
-      <div className='inner-grammar-explanation-container'>
+      <div>
         {currentTopic.contents.map((content: string, index: number) =>
           <div key = {index}>
             {content}
@@ -63,19 +63,19 @@ const GrammarContent = (
 
   return (
     <>
-      <div className="page-container-no-padding-small-font">
-        <div className="central-container">
+      <div>
+        <div>
           <h4> {languages[props.languageNumber].languageName} Grammar</h4>
           <Container>    
             <NavbarBs>
-              <Container className='grammar-container'>
-                <div className='inner-grammar-container'>
+              <Container>
+                <div>
                   <CustomDropDownButton title={'Topic: ' + currentTopic.name}>
                     {currentLanguage.topics.map((topic: Topic, index: number) =>
                       <Dropdown.Item key = {index} 
                         onClick = {() => 
                           changeCurrentTopic(topic)}>
-                        <div className="topic-container">
+                        <div>
                           {topic.name} {
                             topic.isLocked 
                           && lingoCommandIsLocked 
@@ -88,7 +88,7 @@ const GrammarContent = (
               </Container>
             </NavbarBs>
             <p></p>
-            <div className='grammar-explanation-container'>
+            <div>
               {ShowGrammarExplanation()}
             </div>
           </Container>

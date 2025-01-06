@@ -107,7 +107,7 @@ export const Home = () => {
 
   return (
     <div>
-      <div className="content2">
+      <div>
         {reduxNavbar.isHome && <div>  
           <div>
           Learn Japanese Faster

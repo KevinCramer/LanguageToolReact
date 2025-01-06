@@ -51,8 +51,8 @@ const JapaneseStudyGuide = () => {
  
   return (
     <>
-      <div className="page-container">
-        <div className="central-container">
+      <div>
+        <div>
           <h4>Japanese Study Guide</h4>
           {false && <div>
 

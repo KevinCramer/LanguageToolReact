@@ -9,7 +9,7 @@ export default function PremiumContent() {
     <>
       <Card>
         <Card.Body>
-          <h2 className="text-center mb-4">Premium Content</h2>
+          <h2>Premium Content</h2>
           <div>
             Please <CustomLink inline={true} onClick={() => { dispatch(displayLogin()) }}>log in</CustomLink> to access this content.
           </div>

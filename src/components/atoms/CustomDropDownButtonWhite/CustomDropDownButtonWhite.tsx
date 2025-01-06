@@ -13,7 +13,7 @@ type CustomDropDownButtonWhiteProps = {
 const CustomDropDownButtonWhite = ({ title,children, align = 'start' }:
    CustomDropDownButtonWhiteProps) => {
   return (
-    <div className="white-drop-down-button-container">
+    <div>
       <DropdownButton
         title={title}
         size="sm"
