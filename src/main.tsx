@@ -1,4 +1,3 @@
-import 'bootstrap/dist/css/bootstrap.min.css'
 import App from './App'
 import { AuthProvider } from './contexts/AuthContext'
 import { BrowserRouter, useLocation } from 'react-router-dom'
