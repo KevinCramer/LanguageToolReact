@@ -115,14 +115,6 @@ export const Home = () => {
           {!isMobile && <div>
           </div>}
           <button
-            onMouseOver={(e) => {
-              e.currentTarget.style.backgroundColor = '#4682b4';
-              e.currentTarget.style.transform = 'scale(1.05)';
-            }}
-            onMouseOut={(e) => {
-              e.currentTarget.style.backgroundColor = '#1e90ff';
-              e.currentTarget.style.transform = 'scale(1)';
-            }}
             onClick={(event) => {
               navigate('/japanese'); 
             }}
