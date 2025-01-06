@@ -54,42 +54,16 @@ const Navbar = () => {
   const isMobile = width < mobileBreakPoint; 
 
   return (
-    <NavbarBs
-      style={{
-        width: '100%',
-        position: 'relative',
-        height: isMobile ? '78px' : '98px',
-        display: 'flex',
-        alignItems: 'center',
-        backgroundColor: 'transparent',
-      }}
-    >
-      <Nav
-        style={{
-          position: 'absolute',
-          left: 0,
-          right: 0,
-          display: 'flex',
-          justifyContent:'space-around',
-          alignItems: 'center',
-        }}
-      >
+    <NavbarBs>
+      <Nav>
         <Nav.Link
           to="/"
           as={NavLink}
-          style={{
-            color: isOnLanguagesPage ? 'black' : 'white',
-            textDecoration: 'none',
-            whiteSpace: 'nowrap',
-            position: 'relative',
-            letterSpacing: isMobile ? '' : '0.25rem',
-            fontSize: isMobile ? '18px' : '20px', 
-          }}
           onClick={() => dispatch(backHome())}
         >
-          <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+          <div>
             <img src={lingoCommandLogo} width={isMobile ? 70 : 90} height={ isMobile ? 70 : 90} alt="LingoCommand Logo" />
-            {!isMobile && <div style={{ width: '20px' }}></div>}
+            {!isMobile && <div></div>}
             {!isMobile && <div>
               <div>LingoCommand</div>
             </div>}
@@ -99,14 +73,6 @@ const Navbar = () => {
         <Nav.Link
           to="/japanese"
           as={NavLink}
-          style={{
-            color: isOnLanguagesPage ? 'black' : 'white',
-            textDecoration: 'none',
-            whiteSpace: 'nowrap',
-            position: 'relative',
-            fontSize: isMobile ? '18px' : '20px', 
-            letterSpacing: isMobile ? '' : '0.25rem',
-          }}
         >
           Japanese
         </Nav.Link>
@@ -114,14 +80,6 @@ const Navbar = () => {
         <Nav.Link
           to="/about"
           as={NavLink}
-          style={{
-            color: isOnLanguagesPage ? 'black' : 'white',
-            textDecoration: 'none',
-            whiteSpace: 'nowrap',
-            position: 'relative',
-            fontSize: isMobile ? '18px' : '20px', 
-            letterSpacing: isMobile ? '' : '0.25rem',
-          }}
         >
           About
         </Nav.Link>
@@ -129,27 +87,11 @@ const Navbar = () => {
         <Nav.Link
           to="/contact"
           as={NavLink}
-          style={{
-            color: isOnLanguagesPage ? 'black' : 'white',
-            textDecoration: 'none',
-            whiteSpace: 'nowrap',
-            position: 'relative',
-            fontSize: isMobile ? '18px' : '20px', 
-            letterSpacing: isMobile ? '' : '0.25rem',
-          }}
         >
           Contact
         </Nav.Link>
         {!(currentUser && currentUser.email) && (
           <div
-            style={{
-              color: isOnLanguagesPage ? 'black' : 'white',
-              textDecoration: 'none',
-              whiteSpace: 'nowrap',
-              cursor: 'pointer',
-              fontSize: isMobile ? '18px' : '20px',
-              letterSpacing: isMobile ? '' : '0.25rem',
-            }}
             onClick={async () => {
               if (currentUser && currentUser.email) {
                 try {
@@ -173,47 +115,20 @@ const Navbar = () => {
           <>
             <NavDropdown
               title={
-                <span
-                  style={{
-                    color: isOnLanguagesPage ? 'black' : 'white',
-                    whiteSpace: 'nowrap',
-                    textDecoration: 'none',
-                    position: 'relative',
-                    letterSpacing: isMobile ? '' : '0.25rem',
-                    fontSize: isMobile ? '18px' : '20px', 
-                  }}
-                >
+                <span>
                   <BsPerson size={isMobile ? 30 : 40}/>
                 </span>
               }
               id="study-dropdown"
               onToggle={handleDropdownToggle}
               align="end"
-              style={{
-              }}
-              className={isOnLanguagesPage ? 'dropdown-language-page' : 'dropdown-other-page'}
-
             >
               <NavDropdown.Item
                 to="/account"
-                as={NavLink}
-                style={{
-                  whiteSpace: 'nowrap',
-                  color: 'black',
-                  fontSize:'18px', 
-                }}
-              >
+                as={NavLink}>
             Account Settings
               </NavDropdown.Item>
               <div
-                style={{
-                  color: 'black',
-                  textDecoration: 'none',
-                  whiteSpace: 'nowrap',
-                  cursor: 'pointer',
-                  fontSize: '18px',
-                  paddingLeft:'15px'
-                }}
                 onClick={async () => {
                   if (currentUser && currentUser.email) {
                     try {
@@ -235,20 +150,9 @@ const Navbar = () => {
             
           </>
           
-        )}
-        
+        )}   
       </Nav>
-      <hr
-        style={{
-          position: 'absolute',
-          bottom: 0,
-          width: '100%',
-          border: 'none',
-          borderTop: `2px solid ${isOnLanguagesPage ? 'black' : 'white'}`,
-          margin: 0,
-        }}
-      />
-
+      <hr/>
     </NavbarBs>
   );
 };

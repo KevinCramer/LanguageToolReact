@@ -101,22 +101,22 @@ const StudyElement = (
         <audio src={ForeignLanguageWordAudio} id={ForeignLanguageWordAudio}></audio>
         <CustomButton disabled={!ForeignLanguageWord} onClick={handleAudioToggle}>
           {ForeignLanguageWordAudio ? 
-            <VolumeUpIcon style={{ color: isPlaying ? 'rgb(13, 110,253)' : '#4A4A4A' }} /> :
+            <VolumeUpIcon/> :
             <VolumeOffIcon />}
         </CustomButton>
       </div>}
       {isVerb && <Modal show ={showPopUp} onHide={hidePopUp}>
         <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-vcenter" style={{ paddingLeft: '30px', textAlign: 'center', width: '100%' }}>
+          <Modal.Title id="contained-modal-title-vcenter">
             {(ForeignLanguageWord as VerbConjugation).infinitive.toUpperCase()}
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
           {modalTenses.map((obj, i) => (
-            <table key={i} style={{ margin: '0 auto', marginBottom: '40px' }} className='verb-table'>
+            <table key={i} className='verb-table'>
               {/* Top row with a single centered cell */}
               <tr>
-                <td colSpan={2} style={{ textAlign: 'center' }}>
+                <td colSpan={2}>
                   <h6>{obj.title}</h6>
                 </td>
               </tr>
@@ -145,7 +145,7 @@ const StudyElement = (
       </Modal>}
       { strokeOrderVideo && <Modal show={showPopUp} onHide={hidePopUp} size="lg" centered>
         <Modal.Header closeButton>
-          <Modal.Title style={{ textAlign: 'center', width: '100%' }}>
+          <Modal.Title>
             {ForeignLanguageWord.toString() + ' - Hiragana Stroke Order'}
           </Modal.Title>
         </Modal.Header>

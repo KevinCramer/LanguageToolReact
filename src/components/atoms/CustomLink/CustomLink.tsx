@@ -10,10 +10,8 @@ type CustomLinkProps = {
 const CustomLink = ({ onClick, children, inline = false, isWhite = false }: CustomLinkProps) => {
 
   return (
-    <div style={{ color: isWhite ? 'white' : 'rgb(13, 110,253)', 
-      textDecoration: 'underline', textAlign: 'center',
-      display: inline ? 'inline' : '' }} 
-    onClick={onClick}>
+    <div
+      onClick={onClick}>
       {children}
     </div>
   );

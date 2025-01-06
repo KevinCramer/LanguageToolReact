@@ -14,10 +14,10 @@ const Account = () => {
 
   return (
     <>
-      <div style={{ height:'100px' }}>
+      <div>
 
       </div>
-      <h4 style={{ color:'white' }}>Account Settings</h4>
+      <h4>Account Settings</h4>
       <CustomLink isWhite={true} onClick={() => dispatch(displayUpdateAccount())}>
         Reset Password
       </CustomLink>

@@ -171,13 +171,7 @@ const VocabContent = (
       const isVerb = currentTopic.name === 'Verbs'
       var count = 0;
       return ( 
-        <div style={{ display: 'block',
-          maxHeight: 'calc(65dvh - 100px)',
-          overflowY: 'scroll', 
-          border: 'solid 1px #E0E0E0',
-          width: isMobileDevice ? '400px' : '416px',
-          margin: '0 auto', // Centers the div horizontally
-        }}>
+        <div>
           {topicWords.map((pair: Word) =>
             <div key ={showTrueOrder.toString() + (isVerb ?
               (pair.englishWord as VerbConjugationEnglish).infinitive : pair.englishWord)
@@ -196,7 +190,7 @@ const VocabContent = (
         <div className='table-container'>
           <title>{currentLanguage.languageName }Vocabulary</title>
           <Table striped bordered hover size="sm" className="react-bootstrap-table scrollable-table">
-            <thead style={{ display: 'table', width: isMobileDevice ? '100%' : 'calc(100% - 16px)', tableLayout: 'fixed' }}>
+            <thead>
               <tr>
                 <th>
                   {showBaseLanguage ? 'English' : currentLanguage.languageName }
@@ -207,11 +201,7 @@ const VocabContent = (
               </tr>
             </thead>
             <div className="scrollable-tbody">
-              <tbody
-                style={{
-                  overflowX: 'hidden', // Disable horizontal scrolling
-                }}
-              >
+              <tbody>
                 {topicWords.map((pair: Word, index: number) => (
                   <tr key={index}>
                     <td>     
@@ -293,10 +283,8 @@ const VocabContent = (
           {currentLanguage.languageName} {props.isWritingSystem ? 'Writing Systems' : 'Vocabulary'}
         </h4>
         <Container >   
-          <div style={{ display: 'flex', justifyContent: 'center', paddingBottom: '60px' }}>
-            <button style= {{ color:'rgb(13, 110,253)', border: 'none', backgroundColor: 'white',
-              textDecoration: 'underline', fontSize: '18px' }} 
-            onClick={displayPopUp}>How to Guide (Video)</button>
+          <div>
+            <button onClick={displayPopUp}>How to Guide (Video)</button>
           </div>
           <NavbarBs>
             <Container className='options-container'>
@@ -305,8 +293,6 @@ const VocabContent = (
                   {(currentLanguage.topics as Topic[]).sort((t1,t2) => ((t1.topicOrder || 0) < (t2.topicOrder || 0)) ? -1 : 1 )
                     .map((topic: Topic, index: number) =>
                       <Dropdown.Item 
-                        style={{ backgroundColor: index === languages[props.languageNumber].topics
-                          .findIndex(item => item.name === currentTopic.name) ? lightGrey : '' }}
                         key = {index} onClick = {() => 
                           changeCurrentTopic(topic)}>
                         <div className="topic-container">
@@ -314,7 +300,7 @@ const VocabContent = (
                             topic.isLocked 
                           && lingoCommandIsLocked 
                           && !userIsLoggedIn
-                          && <LockIcon style={{ fontSize: '20px' }}/>}
+                          && <LockIcon/>}
                         </div>
                       </Dropdown.Item>)}
                 </CustomDropDownButton>
@@ -328,11 +314,6 @@ const VocabContent = (
                         id="alphabets" 
                         onChange={handleSelectChange} 
                         onClick={preventDropdownClose} // Prevent dropdown from closing
-                        style={{
-                          width: 'auto', // Make the select element only as wide as the content
-                          display: 'inline-block', // Allow the select element to shrink to fit content
-                          padding: '5px', // Add some padding for visual spacing
-                        }}
                       >
                         <option value='0'>romaji</option>
                         <option value="1">hiragana, katakana</option>
@@ -353,11 +334,7 @@ const VocabContent = (
                       type="checkbox"
                       checked={audioBool} // Checkbox is checked if showBaseLanguage is true
                       onChange={changeAudioBool} // Toggle onChange as well
-                      style={{
-                        transform: 'scale(1.5)', // Increase size by a factor of 2 (adjust as needed)
-                        marginRight: '10px', // Space between checkbox and text
-                        width: '20px'
-                      }} />
+                    />
                     show audio</Dropdown.Item>}
                   {((currentTopic.isAlphabet && !quiz) || !currentTopic.isAlphabet) && <Dropdown.Item onClick={(event) => {
                     changeBaseLanguage();
@@ -367,11 +344,7 @@ const VocabContent = (
                       type="checkbox"
                       checked={!showBaseLanguage} // Checkbox is checked if showBaseLanguage is true
                       onChange={changeBaseLanguage} // Toggle onChange as well
-                      style={{
-                        transform: 'scale(1.5)', // Increase size by a factor of 2 (adjust as needed)
-                        marginRight: '10px', // Space between checkbox and text
-                        width: '20px'
-                      }} />
+                    />
                     swap columns</Dropdown.Item>}
                   <Dropdown.Item onClick={(event) => {
                     changeOrder();
@@ -381,11 +354,7 @@ const VocabContent = (
                       type="checkbox"
                       checked={!showTrueOrder} // Checkbox is checked if showBaseLanguage is true
                       onChange={changeOrder} // Toggle onChange as well
-                      style={{
-                        transform: 'scale(1.5)', // Increase size by a factor of 2 (adjust as needed)
-                        marginRight: '10px', // Space between checkbox and text
-                        width: '20px'
-                      }} />
+                    />
                     random ordering</Dropdown.Item>
                 </CustomDropDownButton>  
               </div>             
@@ -393,14 +362,14 @@ const VocabContent = (
           </NavbarBs>
           <Container className='switch-container'>
             <div className='div-switch-container' style ={{ paddingTop: '20px' }}>
-              <div style={{ marginRight: '10px', fontWeight: quiz ? 'normal' : '600' }}>
+              <div>
                 Study
               </div>
               <CustomSwitch 
                 onChange = {changeQuizState}
                 checked= {quiz} 
               /> 
-              <div style = {{ marginLeft: '10px', fontWeight: quiz ? '600' : 'normal' }}>
+              <div>
                  Quiz
               </div>               
             </div>
@@ -408,15 +377,14 @@ const VocabContent = (
           {ToggleQuiz()}
           <Modal show ={showPopUp} onHide={hidePopUp}>
             <Modal.Header closeButton>
-              <Modal.Title id="contained-modal-title-vleft" style={{ textAlign: 'center', width: '100%' }}>
+              <Modal.Title id="contained-modal-title-vleft">
               How to Guide (Video)
               </Modal.Title>
             </Modal.Header>
             <Modal.Body>
               {currentLanguage.languageName === 'Japanese' ? (
-                <div style={{ borderLeft: '1px solid black', borderBottom: '1px solid black', borderRight: '1px solid black', borderTop: isMobileDevice ? '1px solid black' : '' }}>
+                <div>
                   <video
-                    style={{ margin: '0 auto', display: 'block', maxWidth: '100%' }}
                     controls
                     src={props.howToGuideVideo}
                   />

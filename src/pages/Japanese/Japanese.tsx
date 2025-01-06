@@ -13,40 +13,40 @@ const Japanese = () => {
     <>
       <div className="page-container">
         <div className="central-container">
-          <h4 style={{ paddingBottom:'30px' }}> Learn Japanese</h4>
+          <h4> Learn Japanese</h4>
 
-          <div style={{ paddingTop: '20px' }}>
+          <div>
         LingoCommand helps beginners learn Japanese and gain confidence in their skills. We also offer valuable content for advanced users. Try our study guide below:
           </div>
           <div className="study-materials-div">
-            <a href="/japanese/study-guide" style={{ paddingLeft: '50px', paddingRight: '60px' }}>
-              <img src={upwardTrend} width={80} height={80} alt="Study Guide Icon" style={{ display: 'block', margin: '0 auto 10px' }} />
-              < div style={{ textAlign: 'center' }}>
+            <a href="/japanese/study-guide">
+              <img src={upwardTrend} width={80} height={80} alt="Study Guide Icon"/>
+              < div>
             Study Guide
               </div>
             </a>
           </div>
-          <div style={{ paddingTop: '20px' }}>
+          <div>
         Alternatively, you can create your own study plan using the resources available at LingoCommand. The Japanese study materials are divided into four main sections:
           </div>
           <div className="study-materials-div">
-            <a href="/japanese/writing-systems-explained" style={{ paddingLeft: '50px', paddingRight: '60px' }}>
-              <img src={pen} width={80} height={80} alt="Writing Systems Icon" style={{ display: 'block', margin: '0 auto 10px' }} />
-              < div style={{ textAlign: 'center' }}>
+            <a href="/japanese/writing-systems-explained">
+              <img src={pen} width={80} height={80} alt="Writing Systems Icon"/>
+              < div>
             Writing Systems < br />  (Alphabets)
               </div>
             </a>
-            <a href="/japanese/vocabulary" style={{ textAlign: 'center', margin: '10px', paddingRight: '60px' }}>
-              <img src={dictionary} width={80} height={80} alt="Vocabulary Icon" style={{ display: 'block', margin: '0 auto 10px' }} />
+            <a href="/japanese/vocabulary">
+              <img src={dictionary} width={80} height={80} alt="Vocabulary Icon"/>
               <div>Vocabulary</div>
             </a>
 
-            <a href="/japanese/grammar/keigo" style={{ textAlign: 'center', margin: '10px', paddingRight: '60px' }}>
-              <img src={dart} width={80} height={80} alt="Grammar Icon" style={{ display: 'block', margin: '0 auto 10px' }} />
+            <a href="/japanese/grammar/keigo">
+              <img src={dart} width={80} height={80} alt="Grammar Icon"/>
               <div >Grammar</div>
             </a>
-            <a href="/japanese/comprehension/aikos-book-sanctuary"style={{ textAlign: 'center', margin: '10px' }}>
-              <img src={learningKnowledge} width={80} height={80} alt="Reading and Listening Comprehension Icon" style={{ display: 'block', margin: '0 auto 10px' }} />
+            <a href="/japanese/comprehension/aikos-book-sanctuary">
+              <img src={learningKnowledge} width={80} height={80} alt="Reading and Listening Comprehension Icon"/>
               <div>Reading and Listening <br />Comprehension</div>
             </a>
           </div>

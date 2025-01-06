@@ -6,13 +6,13 @@ const KanjiExplained = () => {
     <>
       <div className="page-container">
         <div className="central-container">
-          <h4 style={{ paddingBottom: '30px' }}>Kanji Explained</h4>
+          <h4>Kanji Explained</h4>
           <div >
             Kanji are characters used in the Japanese writing system, originally borrowed from Chinese characters. 
             They represent ideas or meanings rather than just sounds. 
             Each kanji can have multiple meanings and pronunciations depending on the context.
           </div>
-          <div style={{ marginTop: '20px' }}>
+          <div>
             Kanji usually have two types of readings:
             <div>
               <b>On’yomi:</b> Based on the original Chinese pronunciation.
@@ -20,10 +20,10 @@ const KanjiExplained = () => {
             <div>
               <b>Kun’yomi:</b> The native Japanese pronunciation.
             </div>
-            <div style={{ marginTop: '30px' }}>
+            <div>
               Here are some examples: 
               
-              <table style={{ border:'1px solid black' }}>
+              <table>
                 <thead>
                   <tr>
                     <th>Kanji</th>
@@ -48,7 +48,7 @@ const KanjiExplained = () => {
                 </tbody>
               </table>
             </div>
-            <div style={{ marginTop: '30px' }}>
+            <div>
             Moreover kanji combine with other kanji, hiragana, or katakana to form words.
             </div>
             <div>
@@ -56,7 +56,7 @@ const KanjiExplained = () => {
             </div>
 
           </div>
-          <div style={{ marginTop: '20px' }}>
+          <div>
             Having said that at LingoCommand we strongly recommend you avoid spending too much time studying kanji in isolation. Instead we suggest you learn Japanese vocabulary 
             which will allow you to naturally gain familiarity with kanji over time.
           </div>

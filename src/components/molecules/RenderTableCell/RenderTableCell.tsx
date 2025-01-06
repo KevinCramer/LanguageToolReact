@@ -47,17 +47,10 @@ const RenderTableCell = ({
         {current === TranscriptionType.WritingSystem1 && <div>{content.foreignText[0]}</div>}
         {current === TranscriptionType.WritingSystem2 && <div>{content.foreignText[1]}</div>}
         {current === TranscriptionType.WritingSystem2v2 && (
-          <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+          <div>
             {content.foreignText[2]?.split(' ').map((word: any, idx: any) => (
               <div
-                key={idx}
-                style={{
-                  display: 'inline-block',
-                  paddingRight: '5px',
-                  marginRight: '5px',
-                  marginTop: '10px',
-                }}
-              >
+                key={idx}>
                 {word}
               </div>
             ))}
@@ -73,11 +66,10 @@ const RenderTableCell = ({
     {current === TranscriptionType.WritingSystem1 && <div>{displayContent[0].foreignText[0]}</div>}
     {current === TranscriptionType.WritingSystem2 && <div>{displayContent[0].foreignText[1]}</div>}
     {current === TranscriptionType.WritingSystem2v2 && (
-      <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+      <div>
         {displayContent[0].foreignText[2]?.split(' ').map((word, idx) => (
           <div
             key={idx}
-            style={{ display: 'inline-block', paddingRight: '4px', marginRight: '4px' }}
           >
             {word}
           </div>
@@ -91,10 +83,6 @@ const RenderTableCell = ({
     return (
       <>
         <button
-          style={{
-            marginTop : '10px',
-            marginBottom : show ? '0px' : '10px',
-          }}
           onClick={toggleShow}>
           {show ? 'Hide Content' : 'Show Content'}
         </button>

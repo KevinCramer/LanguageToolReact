@@ -67,8 +67,8 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ audioFile, }) => {
   };
 
   return (
-    <div className="audio-player" style={{ borderWidth: '4px' }}>
-      <div style={{ display: 'flex', flexDirection: 'row', paddingBottom: '10px' }}>
+    <div className="audio-player">
+      <div>
         <div>
           {'speed:\u2002'}
         </div>

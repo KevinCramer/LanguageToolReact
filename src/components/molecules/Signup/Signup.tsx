@@ -70,8 +70,7 @@ export default function Signup() {
           </Form>
         </Card.Body>
       </Card>
-      <div className="w-100 text-center mt-2" 
-        style={{ display:'flex', flexDirection: 'row', justifyContent: 'center' }}>
+      <div className="w-100 text-center mt-2">
         Already have an account?&nbsp;<CustomLink onClick={() => dispatch(displayLogin())}>
           Log In
         </CustomLink>

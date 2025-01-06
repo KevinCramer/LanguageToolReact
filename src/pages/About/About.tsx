@@ -31,18 +31,18 @@ const About = () => {
   return (
     <>
       <div className="contact-us-container">
-        <div style={{ color: 'black', backgroundColor: 'white', padding:'10px', borderRadius: '10px', maxWidth: '820px', fontSize: isMobile ? '16px' : '20px', }}>
-          <div style={{ marginTop:'10px' }}>
+        <div>
+          <div>
           LingoCommand is an educational platform for learning Japanese. It accelerates progress by combining these three key principles:
           </div>
           <ul> 
-            <li style={{ marginTop: '20px' }}>
+            <li>
               <b>Customisable Exercises</b>: Select your own Japanese study sessions that perfectly match your learning style and goals with our highly adjustable exercises.
             </li>
-            <li style={{ marginTop: '20px' }}>
+            <li>
               <b>Active Recall</b>: Enhance your Japanese retention through consistent memory exercises.
             </li>
-            <li style={{ marginTop: '20px' }}>
+            <li>
               <b>Repeated Exposure</b>: Develop your skills through repeated exposure to conversations in Japanese, complemented by targeted reading and listening exercises.
             </li>
           </ul>

@@ -130,7 +130,6 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
       return (
         <Dropdown.Item
           key={key}
-          style={{ backgroundColor: current === transcriptionType ? lightGrey : '' }}
           onClick={() => changeHandler(transcriptionType)}
         >
           {title}
@@ -160,7 +159,7 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
     return (
       <div className="inner-audio-player-and-table-container">
         <Table striped bordered hover size="sm" className="react-bootstrap-table2 scrollable-table">
-          <thead style={{ display: 'table', width: isMobileDevice ? '100%' : 'calc(100% - 16px)', tableLayout: 'fixed' }}>
+          <thead>
             <tr>
               {['Left', 'Right'].map((side) => (
                 <th key={side}>
@@ -183,13 +182,10 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
           </thead>
           <div className="scrollable-tbody">
             <tbody
-              style={{
-                overflowX: 'hidden', // Disable horizontal scrolling
-              }}
             >
               {rowsToRender.map((row, index) => (
                 <tr key={index}>
-                  <td style={{ verticalAlign: 'top' }}>
+                  <td>
                     <RenderTableCell
                       current={currentLeft as TranscriptionType}
                       visibility={leftVisibility}
@@ -198,7 +194,7 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
                       granularity={granularity}
                     />
                   </td>
-                  <td style={{ verticalAlign: 'top' }}>
+                  <td>
                     <RenderTableCell
                       current={currentRight as TranscriptionType}
                       visibility={rightVisibility}
@@ -218,15 +214,9 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
   return (
     <div className="page-container-no-padding-small-font">
       <h4>{currentLanguage.languageName} Reading and Listening Comprehension</h4>
-      <div style={{ display: 'flex', justifyContent: 'center', paddingBottom: '60px', paddingTop: '0px' }}>
+      <div>
         <button
-          style={{
-            color: 'rgb(13, 110,253)',
-            border: 'none',
-            backgroundColor: 'white',
-            textDecoration: 'underline',
-            fontSize: '18px',
-          }}
+         
           onClick={() => setShowPopUp(true)}
         >
           How to Guide (Video)
@@ -246,15 +236,6 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
                 {currentLanguage.audioTranscriptions.map((topic, index) => (
                   <Dropdown.Item
                     key={index}
-                    style={{
-                      backgroundColor:
-                        index ===
-                        currentLanguage.audioTranscriptions.findIndex(
-                          (item) => item.name === currentAudioTranscription.name
-                        )
-                          ? lightGrey
-                          : '',
-                    }}
                     onClick={() => changeTranscription(topic)}
                   >
                     <div className="topic-container">
@@ -262,7 +243,7 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
                         topic.isLocked 
                           && lingoCommandIsLocked 
                           && !userIsLoggedIn
-                          && <LockIcon style={{ fontSize: '20px' }}/>}
+                          && <LockIcon/>}
                     </div>
                   </Dropdown.Item>
                 ))}
@@ -274,17 +255,12 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
                     preventDropdownClose(event);
                   }}
                 >
-                  <div style={{ color: rightVisibility ? '#4A4A4A' : '#E0E0E0' }}>
+                  <div>
                     <input
                       type="checkbox"
                       checked={!leftVisibility}
                       onChange={toggleLeftVisibility}
                       disabled={!rightVisibility}
-                      style={{
-                        transform: 'scale(1.5)', // Increase size by a factor of 2 (adjust as needed)
-                        marginRight: '10px', // Space between checkbox and text
-                        width: '20px'
-                      }} 
                       key={leftVisibility as any} // Changing the key forces the rerender
 
                     /> 
@@ -297,17 +273,12 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
                     preventDropdownClose(event);
                   }}
                 >
-                  <div style={{ color: leftVisibility ? '#4A4A4A' : '#E0E0E0' }}>
+                  <div>
                     <input
                       type="checkbox"
                       checked={!rightVisibility}
                       onChange={toggleRightVisibility}
                       disabled={!leftVisibility}
-                      style={{
-                        transform: 'scale(1.5)', // Increase size by a factor of 2 (adjust as needed)
-                        marginRight: '10px', // Space between checkbox and text
-                        width: '20px'
-                      }} 
                       key={rightVisibility as any} // Changing the key forces the rerender
                     /> 
                   hide right column
@@ -318,8 +289,8 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
             </div>
           </Container>
         </NavbarBs>
-        <div className='div-switch-container' style ={{ paddingTop: '20px', justifyContent: 'center' }}>
-          <div style={{ marginRight: '10px', fontWeight: granularity === 'sentence' ? 'normal' : '600' }}>
+        <div className='div-switch-container'>
+          <div>
                 Paragraphs
           </div>
           <CustomSwitch 
@@ -333,13 +304,12 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
         <div className="audio-player-and-table-container">{renderComprehensionTopic()}</div>
         <Modal show={showPopUp} onHide={() => setShowPopUp(false)} size="lg" centered>
           <Modal.Header closeButton>
-            <Modal.Title style={{ textAlign: 'center', width: '100%' }}>How to Guide</Modal.Title>
+            <Modal.Title>How to Guide</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             {currentLanguage.languageName === 'Japanese' ? (
-              <div style={{ borderLeft: '1px solid black', borderBottom: '1px solid black', borderRight: '1px solid black', borderTop: isMobileDevice ? '1px solid black' : '' }}>
+              <div>
                 <video
-                  style={{ margin: '0 auto', display: 'block', maxWidth: '100%' }}
                   controls
                   src={props.howToGuideVideo}
                 />

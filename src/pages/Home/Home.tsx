@@ -109,39 +109,13 @@ export const Home = () => {
   return (
     <div>
       <div className="content2">
-        {reduxNavbar.isHome && <div style = 
-          {{ display:'flex', flexDirection: isMobile ? 'column' : 'row', alignItems: 'center' }}>  
-          <div
-            style={{
-              paddingTop: '10px',
-              paddingBottom: '10px',
-              fontSize: '26px',
-              color: 'white',
-              letterSpacing: '0.25rem',
-            }}
-          >
+        {reduxNavbar.isHome && <div>  
+          <div>
           Learn Japanese Faster
           </div>
-          {!isMobile && <div style={{ width: '40px' }}>
+          {!isMobile && <div>
           </div>}
           <button
-            style={{
-              marginTop: '10px',
-              marginBottom: '10px',
-              marginRight: '00px',
-              fontSize: '18px',
-              color: 'white',
-              backgroundColor: '#1e90ff',
-              border: 'none',
-              borderRadius: '5px',
-              padding: '10px 20px',
-              cursor: 'pointer',
-              boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.2)',
-              transition: 'all 0.3s ease',
-              letterSpacing: '0.25rem',
-              width: isMobile ? '50%' : ''
-
-            }}
             onMouseOver={(e) => {
               e.currentTarget.style.backgroundColor = '#4682b4';
               e.currentTarget.style.transform = 'scale(1.05)';

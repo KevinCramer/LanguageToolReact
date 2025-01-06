@@ -78,7 +78,7 @@ const QuizElement = (
             {/* This is hack to ensure the quiz element doesn't move when tick
              mark is rendered which is about 20px wide
               */}
-            <div style={{ width: response !== '✔' ? '20px' : '0px' }}></div>
+            <div></div>
             <div>
               <div className='tick-mark-container'> {response === '✔' ? response : null}</div>
             </div>

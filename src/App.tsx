@@ -104,9 +104,8 @@ const App = ()=> {
         <Modal.Header closeButton>
         </Modal.Header>
         <Modal.Body>
-          <Container className='d-flex align-items-center justify-content-center'
-            style={{ minHeight: '60vh' }}>
-            <div className='w-100' style={{ maxWidth: '400px' }}>
+          <Container className='d-flex align-items-center justify-content-center'>
+            <div className='w-100'>
               {reduxAuth.modalToShow === authModalStates.signup && <Signup/>}
               {reduxAuth.modalToShow === authModalStates.login && <Login/>}
               {reduxAuth.modalToShow === authModalStates.forgotPassword && <ForgotPassword/>}
@@ -121,9 +120,8 @@ const App = ()=> {
         <Modal.Header closeButton>
         </Modal.Header>
         <Modal.Body>
-          <Container className='d-flex align-items-center justify-content-center'
-            style={{ minHeight: '60vh' }}>
-            <div className='w-100' style={{ maxWidth: '400px' }}>
+          <Container className='d-flex align-items-center justify-content-center'>
+            <div className='w-100'>
               <PremiumContent/>
             </div>
           </Container>

@@ -27,16 +27,16 @@ const HowToTypeJapanese = () => {
     <>
       <div className="page-container">
         <div className="central-container">
-          <h4 style={{ paddingBottom: '40px' }}>How to Type Japanese</h4>
-          <div style={{ paddingBottom: '50px', textAlign: 'center' }}>
-            <a href="#" onClick={openModal} style={{ color: 'rgb(13, 110,253)', textDecoration: 'underline' }}>
+          <h4>How to Type Japanese</h4>
+          <div>
+            <a href="#" onClick={openModal}>
               How to Type Japanese on a Mac
             </a>
           </div>
-          <div style={{ paddingTop: '50px',textAlign: 'center' }}>
+          <div>
            Video Tutorials for Windows, iPhone
           </div>
-          <div style={{ textAlign: 'center' }}>
+          <div>
           and Android coming soon.
           </div>
         </div>
@@ -47,12 +47,11 @@ const HowToTypeJapanese = () => {
           <div className="modal-container">
             <Modal show={isModalOpen} onHide={() => setIsModalOpen(false)} size="lg" centered>
               <Modal.Header closeButton>
-                <Modal.Title style={{ textAlign: 'center', width: '100%' }}>How to Guide</Modal.Title>
+                <Modal.Title>How to Guide</Modal.Title>
               </Modal.Header>
               <Modal.Body>
                 <div>
                   <video
-                    style={{ margin: '0 auto', display: 'block', maxWidth: '100%' }}
                     controls
                     src={howToTypeJapaneseTutorial}
                   />

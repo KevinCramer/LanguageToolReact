@@ -74,7 +74,6 @@ const GrammarContent = (
                   <CustomDropDownButton title={'Topic: ' + currentTopic.name}>
                     {currentLanguage.topics.map((topic: Topic, index: number) =>
                       <Dropdown.Item key = {index} 
-                        style={{ backgroundColor: index === languages[props.languageNumber].topics.findIndex(item => item.name === currentTopic.name) ? lightGrey : '' }}
                         onClick = {() => 
                           changeCurrentTopic(topic)}>
                         <div className="topic-container">
@@ -82,7 +81,7 @@ const GrammarContent = (
                             topic.isLocked 
                           && lingoCommandIsLocked 
                           && !userIsLoggedIn
-                          && <LockIcon style={{ fontSize: '20px' }}/>}
+                          && <LockIcon/>}
                         </div>
                       </Dropdown.Item>)}
                   </CustomDropDownButton>

@@ -54,8 +54,8 @@ const JapaneseStudyGuide = () => {
     <>
       <div className="page-container">
         <div className="central-container">
-          <h4 style={{ paddingBottom: '30px' }}>Japanese Study Guide</h4>
-          {false && <div style={{ display:'flex', justifyContent: 'center' }}>
+          <h4>Japanese Study Guide</h4>
+          {false && <div>
 
           I want to learn  &nbsp;
             <select 
@@ -63,24 +63,18 @@ const JapaneseStudyGuide = () => {
               id="alphabets" 
               onChange={() => {}} 
               onClick={() => {}} // Prevent dropdown from closing
-              style={{
-                width: 'auto', // Make the select element only as wide as the content
-                display: 'inline-block', // Allow the select element to shrink to fit content
-                padding: '5px', // Add some padding for visual spacing
-              }}
             >
               <option value='0'>basic</option>
               <option value="1">intermediate</option>
               <option value="2">advanced</option>
             </select> &nbsp;Japanese
           </div>}
-          <div style={{ height: '40px' }}></div>
           <div>
             <b>Phase 1:</b> Spend a few minutes reading about <a href="/japanese/writing-systems-explained">Japanese writing systems</a>.
           </div>
-          <div style={{ paddingTop:'20px' }}>
+          <div>
             <b>Phase 2:</b> Study <a href="/japanese/hiragana-explained">hiragana</a>. That includes mastering all: 
-            <div style={{ display: 'flex' }}>
+            <div>
               <ul>
                 <li>
                   <a onClick={handleProtectedClick(hiraganaBasicWritingSystem)}
@@ -131,10 +125,10 @@ const JapaneseStudyGuide = () => {
               </ul>
             </div>
           </div>
-          <div style={{ paddingTop:'20px' }}>
+          <div>
             <b>Phase 3:</b> Study <a href="/japanese/katakana-explained">katakana</a>.
              That includes mastering all:
-            <div style={{ display: 'flex' }}>
+            <div>
               <ul>
                 <li>
                   <a onClick={handleProtectedClick(katakanaBasicWritingSystem)}
@@ -199,15 +193,15 @@ const JapaneseStudyGuide = () => {
               </ul>
             </div>
           </div>
-          <div style={{ paddingTop:'20px' }}>
+          <div>
             <b>Phase 4:</b> Study <a href="/japanese/kanji-explained">Introduction to Kanji</a>.
           </div>
-          <div style={{ paddingTop:'20px' }}>
+          <div>
             <b>Phase 5:</b> Watch: <a href="/japanese/how-to-type-japanese">How To Type Japanese</a>.
           </div>
-          <div style={{ paddingTop:'20px' }}>
+          <div>
             <b>Phase 6:</b> Study the vocabulary for these topics:
-            <div style={{ display: 'flex' }}> 
+            <div> 
               <ul>
                 <li>
                   <a onClick={handleProtectedClick(clothesVocabTopic)}
@@ -389,11 +383,11 @@ const JapaneseStudyGuide = () => {
             </div>
             We recommend you spend no more than 15 minutes studying a topic’s vocabulary before taking a quiz. Then if the grade is below 90% which is completely normal go back and do another round of 15 minutes of studying. Make sure to take breaks, and you can also switch between studying a few topics to mix things up. 
           (If you get at least 90% on every quiz, without studying in the last 24 hours, you are ready to move to phase 7).           </div>
-          <div style={{ paddingTop:'20px' }}>
+          <div>
             <b>Phase 7:</b> practice <a href="/japanese/comprehension/aikos-book-sanctuary?eng=F">reading and listening comprehension</a>.
           </div>
-          <div style={{ height: '30px' }}></div>
-          <i style={{ fontSize:'16px', paddingBottom: '30px' }}>
+          <div></div>
+          <i>
           The Japanese language has 130 million native speakers, with about 95% residing in Japan. 
           Over the past 40 years, the number of people learning Japanese as a second language has increased over twentyfold. 
           </i>
