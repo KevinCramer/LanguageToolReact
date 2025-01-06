@@ -23,6 +23,12 @@ const JapaneseWritingSystems = () => {
         The Japanese government has designated 2,136 characters as 'Jōyō kanji' ('daily use kanji').
         High school students are expected to be able to read and write these kanji by the time they graduate.
           </div>
+
+          <div style={{ paddingTop:'30px' }}>
+            Finally <b>Romaji (ローマ字)</b> is the Romanized version of the Japanese writing system. 
+        It uses the Latin alphabet to represent Japanese sounds, making it easier for people who are not familiar with Japanese characters 
+        (like kanji, hiragana, or katakana) to read and pronounce Japanese words.
+          </div>
           <div style={{ paddingTop:'30px', fontFamily: '' }}>
           P.S. Click here to learn <a href="/japanese/how-to-type-japanese">How to Type Japanese</a>.
           </div>
