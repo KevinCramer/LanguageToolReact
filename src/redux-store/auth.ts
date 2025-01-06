@@ -5,7 +5,7 @@ export const authModalStates = {
   login: 'login',
   signup: 'signup',
   forgotPassword: 'forgotPassword',
-  updateProfile: 'updateProfile',
+  updateAccount: 'updateAccount',
   deleteAccount: 'deleteAccount'
 }
 const initialState = {
@@ -32,8 +32,8 @@ export const authSlice = createSlice({
     displayForgotPassword: (state: AuthState) => {
       state.modalToShow = authModalStates.forgotPassword
     },
-    displayUpdateProfile: (state: AuthState) => {
-      state.modalToShow = authModalStates.updateProfile
+    displayUpdateAccount: (state: AuthState) => {
+      state.modalToShow = authModalStates.updateAccount
     },
     displayDeleteAccount: (state: AuthState) => {
       state.modalToShow = authModalStates.deleteAccount
@@ -45,5 +45,5 @@ export const authSlice = createSlice({
 })
 
 export const { displayLogin, displaySignup, hideModal, 
-  displayForgotPassword, displayUpdateProfile, displayDeleteAccount } = authSlice.actions
+  displayForgotPassword, displayUpdateAccount, displayDeleteAccount } = authSlice.actions
 export default authSlice.reducer

@@ -8,14 +8,15 @@ type CustomDropDownButtonProps = {
   title: string;
   children: React.ReactNode;
   align?: AlignType;
+  size?: string;
 
 }
 
-const CustomDropDownButton = ({ title,children, align = 'start' }: CustomDropDownButtonProps) => {
+const CustomDropDownButton = ({ title,children, align = 'start', size = 'sm' }: CustomDropDownButtonProps) => {
   return (
     <DropdownButton
       title={title}
-      size="sm"
+      size={size as any}
       align={align}
     >
       {children}

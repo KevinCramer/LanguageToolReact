@@ -1,0 +1,173 @@
+@import '../../styles/variables';
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #acacac; 
+  border-radius: 5px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+
+h4 {
+  text-align: center;
+  padding-bottom: 50px;
+}
+
+th {
+  text-align: center;
+  width: 50%;
+}
+
+td {
+  vertical-align: 'middle';
+  color: $dark-grey !important;
+}
+
+.transcription-table {
+  width: 350px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: $dark-grey;
+}
+
+.audio-player-and-table-container {
+  margin-top: 10px;
+}
+.inner-audio-player-and-table-container { 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.listening-comprehension-container {
+  justify-content: center !important;
+}
+
+.inner-listening-comprehension-container {
+  width: 400px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.div-switch-container {
+  display: flex;
+  flex-direction: row;
+  margin: 0px 20px 20px 20px; 
+}
+
+table.scrolldown {
+
+  /* border-collapse: collapse; */
+  border: 1px solid black;
+}
+
+
+thead tr th {
+  height: 40px;
+  line-height: 20px;
+}
+
+
+tbody {
+  border-top: 1px solid black;
+}
+
+tbody td,
+thead th {
+  width: 200px;
+  border-right: 1px solid black;
+}
+
+td {
+  text-align: center;
+  border-bottom: 1px solid black;
+}
+
+
+.react-bootstrap-table2 {
+  border-width: 1px;
+  border-color: $dark-grey;
+  border-style: solid;
+  max-width: 800px;
+}
+
+.react-bootstrap-table2 th {
+  text-align: center;
+  width: 50%;
+  color: $dark-grey; 
+}
+
+
+.react-bootstrap-table2 th {
+  text-align: center;
+  width: 50%;
+  color: $dark-grey; 
+}
+
+.table-cell {
+  text-align: left; // Ensure left alignment
+  padding: 10px 5px 0px 5px; // Add some padding for better spacing
+};
+
+
+
+.scrollable-table {
+  width: 100%; /* Ensure the table takes full width */
+  border-collapse: collapse; /* Maintain proper table structure */
+  position: relative; /* Enables absolute positioning for the scrollbar container */
+}
+
+.scrollable-table thead th {
+  position: sticky; /* Keeps the header fixed */
+  top: 0; /* Position the sticky header at the top */
+  z-index: 1; /* Keep the header above scrollable rows */
+}
+
+.scrollable-table tbody {
+  display: block;
+  max-height: calc(65dvh - 100px);
+  overflow-y: scroll; /* Forces scrollbar to show */
+  -webkit-overflow-scrolling: touch;
+}
+
+.scrollable-table tbody::-webkit-scrollbar {
+  width: 16px; /* Set the width of the scrollbar */
+}
+
+.scrollable-table tbody::-webkit-scrollbar-thumb {
+  background-color: #ccc; /* Style for the scrollbar thumb */
+  border-radius: 8px; /* Rounded corners for the thumb */
+}
+
+.scrollable-table tbody::-webkit-scrollbar-track {
+  background-color: #f5f5f5; /* Background for the scrollbar track */
+}
+
+.scrollable-table tbody tr {
+  display: table; /* Keep rows structured like a table */
+  width: 100%; /* Ensure rows match the table width */
+  table-layout: fixed; /* Prevent column squishing */
+}
+
+.scrollable-table thead,
+.scrollable-table tbody tr {
+  display: table; /* Restore table layout */
+  width: 100%; /* Match width for perfect alignment */
+}
+
+.scrollable-table tbody tr:nth-child(odd) {
+  background-color: #f0f0f0; /* Light grey for odd rows */
+}
+
+.scrollable-table tbody tr:nth-child(even) {
+  background-color: #ffffff; /* White for even rows */
+}

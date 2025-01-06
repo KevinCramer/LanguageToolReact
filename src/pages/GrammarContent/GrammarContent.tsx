@@ -1,50 +1,55 @@
 
 import './GrammarContent.scss'
 import { Container, Navbar as NavbarBs } from 'react-bootstrap';
-import { Language, Topic } from '../../../types/grammarTypes';
-import { queryParamCompress, queryParamDecompress } from '../../helpers/query-param-helpers'
+import { GrammarLanguage, Topic } from '../../../types/learningSections/GrammarTypes';
 import { useEffect, useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import CustomDropDownButton from '../../components/atoms/CustomDropDownButton/CustomDropDownButton';
 import Dropdown from 'react-bootstrap/Dropdown';
 import { languages } from '../../data/structured-data/grammar';
-import { languageToSlugs } from '../../constants'
+import { lightGrey, lingoCommandIsLocked } from '../../constants';
+import LockIcon from '@mui/icons-material/Lock';
+import { useAuth } from '../../contexts/AuthContext';
+import { useDispatch } from 'react-redux';
+import { denyPermission } from '../../redux-store/lock';
 
-const GrammarContent = () => {
+const GrammarContent = (
+  props: {
+    languageNumber: number
+    }) => {
   const navigate = useNavigate();
-  var urlSearchParams = new URLSearchParams(useLocation().search);
-  
-  const urlSettings = JSON.parse(
-    queryParamDecompress(urlSearchParams.get('s') as string) as string
-  ) || []
-  const urlLanguage = urlSettings[0]
-  var currentLanguage: Language = languages
-    .find(l => languageToSlugs[l.languageName] === urlLanguage) || languages[0]
-  var [currentLanguage,setLanguage] = useState(currentLanguage);
+  const { topicSlug } = useParams(); // Extract the topicSlug from the URL
+  const dispatch = useDispatch();
 
-  const urlTopic = urlSettings[1]
+  //@ts-ignore
+  const { currentUser } = useAuth();
+  
+  const userIsLoggedIn = currentUser && currentUser.email
+
+  var currentLanguage: GrammarLanguage = languages[props.languageNumber]
+
   var currentTopic = (currentLanguage.topics as Topic[])
-    .find(t => t.slugName === urlTopic) || currentLanguage.topics[0]
+    .find(t => t.slugName === topicSlug) || currentLanguage.topics[0]
   var [currentTopic,setCurrentTopic] = useState(currentTopic)
 
-  const changeCurrentLanguage = 
-    ( language: Language) => setLanguage(language);
-  const changeCurrentTopic = (topic: Topic) => { return setCurrentTopic(topic);}
+  const changeCurrentTopic = (topic: Topic) => {
+    if(topic.isLocked && lingoCommandIsLocked && !userIsLoggedIn ){
+      dispatch(denyPermission());
+    }
+    else{
+      navigate(`/${currentLanguage.languageName.toLowerCase()}/grammar/${topic.slugName}`, { replace: true });
+      return setCurrentTopic(topic);}
+
+  }
 
   useEffect(() => {
     const settings = [
-      languageToSlugs[currentLanguage.languageName],
-      currentTopic.slugName, 
-      true,
-      0, 
-      true,
-      false,
-      false
+      topicSlug
     ]
-    navigate(`?s=${queryParamCompress(JSON.stringify(settings))}`);
+    navigate(`/${currentLanguage.languageName.toLowerCase()}/grammar/${topicSlug}`, { replace: true });
 
   }, [
-    currentLanguage.languageName, currentTopic.slugName, navigate ]);
+    currentLanguage.languageName, topicSlug, currentTopic.slugName, navigate ]);
   function ShowGrammarExplanation(){
     return (
       <div className='inner-grammar-explanation-container'>
@@ -59,33 +64,40 @@ const GrammarContent = () => {
 
   return (
     <>
-      <h4>Grammar</h4>
-      <Container>    
-        <NavbarBs>
-          <Container className='grammar-container'>
-            <div className='inner-grammar-container'>
-              <CustomDropDownButton title=
-                {String(currentLanguage.languageName)}> 
-                {languages.map((language: Language, index: number) =>
-                  <Dropdown.Item key = {index} onClick = {() => [changeCurrentLanguage(
-                    language)]}>
-                    {language.languageName}</Dropdown.Item>)}
-              </CustomDropDownButton>
-              <CustomDropDownButton title={'Topic: ' + currentTopic.name}>
-                {currentLanguage.topics.map((topic: Topic, index: number) =>
-                  <Dropdown.Item key = {index} onClick = {() => 
-                    changeCurrentTopic(topic)}>{topic.name}</Dropdown.Item>)}
-              </CustomDropDownButton>
+      <div className="page-container-no-padding-small-font">
+        <div className="central-container">
+          <h4> {languages[props.languageNumber].languageName} Grammar</h4>
+          <Container>    
+            <NavbarBs>
+              <Container className='grammar-container'>
+                <div className='inner-grammar-container'>
+                  <CustomDropDownButton title={'Topic: ' + currentTopic.name}>
+                    {currentLanguage.topics.map((topic: Topic, index: number) =>
+                      <Dropdown.Item key = {index} 
+                        style={{ backgroundColor: index === languages[props.languageNumber].topics.findIndex(item => item.name === currentTopic.name) ? lightGrey : '' }}
+                        onClick = {() => 
+                          changeCurrentTopic(topic)}>
+                        <div className="topic-container">
+                          {topic.name} {
+                            topic.isLocked 
+                          && lingoCommandIsLocked 
+                          && !userIsLoggedIn
+                          && <LockIcon style={{ fontSize: '20px' }}/>}
+                        </div>
+                      </Dropdown.Item>)}
+                  </CustomDropDownButton>
+                </div>
+              </Container>
+            </NavbarBs>
+            <p></p>
+            <div className='grammar-explanation-container'>
+              {ShowGrammarExplanation()}
             </div>
           </Container>
-        </NavbarBs>
-        <p></p>
-        <div className='grammar-explanation-container'>
-          {ShowGrammarExplanation()}
         </div>
-      </Container>
+      </div>
     </>
   );
-}
+};
  
 export default GrammarContent;

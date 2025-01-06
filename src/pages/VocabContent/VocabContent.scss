@@ -1,8 +1,8 @@
 @import '../../styles/variables';
 
-h4 {
+h4, h3, h2, h1 {
   text-align: center;
-  padding-bottom: 50px;
+  padding-bottom: 0px;
 }
 
 .table-container, .options-container, .switch-container { 
@@ -34,12 +34,13 @@ h4 {
   width: 400px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between; 
+  justify-content: center; 
 }
 
 .div-switch-container {
   display: flex;
   flex-direction: row;
+  padding-top: 0px;
 }
 
 .topic-container {

@@ -5,7 +5,7 @@ import {
   VerbConjugation, 
   VerbConjugationEnglish,
   VerbConjugationForeign
-} from '../../../../types/vocabTypes'
+} from '../../../../types/learningSections/VocabTypes'
 import CustomButton from '../../atoms/CustomButton/CustomButton'
 import { englishPronouns } from '../../../data/structured-data/words'
 import { modalTenses } from '../../../constants'
@@ -22,6 +22,7 @@ const StudyElement = (
     showAudio: boolean,
     showBaseLanguageFirst: boolean,
     isVerb: boolean,
+    strokeOrderVideo?: any,
     pronouns: string[]
     showLeftLabel: boolean, 
   }) => 
@@ -35,6 +36,7 @@ const StudyElement = (
       showAudio,
       showBaseLanguageFirst,
       isVerb,
+      strokeOrderVideo,
       pronouns,
       showLeftLabel
     } = props
@@ -73,15 +75,20 @@ const StudyElement = (
 
   const hidePopUp = () => { return setShowPopUp(false)}
   const displayPopUp = () => { return setShowPopUp(true)}
-  const baseLanguageLabel = <label className='base-language-label'>
+  const baseLanguageLabel = <label className= {(!showBaseLanguageFirst && strokeOrderVideo) ? 'foreign-language-label-stroke-order' : 'base-language-label'}
+    // this onClick function is a complicated mess. This while component needs massive refactor + e2e tests. 
+    onClick={ !isVerb && ((showBaseLanguageFirst && !strokeOrderVideo ) || (!showBaseLanguageFirst && strokeOrderVideo)) ? displayPopUp : ()=> {}}>
     <>{isVerb ? (showBaseLanguageFirst ? (BaseLanguageWord as VerbConjugation).infinitive :
       (ForeignLanguageWord as VerbConjugation).infinitive) : BaseLanguageWord}</> </label>
   const foreignLanguageLabelVerb = <label className='verb-label' onClick={displayPopUp}>
     { showBaseLanguageFirst ? (ForeignLanguageWord as VerbConjugation).infinitive : 
       (BaseLanguageWord as VerbConjugation).infinitive} </label>
+  const foreignLanguageLabelStrokeOrder = <label className={ ((!showBaseLanguageFirst && strokeOrderVideo)) ? 'base-language-label' : 'foreign-language-label-stroke-order'}
+    onClick={showBaseLanguageFirst ? displayPopUp : ()=> {}}> <> {ForeignLanguageWord}</></label>
   const foreignLanguageLabelNoVerb = <label className='foreign-language-label-no-verb'>
     <> {ForeignLanguageWord}</></label>
-  const foreignLanguageLabel = isVerb ? foreignLanguageLabelVerb : foreignLanguageLabelNoVerb
+  const foreignLanguageLabel = isVerb ? foreignLanguageLabelVerb : (strokeOrderVideo ? foreignLanguageLabelStrokeOrder : foreignLanguageLabelNoVerb)
+  console.log('BaseLanguageWord',BaseLanguageWord, 'showLeftLabel: ', showLeftLabel)
   return (
     <Navbar>
       { showLeftLabel ? (
@@ -90,7 +97,7 @@ const StudyElement = (
           baseLanguageLabel) :
         isVerb ? (showBaseLanguageFirst ? foreignLanguageLabel : baseLanguageLabel) :
           foreignLanguageLabel}
-      {showAudio && !showLeftLabel && <div>
+      {showAudio && (showBaseLanguageFirst ? !showLeftLabel : showLeftLabel) && <div>
         <audio src={ForeignLanguageWordAudio} id={ForeignLanguageWordAudio}></audio>
         <CustomButton disabled={!ForeignLanguageWord} onClick={handleAudioToggle}>
           {ForeignLanguageWordAudio ? 
@@ -100,14 +107,19 @@ const StudyElement = (
       </div>}
       {isVerb && <Modal show ={showPopUp} onHide={hidePopUp}>
         <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-vleft">
-            {(ForeignLanguageWord as VerbConjugation).infinitive}
+          <Modal.Title id="contained-modal-title-vcenter" style={{ paddingLeft: '30px', textAlign: 'center', width: '100%' }}>
+            {(ForeignLanguageWord as VerbConjugation).infinitive.toUpperCase()}
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
           {modalTenses.map((obj, i) => (
-            <tr key={i}>
-              <h5>{obj.title}</h5>
+            <table key={i} style={{ margin: '0 auto', marginBottom: '40px' }} className='verb-table'>
+              {/* Top row with a single centered cell */}
+              <tr>
+                <td colSpan={2} style={{ textAlign: 'center' }}>
+                  <h6>{obj.title}</h6>
+                </td>
+              </tr>
               {Array.from({ length: 6 }).map((_, j) => (
                 <tr key={i}> 
                   {showBaseLanguageFirst ? <td>
@@ -126,9 +138,24 @@ const StudyElement = (
                 </tr>
               ))
               }
-            </tr>
+            </table>
           ))
           }
+        </Modal.Body>
+      </Modal>}
+      { strokeOrderVideo && <Modal show={showPopUp} onHide={hidePopUp} size="lg" centered>
+        <Modal.Header closeButton>
+          <Modal.Title style={{ textAlign: 'center', width: '100%' }}>
+            {ForeignLanguageWord.toString() + ' - Hiragana Stroke Order'}
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <div className="embed-responsive embed-responsive-16by9">
+            <video width="100%" controls>
+              <source src={strokeOrderVideo} type="video/mp4"/>
+              Your browser does not support the video tag.
+            </video>
+          </div>
         </Modal.Body>
       </Modal>}
     </Navbar>

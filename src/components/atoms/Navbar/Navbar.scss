@@ -1,65 +1,9 @@
-@import '../../../styles/variables';
-
-.nav-link-custom {
-  margin: 0px 10px 0px 10px;
-  color: $dark-grey !important;
-  text-decoration: none;
+/* When on the languages page */
+.dropdown-language-page .dropdown-toggle::after {
+  color: black; /* Arrow color for language page */
 }
 
-.nav-link-custom:hover,
-.nav-link-custom:active,
-.nav-link-custom.active {
-  text-decoration: underline;
-  color: $ultra-light-grey;
-}
-
-.hover-underline {
-  color: $dark-grey;
-  margin-left: 10px;
-  text-decoration: none;
-}
-
-.hover-underline:hover {
-  text-decoration: underline;
-}
-
-
-.log-in-log-out {
-  margin: 0.5rem 10px 0.5rem 10px;
-}
-
-.log-in-log-out:hover {
-  text-decoration: underline;
-}
-
-
-.dropdown-title {
-  position: relative;
-  cursor: pointer;
-
-  &.closed::after {
-    content: '';
-    display: inline-block;
-    width: 12px; /* Adjust size */
-    height: 12px; /* Adjust size */
-    background-image: url('../../../assets/chevron-right-solid.svg'); /* Path to your SVG file */
-    background-size: contain;
-    background-repeat: no-repeat;
-    margin-left: 5px;
-  }
-
-  &.open::after {
-    content: '';
-    display: inline-block;
-    width: 12px; /* Adjust size */
-    height: 12px; /* Adjust size */
-    background-image: url('../../../assets/chevron-down-solid.svg'); /* Path to your SVG file */
-    background-size: contain;
-    background-repeat: no-repeat;
-    margin-left: 5px;
-  }
-}
-/* Ensure that the default Bootstrap dropdown arrow is hidden */
-.navbar-nav .nav-item .dropdown-toggle::after {
-  display: none !important; /* Hide the default arrow */
+/* When on other pages */
+.dropdown-other-page .dropdown-toggle::after {
+  color: white; /* Arrow color for other pages */
 }

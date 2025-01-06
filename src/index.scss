@@ -20,7 +20,7 @@ audio {
 .home-container {
   display: flex;
   flex-direction: column; 
-  justify-content: center;  
+  justify-content: center;
   min-height: 50vh; 
 }
 
@@ -61,3 +61,89 @@ audio::-webkit-media-controls-panel {
   border: none !important;
   height: 40px
 }
+
+.full-background {
+  background-image: url('/src/assets/nyc2-min.jpeg');
+  background-size: cover; /* Ensures image covers entire div */
+  background-position: center; /* Centers image */
+  width: 100%; /* Adjust width as needed */
+  height: 100vh; /* Full viewport height */
+}
+
+.full-background::before {
+  content: '';
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Black with 50% transparency */
+}
+
+.plain-background {
+  background-color: white;
+  background-size: cover; /* Ensures image covers entire div */
+  background-position: center; /* Centers image */
+  width: 100%; /* Adjust width as needed */
+  height: 100vh; /* Full viewport height */
+}
+
+.plain-background::before {
+  content: '';
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Black with 50% transparency */
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  align-items: left;
+  margin-top: 10%;
+  padding-top: 50px;
+  padding-left:12px;
+  padding-right:12px;
+  padding-bottom:12px;
+  font-size: 18px;
+  background-color: white;
+  min-width: 400px;
+  margin-top: 0px;
+  margin-left: 12px;
+  margin-right: 12px;
+  flex-grow: 1;        /* Allow the container to take up remaining vertical space */
+  border-radius: 5px;
+  overflow-y: auto; /* Adds a vertical scrollbar when content overflows */
+  height: calc(85dvh); /* using dynamic viewport height to support ui element in viewport on mobile*/
+}
+
+.page-container-no-padding-small-font {
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  align-items: left;
+  margin-top: 10%;
+  padding-top: 50px;
+  padding-bottom:12px;
+  background-color: white;
+  min-width: 400px;
+  margin-top: 0px;
+  margin-left: 12px;
+  margin-right: 12px;
+  flex-grow: 1;        /* Allow the container to take up remaining vertical space */
+  border-radius: 5px;
+  overflow-y: auto; /* Adds a vertical scrollbar when content overflows */
+  height: calc(85dvh); /* using dynamic viewport height to support ui element in viewport on mobile*/
+}
+
+.central-container {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%,0%);
+  max-width: 800px;
+}
+
+
