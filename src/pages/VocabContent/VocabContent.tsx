@@ -1,4 +1,3 @@
-import '../../components/atoms/CustomDropDownButton/CustomDropDownButton.scss'
 import { Container, Modal, Navbar as NavbarBs, Table } from 'react-bootstrap';
 import {
   Topic,
