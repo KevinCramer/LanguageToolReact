@@ -1,5 +1,3 @@
-import './CustomSwitch.scss';
-
 type CustomSwitchProps = {
   checked: boolean;
   onChange: (checked: boolean) => void;

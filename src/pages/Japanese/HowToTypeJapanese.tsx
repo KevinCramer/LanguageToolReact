@@ -1,5 +1,4 @@
 import { Modal } from 'react-bootstrap';
-import './Japanese.scss';
 import React, { useState } from 'react';
 import howToTypeJapaneseTutorial from '../../data/raw-data/tutorial-videos/how-to-type-japanese.mp4'
 

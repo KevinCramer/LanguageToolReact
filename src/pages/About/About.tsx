@@ -1,4 +1,3 @@
-import './About.scss';
 import { useEffect, useState } from 'react';
 import { mobileBreakPoint } from '../../constants';
 

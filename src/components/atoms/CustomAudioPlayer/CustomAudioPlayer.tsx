@@ -1,4 +1,3 @@
-import './CustomAudioPlayer.scss'; 
 import { pause, play } from 'ionicons/icons';
 import { timeElapsed, timeRemaining } from '../../../helpers/audio-player-helpers';
 import { useRef, useState } from 'react';

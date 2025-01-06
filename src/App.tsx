@@ -1,5 +1,4 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
-import './index.scss'
 import { authModalStates, hideModal, RootStateAuth } from './redux-store/auth'
 import { Container, Modal } from 'react-bootstrap'
 import { resetPermission, RootStateLock } from './redux-store/lock'

@@ -1,5 +1,3 @@
-import './Custom404Error.scss'
-
 const Custom404Error = () => { 
  
   return (

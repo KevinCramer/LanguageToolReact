@@ -1,4 +1,3 @@
-import './Signup.scss'
 import { Alert, Button, Card, Form } from 'react-bootstrap'
 import { displayLogin, hideModal } from '../../../redux-store/auth'
 import { useRef, useState } from 'react'

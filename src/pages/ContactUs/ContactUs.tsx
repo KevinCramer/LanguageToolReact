@@ -1,4 +1,3 @@
-import './ContactUs.scss';
 import {
   FaFacebook,
   FaInstagram,

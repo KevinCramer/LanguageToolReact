@@ -7,7 +7,6 @@ import { displayLogin } from '../../../redux-store/auth';
 import { useAuth } from '../../../contexts/AuthContext';
 import { useEffect, useState } from 'react';
 import lingoCommandLogo from '../../../assets/lingoCommandLogo.svg';
-import './Navbar.scss';
 import { mobileBreakPoint } from '../../../constants';
 import { BsPerson } from 'react-icons/bs';
 

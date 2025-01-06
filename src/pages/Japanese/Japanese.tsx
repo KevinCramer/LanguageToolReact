@@ -1,9 +1,6 @@
-import './Japanese.scss'
 import dictionary from '../../assets/dictionary.svg';
 import dart from '../../assets/dart.svg';
 import learningKnowledge from '../../assets/learningKnowledge.svg';
-import japanPicture from '../../assets/japan.jpeg';
-
 import pen from '../../assets/pen.svg';
 import upwardTrend from '../../assets/upward-trend.svg';
 

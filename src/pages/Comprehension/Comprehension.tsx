@@ -1,4 +1,3 @@
-import './Comprehension.scss';
 import { AudioTranscription, ComprehensionLanguage, TranscriptionType } from '../../../types/learningSections/ComprehensionTypes';
 import { Container, DropdownItem, Modal, Navbar as NavbarBs, Table } from 'react-bootstrap';
 import { useEffect, useState } from 'react';

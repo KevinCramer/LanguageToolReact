@@ -3,7 +3,6 @@ import { createURL } from '../../helpers/createURL';
 import { japaneseVocabTopicSlugNames, languages as languagesVocab } from '../../data/structured-data/words';
 
 import { useProtectedLink } from '../../helpers/use-protected-link';
-import './Japanese.scss'
 import { lingoCommandIsLocked } from '../../constants';
 import LockIcon from '@mui/icons-material/Lock';
 import { useAuth } from '../../contexts/AuthContext';

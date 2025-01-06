@@ -1,4 +1,3 @@
-import './Japanese.scss'
 import { LanguageNames, LearningSections } from '../../../types/LearningSectionsTypes'
 import { createURL } from '../../helpers/createURL';
 import { japaneseVocabTopicSlugNames, languages as languagesVocab } from '../../data/structured-data/words';

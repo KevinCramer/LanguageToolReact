@@ -1,5 +1,4 @@
 
-import './GrammarContent.scss'
 import { Container, Navbar as NavbarBs } from 'react-bootstrap';
 import { GrammarLanguage, Topic } from '../../../types/learningSections/GrammarTypes';
 import { useEffect, useState } from 'react';

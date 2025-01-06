@@ -1,4 +1,3 @@
-import './QuizElement.scss'
 import { Navbar } from 'react-bootstrap'
 import { roughlyEqual } from '../../../helpers/vocab-content-helpers'
 import { useState } from 'react'

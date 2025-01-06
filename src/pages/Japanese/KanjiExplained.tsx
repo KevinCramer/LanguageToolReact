@@ -1,5 +1,3 @@
-import './Japanese.scss'
-
 const KanjiExplained = () => { 
 
   return (

@@ -1,5 +1,3 @@
-import './CustomLink.scss';
-
 type CustomLinkProps = {
   onClick: any;
   children: React.ReactNode;
