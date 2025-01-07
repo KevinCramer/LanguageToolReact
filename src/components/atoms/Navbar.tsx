@@ -36,13 +36,13 @@ const Navbar = () => {
 
   return (
     <div>
-      <nav className='flex justify-between items-center px-4 py-2'>
+      <nav className='flex justify-between items-center px-4'>
         <NavLink to="/">
           <div className='flex items-center'>
             <img
               src={lingoCommandLogo}
               alt="LingoCommand Logo"
-              className="w-16 h-16 sm:w-24 sm:h-24 sm:mr-2"
+              className="w-14 h-14 sm:w-24 sm:h-24 sm:mr-2"
             />
             {!isMobile && (
               <div>LingoCommand</div>
