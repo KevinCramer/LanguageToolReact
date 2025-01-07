@@ -1,25 +1,12 @@
-import { Modal } from 'react-bootstrap';
-import React, { useState } from 'react';
 import howToTypeJapaneseTutorial from '../../data/raw-data/tutorial-videos/how-to-type-japanese.mp4'
-
-import {
-  FaFacebook,
-  FaInstagram,
-  FaLinkedin,
-  FaPinterest,
-  FaTiktok,
-  FaYoutube,
-} from 'react-icons/fa';
+import { Modal } from 'react-bootstrap';
+import { useState } from 'react';
 
 const HowToTypeJapanese = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => {
     setIsModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
   };
 
   return (
