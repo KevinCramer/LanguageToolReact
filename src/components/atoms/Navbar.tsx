@@ -35,34 +35,60 @@ const Navbar = () => {
   const isMobile = width < mobileBreakPoint;
 
   return (
-    <nav>
-      <div>
-        <NavLink to="/">
-          <div>
-            <img
-              src={lingoCommandLogo}
-              width={isMobile ? 70 : 90}
-              height={isMobile ? 70 : 90}
-              alt="LingoCommand Logo"
-            />
-            {!isMobile && (
-              <div>LingoCommand</div>
-            )}
-          </div>
-        </NavLink>
-
-        <div>
-          <NavLink to="/japanese">
+    <nav className='flex justify-between items-center p-4'>
+      <NavLink to="/">
+        <div className='flex items-center'>
+          <img
+            src={lingoCommandLogo}
+            alt="LingoCommand Logo"
+            className="w-16 h-16 sm:w-24 sm:h-24 sm:mr-2"
+          />
+          {!isMobile && (
+            <div>LingoCommand</div>
+          )}
+        </div>
+      </NavLink>
+      <NavLink to="/japanese">
             Japanese
-          </NavLink>
-          <NavLink to="/about">
+      </NavLink>
+      <NavLink to="/about">
             About
-          </NavLink>
-          <NavLink to="/contact">
+      </NavLink>
+      <NavLink to="/contact">
             Contact
-          </NavLink>
+      </NavLink>
 
-          {!(currentUser && currentUser.email) && (
+      {!(currentUser && currentUser.email) && (
+        <button
+          onClick={async () => {
+            if (currentUser && currentUser.email) {
+              try {
+                await logout();
+                if (location.pathname === '/account') {
+                  navigate('/');
+                }
+              } catch (error) {
+                console.error('Failed to log out', error);
+              }
+            } else {
+              dispatch(displayLogin());
+            }
+          }}
+        >
+          {currentUser && currentUser.email ? 'Log Out' : 'Log In'}
+        </button>
+      )}
+
+      {currentUser && currentUser.email && (
+        <div>
+          <button>
+            <BsPerson size={isMobile ? 30 : 40} />
+          </button>
+          <div>
+            <NavLink
+              to="/account">
+                    Account Settings
+            </NavLink>
             <button
               onClick={async () => {
                 if (currentUser && currentUser.email) {
@@ -77,44 +103,12 @@ const Navbar = () => {
                 } else {
                   dispatch(displayLogin());
                 }
-              }}
-            >
-              {currentUser && currentUser.email ? 'Log Out' : 'Log In'}
-            </button>
-          )}
-
-          {currentUser && currentUser.email && (
-            <div>
-              <button>
-                <BsPerson size={isMobile ? 30 : 40} />
-              </button>
-              <div>
-                <NavLink
-                  to="/account">
-                    Account Settings
-                </NavLink>
-                <button
-                  onClick={async () => {
-                    if (currentUser && currentUser.email) {
-                      try {
-                        await logout();
-                        if (location.pathname === '/account') {
-                          navigate('/');
-                        }
-                      } catch (error) {
-                        console.error('Failed to log out', error);
-                      }
-                    } else {
-                      dispatch(displayLogin());
-                    }
-                  }}>
+              }}>
                     Log Out
-                </button>
-              </div>
-            </div>
-          )}
+            </button>
+          </div>
         </div>
-      </div>
+      )}
     </nav>
   );
 };
