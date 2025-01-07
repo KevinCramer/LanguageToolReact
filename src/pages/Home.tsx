@@ -1,6 +1,5 @@
-import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { mobileBreakPoint } from '../constants';
+import { useEffect } from 'react';
 
 export const Home = () => {
   const navigate = useNavigate(); // React Router's navigation hook
@@ -74,51 +73,10 @@ export const Home = () => {
     }
   }, [location, navigate]);
 
-  // Responsive width logic
-  const useWindowWidth = () => {
-    const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
-
-    useEffect(() => {
-      // Update the windowWidth state when the window is resized
-      const handleResize = () => {
-        setWindowWidth(window.innerWidth);
-      };
-  
-      // Add event listener to handle window resizing
-      window.addEventListener('resize', handleResize);
-  
-      // Cleanup event listener when the component unmounts
-      return () => {
-        window.removeEventListener('resize', handleResize);
-      };
-    }, []);
-  
-    return windowWidth;
-  };
-
-  const width = useWindowWidth(); // Get the current window width
-
-  // Now you can use width to check screen size in your component
-  const isMobile = width < mobileBreakPoint
-
   return (
-    <div>
-      <div>
-        <div>  
-          <div>
-          Learn Japanese Faster
-          </div>
-          {!isMobile && <div>
-          </div>}
-          <button
-            onClick={(event) => {
-              navigate('/japanese'); 
-            }}
-          >
-          Start Now
-          </button>
-        </div>
-      </div>
+    <div className=" h-screen flex flex-col sm:flex-row justify-center items-center">
+      <div className='m-2'>Learn Japanese Faster</div>
+      <button className='m-2 p-2 bg-blue-500 text-white'onClick={(event) => { navigate('/japanese') }}> Start Now </button>
     </div>
   );
 };
