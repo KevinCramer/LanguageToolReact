@@ -24,7 +24,7 @@ const Japanese = () => {
       <h4 className="text-center text-2xl py-12">
         Learn Japanese
       </h4>
-      <div>
+      <div className='text-center px-2'>
         LingoCommand helps beginners learn Japanese and gain confidence in their skills.
         We also offer valuable content for advanced users. Try our study guide below:
       </div>
@@ -35,7 +35,7 @@ const Japanese = () => {
       >
         Study Guide
       </ResourceLink>
-      <div className="text-center">
+      <div className="text-center px-2">
         Alternatively, you can create your own study plan using the resources available 
         at LingoCommand. The Japanese study materials are divided into four main sections:
       </div>
