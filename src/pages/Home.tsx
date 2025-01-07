@@ -1,12 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { mobileBreakPoint } from '../constants';
-import { RootStateNavbar } from '../redux-store/navbar';
-import { useSelector } from 'react-redux';
 
 export const Home = () => {
-  const reduxNavbar = useSelector((state: RootStateNavbar) => state.navbar);
-
   const navigate = useNavigate(); // React Router's navigation hook
   const location = useLocation(); // React Router's location hook
 
@@ -108,7 +104,7 @@ export const Home = () => {
   return (
     <div>
       <div>
-        {reduxNavbar.isHome && <div>  
+        <div>  
           <div>
           Learn Japanese Faster
           </div>
@@ -121,7 +117,7 @@ export const Home = () => {
           >
           Start Now
           </button>
-        </div>}
+        </div>
       </div>
     </div>
   );
