@@ -1,13 +1,11 @@
-import { backHome } from '../../redux-store/navbar';
-import { Nav, Navbar as NavbarBs, NavDropdown } from 'react-bootstrap';
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import { displayLogin } from '../../redux-store/auth';
-import { useAuth } from '../../contexts/AuthContext';
 import { useEffect, useState } from 'react';
+import { BsPerson } from 'react-icons/bs';
+import { displayLogin } from '../../redux-store/auth';
 import lingoCommandLogo from '../../assets/lingoCommandLogo.svg';
 import { mobileBreakPoint } from '../../constants';
-import { BsPerson } from 'react-icons/bs';
+import { useAuth } from '../../contexts/AuthContext';
+import { useDispatch } from 'react-redux';
 
 const Navbar = () => {
   const dispatch = useDispatch();
@@ -17,80 +15,55 @@ const Navbar = () => {
   // @ts-ignore
   const { currentUser, logout } = useAuth();
 
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-
-  const handleDropdownToggle = (isOpen: boolean) => {
-    setIsDropdownOpen(isOpen);
-  };
-
-  const isOnLanguagesPage = location.pathname.startsWith('/japanese');
-
   const useWindowWidth = () => {
     const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
 
     useEffect(() => {
-      // Update the windowWidth state when the window is resized
       const handleResize = () => {
         setWindowWidth(window.innerWidth);
       };
-  
-      // Add event listener to handle window resizing
       window.addEventListener('resize', handleResize);
-  
-      // Cleanup event listener when the component unmounts
       return () => {
         window.removeEventListener('resize', handleResize);
       };
     }, []);
-  
+
     return windowWidth;
   };
 
-  const width = useWindowWidth(); // Get the current window width
-
-  // Now you can use width to check screen size in your component
-  const isMobile = width < mobileBreakPoint; 
+  const width = useWindowWidth();
+  const isMobile = width < mobileBreakPoint;
 
   return (
-    <NavbarBs>
-      <Nav>
-        <Nav.Link
-          to="/"
-          as={NavLink}
-          onClick={() => dispatch(backHome())}
-        >
+    <nav>
+      <div>
+        <NavLink to="/">
           <div>
-            <img src={lingoCommandLogo} width={isMobile ? 70 : 90} height={ isMobile ? 70 : 90} alt="LingoCommand Logo" />
-            {!isMobile && <div></div>}
-            {!isMobile && <div>
+            <img
+              src={lingoCommandLogo}
+              width={isMobile ? 70 : 90}
+              height={isMobile ? 70 : 90}
+              alt="LingoCommand Logo"
+            />
+            {!isMobile && (
               <div>LingoCommand</div>
-            </div>}
+            )}
           </div>
-        </Nav.Link>
+        </NavLink>
 
-        <Nav.Link
-          to="/japanese"
-          as={NavLink}
-        >
-          Japanese
-        </Nav.Link>
-         
-        <Nav.Link
-          to="/about"
-          as={NavLink}
-        >
-          About
-        </Nav.Link>
+        <div>
+          <NavLink to="/japanese">
+            Japanese
+          </NavLink>
+          <NavLink to="/about">
+            About
+          </NavLink>
+          <NavLink to="/contact">
+            Contact
+          </NavLink>
 
-        <Nav.Link
-          to="/contact"
-          as={NavLink}
-        >
-          Contact
-        </Nav.Link>
-        {!(currentUser && currentUser.email) && (
-          <Nav.Link>
-            <div
+          {!(currentUser && currentUser.email) && (
+            <button
               onClick={async () => {
                 if (currentUser && currentUser.email) {
                   try {
@@ -107,52 +80,42 @@ const Navbar = () => {
               }}
             >
               {currentUser && currentUser.email ? 'Log Out' : 'Log In'}
-            </div>
-          </Nav.Link>
-        )}
-        {currentUser && currentUser.email && (
-          <>
-            <NavDropdown
-              title={
-                <span>
-                  <BsPerson size={isMobile ? 30 : 40}/>
-                </span>
-              }
-              id="study-dropdown"
-              onToggle={handleDropdownToggle}
-              align="end"
-            >
-              <NavDropdown.Item
-                to="/account"
-                as={NavLink}>
-            Account Settings
-              </NavDropdown.Item>
-              <div
-                onClick={async () => {
-                  if (currentUser && currentUser.email) {
-                    try {
-                      await logout();
-                      if (location.pathname === '/account') {
-                        navigate('/');
+            </button>
+          )}
+
+          {currentUser && currentUser.email && (
+            <div>
+              <button>
+                <BsPerson size={isMobile ? 30 : 40} />
+              </button>
+              <div>
+                <NavLink
+                  to="/account">
+                    Account Settings
+                </NavLink>
+                <button
+                  onClick={async () => {
+                    if (currentUser && currentUser.email) {
+                      try {
+                        await logout();
+                        if (location.pathname === '/account') {
+                          navigate('/');
+                        }
+                      } catch (error) {
+                        console.error('Failed to log out', error);
                       }
-                    } catch (error) {
-                      console.error('Failed to log out', error);
+                    } else {
+                      dispatch(displayLogin());
                     }
-                  } else {
-                    dispatch(displayLogin());
-                  }
-                }}
-              >
-          Log Out
+                  }}>
+                    Log Out
+                </button>
               </div>
-            </NavDropdown>
-            
-          </>
-          
-        )}   
-      </Nav>
-      <hr/>
-    </NavbarBs>
+            </div>
+          )}
+        </div>
+      </div>
+    </nav>
   );
 };
 
