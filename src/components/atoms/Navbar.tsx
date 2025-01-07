@@ -35,81 +35,84 @@ const Navbar = () => {
   const isMobile = width < mobileBreakPoint;
 
   return (
-    <nav className='flex justify-between items-center p-4'>
-      <NavLink to="/">
-        <div className='flex items-center'>
-          <img
-            src={lingoCommandLogo}
-            alt="LingoCommand Logo"
-            className="w-16 h-16 sm:w-24 sm:h-24 sm:mr-2"
-          />
-          {!isMobile && (
-            <div>LingoCommand</div>
-          )}
-        </div>
-      </NavLink>
-      <NavLink to="/japanese">
-            Japanese
-      </NavLink>
-      <NavLink to="/about">
-            About
-      </NavLink>
-      <NavLink to="/contact">
-            Contact
-      </NavLink>
-
-      {!(currentUser && currentUser.email) && (
-        <button
-          onClick={async () => {
-            if (currentUser && currentUser.email) {
-              try {
-                await logout();
-                if (location.pathname === '/account') {
-                  navigate('/');
-                }
-              } catch (error) {
-                console.error('Failed to log out', error);
-              }
-            } else {
-              dispatch(displayLogin());
-            }
-          }}
-        >
-          {currentUser && currentUser.email ? 'Log Out' : 'Log In'}
-        </button>
-      )}
-
-      {currentUser && currentUser.email && (
-        <div>
-          <button>
-            <BsPerson size={isMobile ? 30 : 40} />
-          </button>
-          <div>
-            <NavLink
-              to="/account">
-                    Account Settings
-            </NavLink>
-            <button
-              onClick={async () => {
-                if (currentUser && currentUser.email) {
-                  try {
-                    await logout();
-                    if (location.pathname === '/account') {
-                      navigate('/');
-                    }
-                  } catch (error) {
-                    console.error('Failed to log out', error);
-                  }
-                } else {
-                  dispatch(displayLogin());
-                }
-              }}>
-                    Log Out
-            </button>
+    <div>
+      <nav className='flex justify-between items-center px-4 py-2'>
+        <NavLink to="/">
+          <div className='flex items-center'>
+            <img
+              src={lingoCommandLogo}
+              alt="LingoCommand Logo"
+              className="w-16 h-16 sm:w-24 sm:h-24 sm:mr-2"
+            />
+            {!isMobile && (
+              <div>LingoCommand</div>
+            )}
           </div>
-        </div>
-      )}
-    </nav>
+        </NavLink>
+        <NavLink to="/japanese">
+            Japanese
+        </NavLink>
+        <NavLink to="/about">
+            About
+        </NavLink>
+        <NavLink to="/contact">
+            Contact
+        </NavLink>
+
+        {!(currentUser && currentUser.email) && (
+          <button
+            onClick={async () => {
+              if (currentUser && currentUser.email) {
+                try {
+                  await logout();
+                  if (location.pathname === '/account') {
+                    navigate('/');
+                  }
+                } catch (error) {
+                  console.error('Failed to log out', error);
+                }
+              } else {
+                dispatch(displayLogin());
+              }
+            }}
+          >
+            {currentUser && currentUser.email ? 'Log Out' : 'Log In'}
+          </button>
+        )}
+
+        {currentUser && currentUser.email && (
+          <div>
+            <button>
+              <BsPerson size={isMobile ? 30 : 40} />
+            </button>
+            <div>
+              <NavLink
+                to="/account">
+                    Account Settings
+              </NavLink>
+              <button
+                onClick={async () => {
+                  if (currentUser && currentUser.email) {
+                    try {
+                      await logout();
+                      if (location.pathname === '/account') {
+                        navigate('/');
+                      }
+                    } catch (error) {
+                      console.error('Failed to log out', error);
+                    }
+                  } else {
+                    dispatch(displayLogin());
+                  }
+                }}>
+                    Log Out
+              </button>
+            </div>
+          </div>
+        )}
+      </nav>
+      <hr className='bg-black h-0.5' />
+    </div>
   );
 };
 
