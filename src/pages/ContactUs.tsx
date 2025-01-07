@@ -33,12 +33,12 @@ const ContactUs = () => {
           <a
             key={label}
             href={href}
-            className="flex flex-row items-center p-4"
+            className="flex flex-row items-center py-2"
             target="_blank"
             rel="noopener noreferrer"
           >
             <Icon size={30} />
-            <span className="pl-2">{label}</span>
+            <span className="pl-4">{label}</span>
           </a>
         ))}
       </div>
