@@ -54,11 +54,11 @@ const App = ()=> {
 
   return (
     <>
-      {pathWithBackground && <div>
+      {pathWithBackground && <>
         <Navbar />
         <Routes>
-          <Route path="/" element={ <div> <Home /></div>} />
-          <Route path="/explore" element={ <div> <Home /></div>} />
+          <Route path="/" element={<Home/>} />
+          <Route path="/explore" element={ <Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/account" element={<Account />} />
@@ -75,12 +75,12 @@ const App = ()=> {
           <Route path="/japanese/comprehension/:topicSlug" element={<Comprehension languageNumber={0} howToGuideVideo={japaneseComprehensionVideo}/>} />
           <Route path="/*" element={<Custom404Error/>} />
         </Routes>
-      </div>}
+      </>}
       {!pathWithBackground && <div>
         <Navbar/>
         <Routes>
-          <Route path="/" element={ <div> <Home /></div>} />
-          <Route path="/explore" element={ <div> <Home /></div>} />
+          <Route path="/" element={<Home />} />
+          <Route path="/explore" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/account" element={<Account />} />

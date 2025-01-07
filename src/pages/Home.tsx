@@ -74,7 +74,7 @@ export const Home = () => {
   }, [location, navigate]);
 
   return (
-    <div className=" h-screen flex flex-col sm:flex-row justify-center items-center">
+    <div className=" flex flex-col flex-1  sm:flex-row justify-center items-center">
       <div className='m-2'>Learn Japanese Faster</div>
       <button className='m-2 p-2 bg-blue-500 text-white'onClick={(event) => { navigate('/japanese') }}> Start Now </button>
     </div>
