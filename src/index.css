@@ -8,7 +8,7 @@ the parent div of the navbar and home or japanese-study-guide
 components takes up the full height of the viewport
 */
 #root {
-    min-height:100dvh;
+    height:100dvh;
     display: flex;
     flex-direction: column;
 }
