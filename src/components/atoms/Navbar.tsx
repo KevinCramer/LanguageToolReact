@@ -15,7 +15,7 @@ const Navbar = () => {
 
   return (
     <div>
-      <nav className='flex justify-between items-center px-2 py-0.5 md:text-xl md:tracking-custom'>
+      <nav className='flex justify-around items-center px-2 py-0.5 md:text-xl md:tracking-custom'>
         <NavLink to='/'>
           <div className='flex items-center'>
             <img

@@ -20,11 +20,11 @@ const ResourceLink = ({ href, icon, alt, children }: ResourceLinkProps) => (
 
 const Japanese = () => {
   return (
-    <div className='flex flex-col items-center'>
+    <div className='max-w-screen-md mx-auto'>
       <h4 className='text-center text-2xl py-12'>
         Learn Japanese
       </h4>
-      <div className='text-center px-2'>
+      <div className='px-2'>
         LingoCommand helps beginners learn Japanese and gain confidence in their skills.
         We also offer valuable content for advanced users. Try our study guide below:
       </div>
@@ -35,7 +35,7 @@ const Japanese = () => {
       >
         Study Guide
       </ResourceLink>
-      <div className='text-center px-2'>
+      <div className='px-2'>
         Alternatively, you can create your own study plan using the resources available 
         at LingoCommand. The Japanese study materials are divided into four main sections:
       </div>
