@@ -1,9 +1,7 @@
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
-import { useEffect, useState } from 'react';
 import { BsPerson } from 'react-icons/bs';
 import { displayLogin } from '../../redux-store/auth';
 import lingoCommandLogo from '../../assets/lingoCommandLogo.svg';
-import { mobileBreakPoint } from '../../constants';
 import { useAuth } from '../../contexts/AuthContext';
 import { useDispatch } from 'react-redux';
 
@@ -15,38 +13,17 @@ const Navbar = () => {
   // @ts-ignore
   const { currentUser, logout } = useAuth();
 
-  const useWindowWidth = () => {
-    const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
-
-    useEffect(() => {
-      const handleResize = () => {
-        setWindowWidth(window.innerWidth);
-      };
-      window.addEventListener('resize', handleResize);
-      return () => {
-        window.removeEventListener('resize', handleResize);
-      };
-    }, []);
-
-    return windowWidth;
-  };
-
-  const width = useWindowWidth();
-  const isMobile = width < mobileBreakPoint;
-
   return (
     <div>
-      <nav className='flex justify-between items-center px-2 py-0.5'>
+      <nav className='flex justify-between items-center px-2 py-0.5 md:text-xl md:tracking-custom'>
         <NavLink to='/'>
           <div className='flex items-center'>
             <img
               src={lingoCommandLogo}
               alt='LingoCommand Logo'
-              className='w-16 h-16 sm:w-24 sm:h-24 sm:mr-2'
+              className='w-16 h-16 md:w-24 md:h-24 md:mr-2'
             />
-            {!isMobile && (
-              <div>LingoCommand</div>
-            )}
+            <div className="hidden md:block">LingoCommand</div>
           </div>
         </NavLink>
         <NavLink to='/japanese'>
@@ -83,7 +60,7 @@ const Navbar = () => {
         {currentUser && currentUser.email && (
           <div>
             <button>
-              <BsPerson size={isMobile ? 30 : 40} />
+              <BsPerson className="w-8 h-8 md:w-10 md:h-10" />
             </button>
             <div>
               <NavLink

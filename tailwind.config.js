@@ -4,8 +4,11 @@ export default {
     './index.html',
     './src/**/*.{js,ts,jsx,tsx}',
   ], theme: {
-    extend: {},
+    extend: {
+      letterSpacing: {
+        'custom': '0.25rem',
+      },
+    },
   },
   plugins: [],
 }
-
