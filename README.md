@@ -40,3 +40,6 @@ To ensure consistency and maintainability in the codebase, please adhere to the 
 
 9. **Use ES6 whenever possible**
    - I.e avoid using 'require' and use import instead. 
+
+10. **Use '' instead of "" wherever possible**
+   - I.e use the string 'hello' instead of "hello"
