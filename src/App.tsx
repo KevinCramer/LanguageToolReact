@@ -31,7 +31,7 @@ import VocabContent from './pages/VocabContent'
 import japaneseComprehensionVideo from './data/raw-data/tutorial-videos/japanese-comprehension-tutorial.mp4'
 import japaneseWritingSystemsVideo from './data/raw-data/tutorial-videos/japanese-writing-systems-tutorial.mp4'
 import japaneseVocabGuideVideo from './data/raw-data/tutorial-videos/japanese-vocab-guide.mp4'
-import tokyoImage from '/src/assets/tokyo.jpg';
+import fujiImage from '/src/assets/fuji-3-dark-50.jpg';
 
 const App = ()=> {
   const location = useLocation();
@@ -58,7 +58,7 @@ const App = ()=> {
       {pathWithBackground && <div
         id="japanese-background-container"
         className="bg-cover bg-center w-full h-screen"
-        style={{ backgroundImage: `url(${tokyoImage})` }}
+        style={{ backgroundImage: `url(${fujiImage})` }}
       >
         <Navbar />
         <Routes>

@@ -22,7 +22,7 @@ const ContactUs = () => {
       <div className='pt-24'>
         You can reach out to us at&nbsp;
       </div>
-      <a href='mailto:contact@lingocommand.com' className='text-blue-500 underline'>
+      <a href='mailto:contact@lingocommand.com' className='text-white underline'>
         contact@lingocommand.com
       </a>
       <div className='py-8'>
