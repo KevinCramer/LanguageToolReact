@@ -74,7 +74,7 @@ export const Home = () => {
   }, [location, navigate]);
 
   return (
-    <div className='flex flex-col flex-1  md:flex-row justify-center items-center'>
+    <div className='flex flex-col flex-1 justify-center items-center'>
       <div className='m-2 text-white text-xl md:text-3xl tracking-custom'>
         Learn Japanese Faster
       </div>
