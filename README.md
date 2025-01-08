@@ -43,3 +43,7 @@ To ensure consistency and maintainability in the codebase, please adhere to the 
 
 10. **Use '' instead of "" wherever possible**
    - I.e use the string 'hello' instead of "hello"
+
+11. **Add the tailwind className first before you add anything else to a HTML tag**
+   - I.e <a className= 'text-blue-500 underline' href='/japanese'> instead of 
+     <a href='/japanese' className= 'text-blue-500 underline'>
