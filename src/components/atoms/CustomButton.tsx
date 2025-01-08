@@ -14,7 +14,7 @@ const CustomButton = ({ disabled, onClick, children, backgroundColor = '#F8F8F8'
   return (
     <Button
       size={size as any}
-      variant="secondary"
+      variant='secondary'
       aria-disabled={disabled}
       onClick={onClick}
       style={{ backgroundColor, color }}

@@ -37,25 +37,25 @@ const Navbar = () => {
   return (
     <div>
       <nav className='flex justify-between items-center px-2 py-0.5'>
-        <NavLink to="/">
+        <NavLink to='/'>
           <div className='flex items-center'>
             <img
               src={lingoCommandLogo}
-              alt="LingoCommand Logo"
-              className="w-16 h-16 sm:w-24 sm:h-24 sm:mr-2"
+              alt='LingoCommand Logo'
+              className='w-16 h-16 sm:w-24 sm:h-24 sm:mr-2'
             />
             {!isMobile && (
               <div>LingoCommand</div>
             )}
           </div>
         </NavLink>
-        <NavLink to="/japanese">
+        <NavLink to='/japanese'>
             Japanese
         </NavLink>
-        <NavLink to="/about">
+        <NavLink to='/about'>
             About
         </NavLink>
-        <NavLink to="/contact">
+        <NavLink to='/contact'>
             Contact
         </NavLink>
 
@@ -87,7 +87,7 @@ const Navbar = () => {
             </button>
             <div>
               <NavLink
-                to="/account">
+                to='/account'>
                     Account Settings
               </NavLink>
               <button

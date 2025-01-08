@@ -9,13 +9,13 @@ const JapaneseWritingSystems = () => {
           The Japanese language has 3 writing systems:
           </div>
           <div>
-            <a href="/japanese/hiragana-explained">Hiragana</a> - a phonetic writing system used for native japanese words. (It has 46 basic characters)
+            <a href='/japanese/hiragana-explained'>Hiragana</a> - a phonetic writing system used for native japanese words. (It has 46 basic characters)
           </div>
           <div>
-            <a href="/japanese/katakana-explained">Katakana</a> - a phonetic writing system mainly used for loan words from other languages. (It has 46 basic characters)
+            <a href='/japanese/katakana-explained'>Katakana</a> - a phonetic writing system mainly used for loan words from other languages. (It has 46 basic characters)
           </div>
           <div>
-            <a href="/japanese/kanji-explained">Kanji</a> - a non phonetic writing system. (It has over 50,000 characters). 
+            <a href='/japanese/kanji-explained'>Kanji</a> - a non phonetic writing system. (It has over 50,000 characters). 
           </div>
           <div>
         The Japanese government has designated 2,136 characters as 'Jōyō kanji' ('daily use kanji').
@@ -28,7 +28,7 @@ const JapaneseWritingSystems = () => {
         (like kanji, hiragana, or katakana) to read and pronounce Japanese words.
           </div>
           <div>
-          P.S. Click here to learn <a href="/japanese/how-to-type-japanese">How to Type Japanese</a>.
+          P.S. Click here to learn <a href='/japanese/how-to-type-japanese'>How to Type Japanese</a>.
           </div>
         </div>
       </div>

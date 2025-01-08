@@ -35,15 +35,15 @@ export default function ForgotPassword() {
       <Card>
         <Card.Body>
           <h2>Password Reset</h2>
-          {error && <Alert variant="danger">{error}</Alert>}
-          {message && <Alert variant="success">{message}</Alert>}
+          {error && <Alert variant='danger'>{error}</Alert>}
+          {message && <Alert variant='success'>{message}</Alert>}
           <Form onSubmit={handleSubmit}>
-            <Form.Group id="email">
+            <Form.Group id='email'>
               <Form.Label>Email</Form.Label>
               {/* @ts-ignore */}
-              <Form.Control type="email" ref={emailRef} required />
+              <Form.Control type='email' ref={emailRef} required />
             </Form.Group>
-            <Button disabled={loading} type="submit">
+            <Button disabled={loading} type='submit'>
               Reset Password
             </Button>
           </Form>

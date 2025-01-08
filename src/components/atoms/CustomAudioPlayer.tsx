@@ -87,16 +87,16 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ audioFile, }) => {
         onTimeUpdate={handleTimeUpdate}
         onLoadedMetadata={handleLoadedMetadata}
       >
-        <source src={audioFile} type="audio/mpeg" />
+        <source src={audioFile} type='audio/mpeg' />
         Your browser does not support the audio element.
       </audio>
       <button onClick={handlePlayPause}>
-        <IonIcon icon={isPlaying ? pause : play} size="large" />
+        <IonIcon icon={isPlaying ? pause : play} size='large' />
       </button>
       <input
-        type="range"
-        min="0"
-        max="100"
+        type='range'
+        min='0'
+        max='100'
         value={(currentSeconds / totalSeconds) * 100 || 0}
         onChange={handleSeek}
       />

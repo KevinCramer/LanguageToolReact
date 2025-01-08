@@ -46,24 +46,24 @@ export default function Signup() {
       <Card>
         <Card.Body>
           <h2>Sign Up</h2>
-          {error && <Alert variant="danger">{error}</Alert>}
+          {error && <Alert variant='danger'>{error}</Alert>}
           <Form onSubmit={handleSubmit}>
-            <Form.Group id="email">
+            <Form.Group id='email'>
               <Form.Label>Email</Form.Label>
               {/* @ts-ignore */}
-              <Form.Control type="email" ref={emailRef} required />
+              <Form.Control type='email' ref={emailRef} required />
             </Form.Group>
-            <Form.Group id="password">
+            <Form.Group id='password'>
               <Form.Label>Password</Form.Label>
               {/* @ts-ignore */}
-              <Form.Control type="password" ref={passwordRef} required />
+              <Form.Control type='password' ref={passwordRef} required />
             </Form.Group>
-            <Form.Group id="password-confirm">
+            <Form.Group id='password-confirm'>
               <Form.Label>Password Confirmation</Form.Label>
               {/* @ts-ignore */}
-              <Form.Control type="password" ref={passwordConfirmRef} required />
+              <Form.Control type='password' ref={passwordConfirmRef} required />
             </Form.Group>
-            <Button disabled={loading} type="submit">
+            <Button disabled={loading} type='submit'>
               Sign Up
             </Button>
           </Form>

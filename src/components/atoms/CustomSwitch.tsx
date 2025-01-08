@@ -10,7 +10,7 @@ const CustomSwitch = ({ checked, onChange }: CustomSwitchProps) => {
 
   return (
     <label>
-      <input type="checkbox" checked={checked} onChange={handleChange} />
+      <input type='checkbox' checked={checked} onChange={handleChange} />
       <span></span>
     </label>
   );

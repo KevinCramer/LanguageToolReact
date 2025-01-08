@@ -12,16 +12,16 @@ interface ResourceLinkProps {
 }
 
 const ResourceLink = ({ href, icon, alt, children }: ResourceLinkProps) => (
-  <a className="flex flex-col items-center m-4" href={href}>
+  <a className='flex flex-col items-center m-4' href={href}>
     <img src={icon} width={80} height={80} alt={alt} />
-    <div className="text-center text-blue-500 underline">{children}</div>
+    <div className='text-center text-blue-500 underline'>{children}</div>
   </a>
 );
 
 const Japanese = () => {
   return (
-    <div className="flex flex-col items-center">
-      <h4 className="text-center text-2xl py-12">
+    <div className='flex flex-col items-center'>
+      <h4 className='text-center text-2xl py-12'>
         Learn Japanese
       </h4>
       <div className='text-center px-2'>
@@ -29,43 +29,43 @@ const Japanese = () => {
         We also offer valuable content for advanced users. Try our study guide below:
       </div>
       <ResourceLink 
-        href="/japanese/study-guide" 
+        href='/japanese/study-guide' 
         icon={upwardTrendIcon} 
-        alt="Study Guide Icon"
+        alt='Study Guide Icon'
       >
         Study Guide
       </ResourceLink>
-      <div className="text-center px-2">
+      <div className='text-center px-2'>
         Alternatively, you can create your own study plan using the resources available 
         at LingoCommand. The Japanese study materials are divided into four main sections:
       </div>
       <ResourceLink 
-        href="/japanese/writing-systems-explained" 
+        href='/japanese/writing-systems-explained' 
         icon={penIcon} 
-        alt="Writing Systems Icon"
+        alt='Writing Systems Icon'
       >
         Writing Systems
         <br/>
         (Alphabets)
       </ResourceLink>
       <ResourceLink 
-        href="/japanese/vocabulary" 
+        href='/japanese/vocabulary' 
         icon={dictionaryIcon} 
-        alt="Vocabulary Icon"
+        alt='Vocabulary Icon'
       >
         Vocabulary
       </ResourceLink>
       <ResourceLink 
-        href="/japanese/grammar/keigo" 
+        href='/japanese/grammar/keigo' 
         icon={dartIcon} 
-        alt="Grammar Icon"
+        alt='Grammar Icon'
       >
         Grammar
       </ResourceLink>
       <ResourceLink 
-        href="/japanese/comprehension/aikos-book-sanctuary" 
+        href='/japanese/comprehension/aikos-book-sanctuary' 
         icon={learningKnowledgeIcon} 
-        alt="Reading and Listening Comprehension Icon"
+        alt='Reading and Listening Comprehension Icon'
       >
         Reading and Listening
         <br/>

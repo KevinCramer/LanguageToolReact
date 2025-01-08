@@ -53,25 +53,25 @@ export default function UpdateAccount() {
       <Card>
         <Card.Body>
           <h2>Reset Password</h2>
-          {error && <Alert variant="danger">{error}</Alert>}
+          {error && <Alert variant='danger'>{error}</Alert>}
           <Form onSubmit={handleSubmit}>
-            <Form.Group id="password">
+            <Form.Group id='password'>
               <Form.Label>New Password</Form.Label>
               <Form.Control
-                type="password"
+                type='password'
                 // @ts-ignore
                 ref={passwordRef}
               />
             </Form.Group>
-            <Form.Group id="password-confirm">
+            <Form.Group id='password-confirm'>
               <Form.Label>New Password Confirmation</Form.Label>
               <Form.Control
-                type="password"
+                type='password'
                 // @ts-ignore
                 ref={passwordConfirmRef}
               />
             </Form.Group>
-            <Button disabled={loading} type="submit">
+            <Button disabled={loading} type='submit'>
               Submit
             </Button>
           </Form>

@@ -157,7 +157,7 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
   
     return (
       <div>
-        <Table striped bordered hover size="sm">
+        <Table striped bordered hover size='sm'>
           <thead>
             <tr>
               {['Left', 'Right'].map((side) => (
@@ -247,7 +247,7 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
                   </Dropdown.Item>
                 ))}
               </CustomDropDownButton>
-              <CustomDropDownButton title='Settings' align="end">
+              <CustomDropDownButton title='Settings' align='end'>
                 <DropdownItem
                   onClick={(event) => {
                     toggleLeftVisibility();
@@ -256,7 +256,7 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
                 >
                   <div>
                     <input
-                      type="checkbox"
+                      type='checkbox'
                       checked={!leftVisibility}
                       onChange={toggleLeftVisibility}
                       disabled={!rightVisibility}
@@ -274,7 +274,7 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
                 >
                   <div>
                     <input
-                      type="checkbox"
+                      type='checkbox'
                       checked={!rightVisibility}
                       onChange={toggleRightVisibility}
                       disabled={!leftVisibility}
@@ -301,7 +301,7 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
           </div>               
         </div>
         <div>{renderComprehensionTopic()}</div>
-        <Modal show={showPopUp} onHide={() => setShowPopUp(false)} size="lg" centered>
+        <Modal show={showPopUp} onHide={() => setShowPopUp(false)} size='lg' centered>
           <Modal.Header closeButton>
             <Modal.Title>How to Guide</Modal.Title>
           </Modal.Header>

@@ -18,14 +18,14 @@ const socialLinks = [
 
 const ContactUs = () => {
   return (
-    <div className="flex flex-col items-center">
-      <div className="pt-24">
+    <div className='flex flex-col items-center'>
+      <div className='pt-24'>
         You can reach out to us at&nbsp;
       </div>
-      <a href="mailto:contact@lingocommand.com" className="text-blue-500">
+      <a href='mailto:contact@lingocommand.com' className='text-blue-500'>
         contact@lingocommand.com
       </a>
-      <div className="py-8">
+      <div className='py-8'>
         Social media:
       </div>
       <div>
@@ -33,12 +33,12 @@ const ContactUs = () => {
           <a
             key={label}
             href={href}
-            className="flex flex-row items-center py-2"
-            target="_blank"
-            rel="noopener noreferrer"
+            className='flex flex-row items-center py-2'
+            target='_blank'
+            rel='noopener noreferrer'
           >
             <Icon size={30} />
-            <span className="pl-4">{label}</span>
+            <span className='pl-4'>{label}</span>
           </a>
         ))}
       </div>

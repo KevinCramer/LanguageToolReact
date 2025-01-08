@@ -50,7 +50,7 @@ const KanjiExplained = () => {
             Moreover kanji combine with other kanji, hiragana, or katakana to form words.
             </div>
             <div>
-              For example: <b>火</b> (fire) + <b>山</b> (mountain) = <b>火山</b> (volcano)."
+              For example: <b>火</b> (fire) + <b>山</b> (mountain) = <b>火山</b> (volcano).
             </div>
 
           </div>

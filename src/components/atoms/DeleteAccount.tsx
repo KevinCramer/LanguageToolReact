@@ -43,9 +43,9 @@ export default function DeleteAccount() {
       <Card>
         <Card.Body>
           <h2>Delete Account</h2>
-          {error && <Alert variant="danger">{error}</Alert>}
+          {error && <Alert variant='danger'>{error}</Alert>}
           <Form onSubmit={handleSubmit}>
-            <Button disabled={loading} type="submit">
+            <Button disabled={loading} type='submit'>
               Delete Account
             </Button>
           </Form>

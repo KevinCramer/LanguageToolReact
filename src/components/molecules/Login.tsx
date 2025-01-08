@@ -38,19 +38,19 @@ export default function Login() {
       <Card>
         <Card.Body>
           <h2>Log In</h2>
-          {error && <Alert variant="danger">{error}</Alert>}
+          {error && <Alert variant='danger'>{error}</Alert>}
           <Form onSubmit={handleSubmit}>
-            <Form.Group id="email">
+            <Form.Group id='email'>
               <Form.Label>Email</Form.Label>
               {/* @ts-ignore */}
-              <Form.Control type="email" ref={emailRef} required />
+              <Form.Control type='email' ref={emailRef} required />
             </Form.Group>
-            <Form.Group id="password">
+            <Form.Group id='password'>
               <Form.Label>Password</Form.Label>
               {/* @ts-ignore */}
-              <Form.Control type="password" ref={passwordRef} required />
+              <Form.Control type='password' ref={passwordRef} required />
             </Form.Group>
-            <Button disabled={loading} type="submit">
+            <Button disabled={loading} type='submit'>
               Log In
             </Button>
           </Form>

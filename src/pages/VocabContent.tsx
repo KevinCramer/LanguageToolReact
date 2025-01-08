@@ -187,7 +187,7 @@ const VocabContent = (
       return (
         <div>
           <title>{currentLanguage.languageName }Vocabulary</title>
-          <Table striped bordered hover size="sm">
+          <Table striped bordered hover size='sm'>
             <thead>
               <tr>
                 <th>
@@ -302,20 +302,20 @@ const VocabContent = (
                         </div>
                       </Dropdown.Item>)}
                 </CustomDropDownButton>
-                <CustomDropDownButton title="Settings" align="end">
+                <CustomDropDownButton title='Settings' align='end'>
                   {currentLanguage.numForeignAlphabets > 1 && !currentTopic.isAlphabet &&
                   <>
                     <Dropdown.Item>
                 writing system:  &nbsp;
                       <select 
-                        name="alphabets" 
-                        id="alphabets" 
+                        name='alphabets' 
+                        id='alphabets' 
                         onChange={handleSelectChange} 
                         onClick={preventDropdownClose} // Prevent dropdown from closing
                       >
                         <option value='0'>romaji</option>
-                        <option value="1">hiragana, katakana</option>
-                        <option value="2">hiragana, katakana, kanji</option>
+                        <option value='1'>hiragana, katakana</option>
+                        <option value='2'>hiragana, katakana, kanji</option>
                       </select>
                     </Dropdown.Item>
                     <hr/>
@@ -329,7 +329,7 @@ const VocabContent = (
                     }}
                   >
                     <input
-                      type="checkbox"
+                      type='checkbox'
                       checked={audioBool} // Checkbox is checked if showBaseLanguage is true
                       onChange={changeAudioBool} // Toggle onChange as well
                     />
@@ -339,7 +339,7 @@ const VocabContent = (
                     preventDropdownClose(event);
                   }}>
                     <input
-                      type="checkbox"
+                      type='checkbox'
                       checked={!showBaseLanguage} // Checkbox is checked if showBaseLanguage is true
                       onChange={changeBaseLanguage} // Toggle onChange as well
                     />
@@ -349,7 +349,7 @@ const VocabContent = (
                     preventDropdownClose(event);
                   }}>
                     <input
-                      type="checkbox"
+                      type='checkbox'
                       checked={!showTrueOrder} // Checkbox is checked if showBaseLanguage is true
                       onChange={changeOrder} // Toggle onChange as well
                     />
@@ -375,7 +375,7 @@ const VocabContent = (
           {ToggleQuiz()}
           <Modal show ={showPopUp} onHide={hidePopUp}>
             <Modal.Header closeButton>
-              <Modal.Title id="contained-modal-title-vleft">
+              <Modal.Title id='contained-modal-title-vleft'>
               How to Guide (Video)
               </Modal.Title>
             </Modal.Header>

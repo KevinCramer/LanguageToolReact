@@ -63,15 +63,15 @@ const QuizElement = (
               <div>
                 <label>{propsQuestionWord} </label>
                 <input 
-                  type="text"
-                  name="answer" 
+                  type='text'
+                  name='answer' 
                   placeholder={myPlaceHolder}
                   value={formValues.answer} 
                   onChange = {handleChange}
-                  autoComplete="off" 
-                  autoCorrect="off" 
-                  spellCheck ="false" 
-                  autoCapitalize="off"/>
+                  autoComplete='off' 
+                  autoCorrect='off' 
+                  spellCheck ='false' 
+                  autoCapitalize='off'/>
               </div>
             </form>
             {/* This is hack to ensure the quiz element doesn't move when tick

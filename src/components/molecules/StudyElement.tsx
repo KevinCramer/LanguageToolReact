@@ -105,7 +105,7 @@ const StudyElement = (
       </div>}
       {isVerb && <Modal show ={showPopUp} onHide={hidePopUp}>
         <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-vcenter">
+          <Modal.Title id='contained-modal-title-vcenter'>
             {(ForeignLanguageWord as VerbConjugation).infinitive.toUpperCase()}
           </Modal.Title>
         </Modal.Header>
@@ -141,7 +141,7 @@ const StudyElement = (
           }
         </Modal.Body>
       </Modal>}
-      { strokeOrderVideo && <Modal show={showPopUp} onHide={hidePopUp} size="lg" centered>
+      { strokeOrderVideo && <Modal show={showPopUp} onHide={hidePopUp} size='lg' centered>
         <Modal.Header closeButton>
           <Modal.Title>
             {ForeignLanguageWord.toString() + ' - Hiragana Stroke Order'}
@@ -149,8 +149,8 @@ const StudyElement = (
         </Modal.Header>
         <Modal.Body>
           <div>
-            <video width="100%" controls>
-              <source src={strokeOrderVideo} type="video/mp4"/>
+            <video width='100%' controls>
+              <source src={strokeOrderVideo} type='video/mp4'/>
               Your browser does not support the video tag.
             </video>
           </div>

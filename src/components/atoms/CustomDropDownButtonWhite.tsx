@@ -16,7 +16,7 @@ const CustomDropDownButtonWhite = ({ title,children, align = 'start' }:
     <div>
       <DropdownButton
         title={title}
-        size="sm"
+        size='sm'
         align={align}
       >
         {children}
