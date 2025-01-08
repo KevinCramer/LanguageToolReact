@@ -662,7 +662,7 @@ const KatakanaExplained = () => {
           Katakana is mainly used to write Japanese loan words. For example in Japanese the word for 'camera' is <b>カメラ (kamera)</b>. Learning all 5 concepts below is essential to learning Japanese.
       </div>
       <div>
-        <b>Basic Katakana</b>  has <a onClick={handleProtectedClick(katakanaBasicWritingSystem)}
+        <b>Basic Katakana</b>  has <a className='text-blue-500 underline' onClick={handleProtectedClick(katakanaBasicWritingSystem)}
           href={
             createURL(
               LanguageNames.Japanese,
@@ -672,7 +672,7 @@ const KatakanaExplained = () => {
                       46 sounds</a>. 
         <div>
           <i>
-                  Note 1 - See this diagram for basic <a
+                  Note 1 - See this diagram for basic <a className='text-blue-500 underline'
               onClick={toggleBasicKatakanaModal}
             >
           pattern
@@ -698,7 +698,7 @@ const KatakanaExplained = () => {
         </div>
         <div>
           <i>
-                  Note 2 - Each basic katakana has a matching basic hiragana that produces the same sound. See <a
+                  Note 2 - Each basic katakana has a matching basic hiragana that produces the same sound. See <a className='text-blue-500 underline'
               onClick={toggleBasicConversionModal}
             >
           diagram
@@ -722,7 +722,7 @@ const KatakanaExplained = () => {
              
       </div>
       <div>
-        <b>Dakuten and Handakuten</b> lead to another <a onClick={handleProtectedClick(katakanaDakutenWritingSystem)} 
+        <b>Dakuten and Handakuten</b> lead to another <a className='text-blue-500 underline' onClick={handleProtectedClick(katakanaDakutenWritingSystem)} 
           href={
             createURL(
               LanguageNames.Japanese,
@@ -739,7 +739,7 @@ const KatakanaExplained = () => {
         </div>
         <div>
           <i>
-                  Note 1 - See this useful <a
+                  Note 1 - See this useful <a className='text-blue-500 underline'
               onClick={toggleDakutenModal}
             >
           diagram
@@ -768,7 +768,7 @@ const KatakanaExplained = () => {
         </div>
         <div>
           <i>
- Note 2 - Also each dakuten/handakuten katakana has a matching dakuten/hankuten hiragana that produces the same sound. See <a
+ Note 2 - Also each dakuten/handakuten katakana has a matching dakuten/hankuten hiragana that produces the same sound. See <a className='text-blue-500 underline'
               onClick={toggleDakutenConversionModal}
             >
           diagram
@@ -791,7 +791,7 @@ const KatakanaExplained = () => {
         </div>
       </div>
       <div>
-        <b>Native Yōon sounds</b>  leads to an additional: <a onClick={handleProtectedClick(katakanaYoonWritingSystem)} 
+        <b>Native Yōon sounds</b>  leads to an additional: <a className='text-blue-500 underline' onClick={handleProtectedClick(katakanaYoonWritingSystem)} 
           href={
             createURL(
               LanguageNames.Japanese,
@@ -810,7 +810,7 @@ const KatakanaExplained = () => {
           <b>キャリア (kyaria, career)</b> and <b>ミュージック (myūjikku, music)</b>. 
           <div>
             <i>
-                    Note - Each native yōon katakana has a matching yōon hiragana that produces the same sound. See <a
+                    Note - Each native yōon katakana has a matching yōon hiragana that produces the same sound. See <a className='text-blue-500 underline'
                 onClick={toggleYoonConversionModal}
               >
           diagram
@@ -833,7 +833,7 @@ const KatakanaExplained = () => {
           </div>
         </div>
         <div>
-          <b>Foreign Yōon sounds</b>  leads to an additional: <a onClick={handleProtectedClick(katakanaSpecialYoonWritingSystem)} 
+          <b>Foreign Yōon sounds</b>  leads to an additional: <a className='text-blue-500 underline' onClick={handleProtectedClick(katakanaSpecialYoonWritingSystem)} 
             href={
               createURL(
                 LanguageNames.Japanese,

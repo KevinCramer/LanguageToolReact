@@ -178,7 +178,7 @@ const HiraganaExplained = () => {
           Learning hiragana is the first step to learning japanese. By learning all 3 concepts below you will learn the basics of Japanese pronunciation. 
       </div>
       <div>
-        <b>Basic Hiragana</b>  has <a onClick={handleProtectedClick(hiraganaBasicWritingSystem)}
+        <b>Basic Hiragana</b>  has <a className='text-blue-500 underline' onClick={handleProtectedClick(hiraganaBasicWritingSystem)}
           href={
             createURL(
               LanguageNames.Japanese,
@@ -186,7 +186,7 @@ const HiraganaExplained = () => {
               hiraganaBasicWritingSystem)
           }>
                       46 sounds</a>. See this table for the basic 
-        <a onClick={toggleBasicHiraganaModal}>
+        <a className='text-blue-500 underline' onClick={toggleBasicHiraganaModal}>
           pattern
         </a>
         {isBasicHiraganaModalOpen && (
@@ -212,7 +212,7 @@ const HiraganaExplained = () => {
         )}
       </div>
       <div>
-        <b>Dakuten and Handakuten</b> lead to another <a onClick={handleProtectedClick(hiraganaDakutenWritingSystem)} 
+        <b>Dakuten and Handakuten</b> lead to another <a className='text-blue-500 underline' onClick={handleProtectedClick(hiraganaDakutenWritingSystem)} 
           href={
             createURL(
               LanguageNames.Japanese,
@@ -232,7 +232,7 @@ const HiraganaExplained = () => {
             The handakuten mark is <b>( ゜)</b>. There are 5 variations.  For example: <b>は (ha) → ぱ (pa)</b>.
         <div>
           <i>
-                  See this useful <a
+                  See this useful <a className='text-blue-500 underline'
               onClick={toggleDakutenModal}
             >
           diagram
@@ -268,7 +268,7 @@ const HiraganaExplained = () => {
         </div>      
       </div>
       <div>
-        <b>Yōon</b>  leads to an additional <a onClick={handleProtectedClick(hiraganaYoonWritingSystem)} 
+        <b>Yōon</b>  leads to an additional <a className='text-blue-500 underline' onClick={handleProtectedClick(hiraganaYoonWritingSystem)} 
           href={
             createURL(
               LanguageNames.Japanese,
