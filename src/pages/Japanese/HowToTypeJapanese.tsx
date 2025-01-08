@@ -10,24 +10,21 @@ const HowToTypeJapanese = () => {
   };
 
   return (
-    <>
+    <div className='max-w-screen-md mx-auto text-center'>
       <div>
+        <h4 className='text-center text-2xl py-12'>How to Type Japanese</h4>
         <div>
-          <h4 className="text-center text-2xl py-12">How to Type Japanese</h4>
-          <div>
-            <a href='#' onClick={openModal}>
+          <a className='text-blue-500 underline' href='#' onClick={openModal}>
               How to Type Japanese on a Mac
-            </a>
-          </div>
-          <div>
+          </a>
+        </div>
+        <div>
            Video Tutorials for Windows, iPhone
-          </div>
-          <div>
+        </div>
+        <div>
           and Android coming soon.
-          </div>
         </div>
       </div>
-
       {isModalOpen && (
         <div>
           <div>
@@ -42,14 +39,12 @@ const HowToTypeJapanese = () => {
                     src={howToTypeJapaneseTutorial}
                   />
                 </div>
-              
               </Modal.Body>
             </Modal>
-          </div>
-          
+          </div> 
         </div>
       )}
-    </>
+    </div>
   );
 };
 

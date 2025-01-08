@@ -4,7 +4,7 @@ const KanjiExplained = () => {
     <>
       <div>
         <div>
-          <h4 className="text-center text-2xl py-12">Kanji Explained</h4>
+          <h4 className='text-center text-2xl py-12'>Kanji Explained</h4>
           <div >
             Kanji are characters used in the Japanese writing system, originally borrowed from Chinese characters. 
             They represent ideas or meanings rather than just sounds. 
