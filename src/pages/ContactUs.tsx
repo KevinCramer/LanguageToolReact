@@ -18,11 +18,11 @@ const socialLinks = [
 
 const ContactUs = () => {
   return (
-    <div className='flex flex-col items-center'>
+    <div className='flex flex-col items-center text-white'>
       <div className='pt-24'>
         You can reach out to us at&nbsp;
       </div>
-      <a href='mailto:contact@lingocommand.com' className='text-blue-500'>
+      <a href='mailto:contact@lingocommand.com' className='text-blue-500 underline'>
         contact@lingocommand.com
       </a>
       <div className='py-8'>

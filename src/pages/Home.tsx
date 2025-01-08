@@ -75,10 +75,10 @@ export const Home = () => {
 
   return (
     <div className='flex flex-col flex-1  md:flex-row justify-center items-center'>
-      <div className='m-2'>
+      <div className='m-2 text-white md:text-3xl tracking-custom'>
         Learn Japanese Faster
       </div>
-      <button className='m-2 p-2 bg-blue-500 text-white'
+      <button className='m-8 p-2 bg-blue-500 text-white md:text-xl tracking-custom'
         onClick={(event) => { navigate('/japanese') }}>
         Start Now 
       </button>

@@ -54,7 +54,11 @@ const App = ()=> {
 
   return (
     <>
-      {pathWithBackground && <>
+      {pathWithBackground && <div
+        id="japanese-background-container"
+        className="bg-cover bg-center w-full h-screen"
+        style={{ backgroundImage: 'url(\'/src/assets/tokyo.jpg\')' }}
+      >
         <Navbar />
         <Routes>
           <Route path="/" element={<Home/>} />
@@ -75,7 +79,7 @@ const App = ()=> {
           <Route path="/japanese/comprehension/:topicSlug" element={<Comprehension languageNumber={0} howToGuideVideo={japaneseComprehensionVideo}/>} />
           <Route path="/*" element={<Custom404Error/>} />
         </Routes>
-      </>}
+      </div>}
       {!pathWithBackground && <div>
         <Navbar/>
         <Routes>

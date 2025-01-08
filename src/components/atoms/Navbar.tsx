@@ -13,9 +13,19 @@ const Navbar = () => {
   // @ts-ignore
   const { currentUser, logout } = useAuth();
 
+  const pathWithBackground =
+  location.pathname === '/' ||
+  location.pathname === '/contact' ||
+  location.pathname === '/account' ||
+  location.pathname === '/about';
+
+  // Define dynamic text color class
+  const textColorClass = pathWithBackground ? 'text-white' : 'text-black';
+  const lineBreakColorClass = pathWithBackground ? 'bg-white opacity-30 h-0.5' : 'bg-black opacity-30 h-0.5';
+
   return (
     <div>
-      <nav className='flex justify-around items-center px-2 py-0.5 md:text-xl md:tracking-custom'>
+      <nav className={`flex justify-around items-center px-2 py-0.5 md:text-xl md:tracking-custom ${textColorClass}`}>
         <NavLink to='/'>
           <div className='flex items-center'>
             <img
@@ -26,18 +36,19 @@ const Navbar = () => {
             <div className="hidden md:block">LingoCommand</div>
           </div>
         </NavLink>
-        <NavLink to='/japanese'>
-            Japanese
+        <NavLink to='/japanese' className={textColorClass}>
+          Japanese
         </NavLink>
-        <NavLink to='/about'>
-            About
+        <NavLink to='/about' className={textColorClass}>
+          About
         </NavLink>
-        <NavLink to='/contact'>
-            Contact
+        <NavLink to='/contact' className={textColorClass}>
+          Contact
         </NavLink>
 
         {!(currentUser && currentUser.email) && (
           <button
+            className={textColorClass}
             onClick={async () => {
               if (currentUser && currentUser.email) {
                 try {
@@ -59,15 +70,15 @@ const Navbar = () => {
 
         {currentUser && currentUser.email && (
           <div>
-            <button>
+            <button className={textColorClass}>
               <BsPerson className="w-8 h-8 md:w-10 md:h-10" />
             </button>
             <div>
-              <NavLink
-                to='/account'>
-                    Account Settings
+              <NavLink to='/account' className={textColorClass}>
+                Account Settings
               </NavLink>
               <button
+                className={textColorClass}
                 onClick={async () => {
                   if (currentUser && currentUser.email) {
                     try {
@@ -81,14 +92,15 @@ const Navbar = () => {
                   } else {
                     dispatch(displayLogin());
                   }
-                }}>
-                    Log Out
+                }}
+              >
+                Log Out
               </button>
             </div>
           </div>
         )}
       </nav>
-      <hr className='bg-black h-0.5' />
+      <hr className={lineBreakColorClass} />
     </div>
   );
 };

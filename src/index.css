@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 /* 
-targetting div with id="root" in index.html to ensure that 
-the parent div of the navbar and home or japanese-study-guide 
+targetting div with id="japanese-background-container" in app.tsx. to ensure that 
+the parent div of the navbar and home
 components takes up the full height of the viewport
 */
-#root {
+#japanese-background-container {
     height:100dvh;
     display: flex;
     flex-direction: column;
