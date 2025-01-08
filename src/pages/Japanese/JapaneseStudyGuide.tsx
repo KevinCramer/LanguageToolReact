@@ -61,7 +61,7 @@ const JapaneseStudyGuide = () => {
     .find((t: any)=> t.slugName === japaneseVocabTopicSlugNames.katakanaSpecialYoon)
  
   return (
-    <div>
+    <div className='max-w-screen-md mx-auto'>
       <h4 className='text-center text-2xl py-12'>
         Japanese Study Guide
       </h4>
@@ -69,11 +69,11 @@ const JapaneseStudyGuide = () => {
         <b>Phase 1:</b> Spend a few minutes reading about <a className= 'text-blue-500 underline' href='/japanese/writing-systems-explained'>Japanese writing systems</a>.
       </div>
       <div>
-        <b>Phase 2:</b> Study <a href='/japanese/hiragana-explained'>hiragana</a>. That includes mastering all: 
+        <b>Phase 2:</b> Study <a className= 'text-blue-500 underline' href='/japanese/hiragana-explained'>hiragana</a>. That includes mastering all: 
         <div>
           <ul>
             <li>
-              <a onClick={handleProtectedClick(hiraganaBasicWritingSystem)}
+              <a className= 'text-blue-500 underline' onClick={handleProtectedClick(hiraganaBasicWritingSystem)}
                 href={
                   createURL(
                     LanguageNames.Japanese,
@@ -88,7 +88,7 @@ const JapaneseStudyGuide = () => {
               </a>
             </li>
             <li>
-              <a onClick={handleProtectedClick(hiraganaDakutenWritingSystem)}
+              <a className= 'text-blue-500 underline' onClick={handleProtectedClick(hiraganaDakutenWritingSystem)}
                 href={
                   createURL(
                     LanguageNames.Japanese,
@@ -104,7 +104,7 @@ const JapaneseStudyGuide = () => {
               </a>
             </li>
             <li>
-              <a onClick={handleProtectedClick(hiraganaYoonWritingSystem)}
+              <a className= 'text-blue-500 underline' onClick={handleProtectedClick(hiraganaYoonWritingSystem)}
                 href={
                   createURL(
                     LanguageNames.Japanese,
@@ -122,12 +122,12 @@ const JapaneseStudyGuide = () => {
         </div>
       </div>
       <div>
-        <b>Phase 3:</b> Study <a href='/japanese/katakana-explained'>katakana</a>.
+        <b>Phase 3:</b> Study <a className= 'text-blue-500 underline' href='/japanese/katakana-explained'>katakana</a>.
              That includes mastering all:
         <div>
           <ul>
             <li>
-              <a onClick={handleProtectedClick(katakanaBasicWritingSystem)}
+              <a className= 'text-blue-500 underline' onClick={handleProtectedClick(katakanaBasicWritingSystem)}
                 href={
                   createURL(
                     LanguageNames.Japanese,
@@ -142,7 +142,7 @@ const JapaneseStudyGuide = () => {
               </a>
             </li>
             <li>
-              <a onClick={handleProtectedClick(katakanaDakutenWritingSystem)}
+              <a className= 'text-blue-500 underline' onClick={handleProtectedClick(katakanaDakutenWritingSystem)}
                 href={
                   createURL(
                     LanguageNames.Japanese,
@@ -157,7 +157,7 @@ const JapaneseStudyGuide = () => {
               </a>
             </li>
             <li>
-              <a onClick={handleProtectedClick(katakanaYoonWritingSystem)}
+              <a className= 'text-blue-500 underline' onClick={handleProtectedClick(katakanaYoonWritingSystem)}
                 href={
                   createURL(
                     LanguageNames.Japanese,
@@ -172,7 +172,7 @@ const JapaneseStudyGuide = () => {
               </a>
             </li>
             <li>
-              <a onClick={handleProtectedClick(katakanaSpecialYoonWritingSystem)}
+              <a className= 'text-blue-500 underline' onClick={handleProtectedClick(katakanaSpecialYoonWritingSystem)}
                 href={
                   createURL(
                     LanguageNames.Japanese,
@@ -190,17 +190,17 @@ const JapaneseStudyGuide = () => {
         </div>
       </div>
       <div>
-        <b>Phase 4:</b> Study <a href='/japanese/kanji-explained'>Introduction to Kanji</a>.
+        <b>Phase 4:</b> Study <a className= 'text-blue-500 underline' href='/japanese/kanji-explained'>Introduction to Kanji</a>.
       </div>
       <div>
-        <b>Phase 5:</b> Watch: <a href='/japanese/how-to-type-japanese'>How To Type Japanese</a>.
+        <b>Phase 5:</b> Watch: <a className= 'text-blue-500 underline' href='/japanese/how-to-type-japanese'>How To Type Japanese</a>.
       </div>
       <div>
         <b>Phase 6:</b> Study the vocabulary for these topics:
         <div> 
           <ul>
             <li>
-              <a onClick={handleProtectedClick(clothesVocabTopic)}
+              <a className= 'text-blue-500 underline' onClick={handleProtectedClick(clothesVocabTopic)}
                 href={
                   createURL(
                     LanguageNames.Japanese,
@@ -216,7 +216,7 @@ const JapaneseStudyGuide = () => {
               </a>
             </li>
             <li>
-              < a onClick={handleProtectedClick(coloursVocabTopic )}
+              <a className= 'text-blue-500 underline' onClick={handleProtectedClick(coloursVocabTopic )}
                 href={
                   createURL(
                     LanguageNames.Japanese,
@@ -232,7 +232,7 @@ const JapaneseStudyGuide = () => {
               </a>
             </li>
             <li>
-              < a onClick={handleProtectedClick(numbersVocabTopic)}
+              <a className= 'text-blue-500 underline' onClick={handleProtectedClick(numbersVocabTopic)}
                 href={
                   createURL(
                     LanguageNames.Japanese,
@@ -248,7 +248,7 @@ const JapaneseStudyGuide = () => {
               </a>
             </li>
             <li>
-              <a onClick={handleProtectedClick(animalsVocabTopic)}
+              <a className= 'text-blue-500 underline' onClick={handleProtectedClick(animalsVocabTopic)}
                 href={
                   createURL(
                     LanguageNames.Japanese,
@@ -264,7 +264,7 @@ const JapaneseStudyGuide = () => {
               </a>
             </li>
             <li>
-              < a onClick={handleProtectedClick(bodyVocabTopic )}
+              <a className= 'text-blue-500 underline' onClick={handleProtectedClick(bodyVocabTopic )}
                 href={
                   createURL(
                     LanguageNames.Japanese,
@@ -280,7 +280,7 @@ const JapaneseStudyGuide = () => {
               </a>
             </li>
             <li>
-              < a onClick={handleProtectedClick(daysOfWeekVocabTopic )}
+              <a className= 'text-blue-500 underline' onClick={handleProtectedClick(daysOfWeekVocabTopic )}
                 href={
                   createURL(
                     LanguageNames.Japanese,
@@ -296,7 +296,7 @@ const JapaneseStudyGuide = () => {
               </a>
             </li>
             <li>
-              < a onClick={handleProtectedClick(foodsVocabTopic)}
+              <a className= 'text-blue-500 underline' onClick={handleProtectedClick(foodsVocabTopic)}
                 href={
                   createURL(
                     LanguageNames.Japanese,
@@ -312,7 +312,7 @@ const JapaneseStudyGuide = () => {
               </a>
             </li>
             <li>
-              < a onClick={handleProtectedClick(irregularAdjectivesVocabTopic)}
+              <a className= 'text-blue-500 underline' onClick={handleProtectedClick(irregularAdjectivesVocabTopic)}
                 href={
                   createURL(
                     LanguageNames.Japanese,
@@ -328,7 +328,7 @@ const JapaneseStudyGuide = () => {
               </a> 
             </li>
             <li>
-              < a onClick={handleProtectedClick(locationVocabTopic)}
+              <a className= 'text-blue-500 underline' onClick={handleProtectedClick(locationVocabTopic)}
                 href={
                   createURL(
                     LanguageNames.Japanese,
@@ -344,7 +344,7 @@ const JapaneseStudyGuide = () => {
               </a>
             </li>
             <li>
-              < a onClick={handleProtectedClick(monthsOfYearVocabTopic )}
+              <a className= 'text-blue-500 underline' onClick={handleProtectedClick(monthsOfYearVocabTopic )}
                 href={
                   createURL(
                     LanguageNames.Japanese,
@@ -360,7 +360,7 @@ const JapaneseStudyGuide = () => {
               </a> 
             </li>
             <li>
-              < a onClick={handleProtectedClick(regularAdjectivesVocabTopic )}
+              <a className= 'text-blue-500 underline' onClick={handleProtectedClick(regularAdjectivesVocabTopic )}
                 href={
                   createURL(
                     LanguageNames.Japanese,
@@ -380,7 +380,7 @@ const JapaneseStudyGuide = () => {
             We recommend you spend no more than 15 minutes studying a topic’s vocabulary before taking a quiz. Then if the grade is below 90% which is completely normal go back and do another round of 15 minutes of studying. Make sure to take breaks, and you can also switch between studying a few topics to mix things up. 
           (If you get at least 90% on every quiz, without studying in the last 24 hours, you are ready to move to phase 7).           </div>
       <div>
-        <b>Phase 7:</b> practice <a href='/japanese/comprehension/aikos-book-sanctuary?eng=F'>reading and listening comprehension</a>.
+        <b>Phase 7:</b> practice <a className= 'text-blue-500 underline' href='/japanese/comprehension/aikos-book-sanctuary?eng=F'>reading and listening comprehension</a>.
       </div>
       <div></div>
       <i>
