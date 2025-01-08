@@ -659,7 +659,7 @@ const KatakanaExplained = () => {
     <>
       <div>
         <div>
-          <h4>Katakana Explained</h4>
+          <h4 className="text-center text-2xl py-12">Katakana Explained</h4>
           <div>
           Katakana is mainly used to write Japanese loan words. For example in Japanese the word for 'camera' is <b>カメラ (kamera)</b>. Learning all 5 concepts below is essential to learning Japanese.
           </div>

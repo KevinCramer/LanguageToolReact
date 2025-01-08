@@ -175,7 +175,7 @@ const HiraganaExplained = () => {
     <>
       <div>
         <div>
-          <h4>Hiragana Explained</h4>
+          <h4 className="text-center text-2xl py-12">Hiragana Explained</h4>
           <div>
           Learning hiragana is the first step to learning japanese. By learning all 3 concepts below you will learn the basics of Japanese pronunciation. 
           </div>

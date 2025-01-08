@@ -13,7 +13,7 @@ const HowToTypeJapanese = () => {
     <>
       <div>
         <div>
-          <h4>How to Type Japanese</h4>
+          <h4 className="text-center text-2xl py-12">How to Type Japanese</h4>
           <div>
             <a href='#' onClick={openModal}>
               How to Type Japanese on a Mac
