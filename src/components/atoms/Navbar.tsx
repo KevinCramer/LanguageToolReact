@@ -21,7 +21,7 @@ const Navbar = () => {
 
   // Define dynamic text color class
   const textColorClass = pathWithBackground ? 'text-white' : 'text-black';
-  const lineBreakColorClass = pathWithBackground ? 'bg-white opacity-50' : 'bg-black h-0.5 opacity-50';
+  const lineBreakColorClass = pathWithBackground ? 'bg-white md:opacity-50' : 'bg-black h-0.5 opacity-50';
 
   return (
     <div>
