@@ -656,223 +656,219 @@ const KatakanaExplained = () => {
   </table>
 ;
   return (
-    <>
+    <div className='max-w-screen-md mx-auto'>
+      <h4 className='text-center text-2xl py-12'>Katakana Explained</h4>
       <div>
-        <div>
-          <h4 className='text-center text-2xl py-12'>Katakana Explained</h4>
-          <div>
           Katakana is mainly used to write Japanese loan words. For example in Japanese the word for 'camera' is <b>カメラ (kamera)</b>. Learning all 5 concepts below is essential to learning Japanese.
-          </div>
-          <div>
-            <b>Basic Katakana</b>  has <a onClick={handleProtectedClick(katakanaBasicWritingSystem)}
-              href={
-                createURL(
-                  LanguageNames.Japanese,
-                  LearningSections.WritingSystem,
-                  katakanaBasicWritingSystem)
-              }>
+      </div>
+      <div>
+        <b>Basic Katakana</b>  has <a onClick={handleProtectedClick(katakanaBasicWritingSystem)}
+          href={
+            createURL(
+              LanguageNames.Japanese,
+              LearningSections.WritingSystem,
+              katakanaBasicWritingSystem)
+          }>
                       46 sounds</a>. 
-            <div>
-              <i>
+        <div>
+          <i>
                   Note 1 - See this diagram for basic <a
-                  onClick={toggleBasicKatakanaModal}
-                >
+              onClick={toggleBasicKatakanaModal}
+            >
           pattern
-                </a>.
-              </i>
-              {isBasicKatakanaModalOpen && (
-                <div>
-                  <div>
-                    <h3>Katakana Chart</h3>
-                    <button 
-                      onClick={toggleBasicKatakanaModal}>
-                      Close
-                    </button>
-                  </div>
-             
-                  {basicKatakanaTable}
-                </div>
-              )}
-
-              {isBasicKatakanaModalOpen && (
-                <div onClick={toggleBasicKatakanaModal}/>
-              )}
-            </div>
+            </a>.
+          </i>
+          {isBasicKatakanaModalOpen && (
             <div>
-              <i>
-                  Note 2 - Each basic katakana has a matching basic hiragana that produces the same sound. See <a
-                  onClick={toggleBasicConversionModal}
-                >
-          diagram
-                </a>.
-              </i>
-              {isBasicConversionModalOpen && (
-                <div>
-                  <div>
-                    <button onClick={toggleBasicConversionModal}>
-                        Close
-                    </button>
-                  </div>
-                  {basicHiraganaToKatakanaTable}
-                </div>
-              )}
-
-              {isDakutenModalOpen && (
-                <div onClick={toggleDakutenModal}/>
-              )}
-            </div>
+              <div>
+                <h3>Katakana Chart</h3>
+                <button 
+                  onClick={toggleBasicKatakanaModal}>
+                      Close
+                </button>
+              </div>
              
-          </div>
-          <div>
-            <b>Dakuten and Handakuten</b> lead to another <a onClick={handleProtectedClick(katakanaDakutenWritingSystem)} 
-              href={
-                createURL(
-                  LanguageNames.Japanese,
-                  LearningSections.WritingSystem,
-                  katakanaDakutenWritingSystem)
-              }>25 katakana variations
-              {katakanaDakutenWritingSystem?.isLocked &&
+              {basicKatakanaTable}
+            </div>
+          )}
+
+          {isBasicKatakanaModalOpen && (
+            <div onClick={toggleBasicKatakanaModal}/>
+          )}
+        </div>
+        <div>
+          <i>
+                  Note 2 - Each basic katakana has a matching basic hiragana that produces the same sound. See <a
+              onClick={toggleBasicConversionModal}
+            >
+          diagram
+            </a>.
+          </i>
+          {isBasicConversionModalOpen && (
+            <div>
+              <div>
+                <button onClick={toggleBasicConversionModal}>
+                        Close
+                </button>
+              </div>
+              {basicHiraganaToKatakanaTable}
+            </div>
+          )}
+
+          {isDakutenModalOpen && (
+            <div onClick={toggleDakutenModal}/>
+          )}
+        </div>
+             
+      </div>
+      <div>
+        <b>Dakuten and Handakuten</b> lead to another <a onClick={handleProtectedClick(katakanaDakutenWritingSystem)} 
+          href={
+            createURL(
+              LanguageNames.Japanese,
+              LearningSections.WritingSystem,
+              katakanaDakutenWritingSystem)
+          }>25 katakana variations
+          {katakanaDakutenWritingSystem?.isLocked &&
                    lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon/> : ''}
-            </a>. <br></br>
+        </a>. <br></br>
             Dakuten and handakuten are marks added on top of katakana that alter pronunciation. 
             The dakuten mark is <b>( ゛)</b>. There are 20 dakuten variations. For example: <b>カ (ka) → ガ (ga)</b>. <br></br> 
             The handakuten mark is <b>( ゜)</b>. There are 5 variations. For example: <b>ハ (ha) → パ (pa)</b>.
-            <div>
-            </div>
-            <div>
-              <i>
+        <div>
+        </div>
+        <div>
+          <i>
                   Note 1 - See this useful <a
-                  onClick={toggleDakutenModal}
-                >
+              onClick={toggleDakutenModal}
+            >
           diagram
-                </a> for the general pattern.
-              </i>
-              {isDakutenModalOpen && (
-                <div>
-                  <div>
-                    <button onClick={toggleDakutenModal}>
+            </a> for the general pattern.
+          </i>
+          {isDakutenModalOpen && (
+            <div>
+              <div>
+                <button onClick={toggleDakutenModal}>
                         Close
-                    </button>
-                  </div>
-                  {dakutenTable}
-                  <div>
+                </button>
+              </div>
+              {dakutenTable}
+              <div>
                     (1) ヂ is written in romaji as <b>di</b> but is pronounced <b>ji</b>.
-                  </div>
-                  <div>
+              </div>
+              <div>
                     (2) ヅ is written in romaji as <b>du</b> but is pronounced <b>zu</b>.
-                  </div>
-                </div>
-              )}
-
-              {isDakutenConversionModalOpen && (
-                <div onClick={toggleDakutenModal}/>
-              )}
+              </div>
             </div>
-            <div>
-              <i>
+          )}
+
+          {isDakutenConversionModalOpen && (
+            <div onClick={toggleDakutenModal}/>
+          )}
+        </div>
+        <div>
+          <i>
  Note 2 - Also each dakuten/handakuten katakana has a matching dakuten/hankuten hiragana that produces the same sound. See <a
-                  onClick={toggleDakutenConversionModal}
-                >
+              onClick={toggleDakutenConversionModal}
+            >
           diagram
-                </a>.
-              </i>
-              {isDakutenConversionModalOpen && (
-                <div>
-                  <div>
-                    <button onClick={toggleDakutenConversionModal}>
-                        Close
-                    </button>
-                  </div>
-                  {dakutenHiraganaToKatakanaTable}
-                </div>
-              )}
-
-              {isDakutenModalOpen && (
-                <div onClick={toggleDakutenConversionModal}/>
-              )}
-            </div>
-          </div>
-          <div>
-            <b>Native Yōon sounds</b>  leads to an additional: <a onClick={handleProtectedClick(katakanaYoonWritingSystem)} 
-              href={
-                createURL(
-                  LanguageNames.Japanese,
-                  LearningSections.WritingSystem,
-                  katakanaYoonWritingSystem)
-              }>
-                36 katakana combinations
-              {katakanaYoonWritingSystem?.isLocked &&
-                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon/> : ''}
-            </a> 
+            </a>.
+          </i>
+          {isDakutenConversionModalOpen && (
             <div>
+              <div>
+                <button onClick={toggleDakutenConversionModal}>
+                        Close
+                </button>
+              </div>
+              {dakutenHiraganaToKatakanaTable}
+            </div>
+          )}
+
+          {isDakutenModalOpen && (
+            <div onClick={toggleDakutenConversionModal}/>
+          )}
+        </div>
+      </div>
+      <div>
+        <b>Native Yōon sounds</b>  leads to an additional: <a onClick={handleProtectedClick(katakanaYoonWritingSystem)} 
+          href={
+            createURL(
+              LanguageNames.Japanese,
+              LearningSections.WritingSystem,
+              katakanaYoonWritingSystem)
+          }>
+                36 katakana combinations
+          {katakanaYoonWritingSystem?.isLocked &&
+                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon/> : ''}
+        </a> 
+        <div>
               Some katakana combine to form Yōon sounds. In these combinations,
             the first character remains full-sized, while the second is smaller.
             Examples like <b>キャ (kya) </b>and <b>ミュ (myu)</b> represent single, blended 
             syllables rather than separate sounds. This blending is crucial in words like <br/>
-              <b>キャリア (kyaria, career)</b> and <b>ミュージック (myūjikku, music)</b>. 
-              <div>
-                <i>
+          <b>キャリア (kyaria, career)</b> and <b>ミュージック (myūjikku, music)</b>. 
+          <div>
+            <i>
                     Note - Each native yōon katakana has a matching yōon hiragana that produces the same sound. See <a
-                    onClick={toggleYoonConversionModal}
-                  >
+                onClick={toggleYoonConversionModal}
+              >
           diagram
-                  </a>.
-                </i>
-                {isYoonConversionModalOpen && (
-                  <div>
-                    <div>
-                      <button onClick={toggleYoonConversionModal}>
-                        Close
-                      </button>
-                    </div>
-                    {yoonHiraganaToKatakanaTable}
-                  </div>
-                )}
-
-                {isYoonConversionModalOpen && (
-                  <div onClick={toggleYoonConversionModal}/>
-                )}
-              </div>
-            </div>
-            <div>
-              <b>Foreign Yōon sounds</b>  leads to an additional: <a onClick={handleProtectedClick(katakanaSpecialYoonWritingSystem)} 
-                href={
-                  createURL(
-                    LanguageNames.Japanese,
-                    LearningSections.WritingSystem,
-                    katakanaSpecialYoonWritingSystem)
-                }>
-                22 katakana combinations
-                {katakanaSpecialYoonWritingSystem?.isLocked &&
-                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon/> : ''}
-              </a>
+              </a>.
+            </i>
+            {isYoonConversionModalOpen && (
               <div>
+                <div>
+                  <button onClick={toggleYoonConversionModal}>
+                        Close
+                  </button>
+                </div>
+                {yoonHiraganaToKatakanaTable}
+              </div>
+            )}
+
+            {isYoonConversionModalOpen && (
+              <div onClick={toggleYoonConversionModal}/>
+            )}
+          </div>
+        </div>
+        <div>
+          <b>Foreign Yōon sounds</b>  leads to an additional: <a onClick={handleProtectedClick(katakanaSpecialYoonWritingSystem)} 
+            href={
+              createURL(
+                LanguageNames.Japanese,
+                LearningSections.WritingSystem,
+                katakanaSpecialYoonWritingSystem)
+            }>
+                22 katakana combinations
+            {katakanaSpecialYoonWritingSystem?.isLocked &&
+                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon/> : ''}
+          </a>
+          <div>
                 Some sounds from non Japanese languages cannot be captured by the 36 native katakana 
                 yōon sounds. For Example <b>ヴァ (bwa/va) </b>and <b>フィ (fi) </b>
                 are foreign sounds in the Japanese loan words <br/><b>ヴァイオリン (vaiorin, violin)</b> and <b>フィルム (firumu, film)</b> respectively.
-              </div>
-            </div>
-            <div>
-              <b>Long Vowels</b> In Katakana, long vowels are handled differently compared to Hiragana.
+          </div>
+        </div>
+        <div>
+          <b>Long Vowels</b> In Katakana, long vowels are handled differently compared to Hiragana.
                Instead of adding extra vowels to extend the sound, Katakana uses a simple dash-like symbol: <b>ー</b> <br/>
                 This symbol tells you to lengthen the vowel sound of the character it follows. 
                 For example:
-              <div>              
-                <b>サカ (saka) </b> becomes <b>サーカー (sākā, soccer) </b> 
-              </div>
-              <div></div>
-              <div>         
-                <b>ノト (noto)</b> becomes  <b>ノート (nōto, notebook)</b>
-              </div>
-              <div></div>
+          <div>              
+            <b>サカ (saka) </b> becomes <b>サーカー (sākā, soccer) </b> 
+          </div>
+          <div></div>
+          <div>         
+            <b>ノト (noto)</b> becomes  <b>ノート (nōto, notebook)</b>
+          </div>
+          <div></div>
 
               The sound is smooth and continuous, not repeated, 
               making it an important part of writing foreign words or names in Katakana!
-            </div>
-          </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
  

@@ -172,126 +172,121 @@ const HiraganaExplained = () => {
   };
 
   return (
-    <>
+    <div className='max-w-screen-md mx-auto'>
+      <h4 className='text-center text-2xl py-12'>Hiragana Explained</h4>
       <div>
-        <div>
-          <h4 className='text-center text-2xl py-12'>Hiragana Explained</h4>
-          <div>
           Learning hiragana is the first step to learning japanese. By learning all 3 concepts below you will learn the basics of Japanese pronunciation. 
-          </div>
-          <div>
-            <b>Basic Hiragana</b>  has <a onClick={handleProtectedClick(hiraganaBasicWritingSystem)}
-              href={
-                createURL(
-                  LanguageNames.Japanese,
-                  LearningSections.WritingSystem,
-                  hiraganaBasicWritingSystem)
-              }>
+      </div>
+      <div>
+        <b>Basic Hiragana</b>  has <a onClick={handleProtectedClick(hiraganaBasicWritingSystem)}
+          href={
+            createURL(
+              LanguageNames.Japanese,
+              LearningSections.WritingSystem,
+              hiraganaBasicWritingSystem)
+          }>
                       46 sounds</a>. See this table for the basic 
-            <a onClick={toggleBasicHiraganaModal}>
+        <a onClick={toggleBasicHiraganaModal}>
           pattern
-            </a>
-            {isBasicHiraganaModalOpen && (
+        </a>
+        {isBasicHiraganaModalOpen && (
+          <div>
+            <div>
               <div>
-                <div>
-                  <div>
-                    <h3>Hiragana Chart</h3>
-                    <button 
-                      onClick={toggleBasicHiraganaModal}>
+                <h3>Hiragana Chart</h3>
+                <button 
+                  onClick={toggleBasicHiraganaModal}>
     Close
-                    </button>
-                  </div>
-             
-                </div>
-                {basicHiraganaTable}                  
+                </button>
               </div>
-            )}
-
-            {isBasicHiraganaModalOpen && (
-              <div
-                onClick={toggleBasicHiraganaModal}
-              />
-            )}
+             
+            </div>
+            {basicHiraganaTable}                  
           </div>
-          <div>
-            <b>Dakuten and Handakuten</b> lead to another <a onClick={handleProtectedClick(hiraganaDakutenWritingSystem)} 
-              href={
-                createURL(
-                  LanguageNames.Japanese,
-                  LearningSections.WritingSystem,
-                  hiraganaDakutenWritingSystem)
-              }>25 hiragana variations
-              {hiraganaDakutenWritingSystem?.isLocked &&
+        )}
+
+        {isBasicHiraganaModalOpen && (
+          <div
+            onClick={toggleBasicHiraganaModal}
+          />
+        )}
+      </div>
+      <div>
+        <b>Dakuten and Handakuten</b> lead to another <a onClick={handleProtectedClick(hiraganaDakutenWritingSystem)} 
+          href={
+            createURL(
+              LanguageNames.Japanese,
+              LearningSections.WritingSystem,
+              hiraganaDakutenWritingSystem)
+          }>25 hiragana variations
+          {hiraganaDakutenWritingSystem?.isLocked &&
                    lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon/> : ''}
-            </a>. <br></br>
+        </a>. <br></br>
             Dakuten and handakuten are marks added on top of hiragana that alter pronunciation. 
-            <div>
-            </div>
+        <div>
+        </div>
             The dakuten mark is <b>( ゛)</b>. There are 20 dakuten variations. For example: <b>か (ka) → が (ga)</b>. <br></br> 
-            <div>
+        <div>
 
-            </div>
+        </div>
             The handakuten mark is <b>( ゜)</b>. There are 5 variations.  For example: <b>は (ha) → ぱ (pa)</b>.
-            <div>
-              <i>
+        <div>
+          <i>
                   See this useful <a
-                  onClick={toggleDakutenModal}
-                >
+              onClick={toggleDakutenModal}
+            >
           diagram
-                </a> for the general pattern.
-              </i>
-              {isDakutenModalOpen && (
-                <div>
-                  <div>
-                    <button onClick={toggleDakutenModal}>
-            Close
-                    </button>
-                  </div>
-                  {dakutenTable}
-
-                  <div>
-                    (1) ぢ is written in romaji as <b>di</b> but is pronounced <b>ji</b>.
-                  </div>
-                  <div>
-                    (2) づ is written in romaji as <b>du</b> but is pronounced <b>zu</b>.
-                  </div>
-                  
-                </div>
-              )}
-
-              {isDakutenModalOpen && (
-                <div
-                  onClick={toggleDakutenModal}
-                />
-              )}
-            </div>
+            </a> for the general pattern.
+          </i>
+          {isDakutenModalOpen && (
             <div>
+              <div>
+                <button onClick={toggleDakutenModal}>
+            Close
+                </button>
+              </div>
+              {dakutenTable}
 
-            </div>      
-          </div>
-          <div>
-            <b>Yōon</b>  leads to an additional <a onClick={handleProtectedClick(hiraganaYoonWritingSystem)} 
-              href={
-                createURL(
-                  LanguageNames.Japanese,
-                  LearningSections.WritingSystem,
-                  hiraganaYoonWritingSystem)
-              }>
+              <div>
+                    (1) ぢ is written in romaji as <b>di</b> but is pronounced <b>ji</b>.
+              </div>
+              <div>
+                    (2) づ is written in romaji as <b>du</b> but is pronounced <b>zu</b>.
+              </div>
+                  
+            </div>
+          )}
+
+          {isDakutenModalOpen && (
+            <div
+              onClick={toggleDakutenModal}
+            />
+          )}
+        </div>
+        <div>
+
+        </div>      
+      </div>
+      <div>
+        <b>Yōon</b>  leads to an additional <a onClick={handleProtectedClick(hiraganaYoonWritingSystem)} 
+          href={
+            createURL(
+              LanguageNames.Japanese,
+              LearningSections.WritingSystem,
+              hiraganaYoonWritingSystem)
+          }>
                 36 hiragana combinations
-              {hiraganaYoonWritingSystem?.isLocked &&
+          {hiraganaYoonWritingSystem?.isLocked &&
                    lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon/> : ''}
-            </a>
+        </a>
                 . <div></div>
             Some hiragana combine to form Yōon sounds. In these combinations,
               the first character remains full-sized, while the second is smaller.
               Examples like <b>きょ(kyo) </b>and <b>しょ(sho)</b> represent single, blended 
               syllables rather than separate sounds. This blending is crucial in words 
               like <br></br><b>きょう(kyou, today)</b> and <b>しょうがっこう(shougakkou, elementary school)</b>. 
-          </div>
-        </div>
-        
       </div>
-    </>
+    </div>
   );
 }
  
