@@ -62,39 +62,37 @@ const GrammarContent = (
   }
 
   return (
-    <>
-      <div>
-        <div>
-          <h4> {languages[props.languageNumber].languageName} Grammar</h4>
-          <Container>    
-            <NavbarBs>
-              <Container>
-                <div>
-                  <CustomDropDownButton title={'Topic: ' + currentTopic.name}>
-                    {currentLanguage.topics.map((topic: Topic, index: number) =>
-                      <Dropdown.Item key = {index} 
-                        onClick = {() => 
-                          changeCurrentTopic(topic)}>
-                        <div>
-                          {topic.name} {
-                            topic.isLocked 
+    <div className='max-w-screen-md mx-auto'>
+      <h4 className='text-center text-2xl py-12'>
+        {languages[props.languageNumber].languageName} Grammar
+      </h4>
+      <Container>    
+        <NavbarBs>
+          <Container>
+            <div className='flex justify-center'>
+              <CustomDropDownButton title={'Topic: ' + currentTopic.name}>
+                {currentLanguage.topics.map((topic: Topic, index: number) =>
+                  <Dropdown.Item key = {index} 
+                    onClick = {() => 
+                      changeCurrentTopic(topic)}>
+                    <div>
+                      {topic.name} {
+                        topic.isLocked 
                           && lingoCommandIsLocked 
                           && !userIsLoggedIn
                           && <LockIcon/>}
-                        </div>
-                      </Dropdown.Item>)}
-                  </CustomDropDownButton>
-                </div>
-              </Container>
-            </NavbarBs>
-            <p></p>
-            <div>
-              {ShowGrammarExplanation()}
+                    </div>
+                  </Dropdown.Item>)}
+              </CustomDropDownButton>
             </div>
           </Container>
+        </NavbarBs>
+        <p></p>
+        <div>
+          {ShowGrammarExplanation()}
         </div>
-      </div>
-    </>
+      </Container>
+    </div>
   );
 };
  

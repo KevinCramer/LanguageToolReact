@@ -275,35 +275,34 @@ const VocabContent = (
       
   }
   return (
-    <>
-      <div>
-        <h4> 
-          {currentLanguage.languageName} {props.isWritingSystem ? 'Writing Systems' : 'Vocabulary'}
-        </h4>
-        <Container >   
-          <div>
-            <button onClick={displayPopUp}>How to Guide (Video)</button>
-          </div>
-          <NavbarBs>
-            <Container>
-              <div>
-                <CustomDropDownButton title={'Topic: ' + currentTopic.name}>
-                  {(currentLanguage.topics as Topic[]).sort((t1,t2) => ((t1.topicOrder || 0) < (t2.topicOrder || 0)) ? -1 : 1 )
-                    .map((topic: Topic, index: number) =>
-                      <Dropdown.Item 
-                        key = {index} onClick = {() => 
-                          changeCurrentTopic(topic)}>
-                        <div>
-                          {topic.name} {
-                            topic.isLocked 
+    <div>
+      <h4 className='text-center text-2xl py-12'>
+        {currentLanguage.languageName} {props.isWritingSystem ? 'Writing Systems' : 'Vocabulary'}
+      </h4>
+      <Container >   
+        <div>
+          <button onClick={displayPopUp}>How to Guide (Video)</button>
+        </div>
+        <NavbarBs>
+          <Container>
+            <div>
+              <CustomDropDownButton title={'Topic: ' + currentTopic.name}>
+                {(currentLanguage.topics as Topic[]).sort((t1,t2) => ((t1.topicOrder || 0) < (t2.topicOrder || 0)) ? -1 : 1 )
+                  .map((topic: Topic, index: number) =>
+                    <Dropdown.Item 
+                      key = {index} onClick = {() => 
+                        changeCurrentTopic(topic)}>
+                      <div>
+                        {topic.name} {
+                          topic.isLocked 
                           && lingoCommandIsLocked 
                           && !userIsLoggedIn
                           && <LockIcon/>}
-                        </div>
-                      </Dropdown.Item>)}
-                </CustomDropDownButton>
-                <CustomDropDownButton title='Settings' align='end'>
-                  {currentLanguage.numForeignAlphabets > 1 && !currentTopic.isAlphabet &&
+                      </div>
+                    </Dropdown.Item>)}
+              </CustomDropDownButton>
+              <CustomDropDownButton title='Settings' align='end'>
+                {currentLanguage.numForeignAlphabets > 1 && !currentTopic.isAlphabet &&
                   <>
                     <Dropdown.Item>
                 writing system:  &nbsp;
@@ -320,81 +319,80 @@ const VocabContent = (
                     </Dropdown.Item>
                     <hr/>
                   </>
-                  }
+                }
 
-                  {!quiz && <Dropdown.Item
-                    onClick={(event) => {
-                      changeAudioBool();
-                      preventDropdownClose(event);
-                    }}
-                  >
-                    <input
-                      type='checkbox'
-                      checked={audioBool} // Checkbox is checked if showBaseLanguage is true
-                      onChange={changeAudioBool} // Toggle onChange as well
-                    />
-                    show audio</Dropdown.Item>}
-                  {((currentTopic.isAlphabet && !quiz) || !currentTopic.isAlphabet) && <Dropdown.Item onClick={(event) => {
-                    changeBaseLanguage();
+                {!quiz && <Dropdown.Item
+                  onClick={(event) => {
+                    changeAudioBool();
                     preventDropdownClose(event);
-                  }}>
-                    <input
-                      type='checkbox'
-                      checked={!showBaseLanguage} // Checkbox is checked if showBaseLanguage is true
-                      onChange={changeBaseLanguage} // Toggle onChange as well
-                    />
-                    swap columns</Dropdown.Item>}
-                  <Dropdown.Item onClick={(event) => {
-                    changeOrder();
-                    preventDropdownClose(event);
-                  }}>
-                    <input
-                      type='checkbox'
-                      checked={!showTrueOrder} // Checkbox is checked if showBaseLanguage is true
-                      onChange={changeOrder} // Toggle onChange as well
-                    />
-                    random ordering</Dropdown.Item>
-                </CustomDropDownButton>  
-              </div>             
-            </Container>
-          </NavbarBs>
-          <Container>
-            <div>
-              <div>
-                Study
-              </div>
-              <CustomSwitch 
-                onChange = {changeQuizState}
-                checked= {quiz} 
-              /> 
-              <div>
-                 Quiz
-              </div>               
-            </div>
-          </Container>
-          {ToggleQuiz()}
-          <Modal show ={showPopUp} onHide={hidePopUp}>
-            <Modal.Header closeButton>
-              <Modal.Title id='contained-modal-title-vleft'>
-              How to Guide (Video)
-              </Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-              {currentLanguage.languageName === 'Japanese' ? (
-                <div>
-                  <video
-                    controls
-                    src={props.howToGuideVideo}
+                  }}
+                >
+                  <input
+                    type='checkbox'
+                    checked={audioBool} // Checkbox is checked if showBaseLanguage is true
+                    onChange={changeAudioBool} // Toggle onChange as well
                   />
-                </div>
-              ) : (
-                <div>Video coming soon</div>
-              )}
-            </Modal.Body>
-          </Modal>
+                    show audio</Dropdown.Item>}
+                {((currentTopic.isAlphabet && !quiz) || !currentTopic.isAlphabet) && <Dropdown.Item onClick={(event) => {
+                  changeBaseLanguage();
+                  preventDropdownClose(event);
+                }}>
+                  <input
+                    type='checkbox'
+                    checked={!showBaseLanguage} // Checkbox is checked if showBaseLanguage is true
+                    onChange={changeBaseLanguage} // Toggle onChange as well
+                  />
+                    swap columns</Dropdown.Item>}
+                <Dropdown.Item onClick={(event) => {
+                  changeOrder();
+                  preventDropdownClose(event);
+                }}>
+                  <input
+                    type='checkbox'
+                    checked={!showTrueOrder} // Checkbox is checked if showBaseLanguage is true
+                    onChange={changeOrder} // Toggle onChange as well
+                  />
+                    random ordering</Dropdown.Item>
+              </CustomDropDownButton>  
+            </div>             
+          </Container>
+        </NavbarBs>
+        <Container>
+          <div>
+            <div>
+                Study
+            </div>
+            <CustomSwitch 
+              onChange = {changeQuizState}
+              checked= {quiz} 
+            /> 
+            <div>
+                 Quiz
+            </div>               
+          </div>
         </Container>
-      </div>
-    </>
+        {ToggleQuiz()}
+        <Modal show ={showPopUp} onHide={hidePopUp}>
+          <Modal.Header closeButton>
+            <Modal.Title id='contained-modal-title-vleft'>
+              How to Guide (Video)
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            {currentLanguage.languageName === 'Japanese' ? (
+              <div>
+                <video
+                  controls
+                  src={props.howToGuideVideo}
+                />
+              </div>
+            ) : (
+              <div>Video coming soon</div>
+            )}
+          </Modal.Body>
+        </Modal>
+      </Container>
+    </div>
   );
 };
  
