@@ -1,9 +1,10 @@
 const About = () => {
   return (
     <div className='flex flex-col justify-center flex-1 px-4'>
-      <div className='max-w-screen-md mx-auto text-white text-lg md:text-xl rounded-md'>
-        <div className='py-2'>
-          LingoCommand is an educational platform for learning Japanese. It accelerates progress by combining these three key principles:
+      <div className='max-w-screen-md mx-auto  md:text-lg rounded-md'>
+        <h4 className='text-center text-2xl py-12'>Our Mission</h4>
+        <div className='pb-2'>
+        LingoCommand is dedicated to helping people learn Japanese in a streamlined and efficient way. It accelerates your progress by combining these three key principles:
         </div>
         <ul> 
           <li className='py-2'>
@@ -16,8 +17,16 @@ const About = () => {
             <b>Repeated Exposure</b>: Develop your skills through repeated exposure to conversations in Japanese, complemented by targeted reading and listening exercises.
           </li>
         </ul> 
+        <div className='grid grid-cols-2 md:grid-cols-3 gap-4 py-8'>
+          <img src='src/assets/man-studying-1.jpg' alt='Image 1' className='rounded-lg' />
+          <img src='src/assets/woman-studying-1.jpg' alt='Image 4' className='rounded-lg' />
+          <img src='src/assets/man-studying-2.jpg' alt='Image 2' className='rounded-lg' />
+          <img src='src/assets/woman-studying-2.jpg' alt='Image 5' className='rounded-lg' />
+          <img src='src/assets/man-studying-3.jpg' alt='Image 3' className='rounded-lg' />
+          <img src='src/assets/woman-studying-3.jpg' alt='Image 6' className='rounded-lg' />
+        </div>
       </div>
-
+     
     </div>
   );
 };

@@ -16,8 +16,7 @@ const Navbar = () => {
   const pathWithBackground =
   location.pathname === '/' ||
   location.pathname === '/contact' ||
-  location.pathname === '/account' ||
-  location.pathname === '/about';
+  location.pathname === '/account';
 
   // Define dynamic text color class
   const textColorClass = pathWithBackground ? 'text-white' : 'text-black';

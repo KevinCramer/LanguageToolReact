@@ -44,7 +44,7 @@ const App = ()=> {
   const reduxLock = useSelector((state: RootStateLock) => state.lock);
   // @ts-ignore
   const { currentUser } = useAuth();
-  const pathWithBackground = location.pathname === '/' || location.pathname === '/contact' || location.pathname === '/account' || location.pathname === '/about'
+  const pathWithBackground = location.pathname === '/' || location.pathname === '/contact' || location.pathname === '/account'
   
   const userIsLoggedIn = currentUser && currentUser.email
   useEffect(() => {
