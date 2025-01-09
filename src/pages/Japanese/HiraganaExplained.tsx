@@ -172,7 +172,7 @@ const HiraganaExplained = () => {
   };
 
   return (
-    <div className='max-w-screen-md mx-auto px-2 md:text-lg'>
+    <div className='max-w-screen-md mx-auto px-2 text-lg'>
       <h4 className='text-center text-2xl py-12'>Hiragana Explained</h4>
       <div className='py-2'>
           Learning hiragana is the first step to learning japanese.

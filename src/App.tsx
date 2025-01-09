@@ -31,7 +31,7 @@ import VocabContent from './pages/VocabContent'
 import japaneseComprehensionVideo from './data/raw-data/tutorial-videos/japanese-comprehension-tutorial.mp4'
 import japaneseWritingSystemsVideo from './data/raw-data/tutorial-videos/japanese-writing-systems-tutorial.mp4'
 import japaneseVocabGuideVideo from './data/raw-data/tutorial-videos/japanese-vocab-guide.mp4'
-import fujiImage from '/src/assets/mount-fuji-dark.jpg';
+import fujiImage from '/src/assets/mount-fuji.jpg';
 
 const App = ()=> {
   const location = useLocation();

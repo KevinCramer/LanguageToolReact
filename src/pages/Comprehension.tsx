@@ -211,7 +211,7 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
   };
     
   return (
-    <div className='md:text-lg'>
+    <div className='text-lg'>
       <h4 className='text-center text-2xl py-12'>
         {currentLanguage.languageName} Reading and Listening Comprehension
       </h4>

@@ -7,7 +7,7 @@ const KanjiExplained = () => {
   ];
 
   return (
-    <div className='max-w-screen-md mx-auto px-2 md:text-lg'>
+    <div className='max-w-screen-md mx-auto px-2 text-lg'>
       <h4 className='text-center text-2xl py-12'>Kanji Explained</h4>
       <div className='py-2'>
             Kanji are characters used in the Japanese writing system,originally
