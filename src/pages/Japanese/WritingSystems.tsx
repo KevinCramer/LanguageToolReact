@@ -30,7 +30,7 @@ const JapaneseWritingSystems = () => {
   );
 
   return (
-    <div className='max-w-screen-md mx-auto'>
+    <div className='max-w-screen-md mx-auto px-2'>
       <h4 className='text-center text-2xl py-12'>Japanese Writing Systems Explained</h4>
       <div className='py-2'>The Japanese language has 3 writing systems:</div>
       {sections.map((section, index) => (

@@ -10,7 +10,7 @@ const HowToTypeJapanese = () => {
   };
 
   return (
-    <div className='max-w-screen-md mx-auto text-center'>
+    <div className='max-w-screen-md mx-auto text-center px-2'>
       <div>
         <h4 className='text-center text-2xl py-12'>How to Type Japanese</h4>
         <div>
