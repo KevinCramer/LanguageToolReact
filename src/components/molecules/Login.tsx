@@ -37,27 +37,32 @@ export default function Login() {
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
-      <div className="relative bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
-        <div>
-          <div className="flex justify-end pb-2">
-            <button
-              onClick={() => dispatch(hideModal())}
-              aria-label="Close">
-              <svg
-                className="h-6 w-6 fill-current"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24">
-                <path
-                  fillRule="evenodd"
-                  clipRule="evenodd"
-                  d="M19.707 4.293a1 1 0 010 1.414L13.414 12l6.293 6.293a1
-                   1 0 01-1.414 1.414L12 13.414l-6.293 6.293a1 1 0 01-1.414-1.414L10.586
-                  12 4.293 5.707a1 1 0 011.414-1.414L12 10.586l6.293-6.293a1 1 0 011.414 0z"
-                />
-              </svg>
-            </button>
+      <div className="relative bg-white p-6 rounded-lg shadow-lg w-full h-full">
+        <div className="flex justify-end pb-2">
+          <button
+            onClick={() => dispatch(hideModal())}
+            aria-label="Close">
+            <svg
+              className="h-6 w-6 fill-current"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24">
+              <path
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M19.707 4.293a1 1 0 010 1.414L13.414 12l6.293 6.293a1 1 0 01-1.414 1.414L12 13.414l-6.293 6.293a1 1 0 01-1.414-1.414L10.586
+                    12 4.293 5.707a1 1 0 011.414-1.414L12 10.586l6.293-6.293a1 1 0 011.414 0z"
+              />
+            </svg>
+          </button>
+        </div>
+        {/* need to fix the pt-[30vh that is just a hack there should be a way to center the login modal in the center of the screen]*/}
+        <div className='max-w-screen-md mx-auto px-4 md:text-lg'>
+         
+          <h4 className="text-2xl mb-4 text-center p-4">Welcome Back.</h4>
+          <div className="mt-4 flex flex-row justify-center">
+            <div>New to LingoCommand? &nbsp;</div>
+            <CustomLink onClick={() => dispatch(displaySignup())}>Create account</CustomLink>
           </div>
-          <h4 className="text-2xl mb-4 text-center">Log In</h4>
           {error && <div className="bg-red-100 text-red-700 p-3 rounded mb-4">{error}</div>}
           <form onSubmit={handleSubmit}>
             <div className="mb-4">
@@ -103,10 +108,7 @@ export default function Login() {
             </CustomLink>
           </div>
         </div>
-        <div className="mt-4 flex flex-row justify-center">
-          <div>New to LingoCommand? &nbsp;</div>
-          <CustomLink onClick={() => dispatch(displaySignup())}>Create account</CustomLink>
-        </div>
+       
       </div>
     </div>
   );
