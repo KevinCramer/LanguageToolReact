@@ -1,7 +1,7 @@
 const About = () => {
   return (
     <div className='flex flex-col justify-center flex-1 px-4'>
-      <div className='max-w-screen-md mx-auto text-white text-lg rounded-md'>
+      <div className='max-w-screen-md mx-auto text-white text-lg md:text-xl rounded-md'>
         <div className='py-2'>
           LingoCommand is an educational platform for learning Japanese. It accelerates progress by combining these three key principles:
         </div>
