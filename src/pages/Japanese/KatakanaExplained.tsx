@@ -661,7 +661,7 @@ const KatakanaExplained = () => {
       <div>
           Katakana is mainly used to write Japanese loan words. For example in Japanese the word for 'camera' is <b>カメラ (kamera)</b>. Learning all 5 concepts below is essential to learning Japanese.
       </div>
-      <div>
+      <div className='py-2'>
         <b>Basic Katakana</b>  has <a className='text-blue-500 underline' onClick={handleProtectedClick(katakanaBasicWritingSystem)}
           href={
             createURL(
@@ -721,7 +721,7 @@ const KatakanaExplained = () => {
         </div>
              
       </div>
-      <div>
+      <div className='py-2'>
         <b>Dakuten and Handakuten</b> lead to another <a className='text-blue-500 underline' onClick={handleProtectedClick(katakanaDakutenWritingSystem)} 
           href={
             createURL(
@@ -790,7 +790,7 @@ const KatakanaExplained = () => {
           )}
         </div>
       </div>
-      <div>
+      <div className='py-2'>
         <b>Native Yōon sounds</b>  leads to an additional: <a className='text-blue-500 underline' onClick={handleProtectedClick(katakanaYoonWritingSystem)} 
           href={
             createURL(
@@ -832,7 +832,7 @@ const KatakanaExplained = () => {
             )}
           </div>
         </div>
-        <div>
+        <div className='py-2'>
           <b>Foreign Yōon sounds</b>  leads to an additional: <a className='text-blue-500 underline' onClick={handleProtectedClick(katakanaSpecialYoonWritingSystem)} 
             href={
               createURL(
@@ -850,16 +850,16 @@ const KatakanaExplained = () => {
                 are foreign sounds in the Japanese loan words <br/><b>ヴァイオリン (vaiorin, violin)</b> and <b>フィルム (firumu, film)</b> respectively.
           </div>
         </div>
-        <div>
+        <div className='py-2'>
           <b>Long Vowels</b> In Katakana, long vowels are handled differently compared to Hiragana.
                Instead of adding extra vowels to extend the sound, Katakana uses a simple dash-like symbol: <b>ー</b> <br/>
                 This symbol tells you to lengthen the vowel sound of the character it follows. 
                 For example:
-          <div>              
+          <div className='py-2'>            
             <b>サカ (saka) </b> becomes <b>サーカー (sākā, soccer) </b> 
           </div>
           <div></div>
-          <div>         
+          <div className='py-2'>       
             <b>ノト (noto)</b> becomes  <b>ノート (nōto, notebook)</b>
           </div>
           <div></div>

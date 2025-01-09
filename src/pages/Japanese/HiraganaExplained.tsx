@@ -174,11 +174,11 @@ const HiraganaExplained = () => {
   return (
     <div className='max-w-screen-md mx-auto px-2'>
       <h4 className='text-center text-2xl py-12'>Hiragana Explained</h4>
-      <div>
+      <div className='py-2'>
           Learning hiragana is the first step to learning japanese.
           By learning all 3 concepts below you will learn the basics of Japanese pronunciation. 
       </div>
-      <div>
+      <div className='py-2'>
         <b>Basic Hiragana</b>  has <a className='text-blue-500 underline'
           onClick={handleProtectedClick(hiraganaBasicWritingSystem)}
           href={
@@ -213,7 +213,7 @@ const HiraganaExplained = () => {
           />
         )}
       </div>
-      <div>
+      <div className='py-2'>
         <b>Dakuten and Handakuten</b> lead to another <a className='text-blue-500 underline'
           onClick={handleProtectedClick(hiraganaDakutenWritingSystem)} 
           href={
@@ -266,7 +266,7 @@ const HiraganaExplained = () => {
         <div>
         </div>      
       </div>
-      <div>
+      <div className='py-2'>
         <b>Yōon</b>  leads to an additional <a className='text-blue-500 underline'
           onClick={handleProtectedClick(hiraganaYoonWritingSystem)} 
           href={
