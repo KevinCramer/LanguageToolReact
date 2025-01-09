@@ -59,7 +59,7 @@ export default function Login() {
           <h4 className="text-2xl mb-4 text-center ">Welcome Back.</h4>
           <div className="mt-4 flex flex-row justify-center p-4">
             <div>New to LingoCommand? &nbsp;</div>
-            <CustomLink onClick={() => dispatch(displaySignup())}>Create account</CustomLink>
+            <CustomLink onClick={() => dispatch(displaySignup())}>Sign Up</CustomLink>
           </div>
           {error && <div className="bg-red-100 text-red-700 p-3 rounded mb-4">{error}</div>}
           <form onSubmit={handleSubmit}>
