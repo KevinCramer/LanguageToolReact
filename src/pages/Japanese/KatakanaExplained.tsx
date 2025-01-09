@@ -1,11 +1,12 @@
+import { japaneseVocabTopicSlugNames, languages as languagesVocab } 
+  from '../../data/structured-data/words';
 import { LanguageNames, LearningSections } from '../../../types/LearningSectionsTypes';
 import { createURL } from '../../helpers/createURL';
-import { japaneseVocabTopicSlugNames, languages as languagesVocab } from '../../data/structured-data/words';
 
-import { useProtectedLink } from '../../helpers/use-protected-link';
 import { lingoCommandIsLocked } from '../../constants';
 import LockIcon from '@mui/icons-material/Lock';
 import { useAuth } from '../../contexts/AuthContext';
+import { useProtectedLink } from '../../helpers/use-protected-link';
 import { useState } from 'react';
 
 const KatakanaExplained = () => { 
@@ -659,10 +660,13 @@ const KatakanaExplained = () => {
     <div className='max-w-screen-md mx-auto px-2'>
       <h4 className='text-center text-2xl py-12'>Katakana Explained</h4>
       <div>
-          Katakana is mainly used to write Japanese loan words. For example in Japanese the word for 'camera' is <b>カメラ (kamera)</b>. Learning all 5 concepts below is essential to learning Japanese.
+          Katakana is mainly used to write Japanese loan words. For example 
+          in Japanese the word for 'camera' is <b>カメラ (kamera)</b>. 
+          Learning all 5 concepts below is essential to learning Japanese.
       </div>
       <div className='py-2'>
-        <b>Basic Katakana</b>  has <a className='text-blue-500 underline' onClick={handleProtectedClick(katakanaBasicWritingSystem)}
+        <b>Basic Katakana</b>  has <a className='text-blue-500 underline'
+          onClick={handleProtectedClick(katakanaBasicWritingSystem)}
           href={
             createURL(
               LanguageNames.Japanese,
@@ -672,11 +676,11 @@ const KatakanaExplained = () => {
                       46 sounds</a>. 
         <div>
           <i>
-                  Note 1 - See this diagram for basic <a className='text-blue-500 underline'
+                  Note 1 - See this diagram for basic <span className='text-blue-500 underline'
               onClick={toggleBasicKatakanaModal}
             >
           pattern
-            </a>.
+            </span>.
           </i>
           {isBasicKatakanaModalOpen && (
             <div>
@@ -698,11 +702,12 @@ const KatakanaExplained = () => {
         </div>
         <div>
           <i>
-                  Note 2 - Each basic katakana has a matching basic hiragana that produces the same sound. See <a className='text-blue-500 underline'
+                  Note 2 - Each basic katakana has a matching basic hiragana that produces the 
+                  same sound. See <span className='text-blue-500 underline'
               onClick={toggleBasicConversionModal}
             >
           diagram
-            </a>.
+            </span>.
           </i>
           {isBasicConversionModalOpen && (
             <div>
@@ -722,7 +727,9 @@ const KatakanaExplained = () => {
              
       </div>
       <div className='py-2'>
-        <b>Dakuten and Handakuten</b> lead to another <a className='text-blue-500 underline' onClick={handleProtectedClick(katakanaDakutenWritingSystem)} 
+        <b>Dakuten and Handakuten</b> lead to another <a 
+          className='text-blue-500 underline' 
+          onClick={handleProtectedClick(katakanaDakutenWritingSystem)} 
           href={
             createURL(
               LanguageNames.Japanese,
@@ -733,17 +740,19 @@ const KatakanaExplained = () => {
                    lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon/> : ''}
         </a>. <br></br>
             Dakuten and handakuten are marks added on top of katakana that alter pronunciation. 
-            The dakuten mark is <b>( ゛)</b>. There are 20 dakuten variations. For example: <b>カ (ka) → ガ (ga)</b>. <br></br> 
-            The handakuten mark is <b>( ゜)</b>. There are 5 variations. For example: <b>ハ (ha) → パ (pa)</b>.
+            The dakuten mark is <b>( ゛)</b>. There are 20 dakuten variations. 
+            For example: <b>カ (ka) → ガ (ga)</b>. <br></br> 
+            The handakuten mark is <b>( ゜)</b>. There are 5 variations. 
+            For example: <b>ハ (ha) → パ (pa)</b>.
         <div>
         </div>
         <div>
           <i>
-                  Note 1 - See this useful <a className='text-blue-500 underline'
+                  Note 1 - See this useful <span className='text-blue-500 underline'
               onClick={toggleDakutenModal}
             >
           diagram
-            </a> for the general pattern.
+            </span> for the general pattern.
           </i>
           {isDakutenModalOpen && (
             <div>
@@ -768,11 +777,12 @@ const KatakanaExplained = () => {
         </div>
         <div>
           <i>
- Note 2 - Also each dakuten/handakuten katakana has a matching dakuten/hankuten hiragana that produces the same sound. See <a className='text-blue-500 underline'
+          Note 2 - Also each dakuten/handakuten katakana has a matching dakuten/hankuten
+          hiragana that produces the same sound. See <span className='text-blue-500 underline'
               onClick={toggleDakutenConversionModal}
             >
           diagram
-            </a>.
+            </span>.
           </i>
           {isDakutenConversionModalOpen && (
             <div>
@@ -791,7 +801,8 @@ const KatakanaExplained = () => {
         </div>
       </div>
       <div className='py-2'>
-        <b>Native Yōon sounds</b>  leads to an additional: <a className='text-blue-500 underline' onClick={handleProtectedClick(katakanaYoonWritingSystem)} 
+        <b>Native Yōon sounds</b>  leads to an additional: <a className='text-blue-500 underline'
+          onClick={handleProtectedClick(katakanaYoonWritingSystem)} 
           href={
             createURL(
               LanguageNames.Japanese,
@@ -810,11 +821,12 @@ const KatakanaExplained = () => {
           <b>キャリア (kyaria, career)</b> and <b>ミュージック (myūjikku, music)</b>. 
           <div>
             <i>
-                    Note - Each native yōon katakana has a matching yōon hiragana that produces the same sound. See <a className='text-blue-500 underline'
+                    Note - Each native yōon katakana has a matching yōon hiragana that produces the 
+                    same sound. See <span className='text-blue-500 underline'
                 onClick={toggleYoonConversionModal}
               >
           diagram
-              </a>.
+              </span>.
             </i>
             {isYoonConversionModalOpen && (
               <div>
@@ -833,7 +845,9 @@ const KatakanaExplained = () => {
           </div>
         </div>
         <div className='py-2'>
-          <b>Foreign Yōon sounds</b>  leads to an additional: <a className='text-blue-500 underline' onClick={handleProtectedClick(katakanaSpecialYoonWritingSystem)} 
+          <b>Foreign Yōon sounds</b>  leads to an additional: <a 
+            className='text-blue-500 underline' 
+            onClick={handleProtectedClick(katakanaSpecialYoonWritingSystem)} 
             href={
               createURL(
                 LanguageNames.Japanese,
@@ -845,16 +859,17 @@ const KatakanaExplained = () => {
                    lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon/> : ''}
           </a>
           <div>
-                Some sounds from non Japanese languages cannot be captured by the 36 native katakana 
-                yōon sounds. For Example <b>ヴァ (bwa/va) </b>and <b>フィ (fi) </b>
-                are foreign sounds in the Japanese loan words <br/><b>ヴァイオリン (vaiorin, violin)</b> and <b>フィルム (firumu, film)</b> respectively.
+                Some sounds from non Japanese languages cannot be captured by the 
+                36 native katakana yōon sounds. For Example <b>ヴァ (bwa/va) </b>and <b>フィ (fi) </b>
+                are foreign sounds in the Japanese loan words <br/><b>ヴァイオリン (vaiorin, violin)</b>
+                and <b>フィルム (firumu, film)</b> respectively.
           </div>
         </div>
         <div className='py-2'>
           <b>Long Vowels</b> In Katakana, long vowels are handled differently compared to Hiragana.
-               Instead of adding extra vowels to extend the sound, Katakana uses a simple dash-like symbol: <b>ー</b> <br/>
-                This symbol tells you to lengthen the vowel sound of the character it follows. 
-                For example:
+               Instead of adding extra vowels to extend the sound, Katakana uses a simple dash-like
+               symbol: <b>ー</b> <br/> This symbol tells you to lengthen the vowel sound of the 
+               character it follows. For example:
           <div className='py-2'>            
             <b>サカ (saka) </b> becomes <b>サーカー (sākā, soccer) </b> 
           </div>
