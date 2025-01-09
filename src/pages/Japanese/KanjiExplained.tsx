@@ -1,5 +1,11 @@
 const KanjiExplained = () => { 
 
+  const headers = ['Kanji', 'Meaning', 'On’yomi', 'Kun’yomi'];
+  const rows: any[] = [
+    { Kanji: '火', Meaning: 'Fire', 'On’yomi': 'Ka, Hi', 'Kun’yomi': 'Hi, Ho' },
+    { Kanji: '山', Meaning: 'Mountain', 'On’yomi': 'San, Zan', 'Kun’yomi': 'Yama' },
+  ];
+
   return (
     <div className='max-w-screen-md mx-auto px-2'>
       <h4 className='text-center text-2xl py-12'>Kanji Explained</h4>
@@ -21,28 +27,26 @@ const KanjiExplained = () => {
       </div>
       <div className='py-2'>
           Here are some examples:     
-        <table>
+        <table className="table-auto border-collapse border border-black w-full text-left">
           <thead>
-            <tr>
-              <th>Kanji</th>
-              <th>Meaning</th>
-              <th>On’yomi</th>
-              <th>Kun’yomi</th>
+            <tr className="bg-gray-200">
+              {headers.map((header, index) => (
+                <th key={index} className="border border-black px-4 py-2">
+                  {header}
+                </th>
+              ))}
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>火</td>
-              <td>Fire</td>
-              <td>Ka, Hi</td>
-              <td>Hi, Ho</td>
-            </tr>
-            <tr>
-              <td>山</td>
-              <td>Mountain</td>
-              <td>San, Zan</td>
-              <td>Yama</td>
-            </tr>
+            {rows.map((row, rowIndex) => (
+              <tr key={rowIndex}>
+                {headers.map((header, cellIndex) => (
+                  <td key={cellIndex} className="border border-black px-4 py-2">
+                    {row[header]}
+                  </td>
+                ))}
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
