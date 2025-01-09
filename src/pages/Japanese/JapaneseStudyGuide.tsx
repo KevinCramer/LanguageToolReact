@@ -78,7 +78,7 @@ const JapaneseStudyGuide = () => {
   const writingSystems = useJapaneseWritingSystems();
 
   return (
-    <div className='max-w-screen-md mx-auto px-2'>
+    <div className='max-w-screen-md mx-auto px-2 md:text-lg'>
       <h4 className='text-center text-2xl py-10'>Japanese Study Guide</h4>
 
       <div className='py-2'>
