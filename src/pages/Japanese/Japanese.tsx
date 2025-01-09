@@ -20,7 +20,7 @@ const ResourceLink = ({ href, icon, alt, children }: ResourceLinkProps) => (
 
 const Japanese = () => {
   return (
-    <div className='max-w-screen-md mx-auto px-4 text-lg'>
+    <div className='max-w-screen-md mx-auto px-4 md:text-lg'>
       <h4 className='text-center text-2xl py-12'>
         Learn Japanese
       </h4>
