@@ -1,3 +1,11 @@
+import manStudying1 from '../assets/man-studying-1.jpg';
+import manStudying2 from '../assets/man-studying-2.jpg';
+import manStudying3 from '../assets/man-studying-3.jpg';
+
+import womanStudying1 from '../assets/woman-studying-1.jpg'
+import womanStudying2 from '../assets/woman-studying-2.jpg'
+import womanStudying3 from '../assets/woman-studying-3.jpg'
+
 const About = () => {
   return (
     <div className='flex flex-col justify-center flex-1 px-4'>
@@ -18,12 +26,12 @@ const About = () => {
           </li>
         </ul> 
         <div className='grid grid-cols-2 md:grid-cols-3 gap-4 py-8'>
-          <img src='src/assets/man-studying-1.jpg' alt='Image 1' className='rounded-lg' />
-          <img src='src/assets/woman-studying-1.jpg' alt='Image 4' className='rounded-lg' />
-          <img src='src/assets/man-studying-2.jpg' alt='Image 2' className='rounded-lg' />
-          <img src='src/assets/woman-studying-2.jpg' alt='Image 5' className='rounded-lg' />
-          <img src='src/assets/man-studying-3.jpg' alt='Image 3' className='rounded-lg' />
-          <img src='src/assets/woman-studying-3.jpg' alt='Image 6' className='rounded-lg' />
+          <img src={manStudying1} alt='Image 1' className='rounded-lg' />
+          <img src={womanStudying1} alt='Image 4' className='rounded-lg' />
+          <img src={manStudying2} alt='Image 2' className='rounded-lg' />
+          <img src={womanStudying2} alt='Image 5' className='rounded-lg' />
+          <img src={manStudying3} alt='Image 3' className='rounded-lg' />
+          <img src={womanStudying3} alt='Image 6' className='rounded-lg' />
         </div>
       </div>
      
