@@ -1,6 +1,5 @@
-import manStudying1 from '../assets/man-studying-1.jpg';
-
-import womanStudying1 from '../assets/woman-studying-1.jpg'
+import manStudying from '../assets/man-studying.jpg';
+import womanStudying from '../assets/woman-studying.jpg'
 
 const About = () => {
   return (
@@ -22,8 +21,8 @@ const About = () => {
           </li>
         </ul> 
         <div className='grid grid-cols-1 md:grid-cols-2 gap-4 py-8'>
-          <img src={manStudying1} alt='Image 1' className='rounded-lg' />
-          <img src={womanStudying1} alt='Image 6' className='rounded-lg' />
+          <img src={manStudying} alt='Image 1' className='rounded-lg' />
+          <img src={womanStudying} alt='Image 6' className='rounded-lg' />
         </div>
       </div>
      
