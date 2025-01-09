@@ -20,7 +20,7 @@ const About = () => {
             <b>Repeated Exposure</b>: Develop your skills through repeated exposure to conversations in Japanese, complemented by targeted reading and listening exercises.
           </li>
         </ul> 
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-4 py-8'>
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-4 py-2'>
           <img src={manStudying} alt='Image 1' className='rounded-lg' />
           <img src={womanStudying} alt='Image 6' className='rounded-lg' />
         </div>
