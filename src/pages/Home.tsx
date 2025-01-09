@@ -78,7 +78,7 @@ export const Home = () => {
       <div className='m-2 text-white text-xl md:text-3xl tracking-custom'>
         Learn Japanese Faster
       </div>
-      <button className='m-8 p-2 bg-white rounded-md md:text-xl tracking-custom'
+      <button className='m-8 p-2 bg-blue-500 text-white rounded-md md:text-xl tracking-custom'
         onClick={(event) => { navigate('/japanese') }}>
         Start Now 
       </button>
