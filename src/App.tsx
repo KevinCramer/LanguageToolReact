@@ -33,6 +33,7 @@ import japaneseComprehensionVideo from './data/raw-data/tutorial-videos/japanese
 import japaneseWritingSystemsVideo from './data/raw-data/tutorial-videos/japanese-writing-systems-tutorial.mp4'
 import japaneseVocabGuideVideo from './data/raw-data/tutorial-videos/japanese-vocab-guide.mp4'
 import fujiImage from '/src/assets/mount-fuji.jpg';
+import JapaneseNavbar from './pages/Japanese/JapaneseNavbar';
 
 const App = ()=> {
   const location = useLocation();
@@ -76,6 +77,7 @@ const App = ()=> {
         className="bg-cover bg-center w-full h-screen"
       >
         <Navbar/>
+        {location.pathname.includes('japanese') && <JapaneseNavbar/>}
         <Routes>
           <Route path="/about" element={<About />} />
           <Route path="/japanese" element={<Japanese/>} />

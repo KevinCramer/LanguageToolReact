@@ -1,4 +1,4 @@
-import { useLocation, useNavigate } from 'react-router-dom';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 
 export const Home = () => {
@@ -82,7 +82,7 @@ export const Home = () => {
         onClick={(event) => { navigate('/japanese') }}>
         Start Now 
       </button>
-    </div>
+    </div>    
   );
 };
 
