@@ -1,13 +1,11 @@
 import { 
   Topic, 
-  TopicWithOneAlphabet,
-  TopicWithThreeAlphabets,
-  TopicWithTwoAlphabets
+  TopicWithThreeWritingSystems,
 } from '../../types/learningSections/VocabTypes';
 import { lingoCommandIsLocked } from '../constants';
 
 export const sortTopics = (
-  topics: TopicWithOneAlphabet[] | TopicWithTwoAlphabets[] | TopicWithThreeAlphabets[],
+  topics: TopicWithThreeWritingSystems[],
   userIsLoggedIn: boolean,
 ) => {
   return topics.sort((a: Topic, b: Topic) => {

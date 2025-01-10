@@ -1,4 +1,5 @@
 import { japaneseVocabTopicSlugNames, languages as languagesVocab } from '../../data/structured-data/words';
+import { japaneseWritingSystemsTopicSlugNames, writingSystems } from '../../data/structured-data/writingSystems';
 import { LanguageNames, LearningSections } from '../../../types/LearningSectionsTypes';
 import { lingoCommandIsLocked, lockIconStyle, protectedLinkStyle } from '../../constants';
 import { createURL } from '../../helpers/createURL';
@@ -7,9 +8,7 @@ import { useAuth } from '../../contexts/AuthContext';
 import { useProtectedLink } from '../../helpers/use-protected-link';
 
 const useJapaneseVocab = () => {
-  const japaneseVocab = (languagesVocab as any[]).find((l: any) => 
-    l.languageName === 'Japanese' && l.topics.some((topic: any) => !topic.isAlphabet)
-  );
+  const japaneseVocab = languagesVocab[0];
 
   const getVocabTopic = (slugName: string) => 
     japaneseVocab?.topics.find((t: any) => t.slugName === slugName);
@@ -30,21 +29,19 @@ const useJapaneseVocab = () => {
 };
 
 const useJapaneseWritingSystems = () => {
-  const japaneseWritingSystems = (languagesVocab as any[]).find((l: any) => 
-    l.languageName === 'Japanese' && l.topics.some((topic: any) => topic.isAlphabet)
-  );
+  const japaneseWritingSystems = writingSystems[0]
 
   const getWritingSystemTopic = (slugName: string) => 
     japaneseWritingSystems?.topics.find((t: any) => t.slugName === slugName);
 
   return {
-    basicHiragana: getWritingSystemTopic(japaneseVocabTopicSlugNames.basicHiragana),
-    hiraganaDakuten: getWritingSystemTopic(japaneseVocabTopicSlugNames.hiraganaDakuten),
-    hiraganaYoon: getWritingSystemTopic(japaneseVocabTopicSlugNames.hiraganaYoon),
-    basicKatakana: getWritingSystemTopic(japaneseVocabTopicSlugNames.basicKatakana),
-    katakanaDakuten: getWritingSystemTopic(japaneseVocabTopicSlugNames.katakanaDakuten),
-    katakanaYoon: getWritingSystemTopic(japaneseVocabTopicSlugNames.katakanaYoon),
-    katakanaSpecialYoon: getWritingSystemTopic(japaneseVocabTopicSlugNames.katakanaSpecialYoon),
+    basicHiragana: getWritingSystemTopic(japaneseWritingSystemsTopicSlugNames.basicHiragana),
+    hiraganaDakuten: getWritingSystemTopic(japaneseWritingSystemsTopicSlugNames.hiraganaDakuten),
+    hiraganaYoon: getWritingSystemTopic(japaneseWritingSystemsTopicSlugNames.hiraganaYoon),
+    basicKatakana: getWritingSystemTopic(japaneseWritingSystemsTopicSlugNames.basicKatakana),
+    katakanaDakuten: getWritingSystemTopic(japaneseWritingSystemsTopicSlugNames.katakanaDakuten),
+    katakanaYoon: getWritingSystemTopic(japaneseWritingSystemsTopicSlugNames.katakanaYoon),
+    katakanaSpecialYoon: getWritingSystemTopic(japaneseWritingSystemsTopicSlugNames.katakanaSpecialYoon),
   };
 };
 
