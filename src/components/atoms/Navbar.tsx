@@ -19,12 +19,13 @@ const Navbar = () => {
   location.pathname === '/account';
 
   // Define dynamic text color class
-  const textColorClass = pathWithBackground ? 'text-white' : 'text-black';
+  const textColorClass = pathWithBackground ? 'text-white' : 'text-white';
+  const backgroundColorClass = pathWithBackground ? '' : 'bg-gray-500';
   const lineBreakColorClass = pathWithBackground ? 'bg-white opacity-50' : 'bg-black h-0.5 opacity-50';
 
   return (
     <div>
-      <nav className={`flex justify-between items-center px-4 py-0.5 md:text-xl md:tracking-custom ${textColorClass}`}>
+      <nav className={`${backgroundColorClass} flex justify-between items-center px-4 py-0.5 md:text-xl md:tracking-custom ${textColorClass}`}>
         <NavLink to='/'>
           <div className='flex items-center'>
             <img
