@@ -9,7 +9,7 @@ const JapaneseNavbar = () => {
       <NavLink to='/japanese/study-guide'>
           Study Guide
       </NavLink>
-      <NavLink to='/japanese/writing-systems'>
+      <NavLink to='/japanese/writing-systems-explained'>
           Writing Systems
       </NavLink>
       <NavLink to='/japanese/vocabulary'>
