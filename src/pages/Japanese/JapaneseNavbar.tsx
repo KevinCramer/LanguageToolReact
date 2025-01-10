@@ -7,32 +7,32 @@ const JapaneseNavbar = () => {
       <div className="overflow-x-auto whitespace-nowrap">
         <ul className="flex space-x-4 justify-start lg:justify-between">
           <li>
-            <NavLink to='/japanese' className="block px-4 py-2 hover:bg-gray-700">
+            <NavLink to='/japanese' className="block d:px-4 py-2 hover:bg-gray-700">
               Japanese Home Page
             </NavLink>
           </li>
           <li>
-            <NavLink to='/japanese/study-guide' className="block px-4 py-2 hover:bg-gray-700">
+            <NavLink to='/japanese/study-guide' className="block md:px-4 py-2 hover:bg-gray-700">
               Study Guide
             </NavLink>
           </li>
           <li>
-            <NavLink to='/japanese/writing-systems-explained' className="block px-4 py-2 hover:bg-gray-700">
+            <NavLink to='/japanese/writing-systems-explained' className="block md:px-4 py-2 hover:bg-gray-700">
               Writing Systems
             </NavLink>
           </li>
           <li>
-            <NavLink to='/japanese/vocabulary' className="block px-4 py-2 hover:bg-gray-700">
+            <NavLink to='/japanese/vocabulary' className="block md:px-4 py-2 hover:bg-gray-700">
               Vocabulary
             </NavLink>
           </li>
           <li>
-            <NavLink to='/japanese/grammar/keigo' className="block px-4 py-2 hover:bg-gray-700">
+            <NavLink to='/japanese/grammar/keigo' className="block md:px-4 py-2 hover:bg-gray-700">
               Grammar
             </NavLink>
           </li>
           <li>
-            <NavLink to='/japanese/comprehension/aikos-book-sanctuary' className="block px-4 py-2 hover:bg-gray-700">
+            <NavLink to='/japanese/comprehension/aikos-book-sanctuary' className="block md:px-4 py-2 hover:bg-gray-700">
               Reading/Listening
             </NavLink>
           </li>
