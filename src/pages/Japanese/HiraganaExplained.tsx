@@ -198,7 +198,7 @@ const HiraganaExplained = () => {
             Firstly hiragana has 46 basic sounds. See this table below for the basic pattern:
           </div>
         
-          <div className='p-4'>
+          <div className='py-4'>
             {basicHiraganaTable}
           </div>
           <div className="flex flex-col space-y-2 justify-center items-center m-8">
