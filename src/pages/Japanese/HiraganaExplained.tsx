@@ -7,7 +7,6 @@ import LockIcon from '@mui/icons-material/Lock';
 import { useAuth } from '../../contexts/AuthContext';
 import { useProtectedLink } from '../../helpers/use-protected-link';
 import { useState } from 'react';
-import WritingSystems from '../WritingSystems';
 
 const HiraganaExplained = () => { 
   //@ts-ignore
@@ -174,18 +173,13 @@ const HiraganaExplained = () => {
       <h4 className='text-center text-2xl py-12'>Hiragana Explained</h4>
       <div className='py-2'>
           Learning hiragana is the first step to learning japanese.
-          By learning all 3 concepts below you will learn the basics of Japanese pronunciation. 
+          By learning all three lessons in order you will learn the basics of Japanese pronunciation. 
       </div>
       <div className='py-2'>
-        <b>Basic Hiragana</b>  has <a className='text-blue-500 underline'
-          onClick={handleProtectedClick(hiraganaBasicWritingSystem)}
-          href={
-            createURL(
-              LanguageNames.Japanese,
-              LearningSections.WritingSystem,
-              hiraganaBasicWritingSystem)
-          }>
-          46 sounds</a>. See this table for the basic <span className='text-blue-500 underline'
+        <div>
+          <b className='underline'>Lesson 1: </b>
+        </div>
+        Basic hiragana  has 46 sounds. See this table for the basic <span className='text-blue-500 underline'
           onClick={toggleBasicHiraganaModal}>
           pattern
         </span>
@@ -211,23 +205,33 @@ const HiraganaExplained = () => {
           />
         )}
       </div>
-      <div className='py-2'>
-        <b>Dakuten and Handakuten</b> lead to another <a className='text-blue-500 underline'
-          onClick={handleProtectedClick(hiraganaDakutenWritingSystem)} 
+      <div className='flex flex-col space-y-2 justify-center items-center m-8'>
+        <a className='text-black border text-center border-black bg-gray-200 active:bg-gray-50 hover:bg-gray-400 border-black p-2 rounded-md'
+          onClick={handleProtectedClick(hiraganaBasicWritingSystem)}
           href={
             createURL(
               LanguageNames.Japanese,
               LearningSections.WritingSystem,
-              hiraganaDakutenWritingSystem)
-          }>25 hiragana variations
-          {hiraganaDakutenWritingSystem?.isLocked &&
-                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon/> : ''}
-        </a>. <br></br>
-            Dakuten and handakuten are marks added on top of hiragana that alter pronunciation. 
+              hiraganaBasicWritingSystem)
+          }>
+            Basic Hiragana Exercise</a> 
+      </div>
+      
+      <div className='py-2'>
+        <div>
+          <b className='underline'>Lesson 2: </b>
+        </div>
+        <div>
+          Dakuten and Handakuten lead to another 25 hiragana variations. 
+        </div>
+        <br></br>
+        <div>
+          Dakuten and handakuten are marks added on top of hiragana that alter pronunciation. 
+        </div>
         <div>
         </div>
             The dakuten mark is <b>( ゛)</b>. There are 20 dakuten variations.
-            For example: <b>か (ka) → が (ga)</b>. <br></br> 
+            For example: <b>か (ka) → が (ga)</b>. 
         <div>
         </div>
             The handakuten mark is <b>( ゜)</b>. There are 5 variations.
@@ -264,20 +268,25 @@ const HiraganaExplained = () => {
         <div>
         </div>      
       </div>
-      <div className='py-2'>
-        <b>Yōon</b>  leads to an additional <a className='text-blue-500 underline'
-          onClick={handleProtectedClick(hiraganaYoonWritingSystem)} 
+      <div className='flex flex-col space-y-2 justify-center items-center m-8'>
+        <a className='text-black border text-center border-black bg-gray-200 active:bg-gray-50 hover:bg-gray-400 border-black p-2 rounded-md'
+          onClick={handleProtectedClick(hiraganaDakutenWritingSystem)} 
           href={
             createURL(
               LanguageNames.Japanese,
               LearningSections.WritingSystem,
-              hiraganaYoonWritingSystem)
-          }>
-                36 hiragana combinations
-          {hiraganaYoonWritingSystem?.isLocked &&
+              hiraganaDakutenWritingSystem)
+          }> Hiragana with Dakuten and Handakuten Exercise
+          {hiraganaDakutenWritingSystem?.isLocked &&
                    lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon/> : ''}
         </a>
-                . <div></div>
+      </div>
+     
+      <div className='py-2'>
+        <div>
+          <b className='underline'>Lesson 3: </b>
+        </div>
+        Yōon  leads to an additional 36 hiragana variations.
             Some hiragana combine to form Yōon sounds. In these combinations,
               the first character remains full-sized, while the second is smaller.
               Examples like <b>きょ(kyo) </b>and <b>しょ(sho)</b> represent single, blended 
@@ -285,7 +294,24 @@ const HiraganaExplained = () => {
               like <br></br><b>きょう(kyou, today)</b> and <b>
               しょうがっこう(shougakkou, elementary school)</b>. 
       </div>
+      <div className='flex flex-col space-y-2 justify-center items-center m-8'>
+   
+        <a className='text-black border text-centers border-black bg-gray-200 active:bg-gray-50 hover:bg-gray-400 border-black p-2 rounded-md'
+          onClick={handleProtectedClick(hiraganaYoonWritingSystem)} 
+          href={
+            createURL(
+              LanguageNames.Japanese,
+              LearningSections.WritingSystem,
+              hiraganaYoonWritingSystem)
+          }>
+               Study Hiragana Yoōn combinations
+          {hiraganaYoonWritingSystem?.isLocked &&
+                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon/> : ''}
+        </a>
+      </div>
+    
     </div>
+    
   );
 }
  
