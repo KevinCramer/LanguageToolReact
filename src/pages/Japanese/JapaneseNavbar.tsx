@@ -5,7 +5,7 @@ const JapaneseNavbar = () => {
     <nav className="bg-gray-500 text-white p-4">
       {/* Add a wrapper div with horizontal overflow */}
       <div className="overflow-x-auto whitespace-nowrap">
-        <ul className="flex space-x-4 justify-start lg:justify-around">
+        <ul className="flex space-x-4 justify-start lg:justify-between">
           <li>
             <NavLink to='/japanese' className="block px-4 py-2 hover:bg-gray-700">
               Japanese Home Page
