@@ -1,5 +1,4 @@
-import { japaneseVocabTopicSlugNames, languages as languagesVocab } 
-  from '../../data/structured-data/words';
+import { japaneseWritingSystemsTopicSlugNames, writingSystems } from '../../data/structured-data/writingSystems';
 import { LanguageNames, LearningSections } from '../../../types/LearningSectionsTypes';
 import { createURL } from '../../helpers/createURL';
 
@@ -15,20 +14,17 @@ const KatakanaExplained = () => {
   const userIsLoggedIn = currentUser && currentUser.email
   const handleProtectedClick = useProtectedLink();
 
-  const japaneseWritingSystems = (languagesVocab as any[]).find((l: any) => {
-    return l.languageName === 'Japanese' && 
-           l.topics.some((topic: any) => topic.isAlphabet);
-  });
+  const japaneseWritingSystems = writingSystems[0];
 
   const katakanaBasicWritingSystem = japaneseWritingSystems?.topics
-    .find((t: any)=> t.slugName === japaneseVocabTopicSlugNames.basicKatakana)
+    .find((t: any)=> t.slugName === japaneseWritingSystemsTopicSlugNames.basicKatakana)
   const katakanaDakutenWritingSystem = japaneseWritingSystems?.topics
-    .find((t: any)=> t.slugName === japaneseVocabTopicSlugNames.katakanaDakuten)
+    .find((t: any)=> t.slugName === japaneseWritingSystemsTopicSlugNames.katakanaDakuten)
   const katakanaYoonWritingSystem = japaneseWritingSystems?.topics
-    .find((t: any)=> t.slugName === japaneseVocabTopicSlugNames.katakanaYoon)
+    .find((t: any)=> t.slugName === japaneseWritingSystemsTopicSlugNames.katakanaYoon)
 
   const katakanaSpecialYoonWritingSystem = japaneseWritingSystems?.topics
-    .find((t: any)=> t.slugName === japaneseVocabTopicSlugNames.katakanaSpecialYoon)
+    .find((t: any)=> t.slugName === japaneseWritingSystemsTopicSlugNames.katakanaSpecialYoon)
 
   const [isBasicKatakanaModalOpen, setBasicKatakanaModalOpen] = useState(false);
 

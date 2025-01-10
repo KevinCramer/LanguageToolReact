@@ -45,7 +45,9 @@ const App = ()=> {
   const reduxLock = useSelector((state: RootStateLock) => state.lock);
   // @ts-ignore
   const { currentUser } = useAuth();
-  const pathWithBackground = location.pathname === '/' || location.pathname === '/contact' || location.pathname === '/account'
+  const pathWithBackground = location.pathname === '/' 
+  || location.pathname === '/contact' 
+  || location.pathname === '/account'
   
   const userIsLoggedIn = currentUser && currentUser.email
   useEffect(() => {
@@ -57,7 +59,7 @@ const App = ()=> {
   return (
     <>
       {pathWithBackground && <div
-        id="japanese-background-container"
+        id="fuji-background-container"
         className="bg-cover bg-center w-full h-screen"
         style={{ backgroundImage: `url(${fujiImage})` }}
       >
@@ -65,33 +67,20 @@ const App = ()=> {
         <Routes>
           <Route path="/" element={<Home/>} />
           <Route path="/explore" element={ <Home />} />
-          <Route path="/about" element={<About />} />
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/account" element={<Account />} />
-          <Route path="/japanese" element={<Japanese/>} />
-          <Route path="/japanese/vocabulary" element={<VocabContent howToGuideVideo={japaneseVocabGuideVideo} />} />
-          <Route path="/japanese/writing-systems-explained" element={<JapaneseWritingSystems />} />
-          <Route path="/japanese/hiragana-explained" element={<HiraganaExplained />} />
-          <Route path="/japanese/katakana-explained" element={<KatakanaExplained />} />
-          <Route path="/japanese/kanji-explained" element={<KanjiExplained />} />
-          <Route path="/japanese/how-to-type-japanese" element={<HowToTypeJapanese />} />
-          <Route path="/japanese/writing-systems" element={<WritingSystems howToGuideVideo={japaneseWritingSystemsVideo} />} />
-          <Route path="/japanese/study-guide" element={<JapaneseStudyGuide/>} />
-          <Route path="/japanese/grammar/:topicSlug" element={<GrammarContent languageNumber={0} />} />
-          <Route path="/japanese/comprehension/:topicSlug" element={<Comprehension languageNumber={0} howToGuideVideo={japaneseComprehensionVideo}/>} />
-          <Route path="/*" element={<Custom404Error/>} />
         </Routes>
       </div>}
-      {!pathWithBackground && <div>
+      {!pathWithBackground && <div
+        id="white-background-container"
+        className="bg-cover bg-center w-full h-screen"
+      >
         <Navbar/>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/explore" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<ContactUs />} />
-          <Route path="/account" element={<Account />} />
           <Route path="/japanese" element={<Japanese/>} />
-          <Route path="/japanese/vocabulary" element={<VocabContent howToGuideVideo={japaneseVocabGuideVideo} />} />
+          <Route path="/japanese/vocabulary" 
+            element={<VocabContent howToGuideVideo={japaneseVocabGuideVideo} />} />
           <Route path="/japanese/writing-systems-explained" element={<JapaneseWritingSystems />} />
           <Route path="/japanese/hiragana-explained" element={<HiraganaExplained />} />
           <Route path="/japanese/katakana-explained" element={<KatakanaExplained />} />
