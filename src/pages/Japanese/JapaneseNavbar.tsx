@@ -4,7 +4,7 @@ const JapaneseNavbar = () => {
   return (
     <nav className='flex justify-around p-4 bg-gray-500 text-white'>
       <NavLink to='/japanese'>
-          Japanese Home Pages
+          Japanese Home Page
       </NavLink>
       <NavLink to='/japanese/study-guide'>
           Study Guide
