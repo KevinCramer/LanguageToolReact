@@ -13,7 +13,6 @@ const StudyElement = (
     showAudio: boolean,
     showBaseLanguageFirst: boolean,
     strokeOrderVideo?: any,
-    pronouns: string[]
     showLeftLabel: boolean, 
   }) => 
 {
@@ -26,7 +25,6 @@ const StudyElement = (
       showAudio,
       showBaseLanguageFirst,
       strokeOrderVideo,
-      pronouns,
       showLeftLabel
     } = props
 

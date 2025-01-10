@@ -1,5 +1,5 @@
-import { japaneseVocabTopicSlugNames, languages as languagesVocab }
-  from '../../data/structured-data/words';
+import { japaneseWritingSystemsTopicSlugNames, writingSystems }
+  from '../../data/structured-data/writingSystems';
 import { LanguageNames, LearningSections } from '../../../types/LearningSectionsTypes';
 import { createURL } from '../../helpers/createURL';
 import { lingoCommandIsLocked } from '../../constants';
@@ -7,6 +7,7 @@ import LockIcon from '@mui/icons-material/Lock';
 import { useAuth } from '../../contexts/AuthContext';
 import { useProtectedLink } from '../../helpers/use-protected-link';
 import { useState } from 'react';
+import WritingSystems from '../WritingSystems';
 
 const HiraganaExplained = () => { 
   //@ts-ignore
@@ -14,17 +15,14 @@ const HiraganaExplained = () => {
   const userIsLoggedIn = currentUser && currentUser.email
   const handleProtectedClick = useProtectedLink();
 
-  const japaneseWritingSystems = (languagesVocab as any[]).find((l: any) => {
-    return l.languageName === 'Japanese' && 
-           l.topics.some((topic: any) => topic.isAlphabet);
-  });
+  const japaneseWritingSystems = writingSystems[0]
 
   const hiraganaBasicWritingSystem = japaneseWritingSystems?.topics
-    .find((t: any)=> t.slugName === japaneseVocabTopicSlugNames.basicHiragana)
+    .find((t: any)=> t.slugName === japaneseWritingSystemsTopicSlugNames.basicHiragana)
   const hiraganaDakutenWritingSystem = japaneseWritingSystems?.topics
-    .find((t: any)=> t.slugName === japaneseVocabTopicSlugNames.hiraganaDakuten)
+    .find((t: any)=> t.slugName === japaneseWritingSystemsTopicSlugNames.hiraganaDakuten)
   const hiraganaYoonWritingSystem = japaneseWritingSystems?.topics
-    .find((t: any)=> t.slugName === japaneseVocabTopicSlugNames.hiraganaYoon)
+    .find((t: any)=> t.slugName === japaneseWritingSystemsTopicSlugNames.hiraganaYoon)
 
   const dakutenTable = <table>
     <thead>

@@ -17,25 +17,19 @@ export const getCheckoutUrl = async (
   const userId = auth.currentUser?.uid;
   if (!userId) throw new Error('User is not authenticated');
 
-  console.log('1')
   const db = getFirestore(app);
-  console.log('db: ', db)
-  console.log('2')
   const checkoutSessionRef = collection(
     db,
     'customers',
     userId,
     'checkout_sessions'
   );
-  console.log('checkoutSessionRef: ', checkoutSessionRef)
 
-  console.log('window.location.origin: ', window.location.origin)
   const docRef = await addDoc(checkoutSessionRef, {
     price: priceId,
     success_url: window.location.origin,
     cancel_url: window.location.origin,
   });
-  console.log('4')
 
   return new Promise<string>((resolve, reject) => {
     const unsubscribe = onSnapshot(docRef, (snap) => {
@@ -48,7 +42,6 @@ export const getCheckoutUrl = async (
         reject(new Error(`An error occurred: ${error.message}`));
       }
       if (url) {
-        console.log('Stripe Checkout URL:', url);
         unsubscribe();
         resolve(url);
       }
@@ -74,7 +67,6 @@ export const getPortalUrl = async (app: FirebaseApp): Promise<string> => {
 
     // Add a type to the data
     dataWithUrl = data as { url: string };
-    console.log('Reroute to Stripe portal: ', dataWithUrl.url);
   } catch (error) {
     console.error(error);
   }

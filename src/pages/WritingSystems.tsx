@@ -8,7 +8,7 @@ import {
 import { queryParamCompress, queryParamDecompress } from '../helpers/query-param-helpers'
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { languages as allLanguages } from '../data/structured-data/words';
+import { writingSystems as allWritingSystems } from '../data/structured-data/writingSystems';
 import CustomDropDownButton from '../components/atoms/CustomDropDownButton';
 import CustomSwitch from '../components/atoms/CustomSwitch';
 import { denyPermission } from '../redux-store/lock';
@@ -23,7 +23,7 @@ import { useAuth } from '../contexts/AuthContext'
 import { useDispatch } from 'react-redux';
 import { sortTopics } from '../helpers/words-data-helper';
 
-const VocabContent = (
+const WritingSystems = (
   props: {
     howToGuideVideo?: any
    }) => {
@@ -33,9 +33,9 @@ const VocabContent = (
   
   const userIsLoggedIn = currentUser && currentUser.email
 
-  let languages = allLanguages.map(language => ({
-    ...language, // Spread the existing language properties
-    topics: sortTopics(language.topics, userIsLoggedIn), // Replace topics with sorted ones
+  let writingSystems = allWritingSystems.map(writingSystem => ({
+    ...writingSystem, // Spread the existing language properties
+    topics: sortTopics(writingSystem.topics, userIsLoggedIn), // Replace topics with sorted ones
   }));
   const dispatch = useDispatch();
 
@@ -45,8 +45,7 @@ const VocabContent = (
   const urlSettings = JSON.parse(
     queryParamDecompress(urlSearchParams.get('s') as string) as string
   ) || []
-  const urlLanguage = urlSettings[0]
-  var currentLanguage: VocabLanguage = languages[0]
+  var currentLanguage: VocabLanguage = writingSystems[0]
   var [currentLanguage,setLanguage] = useState(currentLanguage);
  
   const urlTopic = urlSettings[1]
@@ -234,7 +233,7 @@ const VocabContent = (
   return (
     <div>
       <h4 className='text-center text-2xl py-12'>
-        {currentLanguage.languageName} Vocabulary
+        {currentLanguage.languageName} Writing Systems
       </h4>
       <Container >   
         <div>
@@ -353,4 +352,4 @@ const VocabContent = (
   );
 };
  
-export default VocabContent;
+export default WritingSystems;
