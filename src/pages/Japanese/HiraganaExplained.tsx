@@ -168,18 +168,6 @@ const HiraganaExplained = () => {
     </div>
   );
 
-  const [isDakutenModalOpen, setDakutenModalOpen] = useState(false);
-
-  const toggleDakutenModal = () => {
-    setDakutenModalOpen(!isDakutenModalOpen);
-  };
-
-  const [isBasicHiraganaModalOpen, setBasicHiraganaModalOpen] = useState(false);
-
-  const toggleBasicHiraganaModal = () => {
-    setBasicHiraganaModalOpen(!isBasicHiraganaModalOpen);
-  };
-
   const LessonContent = () => {
     switch (currentLesson) {
     case 1:
