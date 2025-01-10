@@ -16,21 +16,18 @@ const StudyElement = (
     showLeftLabel: boolean, 
   }) => 
 {
+  const {
+    BaseLanguageWord,
+    ForeignLanguageWord,
+    ForeignLanguageWordAudio,
+    showAudio,
+    showBaseLanguageFirst,
+    strokeOrderVideo,
+    showLeftLabel
+  } = props;
 
-  const 
-    {
-      BaseLanguageWord,
-      ForeignLanguageWord,
-      ForeignLanguageWordAudio,
-      showAudio,
-      showBaseLanguageFirst,
-      strokeOrderVideo,
-      showLeftLabel
-    } = props
-
-  var showPopUp = false;
-  var [showPopUp,setShowPopUp] = useState(showPopUp)
-  var [isPlaying, setIsPlaying] = useState(false);
+  const [showPopUp, setShowPopUp] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   const handleAudioToggle = () => {
     const audio = document.getElementById(ForeignLanguageWordAudio) as HTMLAudioElement;
@@ -60,45 +57,56 @@ const StudyElement = (
     }
   }, [ForeignLanguageWordAudio]);
 
-  const hidePopUp = () => { return setShowPopUp(false)}
-  const displayPopUp = () => { return setShowPopUp(true)}
+  const hidePopUp = () => setShowPopUp(false);
+  const displayPopUp = () => setShowPopUp(true);
+
   const baseLanguageLabel = <label
-    // this onClick function is a complicated mess. This while component needs massive refactor + e2e tests. 
-    onClick={ ((showBaseLanguageFirst && !strokeOrderVideo ) || (!showBaseLanguageFirst && strokeOrderVideo)) ? displayPopUp : ()=> {}}>
-    <>{BaseLanguageWord}</> </label>
+    onClick={((showBaseLanguageFirst && !strokeOrderVideo) || (!showBaseLanguageFirst && strokeOrderVideo)) ? displayPopUp : () => {}}>
+    <>{BaseLanguageWord}</>
+  </label>;
+
   const foreignLanguageLabelStrokeOrder = <label
-    onClick={showBaseLanguageFirst ? displayPopUp : ()=> {}}> <> {ForeignLanguageWord}</></label>
+    onClick={showBaseLanguageFirst ? displayPopUp : () => {}}>
+    <> {ForeignLanguageWord}</>
+  </label>;
+
   const foreignLanguageLabel = (strokeOrderVideo ? foreignLanguageLabelStrokeOrder : 
-    <label><>{ForeignLanguageWord}</></label>)
+    <label><>{ForeignLanguageWord}</></label>);
+
   return (
     <Navbar>
       { showLeftLabel ? baseLanguageLabel : foreignLanguageLabel}
-      {showAudio && (showBaseLanguageFirst ? !showLeftLabel : showLeftLabel) && <div>
-        <audio src={ForeignLanguageWordAudio} id={ForeignLanguageWordAudio}></audio>
-        <CustomButton disabled={!ForeignLanguageWord} onClick={handleAudioToggle}>
-          {ForeignLanguageWordAudio ? 
-            <VolumeUpIcon/> :
-            <VolumeOffIcon />}
-        </CustomButton>
-      </div>}
-      { strokeOrderVideo && <Modal show={showPopUp} onHide={hidePopUp} size='lg' centered>
-        <Modal.Header closeButton>
-          <Modal.Title>
-            {ForeignLanguageWord.toString() + ' - Hiragana Stroke Order'}
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <div>
-            <video width='100%' controls>
-              <source src={strokeOrderVideo} type='video/mp4'/>
-              Your browser does not support the video tag.
-            </video>
-          </div>
-        </Modal.Body>
-      </Modal>}
+      {showAudio && (showBaseLanguageFirst ? !showLeftLabel : showLeftLabel) && (
+        <div>
+          <audio src={ForeignLanguageWordAudio} id={ForeignLanguageWordAudio}></audio>
+          <CustomButton disabled={!ForeignLanguageWord} onClick={handleAudioToggle}>
+            {ForeignLanguageWordAudio ? (
+              <VolumeUpIcon className={isPlaying ? 'text-blue-500' : ''} />
+            ) : (
+              <VolumeOffIcon />
+            )}
+          </CustomButton>
+        </div>
+      )}
+      {strokeOrderVideo && (
+        <Modal show={showPopUp} onHide={hidePopUp} size='lg' centered>
+          <Modal.Header closeButton>
+            <Modal.Title>
+              {ForeignLanguageWord.toString() + ' - Hiragana Stroke Order'}
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <div>
+              <video width='100%' controls>
+                <source src={strokeOrderVideo} type='video/mp4'/>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </Modal.Body>
+        </Modal>
+      )}
     </Navbar>
+  );
+};
 
-  )
-}
- 
 export default StudyElement;
