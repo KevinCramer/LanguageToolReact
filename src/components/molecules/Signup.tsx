@@ -1,79 +1,123 @@
-import { Alert, Button, Card, Form } from 'react-bootstrap'
-import { displayLogin, hideModal } from '../../redux-store/auth'
-import { useRef, useState } from 'react'
-import CustomLink from '../atoms/CustomLink'
-import { useAuth } from '../../contexts/AuthContext'
-import { useDispatch } from 'react-redux'
+import { displayLogin, hideModal } from '../../redux-store/auth';
+import { useRef, useState } from 'react';
+import CustomLink from '../atoms/CustomLink';
+import { useAuth } from '../../contexts/AuthContext';
+import { useDispatch } from 'react-redux';
 
 export default function Signup() {
   const dispatch = useDispatch();
   const emailRef = useRef<HTMLInputElement>(null);
-  const passwordRef = useRef()
-  const passwordConfirmRef = useRef()
+  const passwordRef = useRef<HTMLInputElement>(null);
+  const passwordConfirmRef = useRef<HTMLInputElement>(null);
   // @ts-ignore
-  const { signup } = useAuth()
-  const [error, setError] = useState('')
-  const [loading, setLoading] = useState(false)
+  const { signup } = useAuth();
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
 
-  // @ts-ignore
-  async function handleSubmit(e) {
-    e.preventDefault()
+  async function handleSubmit(e: any) {
+    e.preventDefault();
     // @ts-ignore
     if (passwordRef.current.value !== passwordConfirmRef.current.value) {
-      return setError('Passwords do not match')
+      return setError('Passwords do not match');
     }
-
-    // if( emailRef.current && emailRef.current.value !== 'kevincramer1996@gmail.com') {
-    //   return setError('Sorry we are currently not accepting signups to avoid incurring the ICO data protection fee. ')
-    // }
 
     try {
-      setError('')
-      setLoading(true)
+      setError('');
+      setLoading(true);
       // @ts-ignore
-      await signup(emailRef.current.value, passwordRef.current.value)
-      // @ts-ignore
+      await signup(emailRef.current.value, passwordRef.current.value);
       dispatch(hideModal());
-    } catch(error) {
-      setError(`Failed to create an account. The error is: ${error}`)
+    } catch (error) {
+      setError(`Failed to create an account. The error is: ${error}`);
     }
 
-    setLoading(false)
+    setLoading(false);
   }
 
   return (
-    <>
-      <Card>
-        <Card.Body>
-          <h2>Sign Up</h2>
-          {error && <Alert variant='danger'>{error}</Alert>}
-          <Form onSubmit={handleSubmit}>
-            <Form.Group id='email'>
-              <Form.Label>Email</Form.Label>
-              {/* @ts-ignore */}
-              <Form.Control type='email' ref={emailRef} required />
-            </Form.Group>
-            <Form.Group id='password'>
-              <Form.Label>Password</Form.Label>
-              {/* @ts-ignore */}
-              <Form.Control type='password' ref={passwordRef} required />
-            </Form.Group>
-            <Form.Group id='password-confirm'>
-              <Form.Label>Password Confirmation</Form.Label>
-              {/* @ts-ignore */}
-              <Form.Control type='password' ref={passwordConfirmRef} required />
-            </Form.Group>
-            <Button disabled={loading} type='submit'>
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+      <div className="relative bg-white p-6 shadow-lg w-full h-full flex items-center justify-center">
+        <div className="max-w-screen-md mx-auto px-4 md:text-lg">
+          <div className="flex justify-end pb-2">
+            <button
+              onClick={() => dispatch(hideModal())}
+              aria-label="Close"
+            >
+              <svg
+                className="h-6 w-6 fill-current"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fillRule="evenodd"
+                  clipRule="evenodd"
+                  d="M19.707 4.293a1 1 0 010 1.414L13.414 12l6.293 6.293a1 1 0 01-1.414 1.414L12 13.414l-6.293 6.293a1 1 0 01-1.414-1.414L10.586 12 4.293 5.707a1 1 0 011.414-1.414L12 10.586l6.293-6.293a1 1 0 011.414 0z"
+                />
+              </svg>
+            </button>
+          </div>
+          <h4 className="text-2xl mb-4 text-center">Sign Up</h4>
+          {error && (
+            <div className="bg-red-100 text-red-700 p-3 rounded mb-4">
+              {error}
+            </div>
+          )}
+          <form onSubmit={handleSubmit}>
+            <div className="mb-4">
+              <label htmlFor="email" className="block text-sm font-medium">
+                Email
+              </label>
+              <input
+                type="email"
+                id="email"
+                ref={emailRef}
+                required
+                className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+              />
+            </div>
+            <div className="mb-4">
+              <label htmlFor="password" className="block text-sm font-medium">
+                Password
+              </label>
+              <input
+                type="password"
+                id="password"
+                ref={passwordRef}
+                required
+                className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+              />
+            </div>
+            <div className="mb-4">
+              <label
+                htmlFor="password-confirm"
+                className="block text-sm font-medium"
+              >
+                Password Confirmation
+              </label>
+              <input
+                type="password"
+                id="password-confirm"
+                ref={passwordConfirmRef}
+                required
+                className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+              />
+            </div>
+            <button
+              type="submit"
+              disabled={loading}
+              className="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 disabled:opacity-50"
+            >
               Sign Up
-            </Button>
-          </Form>
-        </Card.Body>
-      </Card>
-      <div>
-        Already have an account?&nbsp;<CustomLink onClick={() => dispatch(displayLogin())}>
-          Log In
-        </CustomLink>
+            </button>
+          </form>
+          <div className="mt-4 flex flex-row justify-center">
+            <div>Already have an account?&nbsp;</div>
+            <CustomLink onClick={() => dispatch(displayLogin())}>
+              Log In
+            </CustomLink>
+          </div>
+        </div>
       </div>
-    </>
-  )
+    </div>
+  );
 }
