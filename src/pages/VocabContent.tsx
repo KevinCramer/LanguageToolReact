@@ -1,7 +1,6 @@
 import { Container, Modal, Navbar as NavbarBs, Table } from 'react-bootstrap';
 import {
   Topic,
-  VerbConjugationEnglish, 
   VocabLanguage,
   Word,
   WordWithOneAlphabet, 
@@ -45,21 +44,6 @@ const VocabContent = (
   const dispatch = useDispatch();
 
   const navigate = useNavigate();
-
-  const [isMobileDevice, setIsMobileDevice] = useState(false);
-
-  // Check if the device is mobile
-  const checkIfMobile = () => {
-    const userAgent = navigator.userAgent.toLowerCase();
-    // Regular expression to check for mobile devices (phones, tablets)
-    const isMobile = /iphone|ipod|android|blackberry|windows phone|mobile/i.test(userAgent);
-    setIsMobileDevice(isMobile);
-  };
-
-  // Run the check on mount
-  useEffect(() => {
-    checkIfMobile();
-  }, []);
 
   var urlSearchParams = new URLSearchParams(useLocation().search);
   const urlSettings = JSON.parse(
@@ -166,18 +150,16 @@ const VocabContent = (
   
   function ToggleQuiz(){
     if (quiz) {
-      const isVerb = currentTopic.name === 'Verbs'
       var count = 0;
       return ( 
         <div>
           {topicWords.map((pair: Word) =>
-            <div key ={showTrueOrder.toString() + (isVerb ?
-              (pair.englishWord as VerbConjugationEnglish).infinitive : pair.englishWord)
+            <div key ={showTrueOrder.toString() + (pair.englishWord)
                + pair.foreignWord[currentAlphabet] + showBaseLanguage}>
               <QuizElement myCounter = {count += 1} questionWord = { showBaseLanguage ? 
                 pair.englishWord : pair.foreignWord[currentAlphabet] }
               answerWord = {showBaseLanguage ? pair.foreignWord[currentAlphabet] :
-                pair.englishWord} isVerb = {currentTopic.name === 'Verbs'}/>
+                pair.englishWord}/>
             </div>                    
           )}
         </div>
@@ -211,7 +193,6 @@ const VocabContent = (
                         ForeignLanguageWordAudio = {pair.foreignAudio} 
                         showAudio = {audioBool} 
                         showBaseLanguageFirst = {showBaseLanguage} 
-                        isVerb = {currentTopic.name === 'Verbs'}
                         strokeOrderVideo = {pair.strokeOrderVideo}
                         pronouns = {currentLanguage.pronouns}
                         showLeftLabel = {true}
@@ -226,7 +207,6 @@ const VocabContent = (
                         ForeignLanguageWordAudio = {pair.foreignAudio} 
                         showAudio = {audioBool} 
                         showBaseLanguageFirst = {showBaseLanguage} 
-                        isVerb = {currentTopic.name === 'Verbs'}
                         strokeOrderVideo = {pair.strokeOrderVideo}
                         pronouns = {currentLanguage.pronouns}
                         showLeftLabel = {false}
@@ -249,22 +229,7 @@ const VocabContent = (
         b: Word) => (a.order || 0) < (b.order || 0) ? -1 : 1)
     }
     else {
-      topicWords.sort((a: Word,
-        b: Word) => 
-      {
-        const aInfinitive = (a.englishWord as unknown as VerbConjugationEnglish).infinitive
-        const bInfinitive = (b.englishWord as unknown as VerbConjugationEnglish).infinitive
-        // aInfinitive is only truthy when a (and thus b) are verbs,
-        if(aInfinitive) {
-          // sort by infinitive property
-          return aInfinitive < bInfinitive ? -1 : 1
-        }
-        else {
-          return a.englishWord < b.englishWord ? -1 : 1
-        }
-         
-      }
-      )
+      topicWords.sort((a: Word, b: Word) => { return a.englishWord < b.englishWord ? -1 : 1 })
     }
   }
   else

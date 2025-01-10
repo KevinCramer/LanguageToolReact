@@ -12,21 +12,9 @@ export type WordConjugation = {
     futureTense: string[];
 }
 
-export type VerbConjugationEnglish = {
-    infinitive: string;
-    englishWordConjugation: WordConjugation;
-}
-
-export type VerbConjugationForeign = {
-    infinitive: string;
-    foreignWordConjugation: WordConjugation;
-}
-
-export type VerbConjugation = VerbConjugationEnglish | VerbConjugationForeign;
-
 export type WordWithNumAlphabets<N extends number> = {
-    englishWord: string | VerbConjugationEnglish;
-    foreignWord: FixedSizeArray<N, string | VerbConjugationForeign>;
+    englishWord: string;
+    foreignWord: FixedSizeArray<N, string>;
     foreignAudio: string;
     order?: number;
     strokeOrderVideo?: any;

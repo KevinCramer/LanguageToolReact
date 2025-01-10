@@ -1,13 +1,11 @@
 import { Navbar } from 'react-bootstrap'
 import { roughlyEqual } from '../../helpers/vocab-content-helpers'
 import { useState } from 'react'
-import { VerbConjugation } from '../../../types/learningSections/VocabTypes'
 
 const QuizElement = (
   props: {
-    questionWord: string | VerbConjugation,
-    answerWord: string | VerbConjugation,
-    isVerb: boolean
+    questionWord: string,
+    answerWord: string,
     myCounter: number
     }) => {
   const [formValues, setFormValues] = useState({ answer: '' })
@@ -36,17 +34,8 @@ const QuizElement = (
   if(!hideStudyElement){
     let propsQuestionWord: string;
     let propsAnswerWord: string;
-    if(props.isVerb){
-      propsQuestionWord = (props.questionWord as VerbConjugation)
-        .infinitive
-      propsAnswerWord = (props.answerWord as VerbConjugation)
-        .infinitive
-
-    }
-    else{
-      propsQuestionWord = (props.questionWord as string)
-      propsAnswerWord = (props.answerWord as string)
-    }
+    propsQuestionWord = (props.questionWord as string)
+    propsAnswerWord = (props.answerWord as string)
     const myPlaceHolder = props.myCounter === 1 ? 'enter your answer here' : '';
     return (
       <Navbar>
