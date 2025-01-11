@@ -13,18 +13,17 @@ const Account = () => {
   }
 
   return (
-    <>
-      <div>
-
-      </div>
-      <h4>Account Settings</h4>
-      <CustomLink isWhite={true} onClick={() => dispatch(displayUpdateAccount())}>
+    <div className='flex flex-col justify-center flex-1 px-4'>
+      <div className='max-w-screen-md mx-auto  md:text-lg rounded-md text-white text-center'>
+        <h4 className='text-center text-2xl py-12'>Account Settings</h4>
+        <CustomLink isWhite={true} onClick={() => dispatch(displayUpdateAccount())}>
         Reset Password
-      </CustomLink>
-      <CustomLink isWhite={true} onClick={() => dispatch(displayDeleteAccount())}>
+        </CustomLink>
+        <CustomLink isWhite={true} onClick={() => dispatch(displayDeleteAccount())}>
         Delete Account
-      </CustomLink>
-    </>
+        </CustomLink>
+      </div>
+    </div>
   );
 }
  

@@ -4,6 +4,8 @@ import { displayLogin } from '../../redux-store/auth';
 import lingoCommandLogo from '../../assets/lingoCommandLogo.svg';
 import { useAuth } from '../../contexts/AuthContext';
 import { useDispatch } from 'react-redux';
+import { FaChevronDown } from 'react-icons/fa';
+import { useState } from 'react';
 
 const Navbar = () => {
   const dispatch = useDispatch();
@@ -14,18 +16,22 @@ const Navbar = () => {
   const { currentUser, logout } = useAuth();
 
   const pathWithBackground =
-  location.pathname === '/' ||
-  location.pathname === '/contact' ||
-  location.pathname === '/account';
+    location.pathname === '/' ||
+    location.pathname === '/contact' ||
+    location.pathname === '/account';
 
   // Define dynamic text color class
-  const textColorClass = pathWithBackground ? 'text-white' : 'text-white';
   const backgroundColorClass = pathWithBackground ? '' : 'bg-gray-500';
-  const lineBreakColorClass = pathWithBackground ? 'bg-white opacity-50' : 'bg-black h-0.5 opacity-50';
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
     <div>
-      <nav className={`${backgroundColorClass} flex justify-between items-center px-4 py-0.5 md:text-xl md:tracking-custom ${textColorClass}`}>
+      <nav className={`${backgroundColorClass} flex justify-between items-center px-4 py-0.5 md:text-xl md:tracking-custom text-white`}>
         <NavLink to='/'>
           <div className='flex items-center'>
             <img
@@ -36,19 +42,19 @@ const Navbar = () => {
             <div className="hidden md:block">LingoCommand</div>
           </div>
         </NavLink>
-        <NavLink to='/japanese' className={textColorClass}>
+        <NavLink to='/japanese' className='text-white'>
           Japanese
         </NavLink>
-        <NavLink to='/about' className={textColorClass}>
+        <NavLink to='/about' className='text-white'>
           About
         </NavLink>
-        <NavLink to='/contact' className={textColorClass}>
+        <NavLink to='/contact' className='text-white'>
           Contact
         </NavLink>
 
         {!(currentUser && currentUser.email) && (
           <button
-            className={textColorClass}
+            className='text-white'
             onClick={async () => {
               if (currentUser && currentUser.email) {
                 try {
@@ -69,38 +75,44 @@ const Navbar = () => {
         )}
 
         {currentUser && currentUser.email && (
-          <div>
-            <button className={textColorClass}>
-              <BsPerson className="w-8 h-8 md:w-10 md:h-10" />
+          <div className="relative">
+            <button className='text-white' onClick={toggleDropdown}>
+              <div className='flex justify'>
+                <BsPerson className="w-3 h-8 md:w-10 md:h-10 " />
+                <FaChevronDown className="inline m-auto w-4 h-4" />
+              </div>  
             </button>
-            <div>
-              <NavLink to='/account' className={textColorClass}>
-                Account Settings
-              </NavLink>
-              <button
-                className={textColorClass}
-                onClick={async () => {
-                  if (currentUser && currentUser.email) {
-                    try {
-                      await logout();
-                      if (location.pathname === '/account') {
-                        navigate('/');
+
+            {isOpen && (
+              <div className="absolute right-0 mt-2 w-48 bg-white shadow-lg rounded-lg z-10">
+                <NavLink to='/account' className={`text-black text-sm block px-4 py-2 hover:bg-gray-200 rounded-t-lg`}>
+                  Account Settings
+                </NavLink>
+                <button
+                  className={`text-black text-sm block w-full text-left px-4 py-2 hover:bg-gray-200 rounded-b-lg`}
+                  onClick={async () => {
+                    if (currentUser && currentUser.email) {
+                      try {
+                        await logout();
+                        if (location.pathname === '/account') {
+                          navigate('/');
+                        }
+                      } catch (error) {
+                        console.error('Failed to log out', error);
                       }
-                    } catch (error) {
-                      console.error('Failed to log out', error);
+                    } else {
+                      dispatch(displayLogin());
                     }
-                  } else {
-                    dispatch(displayLogin());
-                  }
-                }}
-              >
-                Log Out
-              </button>
-            </div>
+                  }}
+                >
+                  Log Out
+                </button>
+              </div>
+            )}
           </div>
         )}
       </nav>
-      <hr className={lineBreakColorClass} />
+      {pathWithBackground && <hr className='bg-white opacity-50' />}
     </div>
   );
 };

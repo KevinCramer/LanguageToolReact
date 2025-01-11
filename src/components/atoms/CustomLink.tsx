@@ -6,9 +6,9 @@ type CustomLinkProps = {
 }
 
 const CustomLink = ({ onClick, children, inline = false, isWhite = false }: CustomLinkProps) => {
-
+  const color = isWhite ? 'white' : 'blue'
   return (
-    <div className='text-blue-500 underline cursor-pointer'
+    <div className={`text-${color}-500 underline cursor-pointer`}
       onClick={onClick}>
       {children}
     </div>
