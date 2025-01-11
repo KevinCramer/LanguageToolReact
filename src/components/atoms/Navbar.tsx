@@ -54,7 +54,7 @@ const Navbar = () => {
             <img
               src={lingoCommandLogo}
               alt='LingoCommand Logo'
-              className='w-20 h-20 md:w-28 md:h-28 md:mr-2'
+              className='w-16 h-16 md:w-24 md:h-24 md:mr-2'
             />
           </div>
         </NavLink>
