@@ -51,9 +51,9 @@ const Navbar = () => {
 
   return (
     <div>
-      <nav className={`${backgroundColorClass} flex justify-between items-center px-2 md:pr-4 md:text-xl text-white md:tracking-custom ${pathWithBackground ? 'bg-white bg-opacity-15' : null }`}>
+      <nav className={`${backgroundColorClass} flex justify-between items-center px-1 md:px-2 md:pr-4 md:text-xl text-white md:tracking-custom`}>
         <NavLink to='/'>
-          <div className={`flex items-center px-1 m-2 ${ pathWithBackground ? 'border border-white' : 'border border-white'}  bg-opacity-100`}>
+          <div className={`flex items-center my-1 md:my-2 ${ pathWithBackground ? 'border border-white' : 'border border-white'}  bg-opacity-100`}>
             <img
               src={lingoCommandLogo}
               alt='LingoCommand Logo'
