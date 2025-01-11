@@ -12,16 +12,18 @@ interface ResourceLinkProps {
   children: React.ReactNode;
 }
 
+const imageDimensions = 80
+
 const ResourceLink = ({ href, icon, alt, children }: ResourceLinkProps) => (
   <a className='flex flex-col items-center m-4' href={href}>
-    <img src={icon} width={80} height={80} alt={alt} />
+    <img src={icon} width={imageDimensions} height={imageDimensions} alt={alt} />
     <div className='text-center text-blue-500 underline'>{children}</div>
   </a>
 );
 
 const Japanese = () => {
   return (
-    <div className='max-w-screen-md mx-auto px-4 md:text-lg'>
+    <div className='max-w-screen-md mx-auto px-4 md:text-lg text-center'>
       <h4 className='text-center text-2xl py-12'>
         Learn Japanese
       </h4>
@@ -40,38 +42,45 @@ const Japanese = () => {
         Alternatively, you can create your own study plan using the resources available 
         at LingoCommand. The Japanese study materials are divided into four main sections:
       </div>
-      <ResourceLink 
-        href='/japanese/writing-systems-explained' 
-        icon={penIcon} 
-        alt='Writing Systems Icon'
-      >
+      <div className='flex flex-col md:flex-row justify-center'>
+        <div className='mx-'>
+          <ResourceLink 
+            href='/japanese/writing-systems-explained' 
+            icon={penIcon} 
+            alt='Writing Systems Icon'
+          >
         Writing Systems
-        <br/>
-        (Alphabets)
-      </ResourceLink>
-      <ResourceLink 
-        href='/japanese/vocabulary' 
-        icon={dictionaryIcon} 
-        alt='Vocabulary Icon'
-      >
+          </ResourceLink>
+        </div>
+        <div className='mx-'>
+          <ResourceLink 
+            href='/japanese/vocabulary' 
+            icon={dictionaryIcon} 
+            alt='Vocabulary Icon'
+          >
         Vocabulary
-      </ResourceLink>
-      <ResourceLink 
-        href='/japanese/grammar/keigo' 
-        icon={dartIcon} 
-        alt='Grammar Icon'
-      >
+          </ResourceLink>
+        </div>
+        <div className='mx-'>
+          <ResourceLink 
+            href='/japanese/grammar/keigo' 
+            icon={dartIcon} 
+            alt='Grammar Icon'
+          >
         Grammar
-      </ResourceLink>
-      <ResourceLink 
-        href='/japanese/comprehension/aikos-book-sanctuary' 
-        icon={learningKnowledgeIcon} 
-        alt='Reading and Listening Comprehension Icon'
-      >
-        Reading and Listening
-        <br/>
-        Comprehension
-      </ResourceLink>   
+          </ResourceLink>
+        </div>
+        <div className='mx-'>
+          <ResourceLink 
+            href='/japanese/comprehension/aikos-book-sanctuary' 
+            icon={learningKnowledgeIcon} 
+            alt='Reading and Listening Comprehension Icon'
+          >
+        Reading / Listening
+          </ResourceLink>      
+        </div>    
+      </div>
+
     </div>
   );
 };

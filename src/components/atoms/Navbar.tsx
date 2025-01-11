@@ -4,7 +4,8 @@ import { displayLogin } from '../../redux-store/auth';
 import lingoCommandLogo from '../../assets/lingoCommandLogo.svg';
 import { useAuth } from '../../contexts/AuthContext';
 import { useDispatch } from 'react-redux';
-import { FaChevronDown } from 'react-icons/fa';
+import { FaChevronDown, FaChevronRight } from 'react-icons/fa';
+
 import { useEffect, useRef, useState } from 'react';
 
 const Navbar = () => {
@@ -55,7 +56,6 @@ const Navbar = () => {
               alt='LingoCommand Logo'
               className='w-16 h-16 md:w-24 md:h-24 md:mr-2'
             />
-            <div className="hidden md:block">LingoCommand</div>
           </div>
         </NavLink>
         <NavLink to='/japanese' className='text-white'>
@@ -86,7 +86,8 @@ const Navbar = () => {
               }
             }}
           >
-            {currentUser && currentUser.email ? 'Log Out' : 'Log In'}
+            {currentUser && currentUser.email ? 'Log Out' : 'Log In '}
+            { currentUser && currentUser.email ? null : <FaChevronRight className="inline w-3 h-3" /> }
           </button>
         )}
 
