@@ -1,5 +1,5 @@
 import { AudioTranscription, ComprehensionLanguage, TranscriptionType } from '../../types/learningSections/ComprehensionTypes';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { languages as allLanguages } from '../data/structured-data/comprehension';
 import CustomDropDownButton from '../components/atoms/CustomDropDownButton';
@@ -55,6 +55,29 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
   const [currentAlphabet, setCurrentAlphabet] = useState(initialAlphabet);
   const [granularity, setGranularity] = useState(initialGranularity); // Granularity state
 
+  const [isTopicDropdownOpen, setIsTopicDropdownOpen] = useState(false);
+  const [isSettingsDropdownOpen, setIsSettingsDropdownOpen] = useState(false);
+  
+  const topicDropdownRef = useRef<HTMLDivElement | null>(null);
+  const settingsDropdownRef = useRef<HTMLDivElement | null>(null);
+  
+  // Close dropdowns if clicked outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (topicDropdownRef.current && !topicDropdownRef.current.contains(event.target as Node)) {
+        setIsTopicDropdownOpen(false);
+      }
+      if (settingsDropdownRef.current && !settingsDropdownRef.current.contains(event.target as Node)) {
+        setIsSettingsDropdownOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+  
+  const toggleTopicDropdown = () => setIsTopicDropdownOpen(!isTopicDropdownOpen);
+  const toggleSettingsDropdown = () => setIsSettingsDropdownOpen(!isSettingsDropdownOpen);
+
   const preventDropdownClose = (event: any) => {
     event.stopPropagation(); // Prevent click event from closing the dropdown
   };
@@ -68,6 +91,12 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
 
   const [rightVisibility, setRightVisibility] = useState(true);
   const [showPopUp, setShowPopUp] = useState(false);
+
+  const [isLeftDropdownOpen, setIsLeftDropdownOpen] = useState(false);
+  const [isRightDropdownOpen, setIsRightDropdownOpen] = useState(false);
+
+  const toggleLeftDropdown = () => setIsLeftDropdownOpen(!isLeftDropdownOpen);
+  const toggleRightDropdown = () => setIsRightDropdownOpen(!isRightDropdownOpen);
 
   const titleMap: Record<TranscriptionType, string> = {
     [TranscriptionType.Audio]: `${currentLanguage.languageName} Audio`,
@@ -147,22 +176,31 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
               {['Left', 'Right'].map((side) => (
                 <th
                   key={side}
-                  className="border border-gray-300 px-4 py-2 text-left"
+                  className="border border-gray-300 px-4 py-2 text-left w-1/2 text-center"
                 >
-                  <CustomDropDownButtonWhite
-                    title={
-                      titleMap[(side === 'Left' ? currentLeft : currentRight) as TranscriptionType].length > 20
+                  <div className="relative">
+                    <button
+                      className="px-3 py-2 bg-gray-300 text-black text-sm rounded-lg shadow hover:bg-gray-400"
+                      onClick={() => side === 'Left' ? toggleLeftDropdown() : toggleRightDropdown()}
+                    >
+                      {titleMap[
+                (side === 'Left' ? currentLeft : currentRight) as TranscriptionType
+                      ].length > 20
                         ? `${titleMap[(side === 'Left' ? currentLeft : currentRight) as TranscriptionType].substring(0, 20)}...`
-                        : titleMap[(side === 'Left' ? currentLeft : currentRight) as TranscriptionType]
-                    }
-                  >
-                    <ul className="bg-white border border-gray-300 rounded shadow-md">
-                      {renderDropdownItems(
-                        (side === 'Left' ? currentLeft : currentRight) as TranscriptionType,
-                        side === 'Left' ? setCurrentLeft : setCurrentRight
-                      )}
-                    </ul>
-                  </CustomDropDownButtonWhite>
+                        : titleMap[(side === 'Left' ? currentLeft : currentRight) as TranscriptionType]}
+                    </button>
+
+                    {(side === 'Left' ? isLeftDropdownOpen : isRightDropdownOpen) && (
+                      <div className="absolute left-0 mt-2 bg-white border border-gray-300 rounded-lg shadow w-64 z-10">
+                        <ul className="divide-y divide-gray-200">
+                          {renderDropdownItems(
+                    (side === 'Left' ? currentLeft : currentRight) as TranscriptionType,
+                    side === 'Left' ? setCurrentLeft : setCurrentRight
+                          )}
+                        </ul>
+                      </div>
+                    )}
+                  </div>
                 </th>
               ))}
             </tr>
@@ -170,7 +208,7 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
           <tbody>
             {rowsToRender.map((row, index) => (
               <tr key={index}>
-                <td className="border border-gray-300 px-4 py-2">
+                <td className="border border-gray-300 px-4 py-2 w-1/2 text-center">
                   <RenderTableCell
                     current={currentLeft as TranscriptionType}
                     visibility={leftVisibility}
@@ -179,7 +217,7 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
                     granularity={granularity}
                   />
                 </td>
-                <td className="border border-gray-300 px-4 py-2">
+                <td className="border border-gray-300 px-4 py-2 w-1/2 text-center">
                   <RenderTableCell
                     current={currentRight as TranscriptionType}
                     visibility={rightVisibility}
@@ -211,71 +249,86 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
       </div>
       <div className="max-w-7xl mx-auto">
         <div className='flex justify-center'>
-          <div className='px-2'>
-            <CustomDropDownButton
-              title={`Topic: ${
-                currentAudioTranscription.name.length > 25
-                  ? `${currentAudioTranscription.name.substring(0, 25)}...`
-                  : currentAudioTranscription.name
-              }`}
-            
+          <div className="relative px-2" ref={topicDropdownRef}>
+            <button
+              className="px-3 py-2 bg-gray-300 text-black text-sm rounded-lg shadow hover:bg-gray-400"
+              onClick={toggleTopicDropdown}
             >
-              <ul className="bg-white border border-gray-300 rounded shadow-md">
-                {currentLanguage.audioTranscriptions.map((topic, index) => (
+    Topic:{' '}
+              {currentAudioTranscription.name.length > 25
+                ? `${currentAudioTranscription.name.substring(0, 25)}...`
+                : currentAudioTranscription.name}
+            </button>
+  
+            {isTopicDropdownOpen && (
+              <div className="absolute left-0 mt-2 bg-white border border-gray-300 rounded-lg shadow w-64 z-10">
+                <ul className="divide-y divide-gray-200">
+                  {currentLanguage.audioTranscriptions
+                    .map((topic, index) => (
+                      <li
+                        key={index}
+                        className="px-4 py-2 hover:bg-gray-100 cursor-pointer text-sm"
+                        onClick={() => changeTranscription(topic)}
+                      >
+                        <div className="flex items-center">
+                          {topic.name}
+                          {topic.isLocked && lingoCommandIsLocked && !userIsLoggedIn && (
+                            <LockIcon className="ml-2" />
+                          )}
+                        </div>
+                      </li>
+                    ))}
+                </ul>
+              </div>
+            )}
+          </div>
+          <div className="relative px-2" ref={settingsDropdownRef}>
+            <button
+              className="px-3 py-2 bg-gray-300 text-black text-sm rounded-lg shadow hover:bg-gray-400"
+              onClick={toggleSettingsDropdown}
+            >
+    Settings
+            </button>
+
+            {isSettingsDropdownOpen && (
+              <div className="absolute right-0 mt-2 bg-white border border-gray-300 rounded-lg shadow w-64 z-10">
+                <ul className="divide-y divide-gray-200">
                   <li
-                    key={index}
-                    onClick={() => changeTranscription(topic)}
-                    className="cursor-pointer hover:bg-gray-200 p-2"
+                    onClick={(event) => {
+                      toggleLeftVisibility();
+                      preventDropdownClose(event);
+                    }}
+                    className="cursor-pointer hover:bg-gray-200 p-2 flex items-center"
                   >
-                    <div className="flex items-center">
-                      {topic.name}
-                      {topic.isLocked && lingoCommandIsLocked && !userIsLoggedIn && (
-                        <LockIcon className="ml-2" />
-                      )}
-                    </div>
+                    <input
+                      type="checkbox"
+                      checked={!leftVisibility}
+                      onChange={toggleLeftVisibility}
+                      disabled={!rightVisibility}
+                      className="mr-2"
+                    />
+          Hide left column
                   </li>
-                ))}
-              </ul>
-            </CustomDropDownButton>
-          </div>
-          <div className='px-2'>
-            <CustomDropDownButton title='Settings' align='end'>
-              <ul className="bg-white border border-gray-300 rounded shadow-md">
-                <li
-                  onClick={(event) => {
-                    toggleLeftVisibility();
-                    preventDropdownClose(event);
-                  }}
-                  className="cursor-pointer hover:bg-gray-200 p-2 flex items-center"
-                >
-                  <input
-                    type='checkbox'
-                    checked={!leftVisibility}
-                    onChange={toggleLeftVisibility}
-                    disabled={!rightVisibility}
-                    className="mr-2"
-                  /> 
-                  Hide left column
-                </li>
-                <li
-                  onClick={(event) => {
-                    toggleRightVisibility();
-                    preventDropdownClose(event);
-                  }}
-                  className="cursor-pointer hover:bg-gray-200 p-2 flex items-center"
-                >
-                  <input
-                    type='checkbox'
-                    checked={!rightVisibility}
-                    onChange={toggleRightVisibility}
-                    disabled={!leftVisibility}
-                    className="mr-2"
-                  /> 
-                  Hide right column
-                </li>
-              </ul>
-            </CustomDropDownButton>
-          </div>
+                  <li
+                    onClick={(event) => {
+                      toggleRightVisibility();
+                      preventDropdownClose(event);
+                    }}
+                    className="cursor-pointer hover:bg-gray-200 p-2 flex items-center"
+                  >
+                    <input
+                      type="checkbox"
+                      checked={!rightVisibility}
+                      onChange={toggleRightVisibility}
+                      disabled={!leftVisibility}
+                      className="mr-2"
+                    />
+          Hide right column
+                  </li>
+                </ul>
+              </div>
+            )}
+          </div> 
         </div>
         <div className="flex items-center my-4 justify-center ">
           <div className='px-2' style={{ fontWeight: granularity === 'sentence' ? 'normal' : '600' }}>
