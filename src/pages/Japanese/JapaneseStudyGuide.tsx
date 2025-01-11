@@ -6,6 +6,7 @@ import { createURL } from '../../helpers/createURL';
 import LockIcon from '@mui/icons-material/Lock';
 import { useAuth } from '../../contexts/AuthContext';
 import { useProtectedLink } from '../../helpers/use-protected-link';
+import { useState } from 'react';
 
 const useJapaneseVocab = () => {
   const japaneseVocab = languagesVocab[0];
@@ -73,90 +74,162 @@ const TopicLink = ({ topic, section }: { topic: any; section: any }) => {
 const JapaneseStudyGuide = () => {
   const vocabTopics = useJapaneseVocab();
   const writingSystems = useJapaneseWritingSystems();
+  const [currentStep, setCurrentStep] = useState(1); // Track the active lesson
 
-  return (
-    <div className='max-w-screen-md mx-auto px-4 md:text-lg'>
-      <h4 className='text-center text-2xl py-10'>Japanese Study Guide</h4>
-
-      <div className='py-2'>
-        <b>Phase 1:</b> Spend a few minutes reading about{' '}
-        <a className='text-blue-500 underline' href='/japanese/writing-systems-explained'>
+  const StepContent = () => {
+    switch (currentStep) {
+    case 1:
+      return (
+        <div className='py-8 text-center'>
+          Spend a few minutes reading about{' '}
+          <a className='text-blue-500 underline' href='/japanese/writing-systems-explained'>
           Japanese writing systems
-        </a>
+          </a>
         .
-      </div>
-      <div className='py-2'>
-        <b>Phase 2:</b> Study{' '}
-        <a className='text-blue-500 underline' href='/japanese/hiragana-explained'>
+        </div>
+      );
+    case 2:
+      return (
+        <div className='py-8 text-center'>
+           Study{' '}
+          <a className='text-blue-500 underline' href='/japanese/hiragana-explained'>
           hiragana
-        </a>{' '}
+          </a>{' '}
         by mastering:
-        <ul className='pl-2'>
-          <TopicLink topic={writingSystems.basicHiragana} section={LearningSections.WritingSystem} />
-          <TopicLink topic={writingSystems.hiraganaDakuten} section={LearningSections.WritingSystem} />
-          <TopicLink topic={writingSystems.hiraganaYoon} section={LearningSections.WritingSystem} />
-        </ul>
-      </div>
+          <ul className='p-2 flex flex-col items-center'>
+            <TopicLink topic={writingSystems.basicHiragana} section={LearningSections.WritingSystem} />
+            <TopicLink topic={writingSystems.hiraganaDakuten} section={LearningSections.WritingSystem} />
+            <TopicLink topic={writingSystems.hiraganaYoon} section={LearningSections.WritingSystem} />
+          </ul>
+        </div>
 
-      <div className='py-2'>
-        <b>Phase 3:</b> Study{' '}
-        <a className='text-blue-500 underline' href='/japanese/katakana-explained'>
+      );
+    case 3:
+      return (
+        <div className='py-8 text-center'>
+           Study{' '}
+          <a className='text-blue-500 underline' href='/japanese/katakana-explained'>
           katakana
-        </a>{' '}
+          </a>{' '}
         by mastering:
-        <ul className='pl-2'>
-          <TopicLink topic={writingSystems.basicKatakana} section={LearningSections.WritingSystem} />
-          <TopicLink topic={writingSystems.katakanaDakuten} section={LearningSections.WritingSystem} />
-          <TopicLink topic={writingSystems.katakanaYoon} section={LearningSections.WritingSystem} />
-          <TopicLink topic={writingSystems.katakanaSpecialYoon} section={LearningSections.WritingSystem} />
-        </ul>
-      </div>
-
-      <div className='py-2'>
-        <b>Phase 4:</b> Study{' '}
-        <a className='text-blue-500 underline' href='/japanese/kanji-explained'>
+          <ul className='p-2 flex flex-col items-center'>
+            <TopicLink topic={writingSystems.basicKatakana} section={LearningSections.WritingSystem} />
+            <TopicLink topic={writingSystems.katakanaDakuten} section={LearningSections.WritingSystem} />
+            <TopicLink topic={writingSystems.katakanaYoon} section={LearningSections.WritingSystem} />
+            <TopicLink topic={writingSystems.katakanaSpecialYoon} section={LearningSections.WritingSystem} />
+          </ul>
+        </div>
+      );
+    case 4:
+      return (
+        <div className='py-8 text-center'>
+           Study{' '}
+          <a className='text-blue-500 underline' href='/japanese/kanji-explained'>
           Introduction to Kanji
-        </a>
+          </a>
         .
-      </div>
-
-      <div className='py-2'>
-        <b>Phase 5:</b> Watch:{' '}
-        <a className='text-blue-500 underline' href='/japanese/how-to-type-japanese'>
+        </div>
+      );
+    case 5:
+      return (
+        <div className='py-8 text-center'>
+          Watch:{' '}
+          <a className='text-blue-500 underline' href='/japanese/how-to-type-japanese'>
           How To Type Japanese
-        </a>
+          </a>
         .
-      </div>
+        </div>
 
-      <div className='py-2'>
-        <b>Phase 6:</b> Study the vocabulary for these topics:
-        <ul className='pl-2'>
-          {Object.entries(vocabTopics).map(([key, topic]) => (
-            <TopicLink key={key} topic={topic} section={LearningSections.Vocab} />
-          ))}
-        </ul>
-        <p className='py-2'>
+      );
+    case 6:
+      return (
+        <div className='py-8 text-center'>
+           Study the vocabulary for these topics:
+          <ul className='p-2 flex flex-col items-center'>
+            {Object.entries(vocabTopics).map(([key, topic]) => (
+              <TopicLink key={key} topic={topic} section={LearningSections.Vocab} />
+            ))}
+          </ul>
+          <p className='py-2'>
           We recommend studying a topic’s vocabulary for 15 minutes, then taking a quiz. 
           Repeat a quiz until you can comfortable answer 90% or more of the questions correctly. 
-        </p>
-      </div>
+          </p>
+        </div>
 
-      <div className='py-2'>
-        <b>Phase 7:</b> Practice{' '}
-        <a
-          className='text-blue-500 underline'
-          href='/japanese/comprehension/aikos-book-sanctuary?eng=F'
-        >
+      );
+    case 7:
+      return (
+        <div className='py-8 text-center'>
+           Practice{' '}
+          <a
+            className='text-blue-500 underline'
+            href='/japanese/comprehension/aikos-book-sanctuary?eng=F'
+          >
           reading and listening comprehension
-        </a>
+          </a>
         .
+        </div>
+      );
+    default:
+      return null;
+    }
+  };
+
+  return (
+    <div className="max-w-screen-md mx-auto px-4 md:text-lg">
+      <h4 className="text-center text-2xl pt-12">Japanese Study Guide  - Step {currentStep}</h4>
+      <div className="flex justify-center items-center space-x-4 mt-8">
+        <button
+          className={`px-4 py-2 border rounded-md ${currentStep === 1 ? 'bg-gray-300' : 'bg-gray-100'}`}
+          onClick={() => setCurrentStep(1)}
+        >
+          1
+        </button>
+        <button
+          className={`px-4 py-2 border rounded-md ${currentStep === 2 ? 'bg-gray-300' : 'bg-gray-100'}`}
+          onClick={() => setCurrentStep(2)}
+        >
+          2
+        </button>
+        <button
+          className={`px-4 py-2 border rounded-md ${currentStep === 3 ? 'bg-gray-300' : 'bg-gray-100'}`}
+          onClick={() => setCurrentStep(3)}
+        >
+          3
+        </button>
+        <button
+          className={`px-4 py-2 border rounded-md ${currentStep === 4 ? 'bg-gray-300' : 'bg-gray-100'}`}
+          onClick={() => setCurrentStep(4)}
+        >
+          4
+        </button>
+        <button
+          className={`px-4 py-2 border rounded-md ${currentStep === 5 ? 'bg-gray-300' : 'bg-gray-100'}`}
+          onClick={() => setCurrentStep(5)}
+        >
+          5
+        </button>
+        <button
+          className={`px-4 py-2 border rounded-md ${currentStep === 6 ? 'bg-gray-300' : 'bg-gray-100'}`}
+          onClick={() => setCurrentStep(6)}
+        >
+          6
+        </button>
+        <button
+          className={`px-4 py-2 border rounded-md ${currentStep === 7 ? 'bg-gray-300' : 'bg-gray-100'}`}
+          onClick={() => setCurrentStep(7)}
+        >
+          7
+        </button>
       </div>
-      <i>
+      <StepContent />
+      <div className='mt-16'>
+        <i>
         The Japanese language has 130 million native speakers, with about 95% residing in Japan. Over the past 40 years,
         the number of people learning Japanese as a second language has increased over twentyfold.
-      </i>
+        </i>
+      </div>
     </div>
   );
 };
-
 export default JapaneseStudyGuide;
