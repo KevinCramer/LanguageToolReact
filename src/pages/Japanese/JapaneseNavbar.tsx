@@ -8,39 +8,57 @@ const JapaneseNavbar = () => {
         <div className="overflow-x-auto whitespace-nowrap">
           <ul className="flex space-x-4 justify-start lg:justify-between">
             <li>
-              <NavLink to='/japanese' className="block d:px-4 py-2 hover:bg-gray-100">
-              Japanese Home Page
+              <NavLink 
+                to='/japanese/home-page' 
+                className={({ isActive }) => isActive ? 'block px-4 py-2 font-bold' : 'block px-4 py-2'}
+              >
+                Japanese Home Page
               </NavLink>
             </li>
             <li>
-              <NavLink to='/japanese/study-guide' className="block md:px-4 py-2 hover:bg-gray-100">
-              Study Guide
+              <NavLink 
+                to='/japanese/study-guide' 
+                className={({ isActive }) => isActive ? 'block px-4 py-2 font-bold' : 'block px-4 py-2'}
+              >
+                Study Guide
               </NavLink>
             </li>
             <li>
-              <NavLink to='/japanese/writing-systems-explained' className="block md:px-4 py-2 hover:bg-gray-100">
-              Writing Systems
+              <NavLink 
+                to='/japanese/writing-systems-explained' 
+                className={({ isActive }) => isActive ? 'block px-4 py-2 font-bold' : 'block px-4 py-2'}
+              >
+                Writing Systems
               </NavLink>
             </li>
             <li>
-              <NavLink to='/japanese/vocabulary' className="block md:px-4 py-2 hover:bg-gray-100">
-              Vocabulary
+              <NavLink 
+                to='/japanese/vocabulary' 
+                className={({ isActive }) => isActive ? 'block px-4 py-2 font-bold' : 'block px-4 py-2'}
+              >
+                Vocabulary
               </NavLink>
             </li>
             <li>
-              <NavLink to='/japanese/grammar/keigo' className="block md:px-4 py-2 hover:bg-gray-100">
-              Grammar
+              <NavLink 
+                to='/japanese/grammar/keigo' 
+                className={({ isActive }) => isActive ? 'block px-4 py-2 font-bold' : 'block px-4 py-2'}
+              >
+                Grammar
               </NavLink>
             </li>
             <li>
-              <NavLink to='/japanese/comprehension/aikos-book-sanctuary' className="block md:px-4 py-2 hover:bg-gray-100">
-              Reading/Listening
+              <NavLink 
+                to='/japanese/comprehension/aikos-book-sanctuary' 
+                className={({ isActive }) => isActive ? 'block px-4 py-2 font-bold' : 'block px-4 py-2'}
+              >
+                Reading/Listening
               </NavLink>
             </li>
           </ul>
         </div>
       </nav>
-      <hr className='bg-black h-0.5' />
+      <hr className='bg-black' />
     </>
   );
 };

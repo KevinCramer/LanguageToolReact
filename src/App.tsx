@@ -80,7 +80,7 @@ const App = ()=> {
         {location.pathname.includes('japanese') && <JapaneseNavbar/>}
         <Routes>
           <Route path="/about" element={<About />} />
-          <Route path="/japanese" element={<Japanese/>} />
+          <Route path="/japanese/home-page" element={<Japanese/>} />
           <Route path="/japanese/vocabulary" 
             element={<VocabContent howToGuideVideo={japaneseVocabGuideVideo} />} />
           <Route path="/japanese/writing-systems-explained" element={<JapaneseWritingSystems />} />

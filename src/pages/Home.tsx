@@ -79,7 +79,7 @@ export const Home = () => {
         Learn Japanese Faster
       </div>
       <button className='m-8 p-2 bg-blue-500 text-white rounded-md md:text-xl tracking-custom'
-        onClick={(event) => { navigate('/japanese') }}>
+        onClick={(event) => { navigate('/japanese/home-page') }}>
         Start Now 
       </button>
     </div>    

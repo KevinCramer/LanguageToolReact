@@ -46,25 +46,29 @@ const Navbar = () => {
     };
   }, []);
 
+  // Check if the current URL starts with '/japanese'
+  const onJapanese = location.pathname.startsWith('/japanese');
+
   return (
     <div>
-      <nav className={`${backgroundColorClass} flex justify-between items-center px-2 md:px-4 md:text-xl text-white md:tracking-custom`}>
+      <nav className={`${backgroundColorClass} flex justify-between items-center px-2 md:pr-4 md:text-xl text-white md:tracking-custom ${pathWithBackground ? 'bg-white bg-opacity-15' : null }`}>
         <NavLink to='/'>
-          <div className='flex items-center '>
+          <div className={`flex items-center px-1 m-2 ${ pathWithBackground ? 'border border-white' : 'border border-white'}  bg-opacity-100`}>
             <img
               src={lingoCommandLogo}
               alt='LingoCommand Logo'
-              className='w-16 h-16 md:w-24 md:h-24 md:mr-2'
+              className='w-20 h-16 md:w-24 md:h-20'
             />
           </div>
         </NavLink>
-        <NavLink to='/japanese' className='text-white'>
+        <NavLink to='/japanese/home-page' className={onJapanese ? 'font-bold text-white' : 'text-white'}
+        >
           Japanese
         </NavLink>
-        <NavLink to='/about' className='text-white'>
+        <NavLink to='/about' className={({ isActive }) => isActive ? 'font-bold text-white' : 'text-white'}>
           About
         </NavLink>
-        <NavLink to='/contact' className='text-white'>
+        <NavLink to='/contact' className={({ isActive }) => isActive ? 'font-bold text-white' : 'text-white'}> 
           Contact
         </NavLink>
 
@@ -94,7 +98,7 @@ const Navbar = () => {
           <div className="relative" ref={dropdownRef}>
             <button className='text-white' onClick={toggleDropdown}>
               <div className='flex justify'>
-                <BsPerson className="w-3 h-8 md:w-10 md:h-10 " />
+                <BsPerson className="w-8 h-8 md:w-10 md:h-10 " />
                 <FaChevronDown className="inline m-auto w-4 h-4" />
               </div>  
             </button>
@@ -128,7 +132,6 @@ const Navbar = () => {
           </div>
         )}
       </nav>
-      {pathWithBackground && <hr className='bg-white opacity-50' />}
     </div>
   );
 };

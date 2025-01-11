@@ -30,7 +30,7 @@ const routesMeta = {
       { name: 'keywords', content: 'LingoCommand overview, learn japanese platform, customizable learning tools, educational language app, active recall, repeated exposure, innovative learning methods, accelerated Japanese studies' },
     ],
   },
-  '/japanese': {
+  '/japanese/home-page': {
     title: 'Japanese',
     meta: [
       { name: 'description', content: 'LingoCommand helps beginners learn Japanese and gain confidence in their skills. We also offer valuable content for advanced users.' },
