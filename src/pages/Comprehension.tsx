@@ -2,8 +2,8 @@ import { AudioTranscription, ComprehensionLanguage, TranscriptionType } from '..
 import { useEffect, useRef, useState } from 'react';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { languages as allLanguages } from '../data/structured-data/comprehension';
-import CustomDropDownButton from '../components/atoms/CustomDropDownButton';
 import { lightGrey, lingoCommandIsLocked, mobileBreakPoint } from '../constants';
+import CustomDropDownButton from '../components/atoms/CustomDropDownButton';
 import CustomDropDownButtonWhite from '../components/atoms/CustomDropDownButtonWhite';
 import CustomSwitch from '../components/atoms/CustomSwitch';
 import RenderTableCell from '../components/molecules/RenderTableCell';
@@ -17,8 +17,7 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
 
   //@ts-ignore
   const { currentUser } = useAuth();
-
-  const userIsLoggedIn = currentUser && currentUser.email
+  const userIsLoggedIn = currentUser && currentUser.email;
 
   const navigate = useNavigate();
   const { topicSlug } = useParams();
@@ -47,34 +46,45 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
     }
     else{
       navigate(`/${currentLanguage.languageName.toLowerCase()}/comprehension/${topic.slugName}`, { replace: true });
-      return setCurrentAudioTranscription(topic);}
-
+      return setCurrentAudioTranscription(topic);
+    }
   }
 
   const [transcriptionInEnglish, setTranscriptionInEnglish] = useState(initialTranscriptionInEnglish);
   const [currentAlphabet, setCurrentAlphabet] = useState(initialAlphabet);
-  const [granularity, setGranularity] = useState(initialGranularity); // Granularity state
+  const [granularity, setGranularity] = useState(initialGranularity); 
 
   const [isTopicDropdownOpen, setIsTopicDropdownOpen] = useState(false);
   const [isSettingsDropdownOpen, setIsSettingsDropdownOpen] = useState(false);
-  
+
+  const [isLeftDropdownOpen, setIsLeftDropdownOpen] = useState(false);
+  const [isRightDropdownOpen, setIsRightDropdownOpen] = useState(false);
+
   const topicDropdownRef = useRef<HTMLDivElement | null>(null);
+  const leftDropdownRef = useRef<HTMLDivElement | null>(null);
+  const rightDropdownRef = useRef<HTMLDivElement | null>(null);
   const settingsDropdownRef = useRef<HTMLDivElement | null>(null);
-  
-  // Close dropdowns if clicked outside
+
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (topicDropdownRef.current && !topicDropdownRef.current.contains(event.target as Node)) {
         setIsTopicDropdownOpen(false);
       }
+      if (leftDropdownRef.current && !leftDropdownRef.current.contains(event.target as Node)) {
+        setIsLeftDropdownOpen(false);
+      }
+      if (rightDropdownRef.current && !rightDropdownRef.current.contains(event.target as Node)) {
+        setIsRightDropdownOpen(false);
+      }
       if (settingsDropdownRef.current && !settingsDropdownRef.current.contains(event.target as Node)) {
         setIsSettingsDropdownOpen(false);
       }
     };
+
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
-  
+
   const toggleTopicDropdown = () => setIsTopicDropdownOpen(!isTopicDropdownOpen);
   const toggleSettingsDropdown = () => setIsSettingsDropdownOpen(!isSettingsDropdownOpen);
 
@@ -91,9 +101,6 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
 
   const [rightVisibility, setRightVisibility] = useState(true);
   const [showPopUp, setShowPopUp] = useState(false);
-
-  const [isLeftDropdownOpen, setIsLeftDropdownOpen] = useState(false);
-  const [isRightDropdownOpen, setIsRightDropdownOpen] = useState(false);
 
   const toggleLeftDropdown = () => setIsLeftDropdownOpen(!isLeftDropdownOpen);
   const toggleRightDropdown = () => setIsRightDropdownOpen(!isRightDropdownOpen);
@@ -128,7 +135,6 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
   const toggleVisibility = (setter: React.Dispatch<React.SetStateAction<boolean>>) => () => {
     setter((prev) => !prev);
   };
-
   const renderDropdownItems = (current: TranscriptionType, changeHandler: (type: TranscriptionType) => void) => {
     return Object.entries(titleMap).map(([key, title]) => {
       const transcriptionType = key as TranscriptionType;
@@ -150,21 +156,16 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
     });
   };
 
-  const isSentenceWithNumAlphabets = (sentence: any, numAlphabets: number): boolean => {
-    return sentence.foreignText.length === numAlphabets;
-  };
-
   const renderComprehensionTopic = () => {
-    // Flatten the paragraphs into individual sentences if granularity is 'sentence'
     const rowsToRender = granularity === 'sentence'
       ? currentAudioTranscription.contents.flatMap((content) =>
         content.sentences.map((sentence) => ({
-          sentences: [sentence], // Wrap each sentence in an array to pass to renderTableCell
+          sentences: [sentence], 
           audioFile: content.audioFile,
         }))
       )
       : currentAudioTranscription.contents.map((content) => ({
-        sentences: content.sentences, // Keep sentences as they are when granularity is 'paragraph'
+        sentences: content.sentences,
         audioFile: content.audioFile,
       }));
 
@@ -191,7 +192,7 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
                     </button>
 
                     {(side === 'Left' ? isLeftDropdownOpen : isRightDropdownOpen) && (
-                      <div className="absolute left-0 mt-2 bg-white border border-gray-300 rounded-lg shadow w-64 z-10">
+                      <div ref={side === 'Left' ? leftDropdownRef : rightDropdownRef} className="absolute left-0 mt-2 bg-white border border-gray-300 rounded-lg shadow w-64 z-10">
                         <ul className="divide-y divide-gray-200">
                           {renderDropdownItems(
                     (side === 'Left' ? currentLeft : currentRight) as TranscriptionType,
