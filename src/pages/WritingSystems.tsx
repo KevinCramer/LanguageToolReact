@@ -54,24 +54,7 @@ const WritingSystems = (
   var [showBaseLanguage,setShowBaseLanguage] = useState(showBaseLanguage)
   const changeBaseLanguage = () => { return setShowBaseLanguage(!showBaseLanguage)}
 
-  const urlCurrentAlphabet = urlSettings[3]
-  var currentAlphabet: number = parseInt(urlCurrentAlphabet as string) || 0;
-  var [currentAlphabet,setCurrentAlphabet] = useState(currentAlphabet)
-  const changeCurrentAlphabet = (number: number) => { return setCurrentAlphabet(
-    currentAlphabet = number)}
-
-  const handleSelectChange = (event: any) => {
-    // Handle select change (optional)
-    if(event.target.value === '0'){
-      changeCurrentAlphabet(0)
-    }
-    if(event.target.value === '1'){
-      changeCurrentAlphabet(1)
-    }
-    if(event.target.value === '2'){
-      changeCurrentAlphabet(2)
-    }
-  };
+  var currentAlphabet: number = 0;
 
   const [isTopicDropdownOpen, setIsTopicDropdownOpen] = useState(false);
   const [isSettingsDropdownOpen, setIsSettingsDropdownOpen] = useState(false);

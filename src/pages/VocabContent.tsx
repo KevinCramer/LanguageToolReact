@@ -1,4 +1,3 @@
-import { Container, Modal, Navbar as NavbarBs, Table } from 'react-bootstrap';
 import {
   Topic,
   VocabLanguage,
@@ -6,13 +5,11 @@ import {
   WordWithThreeWritingSystems, 
 } from '../../types/learningSections/VocabTypes'
 import { queryParamCompress, queryParamDecompress } from '../helpers/query-param-helpers'
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { languages as allLanguages } from '../data/structured-data/words';
-import CustomDropDownButton from '../components/atoms/CustomDropDownButton';
 import CustomSwitch from '../components/atoms/CustomSwitch';
 import { denyPermission } from '../redux-store/lock';
-import Dropdown from 'react-bootstrap/Dropdown';
 import { languageToSlugs, lingoCommandIsLocked } from '../constants'
 import LockIcon from '@mui/icons-material/Lock';
 import { nullOrUndefined } from '../helpers/audio-player-helpers'
@@ -45,9 +42,7 @@ const VocabContent = (
   const urlSettings = JSON.parse(
     queryParamDecompress(urlSearchParams.get('s') as string) as string
   ) || []
-  const urlLanguage = urlSettings[0]
   var currentLanguage: VocabLanguage = languages[0]
-  var [currentLanguage,setLanguage] = useState(currentLanguage);
  
   const urlTopic = urlSettings[1]
   var currentTopic: Topic = (currentLanguage.topics as Topic[])
@@ -77,6 +72,29 @@ const VocabContent = (
       changeCurrentAlphabet(2)
     }
   };
+
+  const [isTopicDropdownOpen, setIsTopicDropdownOpen] = useState(false);
+  const [isSettingsDropdownOpen, setIsSettingsDropdownOpen] = useState(false);
+
+  const topicDropdownRef = useRef<HTMLDivElement | null>(null);
+  const settingsDropdownRef = useRef<HTMLDivElement | null>(null);
+
+  // Close dropdowns if clicked outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (topicDropdownRef.current && !topicDropdownRef.current.contains(event.target as Node)) {
+        setIsTopicDropdownOpen(false);
+      }
+      if (settingsDropdownRef.current && !settingsDropdownRef.current.contains(event.target as Node)) {
+        setIsSettingsDropdownOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  const toggleTopicDropdown = () => setIsTopicDropdownOpen(!isTopicDropdownOpen);
+  const toggleSettingsDropdown = () => setIsSettingsDropdownOpen(!isSettingsDropdownOpen);
   
   const preventDropdownClose = (event: any) => {
     event.stopPropagation(); // Prevent click event from closing the dropdown
@@ -141,74 +159,109 @@ const VocabContent = (
   }, [
     currentLanguage.languageName, currentTopic.slugName, showBaseLanguage,
     currentAlphabet,showTrueOrder,quiz,audioBool, navigate ]);
+
+  const minWidth = 'min-w-[350px]'
   
   function ToggleQuiz(){
     if (quiz) {
-      var count = 0;
-      return ( 
-        <div>
-          {topicWords.map((pair: Word) =>
-            <div key ={showTrueOrder.toString() + (pair.englishWord)
-               + pair.foreignWord[currentAlphabet] + showBaseLanguage}>
-              <QuizElement myCounter = {count += 1} questionWord = { showBaseLanguage ? 
-                pair.englishWord : pair.foreignWord[currentAlphabet] }
-              answerWord = {showBaseLanguage ? pair.foreignWord[currentAlphabet] :
-                pair.englishWord}/>
-            </div>                    
-          )}
+      let count = 0;
+      return (
+        <div className={`pt-4 space-y-4 ${minWidth}`}>
+          {topicWords.map((pair: Word) => (
+            <div
+              key={
+                showTrueOrder.toString() +
+                pair.englishWord +
+                pair.foreignWord[currentAlphabet] +
+                showBaseLanguage
+              }
+              className="p-4 border rounded-lg shadow bg-white"
+            >
+              <QuizElement
+                myCounter={++count}
+                questionWord={
+                  showBaseLanguage
+                    ? pair.englishWord
+                    : pair.foreignWord[currentAlphabet]
+                }
+                answerWord={
+                  showBaseLanguage
+                    ? pair.foreignWord[currentAlphabet]
+                    : pair.englishWord
+                }
+              />
+            </div>
+          ))}
         </div>
-      )
-    }
+      );
+    }   
     else {
       return (
-        <div>
-          <title>{currentLanguage.languageName }Vocabulary</title>
-          <Table striped bordered hover size='sm'>
-            <thead>
-              <tr>
-                <th>
-                  {showBaseLanguage ? 'English' : currentLanguage.languageName }
-                </th>
-                <th>
-                  {showBaseLanguage ? currentLanguage.languageName : 'English' }
-                </th>
-              </tr>
-            </thead>
-            <div>
+        <div className='pt-4'>
+          <div className={`overflow-x-auto border rounded-lg shadow ${minWidth}`}>
+            <table className="w-full bg-white border-separate border-spacing-0">
+              <thead className="bg-gray-200">
+                <tr>
+                  <th className="px-4 py-2 text-center text-sm font-medium text-gray-700 border-r border-gray-300 w-1/2">
+                    {showBaseLanguage ? 'English' : currentLanguage.languageName}
+                  </th>
+                  <th className="px-4 py-2 text-center text-sm font-medium text-gray-700 w-1/2">
+                    {showBaseLanguage ? currentLanguage.languageName : 'English'}
+                  </th>
+                </tr>
+              </thead>
               <tbody>
                 {topicWords.map((pair: Word, index: number) => (
-                  <tr key={index}>
-                    <td>     
-                      <StudyElement 
-                        BaseLanguageWord = { showBaseLanguage ? pair.englishWord :
-                          pair.foreignWord[currentAlphabet]} 
-                        ForeignLanguageWord = {showBaseLanguage ? 
-                          pair.foreignWord[currentAlphabet] : pair.englishWord}  
-                        ForeignLanguageWordAudio = {pair.foreignAudio} 
-                        showAudio = {audioBool} 
-                        showBaseLanguageFirst = {showBaseLanguage} 
-                        strokeOrderVideo = {pair.strokeOrderVideo}
-                        showLeftLabel = {true}
+                  <tr
+                    key={index}
+                    className={`${
+                      index % 2 === 0 ? 'bg-gray-50' : 'bg-white'
+                    } hover:bg-gray-100`}
+                  >
+                    <td className="px-4 py-2 text-sm text-gray-800 text-center border-r border-gray-300 w-1/2">
+                      <StudyElement
+                        BaseLanguageWord={
+                          showBaseLanguage
+                            ? pair.englishWord
+                            : pair.foreignWord[currentAlphabet]
+                        }
+                        ForeignLanguageWord={
+                          showBaseLanguage
+                            ? pair.foreignWord[currentAlphabet]
+                            : pair.englishWord
+                        }
+                        ForeignLanguageWordAudio={pair.foreignAudio}
+                        showAudio={audioBool}
+                        showBaseLanguageFirst={showBaseLanguage}
+                        strokeOrderVideo={pair.strokeOrderVideo}
+                        showLeftLabel={true}
                       />
                     </td>
-                    <td>     
-                      <StudyElement 
-                        BaseLanguageWord = { showBaseLanguage ? pair.englishWord :
-                          pair.foreignWord[currentAlphabet]} 
-                        ForeignLanguageWord = {showBaseLanguage ? 
-                          pair.foreignWord[currentAlphabet] : pair.englishWord}  
-                        ForeignLanguageWordAudio = {pair.foreignAudio} 
-                        showAudio = {audioBool} 
-                        showBaseLanguageFirst = {showBaseLanguage} 
-                        strokeOrderVideo = {pair.strokeOrderVideo}
-                        showLeftLabel = {false}
+                    <td className="px-4 py-2 text-sm text-gray-800 text-center w-1/2">
+                      <StudyElement
+                        BaseLanguageWord={
+                          showBaseLanguage
+                            ? pair.englishWord
+                            : pair.foreignWord[currentAlphabet]
+                        }
+                        ForeignLanguageWord={
+                          showBaseLanguage
+                            ? pair.foreignWord[currentAlphabet]
+                            : pair.englishWord
+                        }
+                        ForeignLanguageWordAudio={pair.foreignAudio}
+                        showAudio={audioBool}
+                        showBaseLanguageFirst={showBaseLanguage}
+                        strokeOrderVideo={pair.strokeOrderVideo}
+                        showLeftLabel={false}
                       />
                     </td>
                   </tr>
                 ))}
               </tbody>
-            </div>
-          </Table>
+            </table>
+          </div>
+
         </div>
       )
     }
@@ -232,125 +285,164 @@ const VocabContent = (
       
   }
   return (
-    <div>
+    <div className='flex flex-col items-center text-lg md:text-xl'>
       <h4 className='text-center text-2xl py-12'>
         {currentLanguage.languageName} Vocabulary
       </h4>
-      <Container >   
-        <div>
-          <button onClick={displayPopUp}>How to Guide (Video)</button>
-        </div>
-        <NavbarBs>
-          <Container>
-            <div>
-              <CustomDropDownButton title={'Topic: ' + currentTopic.name}>
-                {(currentLanguage.topics as Topic[]).sort((t1,t2) => ((t1.topicOrder || 0) < (t2.topicOrder || 0)) ? -1 : 1 )
-                  .map((topic: Topic, index: number) =>
-                    <Dropdown.Item 
-                      key = {index} onClick = {() => 
-                        changeCurrentTopic(topic)}>
-                      <div>
-                        {topic.name} {
-                          topic.isLocked 
-                          && lingoCommandIsLocked 
-                          && !userIsLoggedIn
-                          && <LockIcon/>}
+      <div className='flex justify-center'>
+        <span className='text-blue-500 underline'onClick={displayPopUp}>How to Guide (Video)</span>
+      </div>
+      <div className="flex space-x-4 py-4">
+        {/* Topic Dropdown */}
+        <div className="relative" ref={topicDropdownRef}>
+          <button
+            className="px-3 py-2 bg-gray-300 text-black text-sm rounded-lg shadow hover:bg-gray-400"
+            onClick={toggleTopicDropdown}
+          >
+          Topic: {currentTopic.name}
+          </button>
+          {isTopicDropdownOpen && (
+            <div className="absolute left-0 mt-2 bg-white border border-gray-300 rounded-lg shadow w-64 z-10">
+              <ul className="divide-y divide-gray-200">
+                {(currentLanguage.topics as Topic[])
+                  .sort((t1, t2) => (t1.topicOrder || 0) < (t2.topicOrder || 0) ? -1 : 1)
+                  .map((topic, index) => (
+                    <li
+                      key={index}
+                      className="px-4 py-2 hover:bg-gray-100 cursor-pointer text-sm"
+                      onClick={() => changeCurrentTopic(topic)}
+                    >
+                      <div className="flex items-center">
+                        {topic.name}
+                        {topic.isLocked && lingoCommandIsLocked && !userIsLoggedIn && <LockIcon />}
                       </div>
-                    </Dropdown.Item>)}
-              </CustomDropDownButton>
-              <CustomDropDownButton title='Settings' align='end'>
-                {currentLanguage.numWritingSystems > 1 && !currentTopic.isAlphabet &&
-                  <>
-                    <Dropdown.Item>
-                writing system:  &nbsp;
-                      <select 
-                        name='alphabets' 
-                        id='alphabets' 
-                        onChange={handleSelectChange} 
-                        onClick={preventDropdownClose} // Prevent dropdown from closing
-                      >
-                        <option value='0'>romaji</option>
-                        <option value='1'>hiragana, katakana</option>
-                        <option value='2'>hiragana, katakana, kanji</option>
-                      </select>
-                    </Dropdown.Item>
-                    <hr/>
-                  </>
-                }
+                    </li>
+                  ))}
+              </ul>
+            </div>
+          )}
+        </div>
 
-                {!quiz && <Dropdown.Item
+        {/* Settings Dropdown */}
+        <div className="relative" ref={settingsDropdownRef}>
+          <button
+            className="px-3 py-2 bg-gray-300 text-black text-sm rounded-lg shadow hover:bg-gray-400"
+            onClick={toggleSettingsDropdown}
+          >
+          Settings
+          </button>
+          {isSettingsDropdownOpen && (
+            <div className="absolute right-0 mt-2 bg-white border border-gray-300 rounded-lg shadow w-64 z-10">
+              <ul className="divide-y divide-gray-200">
+                <li className="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer text-sm">
+                  <div className="flex-shrink-0">writing system:&nbsp;</div>
+                  <select
+                    name="alphabets"
+                    id="alphabets"
+                    onChange={handleSelectChange}
+                    onClick={preventDropdownClose}
+                    className="ml-2 block w-28 max-w-full truncate overflow-hidden rounded border border-gray-300 bg-white px-2 py-1 text-sm shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200"
+                  >
+                    <option value="0">romaji</option>
+                    <option value="1">hiragana, katakana</option>
+                    <option value="2">hiragana, katakana, kanji</option>
+                  </select>
+                </li>
+                {!quiz && (
+                  <li
+                    className="px-4 py-2 hover:bg-gray-100 cursor-pointer text-sm"
+                    onClick={(event) => {
+                      changeAudioBool();
+                      preventDropdownClose(event);
+                    }}
+                  >
+                    <label>
+                      <input
+                        type="checkbox"
+                        checked={audioBool}
+                        onChange={changeAudioBool}
+                        className="mr-2"
+                      />
+                    Show audio
+                    </label>
+                  </li>
+                )}
+                {((currentTopic.isAlphabet && !quiz) || !currentTopic.isAlphabet) && (
+                  <li
+                    className="px-4 py-2 hover:bg-gray-100 cursor-pointer text-sm"
+                    onClick={(event) => {
+                      changeBaseLanguage();
+                      preventDropdownClose(event);
+                    }}
+                  >
+                    <label>
+                      <input
+                        type="checkbox"
+                        checked={!showBaseLanguage}
+                        onChange={changeBaseLanguage}
+                        className="mr-2"
+                      />
+                    Swap columns
+                    </label>
+                  </li>
+                )}
+
+                <li
+                  className="px-4 py-2 hover:bg-gray-100 cursor-pointer text-sm"
                   onClick={(event) => {
-                    changeAudioBool();
+                    changeOrder();
                     preventDropdownClose(event);
                   }}
                 >
-                  <input
-                    type='checkbox'
-                    checked={audioBool} // Checkbox is checked if showBaseLanguage is true
-                    onChange={changeAudioBool} // Toggle onChange as well
-                  />
-                    show audio</Dropdown.Item>}
-                {((currentTopic.isAlphabet && !quiz) || !currentTopic.isAlphabet) && <Dropdown.Item onClick={(event) => {
-                  changeBaseLanguage();
-                  preventDropdownClose(event);
-                }}>
-                  <input
-                    type='checkbox'
-                    checked={!showBaseLanguage} // Checkbox is checked if showBaseLanguage is true
-                    onChange={changeBaseLanguage} // Toggle onChange as well
-                  />
-                    swap columns</Dropdown.Item>}
-                <Dropdown.Item onClick={(event) => {
-                  changeOrder();
-                  preventDropdownClose(event);
-                }}>
-                  <input
-                    type='checkbox'
-                    checked={!showTrueOrder} // Checkbox is checked if showBaseLanguage is true
-                    onChange={changeOrder} // Toggle onChange as well
-                  />
-                    random ordering</Dropdown.Item>
-              </CustomDropDownButton>  
-            </div>             
-          </Container>
-        </NavbarBs>
-        <Container>
-          <div>
-            <div>
-                Study
+                  <label>
+                    <input
+                      type="checkbox"
+                      checked={!showTrueOrder}
+                      onChange={changeOrder}
+                      className="mr-2"
+                    />
+                  Random ordering
+                  </label>
+                </li>
+              </ul>
             </div>
-            <CustomSwitch 
-              onChange = {changeQuizState}
-              checked= {quiz} 
-            /> 
+          )}
+        </div>
+      </div>
+      <div className='flex justify-center'>
+        <div className='px-2'>
+            Study
+        </div>
+        <CustomSwitch 
+          onChange = {changeQuizState}
+          checked= {quiz} 
+        /> 
+        <div className='px-2'>
+        Quiz
+        </div>               
+      </div>
+      {ToggleQuiz()}
+      {showPopUp && (
+        <div className="modal fixed inset-0 bg-gray-800 bg-opacity-75 flex justify-center items-center">
+          <div className="bg-white rounded p-4 max-w-lg w-full">
+            <div className="flex justify-between items-center mb-4">
+              <h3 className="text-lg font-semibold">How to Guide (Video)</h3>
+              <button className="text-gray-500" onClick={hidePopUp}>
+                ✕
+              </button>
+            </div>
             <div>
-                 Quiz
-            </div>               
+              <video
+                controls
+                src={props.howToGuideVideo}
+                className="w-full rounded"
+              />
+            </div>
           </div>
-        </Container>
-        {ToggleQuiz()}
-        <Modal show ={showPopUp} onHide={hidePopUp}>
-          <Modal.Header closeButton>
-            <Modal.Title id='contained-modal-title-vleft'>
-              How to Guide (Video)
-            </Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            {currentLanguage.languageName === 'Japanese' ? (
-              <div>
-                <video
-                  controls
-                  src={props.howToGuideVideo}
-                />
-              </div>
-            ) : (
-              <div>Video coming soon</div>
-            )}
-          </Modal.Body>
-        </Modal>
-      </Container>
+        </div>
+      )}
     </div>
   );
 };
  
-export default VocabContent;
+export default VocabContent 
