@@ -26,861 +26,828 @@ const KatakanaExplained = () => {
   const katakanaSpecialYoonWritingSystem = japaneseWritingSystems?.topics
     .find((t: any)=> t.slugName === japaneseWritingSystemsTopicSlugNames.katakanaSpecialYoon)
 
-  const [isBasicKatakanaModalOpen, setBasicKatakanaModalOpen] = useState(false);
-
-  const toggleBasicKatakanaModal = () => {
-    setBasicKatakanaModalOpen(!isBasicKatakanaModalOpen);
-  };
-
-  const [isDakutenModalOpen, setDakutenModalOpen] = useState(false);
-
-  const toggleDakutenModal = () => {
-    setDakutenModalOpen(!isDakutenModalOpen);
-  };
-
-  const [isBasicConversionModalOpen, setBasicConversionModalOpen] = useState(false);
-
-  const toggleBasicConversionModal = () => {
-    setBasicConversionModalOpen(!isBasicConversionModalOpen);
-  };
- 
-  const [isDakutenConversionModalOpen, setDakutenConversionModalOpen] = useState(false);
-
-  const toggleDakutenConversionModal = () => {
-    setDakutenConversionModalOpen(!isDakutenConversionModalOpen);
-  };
-
-  const [isYoonConversionModalOpen, setYoonConversionModalOpen] = useState(false);
-
-  const toggleYoonConversionModal = () => {
-    setYoonConversionModalOpen(!isYoonConversionModalOpen);
-  };
+  const [currentLesson, setCurrentLesson] = useState(1); // Track the active lesson
 
   const basicKatakanaTable = (
-    <table>
-      <thead>
-        <tr>
-          <th>A</th>
-          <th>I</th>
-          <th>U</th>
-          <th>E</th>
-          <th>O</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>ア (a)</td>
-          <td>イ (i)</td>
-          <td>ウ (u)</td>
-          <td>エ (e)</td>
-          <td>オ (o)</td>
-        </tr>
-        <tr>
-          <td>カ (ka)</td>
-          <td>キ (ki)</td>
-          <td>ク (ku)</td>
-          <td>ケ (ke)</td>
-          <td>コ (ko)</td>
-        </tr>
-        <tr>
-          <td>サ (sa)</td>
-          <td>シ (shi)</td>
-          <td>ス (su)</td>
-          <td>セ (se)</td>
-          <td>ソ (so)</td>
-        </tr>
-        <tr>
-          <td>タ (ta)</td>
-          <td>チ (chi)</td>
-          <td>ツ (tsu)</td>
-          <td>テ (te)</td>
-          <td>ト (to)</td>
-        </tr>
-        <tr>
-          <td>ナ (na)</td>
-          <td>ニ (ni)</td>
-          <td>ヌ (nu)</td>
-          <td>ネ (ne)</td>
-          <td>ノ (no)</td>
-        </tr>
-        <tr>
-          <td>ハ (ha)</td>
-          <td>ヒ (hi)</td>
-          <td>フ (fu)</td>
-          <td>ヘ (he)</td>
-          <td>ホ (ho)</td>
-        </tr>
-        <tr>
-          <td>マ (ma)</td>
-          <td>ミ (mi)</td>
-          <td>ム (mu)</td>
-          <td>メ (me)</td>
-          <td>モ (mo)</td>
-        </tr>
-        <tr>
-          <td>ヤ (ya)</td>
-          <td></td>
-          <td>ユ (yu)</td>
-          <td></td>
-          <td>ヨ (yo)</td>
-        </tr>
-        <tr>
-          <td>ラ (ra)</td>
-          <td>リ (ri)</td>
-          <td>ル (ru)</td>
-          <td>レ (re)</td>
-          <td>ロ (ro)</td>
-        </tr>
-        <tr>
-          <td>ワ (wa)</td>
-          <td></td>
-          <td>ヲ (wo)</td>
-          <td></td>
-          <td>ン (n)</td>
-        </tr>
-      </tbody>
-    </table>
+    <div className="flex justify-center">
+      <table className="table-auto border-collapse border border-gray-500">
+        <thead>
+          <tr>
+            <th className="border border-gray-500 px-4 py-2 bg-gray-200">A</th>
+            <th className="border border-gray-500 px-4 py-2 bg-gray-200">I</th>
+            <th className="border border-gray-500 px-4 py-2 bg-gray-200">U</th>
+            <th className="border border-gray-500 px-4 py-2 bg-gray-200">E</th>
+            <th className="border border-gray-500 px-4 py-2 bg-gray-200">O</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">ア (a)</td>
+            <td className="border border-gray-500 px-4 py-2">イ (i)</td>
+            <td className="border border-gray-500 px-4 py-2">ウ (u)</td>
+            <td className="border border-gray-500 px-4 py-2">エ (e)</td>
+            <td className="border border-gray-500 px-4 py-2">オ (o)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">カ (ka)</td>
+            <td className="border border-gray-500 px-4 py-2">キ (ki)</td>
+            <td className="border border-gray-500 px-4 py-2">ク (ku)</td>
+            <td className="border border-gray-500 px-4 py-2">ケ (ke)</td>
+            <td className="border border-gray-500 px-4 py-2">コ (ko)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">サ (sa)</td>
+            <td className="border border-gray-500 px-4 py-2">シ (shi)</td>
+            <td className="border border-gray-500 px-4 py-2">ス (su)</td>
+            <td className="border border-gray-500 px-4 py-2">セ (se)</td>
+            <td className="border border-gray-500 px-4 py-2">ソ (so)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">タ (ta)</td>
+            <td className="border border-gray-500 px-4 py-2">チ (chi)</td>
+            <td className="border border-gray-500 px-4 py-2">ツ (tsu)</td>
+            <td className="border border-gray-500 px-4 py-2">テ (te)</td>
+            <td className="border border-gray-500 px-4 py-2">ト (to)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">ナ (na)</td>
+            <td className="border border-gray-500 px-4 py-2">ニ (ni)</td>
+            <td className="border border-gray-500 px-4 py-2">ヌ (nu)</td>
+            <td className="border border-gray-500 px-4 py-2">ネ (ne)</td>
+            <td className="border border-gray-500 px-4 py-2">ノ (no)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">ハ (ha)</td>
+            <td className="border border-gray-500 px-4 py-2">ヒ (hi)</td>
+            <td className="border border-gray-500 px-4 py-2">フ (fu)</td>
+            <td className="border border-gray-500 px-4 py-2">ヘ (he)</td>
+            <td className="border border-gray-500 px-4 py-2">ホ (ho)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">マ (ma)</td>
+            <td className="border border-gray-500 px-4 py-2">ミ (mi)</td>
+            <td className="border border-gray-500 px-4 py-2">ム (mu)</td>
+            <td className="border border-gray-500 px-4 py-2">メ (me)</td>
+            <td className="border border-gray-500 px-4 py-2">モ (mo)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">ヤ (ya)</td>
+            <td className="border border-gray-500 px-4 py-2"></td>
+            <td className="border border-gray-500 px-4 py-2">ユ (yu)</td>
+            <td className="border border-gray-500 px-4 py-2"></td>
+            <td className="border border-gray-500 px-4 py-2">ヨ (yo)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">ラ (ra)</td>
+            <td className="border border-gray-500 px-4 py-2">リ (ri)</td>
+            <td className="border border-gray-500 px-4 py-2">ル (ru)</td>
+            <td className="border border-gray-500 px-4 py-2">レ (re)</td>
+            <td className="border border-gray-500 px-4 py-2">ロ (ro)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">ワ (wa)</td>
+            <td className="border border-gray-500 px-4 py-2"></td>
+            <td className="border border-gray-500 px-4 py-2">ヲ (wo)</td>
+            <td className="border border-gray-500 px-4 py-2"></td>
+            <td className="border border-gray-500 px-4 py-2">ン (n)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  );
+  const basicHiraganaToKatakanaTable = (
+    <div className="flex justify-center">
+      <table className="table-auto border-collapse border border-gray-500">
+        <thead>
+          <tr>
+            <th className="border border-gray-500 px-4 py-2 bg-gray-200">Hiragana</th>
+            <th className="border border-gray-500 px-4 py-2 bg-gray-200">Katakana</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">あ (a)</td>
+            <td className="border border-gray-500 px-4 py-2">ア (a)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">い (i)</td>
+            <td className="border border-gray-500 px-4 py-2">イ (i)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">う (u)</td>
+            <td className="border border-gray-500 px-4 py-2">ウ (u)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">え (e)</td>
+            <td className="border border-gray-500 px-4 py-2">エ (e)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">お (o)</td>
+            <td className="border border-gray-500 px-4 py-2">オ (o)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">か (ka)</td>
+            <td className="border border-gray-500 px-4 py-2">カ (ka)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">き (ki)</td>
+            <td className="border border-gray-500 px-4 py-2">キ (ki)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">く (ku)</td>
+            <td className="border border-gray-500 px-4 py-2">ク (ku)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">け (ke)</td>
+            <td className="border border-gray-500 px-4 py-2">ケ (ke)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">こ (ko)</td>
+            <td className="border border-gray-500 px-4 py-2">コ (ko)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">さ (sa)</td>
+            <td className="border border-gray-500 px-4 py-2">サ (sa)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">し (shi)</td>
+            <td className="border border-gray-500 px-4 py-2">シ (shi)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">す (su)</td>
+            <td className="border border-gray-500 px-4 py-2">ス (su)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">せ (se)</td>
+            <td className="border border-gray-500 px-4 py-2">セ (se)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">そ (so)</td>
+            <td className="border border-gray-500 px-4 py-2">ソ (so)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">た (ta)</td>
+            <td className="border border-gray-500 px-4 py-2">タ (ta)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">ち (chi)</td>
+            <td className="border border-gray-500 px-4 py-2">チ (chi)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">つ (tsu)</td>
+            <td className="border border-gray-500 px-4 py-2">ツ (tsu)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">て (te)</td>
+            <td className="border border-gray-500 px-4 py-2">テ (te)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">と (to)</td>
+            <td className="border border-gray-500 px-4 py-2">ト (to)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">な (na)</td>
+            <td className="border border-gray-500 px-4 py-2">ナ (na)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">に (ni)</td>
+            <td className="border border-gray-500 px-4 py-2">ニ (ni)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">ぬ (nu)</td>
+            <td className="border border-gray-500 px-4 py-2">ヌ (nu)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">ね (ne)</td>
+            <td className="border border-gray-500 px-4 py-2">ネ (ne)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">の (no)</td>
+            <td className="border border-gray-500 px-4 py-2">ノ (no)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">は (ha)</td>
+            <td className="border border-gray-500 px-4 py-2">ハ (ha)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">ひ (hi)</td>
+            <td className="border border-gray-500 px-4 py-2">ヒ (hi)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">ふ (fu)</td>
+            <td className="border border-gray-500 px-4 py-2">フ (fu)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">へ (he)</td>
+            <td className="border border-gray-500 px-4 py-2">ヘ (he)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">ほ (ho)</td>
+            <td className="border border-gray-500 px-4 py-2">ホ (ho)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">ま (ma)</td>
+            <td className="border border-gray-500 px-4 py-2">マ (ma)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">み (mi)</td>
+            <td className="border border-gray-500 px-4 py-2">ミ (mi)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">む (mu)</td>
+            <td className="border border-gray-500 px-4 py-2">ム (mu)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">め (me)</td>
+            <td className="border border-gray-500 px-4 py-2">メ (me)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">も (mo)</td>
+            <td className="border border-gray-500 px-4 py-2">モ (mo)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">や (ya)</td>
+            <td className="border border-gray-500 px-4 py-2">ヤ (ya)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">ゆ (yu)</td>
+            <td className="border border-gray-500 px-4 py-2">ユ (yu)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">よ (yo)</td>
+            <td className="border border-gray-500 px-4 py-2">ヨ (yo)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">ら (ra)</td>
+            <td className="border border-gray-500 px-4 py-2">ラ (ra)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">り (ri)</td>
+            <td className="border border-gray-500 px-4 py-2">リ (ri)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">る (ru)</td>
+            <td className="border border-gray-500 px-4 py-2">ル (ru)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">れ (re)</td>
+            <td className="border border-gray-500 px-4 py-2">レ (re)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">ろ (ro)</td>
+            <td className="border border-gray-500 px-4 py-2">ロ (ro)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">わ (wa)</td>
+            <td className="border border-gray-500 px-4 py-2">ワ (wa)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">を (wo)</td>
+            <td className="border border-gray-500 px-4 py-2">ヲ (wo)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">ん (n)</td>
+            <td className="border border-gray-500 px-4 py-2">ン (n)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  );
+
+  const dakutenTable = (
+    <div className="flex justify-center">
+      <table className="table-auto border-collapse border border-gray-500">
+        <thead>
+          <tr>
+            <th className="border border-gray-500 px-4 py-2 bg-gray-200">K → G</th>
+            <th className="border border-gray-500 px-4 py-2 bg-gray-200">S → Z</th>
+            <th className="border border-gray-500 px-4 py-2 bg-gray-200">T → D</th>
+            <th className="border border-gray-500 px-4 py-2 bg-gray-200">H → B</th>
+            <th className="border border-gray-500 px-4 py-2 bg-gray-200">H → P</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">カ (ka) → ガ (ga)</td>
+            <td className="border border-gray-500 px-4 py-2">サ (sa) → ザ (za)</td>
+            <td className="border border-gray-500 px-4 py-2">タ (ta) → ダ (da)</td>
+            <td className="border border-gray-500 px-4 py-2">ハ (ha) → バ (ba)</td>
+            <td className="border border-gray-500 px-4 py-2">ハ (ha) → パ (pa)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">キ (ki) → ギ (gi)</td>
+            <td className="border border-gray-500 px-4 py-2">シ (shi) → ジ (ji)</td>
+            <td className="border border-gray-500 px-4 py-2">チ (chi) → <b>ヂ (di)¹</b></td>
+            <td className="border border-gray-500 px-4 py-2">ヒ (hi) → ビ (bi)</td>
+            <td className="border border-gray-500 px-4 py-2">ヒ (hi) → ピ (pi)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">ク (ku) → グ (gu)</td>
+            <td className="border border-gray-500 px-4 py-2">ス (su) → ズ (zu)</td>
+            <td className="border border-gray-500 px-4 py-2">ツ (tsu) → <b>ヅ (du)²</b></td>
+            <td className="border border-gray-500 px-4 py-2">フ (fu) → ブ (bu)</td>
+            <td className="border border-gray-500 px-4 py-2">フ (fu) → プ (pu)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">ケ (ke) → ゲ (ge)</td>
+            <td className="border border-gray-500 px-4 py-2">セ (se) → ゼ (ze)</td>
+            <td className="border border-gray-500 px-4 py-2">テ (te) → デ (de)</td>
+            <td className="border border-gray-500 px-4 py-2">ヘ (he) → ベ (be)</td>
+            <td className="border border-gray-500 px-4 py-2">ヘ (he) → ペ (pe)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">コ (ko) → ゴ (go)</td>
+            <td className="border border-gray-500 px-4 py-2">ソ (so) → ゾ (zo)</td>
+            <td className="border border-gray-500 px-4 py-2">ト (to) → ド (do)</td>
+            <td className="border border-gray-500 px-4 py-2">ホ (ho) → ボ (bo)</td>
+            <td className="border border-gray-500 px-4 py-2">ホ (ho) → ポ (po)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  );
+
+  const dakutenHiraganaToKatakanaTable = (
+    <div className="flex justify-center">
+      <table className="table-auto border-collapse border border-gray-500">
+        <thead>
+          <tr>
+            <th className="border border-gray-500 px-4 py-2 bg-gray-200">Hiragana</th>
+            <th className="border border-gray-500 px-4 py-2 bg-gray-200">Katakana</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">が (ga)</td>
+            <td className="border border-gray-500 px-4 py-2">ガ (ga)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">ぎ (gi)</td>
+            <td className="border border-gray-500 px-4 py-2">ギ (gi)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">ぐ (gu)</td>
+            <td className="border border-gray-500 px-4 py-2">グ (gu)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">げ (ge)</td>
+            <td className="border border-gray-500 px-4 py-2">ゲ (ge)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">ご (go)</td>
+            <td className="border border-gray-500 px-4 py-2">ゴ (go)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">ざ (za)</td>
+            <td className="border border-gray-500 px-4 py-2">ザ (za)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">じ (ji)</td>
+            <td className="border border-gray-500 px-4 py-2">ジ (ji)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">ず (zu)</td>
+            <td className="border border-gray-500 px-4 py-2">ズ (zu)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">ぜ (ze)</td>
+            <td className="border border-gray-500 px-4 py-2">ゼ (ze)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">ぞ (zo)</td>
+            <td className="border border-gray-500 px-4 py-2">ゾ (zo)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">だ (da)</td>
+            <td className="border border-gray-500 px-4 py-2">ダ (da)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">ぢ (di) <small>(pronounced ji)</small></td>
+            <td className="border border-gray-500 px-4 py-2">ヂ (di)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">づ (du) <small>(pronounced zu)</small></td>
+            <td className="border border-gray-500 px-4 py-2">ヅ (du)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">で (de)</td>
+            <td className="border border-gray-500 px-4 py-2">デ (de)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">ど (do)</td>
+            <td className="border border-gray-500 px-4 py-2">ド (do)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">ば (ba)</td>
+            <td className="border border-gray-500 px-4 py-2">バ (ba)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">び (bi)</td>
+            <td className="border border-gray-500 px-4 py-2">ビ (bi)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">ぶ (bu)</td>
+            <td className="border border-gray-500 px-4 py-2">ブ (bu)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">べ (be)</td>
+            <td className="border border-gray-500 px-4 py-2">ベ (be)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">ぼ (bo)</td>
+            <td className="border border-gray-500 px-4 py-2">ボ (bo)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">ぱ (pa)</td>
+            <td className="border border-gray-500 px-4 py-2">パ (pa)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">ぴ (pi)</td>
+            <td className="border border-gray-500 px-4 py-2">ピ (pi)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">ぷ (pu)</td>
+            <td className="border border-gray-500 px-4 py-2">プ (pu)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">ぺ (pe)</td>
+            <td className="border border-gray-500 px-4 py-2">ペ (pe)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">ぽ (po)</td>
+            <td className="border border-gray-500 px-4 py-2">ポ (po)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  );
+
+  const yoonHiraganaToKatakanaTable = (
+    <div className="flex justify-center">
+      <table className="table-auto border-collapse border border-gray-500">
+        <thead>
+          <tr>
+            <th className="border border-gray-500 px-4 py-2 bg-gray-200">Hiragana</th>
+            <th className="border border-gray-500 px-4 py-2 bg-gray-200">Katakana</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">きゃ (kya)</td>
+            <td className="border border-gray-500 px-4 py-2">キャ (kya)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">きゅ (kyu)</td>
+            <td className="border border-gray-500 px-4 py-2">キュ (kyu)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">きょ (kyo)</td>
+            <td className="border border-gray-500 px-4 py-2">キョ (kyo)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">しゃ (sha)</td>
+            <td className="border border-gray-500 px-4 py-2">シャ (sha)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">しゅ (shu)</td>
+            <td className="border border-gray-500 px-4 py-2">シュ (shu)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">しょ (sho)</td>
+            <td className="border border-gray-500 px-4 py-2">ショ (sho)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">ちゃ (cha)</td>
+            <td className="border border-gray-500 px-4 py-2">チャ (cha)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">ちゅ (chu)</td>
+            <td className="border border-gray-500 px-4 py-2">チュ (chu)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">ちょ (cho)</td>
+            <td className="border border-gray-500 px-4 py-2">チョ (cho)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">にゃ (nya)</td>
+            <td className="border border-gray-500 px-4 py-2">ニャ (nya)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">にゅ (nyu)</td>
+            <td className="border border-gray-500 px-4 py-2">ニュ (nyu)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">にょ (nyo)</td>
+            <td className="border border-gray-500 px-4 py-2">ニョ (nyo)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">ひゃ (hya)</td>
+            <td className="border border-gray-500 px-4 py-2">ヒャ (hya)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">ひゅ (hyu)</td>
+            <td className="border border-gray-500 px-4 py-2">ヒュ (hyu)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">ひょ (hyo)</td>
+            <td className="border border-gray-500 px-4 py-2">ヒョ (hyo)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">みゃ (mya)</td>
+            <td className="border border-gray-500 px-4 py-2">ミャ (mya)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">みゅ (myu)</td>
+            <td className="border border-gray-500 px-4 py-2">ミュ (myu)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">みょ (myo)</td>
+            <td className="border border-gray-500 px-4 py-2">ミョ (myo)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">りゃ (rya)</td>
+            <td className="border border-gray-500 px-4 py-2">リャ (rya)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">りゅ (ryu)</td>
+            <td className="border border-gray-500 px-4 py-2">リュ (ryu)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">りょ (ryo)</td>
+            <td className="border border-gray-500 px-4 py-2">リョ (ryo)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">ぎゃ (gya)</td>
+            <td className="border border-gray-500 px-4 py-2">ギャ (gya)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">ぎゅ (gyu)</td>
+            <td className="border border-gray-500 px-4 py-2">ギュ (gyu)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">ぎょ (gyo)</td>
+            <td className="border border-gray-500 px-4 py-2">ギョ (gyo)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">じゃ (jya)</td>
+            <td className="border border-gray-500 px-4 py-2">ジャ (jya)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">じゅ (jyu)</td>
+            <td className="border border-gray-500 px-4 py-2">ジュ (jyu)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">じょ (jyo)</td>
+            <td className="border border-gray-500 px-4 py-2">ジョ (jyo)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">ぢゃ (dya)</td>
+            <td className="border border-gray-500 px-4 py-2">ヂャ (dya)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">ぢゅ (dyu)</td>
+            <td className="border border-gray-500 px-4 py-2">ヂュ (dyu)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">ぢょ (dyo)</td>
+            <td className="border border-gray-500 px-4 py-2">ヂョ (dyo)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">びゃ (bya)</td>
+            <td className="border border-gray-500 px-4 py-2">ビャ (bya)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">びゅ (byu)</td>
+            <td className="border border-gray-500 px-4 py-2">ビュ (byu)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">びょ (byo)</td>
+            <td className="border border-gray-500 px-4 py-2">ビョ (byo)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">ぴゃ (pya)</td>
+            <td className="border border-gray-500 px-4 py-2">ピャ (pya)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">ぴゅ (pyu)</td>
+            <td className="border border-gray-500 px-4 py-2">ピュ (pyu)</td>
+          </tr>
+          <tr>
+            <td className="border border-gray-500 px-4 py-2">ぴょ (pyo)</td>
+            <td className="border border-gray-500 px-4 py-2">ピョ (pyo)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   );
   
-  const basicHiraganaToKatakanaTable = <table>
-    <thead>
-      <tr>
-        <th>Hiragana</th>
-        <th>Katakana</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>あ (a)</td>
-        <td>ア (a)</td>
-      </tr>
-      <tr>
-        <td>い (i)</td>
-        <td>イ (i)</td>
-      </tr>
-      <tr>
-        <td>う (u)</td>
-        <td>ウ (u)</td>
-      </tr>
-      <tr>
-        <td>え (e)</td>
-        <td>エ (e)</td>
-      </tr>
-      <tr>
-        <td>お (o)</td>
-        <td>オ (o)</td>
-      </tr>
-      <tr>
-        <td>か (ka)</td>
-        <td>カ (ka)</td>
-      </tr>
-      <tr>
-        <td>き (ki)</td>
-        <td>キ (ki)</td>
-      </tr>
-      <tr>
-        <td>く (ku)</td>
-        <td>ク (ku)</td>
-      </tr>
-      <tr>
-        <td>け (ke)</td>
-        <td>ケ (ke)</td>
-      </tr>
-      <tr>
-        <td>こ (ko)</td>
-        <td>コ (ko)</td>
-      </tr>
-      <tr>
-        <td>さ (sa)</td>
-        <td>サ (sa)</td>
-      </tr>
-      <tr>
-        <td>し (shi)</td>
-        <td>シ (shi)</td>
-      </tr>
-      <tr>
-        <td>す (su)</td>
-        <td>ス (su)</td>
-      </tr>
-      <tr>
-        <td>せ (se)</td>
-        <td>セ (se)</td>
-      </tr>
-      <tr>
-        <td>そ (so)</td>
-        <td>ソ (so)</td>
-      </tr>
-      <tr>
-        <td>た (ta)</td>
-        <td>タ (ta)</td>
-      </tr>
-      <tr>
-        <td>ち (chi)</td>
-        <td>チ (chi)</td>
-      </tr>
-      <tr>
-        <td>つ (tsu)</td>
-        <td>ツ (tsu)</td>
-      </tr>
-      <tr>
-        <td>て (te)</td>
-        <td>テ (te)</td>
-      </tr>
-      <tr>
-        <td>と (to)</td>
-        <td>ト (to)</td>
-      </tr>
-      <tr>
-        <td>な (na)</td>
-        <td>ナ (na)</td>
-      </tr>
-      <tr>
-        <td>に (ni)</td>
-        <td>ニ (ni)</td>
-      </tr>
-      <tr>
-        <td>ぬ (nu)</td>
-        <td>ヌ (nu)</td>
-      </tr>
-      <tr>
-        <td>ね (ne)</td>
-        <td>ネ (ne)</td>
-      </tr>
-      <tr>
-        <td>の (no)</td>
-        <td>ノ (no)</td>
-      </tr>
-      <tr>
-        <td>は (ha)</td>
-        <td>ハ (ha)</td>
-      </tr>
-      <tr>
-        <td>ひ (hi)</td>
-        <td>ヒ (hi)</td>
-      </tr>
-      <tr>
-        <td>ふ (fu)</td>
-        <td>フ (fu)</td>
-      </tr>
-      <tr>
-        <td>へ (he)</td>
-        <td>ヘ (he)</td>
-      </tr>
-      <tr>
-        <td>ほ (ho)</td>
-        <td>ホ (ho)</td>
-      </tr>
-      <tr>
-        <td>ま (ma)</td>
-        <td>マ (ma)</td>
-      </tr>
-      <tr>
-        <td>み (mi)</td>
-        <td>ミ (mi)</td>
-      </tr>
-      <tr>
-        <td>む (mu)</td>
-        <td>ム (mu)</td>
-      </tr>
-      <tr>
-        <td>め (me)</td>
-        <td>メ (me)</td>
-      </tr>
-      <tr>
-        <td>も (mo)</td>
-        <td>モ (mo)</td>
-      </tr>
-      <tr>
-        <td>や (ya)</td>
-        <td>ヤ (ya)</td>
-      </tr>
-      <tr>
-        <td>ゆ (yu)</td>
-        <td>ユ (yu)</td>
-      </tr>
-      <tr>
-        <td>よ (yo)</td>
-        <td>ヨ (yo)</td>
-      </tr>
-      <tr>
-        <td>ら (ra)</td>
-        <td>ラ (ra)</td>
-      </tr>
-      <tr>
-        <td>り (ri)</td>
-        <td>リ (ri)</td>
-      </tr>
-      <tr>
-        <td>る (ru)</td>
-        <td>ル (ru)</td>
-      </tr>
-      <tr>
-        <td>れ (re)</td>
-        <td>レ (re)</td>
-      </tr>
-      <tr>
-        <td>ろ (ro)</td>
-        <td>ロ (ro)</td>
-      </tr>
-      <tr>
-        <td>わ (wa)</td>
-        <td>ワ (wa)</td>
-      </tr>
-      <tr>
-        <td>を (wo)</td>
-        <td>ヲ (wo)</td>
-      </tr>
-      <tr>
-        <td>ん (n)</td>
-        <td>ン (n)</td>
-      </tr>
-    </tbody>
-  </table>
+  ;
 
-  const dakutenTable = <table>
-    <thead>
-      <tr>
-        <th>K → G</th>
-        <th>S → Z</th>
-        <th>T → D</th>
-        <th>H → B</th>
-        <th>H → P</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>カ (ka) → ガ (ga)</td>
-        <td>サ (sa) → ザ (za)</td>
-        <td>タ (ta) → ダ (da)</td>
-        <td>ハ (ha) → バ (ba)</td>
-        <td>ハ (ha) → パ (pa)</td>
-      </tr>
-      <tr>
-        <td>キ (ki) → ギ (gi)</td>
-        <td>シ (shi) → ジ (ji)</td>
-        <td>チ (chi) → <b>ヂ (di)¹</b></td>
-        <td>ヒ (hi) → ビ (bi)</td>
-        <td>ヒ (hi) → ピ (pi)</td>
-      </tr>
-      <tr>
-        <td>ク (ku) → グ (gu)</td>
-        <td>ス (su) → ズ (zu)</td>
-        <td>ツ (tsu) → <b>ヅ (du)²</b></td>
-        <td>フ (fu) → ブ (bu)</td>
-        <td>フ (fu) → プ (pu)</td>
-      </tr>
-      <tr>
-        <td>ケ (ke) → ゲ (ge)</td>
-        <td>セ (se) → ゼ (ze)</td>
-        <td>テ (te) → デ (de)</td>
-        <td>ヘ (he) → ベ (be)</td>
-        <td>ヘ (he) → ペ (pe)</td>
-      </tr>
-      <tr>
-        <td>コ (ko) → ゴ (go)</td>
-        <td>ソ (so) → ゾ (zo)</td>
-        <td>ト (to) → ド (do)</td>
-        <td>ホ (ho) → ボ (bo)</td>
-        <td>ホ (ho) → ポ (po)</td>
-      </tr>
-    </tbody>
-  </table>
+  const LessonContent = () => {
+    switch (currentLesson) {
+    case 1:
+      return (
+        <>
+          <div className="flex flex-col space-y-2 justify-center items-center m-8">
+    
+            <a className="text-black border text-center border-black bg-gray-200 active:bg-gray-50 hover:bg-gray-400 p-2 rounded-md"
 
-  const dakutenHiraganaToKatakanaTable = <table>
-    <thead>
-      <tr>
-        <th>Hiragana</th>
-        <th>Katakana</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>が (ga)</td>
-        <td>ガ (ga)</td>
-      </tr>
-      <tr>
-        <td>ぎ (gi)</td>
-        <td>ギ (gi)</td>
-      </tr>
-      <tr>
-        <td>ぐ (gu)</td>
-        <td>グ (gu)</td>
-      </tr>
-      <tr>
-        <td>げ (ge)</td>
-        <td>ゲ (ge)</td>
-      </tr>
-      <tr>
-        <td>ご (go)</td>
-        <td>ゴ (go)</td>
-      </tr>
-      <tr>
-        <td>ざ (za)</td>
-        <td>ザ (za)</td>
-      </tr>
-      <tr>
-        <td>じ (ji)</td>
-        <td>ジ (ji)</td>
-      </tr>
-      <tr>
-        <td>ず (zu)</td>
-        <td>ズ (zu)</td>
-      </tr>
-      <tr>
-        <td>ぜ (ze)</td>
-        <td>ゼ (ze)</td>
-      </tr>
-      <tr>
-        <td>ぞ (zo)</td>
-        <td>ゾ (zo)</td>
-      </tr>
-      <tr>
-        <td>だ (da)</td>
-        <td>ダ (da)</td>
-      </tr>
-      <tr>
-        <td>ぢ (di) <small>(pronounced ji)</small></td>
-        <td>ヂ (di)</td>
-      </tr>
-      <tr>
-        <td>づ (du) <small>(pronounced zu)</small></td>
-        <td>ヅ (du)</td>
-      </tr>
-      <tr>
-        <td>で (de)</td>
-        <td>デ (de)</td>
-      </tr>
-      <tr>
-        <td>ど (do)</td>
-        <td>ド (do)</td>
-      </tr>
-      <tr>
-        <td>ば (ba)</td>
-        <td>バ (ba)</td>
-      </tr>
-      <tr>
-        <td>び (bi)</td>
-        <td>ビ (bi)</td>
-      </tr>
-      <tr>
-        <td>ぶ (bu)</td>
-        <td>ブ (bu)</td>
-      </tr>
-      <tr>
-        <td>べ (be)</td>
-        <td>ベ (be)</td>
-      </tr>
-      <tr>
-        <td>ぼ (bo)</td>
-        <td>ボ (bo)</td>
-      </tr>
-      <tr>
-        <td>ぱ (pa)</td>
-        <td>パ (pa)</td>
-      </tr>
-      <tr>
-        <td>ぴ (pi)</td>
-        <td>ピ (pi)</td>
-      </tr>
-      <tr>
-        <td>ぷ (pu)</td>
-        <td>プ (pu)</td>
-      </tr>
-      <tr>
-        <td>ぺ (pe)</td>
-        <td>ペ (pe)</td>
-      </tr>
-      <tr>
-        <td>ぽ (po)</td>
-        <td>ポ (po)</td>
-      </tr>
-    </tbody>
-  </table>
-
-  const yoonHiraganaToKatakanaTable = <table>
-    <thead>
-      <tr>
-        <th>Hiragana</th>
-        <th>Katakana</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>きゃ (kya)</td>
-        <td>キャ (kya)</td>
-      </tr>
-      <tr>
-        <td>きゅ (kyu)</td>
-        <td>キュ (kyu)</td>
-      </tr>
-      <tr>
-        <td>きょ (kyo)</td>
-        <td>キョ (kyo)</td>
-      </tr>
-      <tr>
-        <td>しゃ (sha)</td>
-        <td>シャ (sha)</td>
-      </tr>
-      <tr>
-        <td>しゅ (shu)</td>
-        <td>シュ (shu)</td>
-      </tr>
-      <tr>
-        <td>しょ (sho)</td>
-        <td>ショ (sho)</td>
-      </tr>
-      <tr>
-        <td>ちゃ (cha)</td>
-        <td>チャ (cha)</td>
-      </tr>
-      <tr>
-        <td>ちゅ (chu)</td>
-        <td>チュ (chu)</td>
-      </tr>
-      <tr>
-        <td>ちょ (cho)</td>
-        <td>チョ (cho)</td>
-      </tr>
-      <tr>
-        <td>にゃ (nya)</td>
-        <td>ニャ (nya)</td>
-      </tr>
-      <tr>
-        <td>にゅ (nyu)</td>
-        <td>ニュ (nyu)</td>
-      </tr>
-      <tr>
-        <td>にょ (nyo)</td>
-        <td>ニョ (nyo)</td>
-      </tr>
-      <tr>
-        <td>ひゃ (hya)</td>
-        <td>ヒャ (hya)</td>
-      </tr>
-      <tr>
-        <td>ひゅ (hyu)</td>
-        <td>ヒュ (hyu)</td>
-      </tr>
-      <tr>
-        <td>ひょ (hyo)</td>
-        <td>ヒョ (hyo)</td>
-      </tr>
-      <tr>
-        <td>みゃ (mya)</td>
-        <td>ミャ (mya)</td>
-      </tr>
-      <tr>
-        <td>みゅ (myu)</td>
-        <td>ミュ (myu)</td>
-      </tr>
-      <tr>
-        <td>みょ (myo)</td>
-        <td>ミョ (myo)</td>
-      </tr>
-      <tr>
-        <td>りゃ (rya)</td>
-        <td>リャ (rya)</td>
-      </tr>
-      <tr>
-        <td>りゅ (ryu)</td>
-        <td>リュ (ryu)</td>
-      </tr>
-      <tr>
-        <td>りょ (ryo)</td>
-        <td>リョ (ryo)</td>
-      </tr>
-      <tr>
-        <td>ぎゃ (gya)</td>
-        <td>ギャ (gya)</td>
-      </tr>
-      <tr>
-        <td>ぎゅ (gyu)</td>
-        <td>ギュ (gyu)</td>
-      </tr>
-      <tr>
-        <td>ぎょ (gyo)</td>
-        <td>ギョ (gyo)</td>
-      </tr>
-      <tr>
-        <td>じゃ (jya)</td>
-        <td>ジャ (jya)</td>
-      </tr>
-      <tr>
-        <td>じゅ (jyu)</td>
-        <td>ジュ (jyu)</td>
-      </tr>
-      <tr>
-        <td>じょ (jyo)</td>
-        <td>ジョ (jyo)</td>
-      </tr>
-      <tr>
-        <td>ぢゃ (dya)</td>
-        <td>ヂャ (dya)</td>
-      </tr>
-      <tr>
-        <td>ぢゅ (dyu)</td>
-        <td>ヂュ (dyu)</td>
-      </tr>
-      <tr>
-        <td>ぢょ (dyo)</td>
-        <td>ヂョ (dyo)</td>
-      </tr>
-      <tr>
-        <td>びゃ (bya)</td>
-        <td>ビャ (bya)</td>
-      </tr>
-      <tr>
-        <td>びゅ (byu)</td>
-        <td>ビュ (byu)</td>
-      </tr>
-      <tr>
-        <td>びょ (byo)</td>
-        <td>ビョ (byo)</td>
-      </tr>
-      <tr>
-        <td>ぴゃ (pya)</td>
-        <td>ピャ (pya)</td>
-      </tr>
-      <tr>
-        <td>ぴゅ (pyu)</td>
-        <td>ピュ (pyu)</td>
-      </tr>
-      <tr>
-        <td>ぴょ (pyo)</td>
-        <td>ピョ (pyo)</td>
-      </tr>
-    </tbody>
-  </table>
-;
-  return (
-    <div className='max-w-screen-md mx-auto px-4 md:text-lg'>
-      <h4 className='text-center text-2xl py-12'>Katakana Explained</h4>
-      <div>
+              onClick={handleProtectedClick(katakanaBasicWritingSystem)}
+              href={
+                createURL(
+                  LanguageNames.Japanese,
+                  LearningSections.WritingSystem,
+                  katakanaBasicWritingSystem)
+              }>
+        Basic Katakana Exercise
+            </a>
+          </div>
+          <div>
           Katakana is mainly used to write Japanese loan words. For example 
           in Japanese the word for 'camera' is <b>カメラ (kamera)</b>. 
           Learning all 5 concepts below is essential to learning Japanese.
-      </div>
-      <div className='py-2'>
-        <b>Basic Katakana</b>  has <a className='text-blue-500 underline'
-          onClick={handleProtectedClick(katakanaBasicWritingSystem)}
-          href={
-            createURL(
-              LanguageNames.Japanese,
-              LearningSections.WritingSystem,
-              katakanaBasicWritingSystem)
-          }>
-                      46 sounds</a>. 
-        <div>
-          <i>
-                  Note 1 - See this diagram for basic <span className='text-blue-500 underline'
-              onClick={toggleBasicKatakanaModal}
-            >
-          pattern
-            </span>.
-          </i>
-          {isBasicKatakanaModalOpen && (
-            <div>
-              <div>
-                <h3>Katakana Chart</h3>
-                <button 
-                  onClick={toggleBasicKatakanaModal}>
-                      Close
-                </button>
-              </div>
-             
-              {basicKatakanaTable}
-            </div>
-          )}
+          </div>
+          <div className='py-2'>
+            Katakana has 46 basic sounds. See this diagram for pattern:
+      
+            {basicKatakanaTable}
 
-          {isBasicKatakanaModalOpen && (
-            <div onClick={toggleBasicKatakanaModal}/>
-          )}
-        </div>
-        <div>
-          <i>
-                  Note 2 - Each basic katakana has a matching basic hiragana that produces the 
-                  same sound. See <span className='text-blue-500 underline'
-              onClick={toggleBasicConversionModal}
-            >
-          diagram
-            </span>.
-          </i>
-          {isBasicConversionModalOpen && (
-            <div>
-              <div>
-                <button onClick={toggleBasicConversionModal}>
-                        Close
-                </button>
-              </div>
-              {basicHiraganaToKatakanaTable}
-            </div>
-          )}
-
-          {isDakutenModalOpen && (
-            <div onClick={toggleDakutenModal}/>
-          )}
-        </div>
+            Moreover each basic katakana has a matching basic hiragana that produces the 
+                  same sound. See this diagram: 
+            {basicHiraganaToKatakanaTable}
+          </div>  
+        </>
+      );
+    case 2:
+      return (
+        <>
+          <div className="flex flex-col space-y-2 justify-center items-center m-8">
+            <a className="text-black border text-center border-black bg-gray-200 active:bg-gray-50 hover:bg-gray-400 p-2 rounded-md"
+              onClick={handleProtectedClick(katakanaDakutenWritingSystem)}
+              href={
+                createURL(
+                  LanguageNames.Japanese,
+                  LearningSections.WritingSystem,
+                  katakanaDakutenWritingSystem)
+              }>
+              Katakana Dakuten/Handakuten Exercise
+              {katakanaDakutenWritingSystem?.isLocked &&
+                    lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon/> : ''}
+            </a>
+          </div>
+          <div className='py-2'>
+            Dakuten and Handakuten lead to another 25 katakana variations
              
-      </div>
-      <div className='py-2'>
-        <b>Dakuten and Handakuten</b> lead to another <a 
-          className='text-blue-500 underline' 
-          onClick={handleProtectedClick(katakanaDakutenWritingSystem)} 
-          href={
-            createURL(
-              LanguageNames.Japanese,
-              LearningSections.WritingSystem,
-              katakanaDakutenWritingSystem)
-          }>25 katakana variations
-          {katakanaDakutenWritingSystem?.isLocked &&
-                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon/> : ''}
-        </a>. <br></br>
             Dakuten and handakuten are marks added on top of katakana that alter pronunciation. 
             The dakuten mark is <b>( ゛)</b>. There are 20 dakuten variations. 
             For example: <b>カ (ka) → ガ (ga)</b>. <br></br> 
             The handakuten mark is <b>( ゜)</b>. There are 5 variations. 
             For example: <b>ハ (ha) → パ (pa)</b>.
-        <div>
-        </div>
-        <div>
-          <i>
-                  Note 1 - See this useful <span className='text-blue-500 underline'
-              onClick={toggleDakutenModal}
-            >
-          diagram
-            </span> for the general pattern.
-          </i>
-          {isDakutenModalOpen && (
+            
+                 See this useful diagram
+                for the general pattern.
+             
+            {dakutenTable}
             <div>
-              <div>
-                <button onClick={toggleDakutenModal}>
-                        Close
-                </button>
-              </div>
-              {dakutenTable}
-              <div>
                     (1) ヂ is written in romaji as <b>di</b> but is pronounced <b>ji</b>.
-              </div>
-              <div>
-                    (2) ヅ is written in romaji as <b>du</b> but is pronounced <b>zu</b>.
-              </div>
             </div>
-          )}
-
-          {isDakutenConversionModalOpen && (
-            <div onClick={toggleDakutenModal}/>
-          )}
-        </div>
-        <div>
-          <i>
-          Note 2 - Also each dakuten/handakuten katakana has a matching dakuten/hankuten
-          hiragana that produces the same sound. See <span className='text-blue-500 underline'
-              onClick={toggleDakutenConversionModal}
-            >
-          diagram
-            </span>.
-          </i>
-          {isDakutenConversionModalOpen && (
             <div>
-              <div>
-                <button onClick={toggleDakutenConversionModal}>
-                        Close
-                </button>
-              </div>
-              {dakutenHiraganaToKatakanaTable}
+                    (2) ヅ is written in romaji as <b>du</b> but is pronounced <b>zu</b>.
             </div>
-          )}
-
-          {isDakutenModalOpen && (
-            <div onClick={toggleDakutenConversionModal}/>
-          )}
-        </div>
-      </div>
-      <div className='py-2'>
-        <b>Native Yōon sounds</b>  leads to an additional: <a className='text-blue-500 underline'
-          onClick={handleProtectedClick(katakanaYoonWritingSystem)} 
-          href={
-            createURL(
-              LanguageNames.Japanese,
-              LearningSections.WritingSystem,
-              katakanaYoonWritingSystem)
-          }>
-                36 katakana combinations
-          {katakanaYoonWritingSystem?.isLocked &&
-                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon/> : ''}
-        </a> 
-        <div>
-              Some katakana combine to form Yōon sounds. In these combinations,
+             
+          Also each dakuten/handakuten katakana has a matching dakuten/hankuten
+          hiragana that produces the same sound. See diagram:               
+            {dakutenHiraganaToKatakanaTable}
+          </div>
+        </>
+      );
+    case 3:
+      return (
+        <>
+          <div className="flex flex-col space-y-2 justify-center items-center m-8">
+            <a className="text-black border text-center border-black bg-gray-200 active:bg-gray-50 hover:bg-gray-400 p-2 rounded-md"
+              onClick={handleProtectedClick(katakanaYoonWritingSystem)}
+              href={
+                createURL(
+                  LanguageNames.Japanese,
+                  LearningSections.WritingSystem,
+                  katakanaYoonWritingSystem)
+              }>
+              Katakana Yoōn Exercise
+              {katakanaYoonWritingSystem?.isLocked &&
+                    lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon/> : ''}
+            </a>
+          </div>
+          <div className='py-2'>
+            <b>Native Yōon sounds</b>  leads to an additional 36 katakana combinations.
+            Some katakana combine to form Yōon sounds. In these combinations,
             the first character remains full-sized, while the second is smaller.
             Examples like <b>キャ (kya) </b>and <b>ミュ (myu)</b> represent single, blended 
             syllables rather than separate sounds. This blending is crucial in words like <br/>
-          <b>キャリア (kyaria, career)</b> and <b>ミュージック (myūjikku, music)</b>. 
-          <div>
-            <i>
-                    Note - Each native yōon katakana has a matching yōon hiragana that produces the 
-                    same sound. See <span className='text-blue-500 underline'
-                onClick={toggleYoonConversionModal}
-              >
-          diagram
-              </span>.
-            </i>
-            {isYoonConversionModalOpen && (
-              <div>
-                <div>
-                  <button onClick={toggleYoonConversionModal}>
-                        Close
-                  </button>
-                </div>
-                {yoonHiraganaToKatakanaTable}
-              </div>
-            )}
-
-            {isYoonConversionModalOpen && (
-              <div onClick={toggleYoonConversionModal}/>
-            )}
+            <b>キャリア (kyaria, career)</b> and <b>ミュージック (myūjikku, music)</b>. 
+            
+                     Each native yōon katakana has a matching yōon hiragana that produces the 
+                    same sound. See diagram:
+              
+            {yoonHiraganaToKatakanaTable}
+      
           </div>
-        </div>
-        <div className='py-2'>
-          <b>Foreign Yōon sounds</b>  leads to an additional: <a 
-            className='text-blue-500 underline' 
-            onClick={handleProtectedClick(katakanaSpecialYoonWritingSystem)} 
-            href={
-              createURL(
-                LanguageNames.Japanese,
-                LearningSections.WritingSystem,
-                katakanaSpecialYoonWritingSystem)
-            }>
-                22 katakana combinations
-            {katakanaSpecialYoonWritingSystem?.isLocked &&
-                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon/> : ''}
-          </a>
-          <div>
-                Some sounds from non Japanese languages cannot be captured by the 
-                36 native katakana yōon sounds. For Example <b>ヴァ (bwa/va) </b>and <b>フィ (fi) </b>
-                are foreign sounds in the Japanese loan words <br/><b>ヴァイオリン (vaiorin, violin)</b>
-                and <b>フィルム (firumu, film)</b> respectively.
+        </>
+      );
+    case 4:
+      return (
+        <>
+          <div className="flex flex-col space-y-2 justify-center items-center m-8">
+            <a className="text-black border text-center border-black bg-gray-200 active:bg-gray-50 hover:bg-gray-400 p-2 rounded-md"
+              onClick={handleProtectedClick(katakanaSpecialYoonWritingSystem)}
+              href={
+                createURL(
+                  LanguageNames.Japanese,
+                  LearningSections.WritingSystem,
+                  katakanaSpecialYoonWritingSystem)
+              }>
+            Katakana Foreign Yoōn Exercise
+              {katakanaSpecialYoonWritingSystem?.isLocked &&
+                  lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon/> : ''}
+            </a>
           </div>
-        </div>
-        <div className='py-2'>
-          <b>Long Vowels</b> In Katakana, long vowels are handled differently compared to Hiragana.
+          <div className='py-2'>
+          Foreign Yōon sounds leads to an additional
+              22 katakana combinations.
+            
+              Some sounds from non Japanese languages cannot be captured by the 
+              36 native katakana yōon sounds. For Example <b>ヴァ (bwa/va) </b>and <b>フィ (fi) </b>
+              are foreign sounds in the Japanese loan words <br/><b>ヴァイオリン (vaiorin, violin)</b>
+              and <b>フィルム (firumu, film)</b> respectively.
+          </div>
+        </>
+      );
+    case 5:
+      return (
+        <>
+          <div className='py-2'>
+            <b>Long Vowels</b> In Katakana, long vowels are handled differently compared to Hiragana.
                Instead of adding extra vowels to extend the sound, Katakana uses a simple dash-like
                symbol: <b>ー</b> <br/> This symbol tells you to lengthen the vowel sound of the 
                character it follows. For example:
-          <div className='py-2'>            
-            <b>サカ (saka) </b> becomes <b>サーカー (sākā, soccer) </b> 
-          </div>
-          <div></div>
-          <div className='py-2'>       
-            <b>ノト (noto)</b> becomes  <b>ノート (nōto, notebook)</b>
-          </div>
-          <div></div>
+            <div className='py-2'>            
+              <b>サカ (saka) </b> becomes <b>サーカー (sākā, soccer) </b> 
+            </div>
+            <div></div>
+            <div className='py-2'>       
+              <b>ノト (noto)</b> becomes  <b>ノート (nōto, notebook)</b>
+            </div>
+            <div></div>
 
               The sound is smooth and continuous, not repeated, 
               making it an important part of writing foreign words or names in Katakana!
-        </div>
+          </div>
+        </>
+      );
+    default:
+      return null;
+    }
+  };
+
+  return (
+    <div className="max-w-screen-md mx-auto px-4 md:text-lg">
+      <h4 className="text-center text-2xl pt-12">Kakatana Explained  - Lesson {currentLesson}</h4>
+      <div className="flex justify-center items-center space-x-4 mt-8">
+        <button
+          className={`px-4 py-2 border rounded-md ${currentLesson === 1 ? 'bg-gray-300' : 'bg-gray-100'}`}
+          onClick={() => setCurrentLesson(1)}
+        >
+        1
+        </button>
+        <button
+          className={`px-4 py-2 border rounded-md ${currentLesson === 2 ? 'bg-gray-300' : 'bg-gray-100'}`}
+          onClick={() => setCurrentLesson(2)}
+        >
+        2
+        </button>
+        <button
+          className={`px-4 py-2 border rounded-md ${currentLesson === 3 ? 'bg-gray-300' : 'bg-gray-100'}`}
+          onClick={() => setCurrentLesson(3)}
+        >
+        3
+        </button>
+        <button
+          className={`px-4 py-2 border rounded-md ${currentLesson === 4 ? 'bg-gray-300' : 'bg-gray-100'}`}
+          onClick={() => setCurrentLesson(4)}
+        >
+        4
+        </button>
+        <button
+          className={`px-4 py-2 border rounded-md ${currentLesson === 5 ? 'bg-gray-300' : 'bg-gray-100'}`}
+          onClick={() => setCurrentLesson(5)}
+        >
+        5
+        </button>
       </div>
+      <LessonContent />
     </div>
   );
-}
- 
+};
+
 export default KatakanaExplained;
+

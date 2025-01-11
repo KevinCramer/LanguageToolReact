@@ -172,10 +172,15 @@ const HiraganaExplained = () => {
     switch (currentLesson) {
     case 1:
       return (
-        
         <div className="py-2">
-          <div className='text-center p-4'>
-            <b className="underline">Lesson 1 </b>
+          <div className="flex flex-col space-y-2 justify-center items-center m-8">
+            <a
+              className="text-black border text-center border-black bg-gray-200 active:bg-gray-50 hover:bg-gray-400 p-2 rounded-md"
+              onClick={handleProtectedClick(hiraganaBasicWritingSystem)}
+              href={createURL(LanguageNames.Japanese, LearningSections.WritingSystem, hiraganaBasicWritingSystem)}
+            >
+                Basic Hiragana Exercise
+            </a>
           </div>
           <div className="py-2">
         Learning hiragana is the first step to learning Japanese. By learning all three lessons in order, you will learn
@@ -189,23 +194,25 @@ const HiraganaExplained = () => {
           <div className='py-4'>
             {basicHiraganaTable}
           </div>
-          <div className="flex flex-col space-y-2 justify-center items-center m-8">
-            <a
-              className="text-black border text-center border-black bg-gray-200 active:bg-gray-50 hover:bg-gray-400 p-2 rounded-md"
-              onClick={handleProtectedClick(hiraganaBasicWritingSystem)}
-              href={createURL(LanguageNames.Japanese, LearningSections.WritingSystem, hiraganaBasicWritingSystem)}
-            >
-                Basic Hiragana Exercise
-            </a>
-          </div>
+          
         </div>
       );
     case 2:
       return (
         <>
           <div className='py-2'>
-            <div className='text-center p-4'>
-              <b className='underline'>Lesson 2 </b>
+            <div className='flex flex-col space-y-2 justify-center items-center m-8'>
+              <a className='text-black border text-center border-black bg-gray-200 active:bg-gray-50 hover:bg-gray-400 border-black p-2 rounded-md'
+                onClick={handleProtectedClick(hiraganaDakutenWritingSystem)} 
+                href={
+                  createURL(
+                    LanguageNames.Japanese,
+                    LearningSections.WritingSystem,
+                    hiraganaDakutenWritingSystem)
+                }> Hiragana with Dakuten and Handakuten Exercise
+                {hiraganaDakutenWritingSystem?.isLocked &&
+                    lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon/> : ''}
+              </a>
             </div>
             <div>
           Dakuten and Handakuten lead to another 25 hiragana variations. 
@@ -239,27 +246,27 @@ const HiraganaExplained = () => {
             <div>
             </div>      
           </div>
-          <div className='flex flex-col space-y-2 justify-center items-center m-8'>
-            <a className='text-black border text-center border-black bg-gray-200 active:bg-gray-50 hover:bg-gray-400 border-black p-2 rounded-md'
-              onClick={handleProtectedClick(hiraganaDakutenWritingSystem)} 
-              href={
-                createURL(
-                  LanguageNames.Japanese,
-                  LearningSections.WritingSystem,
-                  hiraganaDakutenWritingSystem)
-              }> Hiragana with Dakuten and Handakuten Exercise
-              {hiraganaDakutenWritingSystem?.isLocked &&
-                    lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon/> : ''}
-            </a>
-          </div>
+          
         </>
       );
     case 3:
       return (
         <div className="py-2">
           <div className='py-2'>
-            <div className='text-center p-4'>
-              <b className='underline'>Lesson 3 </b>
+            <div className='flex flex-col space-y-2 justify-center items-center m-8'>
+   
+              <a className='text-black border text-centers border-black bg-gray-200 active:bg-gray-50 hover:bg-gray-400 border-black p-2 rounded-md'
+                onClick={handleProtectedClick(hiraganaYoonWritingSystem)} 
+                href={
+                  createURL(
+                    LanguageNames.Japanese,
+                    LearningSections.WritingSystem,
+                    hiraganaYoonWritingSystem)
+                }>
+                Hiragana Yoōn Exercise
+                {hiraganaYoonWritingSystem?.isLocked &&
+                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon/> : ''}
+              </a>
             </div>
         Yōon  leads to an additional 36 hiragana variations.
             Some hiragana combine to form Yōon sounds. In these combinations,
@@ -268,21 +275,6 @@ const HiraganaExplained = () => {
               syllables rather than separate sounds. This blending is crucial in words 
               like <br></br><b>きょう(kyou, today)</b> and <b>
               しょうがっこう(shougakkou, elementary school)</b>. 
-          </div>
-          <div className='flex flex-col space-y-2 justify-center items-center m-8'>
-   
-            <a className='text-black border text-centers border-black bg-gray-200 active:bg-gray-50 hover:bg-gray-400 border-black p-2 rounded-md'
-              onClick={handleProtectedClick(hiraganaYoonWritingSystem)} 
-              href={
-                createURL(
-                  LanguageNames.Japanese,
-                  LearningSections.WritingSystem,
-                  hiraganaYoonWritingSystem)
-              }>
-               Study Hiragana Yoōn combinations
-              {hiraganaYoonWritingSystem?.isLocked &&
-                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon/> : ''}
-            </a>
           </div>
         </div>
       );
@@ -293,7 +285,7 @@ const HiraganaExplained = () => {
 
   return (
     <div className="max-w-screen-md mx-auto px-4 md:text-lg">
-      <h4 className="text-center text-2xl pt-12">Hiragana Explained</h4>
+      <h4 className="text-center text-2xl pt-12">Hiragana Explained - Lesson {currentLesson}</h4>
       {/* Navigation */}
       <div className="flex justify-center items-center space-x-4 mt-8">
         <button
@@ -315,7 +307,6 @@ const HiraganaExplained = () => {
           3
         </button>
       </div>
-      {/* Display Lesson Content */}
       <LessonContent />
     </div>
   );
