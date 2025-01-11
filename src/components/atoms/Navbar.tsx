@@ -70,7 +70,7 @@ const Navbar = () => {
 
         {!(currentUser && currentUser.email) && (
           <button
-            className='text-white ml-8'
+            className='text-white'
             onClick={async () => {
               if (currentUser && currentUser.email) {
                 try {
