@@ -5,7 +5,7 @@ import lingoCommandLogo from '../../assets/lingoCommandLogo.svg';
 import { useAuth } from '../../contexts/AuthContext';
 import { useDispatch } from 'react-redux';
 import { FaChevronDown } from 'react-icons/fa';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const Navbar = () => {
   const dispatch = useDispatch();
@@ -24,10 +24,26 @@ const Navbar = () => {
   const backgroundColorClass = pathWithBackground ? '' : 'bg-gray-500';
 
   const [isOpen, setIsOpen] = useState(false);
+  
+  // Correct the type of dropdownRef to be a reference to a HTMLDivElement
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
+
+  // Close the dropdown if the user clicks outside of it
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   return (
     <div>
@@ -75,7 +91,7 @@ const Navbar = () => {
         )}
 
         {currentUser && currentUser.email && (
-          <div className="relative">
+          <div className="relative" ref={dropdownRef}>
             <button className='text-white' onClick={toggleDropdown}>
               <div className='flex justify'>
                 <BsPerson className="w-3 h-8 md:w-10 md:h-10 " />
