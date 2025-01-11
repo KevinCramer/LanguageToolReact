@@ -4,7 +4,7 @@ import { displayLogin } from '../../redux-store/auth';
 import lingoCommandLogo from '../../assets/lingoCommandLogo.svg';
 import { useAuth } from '../../contexts/AuthContext';
 import { useDispatch } from 'react-redux';
-import { FaChevronDown, FaChevronRight } from 'react-icons/fa';
+import { FaChevronDown } from 'react-icons/fa';
 
 import { useEffect, useRef, useState } from 'react';
 
@@ -48,9 +48,9 @@ const Navbar = () => {
 
   return (
     <div>
-      <nav className={`${backgroundColorClass} flex justify-between items-center px-4 py-0.5 md:text-xl text-white md:tracking-custom`}>
+      <nav className={`${backgroundColorClass} flex justify-between items-center pl-0.5 pr-2 md:px-4 py-0.5 md:text-xl text-white md:tracking-custom`}>
         <NavLink to='/'>
-          <div className='flex items-center'>
+          <div className='flex items-center '>
             <img
               src={lingoCommandLogo}
               alt='LingoCommand Logo'
@@ -70,7 +70,7 @@ const Navbar = () => {
 
         {!(currentUser && currentUser.email) && (
           <button
-            className='text-white'
+            className='text-white ml-8'
             onClick={async () => {
               if (currentUser && currentUser.email) {
                 try {
@@ -87,7 +87,6 @@ const Navbar = () => {
             }}
           >
             {currentUser && currentUser.email ? 'Log Out' : 'Log In '}
-            { currentUser && currentUser.email ? null : <FaChevronRight className="inline w-3 h-3" /> }
           </button>
         )}
 
