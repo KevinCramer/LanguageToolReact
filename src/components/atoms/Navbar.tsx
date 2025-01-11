@@ -48,13 +48,13 @@ const Navbar = () => {
 
   return (
     <div>
-      <nav className={`${backgroundColorClass} flex justify-between items-center pl-0.5 pr-2 md:px-4 py-0.5 md:text-xl text-white md:tracking-custom`}>
+      <nav className={`${backgroundColorClass} flex justify-between items-center px-2 md:px-4 md:text-xl text-white md:tracking-custom`}>
         <NavLink to='/'>
           <div className='flex items-center '>
             <img
               src={lingoCommandLogo}
               alt='LingoCommand Logo'
-              className='w-16 h-16 md:w-24 md:h-24 md:mr-2'
+              className='w-20 h-20 md:w-28 md:h-28 md:mr-2'
             />
           </div>
         </NavLink>

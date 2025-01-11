@@ -2,12 +2,12 @@
 <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
 
   <!-- White text -->
-  <text style="fill: rgb(255, 255, 255); font-family: 'Times New Roman'; font-size: 32px; white-space: pre;" transform="matrix(4.613720893859863, 0, 0, 5.444302082061768, -1044.8316650390625, -756.7811889648438)">
-    <tspan x="236.421" y="192.014">LINGO</tspan>
+  <text style="fill: rgb(255, 255, 255); font-family: 'Times New Roman'; font-size: 35px; white-space: pre;" transform="matrix(4.613720893859863, 0, 0, 5.444302082061768, -1044.8316650390625, -756.7811889648438)">
+    <tspan x="226" y="192.014">LINGO</tspan>
     <tspan x="238.421" dy="1em">​</tspan>
   </text>
-  <text style="fill: rgb(255, 255, 255); font-family: 'Times New Roman'; font-size: 45px; white-space: pre;" transform="matrix(1.8939120769500732, 0, 0, 2.2627809047698975, -338.84515380859375, -150.8489227294922)">
-    <tspan x="146.421" y="192.014" dy="1em">​</tspan>
+  <text style="fill: rgb(255, 255, 255); font-family: 'Times New Roman'; font-size: 50px; white-space: pre;" transform="matrix(1.8939120769500732, 0, 0, 2.2627809047698975, -338.84515380859375, -150.8489227294922)">
+    <tspan x="115" y="192.014" dy="1em">​</tspan>
     <tspan>COMMAND</tspan>
   </text>
 </svg>
