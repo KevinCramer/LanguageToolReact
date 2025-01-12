@@ -60,6 +60,8 @@ const GrammarContent = (
       </div>
     )
   }
+  const [isTopicDropdownOpen, setIsTopicDropdownOpen] = useState(false);
+  const toggleTopicDropdown = () => setIsTopicDropdownOpen(!isTopicDropdownOpen);
 
   return (
     <div className='max-w-screen-md mx-auto md:text-lg'>
@@ -69,21 +71,47 @@ const GrammarContent = (
       <Container>    
         <NavbarBs>
           <Container>
-            <div className='flex justify-center'>
-              <CustomDropDownButton title={'Topic: ' + currentTopic.name}>
-                {currentLanguage.topics.map((topic: Topic, index: number) =>
-                  <Dropdown.Item key = {index} 
-                    onClick = {() => 
-                      changeCurrentTopic(topic)}>
-                    <div>
-                      {topic.name} {
-                        topic.isLocked 
-                          && lingoCommandIsLocked 
-                          && !userIsLoggedIn
-                          && <LockIcon/>}
-                    </div>
-                  </Dropdown.Item>)}
-              </CustomDropDownButton>
+            <div className="relative flex justify-center">
+              <div className="relative">
+                <button
+                  className="px-3 py-2 bg-gray-300 text-black text-sm rounded-lg shadow hover:bg-gray-400"
+                  onClick={toggleTopicDropdown}
+                >
+                  <div className="flex items-center">
+                    <div>Topic: {currentTopic.name}</div>
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="ml-2"
+                    >
+                      <polygon points="12,16 6,8 18,8" fill="black" />
+                    </svg>
+                  </div>
+                </button>
+                {isTopicDropdownOpen && (
+                  <div className="absolute left-0 mt-2 bg-white border border-gray-300 rounded-lg shadow w-64 z-10">
+                    <ul className="divide-y divide-gray-200">
+                      {currentLanguage.topics
+                        .map((topic: Topic, index: number) => (
+                          <li
+                            key={index}
+                            className="px-4 py-2 hover:bg-gray-100 cursor-pointer text-sm"
+                            onClick={() => changeCurrentTopic(topic)}
+                          >
+                            <div className="flex items-center">
+                              {topic.name}
+                              {topic.isLocked && lingoCommandIsLocked && !userIsLoggedIn && (
+                                <LockIcon className="ml-2" />
+                              )}
+                            </div>
+                          </li>
+                        ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
             </div>
           </Container>
         </NavbarBs>
