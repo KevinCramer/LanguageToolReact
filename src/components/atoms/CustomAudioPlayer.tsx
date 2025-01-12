@@ -67,13 +67,14 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ audioFile, }) => {
 
   return (
     <div>
-      <div>
+      <div className='flex justify-center my-4'>
         <div>
           {'speed:\u2002'}
         </div>
         <select
           value={playbackSpeed}
           onChange={handleSpeedChange}
+          className='border border-black'
         >
           {playbackSpeedOptions.map((option) => (
             <option key={option.value} value={option.value}>
@@ -90,22 +91,24 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ audioFile, }) => {
         <source src={audioFile} type='audio/mpeg' />
         Your browser does not support the audio element.
       </audio>
-      <button onClick={handlePlayPause}>
-        <IonIcon icon={isPlaying ? pause : play} size='large' />
-      </button>
-      <input
-        type='range'
-        min='0'
-        max='100'
-        value={(currentSeconds / totalSeconds) * 100 || 0}
-        onChange={handleSeek}
-      />
-      <div>
-        <div>{timeElapsed(currentSeconds)}</div>
-        <div>{timeRemaining(currentSeconds, totalSeconds)}</div>
+      <div className='flex justify-center items-center flex-col max-w-[300px] mx-auto'>
+        <button onClick={handlePlayPause} className="mb-2">
+          <IonIcon icon={isPlaying ? pause : play} size='large' />
+        </button>
+        <input
+          type='range'
+          min='0'
+          max='100'
+          value={(currentSeconds / totalSeconds) * 100 || 0}
+          onChange={handleSeek}
+          className='w-full mb-2'
+        />
+        <div className='flex justify-between w-full'>
+          <div>{timeElapsed(currentSeconds)}</div>
+          <div>{timeRemaining(currentSeconds, totalSeconds)}</div>
+        </div>
       </div>
     </div>
   );
 };
-
 export default AudioPlayer;
