@@ -1,4 +1,6 @@
-import { AudioTranscriptionWithFourAlphabet, AudioTranscriptionWithOneAlphabet, ComprehensionLanguage } from '../../../types/learningSections/ComprehensionTypes'
+/* eslint-disable @stylistic/js/max-len */
+
+import { AudioTranscriptionWithFourAlphabet, ComprehensionLanguage } from '../../../types/learningSections/ComprehensionTypes'
 
 import aikosBookSanctuaryParagraph1 from '../raw-data/listening-comprehension/japanese/aiko-book-sanctuary-paragraph1.mp3'
 import aikosBookSanctuaryParagraph2 from '../raw-data/listening-comprehension/japanese/aiko-book-sanctuary-paragraph2.mp3'
@@ -17,7 +19,6 @@ import aikosBookSanctuaryParagraph3Sentence1 from '../raw-data/listening-compreh
 import aikosBookSanctuaryParagraph3Sentence2 from '../raw-data/listening-comprehension/japanese/aiko-book-sanctuary-paragraph3-sentence2.mp3'
 import aikosBookSanctuaryParagraph3Sentence3 from '../raw-data/listening-comprehension/japanese/aiko-book-sanctuary-paragraph3-sentence3.mp3'
 
-/* eslint-disable @stylistic/js/max-len */
 const japaneseComprehensionTopicSlugNames = {
   aikosBookSanctuary: 'aikos-book-sanctuary'
 }
