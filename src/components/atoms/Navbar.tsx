@@ -68,19 +68,19 @@ const Navbar = () => {
             </div>
           </div>
         </NavLink>
-        <NavLink to='/japanese/home-page' className={onJapanese ? 'underline text-white text-sm md:text-base' : 'text-white text-sm md:text-base '}> 
+        <NavLink to='/japanese/home-page' className={onJapanese ? 'underline text-white' : 'text-white '}> 
         Japanese
         </NavLink>
-        <NavLink to='/about' className={({ isActive }) => isActive ? 'underline text-white text-sm md:text-base ' : 'text-white text-sm md:text-base '}> 
+        <NavLink to='/about' className={({ isActive }) => isActive ? 'underline text-white ' : 'text-white '}> 
           About
         </NavLink>
-        <NavLink to='/contact' className={({ isActive }) => isActive ? 'underline text-white text-sm md:text-base ' : 'text-white text-sm md:text-base '}> 
+        <NavLink to='/contact' className={({ isActive }) => isActive ? 'underline text-white ' : 'text-white '}> 
           Contact
         </NavLink>
        
         {!(currentUser && currentUser.email) && (
           <button
-            className='text-white md:mr-8 text-sm md:text-base'
+            className='text-white md:mr-8'
             onClick={async () => {
               if (currentUser && currentUser.email) {
                 try {
