@@ -69,8 +69,8 @@ const QuizElement = (
             </div>
           </form>
           
-          {/* For incorrect answers, show the ✘ message on the next line */}
-          <div>
+          {/* For incorrect answers, show the ✘ message on the next line and center it */}
+          <div className='text-center'>
             {response !== '✔' && response}
           </div>
         </div>
