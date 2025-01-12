@@ -74,14 +74,17 @@ const StudyElement = (
     <label><>{ForeignLanguageWord}</></label>);
 
   return (
-    <Navbar>
-      { showLeftLabel ? baseLanguageLabel : foreignLanguageLabel}
+    <Navbar className='flex justify-between items-center'>
+      <div className='flex-grow text-center'>
+        {showLeftLabel ? baseLanguageLabel : foreignLanguageLabel}
+      </div>
+
       {showAudio && (showBaseLanguageFirst ? !showLeftLabel : showLeftLabel) && (
-        <div>
+        <div className='flex items-center'>
           <audio src={ForeignLanguageWordAudio} id={ForeignLanguageWordAudio}></audio>
           <CustomButton disabled={!ForeignLanguageWord} onClick={handleAudioToggle}>
             {ForeignLanguageWordAudio ? (
-              <VolumeUpIcon className={isPlaying ? 'text-blue-500' : ''} />
+              <VolumeUpIcon className={`${isPlaying ? 'text-blue-500' : ''}`} />
             ) : (
               <VolumeOffIcon />
             )}
