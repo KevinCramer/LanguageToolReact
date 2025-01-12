@@ -75,7 +75,7 @@ const StudyElement = (
 
   return (
     <Navbar className='flex justify-between items-center'>
-      <div className='flex-grow text-center'>
+      <div className='flex-grow text-center text-lg'>
         {showLeftLabel ? baseLanguageLabel : foreignLanguageLabel}
       </div>
 
