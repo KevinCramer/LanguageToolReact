@@ -1,14 +1,15 @@
-import { AudioTranscription, ComprehensionLanguage, TranscriptionType } from '../../types/learningSections/ComprehensionTypes';
+import { AudioTranscription, ComprehensionLanguage, TranscriptionType } 
+  from '../../types/learningSections/ComprehensionTypes';
 import { useEffect, useRef, useState } from 'react';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { languages as allLanguages } from '../data/structured-data/comprehension';
-import { lingoCommandIsLocked, mobileBreakPoint } from '../constants';
 import CustomSwitch from '../components/atoms/CustomSwitch';
-import RenderTableCell from '../components/molecules/RenderTableCell';
+import { denyPermission } from '../redux-store/lock';
+import { lingoCommandIsLocked } from '../constants';
 import LockIcon from '@mui/icons-material/Lock';
+import RenderTableCell from '../components/molecules/RenderTableCell';
 import { useAuth } from '../contexts/AuthContext';
 import { useDispatch } from 'react-redux';
-import { denyPermission } from '../redux-store/lock';
 
 const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?: any }) => {
   const dispatch = useDispatch();
@@ -24,14 +25,14 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
   const currentLanguage: ComprehensionLanguage = allLanguages[props.languageNumber];
 
   const initialAudioTranscription =
-    currentLanguage.audioTranscriptions.find((t) => t.slugName === topicSlug) || currentLanguage.audioTranscriptions[0];
+    currentLanguage.audioTranscriptions.find((t) => t.slugName === topicSlug) 
+    || currentLanguage.audioTranscriptions[0];
 
   const queryParams = new URLSearchParams(location.search);
-  const initialTranscriptionInEnglish = queryParams.get('eng') === 'T';
-  const initialAlphabet = parseInt(queryParams.get('numAlphabet') || '0');
   const initialLeft =
     queryParams.get('L') ||
-    (currentLanguage.numForeignAlphabets > 1 ? TranscriptionType.WritingSystem3 : TranscriptionType.WritingSystem1);
+    (currentLanguage.numForeignAlphabets > 1 ? TranscriptionType.WritingSystem3 : 
+      TranscriptionType.WritingSystem1);
   const initialRight = queryParams.get('R') || TranscriptionType.English;
   const initialGranularity = queryParams.get('gran') || 'paragraph';
 
@@ -43,13 +44,12 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
       dispatch(denyPermission());
     }
     else{
-      navigate(`/${currentLanguage.languageName.toLowerCase()}/comprehension/${topic.slugName}`, { replace: true });
+      navigate(`/${currentLanguage.languageName
+        .toLowerCase()}/comprehension/${topic.slugName}`, { replace: true });
       return setCurrentAudioTranscription(topic);
     }
   }
 
-  const [transcriptionInEnglish, setTranscriptionInEnglish] = useState(initialTranscriptionInEnglish);
-  const [currentAlphabet, setCurrentAlphabet] = useState(initialAlphabet);
   const [granularity, setGranularity] = useState(initialGranularity); 
 
   const [isTopicDropdownOpen, setIsTopicDropdownOpen] = useState(false);
@@ -74,7 +74,8 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
       if (rightDropdownRef.current && !rightDropdownRef.current.contains(event.target as Node)) {
         setIsRightDropdownOpen(false);
       }
-      if (settingsDropdownRef.current && !settingsDropdownRef.current.contains(event.target as Node)) {
+      if (settingsDropdownRef.current && !settingsDropdownRef
+        .current.contains(event.target as Node)) {
         setIsSettingsDropdownOpen(false);
       }
     };
@@ -95,7 +96,8 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
   const [leftVisibility, setLeftVisibility] = useState(true);
   const toggleLeftVisibility = () => { return setLeftVisibility(!leftVisibility)}
   const toggleRightVisibility = () => { return setRightVisibility(!rightVisibility)}
-  const toggleGranularity = () => { return setGranularity(granularity === 'sentence' ? 'paragraph' : 'sentence')}
+  const toggleGranularity = () => { return setGranularity(granularity === 'sentence' 
+    ? 'paragraph' : 'sentence')}
 
   const [rightVisibility, setRightVisibility] = useState(true);
   const [showPopUp, setShowPopUp] = useState(false);
@@ -109,31 +111,32 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
     [TranscriptionType.WritingSystem1]: `${currentLanguage.languageName} ${
       currentLanguage.numForeignAlphabets > 1 ? '(Roman Alphabetisation)' : ''
     }`,
-    [TranscriptionType.WritingSystem2v2]: `${currentLanguage.languageName} (Hiragana and Katakana with spacing)`,
+    [TranscriptionType.WritingSystem2v2]: 
+    `${currentLanguage.languageName} (Hiragana and Katakana with spacing)`,
     [TranscriptionType.WritingSystem2]: `${currentLanguage.languageName} (Hiragana and Katakana)`,
-    [TranscriptionType.WritingSystem3]: `${currentLanguage.languageName} (Hiragana, Katakana, and Kanji)`,
+    [TranscriptionType.WritingSystem3]:
+     `${currentLanguage.languageName} (Hiragana, Katakana, and Kanji)`,
   };
 
-  const updateURL = (slugName: string, left: TranscriptionType, right: TranscriptionType, granularity: string) => {
+  const updateURL = (slugName: string, left: TranscriptionType,
+    right: TranscriptionType, granularity: string) => {
     const query = new URLSearchParams(location.search);
     query.set('L', left);
     query.set('R', right);
     query.set('gran', granularity)
-    navigate(`/${currentLanguage.languageName.toLowerCase()}/comprehension/${slugName}?${query.toString()}`, {
+    navigate(`/${currentLanguage.languageName
+      .toLowerCase()}/comprehension/${slugName}?${query.toString()}`, {
       replace: true,
     });
   };
 
   useEffect(() => {
-    const query = new URLSearchParams(location.search);
-    query.set('eng', transcriptionInEnglish ? 'T' : 'F');
-    updateURL(topicSlug as string, currentLeft as TranscriptionType, currentRight as TranscriptionType, granularity); // Call updateURL here
-  }, [transcriptionInEnglish, currentLeft, currentRight, topicSlug, granularity]);
+    updateURL(topicSlug as string, currentLeft as TranscriptionType,
+       currentRight as TranscriptionType, granularity);
+  }, [ currentLeft, currentRight, topicSlug, granularity]);
 
-  const toggleVisibility = (setter: React.Dispatch<React.SetStateAction<boolean>>) => () => {
-    setter((prev) => !prev);
-  };
-  const renderDropdownItems = (current: TranscriptionType, changeHandler: (type: TranscriptionType) => void) => {
+  const renderDropdownItems = (current: TranscriptionType, changeHandler:
+     (type: TranscriptionType) => void) => {
     return Object.entries(titleMap).map(([key, title]) => {
       const transcriptionType = key as TranscriptionType;
       const showCondition =
@@ -175,22 +178,27 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
               {['Left', 'Right'].map((side) => (
                 <th
                   key={side}
-                  className="border border-gray-300 px-4 py-2 text-left w-1/2 text-center"
+                  className="border border-gray-300 px-4 py-2 w-1/2 text-center"
                 >
                   <div className="relative">
                     <button
-                      className="px-3 py-2 bg-gray-300 text-black text-sm rounded-lg shadow hover:bg-gray-400"
+                      className="px-3 py-2 bg-gray-300 text-black 
+                      text-sm rounded-lg shadow hover:bg-gray-400"
                       onClick={() => side === 'Left' ? toggleLeftDropdown() : toggleRightDropdown()}
                     >
                       {titleMap[
                 (side === 'Left' ? currentLeft : currentRight) as TranscriptionType
                       ].length > 20
-                        ? `${titleMap[(side === 'Left' ? currentLeft : currentRight) as TranscriptionType].substring(0, 20)}...`
-                        : titleMap[(side === 'Left' ? currentLeft : currentRight) as TranscriptionType]}
+                        ? `${titleMap[(side === 'Left' ? currentLeft :
+                          currentRight) as TranscriptionType].substring(0, 20)}...`
+                        : titleMap[(side === 'Left' ? currentLeft : 
+                          currentRight) as TranscriptionType]}
                     </button>
 
                     {(side === 'Left' ? isLeftDropdownOpen : isRightDropdownOpen) && (
-                      <div ref={side === 'Left' ? leftDropdownRef : rightDropdownRef} className="absolute left-0 mt-2 bg-white border border-gray-300 rounded-lg shadow w-64 z-10">
+                      <div ref={side === 'Left' ? leftDropdownRef : rightDropdownRef}
+                        className="absolute left-0 mt-2 bg-white border
+                         border-gray-300 rounded-lg shadow w-64 z-10">
                         <ul className="divide-y divide-gray-200">
                           {renderDropdownItems(
                     (side === 'Left' ? currentLeft : currentRight) as TranscriptionType,
@@ -250,7 +258,8 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
         <div className='flex justify-center'>
           <div className="relative px-2" ref={topicDropdownRef}>
             <button
-              className="px-3 py-2 bg-gray-300 text-black text-sm rounded-lg shadow hover:bg-gray-400"
+              className="px-3 py-2 bg-gray-300 text-black text-sm 
+              rounded-lg shadow hover:bg-gray-400"
               onClick={toggleTopicDropdown}
             >
     Topic:{' '}
@@ -260,7 +269,8 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
             </button>
   
             {isTopicDropdownOpen && (
-              <div className="absolute left-0 mt-2 bg-white border border-gray-300 rounded-lg shadow w-64 z-10">
+              <div className="absolute left-0 mt-2 bg-white border
+               border-gray-300 rounded-lg shadow w-64 z-10">
                 <ul className="divide-y divide-gray-200">
                   {currentLanguage.audioTranscriptions
                     .map((topic, index) => (
@@ -283,14 +293,16 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
           </div>
           <div className="relative px-2" ref={settingsDropdownRef}>
             <button
-              className="px-3 py-2 bg-gray-300 text-black text-sm rounded-lg shadow hover:bg-gray-400"
+              className="px-3 py-2 bg-gray-300 text-black text-sm 
+              rounded-lg shadow hover:bg-gray-400"
               onClick={toggleSettingsDropdown}
             >
     Settings
             </button>
 
             {isSettingsDropdownOpen && (
-              <div className="absolute right-0 mt-2 bg-white border border-gray-300 rounded-lg shadow w-64 z-10">
+              <div className="absolute right-0 mt-2 bg-white border
+               border-gray-300 rounded-lg shadow w-64 z-10">
                 <ul className="divide-y divide-gray-200">
                   <li
                     onClick={(event) => {
@@ -330,14 +342,16 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
           </div> 
         </div>
         <div className="flex items-center my-4 justify-center ">
-          <div className='px-2' style={{ fontWeight: granularity === 'sentence' ? 'normal' : '600' }}>
+          <div className='px-2' style={{ fontWeight: granularity === 'sentence'
+            ? 'normal' : '600' }}>
         Paragraphs
           </div>
           <CustomSwitch 
             onChange={toggleGranularity} 
             checked= {granularity === 'sentence'} 
           /> 
-          <div className='px-2'style={{ fontWeight: granularity === 'sentence' ? '600' : 'normal' }}>
+          <div className='px-2'style={{ fontWeight: granularity === 'sentence' 
+            ? '600' : 'normal' }}>
             Sentences
           </div>               
         </div>
@@ -347,7 +361,8 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
             <div className="bg-white rounded shadow-lg max-w-lg w-full">
               <div className="flex justify-between items-center p-4 border-b border-gray-300">
                 <h5 className="text-lg font-semibold">How to Guide</h5>
-                <button onClick={() => setShowPopUp(false)} className="text-gray-500 hover:text-gray-800">&times;</button>
+                <button onClick={() => setShowPopUp(false)} className="text-gray-500
+                 hover:text-gray-800">&times;</button>
               </div>
               <div className="p-4">
                 {currentLanguage.languageName === 'Japanese' ? (
