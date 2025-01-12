@@ -174,8 +174,7 @@ const HiraganaExplained = () => {
       return (
         <div className="py-2">
           <div className="flex flex-col space-y-2 justify-center items-center m-8">
-            <a
-              className="text-black border text-center border-black bg-gray-200 active:bg-gray-50 hover:bg-gray-400 p-2 rounded-md"
+            <a className="text-blue-500  border-[1px] border-b-4 border-gray-300 bg-200 text-center active:bg-gray-300 hover:bg-gray-200  p-2 rounded-2xl"
               onClick={handleProtectedClick(hiraganaBasicWritingSystem)}
               href={createURL(LanguageNames.Japanese, LearningSections.WritingSystem, hiraganaBasicWritingSystem)}
             >
@@ -202,7 +201,7 @@ const HiraganaExplained = () => {
         <>
           <div className='py-2'>
             <div className='flex flex-col space-y-2 justify-center items-center m-8'>
-              <a className='text-black border text-center border-black bg-gray-200 active:bg-gray-50 hover:bg-gray-400 border-black p-2 rounded-md'
+              <a className="text-blue-500  border-[1px] border-b-4 border-gray-300 bg-200 text-center active:bg-gray-300 hover:bg-gray-200  p-2 rounded-2xl"
                 onClick={handleProtectedClick(hiraganaDakutenWritingSystem)} 
                 href={
                   createURL(
@@ -255,7 +254,7 @@ const HiraganaExplained = () => {
           <div className='py-2'>
             <div className='flex flex-col space-y-2 justify-center items-center m-8'>
    
-              <a className='text-black border text-centers border-black bg-gray-200 active:bg-gray-50 hover:bg-gray-400 border-black p-2 rounded-md'
+              <a className="text-blue-500  border-[1px] border-b-4 border-gray-300 bg-200 text-center active:bg-gray-300 hover:bg-gray-200  p-2 rounded-2xl"
                 onClick={handleProtectedClick(hiraganaYoonWritingSystem)} 
                 href={
                   createURL(
