@@ -6,11 +6,11 @@ const JapaneseNavbar = () => {
       <nav className='p-4'>
         {/* Add a wrapper div with horizontal overflow */}
         <div className="overflow-x-auto whitespace-nowrap">
-          <ul className="flex space-x-4 justify-start lg:justify-between">
+          <ul className="flex space-x-4 justify-start lg:justify-center">
             <li>
               <NavLink 
                 to='/japanese/home-page' 
-                className={({ isActive }) => isActive ? 'block px-4 py-2 font-bold' : 'block px-4 py-2'}
+                className={({ isActive }) => isActive ? 'block px-4 py-2 underline' : 'block px-4 py-2'}
               >
                 Japanese Home Page
               </NavLink>
@@ -18,7 +18,7 @@ const JapaneseNavbar = () => {
             <li>
               <NavLink 
                 to='/japanese/study-guide' 
-                className={({ isActive }) => isActive ? 'block px-4 py-2 font-bold' : 'block px-4 py-2'}
+                className={({ isActive }) => isActive ? 'block px-4 py-2 underline' : 'block px-4 py-2'}
               >
                 Study Guide
               </NavLink>
@@ -26,7 +26,7 @@ const JapaneseNavbar = () => {
             <li>
               <NavLink 
                 to='/japanese/writing-systems-explained' 
-                className={({ isActive }) => isActive ? 'block px-4 py-2 font-bold' : 'block px-4 py-2'}
+                className={({ isActive }) => isActive ? 'block px-4 py-2 underline' : 'block px-4 py-2'}
               >
                 Writing Systems
               </NavLink>
@@ -34,7 +34,7 @@ const JapaneseNavbar = () => {
             <li>
               <NavLink 
                 to='/japanese/vocabulary' 
-                className={({ isActive }) => isActive ? 'block px-4 py-2 font-bold' : 'block px-4 py-2'}
+                className={({ isActive }) => isActive ? 'block px-4 py-2 underline' : 'block px-4 py-2'}
               >
                 Vocabulary
               </NavLink>
@@ -42,7 +42,7 @@ const JapaneseNavbar = () => {
             <li>
               <NavLink 
                 to='/japanese/grammar/keigo' 
-                className={({ isActive }) => isActive ? 'block px-4 py-2 font-bold' : 'block px-4 py-2'}
+                className={({ isActive }) => isActive ? 'block px-4 py-2 underline' : 'block px-4 py-2'}
               >
                 Grammar
               </NavLink>
@@ -50,7 +50,7 @@ const JapaneseNavbar = () => {
             <li>
               <NavLink 
                 to='/japanese/comprehension/aikos-book-sanctuary' 
-                className={({ isActive }) => isActive ? 'block px-4 py-2 font-bold' : 'block px-4 py-2'}
+                className={({ isActive }) => isActive ? 'block px-4 py-2 underline' : 'block px-4 py-2'}
               >
                 Reading/Listening
               </NavLink>

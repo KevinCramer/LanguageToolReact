@@ -22,7 +22,7 @@ const Navbar = () => {
     location.pathname === '/account';
 
   // Define dynamic text color class
-  const backgroundColorClass = pathWithBackground ? '' : 'bg-gray-500';
+  const backgroundColorClass = pathWithBackground ? '' : 'bg-gray-800';
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -51,30 +51,39 @@ const Navbar = () => {
 
   return (
     <div>
-      <nav className={`${backgroundColorClass} flex justify-between items-center px-2 md:pr-4 md:text-xl text-white md:tracking-custom`}>
+      <nav className={`${backgroundColorClass} flex justify-between items-center px-2 md:pr-4 text-white`}>
         <NavLink to='/'>
-          <div className={`flex items-center my-2 ${ pathWithBackground ? 'border border-white' : 'border border-white'}  bg-opacity-100`}>
-            <img
-              src={lingoCommandLogo}
-              alt='LingoCommand Logo'
-              className='w-20 h-16 md:w-24 md:h-20'
-            />
+          <div className={`flex items-center my-2  bg-opacity-100 text-sm ml-8`} style={{ fontFamily:'' }}>
+            <div className='text-emerald-400 font-bold text-2xl'>
+              L
+            </div>
+            <div className='text-white text-lg '>
+              ingo
+            </div>
+            <div className='text-emerald-400 font-bold text-2xl '>
+              C
+            </div>
+            <div className='text-white text-lg  '>
+              ommand
+            </div>
           </div>
         </NavLink>
-        <NavLink to='/japanese/home-page' className={onJapanese ? 'font-bold text-white' : 'text-white'}
-        >
-          Japanese
-        </NavLink>
-        <NavLink to='/about' className={({ isActive }) => isActive ? 'font-bold text-white' : 'text-white'}>
+        <div>
+          <NavLink to='/japanese/home-page' className={onJapanese ? 'underline text-white mx-8' : 'text-white mx-8'}> 
+        Japanese
+          </NavLink>
+          <NavLink to='/about' className={({ isActive }) => isActive ? 'underline text-white mx-8' : 'text-white mx-8'}> 
           About
-        </NavLink>
-        <NavLink to='/contact' className={({ isActive }) => isActive ? 'font-bold text-white' : 'text-white'}> 
+          </NavLink>
+          <NavLink to='/contact' className={({ isActive }) => isActive ? 'underline text-white mx-8' : 'text-white mx-8'}> 
           Contact
-        </NavLink>
+          </NavLink>
 
+        </div>
+       
         {!(currentUser && currentUser.email) && (
           <button
-            className='text-white'
+            className='text-white mr-8'
             onClick={async () => {
               if (currentUser && currentUser.email) {
                 try {
