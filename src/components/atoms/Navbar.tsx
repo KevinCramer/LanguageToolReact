@@ -53,14 +53,14 @@ const Navbar = () => {
     <div>
       <nav className={`${backgroundColorClass} flex justify-between items-center px-2 md:pr-4 text-white`}>
         <NavLink to='/'>
-          <div className={`flex items-center my-2  bg-opacity-100 text-sm ml-8`} style={{ fontFamily:'' }}>
+          <div className={`flex items-center my-2 text-sm md:ml-8`}>
             <div className='text-emerald-400 font-bold text-2xl'>
               L
             </div>
             <div className='text-white text-lg '>
               ingo
             </div>
-            <div className='text-emerald-400 font-bold text-2xl '>
+            <div className='text-emerald-4 font-bold text-2xl '>
               C
             </div>
             <div className='text-white text-lg  '>
@@ -69,13 +69,13 @@ const Navbar = () => {
           </div>
         </NavLink>
         <div>
-          <NavLink to='/japanese/home-page' className={onJapanese ? 'underline text-white mx-8' : 'text-white mx-8'}> 
+          <NavLink to='/japanese/home-page' className={onJapanese ? 'underline text-white mx-2 md:mx-8' : 'text-white mx-2 md:mx-8 '}> 
         Japanese
           </NavLink>
-          <NavLink to='/about' className={({ isActive }) => isActive ? 'underline text-white mx-8' : 'text-white mx-8'}> 
+          <NavLink to='/about' className={({ isActive }) => isActive ? 'underline text-white mx-2 md:mx-8 ' : 'text-white mx-2 md:mx-8 '}> 
           About
           </NavLink>
-          <NavLink to='/contact' className={({ isActive }) => isActive ? 'underline text-white mx-8' : 'text-white mx-8'}> 
+          <NavLink to='/contact' className={({ isActive }) => isActive ? 'underline text-white mx-2 md:mx-8 ' : 'text-white mx-2 md:mx-8 '}> 
           Contact
           </NavLink>
 
@@ -83,7 +83,7 @@ const Navbar = () => {
        
         {!(currentUser && currentUser.email) && (
           <button
-            className='text-white mr-8'
+            className='text-white md:mr-8'
             onClick={async () => {
               if (currentUser && currentUser.email) {
                 try {
