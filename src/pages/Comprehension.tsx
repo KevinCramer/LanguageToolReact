@@ -2,9 +2,7 @@ import { AudioTranscription, ComprehensionLanguage, TranscriptionType } from '..
 import { useEffect, useRef, useState } from 'react';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { languages as allLanguages } from '../data/structured-data/comprehension';
-import { lightGrey, lingoCommandIsLocked, mobileBreakPoint } from '../constants';
-import CustomDropDownButton from '../components/atoms/CustomDropDownButton';
-import CustomDropDownButtonWhite from '../components/atoms/CustomDropDownButtonWhite';
+import { lingoCommandIsLocked, mobileBreakPoint } from '../constants';
 import CustomSwitch from '../components/atoms/CustomSwitch';
 import RenderTableCell from '../components/molecules/RenderTableCell';
 import LockIcon from '@mui/icons-material/Lock';
