@@ -53,7 +53,7 @@ const Navbar = () => {
     <div>
       <nav className={`${backgroundColorClass} flex justify-between items-center px-1 md:pr-4 text-white`}>
         <NavLink to='/'>
-          <div className={`flex items-center my-2 text-sm md:ml-8`}>
+          <div className={`flex items-center my-3 text-sm md:ml-8`}>
             <div className='text-emerald-400 font-bold text-2xl'>
               L
             </div>
@@ -68,19 +68,19 @@ const Navbar = () => {
             </div>
           </div>
         </NavLink>
-        <NavLink to='/japanese/home-page' className={onJapanese ? 'underline text-white' : 'text-white '}> 
+        <NavLink to='/japanese/home-page' className={onJapanese ? 'underline text-white text-sm md:text-base' : 'text-white text-sm md:text-base '}> 
         Japanese
         </NavLink>
-        <NavLink to='/about' className={({ isActive }) => isActive ? 'underline text-white ' : 'text-white '}> 
+        <NavLink to='/about' className={({ isActive }) => isActive ? 'underline text-white text-sm md:text-base ' : 'text-white text-sm md:text-base '}> 
           About
         </NavLink>
-        <NavLink to='/contact' className={({ isActive }) => isActive ? 'underline text-white ' : 'text-white '}> 
+        <NavLink to='/contact' className={({ isActive }) => isActive ? 'underline text-white text-sm md:text-base ' : 'text-white text-sm md:text-base '}> 
           Contact
         </NavLink>
        
         {!(currentUser && currentUser.email) && (
           <button
-            className='text-white md:mr-8'
+            className='text-white md:mr-8 text-sm md:text-base'
             onClick={async () => {
               if (currentUser && currentUser.email) {
                 try {
