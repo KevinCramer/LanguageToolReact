@@ -51,31 +51,31 @@ const Navbar = () => {
 
   return (
     <div>
-      <nav className={`${backgroundColorClass} flex justify-between items-center px-2 md:pr-4 text-white`}>
+      <nav className={`${backgroundColorClass} flex justify-between items-center px-1 md:pr-4 text-white`}>
         <NavLink to='/'>
           <div className={`flex items-center my-2 text-sm md:ml-8`}>
-            <div className='text-emerald-400 font-bold text-2xl'>
+            <div className='text-emerald-400 font-bold text-xl md:text-2xl'>
               L
             </div>
-            <div className='text-white text-lg '>
+            <div className='text-white md:text-lg '>
               ingo
             </div>
-            <div className='text-emerald-400 font-bold text-2xl '>
+            <div className='text-emerald-400 font-bold text-xl md:text-2xl '>
               C
             </div>
-            <div className='text-white text-lg  '>
+            <div className='text-white md:text-lg  '>
               ommand
             </div>
           </div>
         </NavLink>
         <div>
-          <NavLink to='/japanese/home-page' className={onJapanese ? 'underline text-white mx-2 md:mx-8' : 'text-white mx-2 md:mx-8 '}> 
+          <NavLink to='/japanese/home-page' className={onJapanese ? 'underline text-white mx-1 md:mx-8' : 'text-white mx-1 md:mx-8 '}> 
         Japanese
           </NavLink>
-          <NavLink to='/about' className={({ isActive }) => isActive ? 'underline text-white mx-2 md:mx-8 ' : 'text-white mx-2 md:mx-8 '}> 
+          <NavLink to='/about' className={({ isActive }) => isActive ? 'underline text-white mx-1 md:mx-8 ' : 'text-white mx-1 md:mx-8 '}> 
           About
           </NavLink>
-          <NavLink to='/contact' className={({ isActive }) => isActive ? 'underline text-white mx-2 md:mx-8 ' : 'text-white mx-2 md:mx-8 '}> 
+          <NavLink to='/contact' className={({ isActive }) => isActive ? 'underline text-white mx-1 md:mx-8 ' : 'text-white mx-1 md:mx-8 '}> 
           Contact
           </NavLink>
 
