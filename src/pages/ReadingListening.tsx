@@ -136,20 +136,23 @@ const ReadingListeningContent = (props: { languageNumber: number; howToGuideVide
   }, [ currentLeft, currentRight, topicSlug, granularity]);
 
   const renderDropdownItems = (current: TranscriptionType, changeHandler:
-     (type: TranscriptionType) => void) => {
+    (type: TranscriptionType) => void, side: string) => {
     return Object.entries(titleMap).map(([key, title]) => {
       const transcriptionType = key as TranscriptionType;
       const showCondition =
-        transcriptionType !== TranscriptionType.Audio &&
-        transcriptionType !== TranscriptionType.English &&
-        parseInt(transcriptionType.slice(-1)) > currentLanguage.numForeignAlphabets;
-
+       transcriptionType !== TranscriptionType.Audio &&
+       transcriptionType !== TranscriptionType.English &&
+       parseInt(transcriptionType.slice(-1)) > currentLanguage.numForeignAlphabets;
+ 
       if (showCondition) return null;
-
+ 
       return (
         <li
           key={key}
-          onClick={() => changeHandler(transcriptionType)}
+          onClick={() => {
+            changeHandler(transcriptionType);
+            side === 'Left' ? setIsLeftDropdownOpen(false) : setIsRightDropdownOpen(false);
+          }}
           className='px-4 py-2 text-sm text-gray-800 cursor-pointer hover:bg-gray-200' >
           {title}
         </li>
@@ -202,14 +205,17 @@ const ReadingListeningContent = (props: { languageNumber: number; howToGuideVide
 
                     {(side === 'Left' ? isLeftDropdownOpen : isRightDropdownOpen) && (
                       <div ref={side === 'Left' ? leftDropdownRef : rightDropdownRef}
-                        className="absolute left-1/2 transform -translate-x-1/2 mt-2 bg-white border border-gray-300 rounded-lg shadow w-44 md:w-64 z-10">                        <ul className="divide-y divide-gray-200">
+                        className="absolute left-1/2 transform -translate-x-1/2 mt-2 bg-white border border-gray-300 rounded-lg shadow w-44 md:w-64 z-10">                        
+                        <ul className="divide-y divide-gray-200">
                           {renderDropdownItems(
-                    (side === 'Left' ? currentLeft : currentRight) as TranscriptionType,
-                    side === 'Left' ? setCurrentLeft : setCurrentRight
-                          ) }
+        (side === 'Left' ? currentLeft : currentRight) as TranscriptionType,
+        side === 'Left' ? setCurrentLeft : setCurrentRight,
+        side // Pass the side ('Left' or 'Right')
+                          )}
                         </ul>
                       </div>
                     )}
+
                   </div>
                 </th>
               ))}
