@@ -310,7 +310,7 @@ const ReadingListeningContent = (props: { languageNumber: number; howToGuideVide
                 <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <polygon points="12,16 6,8 18,8" fill="black" />
                 </svg>
-              </div>
+              </div> 
             </button>
             {isSettingsDropdownOpen && (
               <div className="absolute right-0 mt-2 bg-white border
@@ -321,7 +321,7 @@ const ReadingListeningContent = (props: { languageNumber: number; howToGuideVide
                       toggleLeftVisibility();
                       preventDropdownClose(event);
                     }}
-                    className="cursor-pointer hover:bg-gray-200 p-2 flex items-center"
+                    className={`cursor-pointer hover:bg-gray-200 p-2 flex items-center ${!rightVisibility ? 'pointer-events-none opacity-50' : ''}`}
                   >
                     <input
                       type="checkbox"
@@ -329,6 +329,7 @@ const ReadingListeningContent = (props: { languageNumber: number; howToGuideVide
                       onChange={toggleLeftVisibility}
                       disabled={!rightVisibility}
                       className="mr-2"
+                      key={leftVisibility as any}
                     />
           Hide left column
                   </li>
@@ -337,7 +338,7 @@ const ReadingListeningContent = (props: { languageNumber: number; howToGuideVide
                       toggleRightVisibility();
                       preventDropdownClose(event);
                     }}
-                    className="cursor-pointer hover:bg-gray-200 p-2 flex items-center"
+                    className={`cursor-pointer hover:bg-gray-200 p-2 flex items-center ${!leftVisibility ? 'pointer-events-none opacity-50' : ''}`}
                   >
                     <input
                       type="checkbox"
@@ -345,6 +346,7 @@ const ReadingListeningContent = (props: { languageNumber: number; howToGuideVide
                       onChange={toggleRightVisibility}
                       disabled={!leftVisibility}
                       className="mr-2"
+                      key={rightVisibility as any}
                     />
           Hide right column
                   </li>
