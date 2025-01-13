@@ -26,7 +26,7 @@ import Navbar from './components/atoms/Navbar'
 import Signup from './components/molecules/Signup'
 import UpdateAccount from './components/atoms/UpdateAccount'
 import { useAuth } from './contexts/AuthContext'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import VocabContent from './pages/VocabContent'
 import WritingSystems from './pages/WritingSystems'
 import japaneseComprehensionVideo from './data/raw-data/tutorial-videos/japanese-comprehension-tutorial.mp4'
@@ -34,7 +34,6 @@ import japaneseWritingSystemsVideo from './data/raw-data/tutorial-videos/japanes
 import japaneseVocabGuideVideo from './data/raw-data/tutorial-videos/japanese-vocab-guide.mp4'
 import fujiImage from '/src/assets/mount-fuji.jpg';
 import JapaneseNavbar from './pages/Japanese/JapaneseNavbar';
-import { fontStretch } from './constants';
 
 const App = ()=> {
   const location = useLocation();
@@ -58,35 +57,8 @@ const App = ()=> {
     }
   }, [currentUser && currentUser.email]);
 
-  const useWindowWidth = () => {
-    const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
-  
-    useEffect(() => {
-      // Update the windowWidth state when the window is resized
-      const handleResize = () => {
-        setWindowWidth(window.innerWidth);
-      };
-    
-      // Add event listener to handle window resizing
-      window.addEventListener('resize', handleResize);
-    
-      // Cleanup event listener when the component unmounts
-      return () => {
-        window.removeEventListener('resize', handleResize);
-      };
-    }, []);
-    
-    return windowWidth;
-  };
-  
-  const width = useWindowWidth(); // Get the current window width
-  
-  // Now you can use width to check screen size in your component
-  const isMobile = width < 768; 
-  const globalFontStretch = isMobile ? fontStretch : '100% '
-
   return (
-    <div style={{ fontStretch: globalFontStretch }}>
+    <>
       {pathWithBackground && <div
         id="fuji-background-container"
         className="bg-cover bg-center w-full h-screen"
@@ -151,7 +123,7 @@ const App = ()=> {
           </Container>
         </Modal.Body>
       </Modal>
-    </div>
+    </>
   );
 }
 
