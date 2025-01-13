@@ -19,7 +19,7 @@ import HiraganaExplained from './pages/Japanese/HiraganaExplained'
 import KatakanaExplained from './pages/Japanese/KatakanaExplained'
 import KanjiExplained from './pages/Japanese/KanjiExplained'
 import HowToTypeJapanese from './pages/Japanese/HowToTypeJapanese'
-import Comprehension from './pages/Comprehension'
+import ReadingListening from './pages/ReadingListening'
 import PremiumContent from './components/atoms/PremiumContent'
 import Login from './components/molecules/Login'
 import Navbar from './components/atoms/Navbar'
@@ -91,7 +91,7 @@ const App = ()=> {
           <Route path="/japanese/writing-systems" element={<WritingSystems howToGuideVideo={japaneseWritingSystemsVideo}/>} />
           <Route path="/japanese/study-guide" element={<JapaneseStudyGuide/>} />
           <Route path="/japanese/grammar/:topicSlug" element={<GrammarContent languageNumber={0} />} />
-          <Route path="/japanese/comprehension/:topicSlug" element={<Comprehension languageNumber={0} howToGuideVideo={japaneseComprehensionVideo}/>} />
+          <Route path="/japanese/reading-listening/:topicSlug" element={<ReadingListening languageNumber={0} howToGuideVideo={japaneseComprehensionVideo}/>} />
           <Route path="/*" element={<Custom404Error/>} />
         </Routes>
       </div>}

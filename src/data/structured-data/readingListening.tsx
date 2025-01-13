@@ -1,6 +1,6 @@
 /* eslint-disable @stylistic/js/max-len */
 
-import { AudioTranscriptionWithFourAlphabet, ComprehensionLanguage } from '../../../types/learningSections/ComprehensionTypes'
+import { AudioTranscriptionWithFourAlphabet, ReadingListeningLanguage } from '../../../types/learningSections/ReadingListeningTypes'
 
 import aikosBookSanctuaryParagraph1 from '../raw-data/listening-comprehension/japanese/aiko-book-sanctuary-paragraph1.mp3'
 import aikosBookSanctuaryParagraph2 from '../raw-data/listening-comprehension/japanese/aiko-book-sanctuary-paragraph2.mp3'
@@ -144,7 +144,7 @@ const japaneseAudioTranscriptions: AudioTranscriptionWithFourAlphabet[] = [
   },
 ] 
 export const 
-  languages: ComprehensionLanguage[] = 
+  languages: ReadingListeningLanguage[] = 
         [
           { languageName: 'Japanese', audioTranscriptions: (japaneseAudioTranscriptions), numForeignAlphabets: 4 },
         ]

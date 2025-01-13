@@ -72,7 +72,7 @@ const Japanese = () => {
         </div>
         <div className='mx-'>
           <ResourceLink 
-            href='/japanese/comprehension/aikos-book-sanctuary' 
+            href='/japanese/reading-listening/aikos-book-sanctuary' 
             icon={learningKnowledgeIcon} 
             alt='Reading and Listening Comprehension Icon'
           >

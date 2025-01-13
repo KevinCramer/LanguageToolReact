@@ -48,7 +48,7 @@ export type AudioTranscription =
 AudioTranscriptionWithOneAlphabet | AudioTranscriptionWithTwoAlphabet |
 AudioTranscriptionWithThreeAlphabet | AudioTranscriptionWithFourAlphabet;
 
-export type ComprehensionLanguage = {
+export type ReadingListeningLanguage = {
     languageName: string;
     audioTranscriptions: AudioTranscription[];
     numForeignAlphabets: number;

@@ -1,8 +1,8 @@
-import { AudioTranscription, ComprehensionLanguage, TranscriptionType } 
-  from '../../types/learningSections/ComprehensionTypes';
+import { AudioTranscription, ReadingListeningLanguage, TranscriptionType } 
+  from '../../types/learningSections/ReadingListeningTypes';
 import { useEffect, useRef, useState } from 'react';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
-import { languages as allLanguages } from '../data/structured-data/comprehension';
+import { languages as allLanguages } from '../data/structured-data/readingListening';
 import CustomSwitch from '../components/atoms/CustomSwitch';
 import { denyPermission } from '../redux-store/lock';
 import { lingoCommandIsLocked } from '../constants';
@@ -11,7 +11,7 @@ import RenderTableCell from '../components/molecules/RenderTableCell';
 import { useAuth } from '../contexts/AuthContext';
 import { useDispatch } from 'react-redux';
 
-const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?: any }) => {
+const ReadingListeningContent = (props: { languageNumber: number; howToGuideVideo?: any }) => {
   const dispatch = useDispatch();
 
   //@ts-ignore
@@ -22,7 +22,7 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
   const { topicSlug } = useParams();
   const location = useLocation();
 
-  const currentLanguage: ComprehensionLanguage = allLanguages[props.languageNumber];
+  const currentLanguage: ReadingListeningLanguage = allLanguages[props.languageNumber];
 
   const initialAudioTranscription =
     currentLanguage.audioTranscriptions.find((t) => t.slugName === topicSlug) 
@@ -45,7 +45,7 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
     }
     else{
       navigate(`/${currentLanguage.languageName
-        .toLowerCase()}/comprehension/${topic.slugName}`, { replace: true });
+        .toLowerCase()}/reading-listening/${topic.slugName}`, { replace: true });
       return setCurrentAudioTranscription(topic);
     }
   }
@@ -125,7 +125,7 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
     query.set('R', right);
     query.set('gran', granularity)
     navigate(`/${currentLanguage.languageName
-      .toLowerCase()}/comprehension/${slugName}?${query.toString()}`, {
+      .toLowerCase()}/reading-listening/${slugName}?${query.toString()}`, {
       replace: true,
     });
   };
@@ -157,7 +157,7 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
     });
   };
 
-  const renderComprehensionTopic = () => {
+  const renderReadingListeningTopic = () => {
     const rowsToRender = granularity === 'sentence'
       ? currentAudioTranscription.contents.flatMap((content) =>
         content.sentences.map((sentence) => ({
@@ -367,7 +367,7 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
             Sentences
           </div>               
         </div>
-        <div>{renderComprehensionTopic()}</div>
+        <div>{renderReadingListeningTopic()}</div>
         {showPopUp && (
           <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
             <div className="bg-white rounded shadow-lg max-w-lg w-full">
@@ -397,4 +397,4 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
   );
 };
 
-export default ComprehensionContent;
+export default ReadingListeningContent;

@@ -49,7 +49,7 @@ const JapaneseNavbar = () => {
             </li>
             <li>
               <NavLink 
-                to='/japanese/comprehension/aikos-book-sanctuary' 
+                to='/japanese/reading-listening/aikos-book-sanctuary' 
                 className={({ isActive }) => isActive ? 'block px-4  underline' : 'block px-4 '}
               >
                 Reading/Listening

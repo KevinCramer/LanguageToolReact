@@ -163,7 +163,7 @@ const JapaneseStudyGuide = () => {
            Practice{' '}
           <a
             className='text-blue-500 underline'
-            href='/japanese/comprehension/aikos-book-sanctuary?eng=F'
+            href='/japanese/reading-listening/aikos-book-sanctuary?eng=F'
           >
           reading and listening comprehension
           </a>

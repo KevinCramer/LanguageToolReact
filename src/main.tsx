@@ -212,7 +212,7 @@ const routesMeta = {
       { name: 'keywords', content: 'keigo grammar, japanese honorific language, japanese politeness, learn japanese grammar, formal japanese' },
     ],
   },
-  '/japanese/comprehension/aikos-book-sanctuary?eng=F': {
+  '/japanese/reading-listening/aikos-book-sanctuary?eng=F': {
     title: 'Japanese Reading and Listening Comprehension Exercise',
     meta: [
       { name: 'description', content: 'Aiko loves reading books and finds comfort and excitement at her local library. 愛子さんは本を読むことが大好きで、地元の図書館で心の安らぎと楽しさを見つけています。' },

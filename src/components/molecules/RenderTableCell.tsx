@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import { Paragraph, SentenceWithNumAlphabets, TranscriptionType } from '../../../types/learningSections/ComprehensionTypes';
+import { Paragraph, SentenceWithNumAlphabets, TranscriptionType } 
+  from '../../../types/learningSections/ReadingListeningTypes';
 import AudioPlayer from '../atoms/CustomAudioPlayer';
+import { useState } from 'react';
 
 const RenderTableCell = ({
   current,
