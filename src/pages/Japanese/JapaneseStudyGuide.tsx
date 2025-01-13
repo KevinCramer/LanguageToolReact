@@ -121,29 +121,29 @@ const JapaneseStudyGuide = () => {
 
       <div className='py-4'>
         <div className='underline font-bold'>Step 6:</div>
-           Do the vocabulary exercises for a range of different topics here. Make sure to watch the video guide on the page first:
+        Practice vocabulary exercises on various topics. Dedicate 15 minutes to studying vocabulary for each topic,
+         followed by a quiz. Aim to repeat the quiz until you can consistently score at least 90%. Begin your vocabulary practice here:
         <ul className=' flex flex-col max-w-[400px]'>
           <a className='text-blue-500 underline' href='/japanese/vocabulary'>
           Vocabulary Exercises
           </a>
         </ul>
-        <p className='py-4'>
-          We recommend studying a topic’s vocabulary for 15 minutes, then taking a quiz. 
-          Repeat a quiz until you can comfortable answer 90% or more of the questions correctly. 
-        </p>
+  
       </div>
 
       <div className='py-4'>
         <div className='underline font-bold'>Step 7:</div>
            In order to gain true familiarity with the japanese language being able to listen and read Japanese is essential.
           Now that you understand how Japanese writing systems work and you have built up some vocabulary you are ready to 
-          start these {' '}
-        <a
-          className='text-blue-500 underline'
-          href='/japanese/reading-listening/aikos-book-sanctuary?eng=F'
-        >
+          start these exercises:
+        <div>
+          <a
+            className='text-blue-500 underline'
+            href='/japanese/reading-listening/aikos-book-sanctuary?eng=F'>
           reading and listening exercises
-        </a>
+          </a>
+        </div>
+       
       </div>
     </div>
   );

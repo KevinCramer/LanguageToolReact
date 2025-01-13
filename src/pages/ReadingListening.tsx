@@ -171,7 +171,7 @@ const ReadingListeningContent = (props: { languageNumber: number; howToGuideVide
       }));
 
     return (
-      <div>
+      <div className=' mx-2 md:mx-4'>
         <table className="table-auto w-full border-collapse border border-gray-300">
           <thead>
             <tr>
