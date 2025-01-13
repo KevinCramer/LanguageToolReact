@@ -262,12 +262,18 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
               rounded-lg shadow hover:bg-gray-400"
               onClick={toggleTopicDropdown}
             >
-    Topic:{' '}
-              {currentAudioTranscription.name.length > 25
-                ? `${currentAudioTranscription.name.substring(0, 25)}...`
-                : currentAudioTranscription.name}
+              <div className='flex'>
+                <div>
+              Topic:{' '}
+                  {currentAudioTranscription.name.length > 25
+                    ? `${currentAudioTranscription.name.substring(0, 25)}...`
+                    : currentAudioTranscription.name}
+                </div>
+                <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <polygon points="12,16 6,8 18,8" fill="black" />
+                </svg>
+              </div>
             </button>
-  
             {isTopicDropdownOpen && (
               <div className="absolute left-0 mt-2 bg-white border
                border-gray-300 rounded-lg shadow w-64 z-10">
@@ -297,9 +303,15 @@ const ComprehensionContent = (props: { languageNumber: number; howToGuideVideo?:
               rounded-lg shadow hover:bg-gray-400"
               onClick={toggleSettingsDropdown}
             >
-    Settings
+              <div className='flex'>
+                <div>
+                Settings
+                </div>
+                <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <polygon points="12,16 6,8 18,8" fill="black" />
+                </svg>
+              </div>
             </button>
-
             {isSettingsDropdownOpen && (
               <div className="absolute right-0 mt-2 bg-white border
                border-gray-300 rounded-lg shadow w-64 z-10">
