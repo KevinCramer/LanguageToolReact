@@ -75,8 +75,8 @@ const Navbar = () => {
   const isMobile = width < 768; 
 
   return (
-    <div>
-      <nav className={`${backgroundColorClass} flex justify-between items-center px-1 md:pr-4 text-white`}>
+    <>
+      <nav className={`${backgroundColorClass} flex justify-between items-center px-1 md:pr-4 text-white relative`}>
         <NavLink to='/'>
           <div className={`flex items-center my-3 text-sm md:ml-8`}>
             <div className='text-emerald-400 font-bold text-2xl'>
@@ -93,17 +93,6 @@ const Navbar = () => {
             </div>
           </div>
         </NavLink>
-        {!isMobile && <div>
-          <NavLink to='/japanese/home-page' className={onJapanese ? 'underline text-white mx-8' : 'text-white mx-8 '}> 
-        Japanese
-          </NavLink>
-          <NavLink to='/about' className={({ isActive }) => isActive ? 'underline text-white mx-8 ' : 'text-white mx-8 '}> 
-          About
-          </NavLink>
-          <NavLink to='/contact' className={({ isActive }) => isActive ? 'underline text-white mx-8 ' : 'text-white mx-8 '}> 
-          Contact
-          </NavLink>
-        </div>}
         {isMobile && 
         <>
           <NavLink to='/japanese/home-page' className={onJapanese ? 'underline text-white' : 'text-white '}> 
@@ -177,7 +166,20 @@ const Navbar = () => {
           </div>
         )}
       </nav>
-    </div>
+      {!isMobile && <nav className="absolute left-1/2 transform -translate-x-1/2 z-1 bg-opacity-50 h-14 flex items-center px-4">
+        <div>
+          <NavLink to='/japanese/home-page' className={onJapanese ? 'underline text-white mx-8' : 'text-white mx-8 '}> 
+        Japanese
+          </NavLink>
+          <NavLink to='/about' className={({ isActive }) => isActive ? 'underline text-white mx-8 ' : 'text-white mx-8 '}> 
+          About
+          </NavLink>
+          <NavLink to='/contact' className={({ isActive }) => isActive ? 'underline text-white mx-8 ' : 'text-white mx-8 '}> 
+          Contact
+          </NavLink>
+        </div>
+      </nav>}
+    </>
   );
 };
 
