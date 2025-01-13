@@ -29,22 +29,22 @@ const HowToTypeJapanese = () => {
         
       </div>
       {isModalOpen && (
-        <div>
-          <div>
-            <Modal show={isModalOpen} onHide={() => setIsModalOpen(false)} size='lg' centered>
-              <Modal.Header closeButton>
-                <Modal.Title>How to Guide</Modal.Title>
-              </Modal.Header>
-              <Modal.Body>
-                <div>
-                  <video
-                    controls
-                    src={howToTypeJapaneseTutorial}
-                  />
-                </div>
-              </Modal.Body>
-            </Modal>
-          </div> 
+        <div className="fixed inset-0 bg-gray-800 bg-opacity-75 flex justify-center items-center">
+          <div className="bg-white rounded p-6 max-w-2xl w-full">
+            <div className="flex justify-between items-center mb-4">
+              <h3 className="text-xl font-semibold"></h3>
+              <button className="text-gray-500 hover:text-gray-700" onClick={() => setIsModalOpen(false)}>
+          ✕
+              </button>
+            </div>
+            <div>
+              <video
+                controls
+                src={howToTypeJapaneseTutorial}
+                className="w-full rounded"
+              />
+            </div>
+          </div>
         </div>
       )}
     </div>
