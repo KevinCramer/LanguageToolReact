@@ -302,7 +302,7 @@ const WritingSystems = (
                       className="px-4 py-2 hover:bg-gray-100 cursor-pointer text-sm"
                       onClick={() => changeCurrentTopic(topic)}
                     >
-                      <div className="flex items-center">
+                      <div className="flex items-center justify-between">
                         {topic.name}
                         {topic.isLocked && lingoCommandIsLocked && !userIsLoggedIn && <LockIcon />}
                       </div>

@@ -6,13 +6,24 @@ import { lingoCommandIsLocked } from '../../constants';
 import LockIcon from '@mui/icons-material/Lock';
 import { useAuth } from '../../contexts/AuthContext';
 import { useProtectedLink } from '../../helpers/use-protected-link';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
+
+const lessonTitles = {
+  1: 'Basic Katakana',
+  2: 'Katakana with Dakuten and Handakuten',
+  3: 'Yoōn Katakana',
+  4: 'Foreign Yoōn Katakana',
+  5: 'Katakana Long Vowels'
+
+}
 
 const KatakanaExplained = () => { 
   //@ts-ignore
   const { currentUser } = useAuth();
   const userIsLoggedIn = currentUser && currentUser.email
   const handleProtectedClick = useProtectedLink();
+  const [searchParams, setSearchParams] = useSearchParams();
 
   const japaneseWritingSystems = writingSystems[0];
 
@@ -26,7 +37,14 @@ const KatakanaExplained = () => {
   const katakanaSpecialYoonWritingSystem = japaneseWritingSystems?.topics
     .find((t: any)=> t.slugName === japaneseWritingSystemsTopicSlugNames.katakanaSpecialYoon)
 
-  const [currentLesson, setCurrentLesson] = useState(1); // Track the active lesson
+  // Get the initial lesson number from query params or default to 1
+  const initialLesson = parseInt(searchParams.get('lesson') || '1', 10);
+  const [currentLesson, setCurrentLesson] = useState(initialLesson);
+
+  useEffect(() => {
+  // Update the query parameter whenever the lesson changes
+    setSearchParams({ lesson: currentLesson.toString() });
+  }, [currentLesson, setSearchParams]);
 
   const basicKatakanaTable = (
     <div className="flex justify-center">
@@ -669,12 +687,19 @@ const KatakanaExplained = () => {
           </div>
           <div className='py-2'>
             Katakana has 46 basic sounds. See this diagram for pattern:
-      
-            {basicKatakanaTable}
+            <div className='py-4'>
+              {basicKatakanaTable}
 
+            </div>
+         
+            <div className='py-4'>
             Moreover each basic katakana has a matching basic hiragana that produces the 
-                  same sound. See this diagram: 
-            {basicHiraganaToKatakanaTable}
+            same sound. See this diagram: 
+              <div className='py-2'>
+                {basicHiraganaToKatakanaTable}
+
+              </div>
+            </div>
           </div>  
         </>
       );
@@ -705,18 +730,24 @@ const KatakanaExplained = () => {
             For example: <b>ハ (ha) → パ (pa)</b>.
             
                  See this useful diagram
-                for the general pattern.
-             
-            {dakutenTable}
-            <div>
+                for the general pattern:
+            <div className='py-4'>
+              {dakutenTable}
+            </div>
+            <div className='pb-4'>
+              <div>
                     (1) ヂ is written in romaji as <b>di</b> but is pronounced <b>ji</b>.
-            </div>
-            <div>
+              </div>
+              <div>
                     (2) ヅ is written in romaji as <b>du</b> but is pronounced <b>zu</b>.
+              </div>
             </div>
              
-          Also each dakuten/handakuten katakana has a matching dakuten/hankuten
-          hiragana that produces the same sound. See diagram:               
+            <div className='pt-6 pb-4'>
+              Also each dakuten/handakuten katakana has a matching dakuten/hankuten
+              hiragana that produces the same sound. See diagram:        
+            </div>
+                
             {dakutenHiraganaToKatakanaTable}
           </div>
         </>
@@ -733,7 +764,7 @@ const KatakanaExplained = () => {
                   LearningSections.WritingSystem,
                   katakanaYoonWritingSystem)
               }>
-              Katakana Yoōn Exercise
+              Yoōn Katakana Exercise
               {katakanaYoonWritingSystem?.isLocked &&
                     lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon/> : ''}
             </a>
@@ -748,8 +779,10 @@ const KatakanaExplained = () => {
             
                      Each native yōon katakana has a matching yōon hiragana that produces the 
                     same sound. See diagram:
-              
-            {yoonHiraganaToKatakanaTable}
+            <div className='py-4'>
+              {yoonHiraganaToKatakanaTable}
+
+            </div>
       
           </div>
         </>
@@ -766,7 +799,7 @@ const KatakanaExplained = () => {
                   LearningSections.WritingSystem,
                   katakanaSpecialYoonWritingSystem)
               }>
-            Katakana Foreign Yoōn Exercise
+             Foreign Yoōn Katakana Exercise
               {katakanaSpecialYoonWritingSystem?.isLocked &&
                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon/> : ''}
             </a>
@@ -811,7 +844,8 @@ const KatakanaExplained = () => {
 
   return (
     <div className="max-w-screen-md mx-auto px-4 md:text-lg">
-      <h4 className="text-center text-2xl pt-12">Kakatana Explained  - Lesson {currentLesson}</h4>
+      {/*@ts-ignore*/}
+      <h4 className="text-center text-2xl pt-12">Lesson {currentLesson} - {lessonTitles[currentLesson]}</h4>
       <div className="flex justify-center items-center space-x-4 mt-8">
         <button
           className={`px-4 py-2 border rounded-md ${currentLesson === 1 ? 'bg-gray-300' : 'bg-gray-100'}`}

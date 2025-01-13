@@ -78,22 +78,25 @@ const App = ()=> {
       >
         <Navbar/>
         {location.pathname.includes('japanese') && <JapaneseNavbar/>}
-        <Routes>
-          <Route path="/about" element={<About />} />
-          <Route path="/japanese/home-page" element={<Japanese/>} />
-          <Route path="/japanese/vocabulary" 
-            element={<VocabContent howToGuideVideo={japaneseVocabGuideVideo} />} />
-          <Route path="/japanese/writing-systems-explained" element={<JapaneseWritingSystems />} />
-          <Route path="/japanese/hiragana-explained" element={<HiraganaExplained />} />
-          <Route path="/japanese/katakana-explained" element={<KatakanaExplained />} />
-          <Route path="/japanese/kanji-explained" element={<KanjiExplained />} />
-          <Route path="/japanese/how-to-type-japanese" element={<HowToTypeJapanese />} />
-          <Route path="/japanese/writing-systems" element={<WritingSystems howToGuideVideo={japaneseWritingSystemsVideo}/>} />
-          <Route path="/japanese/study-guide" element={<JapaneseStudyGuide/>} />
-          <Route path="/japanese/grammar/:topicSlug" element={<GrammarContent languageNumber={0} />} />
-          <Route path="/japanese/reading-listening/:topicSlug" element={<ReadingListening languageNumber={0} howToGuideVideo={japaneseComprehensionVideo}/>} />
-          <Route path="/*" element={<Custom404Error/>} />
-        </Routes>
+        <div className='pb-20'>
+          <Routes>
+            <Route path="/about" element={<About />} />
+            <Route path="/japanese/home-page" element={<Japanese/>} />
+            <Route path="/japanese/vocabulary" 
+              element={<VocabContent howToGuideVideo={japaneseVocabGuideVideo} />} />
+            <Route path="/japanese/writing-systems-explained" element={<JapaneseWritingSystems />} />
+            <Route path="/japanese/hiragana-explained" element={<HiraganaExplained />} />
+            <Route path="/japanese/katakana-explained" element={<KatakanaExplained />} />
+            <Route path="/japanese/kanji-explained" element={<KanjiExplained />} />
+            <Route path="/japanese/how-to-type-japanese" element={<HowToTypeJapanese />} />
+            <Route path="/japanese/writing-systems" element={<WritingSystems howToGuideVideo={japaneseWritingSystemsVideo}/>} />
+            <Route path="/japanese/study-guide" element={<JapaneseStudyGuide/>} />
+            <Route path="/japanese/grammar/:topicSlug" element={<GrammarContent languageNumber={0} />} />
+            <Route path="/japanese/reading-listening/:topicSlug" element={<ReadingListening languageNumber={0} howToGuideVideo={japaneseComprehensionVideo}/>} />
+            <Route path="/*" element={<Custom404Error/>} />
+          </Routes>
+        </div>
+       
       </div>}
       <Modal show ={reduxAuth.modalToShow !== authModalStates.none}
         onHide={() => dispatch(hideModal())}>

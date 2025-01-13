@@ -80,6 +80,12 @@ const Japanese = () => {
           </ResourceLink>      
         </div>    
       </div>
+      <div className='mt-16'>
+        <i>
+        The Japanese language has 130 million native speakers, with about 95% residing in Japan. Over the past 40 years,
+        the number of people learning Japanese as a second language has increased over twentyfold.
+        </i>
+      </div>
 
     </div>
   );

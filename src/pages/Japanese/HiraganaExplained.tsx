@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { japaneseWritingSystemsTopicSlugNames, writingSystems } from '../../data/structured-data/writingSystems';
 import { LanguageNames, LearningSections } from '../../../types/LearningSectionsTypes';
 import { createURL } from '../../helpers/createURL';
@@ -6,12 +6,19 @@ import { lingoCommandIsLocked } from '../../constants';
 import LockIcon from '@mui/icons-material/Lock';
 import { useAuth } from '../../contexts/AuthContext';
 import { useProtectedLink } from '../../helpers/use-protected-link';
+import { useSearchParams } from 'react-router-dom';
 
+const lessonTitles = {
+  1: 'Basic Hiragana',
+  2: 'Hiragana with Dakuten and Handakuten',
+  3: 'Yoōn Hiragana'
+}
 const HiraganaExplained = () => {
   //@ts-ignore
   const { currentUser } = useAuth();
   const userIsLoggedIn = currentUser && currentUser.email;
   const handleProtectedClick = useProtectedLink();
+  const [searchParams, setSearchParams] = useSearchParams();
 
   const japaneseWritingSystems = writingSystems[0];
 
@@ -25,8 +32,15 @@ const HiraganaExplained = () => {
     (t: any) => t.slugName === japaneseWritingSystemsTopicSlugNames.hiraganaYoon
   );
 
-  const [currentLesson, setCurrentLesson] = useState(1); // Track the active lesson
+  // Get the initial lesson number from query params or default to 1
+  const initialLesson = parseInt(searchParams.get('lesson') || '1', 10);
+  const [currentLesson, setCurrentLesson] = useState(initialLesson);
 
+  useEffect(() => {
+  // Update the query parameter whenever the lesson changes
+    setSearchParams({ lesson: currentLesson.toString() });
+  }, [currentLesson, setSearchParams]);
+  
   const dakutenTable = (
     <div className="flex justify-center my-4">
       <table className="table-auto border-collapse border border-gray-500">
@@ -262,7 +276,7 @@ const HiraganaExplained = () => {
                     LearningSections.WritingSystem,
                     hiraganaYoonWritingSystem)
                 }>
-                Hiragana Yoōn Exercise
+                Yoōn Hiragana Exercise
                 {hiraganaYoonWritingSystem?.isLocked &&
                    lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon/> : ''}
               </a>
@@ -284,7 +298,8 @@ const HiraganaExplained = () => {
 
   return (
     <div className="max-w-screen-md mx-auto px-4 md:text-lg">
-      <h4 className="text-center text-2xl pt-12">Hiragana Explained - Lesson {currentLesson}</h4>
+      {/*@ts-ignore*/}
+      <h4 className="text-center text-2xl pt-12">Lesson {currentLesson} - {lessonTitles[currentLesson]}</h4>
       {/* Navigation */}
       <div className="flex justify-center items-center space-x-4 mt-8">
         <button
