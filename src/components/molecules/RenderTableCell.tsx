@@ -90,20 +90,23 @@ const RenderTableCell = ({
 
   if (!visibility) {
     return (
-      <>
+      <div
+        className="w-full flex flex-col items-center justify-center"
+      >
         <button
-          className={`mt-2 ${show ? 'mb-0' : 'mb-2'}`}
+          className="text-blue-500 border-[1px] border-b-4 border-gray-300 bg-200 text-center active:bg-gray-300 hover:bg-gray-200 p-2 rounded-2xl"
           onClick={toggleShow}
         >
           {show ? 'Hide Content' : 'Show Content'}
         </button>
         {show && (
-          <div>
+          <div className="mt-4">
             {granularity === 'sentence' && <div>{sentenceContent}</div>}
             {granularity === 'paragraph' && <div>{paragraphContent}</div>}
           </div>
         )}
-      </>
+      </div>
+
     );
   }
 

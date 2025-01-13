@@ -215,7 +215,7 @@ const ReadingListeningContent = (props: { languageNumber: number; howToGuideVide
           <tbody>
             {rowsToRender.map((row, index) => (
               <tr key={index}>
-                <td className="border border-gray-300 px-4 py-2 w-1/2">
+                <td className="border border-gray-300 px-4 py-2 align-top">
                   <RenderTableCell
                     current={currentLeft as TranscriptionType}
                     visibility={leftVisibility}
@@ -224,7 +224,7 @@ const ReadingListeningContent = (props: { languageNumber: number; howToGuideVide
                     granularity={granularity}
                   />
                 </td>
-                <td className="border border-gray-300 px-4 py-2 w-1/2">
+                <td className="border border-gray-300 px-4 py-2 align-top">
                   <RenderTableCell
                     current={currentRight as TranscriptionType}
                     visibility={rightVisibility}
