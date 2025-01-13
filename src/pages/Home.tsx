@@ -10,7 +10,7 @@ export const Home = () => {
     if (window.location.pathname === '/explore') {
       window.location.replace(
         // eslint-disable-next-line @stylistic/js/max-len
-        'https://www.lingocommand.com/?utm_source=tiktok&utm_medium=social&utm_campaign=homepage_campaign'
+        '/?utm_source=tiktok&utm_medium=social&utm_campaign=homepage_campaign'
       );
     }
   }, []);
