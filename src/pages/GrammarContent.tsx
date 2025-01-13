@@ -32,7 +32,8 @@ const GrammarContent = (props: { languageNumber: number }) => {
       dispatch(denyPermission());
     } else {
       navigate(`/${currentLanguage.languageName.toLowerCase()}/grammar/${topic.slugName}`, { replace: true });
-      return setCurrentTopic(topic);
+      setCurrentTopic(topic);
+      setIsTopicDropdownOpen(false); // Close the dropdown after selecting an item
     }
   };
 
