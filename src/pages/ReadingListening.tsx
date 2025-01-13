@@ -186,13 +186,18 @@ const ReadingListeningContent = (props: { languageNumber: number; howToGuideVide
                       text-sm rounded-lg shadow hover:bg-gray-400"
                       onClick={() => side === 'Left' ? toggleLeftDropdown() : toggleRightDropdown()}
                     >
-                      {titleMap[
+                      <div className='flex'>
+                        {titleMap[
                 (side === 'Left' ? currentLeft : currentRight) as TranscriptionType
-                      ].length > 20
-                        ? `${titleMap[(side === 'Left' ? currentLeft :
-                          currentRight) as TranscriptionType].substring(0, 20)}...`
-                        : titleMap[(side === 'Left' ? currentLeft : 
-                          currentRight) as TranscriptionType]}
+                        ].length > 20
+                          ? `${titleMap[(side === 'Left' ? currentLeft :
+                            currentRight) as TranscriptionType].substring(0, 20)}...`
+                          : titleMap[(side === 'Left' ? currentLeft : 
+                            currentRight) as TranscriptionType]}
+                        <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <polygon points="12,16 6,8 18,8" fill="black" />
+                        </svg>
+                      </div>
                     </button>
 
                     {(side === 'Left' ? isLeftDropdownOpen : isRightDropdownOpen) && (
