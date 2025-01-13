@@ -73,12 +73,12 @@ const Navbar = () => {
 
   // Now you can use width to check screen size in your component
   const isMobile = width < 768; 
-
+  const fontStretch = isMobile ? '50%' : '100%'
   return (
     <>
-      <nav className={`${backgroundColorClass} flex justify-between items-center px-1 md:pr-4 text-white relative`}>
+      <nav className={`${backgroundColorClass} flex justify-between items-center px-2 md:pr-4 text-white relative`}>
         <NavLink to='/'>
-          <div className={`flex items-center my-3 text-sm md:ml-8`}>
+          <div className={`flex items-center my-3 text-sm md:ml-8`} style={{ fontStretch }}>
             <div className='text-emerald-400 font-bold text-2xl'>
               L
             </div>
@@ -95,13 +95,13 @@ const Navbar = () => {
         </NavLink>
         {isMobile && 
         <>
-          <NavLink to='/japanese/home-page' className={onJapanese ? 'underline text-white' : 'text-white '}> 
+          <NavLink to='/japanese/home-page' className={onJapanese ? 'underline text-white' : 'text-white '} style={{ fontStretch }}> 
         Japanese
           </NavLink>
-          <NavLink to='/about' className={({ isActive }) => isActive ? 'underline text-white ' : 'text-white '}> 
+          <NavLink to='/about' className={({ isActive }) => isActive ? 'underline text-white ' : 'text-white '}style={{ fontStretch }}> 
           About
           </NavLink>
-          <NavLink to='/contact' className={({ isActive }) => isActive ? 'underline text-white ' : 'text-white '}> 
+          <NavLink to='/contact' className={({ isActive }) => isActive ? 'underline text-white ' : 'text-white '} style={{ fontStretch }}> 
           Contact
           </NavLink>
         </>
@@ -109,6 +109,7 @@ const Navbar = () => {
         {!(currentUser && currentUser.email) && (
           <button
             className='text-white md:mr-8'
+            style={{ fontStretch }}
             onClick={async () => {
               if (currentUser && currentUser.email) {
                 try {
