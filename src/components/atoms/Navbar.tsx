@@ -6,6 +6,7 @@ import { useDispatch } from 'react-redux';
 import { FaChevronDown } from 'react-icons/fa';
 
 import { useEffect, useRef, useState } from 'react';
+import { fontStretch } from '../../constants';
 
 const Navbar = () => {
   const dispatch = useDispatch();
@@ -73,12 +74,12 @@ const Navbar = () => {
 
   // Now you can use width to check screen size in your component
   const isMobile = width < 768; 
-  const fontStretch = isMobile ? '50%' : '100%'
+  const navbarFontStretch = isMobile ? fontStretch : '100%'
   return (
     <>
       <nav className={`${backgroundColorClass} flex justify-between items-center px-2 md:pr-4 text-white relative`}>
         <NavLink to='/'>
-          <div className={`flex items-center my-3 text-sm md:ml-8`} style={{ fontStretch }}>
+          <div className={`flex items-center my-3 text-sm md:ml-8`} style={{ fontStretch: navbarFontStretch }}>
             <div className='text-emerald-400 font-bold text-2xl'>
               L
             </div>
@@ -95,13 +96,13 @@ const Navbar = () => {
         </NavLink>
         {isMobile && 
         <>
-          <NavLink to='/japanese/home-page' className={onJapanese ? 'underline text-white' : 'text-white '} style={{ fontStretch }}> 
+          <NavLink to='/japanese/home-page' className={onJapanese ? 'underline text-white' : 'text-white '} style={{ fontStretch: navbarFontStretch }}> 
         Japanese
           </NavLink>
-          <NavLink to='/about' className={({ isActive }) => isActive ? 'underline text-white ' : 'text-white '}style={{ fontStretch }}> 
+          <NavLink to='/about' className={({ isActive }) => isActive ? 'underline text-white ' : 'text-white '}style={{ fontStretch: navbarFontStretch }}> 
           About
           </NavLink>
-          <NavLink to='/contact' className={({ isActive }) => isActive ? 'underline text-white ' : 'text-white '} style={{ fontStretch }}> 
+          <NavLink to='/contact' className={({ isActive }) => isActive ? 'underline text-white ' : 'text-white '} style={{ fontStretch: navbarFontStretch }}> 
           Contact
           </NavLink>
         </>
@@ -109,7 +110,7 @@ const Navbar = () => {
         {!(currentUser && currentUser.email) && (
           <button
             className='text-white md:mr-8'
-            style={{ fontStretch }}
+            style={{ fontStretch: navbarFontStretch }}
             onClick={async () => {
               if (currentUser && currentUser.email) {
                 try {

@@ -10,3 +10,5 @@ export const mobileBreakPoint = 768;
 
 export const lockIconStyle = { fontSize: '16px', marginLeft: '5px' }
 export const protectedLinkStyle = { display:'flex',alignItems: 'center', justifyContent: 'space-between' }
+
+export const fontStretch = '50%'
