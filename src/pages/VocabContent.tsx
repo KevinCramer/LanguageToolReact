@@ -199,7 +199,7 @@ const VocabContent = (
       return (
         <div className='pt-4'>
           <div className={`overflow-x-auto border rounded-lg shadow ${minWidth}`}>
-            <table className="w-full bg-white border-separate border-spacing-0">
+            <table className="w-full bg-white border-collapse">
               <thead className="bg-gray-200">
                 <tr>
                   <th className="px-4 py-2 text-center text-sm font-medium text-gray-700 border-r border-gray-300 w-1/2">
@@ -216,7 +216,7 @@ const VocabContent = (
                     key={index}
                     className={`${
                       index % 2 === 0 ? 'bg-gray-50' : 'bg-white'
-                    } hover:bg-gray-100`}
+                    } hover:bg-gray-100 border-b border-gray-300`}
                   >
                     <td className="px-4 py-2 text-sm text-gray-800 text-center border-r border-gray-300 w-1/2">
                       <StudyElement
@@ -261,7 +261,6 @@ const VocabContent = (
               </tbody>
             </table>
           </div>
-
         </div>
       )
     }

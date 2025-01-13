@@ -201,7 +201,7 @@ const WritingSystems = (
                       index % 2 === 0 ? 'bg-gray-50' : 'bg-white'
                     } hover:bg-gray-100`}
                   >
-                    <td className="px-4 py-2 text-sm text-gray-800 text-center border-r border-gray-300 w-1/2">
+                    <td className="px-4 py-2 text-sm text-gray-800 text-center border-b border-r border-gray-300 w-1/2">
                       <StudyElement
                         BaseLanguageWord={
                           showBaseLanguage
@@ -220,7 +220,7 @@ const WritingSystems = (
                         showLeftLabel={true}
                       />
                     </td>
-                    <td className="px-4 py-2 text-sm text-gray-800 text-center w-1/2">
+                    <td className="px-4 py-2 text-sm text-gray-800  border-b border-gray-300 text-center w-1/2">
                       <StudyElement
                         BaseLanguageWord={
                           showBaseLanguage
