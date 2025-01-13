@@ -180,43 +180,43 @@ const JapaneseStudyGuide = () => {
       <h4 className="text-center text-2xl pt-12">Japanese Study Guide  - Step {currentStep}</h4>
       <div className="flex justify-center items-center space-x-4 mt-8">
         <button
-          className={`px-4 py-2 border rounded-md ${currentStep === 1 ? 'bg-gray-300' : 'bg-gray-100'}`}
+          className={`px-3 py-1 md:px-4 md:py-2 border rounded-md ${currentStep === 1 ? 'bg-gray-300' : 'bg-gray-100'}`}
           onClick={() => setCurrentStep(1)}
         >
           1
         </button>
         <button
-          className={`px-4 py-2 border rounded-md ${currentStep === 2 ? 'bg-gray-300' : 'bg-gray-100'}`}
+          className={`px-3 py-1 md:px-4 md:py-2 border rounded-md ${currentStep === 2 ? 'bg-gray-300' : 'bg-gray-100'}`}
           onClick={() => setCurrentStep(2)}
         >
           2
         </button>
         <button
-          className={`px-4 py-2 border rounded-md ${currentStep === 3 ? 'bg-gray-300' : 'bg-gray-100'}`}
+          className={`px-3 py-1 md:px-4 md:py-2 border rounded-md ${currentStep === 3 ? 'bg-gray-300' : 'bg-gray-100'}`}
           onClick={() => setCurrentStep(3)}
         >
           3
         </button>
         <button
-          className={`px-4 py-2 border rounded-md ${currentStep === 4 ? 'bg-gray-300' : 'bg-gray-100'}`}
+          className={`px-3 py-1 md:px-4 md:py-2 border rounded-md ${currentStep === 4 ? 'bg-gray-300' : 'bg-gray-100'}`}
           onClick={() => setCurrentStep(4)}
         >
           4
         </button>
         <button
-          className={`px-4 py-2 border rounded-md ${currentStep === 5 ? 'bg-gray-300' : 'bg-gray-100'}`}
+          className={`px-3 py-1 md:px-4 md:py-2 border rounded-md ${currentStep === 5 ? 'bg-gray-300' : 'bg-gray-100'}`}
           onClick={() => setCurrentStep(5)}
         >
           5
         </button>
         <button
-          className={`px-4 py-2 border rounded-md ${currentStep === 6 ? 'bg-gray-300' : 'bg-gray-100'}`}
+          className={`px-3 py-1 md:px-4 md:py-2 border rounded-md ${currentStep === 6 ? 'bg-gray-300' : 'bg-gray-100'}`}
           onClick={() => setCurrentStep(6)}
         >
           6
         </button>
         <button
-          className={`px-4 py-2 border rounded-md ${currentStep === 7 ? 'bg-gray-300' : 'bg-gray-100'}`}
+          className={`px-3 py-1 md:px-4 md:py-2 border rounded-md ${currentStep === 7 ? 'bg-gray-300' : 'bg-gray-100'}`}
           onClick={() => setCurrentStep(7)}
         >
           7
