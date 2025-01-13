@@ -11,6 +11,27 @@ import RenderTableCell from '../components/molecules/RenderTableCell';
 import { useAuth } from '../contexts/AuthContext';
 import { useDispatch } from 'react-redux';
 
+const useWindowWidth = () => {
+  const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
+
+  useEffect(() => {
+    // Update the windowWidth state when the window is resized
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+  
+    // Add event listener to handle window resizing
+    window.addEventListener('resize', handleResize);
+  
+    // Cleanup event listener when the component unmounts
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+  
+  return windowWidth;
+};
+
 const ReadingListeningContent = (props: { languageNumber: number; howToGuideVideo?: any }) => {
   const dispatch = useDispatch();
 
@@ -178,6 +199,7 @@ const ReadingListeningContent = (props: { languageNumber: number; howToGuideVide
       }));
 
     return (
+      
       <div className=' mx-2 md:mx-4'>
         <table className="table-auto w-full border-collapse border border-gray-300">
           <thead>
@@ -185,12 +207,11 @@ const ReadingListeningContent = (props: { languageNumber: number; howToGuideVide
               {['Left', 'Right'].map((side) => (
                 <th
                   key={side}
-                  className="border border-gray-300 px-4 py-2 w-1/2 text-center"
+                  className="border border-gray-300 px-4 py-2 w-1/2 text-center font-normal"
                 >
                   <div className="relative">
                     <button
-                      className="px-3 py-2 bg-gray-300 text-black 
-                      text-sm rounded-lg shadow hover:bg-gray-400"
+                      className="border-[1px] border-b-4 text-sm border-gray-300 bg-200 text-center active:bg-gray-300 hover:bg-gray-200  p-1 pl-2 rounded-lg mb-2"
                       onClick={() => side === 'Left' ? toggleLeftDropdown() : toggleRightDropdown()}
                     >
                       <div className='flex'>
@@ -198,7 +219,7 @@ const ReadingListeningContent = (props: { languageNumber: number; howToGuideVide
                 (side === 'Left' ? currentLeft : currentRight) as TranscriptionType
                         ].length > 20
                           ? `${titleMap[(side === 'Left' ? currentLeft :
-                            currentRight) as TranscriptionType].substring(0, 20)}...`
+                            currentRight) as TranscriptionType].substring(0, isMobile ? 12 : 20)}...`
                           : titleMap[(side === 'Left' ? currentLeft : 
                             currentRight) as TranscriptionType]}
                         <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -254,6 +275,10 @@ const ReadingListeningContent = (props: { languageNumber: number; howToGuideVide
     );
   };
 
+  const width = useWindowWidth(); // Get the current window width
+
+  // Now you can use width to check screen size in your component
+  const isMobile = width < 768; 
   return (
     <div className='md:text-lg'>
       <h4 className='text-center text-2xl py-12'>
@@ -271,8 +296,7 @@ const ReadingListeningContent = (props: { languageNumber: number; howToGuideVide
         <div className='flex justify-center'>
           <div className="relative px-2" ref={topicDropdownRef}>
             <button
-              className="px-3 py-2 bg-gray-300 text-black text-sm 
-              rounded-lg shadow hover:bg-gray-400"
+              className="border-[1px] border-b-4 text-sm border-gray-300 bg-200 text-center active:bg-gray-300 hover:bg-gray-200  p-1 pl-2 rounded-lg mb-2"
               onClick={toggleTopicDropdown}
             >
               <div className='flex'>
@@ -312,8 +336,7 @@ const ReadingListeningContent = (props: { languageNumber: number; howToGuideVide
           </div>
           <div className="relative px-2" ref={settingsDropdownRef}>
             <button
-              className="px-3 py-2 bg-gray-300 text-black text-sm 
-              rounded-lg shadow hover:bg-gray-400"
+              className="border-[1px] border-b-4 text-sm border-gray-300 bg-200 text-center active:bg-gray-300 hover:bg-gray-200  p-1 pl-2 rounded-lg mb-2"
               onClick={toggleSettingsDropdown}
             >
               <div className='flex'>
@@ -328,7 +351,7 @@ const ReadingListeningContent = (props: { languageNumber: number; howToGuideVide
             {isSettingsDropdownOpen && (
               <div className="absolute right-0 mt-2 bg-white border
                border-gray-300 rounded-lg shadow w-64 z-10">
-                <ul className="divide-y divide-gray-200">
+                <ul className="divide-y divide-gray-200 text-sm">
                   <li
                     onClick={(event) => {
                       toggleLeftVisibility();

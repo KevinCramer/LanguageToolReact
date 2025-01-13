@@ -74,7 +74,7 @@ const GrammarContent = (
             <div className="relative flex justify-center">
               <div className="relative">
                 <button
-                  className="px-3 py-2 bg-gray-300 text-black text-sm rounded-lg shadow hover:bg-gray-400"
+                  className="border-[1px] border-b-4 text-sm border-gray-300 bg-200 text-center active:bg-gray-300 hover:bg-gray-200  p-1 pl-2 rounded-lg mb-2"
                   onClick={toggleTopicDropdown}
                 >
                   <div className="flex items-center">
