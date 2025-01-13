@@ -111,6 +111,7 @@ const VocabContent = (
     }
     else {
       setCurrentTopic(topic);
+      setIsTopicDropdownOpen(false); // Close the dropdown when a topic is selected
     }
   }
 
@@ -315,7 +316,9 @@ const VocabContent = (
                   .map((topic, index) => (
                     <li
                       key={index}
-                      className="px-4 py-2 hover:bg-gray-100 cursor-pointer text-sm"
+                      className={`px-4 py-2 text-sm text-gray-800 cursor-pointer hover:bg-gray-200 ${
+                        currentTopic.name === topic.name ? 'bg-gray-100' : ''
+                      }`}
                       onClick={() => changeCurrentTopic(topic)}
                     >
                       <div className="flex items-center justify-between">
@@ -327,7 +330,7 @@ const VocabContent = (
                     </li>
                   ))}
               </ul>
-            </div>       
+            </div>
           )}
         </div>
 
