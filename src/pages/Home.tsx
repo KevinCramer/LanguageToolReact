@@ -1,5 +1,6 @@
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
+import { fontStretch } from '../constants';
 
 export const Home = () => {
   const navigate = useNavigate(); // React Router's navigation hook
@@ -79,7 +80,7 @@ export const Home = () => {
         Learn Japanese Faster
       </div>
       <button className='m-8 p-1 bg-blue-500 text-white rounded-md text-lg md:text-xl md:tracking-custom'
-        onClick={(event) => { navigate('/japanese/home-page') }}>
+        onClick={(event) => { navigate('/japanese/home-page') }} style={{ fontStretch }}>
         Start Now 
       </button>
     </div>    

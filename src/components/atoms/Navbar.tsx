@@ -94,6 +94,7 @@ const Navbar = () => {
             </div>
           </div>
         </NavLink>
+       
         {isMobile && 
         <>
           <NavLink to='/japanese/home-page' className={onJapanese ? 'underline text-white' : 'text-white '} style={{ fontStretch: navbarFontStretch }}> 
@@ -168,7 +169,7 @@ const Navbar = () => {
           </div>
         )}
       </nav>
-      {!isMobile && <nav className="absolute left-1/2 transform -translate-x-1/2 z-1 bg-opacity-50 h-14 flex items-center px-4">
+      {!isMobile && true && <nav className="absolute left-1/2 transform -translate-x-1/2 z-1 bg-opacity-50 h-14 flex items-center px-4">
         <div>
           <NavLink to='/japanese/home-page' className={onJapanese ? 'underline text-white mx-8' : 'text-white mx-8 '}> 
         Japanese
