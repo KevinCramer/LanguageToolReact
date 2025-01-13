@@ -82,13 +82,13 @@ const StudyElement = (
       {showAudio && (showBaseLanguageFirst ? !showLeftLabel : showLeftLabel) && (
         <div className='flex items-center'>
           <audio src={ForeignLanguageWordAudio} id={ForeignLanguageWordAudio}></audio>
-          <CustomButton disabled={!ForeignLanguageWord} onClick={handleAudioToggle}>
+          <button disabled={!ForeignLanguageWord} onClick={handleAudioToggle}>
             {ForeignLanguageWordAudio ? (
-              <VolumeUpIcon className={`${isPlaying ? 'text-blue-500' : ''}`} />
+              <VolumeUpIcon className={`${isPlaying ? 'text-blue-500' : 'bg-transparent'}`} />
             ) : (
               <VolumeOffIcon />
             )}
-          </CustomButton>
+          </button>
         </div>
       )}
       {strokeOrderVideo && (
