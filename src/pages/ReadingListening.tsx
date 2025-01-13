@@ -140,12 +140,15 @@ const ReadingListeningContent = (props: { languageNumber: number; howToGuideVide
     return Object.entries(titleMap).map(([key, title]) => {
       const transcriptionType = key as TranscriptionType;
       const showCondition =
-       transcriptionType !== TranscriptionType.Audio &&
-       transcriptionType !== TranscriptionType.English &&
-       parseInt(transcriptionType.slice(-1)) > currentLanguage.numForeignAlphabets;
- 
+      transcriptionType !== TranscriptionType.Audio &&
+      transcriptionType !== TranscriptionType.English &&
+      parseInt(transcriptionType.slice(-1)) > currentLanguage.numForeignAlphabets;
+
       if (showCondition) return null;
- 
+
+      // Check if the current transcription type is the selected one
+      const isSelected = transcriptionType === current;
+
       return (
         <li
           key={key}
@@ -153,7 +156,8 @@ const ReadingListeningContent = (props: { languageNumber: number; howToGuideVide
             changeHandler(transcriptionType);
             side === 'Left' ? setIsLeftDropdownOpen(false) : setIsRightDropdownOpen(false);
           }}
-          className='px-4 py-2 text-sm text-gray-800 cursor-pointer hover:bg-gray-200' >
+          className={`px-4 py-2 text-sm text-gray-800 cursor-pointer hover:bg-gray-200 ${isSelected ? 'bg-gray-100' : ''}`}
+        >
           {title}
         </li>
       );
