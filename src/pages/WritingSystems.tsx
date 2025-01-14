@@ -122,6 +122,10 @@ const WritingSystems = (
   var [audioBool,setAudioBool] = useState(audioBool)
   const changeAudioBool = () => { return setAudioBool(!audioBool)}
   
+  var modifyQuiz = false
+  var [modifyQuiz,setModifyQuiz] = useState(modifyQuiz)
+  const changeModifyQuiz = () => { return setModifyQuiz(!modifyQuiz)}
+
   var showPopUp = false;
   var [showPopUp,setShowPopUp] = useState(showPopUp)
   const hidePopUp = () => { return setShowPopUp(false)}
@@ -216,6 +220,7 @@ const WritingSystems = (
                         }
                         ForeignLanguageWordAudio={pair.foreignAudio}
                         showAudio={audioBool}
+                        showModifyQuiz={modifyQuiz}
                         showBaseLanguageFirst={showBaseLanguage}
                         strokeOrderVideo={pair.strokeOrderVideo}
                         showLeftLabel={true}
@@ -235,6 +240,7 @@ const WritingSystems = (
                         }
                         ForeignLanguageWordAudio={pair.foreignAudio}
                         showAudio={audioBool}
+                        showModifyQuiz={modifyQuiz}
                         showBaseLanguageFirst={showBaseLanguage}
                         strokeOrderVideo={pair.strokeOrderVideo}
                         showLeftLabel={false}
@@ -389,6 +395,25 @@ const WritingSystems = (
                   Random ordering
                   </label>
                 </li>
+                {!quiz && (
+                  <li
+                    className="px-4 py-2 hover:bg-gray-100 cursor-pointer text-sm"
+                    onClick={(event) => {
+                      changeModifyQuiz();
+                      preventDropdownClose(event);
+                    }}
+                  >
+                    <label>
+                      <input
+                        type="checkbox"
+                        checked={modifyQuiz}
+                        onChange={changeModifyQuiz}
+                        className="mr-2"
+                      />
+                    Select questions for quiz
+                    </label>
+                  </li>
+                )} 
               </ul>
             </div>
           )}

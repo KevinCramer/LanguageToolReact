@@ -1,5 +1,4 @@
 import { Navbar } from 'react-bootstrap'
-import CustomButton from '../atoms/CustomButton'
 import { useEffect, useState } from 'react'
 import VolumeUpIcon from '@mui/icons-material/VolumeUp';
 import VolumeOffIcon from '@mui/icons-material/VolumeOff';
@@ -11,6 +10,7 @@ const StudyElement = (
     ForeignLanguageWord: string,
     ForeignLanguageWordAudio: string,
     showAudio: boolean,
+    showModifyQuiz: boolean,
     showBaseLanguageFirst: boolean,
     strokeOrderVideo?: any,
     showLeftLabel: boolean, 
@@ -21,6 +21,7 @@ const StudyElement = (
     ForeignLanguageWord,
     ForeignLanguageWordAudio,
     showAudio,
+    showModifyQuiz,
     showBaseLanguageFirst,
     strokeOrderVideo,
     showLeftLabel
@@ -90,6 +91,15 @@ const StudyElement = (
             )}
           </button>
         </div>
+      )}
+      {showModifyQuiz && !showLeftLabel && (
+        <input
+          type="checkbox"
+          defaultChecked={false}
+          /*checked={true}*/
+          /*onChange={() => {})}*/
+          className="mx-2"
+        />
       )}
       {strokeOrderVideo && (
         <>
