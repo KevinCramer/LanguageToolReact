@@ -166,6 +166,8 @@ const WritingSystems = (
     currentAlphabet,showTrueOrder,quiz,audioBool, navigate ]);
 
   const minWidth = 'min-w-[350px]'
+
+  console.log('selectedWordsForQuiz: ', selectedWordsForQuiz)
   
   function ToggleQuiz() {
     if (quiz) {
@@ -242,6 +244,7 @@ const WritingSystems = (
                         strokeOrderVideo={pair.strokeOrderVideo}
                         showLeftLabel={true}
                         onQuizSelect={(isSelected: boolean) => handleQuizSelection(pair, isSelected)} // Pass onQuizSelect
+                        initialQuizSelect={selectedWordsForQuiz.some((word) => word.englishWord === pair.englishWord)}
                       />
                     </td>
                     <td className="px-4 py-2 text-sm text-gray-800  border-b border-gray-300 text-center w-1/2">
@@ -263,6 +266,8 @@ const WritingSystems = (
                         strokeOrderVideo={pair.strokeOrderVideo}
                         showLeftLabel={false}
                         onQuizSelect={(isSelected: boolean) => handleQuizSelection(pair, isSelected)} // Pass onQuizSelect
+                        initialQuizSelect={selectedWordsForQuiz.some((word) => word.englishWord === pair.englishWord)}
+
                       />
                     </td>
                   </tr>

@@ -15,6 +15,7 @@ const StudyElement = (
     strokeOrderVideo?: any,
     showLeftLabel: boolean, 
     onQuizSelect: (isSelected: boolean) => void; // Added prop for quiz selection
+    initialQuizSelect: boolean,
   }) => 
 {
   const {
@@ -27,11 +28,12 @@ const StudyElement = (
     strokeOrderVideo,
     showLeftLabel,
     onQuizSelect, // Destructuring the onQuizSelect prop
+    initialQuizSelect,
   } = props;
 
   const [showPopUp, setShowPopUp] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [isSelected, setIsSelected] = useState(false); // New state for selection
+  const [isSelected, setIsSelected] = useState(initialQuizSelect); // New state for selection
 
   const handleAudioToggle = () => {
     const audio = document.getElementById(ForeignLanguageWordAudio) as HTMLAudioElement;
