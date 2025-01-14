@@ -167,7 +167,7 @@ const WritingSystems = (
       let count = 0;
       return (
         <div className={`pt-4 space-y-4 ${minWidth}`}>
-          {selectedWordsForQuiz.map((pair: Word) => (
+          {( modifyQuiz ? selectedWordsForQuiz : topicWords).map((pair: Word) => (
             <div
               key={
                 showTrueOrder.toString() +

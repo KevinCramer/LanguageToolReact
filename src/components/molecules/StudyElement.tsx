@@ -104,7 +104,6 @@ const StudyElement = (
       )}
       {showModifyQuiz && !showLeftLabel && (
         <div className="flex items-center">
-          <label>Select for Quiz</label>
           <input
             type="checkbox"
             checked={isSelected} // Use the state to control checkbox
