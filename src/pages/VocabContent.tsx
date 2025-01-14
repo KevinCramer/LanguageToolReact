@@ -76,6 +76,18 @@ const VocabContent = (
   const [isTopicDropdownOpen, setIsTopicDropdownOpen] = useState(false);
   const [isSettingsDropdownOpen, setIsSettingsDropdownOpen] = useState(false);
 
+  const [selectedWordsForQuiz, setSelectedWordsForQuiz] = useState<Word[]>([]);
+
+  const handleQuizSelection = (word: Word, isSelected: boolean) => {
+    setSelectedWordsForQuiz(prevSelected => {
+      if (isSelected) {
+        return [...prevSelected, word];
+      } else {
+        return prevSelected.filter(w => w !== word);
+      }
+    });
+  };
+
   const topicDropdownRef = useRef<HTMLDivElement | null>(null);
   const settingsDropdownRef = useRef<HTMLDivElement | null>(null);
 
@@ -236,6 +248,8 @@ const VocabContent = (
                         showBaseLanguageFirst={showBaseLanguage}
                         strokeOrderVideo={pair.strokeOrderVideo}
                         showLeftLabel={true}
+                        onQuizSelect={(isSelected: boolean) => handleQuizSelection(pair, isSelected)} // Pass onQuizSelect
+                        initialQuizSelect={selectedWordsForQuiz.some((word) => word.englishWord === pair.englishWord)}
                       />
                     </td>
                     <td className="px-4 py-2 text-sm text-gray-800 text-center w-1/2">
@@ -255,6 +269,8 @@ const VocabContent = (
                         showBaseLanguageFirst={showBaseLanguage}
                         strokeOrderVideo={pair.strokeOrderVideo}
                         showLeftLabel={false}
+                        onQuizSelect={(isSelected: boolean) => handleQuizSelection(pair, isSelected)} // Pass onQuizSelect
+                        initialQuizSelect={selectedWordsForQuiz.some((word) => word.englishWord === pair.englishWord)}
                       />
                     </td>
                   </tr>
