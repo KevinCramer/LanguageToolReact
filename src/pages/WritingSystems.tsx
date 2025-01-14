@@ -136,8 +136,13 @@ const WritingSystems = (
   
   var modifyQuiz = false
   var [modifyQuiz,setModifyQuiz] = useState(modifyQuiz)
-  const changeModifyQuiz = () => { return setModifyQuiz(!modifyQuiz)}
-
+  const changeModifyQuiz = () => {
+    // Reset selectedWordsForQuiz when modifyQuiz is turned off
+    if (modifyQuiz) {
+      setSelectedWordsForQuiz([]); // Clear selected words when modifying quiz is turned off
+    }
+    setModifyQuiz(!modifyQuiz);
+  };
   var showPopUp = false;
   var [showPopUp,setShowPopUp] = useState(showPopUp)
   const hidePopUp = () => { return setShowPopUp(false)}
