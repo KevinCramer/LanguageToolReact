@@ -150,6 +150,16 @@ const VocabContent = (
   var audioBool = !nullOrUndefined(urlAudio) ? urlAudio : true 
   var [audioBool,setAudioBool] = useState(audioBool)
   const changeAudioBool = () => { return setAudioBool(!audioBool)}
+
+  var modifyQuiz = false
+  var [modifyQuiz,setModifyQuiz] = useState(modifyQuiz)
+  const changeModifyQuiz = () => {
+    // Reset selectedWordsForQuiz when modifyQuiz is turned off
+    if (modifyQuiz) {
+      setSelectedWordsForQuiz([]); // Clear selected words when modifying quiz is turned off
+    }
+    setModifyQuiz(!modifyQuiz);
+  };
   
   var showPopUp = false;
   var [showPopUp,setShowPopUp] = useState(showPopUp)
@@ -175,12 +185,12 @@ const VocabContent = (
 
   const minWidth = 'min-w-[350px]'
   
-  function ToggleQuiz(){
+  function ToggleQuiz() {
     if (quiz) {
       let count = 0;
       return (
         <div className={`pt-4 space-y-4 ${minWidth}`}>
-          {topicWords.map((pair: Word) => (
+          {( modifyQuiz ? selectedWordsForQuiz : topicWords).map((pair: Word) => (
             <div
               key={
                 showTrueOrder.toString() +
@@ -207,12 +217,12 @@ const VocabContent = (
           ))}
         </div>
       );
-    }   
-    else {
+    } else {
+      // Study mode (no quiz selected words)
       return (
         <div className='pt-4'>
           <div className={`overflow-x-auto border rounded-lg shadow ${minWidth}`}>
-            <table className="w-full bg-white border-collapse">
+            <table className="w-full bg-white border-separate border-spacing-0">
               <thead className="bg-gray-200">
                 <tr>
                   <th className="px-4 py-2 text-center text-sm font-medium text-gray-700 border-r border-gray-300 w-1/2">
@@ -229,9 +239,9 @@ const VocabContent = (
                     key={index}
                     className={`${
                       index % 2 === 0 ? 'bg-gray-50' : 'bg-white'
-                    } hover:bg-gray-100 border-b border-gray-300`}
+                    } hover:bg-gray-100`}
                   >
-                    <td className="px-4 py-2 text-sm text-gray-800 text-center border-r border-gray-300 w-1/2">
+                    <td className="px-4 py-2 text-sm text-gray-800 text-center border-b border-r border-gray-300 w-1/2">
                       <StudyElement
                         BaseLanguageWord={
                           showBaseLanguage
@@ -245,6 +255,7 @@ const VocabContent = (
                         }
                         ForeignLanguageWordAudio={pair.foreignAudio}
                         showAudio={audioBool}
+                        showModifyQuiz={modifyQuiz}
                         showBaseLanguageFirst={showBaseLanguage}
                         strokeOrderVideo={pair.strokeOrderVideo}
                         showLeftLabel={true}
@@ -252,7 +263,7 @@ const VocabContent = (
                         initialQuizSelect={selectedWordsForQuiz.some((word) => word.englishWord === pair.englishWord)}
                       />
                     </td>
-                    <td className="px-4 py-2 text-sm text-gray-800 text-center w-1/2">
+                    <td className="px-4 py-2 text-sm text-gray-800  border-b border-gray-300 text-center w-1/2">
                       <StudyElement
                         BaseLanguageWord={
                           showBaseLanguage
@@ -266,11 +277,13 @@ const VocabContent = (
                         }
                         ForeignLanguageWordAudio={pair.foreignAudio}
                         showAudio={audioBool}
+                        showModifyQuiz={modifyQuiz}
                         showBaseLanguageFirst={showBaseLanguage}
                         strokeOrderVideo={pair.strokeOrderVideo}
                         showLeftLabel={false}
                         onQuizSelect={(isSelected: boolean) => handleQuizSelection(pair, isSelected)} // Pass onQuizSelect
                         initialQuizSelect={selectedWordsForQuiz.some((word) => word.englishWord === pair.englishWord)}
+
                       />
                     </td>
                   </tr>
@@ -279,9 +292,10 @@ const VocabContent = (
             </table>
           </div>
         </div>
-      )
+      );
     }
   }
+
   if(showTrueOrder)
   {
     var topicWords = currentTopic.words
@@ -438,6 +452,25 @@ const VocabContent = (
                   Random ordering
                   </label>
                 </li>
+                {!quiz && (
+                  <li
+                    className="px-4 py-2 hover:bg-gray-100 cursor-pointer text-sm"
+                    onClick={(event) => {
+                      changeModifyQuiz();
+                      preventDropdownClose(event);
+                    }}
+                  >
+                    <label>
+                      <input
+                        type="checkbox"
+                        checked={modifyQuiz}
+                        onChange={changeModifyQuiz}
+                        className="mr-2"
+                      />
+                    Select questions for quiz
+                    </label>
+                  </li>
+                )}
               </ul>
             </div>
           )}
