@@ -14,6 +14,7 @@ const StudyElement = (
     showBaseLanguageFirst: boolean,
     strokeOrderVideo?: any,
     showLeftLabel: boolean, 
+    onQuizSelect: (isSelected: boolean) => void; // Added prop for quiz selection
   }) => 
 {
   const {
@@ -24,11 +25,13 @@ const StudyElement = (
     showModifyQuiz,
     showBaseLanguageFirst,
     strokeOrderVideo,
-    showLeftLabel
+    showLeftLabel,
+    onQuizSelect, // Destructuring the onQuizSelect prop
   } = props;
 
   const [showPopUp, setShowPopUp] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isSelected, setIsSelected] = useState(false); // New state for selection
 
   const handleAudioToggle = () => {
     const audio = document.getElementById(ForeignLanguageWordAudio) as HTMLAudioElement;
@@ -74,6 +77,13 @@ const StudyElement = (
   const foreignLanguageLabel = (strokeOrderVideo ? foreignLanguageLabelStrokeOrder : 
     <label><>{ForeignLanguageWord}</></label>);
 
+  // Handle checkbox change to select for quiz
+  const toggleSelection = () => {
+    const newSelectionState = !isSelected;
+    setIsSelected(newSelectionState);
+    onQuizSelect(newSelectionState); // Pass the new selection state to the parent component
+  };
+
   return (
     <Navbar className='flex justify-between items-center'>
       <div className='flex-grow text-center text-lg'>
@@ -93,13 +103,15 @@ const StudyElement = (
         </div>
       )}
       {showModifyQuiz && !showLeftLabel && (
-        <input
-          type="checkbox"
-          defaultChecked={false}
-          /*checked={true}*/
-          /*onChange={() => {})}*/
-          className="mx-2"
-        />
+        <div className="flex items-center">
+          <label>Select for Quiz</label>
+          <input
+            type="checkbox"
+            checked={isSelected} // Use the state to control checkbox
+            onChange={toggleSelection} // Call the toggle function on change
+            className="mx-2"
+          />
+        </div>
       )}
       {strokeOrderVideo && (
         <>

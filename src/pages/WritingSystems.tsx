@@ -59,6 +59,18 @@ const WritingSystems = (
   const [isTopicDropdownOpen, setIsTopicDropdownOpen] = useState(false);
   const [isSettingsDropdownOpen, setIsSettingsDropdownOpen] = useState(false);
 
+  const [selectedWordsForQuiz, setSelectedWordsForQuiz] = useState<Word[]>([]);
+
+  const handleQuizSelection = (word: Word, isSelected: boolean) => {
+    setSelectedWordsForQuiz(prevSelected => {
+      if (isSelected) {
+        return [...prevSelected, word];
+      } else {
+        return prevSelected.filter(w => w !== word);
+      }
+    });
+  };
+
   const topicDropdownRef = useRef<HTMLDivElement | null>(null);
   const settingsDropdownRef = useRef<HTMLDivElement | null>(null);
 
@@ -150,12 +162,12 @@ const WritingSystems = (
 
   const minWidth = 'min-w-[350px]'
   
-  function ToggleQuiz(){
+  function ToggleQuiz() {
     if (quiz) {
       let count = 0;
       return (
         <div className={`pt-4 space-y-4 ${minWidth}`}>
-          {topicWords.map((pair: Word) => (
+          {selectedWordsForQuiz.map((pair: Word) => (
             <div
               key={
                 showTrueOrder.toString() +
@@ -182,8 +194,8 @@ const WritingSystems = (
           ))}
         </div>
       );
-    }   
-    else {
+    } else {
+      // Study mode (no quiz selected words)
       return (
         <div className='pt-4'>
           <div className={`overflow-x-auto border rounded-lg shadow ${minWidth}`}>
@@ -224,6 +236,7 @@ const WritingSystems = (
                         showBaseLanguageFirst={showBaseLanguage}
                         strokeOrderVideo={pair.strokeOrderVideo}
                         showLeftLabel={true}
+                        onQuizSelect={(isSelected: boolean) => handleQuizSelection(pair, isSelected)} // Pass onQuizSelect
                       />
                     </td>
                     <td className="px-4 py-2 text-sm text-gray-800  border-b border-gray-300 text-center w-1/2">
@@ -244,6 +257,7 @@ const WritingSystems = (
                         showBaseLanguageFirst={showBaseLanguage}
                         strokeOrderVideo={pair.strokeOrderVideo}
                         showLeftLabel={false}
+                        onQuizSelect={(isSelected: boolean) => handleQuizSelection(pair, isSelected)} // Pass onQuizSelect
                       />
                     </td>
                   </tr>
@@ -251,11 +265,11 @@ const WritingSystems = (
               </tbody>
             </table>
           </div>
-
         </div>
-      )
+      );
     }
   }
+
   if(showTrueOrder)
   {
     var topicWords = currentTopic.words
