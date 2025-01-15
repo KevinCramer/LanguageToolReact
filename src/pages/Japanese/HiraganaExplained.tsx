@@ -199,16 +199,18 @@ const HiraganaExplained = () => {
           <div className='py-4'>
             {basicHiraganaTable}
           </div>
-          <div className='py-4'>
+          <div className='flex py-6'>
+            <div className='py-4'>
             Now try this exercise:
-          </div>
-          <div className="flex flex-col space-y-2 justify-center items-center m-2">
-            <a className="text-blue-500  border-[1px] border-b-4 border-gray-300 bg-200 text-center active:bg-gray-300 hover:bg-gray-200  p-2 rounded-2xl"
-              onClick={handleProtectedClick(hiraganaBasicWritingSystem)}
-              href={createURL(LanguageNames.Japanese, LearningSections.WritingSystem, hiraganaBasicWritingSystem)}
-            >
+            </div>
+            <div className="flex flex-col space-y-2 justify-center items-center ml-4">
+              <a className="text-blue-500  border-[1px] border-b-4 border-gray-300 bg-200 text-center active:bg-gray-300 hover:bg-gray-200  p-2 rounded-2xl"
+                onClick={handleProtectedClick(hiraganaBasicWritingSystem)}
+                href={createURL(LanguageNames.Japanese, LearningSections.WritingSystem, hiraganaBasicWritingSystem)}
+              >
                 Basic Hiragana Exercise
-            </a>
+              </a>
+            </div>
           </div>
         </div>
       );
@@ -245,22 +247,25 @@ const HiraganaExplained = () => {
                 </div>       
               </div>
             </div>
-            <div className='py-4'>
+            <div className='flex py-6'>
+              <div className='py-4'>
               Now try this exercise:
-            </div>
-            <div className='flex flex-col space-y-2 justify-center items-center m-2'>
-              <a className="text-blue-500  border-[1px] border-b-4 border-gray-300 bg-200 text-center active:bg-gray-300 hover:bg-gray-200  p-2 rounded-2xl"
-                onClick={handleProtectedClick(hiraganaDakutenWritingSystem)} 
-                href={
-                  createURL(
-                    LanguageNames.Japanese,
-                    LearningSections.WritingSystem,
-                    hiraganaDakutenWritingSystem)
-                }> Hiragana with Dakuten and Handakuten Exercise
-                {hiraganaDakutenWritingSystem?.isLocked &&
+              </div>
+              <div className='flex flex-col space-y-2 justify-center items-center ml-4'>
+                <a className="text-blue-500  border-[1px] border-b-4 border-gray-300 bg-200 text-center active:bg-gray-300 hover:bg-gray-200  p-2 rounded-2xl"
+                  onClick={handleProtectedClick(hiraganaDakutenWritingSystem)} 
+                  href={
+                    createURL(
+                      LanguageNames.Japanese,
+                      LearningSections.WritingSystem,
+                      hiraganaDakutenWritingSystem)
+                  }> Hiragana with Dakuten and Handakuten Exercise
+                  {hiraganaDakutenWritingSystem?.isLocked &&
                     lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon/> : ''}
-              </a>
-            </div>    
+                </a>
+              </div>    
+            </div>
+            
           </div>
           
         </>
@@ -277,24 +282,26 @@ const HiraganaExplained = () => {
             like <br></br><b>きょう(kyou, today)</b> and <b>
             しょうがっこう(shougakkou, elementary school)</b>. 
           </div>
-          <div className='py-4'>
+          <div className='flex py-6'>
+            <div className='py-4'>
             Now try this exercise:
-          </div>
-          <div className='flex flex-col space-y-2 justify-center items-center m-2'>
-   
-            <a className="text-blue-500  border-[1px] border-b-4 border-gray-300 bg-200 text-center active:bg-gray-300 hover:bg-gray-200  p-2 rounded-2xl"
-              onClick={handleProtectedClick(hiraganaYoonWritingSystem)} 
-              href={
-                createURL(
-                  LanguageNames.Japanese,
-                  LearningSections.WritingSystem,
-                  hiraganaYoonWritingSystem)
-              }>
+            </div>
+            <div className='flex flex-col space-y-2 justify-center items-center ml-4'>
+              <a className="text-blue-500  border-[1px] border-b-4 border-gray-300 bg-200 text-center active:bg-gray-300 hover:bg-gray-200  p-2 rounded-2xl"
+                onClick={handleProtectedClick(hiraganaYoonWritingSystem)} 
+                href={
+                  createURL(
+                    LanguageNames.Japanese,
+                    LearningSections.WritingSystem,
+                    hiraganaYoonWritingSystem)
+                }>
                 Yoōn Hiragana Exercise
-              {hiraganaYoonWritingSystem?.isLocked &&
+                {hiraganaYoonWritingSystem?.isLocked &&
                    lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon/> : ''}
-            </a>
+              </a>
+            </div>
           </div>
+         
         </div>
       );
     default:

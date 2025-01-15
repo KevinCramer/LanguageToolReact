@@ -686,22 +686,24 @@ const KatakanaExplained = () => {
 
               </div>
             </div>
-            <div className='py-4'>
+            <div className='flex py-6'>
+              <div className='py-4'>
               Now try this exercise:
-            </div>
-            <div className="flex flex-col space-y-2 justify-center items-center m-2">
+              </div>
+              <div className="flex flex-col space-y-2 justify-center items-center ml-4">
     
-              <a className="text-blue-500  border-[1px] border-b-4 border-gray-300 bg-200 text-center active:bg-gray-300 hover:bg-gray-200  p-2 rounded-2xl"
+                <a className="text-blue-500  border-[1px] border-b-4 border-gray-300 bg-200 text-center active:bg-gray-300 hover:bg-gray-200  p-2 rounded-2xl"
 
-                onClick={handleProtectedClick(katakanaBasicWritingSystem)}
-                href={
-                  createURL(
-                    LanguageNames.Japanese,
-                    LearningSections.WritingSystem,
-                    katakanaBasicWritingSystem)
-                }>
+                  onClick={handleProtectedClick(katakanaBasicWritingSystem)}
+                  href={
+                    createURL(
+                      LanguageNames.Japanese,
+                      LearningSections.WritingSystem,
+                      katakanaBasicWritingSystem)
+                  }>
         Basic Katakana Exercise
-              </a>
+                </a>
+              </div>
             </div>
           </div>  
         </>
@@ -739,22 +741,24 @@ const KatakanaExplained = () => {
                 
             {dakutenHiraganaToKatakanaTable}
           </div>
-          <div className='py-4'>
+          <div className='flex py-6'>
+            <div className='py-4'>
               Now try this exercise:
-          </div>
-          <div className="flex flex-col space-y-2 justify-center items-center m-2">
-            <a className="text-blue-500  border-[1px] border-b-4 border-gray-300 bg-200 text-center active:bg-gray-300 hover:bg-gray-200  p-2 rounded-2xl"
-              onClick={handleProtectedClick(katakanaDakutenWritingSystem)}
-              href={
-                createURL(
-                  LanguageNames.Japanese,
-                  LearningSections.WritingSystem,
-                  katakanaDakutenWritingSystem)
-              }>
+            </div>
+            <div className="flex flex-col space-y-2 justify-center items-center ml-4">
+              <a className="text-blue-500  border-[1px] border-b-4 border-gray-300 bg-200 text-center active:bg-gray-300 hover:bg-gray-200  p-2 rounded-2xl"
+                onClick={handleProtectedClick(katakanaDakutenWritingSystem)}
+                href={
+                  createURL(
+                    LanguageNames.Japanese,
+                    LearningSections.WritingSystem,
+                    katakanaDakutenWritingSystem)
+                }>
               Katakana Dakuten/Handakuten Exercise
-              {katakanaDakutenWritingSystem?.isLocked &&
+                {katakanaDakutenWritingSystem?.isLocked &&
                     lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon/> : ''}
-            </a>
+              </a>
+            </div>
           </div>
         </>
       );
@@ -775,22 +779,24 @@ const KatakanaExplained = () => {
               {yoonHiraganaToKatakanaTable}
 
             </div>
-            <div className='py-4'>
+            <div className='flex py-6'>
+              <div className='py-4'>
               Now try this exercise:
-            </div>
-            <div className="flex flex-col space-y-2 justify-center items-center m-2">
-              <a className="text-blue-500  border-[1px] border-b-4 border-gray-300 bg-200 text-center active:bg-gray-300 hover:bg-gray-200  p-2 rounded-2xl"
-                onClick={handleProtectedClick(katakanaYoonWritingSystem)}
-                href={
-                  createURL(
-                    LanguageNames.Japanese,
-                    LearningSections.WritingSystem,
-                    katakanaYoonWritingSystem)
-                }>
+              </div>
+              <div className="flex flex-col space-y-2 justify-center items-center ml-4">
+                <a className="text-blue-500  border-[1px] border-b-4 border-gray-300 bg-200 text-center active:bg-gray-300 hover:bg-gray-200  p-2 rounded-2xl"
+                  onClick={handleProtectedClick(katakanaYoonWritingSystem)}
+                  href={
+                    createURL(
+                      LanguageNames.Japanese,
+                      LearningSections.WritingSystem,
+                      katakanaYoonWritingSystem)
+                  }>
               Yoōn Katakana Exercise
-                {katakanaYoonWritingSystem?.isLocked &&
+                  {katakanaYoonWritingSystem?.isLocked &&
                     lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon/> : ''}
-              </a>
+                </a>
+              </div>
             </div>
           </div>
         </>
@@ -807,22 +813,24 @@ const KatakanaExplained = () => {
               are foreign sounds in the Japanese loan words <br/><b>ヴァイオリン (vaiorin, violin)</b>
               and <b>フィルム (firumu, film)</b> respectively.
           </div>
-          <div className='py-4'>
+          <div className='flex py-6'>
+            <div className='py-4'>
             Now try this exercise:
-          </div>
-          <div className="flex flex-col space-y-2 justify-center items-center m-2">
-            <a className="text-blue-500  border-[1px] border-b-4 border-gray-300 bg-200 text-center active:bg-gray-300 hover:bg-gray-200  p-2 rounded-2xl"
-              onClick={handleProtectedClick(katakanaSpecialYoonWritingSystem)}
-              href={
-                createURL(
-                  LanguageNames.Japanese,
-                  LearningSections.WritingSystem,
-                  katakanaSpecialYoonWritingSystem)
-              }>
+            </div>
+            <div className="flex flex-col space-y-2 justify-center items-center ml-4">
+              <a className="text-blue-500  border-[1px] border-b-4 border-gray-300 bg-200 text-center active:bg-gray-300 hover:bg-gray-200  p-2 rounded-2xl"
+                onClick={handleProtectedClick(katakanaSpecialYoonWritingSystem)}
+                href={
+                  createURL(
+                    LanguageNames.Japanese,
+                    LearningSections.WritingSystem,
+                    katakanaSpecialYoonWritingSystem)
+                }>
              Foreign Yoōn Katakana Exercise
-              {katakanaSpecialYoonWritingSystem?.isLocked &&
+                {katakanaSpecialYoonWritingSystem?.isLocked &&
                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon/> : ''}
-            </a>
+              </a>
+            </div>
           </div>
         </>
       );
