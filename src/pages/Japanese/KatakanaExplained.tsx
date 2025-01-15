@@ -666,20 +666,6 @@ const KatakanaExplained = () => {
     case 1:
       return (
         <>
-          <div className="flex flex-col space-y-2 justify-center items-center m-8">
-    
-            <a className="text-blue-500  border-[1px] border-b-4 border-gray-300 bg-200 text-center active:bg-gray-300 hover:bg-gray-200  p-2 rounded-2xl"
-
-              onClick={handleProtectedClick(katakanaBasicWritingSystem)}
-              href={
-                createURL(
-                  LanguageNames.Japanese,
-                  LearningSections.WritingSystem,
-                  katakanaBasicWritingSystem)
-              }>
-        Basic Katakana Exercise
-            </a>
-          </div>
           <div>
           Katakana is mainly used to write Japanese loan words. For example 
           in Japanese the word for 'camera' is <b>カメラ (kamera)</b>. 
@@ -700,27 +686,30 @@ const KatakanaExplained = () => {
 
               </div>
             </div>
+            <div className='py-4'>
+              Now try this exercise:
+            </div>
+            <div className="flex flex-col space-y-2 justify-center items-center m-2">
+    
+              <a className="text-blue-500  border-[1px] border-b-4 border-gray-300 bg-200 text-center active:bg-gray-300 hover:bg-gray-200  p-2 rounded-2xl"
+
+                onClick={handleProtectedClick(katakanaBasicWritingSystem)}
+                href={
+                  createURL(
+                    LanguageNames.Japanese,
+                    LearningSections.WritingSystem,
+                    katakanaBasicWritingSystem)
+                }>
+        Basic Katakana Exercise
+              </a>
+            </div>
           </div>  
         </>
       );
     case 2:
       return (
         <>
-          <div className="flex flex-col space-y-2 justify-center items-center m-8">
-            <a className="text-blue-500  border-[1px] border-b-4 border-gray-300 bg-200 text-center active:bg-gray-300 hover:bg-gray-200  p-2 rounded-2xl"
-              onClick={handleProtectedClick(katakanaDakutenWritingSystem)}
-              href={
-                createURL(
-                  LanguageNames.Japanese,
-                  LearningSections.WritingSystem,
-                  katakanaDakutenWritingSystem)
-              }>
-              Katakana Dakuten/Handakuten Exercise
-              {katakanaDakutenWritingSystem?.isLocked &&
-                    lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon/> : ''}
-            </a>
-          </div>
-          <div className='py-2'>
+          <div>
             Dakuten and Handakuten lead to another 25 katakana variations
              
             Dakuten and handakuten are marks added on top of katakana that alter pronunciation. 
@@ -750,26 +739,29 @@ const KatakanaExplained = () => {
                 
             {dakutenHiraganaToKatakanaTable}
           </div>
+          <div className='py-4'>
+              Now try this exercise:
+          </div>
+          <div className="flex flex-col space-y-2 justify-center items-center m-2">
+            <a className="text-blue-500  border-[1px] border-b-4 border-gray-300 bg-200 text-center active:bg-gray-300 hover:bg-gray-200  p-2 rounded-2xl"
+              onClick={handleProtectedClick(katakanaDakutenWritingSystem)}
+              href={
+                createURL(
+                  LanguageNames.Japanese,
+                  LearningSections.WritingSystem,
+                  katakanaDakutenWritingSystem)
+              }>
+              Katakana Dakuten/Handakuten Exercise
+              {katakanaDakutenWritingSystem?.isLocked &&
+                    lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon/> : ''}
+            </a>
+          </div>
         </>
       );
     case 3:
       return (
         <>
-          <div className="flex flex-col space-y-2 justify-center items-center m-8">
-            <a className="text-blue-500  border-[1px] border-b-4 border-gray-300 bg-200 text-center active:bg-gray-300 hover:bg-gray-200  p-2 rounded-2xl"
-              onClick={handleProtectedClick(katakanaYoonWritingSystem)}
-              href={
-                createURL(
-                  LanguageNames.Japanese,
-                  LearningSections.WritingSystem,
-                  katakanaYoonWritingSystem)
-              }>
-              Yoōn Katakana Exercise
-              {katakanaYoonWritingSystem?.isLocked &&
-                    lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon/> : ''}
-            </a>
-          </div>
-          <div className='py-2'>
+          <div>
             <b>Native Yōon sounds</b>  leads to an additional 36 katakana combinations.
             Some katakana combine to form Yōon sounds. In these combinations,
             the first character remains full-sized, while the second is smaller.
@@ -783,14 +775,42 @@ const KatakanaExplained = () => {
               {yoonHiraganaToKatakanaTable}
 
             </div>
-      
+            <div className='py-4'>
+              Now try this exercise:
+            </div>
+            <div className="flex flex-col space-y-2 justify-center items-center m-2">
+              <a className="text-blue-500  border-[1px] border-b-4 border-gray-300 bg-200 text-center active:bg-gray-300 hover:bg-gray-200  p-2 rounded-2xl"
+                onClick={handleProtectedClick(katakanaYoonWritingSystem)}
+                href={
+                  createURL(
+                    LanguageNames.Japanese,
+                    LearningSections.WritingSystem,
+                    katakanaYoonWritingSystem)
+                }>
+              Yoōn Katakana Exercise
+                {katakanaYoonWritingSystem?.isLocked &&
+                    lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon/> : ''}
+              </a>
+            </div>
           </div>
         </>
       );
     case 4:
       return (
         <>
-          <div className="flex flex-col space-y-2 justify-center items-center m-8">
+          <div>
+          Foreign Yōon sounds leads to an additional
+              22 katakana combinations.
+            
+              Some sounds from non Japanese languages cannot be captured by the 
+              36 native katakana yōon sounds. For Example <b>ヴァ (bwa/va) </b>and <b>フィ (fi) </b>
+              are foreign sounds in the Japanese loan words <br/><b>ヴァイオリン (vaiorin, violin)</b>
+              and <b>フィルム (firumu, film)</b> respectively.
+          </div>
+          <div className='py-4'>
+            Now try this exercise:
+          </div>
+          <div className="flex flex-col space-y-2 justify-center items-center m-2">
             <a className="text-blue-500  border-[1px] border-b-4 border-gray-300 bg-200 text-center active:bg-gray-300 hover:bg-gray-200  p-2 rounded-2xl"
               onClick={handleProtectedClick(katakanaSpecialYoonWritingSystem)}
               href={
@@ -804,21 +824,12 @@ const KatakanaExplained = () => {
                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon/> : ''}
             </a>
           </div>
-          <div className='py-2'>
-          Foreign Yōon sounds leads to an additional
-              22 katakana combinations.
-            
-              Some sounds from non Japanese languages cannot be captured by the 
-              36 native katakana yōon sounds. For Example <b>ヴァ (bwa/va) </b>and <b>フィ (fi) </b>
-              are foreign sounds in the Japanese loan words <br/><b>ヴァイオリン (vaiorin, violin)</b>
-              and <b>フィルム (firumu, film)</b> respectively.
-          </div>
         </>
       );
     case 5:
       return (
         <>
-          <div className='py-2'>
+          <div>
             <b>Long Vowels</b> In Katakana, long vowels are handled differently compared to Hiragana.
                Instead of adding extra vowels to extend the sound, Katakana uses a simple dash-like
                symbol: <b>ー</b> <br/> This symbol tells you to lengthen the vowel sound of the 
@@ -846,7 +857,7 @@ const KatakanaExplained = () => {
     <div className="max-w-screen-md mx-auto px-4 md:text-lg">
       {/*@ts-ignore*/}
       <h4 className="text-center text-2xl pt-12">Lesson {currentLesson} - {lessonTitles[currentLesson]}</h4>
-      <div className="flex justify-center items-center space-x-4 mt-8">
+      <div className="flex justify-center items-center space-x-4 mt-8 mb-6">
         <button
           className={`px-4 py-2 border rounded-md ${currentLesson === 1 ? 'bg-gray-300' : 'bg-gray-100'}`}
           onClick={() => setCurrentLesson(1)}

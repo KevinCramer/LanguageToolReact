@@ -25,7 +25,7 @@ const JapaneseWritingSystems = () => {
 
   const typingJapaneseSection = (
     <div className='py-2'>
-      P.S. Click here to learn <a className='text-blue-500 underline' href='/japanese/how-to-type-japanese'>How to Type Japanese</a>.
+      Finally you can click here to learn <a className='text-blue-500 underline' href='/japanese/how-to-type-japanese'>How to Type Japanese</a>.
     </div>
   );
 

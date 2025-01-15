@@ -7,7 +7,7 @@ const About = () => {
       <div className='max-w-screen-md mx-auto  md:text-lg rounded-md'>
         <h4 className='text-center text-2xl py-12'>Our Mission</h4>
         <div className='pb-2'>
-        LingoCommand is dedicated to helping people learn Japanese in a streamlined and efficient way. It accelerates your progress by combining these three key principles:
+        LingoCommand is dedicated to helping people learn Japanese in a streamlined and efficient way. It will accelerate your progress by combining three key principles:
         </div>
         <ul> 
           <li className='py-2'>

@@ -101,7 +101,7 @@ const JapaneseStudyGuide = () => {
       <div className='py-4'>
         <div className='underline font-bold'>Step 4:</div>
         The Kanji writing system is something you will gain familiarity with as you learn vocabulary. For now 
-        just read this brief explanation:
+        read this brief explanation:
         <ul className='flex flex-col'>
           <a className='text-blue-500 underline' href='/japanese/kanji-explained'>
             Lesson 1 - Introduction to Kanji
