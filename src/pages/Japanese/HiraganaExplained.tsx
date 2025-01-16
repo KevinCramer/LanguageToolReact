@@ -219,10 +219,6 @@ const HiraganaExplained = () => {
         <>
           <div>
             <div>
-          Dakuten and Handakuten lead to another 25 hiragana variations. 
-            </div>
-            <br></br>
-            <div>
           Dakuten and handakuten are marks added on top of hiragana that alter pronunciation. 
             </div>
             <div>
@@ -274,12 +270,12 @@ const HiraganaExplained = () => {
       return (
         <div >
           <div>
-            Yōon  leads to an additional 36 hiragana variations.
             Some hiragana combine to form Yōon sounds. In these combinations,
-            the first character remains full-sized, while the second is smaller.
-            Examples like <b>きょ(kyo) </b>and <b>しょ(sho)</b> represent single, blended 
+            the first character remains full-sized, while the second is smaller. 
+            There are 36 of these combinations. 
+            Examples include <b>きょ(kyo) </b>and <b>しょ(sho)</b> which represent single blended 
             syllables rather than separate sounds. This blending is crucial in words 
-            like <br></br><b>きょう(kyou, today)</b> and <b>
+            like <b>きょう(kyou, today)</b> and <b>
             しょうがっこう(shougakkou, elementary school)</b>. 
           </div>
           <div className='flex py-6'>

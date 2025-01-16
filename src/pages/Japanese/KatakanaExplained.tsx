@@ -712,9 +712,7 @@ const KatakanaExplained = () => {
       return (
         <>
           <div>
-            Dakuten and Handakuten lead to another 25 katakana variations
-             
-            Dakuten and handakuten are marks added on top of katakana that alter pronunciation. 
+            Dakuten and handakuten are marks added on top of katakana (and hiragana) that alter pronunciation. 
             The dakuten mark is <b>( ゛)</b>. There are 20 dakuten variations. 
             For example: <b>カ (ka) → ガ (ga)</b>. <br></br> 
             The handakuten mark is <b>( ゜)</b>. There are 5 variations. 
@@ -766,14 +764,14 @@ const KatakanaExplained = () => {
       return (
         <>
           <div>
-            <b>Native Yōon sounds</b>  leads to an additional 36 katakana combinations.
             Some katakana combine to form Yōon sounds. In these combinations,
-            the first character remains full-sized, while the second is smaller.
+            the first character remains full-sized, while the second is smaller. 
+            There are 36 of these combinations.
             Examples like <b>キャ (kya) </b>and <b>ミュ (myu)</b> represent single, blended 
             syllables rather than separate sounds. This blending is crucial in words like <br/>
             <b>キャリア (kyaria, career)</b> and <b>ミュージック (myūjikku, music)</b>. 
             
-                     Each native yōon katakana has a matching yōon hiragana that produces the 
+                     Each yōon katakana has a matching yōon hiragana that produces the 
                     same sound. See diagram:
             <div className='py-4'>
               {yoonHiraganaToKatakanaTable}
@@ -805,13 +803,10 @@ const KatakanaExplained = () => {
       return (
         <>
           <div>
-          Foreign Yōon sounds leads to an additional
-              22 katakana combinations.
-            
               Some sounds from non Japanese languages cannot be captured by the 
-              36 native katakana yōon sounds. For Example <b>ヴァ (bwa/va) </b>and <b>フィ (fi) </b>
-              are foreign sounds in the Japanese loan words <br/><b>ヴァイオリン (vaiorin, violin)</b>
-              and <b>フィルム (firumu, film)</b> respectively.
+              36 native katakana yōon sounds. For example <b>ヴァ (bwa/va) </b>and <b>フィ (fi) </b>
+              are foreign sounds in the Japanese loan words <b>ヴァイオリン (vaiorin, violin)</b> and <b>フィルム (firumu, film)</b> respectively.
+              There are 22 Foreign Yōon combinations in total.
           </div>
           <div className='flex py-6'>
             <div className='py-4'>
@@ -838,8 +833,8 @@ const KatakanaExplained = () => {
       return (
         <>
           <div>
-            <b>Long Vowels</b> In Katakana, long vowels are handled differently compared to Hiragana.
-               Instead of adding extra vowels to extend the sound, Katakana uses a simple dash-like
+            <b>Long vowels</b> are handled differently in katakana compared to hiragana.
+               Instead of adding extra vowels to extend the sound, katakana uses a simple dash-like
                symbol: <b>ー</b> <br/> This symbol tells you to lengthen the vowel sound of the 
                character it follows. For example:
             <div className='py-2'>            
@@ -852,7 +847,7 @@ const KatakanaExplained = () => {
             <div></div>
 
               The sound is smooth and continuous, not repeated, 
-              making it an important part of writing foreign words or names in Katakana!
+              making it an important part of writing foreign words or names in katakana!
           </div>
         </>
       );

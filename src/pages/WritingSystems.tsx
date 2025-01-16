@@ -209,10 +209,10 @@ const WritingSystems = (
             <table className="w-full bg-white border-separate border-spacing-0">
               <thead className="bg-gray-200">
                 <tr>
-                  <th className="px-4 py-2 text-center font-bold text-gray-700 border-r border-gray-300 w-1/2">
+                  <th className="px-4 py-2 text-center text-gray-700 border-r border-gray-300 w-1/2">
                     {showBaseLanguage ? 'English' : currentLanguage.languageName}
                   </th>
-                  <th className="px-4 py-2 text-center font-bold text-gray-700 w-1/2">
+                  <th className="px-4 py-2 text-center text-gray-700 w-1/2">
                     {showBaseLanguage ? currentLanguage.languageName : 'English'}
                   </th>
                 </tr>
