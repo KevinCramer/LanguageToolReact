@@ -225,10 +225,10 @@ const VocabContent = (
             <table className="w-full bg-white border-separate border-spacing-0">
               <thead className="bg-gray-200">
                 <tr>
-                  <th className="px-4 py-2 text-center text-sm font-medium text-gray-700 border-r border-gray-300 w-1/2">
+                  <th className="px-4 py-2 text-center font-bold text-gray-700 border-r border-gray-300 w-1/2">
                     {showBaseLanguage ? 'English' : currentLanguage.languageName}
                   </th>
-                  <th className="px-4 py-2 text-center text-sm font-medium text-gray-700 w-1/2">
+                  <th className="px-4 py-2 text-center font-bold text-gray-700 w-1/2">
                     {showBaseLanguage ? currentLanguage.languageName : 'English'}
                   </th>
                 </tr>
@@ -493,7 +493,7 @@ const VocabContent = (
         <div className="modal fixed inset-0 bg-gray-800 bg-opacity-75 flex justify-center items-center">
           <div className="bg-white rounded p-4 max-w-lg w-full">
             <div className="flex justify-between items-center mb-4">
-              <h3 className="text-lg font-semibold">How to Guide (Video)</h3>
+              <h3 className="text-lg font-semibold">  How to Guide (Video)</h3>
               <button className="text-gray-500" onClick={hidePopUp}>
                 ✕
               </button>

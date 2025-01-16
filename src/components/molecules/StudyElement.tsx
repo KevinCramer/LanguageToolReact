@@ -1,4 +1,3 @@
-import { Navbar } from 'react-bootstrap'
 import { useEffect, useState } from 'react'
 import VolumeUpIcon from '@mui/icons-material/VolumeUp';
 import VolumeOffIcon from '@mui/icons-material/VolumeOff';
@@ -87,8 +86,8 @@ const StudyElement = (
   };
 
   return (
-    <Navbar className='flex justify-between items-center'>
-      <div className='flex-grow text-center text-lg'>
+    <div className='flex justify-between items-center'>
+      <div className='flex-grow text-center text-lg md:text-xl'>
         {showLeftLabel ? baseLanguageLabel : foreignLanguageLabel}
       </div>
 
@@ -154,7 +153,7 @@ const StudyElement = (
           )}
         </>
       )}
-    </Navbar>
+    </div>
   );
 };
 

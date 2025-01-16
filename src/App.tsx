@@ -1,6 +1,5 @@
 import './index.css';
 import { authModalStates, hideModal, RootStateAuth } from './redux-store/auth'
-import { Container, Modal } from 'react-bootstrap'
 import { resetPermission, RootStateLock } from './redux-store/lock'
 import { Route, Routes, useLocation } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
@@ -116,34 +115,45 @@ const App = ()=> {
         </div>
        
       </div>}
-      <Modal show ={reduxAuth.modalToShow !== authModalStates.none}
-        onHide={() => dispatch(hideModal())}>
-        <Modal.Header closeButton>
-        </Modal.Header>
-        <Modal.Body>
-          <Container>
-            <div>
-              {reduxAuth.modalToShow === authModalStates.signup && <Signup/>}
-              {reduxAuth.modalToShow === authModalStates.login && <Login/>}
-              {reduxAuth.modalToShow === authModalStates.forgotPassword && <ForgotPassword/>}
-              {reduxAuth.modalToShow === authModalStates.updateAccount && <UpdateAccount/>}
-              {reduxAuth.modalToShow === authModalStates.deleteAccount && <DeleteAccount/>}
+      {reduxAuth.modalToShow !== authModalStates.none && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-gray-800 bg-opacity-50">
+          <div className="bg-white rounded-lg shadow-lg max-w-md w-full">
+            <div className="flex justify-end p-4">
+              <button
+                className="text-gray-500 hover:text-gray-800 focus:outline-none"
+                onClick={() => dispatch(hideModal())}
+              >
+          &times;
+              </button>
             </div>
-          </Container>
-        </Modal.Body>
-      </Modal>
-      <Modal show ={reduxLock.permissionDenied && !userIsLoggedIn}
-        onHide={() => dispatch(resetPermission())}>
-        <Modal.Header closeButton>
-        </Modal.Header>
-        <Modal.Body>
-          <Container>
-            <div>
-              <PremiumContent/>
+            <div className="p-6">
+              {reduxAuth.modalToShow === authModalStates.signup && <Signup />}
+              {reduxAuth.modalToShow === authModalStates.login && <Login />}
+              {reduxAuth.modalToShow === authModalStates.forgotPassword && <ForgotPassword />}
+              {reduxAuth.modalToShow === authModalStates.updateAccount && <UpdateAccount />}
+              {reduxAuth.modalToShow === authModalStates.deleteAccount && <DeleteAccount />}
             </div>
-          </Container>
-        </Modal.Body>
-      </Modal>
+          </div>
+        </div>
+      )}
+
+      {reduxLock.permissionDenied && !userIsLoggedIn && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-gray-800 bg-opacity-50">
+          <div className="bg-white rounded-lg shadow-lg max-w-md w-full">
+            <div className="flex justify-end p-4">
+              <button
+                className="text-gray-500 hover:text-gray-800 focus:outline-none"
+                onClick={() => dispatch(resetPermission())}
+              >
+          &times;
+              </button>
+            </div>
+            <div className="p-6">
+              <PremiumContent />
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }

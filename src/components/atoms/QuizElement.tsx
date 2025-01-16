@@ -1,4 +1,3 @@
-import { Navbar } from 'react-bootstrap'
 import { roughlyEqual } from '../../helpers/vocab-content-helpers'
 import { useState } from 'react'
 
@@ -40,7 +39,7 @@ const QuizElement = (
     const myPlaceHolder = props.myCounter === 1 ? 'enter your answer here' : '';
 
     return (
-      <Navbar className='flex flex-col items-center'>
+      <div className='flex flex-col items-center'>
         <div className='w-full'>
           <form 
             onBlur={e => checkAnswer(
@@ -74,7 +73,7 @@ const QuizElement = (
             {response !== '✔' && response}
           </div>
         </div>
-      </Navbar>
+      </div>
     )
   } else {
     return null

@@ -280,19 +280,19 @@ const ReadingListeningContent = (props: { languageNumber: number; howToGuideVide
   // Now you can use width to check screen size in your component
   const isMobile = width < 768; 
   return (
-    <div className='md:text-lg'>
+    <div className='text-lg md:text-xl'>
       <h4 className='text-center text-2xl py-12'>
         {currentLanguage.languageName} Reading and Listening Comprehension
       </h4>
       <div className='flex justify-center'>
         <span
-          className="text-blue-500 underline text center  py-2"
+          className="text-blue-500 underline text center"
           onClick={() => setShowPopUp(true)}
         >
           How to Guide (Video)
         </span>
       </div>
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto py-4">
         <div className='flex justify-center'>
           <div className="relative px-2" ref={topicDropdownRef}>
             <button
