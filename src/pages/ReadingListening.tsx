@@ -364,7 +364,7 @@ const ReadingListeningContent = (props: { languageNumber: number; howToGuideVide
                       checked={!leftVisibility}
                       onChange={toggleLeftVisibility}
                       disabled={!rightVisibility}
-                      className="mr-2"
+                      className="mr-2 cursor-pointer w-4 h-4"
                       key={leftVisibility as any}
                     />
           Hide left column
@@ -381,7 +381,7 @@ const ReadingListeningContent = (props: { languageNumber: number; howToGuideVide
                       checked={!rightVisibility}
                       onChange={toggleRightVisibility}
                       disabled={!leftVisibility}
-                      className="mr-2"
+                      className="mr-2 cursor-pointer w-4 h-4"
                       key={rightVisibility as any}
                     />
           Hide right column

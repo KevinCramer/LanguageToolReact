@@ -382,14 +382,15 @@ const VocabContent = (
           {isSettingsDropdownOpen && (
             <div className="absolute right-0 mt-2 bg-white border border-gray-300 rounded-lg shadow w-64 z-10">
               <ul className="divide-y divide-gray-200">
-                <li className="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer text-sm">
-                  <div className="flex-shrink-0">writing system:&nbsp;</div>
+                <li 
+                  className="flex items-center px-4 py-2  text-sm">
+                  <div className="flex-shrink-0 cursor-default">writing system:&nbsp;</div>
                   <select
                     name="alphabets"
                     id="alphabets"
                     onChange={handleSelectChange}
                     onClick={preventDropdownClose}
-                    className="ml-2 block w-28 max-w-full truncate overflow-hidden rounded border border-gray-300 bg-white px-2 py-1 text-sm shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200"
+                    className="ml-2 block w-28 max-w-full truncate overflow-hidden rounded border border-gray-300 bg-white px-2 py-1 text-sm shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 cursor-pointer"
                   >
                     <option value="0">romaji</option>
                     <option value="1">hiragana, katakana</option>
@@ -404,15 +405,17 @@ const VocabContent = (
                       preventDropdownClose(event);
                     }}
                   >
-                    <label>
+                    <div className='flex'>
                       <input
                         type="checkbox"
                         checked={audioBool}
                         onChange={changeAudioBool}
-                        className="mr-2"
+                        className="mr-2 cursor-pointer w-4 h-4"
                       />
-                    Show audio
-                    </label>
+                      <div>
+                        Show audio
+                      </div>
+                    </div>
                   </li>
                 )}
                 {((currentTopic.isAlphabet && !quiz) || !currentTopic.isAlphabet) && (
@@ -423,15 +426,17 @@ const VocabContent = (
                       preventDropdownClose(event);
                     }}
                   >
-                    <label>
+                    <div className='flex'>
                       <input
                         type="checkbox"
                         checked={!showBaseLanguage}
                         onChange={changeBaseLanguage}
-                        className="mr-2"
+                        className="mr-2 cursor-pointer w-4 h-4"
                       />
-                    Swap columns
-                    </label>
+                      <div>
+                        Swap columns
+                      </div>
+                    </div>
                   </li>
                 )}
 
@@ -442,15 +447,17 @@ const VocabContent = (
                     preventDropdownClose(event);
                   }}
                 >
-                  <label>
+                  <div className='flex'>
                     <input
                       type="checkbox"
                       checked={!showTrueOrder}
                       onChange={changeOrder}
-                      className="mr-2"
+                      className="mr-2 cursor-pointer w-4 h-4"
                     />
-                  Random ordering
-                  </label>
+                    <div>
+                      Random ordering
+                    </div>  
+                  </div>
                 </li>
                 {!quiz && (
                   <li
@@ -460,15 +467,17 @@ const VocabContent = (
                       preventDropdownClose(event);
                     }}
                   >
-                    <label>
+                    <div className='flex'>
                       <input
                         type="checkbox"
                         checked={modifyQuiz}
                         onChange={changeModifyQuiz}
-                        className="mr-2"
+                        className="mr-2 cursor-pointer w-4 h-4"
                       />
-                    Select questions for quiz
-                    </label>
+                      <div>
+                      Select questions for quiz
+                      </div>
+                    </div>
                   </li>
                 )}
               </ul>

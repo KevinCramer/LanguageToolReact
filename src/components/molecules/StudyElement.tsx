@@ -109,7 +109,7 @@ const StudyElement = (
             type="checkbox"
             checked={isSelected} // Use the state to control checkbox
             onChange={toggleSelection} // Call the toggle function on change
-            className="mx-2"
+            className=" ml-2 cursor-pointer w-4 h-4"
           />
         </div>
       )}
