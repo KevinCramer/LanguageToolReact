@@ -14,7 +14,7 @@ import { languageToSlugs, lingoCommandIsLocked } from '../constants'
 import LockIcon from '@mui/icons-material/Lock';
 import { nullOrUndefined } from '../helpers/audio-player-helpers'
 import QuizElement from '../components/atoms/QuizElement';
-import { scramble } from '../helpers/vocab-content-helpers';
+import { scramble, scrambleWithoutMutate } from '../helpers/vocab-content-helpers';
 import StudyElement from '../components/molecules/StudyElement';
 import { useAuth } from '../contexts/AuthContext'
 import { useDispatch } from 'react-redux';
@@ -76,14 +76,29 @@ const VocabContent = (
   const [isTopicDropdownOpen, setIsTopicDropdownOpen] = useState(false);
   const [isSettingsDropdownOpen, setIsSettingsDropdownOpen] = useState(false);
 
-  const [selectedWordsForQuiz, setSelectedWordsForQuiz] = useState<Word[]>([]);
+  var [selectedWordsForQuiz, setSelectedWordsForQuiz] = useState<Word[]>([]);
 
   const handleQuizSelection = (word: Word, isSelected: boolean) => {
     setSelectedWordsForQuiz(prevSelected => {
       if (isSelected) {
-        return [...prevSelected, word];
+        if(currentTopic.hasOrdering){
+          return [...prevSelected, word].sort((a: Word,
+            b: Word) => (a.order || 0) < (b.order || 0) ? -1 : 1)
+        }
+        else {
+          return [...prevSelected, word]
+            .sort((a: Word, b: Word) => { return a.englishWord < b.englishWord ? -1 : 1 })
+        }
       } else {
-        return prevSelected.filter(w => w !== word);
+        if(currentTopic.hasOrdering){
+          return prevSelected.filter(w => w !== word).sort((a: Word,
+            b: Word) => (a.order || 0) < (b.order || 0) ? -1 : 1)
+        }
+        else {
+          return prevSelected.filter(w => w !== word)
+            .sort((a: Word, b: Word) => { return a.englishWord < b.englishWord ? -1 : 1 })
+        }
+        
       }
     });
   };
@@ -190,7 +205,7 @@ const VocabContent = (
       let count = 0;
       return (
         <div className={`pt-4 space-y-4 ${minWidth}`}>
-          {( modifyQuiz ? selectedWordsForQuiz : topicWords).map((pair: Word) => (
+          {( modifyQuiz ? (showTrueOrder ? selectedWordsForQuiz : scrambleWithoutMutate(selectedWordsForQuiz)) : topicWords).map((pair: Word) => (
             <div
               key={
                 showTrueOrder.toString() +
