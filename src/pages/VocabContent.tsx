@@ -391,6 +391,7 @@ const VocabContent = (
                     onChange={handleSelectChange}
                     onClick={preventDropdownClose}
                     className="ml-2 block w-28 max-w-full truncate overflow-hidden rounded border border-gray-300 bg-white px-2 py-1 text-sm shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 cursor-pointer"
+                    value={currentAlphabet}
                   >
                     <option value="0">romaji</option>
                     <option value="1">hiragana, katakana</option>
