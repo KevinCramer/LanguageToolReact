@@ -34,6 +34,11 @@ const StudyElement = (
   const [isPlaying, setIsPlaying] = useState(false);
   const [isSelected, setIsSelected] = useState(initialQuizSelect); // New state for selection
 
+  // Sync isSelected with initialQuizSelect when it changes
+  useEffect(() => {
+    setIsSelected(initialQuizSelect);
+  }, [initialQuizSelect]);
+
   const handleAudioToggle = () => {
     const audio = document.getElementById(ForeignLanguageWordAudio) as HTMLAudioElement;
     if (audio) {
