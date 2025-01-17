@@ -199,13 +199,42 @@ const VocabContent = (
     currentAlphabet,showTrueOrder,quiz,audioBool, navigate ]);
 
   const minWidth = 'min-w-[350px]'
+  var [s, setS] = useState(JSON.parse(JSON.stringify(selectedWordsForQuiz))); // Using state instead of a regular variable
+  let keyRender = 0;
+  console.log('s: ', s)
+  
+  useEffect(() => {
+    if (!showTrueOrder) {
+      const scrambledWords = scrambleWithoutMutate(s); // Scramble the array without mutating it
+      setS(scrambledWords); // Update the state with the scrambled array
+      console.log('s: ', scrambledWords);
+    } 
+  }, [showTrueOrder]); // Re-run the effect when showTrueOrder changes
+
+  // Effect for handling changes to `selectedWordsForQuiz`
+  useEffect(() => {
+    if (!showTrueOrder) {
+      const scrambledWords = scrambleWithoutMutate(selectedWordsForQuiz); // Scramble `selectedWordsForQuiz`
+      setS(scrambledWords); // Update `s` with scrambled version
+    } else {
+      setS(JSON.parse(JSON.stringify(selectedWordsForQuiz))); // Reset `s` when `selectedWordsForQuiz` changes
+    }
+  }, [selectedWordsForQuiz, showTrueOrder]); // This effect runs whenever `selectedWordsForQuiz` or `showTrueOrder` changes
+
+  // Effect for handling changes to `currentTopic`
+  useEffect(() => {
+  // Reset both selectedWordsForQuiz and s to empty arrays when currentTopic changes
+    setS([]);
+    setSelectedWordsForQuiz([]); // Make sure selectedWordsForQuiz is also set to empty
+    setModifyQuiz(false)
+  }, [currentTopic]); // This effect runs whenever currentTopic changes
   
   function ToggleQuiz() {
     if (quiz) {
       let count = 0;
       return (
-        <div className={`pt-4 space-y-4 ${minWidth}`}>
-          {( modifyQuiz ? (showTrueOrder ? selectedWordsForQuiz : scrambleWithoutMutate(selectedWordsForQuiz)) : topicWords).map((pair: Word) => (
+        <div className={`pt-4 space-y-4 ${minWidth}`} key={keyRender}>
+          {( modifyQuiz ? (showTrueOrder ? selectedWordsForQuiz : s) : topicWords).map((pair: Word) => (
             <div
               key={
                 showTrueOrder.toString() +
