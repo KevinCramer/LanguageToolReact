@@ -291,13 +291,25 @@ const WritingSystems = (
       topicWords.sort((a: Word, b: Word) => { return a.englishWord < b.englishWord ? -1 : 1 })
     }
   }
-  else
-  {
-    var topicWords = scramble(
-      currentTopic.words as (Word)[]) as 
-      WordWithThreeWritingSystems[]
-      
+  
+  const prevShowTrueOrder = useRef(showTrueOrder); // To track the previous value of showTrueOrder
+  
+  useEffect(() => {
+    // Check if showTrueOrder is true
+    if (!showTrueOrder) {
+      console.log('random ordering switched on')
+      var topicWords = scramble(
+          currentTopic.words as (Word)[]) as 
+          WordWithThreeWritingSystems[]
+      // Your logic here
+    } 
+  }, [showTrueOrder]);
+  
+  if (!showTrueOrder) {
+    
+    var topicWords = currentTopic.words      
   }
+    
   return (
     <div className='flex flex-col items-center text-lg md:text-xl'>
       <h4 className='text-center text-2xl py-12'>
