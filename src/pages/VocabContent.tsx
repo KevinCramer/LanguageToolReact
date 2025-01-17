@@ -201,13 +201,11 @@ const VocabContent = (
   const minWidth = 'min-w-[350px]'
   var [s, setS] = useState(JSON.parse(JSON.stringify(selectedWordsForQuiz))); // Using state instead of a regular variable
   let keyRender = 0;
-  console.log('s: ', s)
   
   useEffect(() => {
     if (!showTrueOrder) {
       const scrambledWords = scrambleWithoutMutate(s); // Scramble the array without mutating it
       setS(scrambledWords); // Update the state with the scrambled array
-      console.log('s: ', scrambledWords);
     } 
   }, [showTrueOrder]); // Re-run the effect when showTrueOrder changes
 
@@ -357,7 +355,6 @@ const VocabContent = (
   useEffect(() => {
     // Check if showTrueOrder is true
     if (!showTrueOrder) {
-      console.log('random ordering switched on')
       var topicWords = scramble(
         currentTopic.words as (Word)[]) as 
         WordWithThreeWritingSystems[]

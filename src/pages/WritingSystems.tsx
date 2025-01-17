@@ -180,8 +180,6 @@ const WritingSystems = (
     currentAlphabet,showTrueOrder,quiz,audioBool, navigate ]);
 
   const minWidth = 'min-w-[350px]'
-
-  console.log('selectedWordsForQuiz: ', selectedWordsForQuiz)
   
   function ToggleQuiz() {
     if (quiz) {
@@ -311,7 +309,6 @@ const WritingSystems = (
   useEffect(() => {
     // Check if showTrueOrder is true
     if (!showTrueOrder) {
-      console.log('random ordering switched on')
       var topicWords = scramble(
           currentTopic.words as (Word)[]) as 
           WordWithThreeWritingSystems[]
