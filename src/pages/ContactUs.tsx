@@ -1,4 +1,5 @@
 import {
+  FaFacebook,
   FaInstagram,
   FaLinkedin,
   FaTiktok,
@@ -10,6 +11,8 @@ const socialLinks = [
   { href: 'https://www.tiktok.com/@lingocommand', icon: FaTiktok, label: 'TikTok' },
   { href: 'https://www.instagram.com/lingocommand/', icon: FaInstagram, label: 'Instagram' },
   { href: 'https://www.linkedin.com/company/lingocommand/posts/?feedView=all', icon: FaLinkedin, label: 'LinkedIn' },
+  { href: 'https://www.facebook.com/profile.php?id=100068758832446', icon: FaFacebook, label: 'Facebook' },
+
 ];
 
 const ContactUs = () => {
