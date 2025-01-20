@@ -7,6 +7,7 @@ import LockIcon from '@mui/icons-material/Lock';
 import { useAuth } from '../contexts/AuthContext';
 import { useDispatch } from 'react-redux';
 import { denyPermission } from '../redux-store/lock';
+import DownChevronIcon from '../components/atoms/DownChevronIcon';
 
 const GrammarContent = (props: { languageNumber: number }) => {
   const navigate = useNavigate();
@@ -81,15 +82,7 @@ const GrammarContent = (props: { languageNumber: number }) => {
             >
               <div className="flex items-center">
                 <div>Topic: {currentTopic.name}</div>
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="ml-2"
-                >
-                  <polygon points="12,16 6,8 18,8" fill="black" />
-                </svg>
+                <DownChevronIcon/>
               </div>
             </button>
             {isTopicDropdownOpen && (
