@@ -4,7 +4,7 @@ import CustomLink from './CustomLink';
 import { displayLogin } from '../../redux-store/auth';
 import CloseIcon from './CloseIcon';
 
-export default function PremiumContent() {
+export default function FreeContent() {
   const dispatch = useDispatch();
 
   return (
@@ -22,7 +22,7 @@ export default function PremiumContent() {
             </button>
           </div>
 
-          <h2 className="text-2xl font-semibold text-center mb-4">Premium Content</h2>
+          <h2 className="text-2xl font-semibold text-center mb-4">Free Content</h2>
           <div className="flex text-center text-gray-700 mb-6">
             <div>
             To access this content please &nbsp;
@@ -36,11 +36,6 @@ export default function PremiumContent() {
             >
               log in
             </CustomLink>.
-          </div>
-
-          {/* Conditional Content Based on Authentication */}
-          <div className="text-center mt-6">
-            {/* Add any additional premium content description or image here */}
           </div>
         </div>
       </div>

@@ -9,6 +9,7 @@ import About from './pages/About'
 import Custom404Error from './pages/Custom404Error'
 import DeleteAccount from './components/atoms/DeleteAccount'
 import ForgotPassword from './components/molecules/ForgotPassword'
+import FreeContent from './components/atoms/FreeContent';
 import GrammarContent from './pages/GrammarContent'
 import Home from './pages/Home'
 import Japanese from './pages/Japanese/Japanese'
@@ -19,7 +20,6 @@ import KatakanaExplained from './pages/Japanese/KatakanaExplained'
 import KanjiExplained from './pages/Japanese/KanjiExplained'
 import HowToTypeJapanese from './pages/Japanese/HowToTypeJapanese'
 import ReadingListening from './pages/ReadingListening'
-import PremiumContent from './components/atoms/PremiumContent'
 import Login from './components/molecules/Login'
 import Navbar from './components/atoms/Navbar'
 import Signup from './components/molecules/Signup'
@@ -149,7 +149,7 @@ const App = ()=> {
               </button>
             </div>
             <div className="p-6">
-              <PremiumContent />
+              <FreeContent/>
             </div>
           </div>
         </div>
