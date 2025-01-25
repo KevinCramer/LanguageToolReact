@@ -1,12 +1,14 @@
-import { displayLogin, hideModal } from '../../redux-store/auth';
+import { hideModal } from '../../redux-store/auth';
 import { useRef, useState } from 'react';
 import CustomLink from '../atoms/CustomLink';
 import { useAuth } from '../../contexts/AuthContext';
 import { useDispatch } from 'react-redux';
 import CloseIcon from '../atoms/CloseIcon';
+import { useNavigate } from 'react-router-dom';
 
 export default function Signup() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const emailRef = useRef<HTMLInputElement>(null);
   const passwordRef = useRef<HTMLInputElement>(null);
   const passwordConfirmRef = useRef<HTMLInputElement>(null);
@@ -103,7 +105,7 @@ export default function Signup() {
           </form>
           <div className="mt-4 flex flex-row justify-center">
             <div>Already have an account?&nbsp;</div>
-            <CustomLink onClick={() => dispatch(displayLogin())}>
+            <CustomLink onClick={() => navigate('/login')}>
               Log In
             </CustomLink>
           </div>

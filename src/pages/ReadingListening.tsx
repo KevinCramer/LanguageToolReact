@@ -4,12 +4,10 @@ import { useEffect, useRef, useState } from 'react';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { languages as allLanguages } from '../data/structured-data/readingListening';
 import CustomSwitch from '../components/atoms/CustomSwitch';
-import { denyPermission } from '../redux-store/lock';
 import { lingoCommandIsLocked } from '../constants';
 import LockIcon from '@mui/icons-material/Lock';
 import RenderTableCell from '../components/molecules/RenderTableCell';
 import { useAuth } from '../contexts/AuthContext';
-import { useDispatch } from 'react-redux';
 import DownChevronIcon from '../components/atoms/DownChevronIcon';
 
 const useWindowWidth = () => {
@@ -34,7 +32,6 @@ const useWindowWidth = () => {
 };
 
 const ReadingListeningContent = (props: { languageNumber: number; howToGuideVideo?: any }) => {
-  const dispatch = useDispatch();
 
   //@ts-ignore
   const { currentUser } = useAuth();
@@ -63,7 +60,7 @@ const ReadingListeningContent = (props: { languageNumber: number; howToGuideVide
 
   const changeTranscription = (topic: AudioTranscription) => {
     if(topic.isLocked && lingoCommandIsLocked && !userIsLoggedIn ){
-      dispatch(denyPermission());
+      navigate('/free-content');
     }
     else{
       navigate(`/${currentLanguage.languageName

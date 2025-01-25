@@ -1,11 +1,10 @@
 import { MouseEvent } from 'react';
-import { useDispatch } from 'react-redux';
 import { useAuth } from '../contexts/AuthContext';
-import { denyPermission } from '../redux-store/lock';
 import { lingoCommandIsLocked } from '../constants';
+import { useNavigate } from 'react-router-dom';
 
 export const useProtectedLink = () => {
-  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   // @ts-ignore
   const { currentUser } = useAuth(); // Access the auth context
@@ -15,7 +14,7 @@ export const useProtectedLink = () => {
   const handleProtectedClick = (topic: any) => (e: MouseEvent<HTMLAnchorElement>) => {
     if (!userIsLoggedIn && topic.isLocked && lingoCommandIsLocked) {
       e.preventDefault(); // Prevent navigation
-      dispatch(denyPermission()); // Dispatch the denyPermission action
+      navigate('/free-content');
     }
   };
 

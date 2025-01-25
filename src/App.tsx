@@ -1,6 +1,6 @@
 import './index.css';
-import { authModalStates, hideModal, RootStateAuth } from './redux-store/auth'
-import { resetPermission, RootStateLock } from './redux-store/lock'
+import { hideModal, RootStateAuth } from './redux-store/auth'
+import { RootStateLock } from './redux-store/lock'
 import { Route, Routes, useLocation } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
 import Account from './pages/Account'
@@ -70,6 +70,12 @@ const App = ()=> {
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/account" element={<Account />} />
           <Route path="/about" element={<About />} />
+          <Route path="/login" element={<Login/>} />
+          <Route path="/signup" element={<Signup/>} />
+          <Route path="/forgot-password" element={<ForgotPassword/>} />
+          <Route path="/update-account" element={<UpdateAccount/>} />
+          <Route path="/delete-account" element={<DeleteAccount/>} />
+          <Route path="/free-content" element={<FreeContent/>} />
           <Route path="/japanese/home-page" element={<Japanese/>} />
           <Route path="/japanese/vocabulary" 
             element={<VocabContent howToGuideVideo={japaneseVocabGuideVideo} />} />
@@ -98,6 +104,12 @@ const App = ()=> {
             <Route path="/contact" element={<ContactUs />} />
             <Route path="/account" element={<Account />} />
             <Route path="/about" element={<About />} />
+            <Route path="/login" element={<Login/>} />
+            <Route path="/signup" element={<Signup/>} />
+            <Route path="/forgot-password" element={<ForgotPassword/>} />
+            <Route path="/update-account" element={<UpdateAccount/>} />
+            <Route path="/delete-account" element={<DeleteAccount/>} />
+            <Route path="/free-content" element={<FreeContent/>} />
             <Route path="/japanese/home-page" element={<Japanese/>} />
             <Route path="/japanese/vocabulary" 
               element={<VocabContent howToGuideVideo={japaneseVocabGuideVideo} />} />
@@ -113,47 +125,7 @@ const App = ()=> {
             <Route path="/*" element={<Custom404Error/>} />
           </Routes>
         </div>
-       
       </div>}
-      {reduxAuth.modalToShow !== authModalStates.none && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-gray-800 bg-opacity-50">
-          <div className="bg-white rounded-lg shadow-lg max-w-md w-full">
-            <div className="flex justify-end p-4">
-              <button
-                className="text-gray-500 hover:text-gray-800 focus:outline-none"
-                onClick={() => dispatch(hideModal())}
-              >
-          &times;
-              </button>
-            </div>
-            <div className="p-6">
-              {reduxAuth.modalToShow === authModalStates.signup && <Signup />}
-              {reduxAuth.modalToShow === authModalStates.login && <Login />}
-              {reduxAuth.modalToShow === authModalStates.forgotPassword && <ForgotPassword />}
-              {reduxAuth.modalToShow === authModalStates.updateAccount && <UpdateAccount />}
-              {reduxAuth.modalToShow === authModalStates.deleteAccount && <DeleteAccount />}
-            </div>
-          </div>
-        </div>
-      )}
-
-      {reduxLock.permissionDenied && !userIsLoggedIn && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-gray-800 bg-opacity-50">
-          <div className="bg-white rounded-lg shadow-lg max-w-md w-full">
-            <div className="flex justify-end p-4">
-              <button
-                className="text-gray-500 hover:text-gray-800 focus:outline-none"
-                onClick={() => dispatch(resetPermission())}
-              >
-          &times;
-              </button>
-            </div>
-            <div className="p-6">
-              <FreeContent/>
-            </div>
-          </div>
-        </div>
-      )}
     </>
   );
 }

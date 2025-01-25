@@ -1,6 +1,4 @@
 import {
-  displayForgotPassword,
-  displaySignup,
   hideModal
 } from '../../redux-store/auth';
 import { useRef, useState } from 'react';
@@ -9,9 +7,11 @@ import { resetPermission } from '../../redux-store/lock';
 import { useAuth } from '../../contexts/AuthContext';
 import { useDispatch } from 'react-redux';
 import CloseIcon from '../atoms/CloseIcon';
+import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const emailRef = useRef<HTMLInputElement>(null);
   const passwordRef = useRef<HTMLInputElement>(null);
   //@ts-ignore
@@ -50,7 +50,7 @@ export default function Login() {
           <h4 className="text-2xl mb-4 text-center ">Welcome Back.</h4>
           <div className="mt-4 flex flex-row justify-center p-4">
             <div>New to LingoCommand? &nbsp;</div>
-            <CustomLink onClick={() => dispatch(displaySignup())}>Sign Up</CustomLink>
+            <CustomLink onClick={() => navigate('/signup')}>Sign Up</CustomLink>
           </div>
           {error && <div className="bg-red-100 text-red-700 p-3 rounded mb-4">{error}</div>}
           <form onSubmit={handleSubmit}>
@@ -92,7 +92,7 @@ export default function Login() {
             </button>
           </form>
           <div className="mt-4 text-center">
-            <CustomLink onClick={() => dispatch(displayForgotPassword())}>
+            <CustomLink onClick={() => navigate('/forgot-password')}>
             Forgot Password?
             </CustomLink>
           </div>

@@ -5,14 +5,11 @@ import { languages } from '../data/structured-data/grammar';
 import { lingoCommandIsLocked } from '../constants';
 import LockIcon from '@mui/icons-material/Lock';
 import { useAuth } from '../contexts/AuthContext';
-import { useDispatch } from 'react-redux';
-import { denyPermission } from '../redux-store/lock';
 import DownChevronIcon from '../components/atoms/DownChevronIcon';
 
 const GrammarContent = (props: { languageNumber: number }) => {
   const navigate = useNavigate();
   const { topicSlug } = useParams(); // Extract the topicSlug from the URL
-  const dispatch = useDispatch();
 
   //@ts-ignore
   const { currentUser } = useAuth();
@@ -27,7 +24,7 @@ const GrammarContent = (props: { languageNumber: number }) => {
 
   const changeCurrentTopic = (topic: Topic) => {
     if (topic.isLocked && lingoCommandIsLocked && !userIsLoggedIn) {
-      dispatch(denyPermission());
+      navigate('/free-content');
     } else {
       navigate(`/${currentLanguage.languageName.toLowerCase()}/grammar/${topic.slugName}`, { replace: true });
       setCurrentTopic(topic);

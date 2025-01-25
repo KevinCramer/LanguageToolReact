@@ -1,15 +1,12 @@
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { BsPerson } from 'react-icons/bs';
-import { displayLogin } from '../../redux-store/auth';
 import { useAuth } from '../../contexts/AuthContext';
-import { useDispatch } from 'react-redux';
 import { FaChevronDown } from 'react-icons/fa';
 
 import { useEffect, useRef, useState } from 'react';
 import { fontStretch } from '../../constants';
 
 const Navbar = () => {
-  const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -123,7 +120,7 @@ const Navbar = () => {
                   console.error('Failed to log out', error);
                 }
               } else {
-                dispatch(displayLogin());
+                navigate('/login');
               }
             }}
           >
@@ -158,7 +155,7 @@ const Navbar = () => {
                         console.error('Failed to log out', error);
                       }
                     } else {
-                      dispatch(displayLogin());
+                      navigate('/login');
                     }
                   }}
                 >

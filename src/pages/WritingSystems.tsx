@@ -9,7 +9,6 @@ import { useEffect, useRef, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { writingSystems as allWritingSystems } from '../data/structured-data/writingSystems';
 import CustomSwitch from '../components/atoms/CustomSwitch';
-import { denyPermission } from '../redux-store/lock';
 import { languageToSlugs, lingoCommandIsLocked } from '../constants'
 import LockIcon from '@mui/icons-material/Lock';
 import { nullOrUndefined } from '../helpers/audio-player-helpers'
@@ -17,7 +16,6 @@ import QuizElement from '../components/atoms/QuizElement';
 import { scramble, scrambleWithoutMutate } from '../helpers/vocab-content-helpers';
 import StudyElement from '../components/molecules/StudyElement';
 import { useAuth } from '../contexts/AuthContext'
-import { useDispatch } from 'react-redux';
 import { sortTopics } from '../helpers/words-data-helper';
 import DownChevronIcon from '../components/atoms/DownChevronIcon';
 
@@ -35,7 +33,6 @@ const WritingSystems = (
     ...writingSystem, // Spread the existing language properties
     topics: sortTopics(writingSystem.topics, userIsLoggedIn), // Replace topics with sorted ones
   }));
-  const dispatch = useDispatch();
 
   const navigate = useNavigate();
 
@@ -117,7 +114,7 @@ const WritingSystems = (
 
   const changeCurrentTopic = (topic: Topic) => {
     if(topic.isLocked && lingoCommandIsLocked && !userIsLoggedIn ){
-      dispatch(denyPermission());
+      navigate('/free-content');
     }
     else {
       setCurrentTopic(topic);
