@@ -10,7 +10,7 @@ export function timeElapsed(currentSeconds: number): string {
 }
 
 export function timeRemaining(currentSeconds: number, totalSeconds: number): string {
-  const secondsRemaining = totalSeconds - currentSeconds;
+  const secondsRemaining = Math.max(totalSeconds - currentSeconds, 0); // Prevent negative values
   return `${Math.floor((secondsRemaining) / secondsInMinute)}:${
     (Math.floor(secondsRemaining) - secondsInMinute *
      Math.floor((secondsRemaining) / secondsInMinute))
