@@ -25,7 +25,7 @@ export default function FreeContent() {
           <h2 className="text-2xl font-semibold text-center mb-4">Free Content</h2>
           <div className="flex text-center text-gray-700 mb-6">
             <div>
-            To access this content please &nbsp;
+            To access this content please&nbsp;
             </div>
             <CustomLink
               inline={true}
