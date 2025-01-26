@@ -8,7 +8,6 @@ import { queryParamCompress, queryParamDecompress } from '../helpers/query-param
 import { useEffect, useRef, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { languages as allLanguages } from '../data/structured-data/words';
-import CustomSwitch from '../components/atoms/CustomSwitch';
 import { languageToSlugs, lingoCommandIsLocked } from '../constants'
 import LockIcon from '@mui/icons-material/Lock';
 import { nullOrUndefined } from '../helpers/audio-player-helpers'
@@ -20,6 +19,7 @@ import { sortTopics } from '../helpers/words-data-helper';
 import DownChevronIcon from '../components/atoms/DownChevronIcon';
 import { useDispatch } from 'react-redux';
 import { setBackwardRoute, setForwardRoute } from '../redux-store/route';
+import { BsCheck, BsSquare } from 'react-icons/bs';
 
 const VocabContent = (
   props: {
@@ -426,18 +426,22 @@ const VocabContent = (
         </div>
         <div className='flex justify-center'>
           <button
-            className=" flex items-center border-[1px] border-b-4 border-blue-500 text-blue-500 w-[80px] rounded-lg text-base transform transition-transform duration-200 hover:scale-105"
+            className=" flex items-center border-[1px] border-b-4 border-blue-500 text-blue-500 w-[80px] rounded-lg text-base"
             onClick={changeQuizState}
           >
             <div className='text-xl ml-2'>Quiz</div> 
-            <input
-              className="ml-2 w-4 h-4"
-              type="checkbox"
-              name="example"
-              value="option1"
-              onChange={changeQuizState}
-              checked={quiz}
-            />
+            <div style={{ display: 'inline-block', borderRadius: '4px' }}
+              className='ml-1.5'>
+              {quiz ? <BsCheck size={16}
+                className='text-white bg-blue-500'
+                style={{ strokeWidth: '1' }}
+                onChange={changeQuizState}
+              /> : <BsSquare size={16}
+                className='text-blue-500 '
+                onChange={changeQuizState}
+              />}
+             
+            </div>
         
           </button>
         </div>
