@@ -389,12 +389,15 @@ const VocabContent = (
         {/* Topic Dropdown */}
         <div className="relative" ref={topicDropdownRef}>
           <button
-            className="border-[1px] border-b-4 text-sm border-gray-300 bg-200 text-center active:bg-gray-300 hover:bg-gray-200  p-1 pl-2 rounded-lg"
+            className="border-[1px] border-b-4 text-sm w-[145px] border-gray-300 bg-200 text-center active:bg-gray-300 hover:bg-gray-200  p-1 pl-2 rounded-lg"
             onClick={toggleTopicDropdown}
           >
             <div className='flex items-center'>
               <div>
-              Topic: {currentTopic.name}
+              Topic:{' '}
+                {currentTopic.name.length > 7
+                  ? `${currentTopic.name.substring(0, 7)}...`
+                  : currentTopic.name}
               </div>
               <DownChevronIcon/>
             </div>

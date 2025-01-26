@@ -20,6 +20,7 @@ import { sortTopics } from '../helpers/words-data-helper';
 import DownChevronIcon from '../components/atoms/DownChevronIcon';
 import { useDispatch } from 'react-redux';
 import { setBackwardRoute, setForwardRoute } from '../redux-store/route';
+import { BsCheck, BsSquare } from 'react-icons/bs';
 
 const WritingSystems = (
   props: {
@@ -249,15 +250,15 @@ const WritingSystems = (
     } else {
       // Study mode (no quiz selected words)
       return (
-        <div className='pt-4'>
-          <div className={`overflow-x-auto border rounded-lg shadow ${minWidth}`}>
-            <table className="w-full bg-white border-separate border-spacing-0">
-              <thead className="bg-gray-200">
+        <div className='pt-2'>
+          <div className={`overflow-x-auto border shadow ${minWidth}`}>
+            <table className="w-full bg-white border-separate border-t border-l border-r border-gray-500 border-spacing-0">
+              <thead className=" text-black bg-gray-200">
                 <tr>
-                  <th className="px-4 py-2 text-center text-gray-700 border-r border-gray-300 w-1/2">
+                  <th className="px-4 py-2 text-center border-r border-b border-gray-800 w-1/2">
                     {showBaseLanguage ? 'English' : currentLanguage.languageName}
                   </th>
-                  <th className="px-4 py-2 text-center text-gray-700 w-1/2">
+                  <th className="px-4 py-2 text-center border-b border-gray-800 w-1/2">
                     {showBaseLanguage ? currentLanguage.languageName : 'English'}
                   </th>
                 </tr>
@@ -267,10 +268,10 @@ const WritingSystems = (
                   <tr
                     key={index}
                     className={`${
-                      index % 2 === 0 ? 'bg-gray-50' : 'bg-white'
+                      index % 2 === 0 ? 'bg-white' : 'bg-white'
                     } hover:bg-gray-100`}
                   >
-                    <td className="px-4 py-2 text-sm text-gray-800 text-center border-b border-r border-gray-300 w-1/2">
+                    <td className="px-4 py-2 text-sm text-center border-b border-r border-gray-500 w-1/2">
                       <StudyElement
                         BaseLanguageWord={
                           showBaseLanguage
@@ -292,7 +293,7 @@ const WritingSystems = (
                         initialQuizSelect={selectedWordsForQuiz.some((word) => word.englishWord === pair.englishWord)}
                       />
                     </td>
-                    <td className="px-4 py-2 text-sm text-gray-800  border-b border-gray-300 text-center w-1/2">
+                    <td className="px-4 py-2 text-sm  border-b border-gray-500 text-center w-1/2">
                       <StudyElement
                         BaseLanguageWord={
                           showBaseLanguage
@@ -356,22 +357,42 @@ const WritingSystems = (
     
   return (
     <div className='flex flex-col items-center text-lg md:text-xl'>
-      <h4 className='text-center text-2xl py-12'>
-        {currentLanguage.languageName} Writing Systems
-      </h4>
-      <div className='flex justify-center'>
-        <span className='text-blue-500 underline'onClick={displayPopUp}>How to Guide (Video)</span>
+      <div className='flex mt-12 mb-12 items-center'>
+        {/* <h4 className='text-center text-2xl flex'>
+          Japanese Writing Systems  -&nbsp;
+          <div className='text-blue-500 text-xl'> &nbsp; </div>
+          <button onClick={displayPopUp} className='text-blue-500 underline text-xl'>
+            Video Guide
+          </button>
+          <div className='text-blue-500 text-xl'></div> 
+        </h4> */}
+        <h4 className="flex flex-row justify-center text-center text-2xl py-12">
+          <div>
+          Japanese Writing Systems -&nbsp;
+            <a
+              onClick={() => setShowPopUp(true)}
+              className="text-blue-500 underline text-xl"
+            >
+        Video Guide
+            </a>
+          </div>
+         
+        </h4>
+    
       </div>
-      <div className="flex space-x-4 py-4">
+      <div className="flex min-w-[350px] justify-between items-center mb-2">
         {/* Topic Dropdown */}
         <div className="relative" ref={topicDropdownRef}>
           <button
-            className="border-[1px] border-b-4 text-sm border-gray-300 bg-200 text-center active:bg-gray-300 hover:bg-gray-200  p-1 pl-2 rounded-lg mb-2"
+            className="border-[1px] border-b-4 text-sm w-[145px] border-gray-300 bg-200 text-center active:bg-gray-300 hover:bg-gray-200  p-1 pl-2 rounded-lg"
             onClick={toggleTopicDropdown}
           >
             <div className='flex'>
               <div>
-              Topic: {currentTopic.name}
+              Topic:{' '}
+                {currentTopic.name.length > 7
+                  ? `${currentTopic.name.substring(0, 7)}...`
+                  : currentTopic.name}
               </div>
               <DownChevronIcon/>
             </div>
@@ -399,11 +420,31 @@ const WritingSystems = (
             </div>
           )}
         </div>
-
+        <div className='flex justify-center'>
+          <button
+            className=" flex items-center border-[1px] border-b-4 border-blue-500 text-blue-500 w-[80px] rounded-lg text-base"
+            onClick={changeQuizState}
+          >
+            <div className='text-xl ml-2'>Quiz</div> 
+            <div style={{ display: 'inline-block', borderRadius: '4px' }}
+              className='ml-1.5'>
+              {quiz ? <BsCheck size={16}
+                className='text-white bg-blue-500'
+                style={{ strokeWidth: '1' }}
+                onChange={changeQuizState}
+              /> : <BsSquare size={16}
+                className='text-blue-500 '
+                onChange={changeQuizState}
+              />}
+                     
+            </div>
+                
+          </button>
+        </div>
         {/* Settings Dropdown */}
         <div className="relative" ref={settingsDropdownRef}>
           <button
-            className="border-[1px] border-b-4 text-sm border-gray-300 bg-200 text-center active:bg-gray-300 hover:bg-gray-200  p-1 pl-2 rounded-lg mb-2"
+            className="border-[1px] border-b-4 text-sm border-gray-300 bg-200 text-center active:bg-gray-300 hover:bg-gray-200  p-1 pl-2 rounded-lg"
             onClick={toggleSettingsDropdown}
           >
             <div className='flex'>
@@ -503,18 +544,6 @@ const WritingSystems = (
             </div>
           )}
         </div>
-      </div>
-      <div className='flex justify-center'>
-        <div className='px-2'>
-            Study
-        </div>
-        <CustomSwitch 
-          onChange = {changeQuizState}
-          checked= {quiz} 
-        /> 
-        <div className='px-2'>
-        Quiz
-        </div>               
       </div>
       {ToggleQuiz()}
       {showPopUp && (

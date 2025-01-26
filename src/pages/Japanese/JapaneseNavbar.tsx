@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { fontStretch } from '../../constants';
 import { useEffect, useState } from 'react';
 
@@ -25,10 +25,12 @@ const useWindowWidth = () => {
   
 const JapaneseNavbar = () => {
   const width = useWindowWidth(); // Get the current window width
+  const location = useLocation(); 
 
   // Now you can use width to check screen size in your component
   const isMobile = width < 768; 
   const navbarFontStretch = isMobile ? fontStretch : '100%'
+  console.log('location.pathname:', location.pathname);
   return (
     <>
       <nav className='p-4'>
@@ -38,7 +40,7 @@ const JapaneseNavbar = () => {
             <li>
               <NavLink 
                 to='/japanese/home-page' 
-                className={({ isActive }) => isActive ? 'block px-4  underline' : 'block px-4 '}
+                className={({ isActive }) => (isActive) ? 'block px-4  underline' : 'block px-4 '}
               >
                 Japanese Home Page
               </NavLink>
@@ -54,7 +56,14 @@ const JapaneseNavbar = () => {
             <li>
               <NavLink 
                 to='/japanese/writing-systems-explained' 
-                className={({ isActive }) => isActive ? 'block px-4  underline' : 'block px-4 '}
+                className={({ isActive }) => isActive 
+                || location.pathname.includes('hiragana-explained') 
+                || location.pathname.includes('katakana-explained')
+                || location.pathname.includes('kanji-explained')
+                || location.pathname.includes('how-to-type-japanese')
+                || location.pathname.includes('writing-systems')
+
+                  ? 'block px-4  underline' : 'block px-4 '}
               >
                 Writing Systems
               </NavLink>
