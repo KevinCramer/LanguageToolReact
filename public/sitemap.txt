@@ -9,6 +9,9 @@ https://www.lingocommand.com/free-content
 https://www.lingocommand.com/japanese/home-page
 https://www.lingocommand.com/japanese/study-guide
 https://www.lingocommand.com/japanese/writing-systems-explained
+https://www.lingocommand.com/japanese/kanji-explained
+https://www.lingocommand.com/japanese/how-to-type-japanese
+https://www.lingocommand.com/japanese/vocabulary-guide
 https://www.lingocommand.com/japanese/hiragana-explained?lesson=1
 https://www.lingocommand.com/japanese/hiragana-explained?lesson=2
 https://www.lingocommand.com/japanese/hiragana-explained?lesson=3
@@ -17,8 +20,6 @@ https://www.lingocommand.com/japanese/katakana-explained?lesson=2
 https://www.lingocommand.com/japanese/katakana-explained?lesson=3
 https://www.lingocommand.com/japanese/katakana-explained?lesson=4
 https://www.lingocommand.com/japanese/katakana-explained?lesson=5
-https://www.lingocommand.com/japanese/kanji-explained
-https://www.lingocommand.com/japanese/how-to-type-japanese
 https://www.lingocommand.com/japanese/writing-systems?s=hir-T0TFT
 https://www.lingocommand.com/japanese/writing-systems?s=hirdak-T0TFT
 https://www.lingocommand.com/japanese/writing-systems?s=hiryoon-T0TFT
