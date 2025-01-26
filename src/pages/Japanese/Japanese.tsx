@@ -1,6 +1,6 @@
 const Japanese = () => {
   return (
-    <div className="max-w-screen-md mx-auto px- md:text-lg text-center">
+    <div className="max-w-screen-md mx-auto px-2 md:text-lg text-center">
       <h4 className="text-center text-2xl py-12"></h4>
       <div className="border border-gray-300 rounded-xl px-4 py-4 w-full transform transition-transform duration-200 hover:scale-105 hover:cursor-pointer"
         onClick={() => window.location.href = 'study-guide'}>
