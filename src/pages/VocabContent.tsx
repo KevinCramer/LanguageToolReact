@@ -429,7 +429,7 @@ const VocabContent = (
         </div>
         <div className='flex justify-center'>
           <button
-            className=" flex items-center border-[1px] border-b-4 bg-blue-500 border-blue-700 text-blue-500 w-[80px] rounded-lg text-base"
+            className=" flex items-center border-[1px] border-b-4 bg-blue-500 border-blue-700 text-blue-500 w-[80px] rounded-lg text-base transform transition-transform duration-200 hover:scale-105"
             onClick={changeQuizState}
           >
             <div className='text-xl text-white ml-2'>Quiz</div> 
