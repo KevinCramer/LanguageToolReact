@@ -10,32 +10,50 @@ const Japanese = () => {
         </div>
         <div>
           <button className="w-[200px] mb-4 border-[1px] border-b-4 bg-blue-500 border-blue-700 bg-200 text-center text-white p-2 rounded-2xl text-lg md:text-xl transform transition-transform duration-200 hover:scale-105">
+            <a href='study-guide'>
             Access Study Guide
+            </a>
           </button>
         </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 justify-items-center mt-8">
         <div className="border border-gray-300 rounded-xl m-2 px-4 py-4 w-full transform transition-transform duration-200 hover:scale-105 md:text-left">
-          <div className="text-xl mb-4 text-blue-500 underline">Writing Systems</div>
+          <div className="text-xl mb-4 text-blue-500 underline">
+            <a href='writing-systems-explained'>
+            Writing Systems
+            </a>
+          </div>
           <div className="mb-4">
             Master Hiragana, Katakana, and Kanji with simple lessons and exercises.
           </div>
         </div>
         <div className="border border-gray-300 rounded-xl m-2 px-4 py-4 w-full transform transition-transform duration-200 hover:scale-105 md:text-left">
-          <div className="text-xl mb-4 text-blue-500 underline">Vocabulary</div>
+          <div className="text-xl mb-4 text-blue-500 underline">
+            <a href='vocabulary'>
+            Vocabulary
+            </a>
+          </div>
           <div className="mb-4">
             Learn essential words and phrases for everyday conversations.
           </div>
         </div>
         <div className="border border-gray-300 rounded-xl m-2 px-4 py-4 w-full transform transition-transform duration-200 hover:scale-105 md:text-left">
-          <div className="text-xl mb-4 text-blue-500 underline">Grammar</div>
+          <div className="text-xl mb-4 text-blue-500 underline">
+            <a href='grammar'>
+            Grammar
+            </a>
+          </div>
           <div className="mb-4">
             Understand sentence structure and build natural Japanese sentences. 
           </div>
         </div>
         <div className="border border-gray-300 rounded-xl m-2 px-4 py-4 w-full transform transition-transform duration-200 hover:scale-105 md:text-left">
-          <div className="text-xl mb-4 text-blue-500 underline">Reading & Listening</div>
+          <div className="text-xl mb-4 text-blue-500 underline">
+            <a href='reading-listening/aikos-book-sanctuary?L=WritingSystem3&R=English&gran=paragraph'>
+            Reading & Listening
+            </a>
+          </div>
           <div className="mb-4">
             Improve your comprehension with real-world texts and audio materials.
           </div>
