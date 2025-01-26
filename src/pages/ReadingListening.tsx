@@ -3,7 +3,6 @@ import { AudioTranscription, ReadingListeningLanguage, TranscriptionType }
 import { useEffect, useRef, useState } from 'react';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { languages as allLanguages } from '../data/structured-data/readingListening';
-import CustomSwitch from '../components/atoms/CustomSwitch';
 import { lingoCommandIsLocked } from '../constants';
 import LockIcon from '@mui/icons-material/Lock';
 import RenderTableCell from '../components/molecules/RenderTableCell';
@@ -282,20 +281,22 @@ const ReadingListeningContent = (props: { languageNumber: number; howToGuideVide
   // Now you can use width to check screen size in your component
   const isMobile = width < 768; 
   return (
-    <div className='text-lg md:text-xl'>
-      <h4 className='text-center text-2xl py-12'>
-        {currentLanguage.languageName} Reading and Listening Comprehension
+    <div className="text-lg md:text-xl">
+      <h4 className="flex flex-row justify-center text-center text-2xl py-12">
+        <div>
+        Japanese Reading and Listening Comprehension -&nbsp;
+          <a
+            onClick={() => setShowPopUp(true)}
+            className="text-blue-500 underline text-xl"
+          >
+        Video Guide
+          </a>
+        </div>
+         
       </h4>
-      <div className='flex justify-center'>
-        <span
-          className="text-blue-500 underline text center"
-          onClick={() => setShowPopUp(true)}
-        >
-          How to Guide (Video)
-        </span>
-      </div>
-      <div className="max-w-7xl mx-auto py-4">
-        <div className='flex justify-center'>
+    
+      <div className="max-w-7xl mx-auto">
+        <div className='flex justify-center mb-2'>
           <div className="relative px-2" ref={topicDropdownRef}>
             <button
               className="border-[1px] border-b-4 text-sm border-gray-300 bg-200 text-center active:bg-gray-300 hover:bg-gray-200  p-1 pl-2 rounded-lg mb-2"
@@ -334,6 +335,7 @@ const ReadingListeningContent = (props: { languageNumber: number; howToGuideVide
               </div>
             )}
           </div>
+          
           <div className="relative px-2" ref={settingsDropdownRef}>
             <button
               className="border-[1px] border-b-4 text-sm border-gray-300 bg-200 text-center active:bg-gray-300 hover:bg-gray-200  p-1 pl-2 rounded-lg mb-2"
@@ -350,6 +352,21 @@ const ReadingListeningContent = (props: { languageNumber: number; howToGuideVide
               <div className="absolute right-0 mt-2 bg-white border
                border-gray-300 rounded-lg shadow w-64 z-10">
                 <ul className="divide-y divide-gray-200 text-sm">
+                  <li 
+                    className="flex items-center px-4 py-2  text-sm">
+                    <div className="flex-shrink-0 cursor-default">granularity:&nbsp;</div>
+                    <select
+                      name="alphabets"
+                      id="alphabets"
+                      onChange={toggleGranularity}
+                      onClick={preventDropdownClose}
+                      className="ml-2 block w-28 max-w-full truncate overflow-hidden rounded border border-gray-300 bg-white px-2 py-1 text-sm shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 cursor-pointer"
+                      value={granularity === 'sentence' ? 1 : 0}
+                    >
+                      <option value="0">paragraph</option>
+                      <option value="1">sentence</option>
+                    </select>
+                  </li>
                   <li
                     onClick={(event) => {
                       toggleLeftVisibility();
@@ -389,20 +406,7 @@ const ReadingListeningContent = (props: { languageNumber: number; howToGuideVide
             )}
           </div> 
         </div>
-        <div className="flex items-center my-4 justify-center ">
-          <div className='px-2' style={{ fontWeight: granularity === 'sentence'
-            ? 'normal' : '600' }}>
-        Paragraphs
-          </div>
-          <CustomSwitch 
-            onChange={toggleGranularity} 
-            checked= {granularity === 'sentence'} 
-          /> 
-          <div className='px-2'style={{ fontWeight: granularity === 'sentence' 
-            ? '600' : 'normal' }}>
-            Sentences
-          </div>               
-        </div>
+        
         <div>{renderReadingListeningTopic()}</div>
         {showPopUp && (
           <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
