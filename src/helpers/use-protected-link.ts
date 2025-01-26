@@ -1,10 +1,14 @@
 import { MouseEvent } from 'react';
 import { useAuth } from '../contexts/AuthContext';
 import { lingoCommandIsLocked } from '../constants';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { setBackwardRoute, setForwardRoute } from '../redux-store/route';
 
 export const useProtectedLink = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const location = useLocation();
 
   // @ts-ignore
   const { currentUser } = useAuth(); // Access the auth context
@@ -14,9 +18,9 @@ export const useProtectedLink = () => {
   const handleProtectedClick = (topic: any) => (e: MouseEvent<HTMLAnchorElement>) => {
     if (!userIsLoggedIn && topic.isLocked && lingoCommandIsLocked) {
       e.preventDefault(); // Prevent navigation
-      navigate('/free-content');
-    }
+      dispatch(setBackwardRoute(location.pathname + location.search));
+      dispatch(setForwardRoute(`/japanese/writing-systems?s=${topic.slugName}-T0TFT`));
+      navigate('/free-content') }
   };
-
   return handleProtectedClick; // Return only the function
 };

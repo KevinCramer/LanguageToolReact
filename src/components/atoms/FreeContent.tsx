@@ -1,5 +1,4 @@
 import { useDispatch } from 'react-redux';
-import { resetPermission } from '../../redux-store/lock';
 import CustomLink from './CustomLink';
 import CloseIcon from './CloseIcon';
 import { useNavigate } from 'react-router-dom';
@@ -32,7 +31,6 @@ export default function FreeContent() {
               inline={true}
               onClick={() => {
                 navigate('/login');
-                dispatch(resetPermission());
               }}
             >
               log in

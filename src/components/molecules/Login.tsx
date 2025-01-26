@@ -1,16 +1,12 @@
-import {
-  hideModal
-} from '../../redux-store/auth';
 import { useRef, useState } from 'react';
 import CustomLink from '../atoms/CustomLink';
-import { resetPermission } from '../../redux-store/lock';
 import { useAuth } from '../../contexts/AuthContext';
-import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import CloseIcon from '../atoms/CloseIcon';
 import { useNavigate } from 'react-router-dom';
+import { RootStateRoute } from '../../redux-store/route';
 
 export default function Login() {
-  const dispatch = useDispatch();
   const navigate = useNavigate();
   const emailRef = useRef<HTMLInputElement>(null);
   const passwordRef = useRef<HTMLInputElement>(null);
@@ -18,6 +14,9 @@ export default function Login() {
   const { login } = useAuth();
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+
+  const forwardRoute = useSelector((state: RootStateRoute) => state.route.forwardRoute);
+  const backwardRoute = useSelector((state: RootStateRoute) => state.route.backwardRoute);
 
   async function handleSubmit(e: any) {
     e.preventDefault();
@@ -27,8 +26,7 @@ export default function Login() {
       setLoading(true);
       // @ts-ignore
       await login(emailRef.current.value, passwordRef.current.value);
-      dispatch(hideModal());
-      dispatch(resetPermission());
+      navigate(forwardRoute || '/');
     } catch (error) {
       setError(`Failed to log in. The error is: ${error}`);
     }
@@ -42,7 +40,7 @@ export default function Login() {
         <div className="max-w-screen-md mx-auto px-4 md:text-lg">
           <div className="flex justify-end pb-2">
             <button
-              onClick={() => dispatch(hideModal())}
+              onClick={() => navigate(backwardRoute || '/')}
               aria-label="Close">
               <CloseIcon/>
             </button>

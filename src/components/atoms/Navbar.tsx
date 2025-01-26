@@ -5,10 +5,13 @@ import { FaChevronDown } from 'react-icons/fa';
 
 import { useEffect, useRef, useState } from 'react';
 import { fontStretch } from '../../constants';
+import { setBackwardRoute, setForwardRoute } from '../../redux-store/route';
+import { useDispatch } from 'react-redux';
 
 const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const dispatch = useDispatch();
 
   // @ts-ignore
   const { currentUser, logout } = useAuth();
@@ -120,8 +123,9 @@ const Navbar = () => {
                   console.error('Failed to log out', error);
                 }
               } else {
-                navigate('/login');
-              }
+                dispatch(setBackwardRoute(location.pathname));
+                dispatch(setForwardRoute(location.pathname));
+                navigate('/login'); }
             }}
           >
             {currentUser && currentUser.email ? 'Log Out' : 'Log In '}
@@ -155,6 +159,8 @@ const Navbar = () => {
                         console.error('Failed to log out', error);
                       }
                     } else {
+                      dispatch(setBackwardRoute(location.pathname));
+                      dispatch(setForwardRoute(location.pathname));
                       navigate('/login');
                     }
                   }}

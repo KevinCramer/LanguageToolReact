@@ -18,6 +18,8 @@ import StudyElement from '../components/molecules/StudyElement';
 import { useAuth } from '../contexts/AuthContext'
 import { sortTopics } from '../helpers/words-data-helper';
 import DownChevronIcon from '../components/atoms/DownChevronIcon';
+import { useDispatch } from 'react-redux';
+import { setBackwardRoute, setForwardRoute } from '../redux-store/route';
 
 const WritingSystems = (
   props: {
@@ -26,6 +28,8 @@ const WritingSystems = (
       
   //@ts-ignore
   const { currentUser } = useAuth();
+  const dispatch = useDispatch();
+  const location = useLocation();
   
   const userIsLoggedIn = currentUser && currentUser.email
 
@@ -114,7 +118,10 @@ const WritingSystems = (
 
   const changeCurrentTopic = (topic: Topic) => {
     if(topic.isLocked && lingoCommandIsLocked && !userIsLoggedIn ){
-      navigate('/free-content');
+      dispatch(setBackwardRoute(location.pathname + location.search));
+      dispatch(setForwardRoute((location.pathname + location.search)
+        .replace(/(?<=\?s=)[^=-]+(?=-)/, topic.slugName)));
+      navigate('/free-content')
     }
     else {
       setCurrentTopic(topic);

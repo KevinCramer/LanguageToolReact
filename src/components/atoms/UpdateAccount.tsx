@@ -1,5 +1,4 @@
 import { useRef, useState } from 'react';
-import { hideModal } from '../../redux-store/auth';
 import { useAuth } from '../../contexts/AuthContext';
 import { useDispatch } from 'react-redux';
 import CloseIcon from './CloseIcon';
@@ -37,7 +36,7 @@ export default function UpdateAccount() {
 
     Promise.all(promises)
       .then(() => {
-        dispatch(hideModal());
+        //dispatch(hideModal());
       })
       .catch((error) => {
         setError(`Failed to update account. The error is: ${error}`);
@@ -53,7 +52,7 @@ export default function UpdateAccount() {
         <div className="max-w-screen-md mx-auto px-4 md:text-lg">
           <div className="flex justify-end pb-2">
             <button
-              onClick={() => dispatch(hideModal())}
+              onClick={() => {}}
               aria-label="Close"
             >
               <CloseIcon/>

@@ -1,8 +1,5 @@
 import './index.css';
-import { hideModal, RootStateAuth } from './redux-store/auth'
-import { RootStateLock } from './redux-store/lock'
-import { Route, Routes, useLocation } from 'react-router-dom'
-import { useDispatch, useSelector } from 'react-redux';
+import { Route, Routes, useLocation, useNavigate } from 'react-router-dom'
 import Account from './pages/Account'
 import ContactUs from './pages/ContactUs'
 import About from './pages/About'
@@ -24,8 +21,6 @@ import Login from './components/molecules/Login'
 import Navbar from './components/atoms/Navbar'
 import Signup from './components/molecules/Signup'
 import UpdateAccount from './components/atoms/UpdateAccount'
-import { useAuth } from './contexts/AuthContext'
-import { useEffect } from 'react'
 import VocabContent from './pages/VocabContent'
 import WritingSystems from './pages/WritingSystems'
 import japaneseComprehensionVideo from './data/raw-data/tutorial-videos/japanese-comprehension-tutorial.mp4'
@@ -39,22 +34,11 @@ const App = ()=> {
   // will log out user iff there is no lingocommand tab 
   // where the user was active in the last 30 minutes
   // useInactivityTimer(30 * msInMinute, 30 * msInMinute);
-  const dispatch = useDispatch(); 
 
-  const reduxAuth = useSelector((state: RootStateAuth) => state.auth);
-  const reduxLock = useSelector((state: RootStateLock) => state.lock);
   // @ts-ignore
-  const { currentUser } = useAuth();
   const pathWithBackground = location.pathname === '/' 
   || location.pathname === '/contact' 
   || location.pathname === '/account'
-  
-  const userIsLoggedIn = currentUser && currentUser.email
-  useEffect(() => {
-    if (currentUser && currentUser.email) {
-      dispatch(hideModal());
-    }
-  }, [currentUser && currentUser.email]);
 
   return (
     <>

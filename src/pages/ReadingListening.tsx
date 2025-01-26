@@ -9,6 +9,8 @@ import LockIcon from '@mui/icons-material/Lock';
 import RenderTableCell from '../components/molecules/RenderTableCell';
 import { useAuth } from '../contexts/AuthContext';
 import DownChevronIcon from '../components/atoms/DownChevronIcon';
+import { setBackwardRoute, setForwardRoute } from '../redux-store/route';
+import { useDispatch } from 'react-redux';
 
 const useWindowWidth = () => {
   const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
@@ -40,6 +42,7 @@ const ReadingListeningContent = (props: { languageNumber: number; howToGuideVide
   const navigate = useNavigate();
   const { topicSlug } = useParams();
   const location = useLocation();
+  const dispatch = useDispatch();
 
   const currentLanguage: ReadingListeningLanguage = allLanguages[props.languageNumber];
 
@@ -60,7 +63,10 @@ const ReadingListeningContent = (props: { languageNumber: number; howToGuideVide
 
   const changeTranscription = (topic: AudioTranscription) => {
     if(topic.isLocked && lingoCommandIsLocked && !userIsLoggedIn ){
-      navigate('/free-content');
+      dispatch(setBackwardRoute(location.pathname + location.search));
+      dispatch(setForwardRoute((location.pathname + location.search)
+        .replace(/(?<=\?s=)[^=-]+(?=-)/, topic.slugName)));
+      navigate('/free-content')
     }
     else{
       navigate(`/${currentLanguage.languageName

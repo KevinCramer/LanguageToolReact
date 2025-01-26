@@ -18,6 +18,8 @@ import StudyElement from '../components/molecules/StudyElement';
 import { useAuth } from '../contexts/AuthContext'
 import { sortTopics } from '../helpers/words-data-helper';
 import DownChevronIcon from '../components/atoms/DownChevronIcon';
+import { useDispatch } from 'react-redux';
+import { setBackwardRoute, setForwardRoute } from '../redux-store/route';
 
 const VocabContent = (
   props: {
@@ -26,6 +28,8 @@ const VocabContent = (
       
   //@ts-ignore
   const { currentUser } = useAuth();
+  const location = useLocation();
+  const dispatch = useDispatch();
   
   const userIsLoggedIn = currentUser && currentUser.email
 
@@ -132,6 +136,9 @@ const VocabContent = (
 
   const changeCurrentTopic = (topic: Topic) => {
     if(topic.isLocked && lingoCommandIsLocked && !userIsLoggedIn ){
+      dispatch(setBackwardRoute(location.pathname + location.search));
+      dispatch(setForwardRoute((location.pathname + location.search)
+        .replace(/(?<=\?s=)[^=-]+(?=-)/, topic.slugName)));
       navigate('/free-content')
     }
     else {
