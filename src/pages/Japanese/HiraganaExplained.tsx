@@ -204,7 +204,8 @@ const HiraganaExplained = () => {
             Now try this exercise:
             </div>
             <div className="flex flex-col space-y-2 justify-center items-center ml-4">
-              <a className="text-blue-500  border-[1px] border-b-4 border-gray-300 bg-200 text-center active:bg-gray-300 hover:bg-gray-200  p-2 rounded-2xl"
+              <a className=" border-[1px] border-b-4 bg-blue-500 border-blue-700 bg-200 text-center text-white p-2 rounded-2xl text-lg md:text-xl transform transition-transform duration-200 hover:scale-105"
+
                 onClick={handleProtectedClick(hiraganaBasicWritingSystem)}
                 href={createURL(LanguageNames.Japanese, LearningSections.WritingSystem, hiraganaBasicWritingSystem)}
               >
@@ -248,7 +249,7 @@ const HiraganaExplained = () => {
               Now try this exercise:
               </div>
               <div className='flex flex-col space-y-2 justify-center items-center ml-4'>
-                <a className="text-blue-500  border-[1px] border-b-4 border-gray-300 bg-200 text-center active:bg-gray-300 hover:bg-gray-200  p-2 rounded-2xl"
+                <a className=" border-[1px] border-b-4 bg-blue-500 border-blue-700 bg-200 text-center text-white p-2 rounded-2xl text-lg md:text-xl transform transition-transform duration-200 hover:scale-105"
                   onClick={handleProtectedClick(hiraganaDakutenWritingSystem)} 
                   href={
                     createURL(
@@ -283,7 +284,7 @@ const HiraganaExplained = () => {
             Now try this exercise:
             </div>
             <div className='flex flex-col space-y-2 justify-center items-center ml-4'>
-              <a className="text-blue-500  border-[1px] border-b-4 border-gray-300 bg-200 text-center active:bg-gray-300 hover:bg-gray-200  p-2 rounded-2xl"
+              <a className=" border-[1px] border-b-4 bg-blue-500 border-blue-700 bg-200 text-center text-white p-2 rounded-2xl text-lg md:text-xl transform transition-transform duration-200 hover:scale-105"
                 onClick={handleProtectedClick(hiraganaYoonWritingSystem)} 
                 href={
                   createURL(
