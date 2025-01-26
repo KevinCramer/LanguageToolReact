@@ -6,7 +6,7 @@ const Japanese = () => {
         onClick={() => window.location.href = 'study-guide'}>
         <div className="text-xl mb-4 font-bold"> Japanese Study Guide</div>
         <div className="mb-4">
-          Take the guesswork out of learning Japanese with our expertly-crafted study guide. 
+          Take the guesswork out of learning Japanese with our study guide. 
           Perfect for beginners and advanced learners alike!
         </div>
         <div>

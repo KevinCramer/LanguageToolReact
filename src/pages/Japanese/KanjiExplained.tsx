@@ -1,3 +1,5 @@
+import { createURL } from '../../helpers/createURL';
+
 const KanjiExplained = () => { 
 
   const kanjiTable = (
@@ -46,8 +48,15 @@ const KanjiExplained = () => {
         <div>For example: <b>火</b> (fire) + <b>山</b> (mountain) = <b>火山</b> (volcano).</div>
       </div>
       <div>
-        Having said that, at LingoCommand we strongly recommend you avoid spending too much time studying kanji in isolation. Instead, we suggest you learn Japanese vocabulary, which will allow you to naturally gain familiarity with kanji over time.
+        Having said that, at LingoCommand we strongly recommend you avoid spending too much time studying kanji in isolation. Instead, we suggest you learn Japanese vocabulary, which will allow you to naturally gain familiarity with kanji over time. 
+
       </div>        
+      <div className="flex flex-col space-y-2 justify-center items-center m-4">
+        <a className="border-[1px] border-b-4 bg-blue-500 border-blue-700 bg-200 text-center text-white p-2 rounded-2xl text-lg md:text-xl transform transition-transform duration-200 hover:scale-105"
+          href='vocabulary?s=clo-T2TFT'>
+                      Kanji Vocabulary Exercises
+        </a>
+      </div>
     </div>
   );
 }
