@@ -9,10 +9,11 @@ const Japanese = () => {
           Perfect for beginners and advanced learners alike!
         </div>
         <div>
-          <button className="w-[200px] mb-4 border-[1px] border-b-4 bg-blue-500 border-blue-700 bg-200 text-center text-white p-2 rounded-2xl text-lg md:text-xl transform transition-transform duration-200 hover:scale-105">
-            <a href='study-guide'>
-            Access Study Guide
-            </a>
+          <button
+            className="w-[200px] mb-4 border-[1px] border-b-4 bg-blue-500 border-blue-700 text-center text-white p-2 rounded-2xl text-lg md:text-xl transform transition-transform duration-200 hover:scale-105"
+            onClick={() => window.location.href = 'study-guide'}
+          >
+            <div>Access Study Guide</div>
           </button>
         </div>
       </div>
