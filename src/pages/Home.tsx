@@ -78,10 +78,13 @@ export const Home = () => {
       <div className='m-2 text-white text-xl md:text-2xl md:tracking-custom'>
         Learn Japanese Faster
       </div>
-      <button className='m-8 p-1 bg-blue-500 text-white rounded-md text-lg md:text-xl md:tracking-custom'
-        onClick={(event) => { navigate('/japanese/home-page') }}>
-        Start Now 
+      <button
+        className="mt-8 border-[1px] border-b-4 bg-blue-500 border-blue-700 bg-200 text-center text-white p-2 rounded-2xl text-lg md:text-xl transform transition-transform duration-200 hover:scale-105 md:tracking-custom"
+        onClick={(event) => { navigate('/japanese/home-page') }}
+      >
+  Start Now
       </button>
+  
     </div>    
   );
 };

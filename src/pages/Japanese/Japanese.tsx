@@ -1,92 +1,46 @@
-import { NavLink } from 'react-router-dom';
-import dartIcon from '../../assets/dart.svg';
-import dictionaryIcon from '../../assets/dictionary.svg';
-import learningKnowledgeIcon from '../../assets/learningKnowledge.svg';
-import penIcon from '../../assets/pen.svg';
-import upwardTrendIcon from '../../assets/upward-trend.svg';
-
-interface ResourceLinkProps {
-  href: string;
-  icon: string;
-  alt: string;
-  children: React.ReactNode;
-}
-
-const imageDimensions = 80
-
-const ResourceLink = ({ href, icon, alt, children }: ResourceLinkProps) => (
-  <a className='flex flex-col items-center m-4' href={href}>
-    <img src={icon} width={imageDimensions} height={imageDimensions} alt={alt} />
-    <div className='text-center text-blue-500 underline'>{children}</div>
-  </a>
-);
-
 const Japanese = () => {
   return (
-    <div className='max-w-screen-md mx-auto px-4 md:text-lg text-center'>
-      <h4 className='text-center text-2xl py-12'>
-        Learn Japanese
-      </h4>
-      <div>
-        LingoCommand helps beginners learn Japanese and gain confidence in their skills.
-        We also offer valuable content for advanced users. Try our study guide below:
-      </div>
-      <ResourceLink 
-        href='/japanese/study-guide' 
-        icon={upwardTrendIcon} 
-        alt='Study Guide Icon'
-      >
-        Study Guide
-      </ResourceLink>
-      <div>
-        Alternatively, you can create your own study plan using the resources available 
-        at LingoCommand. The Japanese study materials are divided into four main sections:
-      </div>
-      <div className='flex flex-col md:flex-row justify-center'>
-        <div className='mx-'>
-          <ResourceLink 
-            href='/japanese/writing-systems-explained' 
-            icon={penIcon} 
-            alt='Writing Systems Icon'
-          >
-        Writing Systems
-          </ResourceLink>
+    <div className="max-w-screen-md mx-auto px-4 md:text-lg text-center">
+      <h4 className="text-center text-2xl py-12"></h4>
+      <div className="border border-gray-300 rounded-xl p-2">
+        <div className="text-xl mb-4 font-bold">Study Guide</div>
+        <div className="mb-4">
+          Take the guesswork out of learning Japanese with our expertly-crafted study guide. 
+          Perfect for beginners and advanced learners alike!
         </div>
-        <div className='mx-'>
-          <ResourceLink 
-            href='/japanese/vocabulary' 
-            icon={dictionaryIcon} 
-            alt='Vocabulary Icon'
-          >
-        Vocabulary
-          </ResourceLink>
+        <div>
+          <button className="w-[200px] mb-4 border-[1px] border-b-4 bg-blue-500 border-blue-700 bg-200 text-center text-white p-2 rounded-2xl text-lg md:text-xl transform transition-transform duration-200 hover:scale-105">
+            Access Study Guide
+          </button>
         </div>
-        <div className='mx-'>
-          <ResourceLink 
-            href='/japanese/grammar/keigo' 
-            icon={dartIcon} 
-            alt='Grammar Icon'
-          >
-        Grammar
-          </ResourceLink>
-        </div>
-        <div className='mx-'>
-          <ResourceLink 
-            href='/japanese/reading-listening/aikos-book-sanctuary' 
-            icon={learningKnowledgeIcon} 
-            alt='Reading and Listening Comprehension Icon'
-          >
-        Reading / Listening
-          </ResourceLink>      
-        </div>    
-      </div>
-      <div className='mt-8'>
-        <i>
-        The Japanese language has 130 million native speakers, with about 95% residing in Japan. Over the past 40 years,
-        the number of people learning Japanese as a second language has increased over twentyfold.
-        </i>
       </div>
 
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 justify-items-center mt-8">
+        <div className="border border-gray-300 rounded-xl m-2 px-4 py-4 w-full transform transition-transform duration-200 hover:scale-105 md:text-left">
+          <div className="text-xl mb-4 text-blue-500 underline">Writing Systems</div>
+          <div className="mb-4">
+            Master Hiragana, Katakana, and Kanji with simple lessons and exercises.
+          </div>
+        </div>
+        <div className="border border-gray-300 rounded-xl m-2 px-4 py-4 w-full transform transition-transform duration-200 hover:scale-105 md:text-left">
+          <div className="text-xl mb-4 text-blue-500 underline">Vocabulary</div>
+          <div className="mb-4">
+            Learn essential words and phrases for everyday conversations.
+          </div>
+        </div>
+        <div className="border border-gray-300 rounded-xl m-2 px-4 py-4 w-full transform transition-transform duration-200 hover:scale-105 md:text-left">
+          <div className="text-xl mb-4 text-blue-500 underline">Grammar</div>
+          <div className="mb-4">
+            Understand sentence structure and build natural Japanese sentences. 
+          </div>
+        </div>
+        <div className="border border-gray-300 rounded-xl m-2 px-4 py-4 w-full transform transition-transform duration-200 hover:scale-105 md:text-left">
+          <div className="text-xl mb-4 text-blue-500 underline">Reading & Listening</div>
+          <div className="mb-4">
+            Improve your comprehension with real-world texts and audio materials.
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

@@ -86,7 +86,7 @@ const Navbar = () => {
             <div className='text-white text-lg '>
               ingo
             </div>
-            <div className='text-emerald-400 font-bold text-2xl '>
+            <div className='text-emerald-400 font-bold text-2xl'>
               C
             </div>
             <div className='text-white text-lg'>
@@ -128,7 +128,13 @@ const Navbar = () => {
                 navigate('/login'); }
             }}
           >
-            {currentUser && currentUser.email ? 'Log Out' : 'Log In '}
+            {currentUser && currentUser.email ? 'Log Out' : 
+              <div className={pathWithBackground ? 
+                'font-bold' : 
+                'flex items-center md:font-bold text-white rounded-xl'}> 
+                <div>Log In </div>
+              </div>
+            }
           </button>
         )}
 
