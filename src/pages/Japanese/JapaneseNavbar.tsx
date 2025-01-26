@@ -70,7 +70,7 @@ const JapaneseNavbar = () => {
             </li>
             <li>
               <NavLink 
-                to='/japanese/vocabulary' 
+                to='/japanese/vocabulary-guide' 
                 className={({ isActive }) => isActive ? 'block px-4  underline' : 'block px-4 '}
               >
                 Vocabulary

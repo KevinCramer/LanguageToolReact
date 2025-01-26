@@ -27,6 +27,7 @@ import japaneseWritingSystemsVideo from './data/raw-data/tutorial-videos/japanes
 import japaneseVocabGuideVideo from './data/raw-data/tutorial-videos/japanese-vocab-guide.mp4'
 import fujiImage from '/src/assets/mount-fuji.jpg';
 import JapaneseNavbar from './pages/Japanese/JapaneseNavbar';
+import VocabularyGuide from './pages/Japanese/VocabularyGuide';
 
 const App = ()=> {
   const location = useLocation();
@@ -59,6 +60,8 @@ const App = ()=> {
           <Route path="/delete-account" element={<DeleteAccount/>} />
           <Route path="/free-content" element={<FreeContent/>} />
           <Route path="/japanese/home-page" element={<Japanese/>} />
+          <Route path="/japanese/vocabulary-guide" 
+            element={<VocabularyGuide/>} />
           <Route path="/japanese/vocabulary" 
             element={<VocabContent howToGuideVideo={japaneseVocabGuideVideo} />} />
           <Route path="/japanese/writing-systems-explained" element={<JapaneseWritingSystems />} />
@@ -92,6 +95,8 @@ const App = ()=> {
             <Route path="/delete-account" element={<DeleteAccount/>} />
             <Route path="/free-content" element={<FreeContent/>} />
             <Route path="/japanese/home-page" element={<Japanese/>} />
+            <Route path="/japanese/vocabulary-guide" 
+              element={<VocabularyGuide/>} />
             <Route path="/japanese/vocabulary" 
               element={<VocabContent howToGuideVideo={japaneseVocabGuideVideo} />} />
             <Route path="/japanese/writing-systems-explained" element={<JapaneseWritingSystems />} />
