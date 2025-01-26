@@ -267,15 +267,15 @@ const VocabContent = (
     } else {
       // Study mode (no quiz selected words)
       return (
-        <div className='pt-4'>
+        <div className='pt-2'>
           <div className={`overflow-x-auto border rounded-lg shadow ${minWidth}`}>
             <table className="w-full bg-white border-separate border-spacing-0">
-              <thead className="bg-gray-200">
+              <thead className=" text-black bg-gray-200">
                 <tr>
-                  <th className="px-4 py-2 text-center text-gray-700 border-r border-gray-300 w-1/2">
+                  <th className="px-4 py-2 text-center border-r border-gray-300 w-1/2">
                     {showBaseLanguage ? 'English' : currentLanguage.languageName}
                   </th>
-                  <th className="px-4 py-2 text-center text-gray-700 w-1/2">
+                  <th className="px-4 py-2 text-center w-1/2">
                     {showBaseLanguage ? currentLanguage.languageName : 'English'}
                   </th>
                 </tr>
@@ -374,20 +374,25 @@ const VocabContent = (
   
   return (
     <div className='flex flex-col items-center text-lg md:text-xl'>
-      <h4 className='text-center text-2xl py-12'>
-        {currentLanguage.languageName} Vocabulary
-      </h4>
-      <div className='flex justify-center'>
-        <span className='text-blue-500 underline'onClick={displayPopUp}>How to Guide (Video)</span>
+      <div className='flex mt-12 mb-12 items-center'>
+        <h4 className='text-center text-2xl flex'>
+          {currentLanguage.languageName} Vocabulary -&nbsp;
+          <div className='text-blue-500 text-xl'> &nbsp; </div>
+          <button onClick={displayPopUp} className='text-blue-500 underline text-xl'>
+            Video Guide
+          </button>
+          <div className='text-blue-500 text-xl'></div> 
+        </h4>
       </div>
-      <div className="flex space-x-4 py-4">
+    
+      <div className="flex min-w-[350px] justify-between items-center mb-2">
         {/* Topic Dropdown */}
         <div className="relative" ref={topicDropdownRef}>
           <button
-            className="border-[1px] border-b-4 text-sm border-gray-300 bg-200 text-center active:bg-gray-300 hover:bg-gray-200  p-1 pl-2 rounded-lg mb-2"
+            className="border-[1px] border-b-4 text-sm border-gray-300 bg-200 text-center active:bg-gray-300 hover:bg-gray-200  p-1 pl-2 rounded-lg"
             onClick={toggleTopicDropdown}
           >
-            <div className='flex'>
+            <div className='flex items-center'>
               <div>
               Topic: {currentTopic.name}
               </div>
@@ -419,14 +424,23 @@ const VocabContent = (
             </div>
           )}
         </div>
-
+        <div className='flex justify-center'>
+          <button
+            className="border-[1px] border-b-4 bg-blue-500 border-blue-700 bg-200 text-center text-white  w-[80px] rounded-lg text-base transform transition-transform duration-200 hover:scale-105"
+            onClick={changeQuizState}
+          >
+            <div className='text-xl'>{quiz ? 'Study' : 'Quiz'}</div> 
+        
+          </button>
+        </div>
+       
         {/* Settings Dropdown */}
         <div className="relative" ref={settingsDropdownRef}>
           <button
-            className="border-[1px] border-b-4 text-sm border-gray-300 bg-200 text-center active:bg-gray-300 hover:bg-gray-200  p-1 pl-2 rounded-lg mb-2"
+            className="border-[1px] border-b-4 text-sm border-gray-300 bg-200 text-center active:bg-gray-300 hover:bg-gray-200  p-1 pl-2 rounded-lg"
             onClick={toggleSettingsDropdown}
           >
-            <div className='flex'>
+            <div className='flex items-center'>
               <div>
             Settings 
               </div>
@@ -539,18 +553,6 @@ const VocabContent = (
             </div>
           )}
         </div>
-      </div>
-      <div className='flex justify-center'>
-        <div className='px-2'>
-            Study
-        </div>
-        <CustomSwitch 
-          onChange = {changeQuizState}
-          checked= {quiz} 
-        /> 
-        <div className='px-2'>
-        Quiz
-        </div>               
       </div>
       {ToggleQuiz()}
       {showPopUp && (

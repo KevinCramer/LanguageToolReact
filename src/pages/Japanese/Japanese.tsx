@@ -3,7 +3,7 @@ const Japanese = () => {
     <div className="max-w-screen-md mx-auto px-4 md:text-lg text-center">
       <h4 className="text-center text-2xl py-12"></h4>
       <div className="border border-gray-300 rounded-xl p-2">
-        <div className="text-xl mb-4 font-bold">Study Guide</div>
+        <div className="text-xl mb-4 font-bold"> Japanese Study Guide</div>
         <div className="mb-4">
           Take the guesswork out of learning Japanese with our expertly-crafted study guide. 
           Perfect for beginners and advanced learners alike!
