@@ -1,11 +1,11 @@
 import { useDispatch } from 'react-redux';
-import { resetPermission } from '../../redux-store/lock';
 import CustomLink from './CustomLink';
-import { displayLogin } from '../../redux-store/auth';
 import CloseIcon from './CloseIcon';
+import { useNavigate } from 'react-router-dom';
 
 export default function FreeContent() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
@@ -14,7 +14,7 @@ export default function FreeContent() {
           {/* Close Button Positioning */}
           <div className="flex justify-end pb-2">
             <button
-              onClick={() => dispatch(resetPermission())} // Close the modal without navigating to login page
+              onClick={() => navigate(-1)} //
               aria-label="Close"
               className="text-gray-600 hover:text-gray-800"
             >
@@ -30,8 +30,7 @@ export default function FreeContent() {
             <CustomLink
               inline={true}
               onClick={() => {
-                dispatch(displayLogin()); // Close modal on "log in" click
-                dispatch(resetPermission());
+                navigate('/login');
               }}
             >
               log in

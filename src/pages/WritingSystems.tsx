@@ -9,7 +9,6 @@ import { useEffect, useRef, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { writingSystems as allWritingSystems } from '../data/structured-data/writingSystems';
 import CustomSwitch from '../components/atoms/CustomSwitch';
-import { denyPermission } from '../redux-store/lock';
 import { languageToSlugs, lingoCommandIsLocked } from '../constants'
 import LockIcon from '@mui/icons-material/Lock';
 import { nullOrUndefined } from '../helpers/audio-player-helpers'
@@ -17,9 +16,10 @@ import QuizElement from '../components/atoms/QuizElement';
 import { scramble, scrambleWithoutMutate } from '../helpers/vocab-content-helpers';
 import StudyElement from '../components/molecules/StudyElement';
 import { useAuth } from '../contexts/AuthContext'
-import { useDispatch } from 'react-redux';
 import { sortTopics } from '../helpers/words-data-helper';
 import DownChevronIcon from '../components/atoms/DownChevronIcon';
+import { useDispatch } from 'react-redux';
+import { setBackwardRoute, setForwardRoute } from '../redux-store/route';
 
 const WritingSystems = (
   props: {
@@ -28,6 +28,8 @@ const WritingSystems = (
       
   //@ts-ignore
   const { currentUser } = useAuth();
+  const dispatch = useDispatch();
+  const location = useLocation();
   
   const userIsLoggedIn = currentUser && currentUser.email
 
@@ -35,7 +37,6 @@ const WritingSystems = (
     ...writingSystem, // Spread the existing language properties
     topics: sortTopics(writingSystem.topics, userIsLoggedIn), // Replace topics with sorted ones
   }));
-  const dispatch = useDispatch();
 
   const navigate = useNavigate();
 
@@ -117,7 +118,10 @@ const WritingSystems = (
 
   const changeCurrentTopic = (topic: Topic) => {
     if(topic.isLocked && lingoCommandIsLocked && !userIsLoggedIn ){
-      dispatch(denyPermission());
+      dispatch(setBackwardRoute(location.pathname + location.search));
+      dispatch(setForwardRoute((location.pathname + location.search)
+        .replace(/(?<=\?s=)[^=-]+(?=-)/, topic.slugName)));
+      navigate('/free-content')
     }
     else {
       setCurrentTopic(topic);

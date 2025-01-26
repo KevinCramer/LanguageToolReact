@@ -4,13 +4,13 @@ import { useEffect, useRef, useState } from 'react';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { languages as allLanguages } from '../data/structured-data/readingListening';
 import CustomSwitch from '../components/atoms/CustomSwitch';
-import { denyPermission } from '../redux-store/lock';
 import { lingoCommandIsLocked } from '../constants';
 import LockIcon from '@mui/icons-material/Lock';
 import RenderTableCell from '../components/molecules/RenderTableCell';
 import { useAuth } from '../contexts/AuthContext';
-import { useDispatch } from 'react-redux';
 import DownChevronIcon from '../components/atoms/DownChevronIcon';
+import { setBackwardRoute, setForwardRoute } from '../redux-store/route';
+import { useDispatch } from 'react-redux';
 
 const useWindowWidth = () => {
   const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
@@ -34,7 +34,6 @@ const useWindowWidth = () => {
 };
 
 const ReadingListeningContent = (props: { languageNumber: number; howToGuideVideo?: any }) => {
-  const dispatch = useDispatch();
 
   //@ts-ignore
   const { currentUser } = useAuth();
@@ -43,6 +42,7 @@ const ReadingListeningContent = (props: { languageNumber: number; howToGuideVide
   const navigate = useNavigate();
   const { topicSlug } = useParams();
   const location = useLocation();
+  const dispatch = useDispatch();
 
   const currentLanguage: ReadingListeningLanguage = allLanguages[props.languageNumber];
 
@@ -63,7 +63,10 @@ const ReadingListeningContent = (props: { languageNumber: number; howToGuideVide
 
   const changeTranscription = (topic: AudioTranscription) => {
     if(topic.isLocked && lingoCommandIsLocked && !userIsLoggedIn ){
-      dispatch(denyPermission());
+      dispatch(setBackwardRoute(location.pathname + location.search));
+      dispatch(setForwardRoute((location.pathname + location.search)
+        .replace(/(?<=\?s=)[^=-]+(?=-)/, topic.slugName)));
+      navigate('/free-content')
     }
     else{
       navigate(`/${currentLanguage.languageName

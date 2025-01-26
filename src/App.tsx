@@ -1,8 +1,5 @@
 import './index.css';
-import { authModalStates, hideModal, RootStateAuth } from './redux-store/auth'
-import { resetPermission, RootStateLock } from './redux-store/lock'
-import { Route, Routes, useLocation } from 'react-router-dom'
-import { useDispatch, useSelector } from 'react-redux';
+import { Route, Routes, useLocation, useNavigate } from 'react-router-dom'
 import Account from './pages/Account'
 import ContactUs from './pages/ContactUs'
 import About from './pages/About'
@@ -24,8 +21,6 @@ import Login from './components/molecules/Login'
 import Navbar from './components/atoms/Navbar'
 import Signup from './components/molecules/Signup'
 import UpdateAccount from './components/atoms/UpdateAccount'
-import { useAuth } from './contexts/AuthContext'
-import { useEffect } from 'react'
 import VocabContent from './pages/VocabContent'
 import WritingSystems from './pages/WritingSystems'
 import japaneseComprehensionVideo from './data/raw-data/tutorial-videos/japanese-comprehension-tutorial.mp4'
@@ -39,22 +34,11 @@ const App = ()=> {
   // will log out user iff there is no lingocommand tab 
   // where the user was active in the last 30 minutes
   // useInactivityTimer(30 * msInMinute, 30 * msInMinute);
-  const dispatch = useDispatch(); 
 
-  const reduxAuth = useSelector((state: RootStateAuth) => state.auth);
-  const reduxLock = useSelector((state: RootStateLock) => state.lock);
   // @ts-ignore
-  const { currentUser } = useAuth();
   const pathWithBackground = location.pathname === '/' 
   || location.pathname === '/contact' 
   || location.pathname === '/account'
-  
-  const userIsLoggedIn = currentUser && currentUser.email
-  useEffect(() => {
-    if (currentUser && currentUser.email) {
-      dispatch(hideModal());
-    }
-  }, [currentUser && currentUser.email]);
 
   return (
     <>
@@ -70,6 +54,12 @@ const App = ()=> {
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/account" element={<Account />} />
           <Route path="/about" element={<About />} />
+          <Route path="/login" element={<Login/>} />
+          <Route path="/signup" element={<Signup/>} />
+          <Route path="/forgot-password" element={<ForgotPassword/>} />
+          <Route path="/update-account" element={<UpdateAccount/>} />
+          <Route path="/delete-account" element={<DeleteAccount/>} />
+          <Route path="/free-content" element={<FreeContent/>} />
           <Route path="/japanese/home-page" element={<Japanese/>} />
           <Route path="/japanese/vocabulary" 
             element={<VocabContent howToGuideVideo={japaneseVocabGuideVideo} />} />
@@ -98,6 +88,12 @@ const App = ()=> {
             <Route path="/contact" element={<ContactUs />} />
             <Route path="/account" element={<Account />} />
             <Route path="/about" element={<About />} />
+            <Route path="/login" element={<Login/>} />
+            <Route path="/signup" element={<Signup/>} />
+            <Route path="/forgot-password" element={<ForgotPassword/>} />
+            <Route path="/update-account" element={<UpdateAccount/>} />
+            <Route path="/delete-account" element={<DeleteAccount/>} />
+            <Route path="/free-content" element={<FreeContent/>} />
             <Route path="/japanese/home-page" element={<Japanese/>} />
             <Route path="/japanese/vocabulary" 
               element={<VocabContent howToGuideVideo={japaneseVocabGuideVideo} />} />
@@ -113,47 +109,7 @@ const App = ()=> {
             <Route path="/*" element={<Custom404Error/>} />
           </Routes>
         </div>
-       
       </div>}
-      {reduxAuth.modalToShow !== authModalStates.none && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-gray-800 bg-opacity-50">
-          <div className="bg-white rounded-lg shadow-lg max-w-md w-full">
-            <div className="flex justify-end p-4">
-              <button
-                className="text-gray-500 hover:text-gray-800 focus:outline-none"
-                onClick={() => dispatch(hideModal())}
-              >
-          &times;
-              </button>
-            </div>
-            <div className="p-6">
-              {reduxAuth.modalToShow === authModalStates.signup && <Signup />}
-              {reduxAuth.modalToShow === authModalStates.login && <Login />}
-              {reduxAuth.modalToShow === authModalStates.forgotPassword && <ForgotPassword />}
-              {reduxAuth.modalToShow === authModalStates.updateAccount && <UpdateAccount />}
-              {reduxAuth.modalToShow === authModalStates.deleteAccount && <DeleteAccount />}
-            </div>
-          </div>
-        </div>
-      )}
-
-      {reduxLock.permissionDenied && !userIsLoggedIn && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-gray-800 bg-opacity-50">
-          <div className="bg-white rounded-lg shadow-lg max-w-md w-full">
-            <div className="flex justify-end p-4">
-              <button
-                className="text-gray-500 hover:text-gray-800 focus:outline-none"
-                onClick={() => dispatch(resetPermission())}
-              >
-          &times;
-              </button>
-            </div>
-            <div className="p-6">
-              <FreeContent/>
-            </div>
-          </div>
-        </div>
-      )}
     </>
   );
 }

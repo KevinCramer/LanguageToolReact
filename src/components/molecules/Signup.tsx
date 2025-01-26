@@ -1,12 +1,16 @@
-import { displayLogin, hideModal } from '../../redux-store/auth';
 import { useRef, useState } from 'react';
 import CustomLink from '../atoms/CustomLink';
 import { useAuth } from '../../contexts/AuthContext';
-import { useDispatch } from 'react-redux';
 import CloseIcon from '../atoms/CloseIcon';
+import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { RootStateRoute } from '../../redux-store/route';
 
 export default function Signup() {
-  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const forwardRoute = useSelector((state: RootStateRoute) => state.route.forwardRoute);
+  const backwardRoute = useSelector((state: RootStateRoute) => state.route.backwardRoute);
   const emailRef = useRef<HTMLInputElement>(null);
   const passwordRef = useRef<HTMLInputElement>(null);
   const passwordConfirmRef = useRef<HTMLInputElement>(null);
@@ -27,7 +31,7 @@ export default function Signup() {
       setLoading(true);
       // @ts-ignore
       await signup(emailRef.current.value, passwordRef.current.value);
-      dispatch(hideModal());
+      navigate(forwardRoute || '/');
     } catch (error) {
       setError(`Failed to create an account. The error is: ${error}`);
     }
@@ -41,7 +45,7 @@ export default function Signup() {
         <div className="max-w-screen-md mx-auto px-4 md:text-lg">
           <div className="flex justify-end pb-2">
             <button
-              onClick={() => dispatch(hideModal())}
+              onClick={() => navigate(backwardRoute || '/')}
               aria-label="Close"
             >
               <CloseIcon/>
@@ -103,7 +107,7 @@ export default function Signup() {
           </form>
           <div className="mt-4 flex flex-row justify-center">
             <div>Already have an account?&nbsp;</div>
-            <CustomLink onClick={() => dispatch(displayLogin())}>
+            <CustomLink onClick={() => navigate('/login')}>
               Log In
             </CustomLink>
           </div>

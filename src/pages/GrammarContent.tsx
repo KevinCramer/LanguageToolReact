@@ -1,21 +1,22 @@
 import { GrammarLanguage, Topic } from '../../types/learningSections/GrammarTypes';
 import { useEffect, useRef, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { languages } from '../data/structured-data/grammar';
 import { lingoCommandIsLocked } from '../constants';
 import LockIcon from '@mui/icons-material/Lock';
 import { useAuth } from '../contexts/AuthContext';
-import { useDispatch } from 'react-redux';
-import { denyPermission } from '../redux-store/lock';
 import DownChevronIcon from '../components/atoms/DownChevronIcon';
+import { setBackwardRoute, setForwardRoute } from '../redux-store/route';
+import { useDispatch } from 'react-redux';
 
 const GrammarContent = (props: { languageNumber: number }) => {
   const navigate = useNavigate();
   const { topicSlug } = useParams(); // Extract the topicSlug from the URL
-  const dispatch = useDispatch();
 
   //@ts-ignore
   const { currentUser } = useAuth();
+  const dispatch = useDispatch();
+  const location = useLocation();
   
   const userIsLoggedIn = currentUser && currentUser.email;
 
@@ -26,8 +27,11 @@ const GrammarContent = (props: { languageNumber: number }) => {
   var [currentTopic, setCurrentTopic] = useState(currentTopic);
 
   const changeCurrentTopic = (topic: Topic) => {
-    if (topic.isLocked && lingoCommandIsLocked && !userIsLoggedIn) {
-      dispatch(denyPermission());
+    if(topic.isLocked && lingoCommandIsLocked && !userIsLoggedIn ){
+      dispatch(setBackwardRoute(location.pathname + location.search));
+      dispatch(setForwardRoute((location.pathname + location.search)
+        .replace(/(?<=\?s=)[^=-]+(?=-)/, topic.slugName)));
+      navigate('/free-content')
     } else {
       navigate(`/${currentLanguage.languageName.toLowerCase()}/grammar/${topic.slugName}`, { replace: true });
       setCurrentTopic(topic);

@@ -1,4 +1,3 @@
-import { hideModal } from '../../redux-store/auth';
 import { useAuth } from '../../contexts/AuthContext';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -24,7 +23,7 @@ export default function DeleteAccount() {
 
     Promise.all(promises)
       .then(() => {
-        dispatch(hideModal());
+        //dispatch(hideModal());
         navigate('/');
       })
       .catch((error) => {
@@ -41,7 +40,7 @@ export default function DeleteAccount() {
         <div className="max-w-screen-md mx-auto px-4 md:text-lg">
           <div className="flex justify-end pb-2">
             <button
-              onClick={() => dispatch(hideModal())}
+              onClick={() => {}}
               aria-label="Close"
             >
               <CloseIcon/>
