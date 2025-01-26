@@ -2,7 +2,8 @@ const Japanese = () => {
   return (
     <div className="max-w-screen-md mx-auto px-4 md:text-lg text-center">
       <h4 className="text-center text-2xl py-12"></h4>
-      <div className="border border-gray-300 rounded-xl p-2">
+      <div className="border border-gray-300 rounded-xl m-2 px-4 py-4 w-full transform transition-transform duration-200 hover:scale-105 hover:cursor-pointer"
+        onClick={() => window.location.href = 'study-guide'}>
         <div className="text-xl mb-4 font-bold"> Japanese Study Guide</div>
         <div className="mb-4">
           Take the guesswork out of learning Japanese with our expertly-crafted study guide. 
@@ -19,7 +20,8 @@ const Japanese = () => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 justify-items-center mt-8">
-        <div className="border border-gray-300 rounded-xl m-2 px-4 py-4 w-full transform transition-transform duration-200 hover:scale-105 md:text-left">
+        <div className="border border-gray-300 rounded-xl m-2 px-4 py-4 w-full transform transition-transform duration-200 hover:scale-105 md:text-left hover:cursor-pointer"
+          onClick={() => window.location.href = 'writing-systems-explained'}>
           <div className="text-xl mb-4 text-blue-500 underline">
             <a href='writing-systems-explained'>
             Writing Systems
@@ -29,7 +31,8 @@ const Japanese = () => {
             Master Hiragana, Katakana, and Kanji with simple lessons and exercises.
           </div>
         </div>
-        <div className="border border-gray-300 rounded-xl m-2 px-4 py-4 w-full transform transition-transform duration-200 hover:scale-105 md:text-left">
+        <div className="border border-gray-300 rounded-xl m-2 px-4 py-4 w-full transform transition-transform duration-200 hover:scale-105 md:text-left hover:cursor-pointer"
+          onClick={() => window.location.href = 'vocabulary'}>
           <div className="text-xl mb-4 text-blue-500 underline">
             <a href='vocabulary'>
             Vocabulary
@@ -39,9 +42,10 @@ const Japanese = () => {
             Learn essential words and phrases for everyday conversations.
           </div>
         </div>
-        <div className="border border-gray-300 rounded-xl m-2 px-4 py-4 w-full transform transition-transform duration-200 hover:scale-105 md:text-left">
+        <div className="border border-gray-300 rounded-xl m-2 px-4 py-4 w-full transform transition-transform duration-200 hover:scale-105 md:text-left hover:cursor-pointer"
+          onClick={() => window.location.href = 'grammar/keigo'}>
           <div className="text-xl mb-4 text-blue-500 underline">
-            <a href='grammar'>
+            <a href='grammar/keigo'>
             Grammar
             </a>
           </div>
@@ -49,8 +53,10 @@ const Japanese = () => {
             Understand sentence structure and build natural Japanese sentences. 
           </div>
         </div>
-        <div className="border border-gray-300 rounded-xl m-2 px-4 py-4 w-full transform transition-transform duration-200 hover:scale-105 md:text-left">
-          <div className="text-xl mb-4 text-blue-500 underline">
+        <div className="border border-gray-300 rounded-xl m-2 px-4 py-4 w-full transform transition-transform duration-200 hover:scale-105 md:text-left hover:cursor-pointer"
+          onClick={() => window.location.href = 'reading-listening/aikos-book-sanctuary?L=WritingSystem3&R=English&gran=paragraph'}>
+          <div className="text-xl mb-4 text-blue-500 underline"
+          >
             <a href='reading-listening/aikos-book-sanctuary?L=WritingSystem3&R=English&gran=paragraph'>
             Reading & Listening
             </a>
