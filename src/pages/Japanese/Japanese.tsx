@@ -1,8 +1,8 @@
 const Japanese = () => {
   return (
-    <div className="max-w-screen-md mx-auto px-4 md:text-lg text-center">
+    <div className="max-w-screen-md mx-auto px- md:text-lg text-center">
       <h4 className="text-center text-2xl py-12"></h4>
-      <div className="border border-gray-300 rounded-xl m-2 px-4 py-4 w-full transform transition-transform duration-200 hover:scale-105 hover:cursor-pointer"
+      <div className="border border-gray-300 rounded-xl px-4 py-4 w-full transform transition-transform duration-200 hover:scale-105 hover:cursor-pointer"
         onClick={() => window.location.href = 'study-guide'}>
         <div className="text-xl mb-4 font-bold"> Japanese Study Guide</div>
         <div className="mb-4">
@@ -19,7 +19,7 @@ const Japanese = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 justify-items-center mt-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 justify-items-center mt-8">
         <div className="border border-gray-300 rounded-xl m-2 px-4 py-4 w-full transform transition-transform duration-200 hover:scale-105 md:text-left hover:cursor-pointer"
           onClick={() => window.location.href = 'writing-systems-explained'}>
           <div className="text-xl mb-4 text-blue-500 underline">
