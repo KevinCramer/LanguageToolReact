@@ -426,10 +426,18 @@ const VocabContent = (
         </div>
         <div className='flex justify-center'>
           <button
-            className="border-[1px] border-b-4 bg-blue-500 border-blue-700 bg-200 text-center text-white  w-[80px] rounded-lg text-base transform transition-transform duration-200 hover:scale-105"
+            className=" flex items-center border-[1px] border-b-4 border-blue-500 text-blue-500 w-[80px] rounded-lg text-base transform transition-transform duration-200 hover:scale-105"
             onClick={changeQuizState}
           >
-            <div className='text-xl'>{quiz ? 'Study' : 'Quiz'}</div> 
+            <div className='text-xl ml-2'>Quiz</div> 
+            <input
+              className="ml-2 w-4 h-4"
+              type="checkbox"
+              name="example"
+              value="option1"
+              onChange={changeQuizState}
+              checked={quiz}
+            />
         
           </button>
         </div>
