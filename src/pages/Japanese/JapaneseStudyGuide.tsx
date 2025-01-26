@@ -124,7 +124,7 @@ const JapaneseStudyGuide = () => {
         Practice vocabulary exercises on various topics. Dedicate 15 minutes to studying vocabulary for each topic,
          followed by a quiz. Aim to repeat the quiz until you can consistently score at least 90%. Begin your vocabulary practice here:
         <ul className=' flex flex-col max-w-[400px]'>
-          <a className='text-blue-500 underline' href='/japanese/vocabulary'>
+          <a className='text-blue-500 underline' href='/japanese/vocabulary-guide'>
           Vocabulary Exercises
           </a>
         </ul>

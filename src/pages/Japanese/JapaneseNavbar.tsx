@@ -71,7 +71,9 @@ const JapaneseNavbar = () => {
             <li>
               <NavLink 
                 to='/japanese/vocabulary-guide' 
-                className={({ isActive }) => isActive ? 'block px-4  underline' : 'block px-4 '}
+                className={({ isActive }) => isActive 
+                || location.pathname.includes('vocabulary') 
+                  ? 'block px-4  underline' : 'block px-4 '}
               >
                 Vocabulary
               </NavLink>
