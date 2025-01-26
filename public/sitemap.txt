@@ -3,8 +3,7 @@ https://www.lingocommand.com/contact
 https://www.lingocommand.com/about
 https://www.lingocommand.com/login
 https://www.lingocommand.com/signup
-https://www.lingocommand.com/forgot-password
-https://www.lingocommand.com/update-account
+https://www.lingocommand.com/reset-password
 https://www.lingocommand.com/delete-account
 https://www.lingocommand.com/free-content
 https://www.lingocommand.com/japanese/home-page

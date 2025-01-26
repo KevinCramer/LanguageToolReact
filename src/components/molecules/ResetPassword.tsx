@@ -1,10 +1,11 @@
 import { useRef, useState } from 'react';
-import CustomLink from '../atoms/CustomLink';
 import { useAuth } from '../../contexts/AuthContext';
 import CloseIcon from '../atoms/CloseIcon';
 import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { RootStateRoute } from '../../redux-store/route';
 
-export default function ForgotPassword() {
+export default function ResetPassWord() {
   const navigate = useNavigate();
   const emailRef = useRef<HTMLInputElement>(null);
   // @ts-ignore
@@ -12,6 +13,8 @@ export default function ForgotPassword() {
   const [error, setError] = useState('');
   const [message, setMessage] = useState('');
   const [loading, setLoading] = useState(false);
+
+  const backwardRoute = useSelector((state: RootStateRoute) => state.route.backwardRoute);
 
   async function handleSubmit(e: any) {
     e.preventDefault();
@@ -35,8 +38,7 @@ export default function ForgotPassword() {
         <div className="max-w-screen-md mx-auto px-4 md:text-lg">
           <div className="flex justify-end pb-2">
             <button
-              onClick={() => navigate('/login')
-              }
+              onClick={() => navigate(backwardRoute || '/')}
               aria-label="Close"
             >
               <CloseIcon/>
@@ -71,20 +73,9 @@ export default function ForgotPassword() {
               disabled={loading}
               className="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 disabled:opacity-50"
             >
-              Reset Password
+              Send email to reset password
             </button>
           </form>
-          <div className="mt-4 text-center">
-            <CustomLink onClick={() => navigate('/login')}>
-              Log In
-            </CustomLink>
-          </div>
-          <div className="mt-4 flex flex-row justify-center">
-            <div>Need an account?&nbsp;</div>
-            <CustomLink onClick={() => navigate('/signup')}>
-              Sign Up
-            </CustomLink>
-          </div>
         </div>
       </div>
     </div>

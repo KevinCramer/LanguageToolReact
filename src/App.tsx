@@ -1,11 +1,11 @@
 import './index.css';
-import { Route, Routes, useLocation, useNavigate } from 'react-router-dom'
+import { Route, Routes, useLocation } from 'react-router-dom'
 import Account from './pages/Account'
 import ContactUs from './pages/ContactUs'
 import About from './pages/About'
 import Custom404Error from './pages/Custom404Error'
 import DeleteAccount from './components/atoms/DeleteAccount'
-import ForgotPassword from './components/molecules/ForgotPassword'
+import ResetPassword from './components/molecules/ResetPassword'
 import FreeContent from './components/atoms/FreeContent';
 import GrammarContent from './pages/GrammarContent'
 import Home from './pages/Home'
@@ -20,7 +20,6 @@ import ReadingListening from './pages/ReadingListening'
 import Login from './components/molecules/Login'
 import Navbar from './components/atoms/Navbar'
 import Signup from './components/molecules/Signup'
-import UpdateAccount from './components/atoms/UpdateAccount'
 import VocabContent from './pages/VocabContent'
 import WritingSystems from './pages/WritingSystems'
 import japaneseComprehensionVideo from './data/raw-data/tutorial-videos/japanese-comprehension-tutorial.mp4'
@@ -56,8 +55,7 @@ const App = ()=> {
           <Route path="/about" element={<About />} />
           <Route path="/login" element={<Login/>} />
           <Route path="/signup" element={<Signup/>} />
-          <Route path="/forgot-password" element={<ForgotPassword/>} />
-          <Route path="/update-account" element={<UpdateAccount/>} />
+          <Route path="/reset-password" element={<ResetPassword/>} />
           <Route path="/delete-account" element={<DeleteAccount/>} />
           <Route path="/free-content" element={<FreeContent/>} />
           <Route path="/japanese/home-page" element={<Japanese/>} />
@@ -90,8 +88,7 @@ const App = ()=> {
             <Route path="/about" element={<About />} />
             <Route path="/login" element={<Login/>} />
             <Route path="/signup" element={<Signup/>} />
-            <Route path="/forgot-password" element={<ForgotPassword/>} />
-            <Route path="/update-account" element={<UpdateAccount/>} />
+            <Route path="/reset-password" element={<ResetPassword/>} />
             <Route path="/delete-account" element={<DeleteAccount/>} />
             <Route path="/free-content" element={<FreeContent/>} />
             <Route path="/japanese/home-page" element={<Japanese/>} />

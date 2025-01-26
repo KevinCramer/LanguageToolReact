@@ -1,16 +1,18 @@
 import { useAuth } from '../../contexts/AuthContext';
-import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import CloseIcon from './CloseIcon';
+import { RootStateRoute } from '../../redux-store/route';
 
 export default function DeleteAccount() {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
   // @ts-ignore
   const { deleteUser } = useAuth();
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+
+  const backwardRoute = useSelector((state: RootStateRoute) => state.route.backwardRoute);
 
   function handleSubmit(e: any) {
     e.preventDefault();
@@ -40,7 +42,7 @@ export default function DeleteAccount() {
         <div className="max-w-screen-md mx-auto px-4 md:text-lg">
           <div className="flex justify-end pb-2">
             <button
-              onClick={() => {}}
+              onClick={() => navigate(backwardRoute || '/')}
               aria-label="Close"
             >
               <CloseIcon/>
