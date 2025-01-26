@@ -358,14 +358,6 @@ const WritingSystems = (
   return (
     <div className='flex flex-col items-center text-lg md:text-xl'>
       <div className='flex mt-12 mb-12 items-center'>
-        {/* <h4 className='text-center text-2xl flex'>
-          Japanese Writing Systems  -&nbsp;
-          <div className='text-blue-500 text-xl'> &nbsp; </div>
-          <button onClick={displayPopUp} className='text-blue-500 underline text-xl'>
-            Video Guide
-          </button>
-          <div className='text-blue-500 text-xl'></div> 
-        </h4> */}
         <h4 className="flex flex-row justify-center text-center text-2xl py-12">
           <div>
           Japanese Writing Systems -&nbsp;
@@ -422,23 +414,21 @@ const WritingSystems = (
         </div>
         <div className='flex justify-center'>
           <button
-            className=" flex items-center border-[1px] border-b-4 border-blue-500 text-blue-500 w-[80px] rounded-lg text-base"
+            className=" flex items-center border-[1px] border-b-4 bg-blue-500 border-blue-700 text-blue-500 w-[80px] rounded-lg text-base"
             onClick={changeQuizState}
           >
-            <div className='text-xl ml-2'>Quiz</div> 
+            <div className='text-xl text-white ml-2'>Quiz</div> 
             <div style={{ display: 'inline-block', borderRadius: '4px' }}
               className='ml-1.5'>
               {quiz ? <BsCheck size={16}
-                className='text-white bg-blue-500'
+                className='text-white bg-blue-500 border border-white rounded'
                 style={{ strokeWidth: '1' }}
                 onChange={changeQuizState}
               /> : <BsSquare size={16}
-                className='text-blue-500 '
+                className='text-blue-500 border border-white rounded '
                 onChange={changeQuizState}
               />}
-                     
             </div>
-                
           </button>
         </div>
         {/* Settings Dropdown */}

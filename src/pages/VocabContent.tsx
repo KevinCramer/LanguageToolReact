@@ -429,23 +429,21 @@ const VocabContent = (
         </div>
         <div className='flex justify-center'>
           <button
-            className=" flex items-center border-[1px] border-b-4 border-blue-500 text-blue-500 w-[80px] rounded-lg text-base"
+            className=" flex items-center border-[1px] border-b-4 bg-blue-500 border-blue-700 text-blue-500 w-[80px] rounded-lg text-base"
             onClick={changeQuizState}
           >
-            <div className='text-xl ml-2'>Quiz</div> 
+            <div className='text-xl text-white ml-2'>Quiz</div> 
             <div style={{ display: 'inline-block', borderRadius: '4px' }}
               className='ml-1.5'>
               {quiz ? <BsCheck size={16}
-                className='text-white bg-blue-500'
+                className='text-white bg-blue-500 border border-white rounded'
                 style={{ strokeWidth: '1' }}
                 onChange={changeQuizState}
               /> : <BsSquare size={16}
-                className='text-blue-500 '
+                className='text-blue-500 border border-white rounded '
                 onChange={changeQuizState}
               />}
-             
             </div>
-        
           </button>
         </div>
        
