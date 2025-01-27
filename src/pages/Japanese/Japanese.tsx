@@ -32,7 +32,7 @@ const Japanese = () => {
           </div>
         </div>
         <div className="border border-gray-300 rounded-xl m-2 px-4 py-4 w-full transform transition-transform duration-200 hover:scale-105 md:text-left hover:cursor-pointer"
-          onClick={() => window.location.href = 'vocabulary'}>
+          onClick={() => window.location.href = 'vocabulary-guide'}>
           <div className="text-xl mb-4 text-blue-500 underline">
             <a href='vocabulary'>
             Vocabulary
