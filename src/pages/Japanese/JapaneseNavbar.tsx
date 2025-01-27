@@ -30,7 +30,6 @@ const JapaneseNavbar = () => {
   // Now you can use width to check screen size in your component
   const isMobile = width < 768; 
   const navbarFontStretch = isMobile ? fontStretch : '100%'
-  console.log('location.pathname:', location.pathname);
   return (
     <>
       <nav className='p-4'>
@@ -94,6 +93,17 @@ const JapaneseNavbar = () => {
                 Reading/Listening
               </NavLink>
             </li>
+            {isMobile &&
+              <li>
+                <NavLink 
+                  to='/contact' 
+                  className={({ isActive }) => isActive ? 'block px-4  underline' : 'block px-4 '}
+                >
+                 Contact
+                </NavLink>
+              </li>
+            }
+           
           </ul>
         </div>
       </nav>

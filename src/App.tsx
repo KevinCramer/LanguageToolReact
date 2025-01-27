@@ -28,6 +28,7 @@ import japaneseVocabGuideVideo from './data/raw-data/tutorial-videos/japanese-vo
 import fujiImage from '/src/assets/mount-fuji.jpg';
 import JapaneseNavbar from './pages/Japanese/JapaneseNavbar';
 import VocabularyGuide from './pages/Japanese/VocabularyGuide';
+import { useEffect, useState } from 'react';
 
 const App = ()=> {
   const location = useLocation();
@@ -35,10 +36,33 @@ const App = ()=> {
   // where the user was active in the last 30 minutes
   // useInactivityTimer(30 * msInMinute, 30 * msInMinute);
 
-  // @ts-ignore
+  const useWindowWidth = () => {
+    const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
+  
+    useEffect(() => {
+      // Update the windowWidth state when the window is resized
+      const handleResize = () => {
+        setWindowWidth(window.innerWidth);
+      };
+    
+      // Add event listener to handle window resizing
+      window.addEventListener('resize', handleResize);
+    
+      // Cleanup event listener when the component unmounts
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }, []);
+    
+    return windowWidth;
+  };
+
+  const width = useWindowWidth(); // Get the current window width
+  const isMobile = width < 768; 
+
   const pathWithBackground = location.pathname === '/' 
-  || location.pathname === '/contact' 
   || location.pathname === '/account'
+  || (isMobile ? false : location.pathname === '/contact');
 
   return (
     <>
@@ -81,7 +105,7 @@ const App = ()=> {
         className="bg-cover bg-center w-full h-screen text-lg"
       >
         <Navbar/>
-        {location.pathname.includes('japanese') && <JapaneseNavbar/>}
+        {(location.pathname.includes('japanese') || (isMobile ? location.pathname.includes('contact') : false)) && <JapaneseNavbar/>}
         <div className='pb-20'>
           <Routes>
             <Route path="/" element={<Home/>} />

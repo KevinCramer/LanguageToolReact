@@ -16,14 +16,6 @@ const Navbar = () => {
   // @ts-ignore
   const { currentUser, logout } = useAuth();
 
-  const pathWithBackground =
-    location.pathname === '/' ||
-    location.pathname === '/contact' ||
-    location.pathname === '/account';
-
-  // Define dynamic text color class
-  const backgroundColorClass = pathWithBackground ? '' : 'bg-gray-800';
-
   const [isOpen, setIsOpen] = useState(false);
 
   // Correct the type of dropdownRef to be a reference to a HTMLDivElement
@@ -74,6 +66,14 @@ const Navbar = () => {
 
   // Now you can use width to check screen size in your component
   const isMobile = width < 768; 
+
+  const pathWithBackground = location.pathname === '/' 
+  || location.pathname === '/account'
+  || (isMobile ? false : location.pathname === '/contact');
+
+  // Define dynamic text color class
+  const backgroundColorClass = pathWithBackground ? '' : 'bg-gray-800';
+
   const navbarFontStretch = isMobile ? fontStretch : '100%'
   return (
     <>
