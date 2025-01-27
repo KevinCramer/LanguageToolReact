@@ -100,48 +100,48 @@ const HiraganaExplained = () => {
       <table className="table-auto border-collapse border border-gray-500">
         <thead>
           <tr>
-            <th className="border border-gray-500 px-4 py-2 bg-gray-200">K → G</th>
-            <th className="border border-gray-500 px-4 py-2 bg-gray-200">S → Z</th>
-            <th className="border border-gray-500 px-4 py-2 bg-gray-200">T → D</th>
-            <th className="border border-gray-500 px-4 py-2 bg-gray-200">H → B</th>
-            <th className="border border-gray-500 px-4 py-2 bg-gray-200">H → P</th>
+            <th className="border border-gray-500 md:px-4 py-2 bg-gray-200">K → G</th>
+            <th className="border border-gray-500 md:px-4 py-2 bg-gray-200">S → Z</th>
+            <th className="border border-gray-500 md:px-4 py-2 bg-gray-200">T → D</th>
+            <th className="border border-gray-500 md:px-4 py-2 bg-gray-200">H → B</th>
+            <th className="border border-gray-500 md:px-4 py-2 bg-gray-200">H → P</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td className="border border-gray-500 px-4 py-2">か (ka) → が (ga)</td>
-            <td className="border border-gray-500 px-4 py-2">さ (sa) → ざ (za)</td>
-            <td className="border border-gray-500 px-4 py-2">た (ta) → だ (da)</td>
-            <td className="border border-gray-500 px-4 py-2">は (ha) → ば (ba)</td>
-            <td className="border border-gray-500 px-4 py-2">は (ha) → ぱ (pa)</td>
+            <td className="border border-gray-500 px-2 py-2 md:py-6 text-center">か (ka) → が (ga)</td>
+            <td className="border border-gray-500 px-2 py-2 md:py-6 text-center">さ (sa) → ざ (za)</td>
+            <td className="border border-gray-500 px-2 py-2 md:py-6 text-center">た (ta) → だ (da)</td>
+            <td className="border border-gray-500 px-2 py-2 md:py-6 text-center">は (ha) → ば (ba)</td>
+            <td className="border border-gray-500 px-2 py-2 md:py-6 text-center">は (ha) → ぱ (pa)</td>
           </tr>
           <tr>
-            <td className="border border-gray-500 px-4 py-2">き (ki) → ぎ (gi)</td>
-            <td className="border border-gray-500 px-4 py-2">し (shi) → じ (ji)</td>
-            <td className="border border-gray-500 px-4 py-2">ち (chi) → <b>ぢ (di)¹</b></td>
-            <td className="border border-gray-500 px-4 py-2">ひ (hi) → び (bi)</td>
-            <td className="border border-gray-500 px-4 py-2">ひ (hi) → ぴ (pi)</td>
+            <td className="border border-gray-500 px-2 py-2 md:py-6 text-center">き (ki) → ぎ (gi)</td>
+            <td className="border border-gray-500 px-2 py-2 md:py-6 text-center">し (shi) → じ (ji)</td>
+            <td className="border border-gray-500 px-2 py-2 md:py-6 text-center">ち (chi) → <b>ぢ (di)¹</b></td>
+            <td className="border border-gray-500 px-2 py-2 md:py-6 text-center">ひ (hi) → び (bi)</td>
+            <td className="border border-gray-500 px-2 py-2 md:py-6 text-center">ひ (hi) → ぴ (pi)</td>
           </tr>
           <tr>
-            <td className="border border-gray-500 px-4 py-2">く (ku) → ぐ (gu)</td>
-            <td className="border border-gray-500 px-4 py-2">す (su) → ず (zu)</td>
-            <td className="border border-gray-500 px-4 py-2">つ (tsu) → <b>づ (du)²</b></td>
-            <td className="border border-gray-500 px-4 py-2">ふ (fu) → ぶ (bu)</td>
-            <td className="border border-gray-500 px-4 py-2">ふ (fu) → ぷ (pu)</td>
+            <td className="border border-gray-500 px-2 py-2 md:py-6 text-center">く (ku) → ぐ (gu)</td>
+            <td className="border border-gray-500 px-2 py-2 md:py-6 text-center">す (su) → ず (zu)</td>
+            <td className="border border-gray-500 px-2 py-2 md:py-6 text-center">つ (tsu) → <b>づ (du)²</b></td>
+            <td className="border border-gray-500 px-2 py-2 md:py-6 text-center">ふ (fu) → ぶ (bu)</td>
+            <td className="border border-gray-500 px-2 py-2 md:py-6 text-center">ふ (fu) → ぷ (pu)</td>
           </tr>
           <tr>
-            <td className="border border-gray-500 px-4 py-2">け (ke) → げ (ge)</td>
-            <td className="border border-gray-500 px-4 py-2">せ (se) → ぜ (ze)</td>
-            <td className="border border-gray-500 px-4 py-2">て (te) → で (de)</td>
-            <td className="border border-gray-500 px-4 py-2">へ (he) → べ (be)</td>
-            <td className="border border-gray-500 px-4 py-2">へ (he) → ぺ (pe)</td>
+            <td className="border border-gray-500 px-2 py-2 md:py-6 text-center">け (ke) → げ (ge)</td>
+            <td className="border border-gray-500 px-2 py-2 md:py-6 text-center">せ (se) → ぜ (ze)</td>
+            <td className="border border-gray-500 px-2 py-2 md:py-6 text-center">て (te) → で (de)</td>
+            <td className="border border-gray-500 px-2 py-2 md:py-6 text-center">へ (he) → べ (be)</td>
+            <td className="border border-gray-500 px-2 py-2 md:py-6 text-center">へ (he) → ぺ (pe)</td>
           </tr>
           <tr>
-            <td className="border border-gray-500 px-4 py-2">こ (ko) → ご (go)</td>
-            <td className="border border-gray-500 px-4 py-2">そ (so) → ぞ (zo)</td>
-            <td className="border border-gray-500 px-4 py-2">と (to) → ど (do)</td>
-            <td className="border border-gray-500 px-4 py-2">ほ (ho) → ぼ (bo)</td>
-            <td className="border border-gray-500 px-4 py-2">ほ (ho) → ぽ (po)</td>
+            <td className="border border-gray-500 px-2 py-2 md:py-6 text-center">こ (ko) → ご (go)</td>
+            <td className="border border-gray-500 px-2 py-2 md:py-6 text-center">そ (so) → ぞ (zo)</td>
+            <td className="border border-gray-500 px-2 py-2 md:py-6 text-center">と (to) → ど (do)</td>
+            <td className="border border-gray-500 px-2 py-2 md:py-6 text-center">ほ (ho) → ぼ (bo)</td>
+            <td className="border border-gray-500 px-2 py-2 md:py-6 text-center">ほ (ho) → ぽ (po)</td>
           </tr>
         </tbody>
       </table>
@@ -165,7 +165,7 @@ const HiraganaExplained = () => {
       return (
         <td className="border border-gray-500 relative group">
           <div
-            className="border px-4 py-2 cursor-pointer"
+            className="border px-1 md:px-4 py-2 text-center cursor-pointer md:text-lg"
             onClick={() => playAudio(audio)}
           >
             {character}

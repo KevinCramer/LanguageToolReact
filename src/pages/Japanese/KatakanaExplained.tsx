@@ -47,7 +47,7 @@ const KatakanaExplained = () => {
   }, [currentLesson, setSearchParams]);
 
   const basicKatakanaTable = (
-    <div className="flex justify-center">
+    <div className="flex justify-center md:text-lg">
       <table className="table-auto border-collapse border border-gray-500">
         <thead>
           <tr>
@@ -135,7 +135,7 @@ const KatakanaExplained = () => {
   );
   const basicHiraganaToKatakanaTable = (
     <div className="flex justify-center">
-      <table className="table-auto border-collapse border border-gray-500">
+      <table className="table-auto border-collapse border border-gray-500 md:text-lg">
         <thead>
           <tr>
             <th className="border border-gray-500 px-4 py-2 bg-gray-200">Hiragana</th>
@@ -387,7 +387,7 @@ const KatakanaExplained = () => {
 
   const dakutenHiraganaToKatakanaTable = (
     <div className="flex justify-center">
-      <table className="table-auto border-collapse border border-gray-500">
+      <table className="table-auto border-collapse border border-gray-500 md:text-lg">
         <thead>
           <tr>
             <th className="border border-gray-500 px-4 py-2 bg-gray-200">Hiragana</th>
@@ -502,7 +502,7 @@ const KatakanaExplained = () => {
 
   const yoonHiraganaToKatakanaTable = (
     <div className="flex justify-center">
-      <table className="table-auto border-collapse border border-gray-500">
+      <table className="table-auto border-collapse border border-gray-500 md:text-lg">
         <thead>
           <tr>
             <th className="border border-gray-500 px-4 py-2 bg-gray-200">Hiragana</th>

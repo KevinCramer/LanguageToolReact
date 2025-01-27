@@ -91,7 +91,7 @@ const StudyElement = (
   };
 
   return (
-    <div className='flex justify-between items-center'>
+    <div className='flex justify-between items-center text-xl'>
       <div className='flex-grow text-center'>
         {showLeftLabel ? baseLanguageLabel : foreignLanguageLabel}
       </div>
