@@ -8,6 +8,54 @@ import { useAuth } from '../../contexts/AuthContext';
 import { useProtectedLink } from '../../helpers/use-protected-link';
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
+import VolumeUpIcon from '@mui/icons-material/VolumeUp';
+
+import hiraganaAudioA from '../../data/raw-data/audio_vocab/japanese/hiragana/a.mp3'
+import hiraganaAudioI from '../../data/raw-data/audio_vocab/japanese/hiragana/i.mp3'
+import hiraganaAudioU from '../../data/raw-data/audio_vocab/japanese/hiragana/u.mp3'
+import hiraganaAudioE from '../../data/raw-data/audio_vocab/japanese/hiragana/e.mp3'
+import hiraganaAudioO from '../../data/raw-data/audio_vocab/japanese/hiragana/o.mp3'
+import hiraganaAudioKa from '../../data/raw-data/audio_vocab/japanese/hiragana/ka.mp3'
+import hiraganaAudioKi from '../../data/raw-data/audio_vocab/japanese/hiragana/ki.mp3'
+import hiraganaAudioKu from '../../data/raw-data/audio_vocab/japanese/hiragana/ku.mp3'
+import hiraganaAudioKe from '../../data/raw-data/audio_vocab/japanese/hiragana/ke.mp3'
+import hiraganaAudioKo from '../../data/raw-data/audio_vocab/japanese/hiragana/ko.mp3'
+import hiraganaAudioSa from '../../data/raw-data/audio_vocab/japanese/hiragana/sa.mp3'
+import hiraganaAudioShi from '../../data/raw-data/audio_vocab/japanese/hiragana/shi.mp3'
+import hiraganaAudioSu from '../../data/raw-data/audio_vocab/japanese/hiragana/su.mp3'
+import hiraganaAudioSe from '../../data/raw-data/audio_vocab/japanese/hiragana/se.mp3'
+import hiraganaAudioSo from '../../data/raw-data/audio_vocab/japanese/hiragana/so.mp3'
+import hiraganaAudioTa from '../../data/raw-data/audio_vocab/japanese/hiragana/ta.mp3'
+import hiraganaAudioChi from '../../data/raw-data/audio_vocab/japanese/hiragana/chi.mp3'
+import hiraganaAudioTsu from '../../data/raw-data/audio_vocab/japanese/hiragana/tsu.mp3'
+import hiraganaAudioTe from '../../data/raw-data/audio_vocab/japanese/hiragana/te.mp3'
+import hiraganaAudioTo from '../../data/raw-data/audio_vocab/japanese/hiragana/to.mp3'
+import hiraganaAudioNa from '../../data/raw-data/audio_vocab/japanese/hiragana/na.mp3'
+import hiraganaAudioNi from '../../data/raw-data/audio_vocab/japanese/hiragana/ni.mp3'
+import hiraganaAudioNu from '../../data/raw-data/audio_vocab/japanese/hiragana/nu.mp3'
+import hiraganaAudioNe from '../../data/raw-data/audio_vocab/japanese/hiragana/ne.mp3'
+import hiraganaAudioNo from '../../data/raw-data/audio_vocab/japanese/hiragana/no.mp3'
+import hiraganaAudioHa from '../../data/raw-data/audio_vocab/japanese/hiragana/ha.mp3'
+import hiraganaAudioHi from '../../data/raw-data/audio_vocab/japanese/hiragana/hi.mp3'
+import hiraganaAudioFu from '../../data/raw-data/audio_vocab/japanese/hiragana/fu.mp3'
+import hiraganaAudioHe from '../../data/raw-data/audio_vocab/japanese/hiragana/he.mp3'
+import hiraganaAudioHo from '../../data/raw-data/audio_vocab/japanese/hiragana/ho.mp3'
+import hiraganaAudioMa from '../../data/raw-data/audio_vocab/japanese/hiragana/ma.mp3'
+import hiraganaAudioMi from '../../data/raw-data/audio_vocab/japanese/hiragana/mi.mp3'
+import hiraganaAudioMu from '../../data/raw-data/audio_vocab/japanese/hiragana/mu.mp3'
+import hiraganaAudioMe from '../../data/raw-data/audio_vocab/japanese/hiragana/me.mp3'
+import hiraganaAudioMo from '../../data/raw-data/audio_vocab/japanese/hiragana/mo.mp3'
+import hiraganaAudioYa from '../../data/raw-data/audio_vocab/japanese/hiragana/ya.mp3'
+import hiraganaAudioYu from '../../data/raw-data/audio_vocab/japanese/hiragana/yu.mp3'
+import hiraganaAudioYo from '../../data/raw-data/audio_vocab/japanese/hiragana/yo.mp3'
+import hiraganaAudioRa from '../../data/raw-data/audio_vocab/japanese/hiragana/ra.mp3'
+import hiraganaAudioRi from '../../data/raw-data/audio_vocab/japanese/hiragana/ri.mp3'
+import hiraganaAudioRu from '../../data/raw-data/audio_vocab/japanese/hiragana/ru.mp3'
+import hiraganaAudioRe from '../../data/raw-data/audio_vocab/japanese/hiragana/re.mp3'
+import hiraganaAudioRo from '../../data/raw-data/audio_vocab/japanese/hiragana/ro.mp3'
+import hiraganaAudioWa from '../../data/raw-data/audio_vocab/japanese/hiragana/wa.mp3'
+import hiraganaAudioWo from '../../data/raw-data/audio_vocab/japanese/hiragana/wo.mp3'
+import hiraganaAudioN from '../../data/raw-data/audio_vocab/japanese/hiragana/n.mp3'
 
 const lessonTitles = {
   1: 'Basic Katakana',
@@ -46,93 +94,126 @@ const KatakanaExplained = () => {
     setSearchParams({ lesson: currentLesson.toString() });
   }, [currentLesson, setSearchParams]);
 
+  const TableHeader = ({ headers }: any) => (
+    <thead>
+      <tr>
+        {headers.map((header: any) => (
+          <th key={header} className="border border-gray-500 px-4 py-2 bg-gray-200">
+            {header}
+          </th>
+        ))}
+      </tr>
+    </thead>
+  );
+  
+  const playAudio = (audioFile:any) => {
+    const audio = new Audio(audioFile);
+    audio.play();
+  };
+
+  const TableCell = ({ character, audio }: any) => {
+    if(character) {
+      return (
+        <td className="border border-gray-500 relative group">
+          <div
+            className="border px-1 md:px-4 py-2 text-center cursor-pointer md:text-lg"
+            onClick={() => playAudio(audio)}
+          >
+            {character}
+          </div>
+          <span className="absolute right-0 bottom-0 text-sm text-gray-700 opacity-0 group-hover:opacity-100 group-hover:block transition-opacity duration-300">
+            <VolumeUpIcon style={{ fontSize: 16, color: 'black' }} />
+          </span>
+        </td>
+      )
+    }
+    else {
+      return ( <td className="border border-gray-500 px-4 py-2"></td>
+      )
+    }
+   
+  }
+
   const basicKatakanaTable = (
-    <div className="flex justify-center text-base md:text-lg">
+    <div className="flex justify-center">
       <table className="table-auto border-collapse border border-gray-500">
-        <thead>
-          <tr>
-            <th className="border border-gray-500 px-4 py-2 bg-gray-200">A</th>
-            <th className="border border-gray-500 px-4 py-2 bg-gray-200">I</th>
-            <th className="border border-gray-500 px-4 py-2 bg-gray-200">U</th>
-            <th className="border border-gray-500 px-4 py-2 bg-gray-200">E</th>
-            <th className="border border-gray-500 px-4 py-2 bg-gray-200">O</th>
-          </tr>
-        </thead>
+        <TableHeader headers={['A', 'I', 'U', 'E', 'O']} />
         <tbody>
           <tr>
-            <td className="border border-gray-500 px-4 py-2">ア (a)</td>
-            <td className="border border-gray-500 px-4 py-2">イ (i)</td>
-            <td className="border border-gray-500 px-4 py-2">ウ (u)</td>
-            <td className="border border-gray-500 px-4 py-2">エ (e)</td>
-            <td className="border border-gray-500 px-4 py-2">オ (o)</td>
+            <TableCell character="ア (a)" audio={hiraganaAudioA} />
+            <TableCell character="イ (i)" audio={hiraganaAudioI} />
+            <TableCell character="ウ (u)" audio={hiraganaAudioU} />
+            <TableCell character="エ (e)" audio={hiraganaAudioE} />
+            <TableCell character="オ (o)" audio={hiraganaAudioO} />
           </tr>
           <tr>
-            <td className="border border-gray-500 px-4 py-2">カ (ka)</td>
-            <td className="border border-gray-500 px-4 py-2">キ (ki)</td>
-            <td className="border border-gray-500 px-4 py-2">ク (ku)</td>
-            <td className="border border-gray-500 px-4 py-2">ケ (ke)</td>
-            <td className="border border-gray-500 px-4 py-2">コ (ko)</td>
+            <TableCell character="カ (ka)" audio={hiraganaAudioKa} />
+            <TableCell character="キ (ki)" audio={hiraganaAudioKi} />
+            <TableCell character="ク (ku)" audio={hiraganaAudioKu} />
+            <TableCell character="ケ (ke)" audio={hiraganaAudioKe} />
+            <TableCell character="コ (ko)" audio={hiraganaAudioKo} />
           </tr>
           <tr>
-            <td className="border border-gray-500 px-4 py-2">サ (sa)</td>
-            <td className="border border-gray-500 px-4 py-2">シ (shi)</td>
-            <td className="border border-gray-500 px-4 py-2">ス (su)</td>
-            <td className="border border-gray-500 px-4 py-2">セ (se)</td>
-            <td className="border border-gray-500 px-4 py-2">ソ (so)</td>
+            <TableCell character="サ (sa)" audio={hiraganaAudioSa} />
+            <TableCell character="シ (shi)" audio={hiraganaAudioShi} />
+            <TableCell character="ス (su)" audio={hiraganaAudioSu} />
+            <TableCell character="セ (se)" audio={hiraganaAudioSe} />
+            <TableCell character="ソ (so)" audio={hiraganaAudioSo} />
           </tr>
           <tr>
-            <td className="border border-gray-500 px-4 py-2">タ (ta)</td>
-            <td className="border border-gray-500 px-4 py-2">チ (chi)</td>
-            <td className="border border-gray-500 px-4 py-2">ツ (tsu)</td>
-            <td className="border border-gray-500 px-4 py-2">テ (te)</td>
-            <td className="border border-gray-500 px-4 py-2">ト (to)</td>
+            <TableCell character="タ (ta)" audio={hiraganaAudioTa} />
+            <TableCell character="チ (chi)" audio={hiraganaAudioChi} />
+            <TableCell character="ツ (tsu)" audio={hiraganaAudioTsu} />
+            <TableCell character="テ (te)" audio={hiraganaAudioTe} />
+            <TableCell character="ト (to)" audio={hiraganaAudioTo} />
           </tr>
           <tr>
-            <td className="border border-gray-500 px-4 py-2">ナ (na)</td>
-            <td className="border border-gray-500 px-4 py-2">ニ (ni)</td>
-            <td className="border border-gray-500 px-4 py-2">ヌ (nu)</td>
-            <td className="border border-gray-500 px-4 py-2">ネ (ne)</td>
-            <td className="border border-gray-500 px-4 py-2">ノ (no)</td>
+            <TableCell character="ナ (na)" audio={hiraganaAudioNa} />
+            <TableCell character="ニ (ni)" audio={hiraganaAudioNi} />
+            <TableCell character="ヌ (nu)" audio={hiraganaAudioNu} />
+            <TableCell character="ネ (ne)" audio={hiraganaAudioNe} />
+            <TableCell character="ノ (no)" audio={hiraganaAudioNo} />
           </tr>
           <tr>
-            <td className="border border-gray-500 px-4 py-2">ハ (ha)</td>
-            <td className="border border-gray-500 px-4 py-2">ヒ (hi)</td>
-            <td className="border border-gray-500 px-4 py-2">フ (fu)</td>
-            <td className="border border-gray-500 px-4 py-2">ヘ (he)</td>
-            <td className="border border-gray-500 px-4 py-2">ホ (ho)</td>
+            <TableCell character="ハ (ha)" audio={hiraganaAudioHa} />
+            <TableCell character="ヒ (hi)" audio={hiraganaAudioHi} />
+            <TableCell character="フ (fu)" audio={hiraganaAudioFu} />
+            <TableCell character="ヘ (he)" audio={hiraganaAudioHe} />
+            <TableCell character="ホ (ho)" audio={hiraganaAudioHo} />
           </tr>
           <tr>
-            <td className="border border-gray-500 px-4 py-2">マ (ma)</td>
-            <td className="border border-gray-500 px-4 py-2">ミ (mi)</td>
-            <td className="border border-gray-500 px-4 py-2">ム (mu)</td>
-            <td className="border border-gray-500 px-4 py-2">メ (me)</td>
-            <td className="border border-gray-500 px-4 py-2">モ (mo)</td>
+            <TableCell character="マ (ma)" audio={hiraganaAudioMa} />
+            <TableCell character="ミ (mi)" audio={hiraganaAudioMi} />
+            <TableCell character="ム (mu)" audio={hiraganaAudioMu} />
+            <TableCell character="メ (me)" audio={hiraganaAudioMe} />
+            <TableCell character="モ (mo)" audio={hiraganaAudioMo} />
           </tr>
           <tr>
-            <td className="border border-gray-500 px-4 py-2">ヤ (ya)</td>
-            <td className="border border-gray-500 px-4 py-2"></td>
-            <td className="border border-gray-500 px-4 py-2">ユ (yu)</td>
-            <td className="border border-gray-500 px-4 py-2"></td>
-            <td className="border border-gray-500 px-4 py-2">ヨ (yo)</td>
+            <TableCell character="ヤ (ya)" audio={hiraganaAudioYa} />
+            <TableCell />
+            <TableCell character="ユ (yu)" audio={hiraganaAudioYu} />
+            <TableCell />
+            <TableCell character="ヨ (yo)" audio={hiraganaAudioYo} />
           </tr>
           <tr>
-            <td className="border border-gray-500 px-4 py-2">ラ (ra)</td>
-            <td className="border border-gray-500 px-4 py-2">リ (ri)</td>
-            <td className="border border-gray-500 px-4 py-2">ル (ru)</td>
-            <td className="border border-gray-500 px-4 py-2">レ (re)</td>
-            <td className="border border-gray-500 px-4 py-2">ロ (ro)</td>
+            <TableCell character="ラ (ra)" audio={hiraganaAudioRa} />
+            <TableCell character="リ (ri)" audio={hiraganaAudioRi} />
+            <TableCell character="ル (ru)" audio={hiraganaAudioRu} />
+            <TableCell character="レ (re)" audio={hiraganaAudioRe} />
+            <TableCell character="ロ (ro)" audio={hiraganaAudioRo} />
           </tr>
           <tr>
-            <td className="border border-gray-500 px-4 py-2">ワ (wa)</td>
-            <td className="border border-gray-500 px-4 py-2"></td>
-            <td className="border border-gray-500 px-4 py-2">ヲ (wo)</td>
-            <td className="border border-gray-500 px-4 py-2"></td>
-            <td className="border border-gray-500 px-4 py-2">ン (n)</td>
+            <TableCell character="ワ (wa)" audio={hiraganaAudioWa} />
+            <TableCell />
+            <TableCell character="ヲ (wo)" audio={hiraganaAudioWo} />
+            <TableCell />
+            <TableCell character="ン (n)" audio={hiraganaAudioN} />
           </tr>
         </tbody>
       </table>
     </div>
   );
+
   const basicHiraganaToKatakanaTable = (
     <div className="flex justify-center">
       <table className="table-auto border-collapse border border-gray-500 text-base md:text-lg">
