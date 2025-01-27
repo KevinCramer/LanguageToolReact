@@ -149,11 +149,11 @@ const Navbar = () => {
 
             {isOpen && (
               <div className="absolute right-0 mt-2 w-48 bg-white shadow-lg rounded-lg z-10">
-                <NavLink to='/account' className={`text-black text-sm block px-4 py-2 hover:bg-gray-200 rounded-t-lg text-center`}>
+                <NavLink to='/account' className={`text-black block px-4 py-2 hover:bg-gray-200 rounded-t-lg text-center`}>
                   Account Settings
                 </NavLink>
                 <button
-                  className={`text-black text-sm block w-full text-left px-4 py-2 hover:bg-gray-200 rounded-b-lg text-center`}
+                  className={`text-black block w-full text-left px-4 py-2 hover:bg-gray-200 rounded-b-lg text-center`}
                   onClick={async () => {
                     if (currentUser && currentUser.email) {
                       try {
