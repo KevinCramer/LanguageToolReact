@@ -284,15 +284,8 @@ const ReadingListeningContent = (props: { languageNumber: number; howToGuideVide
     <div className="text-lg md:text-xl">
       <h4 className="flex flex-row justify-center text-center text-2xl py-12">
         <div>
-         Reading and Listening Comprehension <div className='text-xl'>(Intermediate & Advanced Level)</div> -&nbsp;
-          <a
-            onClick={() => setShowPopUp(true)}
-            className="text-blue-500 underline text-xl"
-          >
-        Video Guide
-          </a>
-        </div>
-         
+         Japanese Reading and Listening Comprehension <div className='text-xl'>(Intermediate & Advanced Level)</div>
+        </div>    
       </h4>
     
       <div className="max-w-7xl mx-auto">
@@ -305,8 +298,8 @@ const ReadingListeningContent = (props: { languageNumber: number; howToGuideVide
               <div className='flex'>
                 <div>
               Topic:{' '}
-                  {currentAudioTranscription.name.length > 25
-                    ? `${currentAudioTranscription.name.substring(0, 25)}...`
+                  {currentAudioTranscription.name.length > 7
+                    ? `${currentAudioTranscription.name.substring(0, 7)}...`
                     : currentAudioTranscription.name}
                 </div>
                 <DownChevronIcon/>
@@ -335,7 +328,14 @@ const ReadingListeningContent = (props: { languageNumber: number; howToGuideVide
               </div>
             )}
           </div>
-          
+          <div className="relative px-2">
+            <button
+              className=" border-[1px] border-b-4 bg-blue-500 border-blue-700 bg-200 text-center text-white px-2 text-base py-0.5 rounded-lg transform transition-transform duration-200 hover:scale-105"
+              onClick={() => setShowPopUp(true)} >
+            Video Guide
+
+            </button>
+          </div>
           <div className="relative px-2" ref={settingsDropdownRef}>
             <button
               className="border-[1px] border-b-4 text-sm border-gray-300 bg-200 text-center active:bg-gray-300 hover:bg-gray-200  p-1 pl-2 rounded-lg mb-2"
