@@ -284,7 +284,7 @@ const ReadingListeningContent = (props: { languageNumber: number; howToGuideVide
     <div className="text-lg md:text-xl">
       <h4 className="flex flex-row justify-center text-center text-2xl py-12">
         <div>
-        Japanese Reading and Listening Comprehension -&nbsp;
+         Reading and Listening Comprehension <div className='text-xl'>(Intermediate & Advanced Level)</div> -&nbsp;
           <a
             onClick={() => setShowPopUp(true)}
             className="text-blue-500 underline text-xl"

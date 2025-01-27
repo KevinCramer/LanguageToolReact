@@ -55,6 +55,16 @@ const JapaneseNavbar = () => {
             </li>
             <li>
               <NavLink 
+                to='/japanese/vocabulary-guide' 
+                className={({ isActive }) => isActive 
+                || location.pathname.includes('vocabulary') 
+                  ? 'block px-4  underline' : 'block px-4 '}
+              >
+                Vocabulary
+              </NavLink>
+            </li>
+            <li>
+              <NavLink 
                 to='/japanese/writing-systems-explained' 
                 className={({ isActive }) => isActive 
                 || location.pathname.includes('hiragana-explained') 
@@ -66,16 +76,6 @@ const JapaneseNavbar = () => {
                   ? 'block px-4  underline' : 'block px-4 '}
               >
                 Writing Systems
-              </NavLink>
-            </li>
-            <li>
-              <NavLink 
-                to='/japanese/vocabulary-guide' 
-                className={({ isActive }) => isActive 
-                || location.pathname.includes('vocabulary') 
-                  ? 'block px-4  underline' : 'block px-4 '}
-              >
-                Vocabulary
               </NavLink>
             </li>
             <li>
