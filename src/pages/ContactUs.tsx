@@ -45,7 +45,7 @@ const ContactUs = () => {
       <div className='pt-24'>
         You can reach out to us at&nbsp;
       </div>
-      <a href='mailto:contact@lingocommand.com' className='text-white underline'>
+      <a href='mailto:contact@lingocommand.com' className={`${isMobile ? 'text-black' : 'text-white'} underline`}>
         contact@lingocommand.com
       </a>
       <div className='py-8'>
