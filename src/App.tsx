@@ -44,7 +44,7 @@ const App = ()=> {
     <>
       {pathWithBackground && <div
         id="fuji-background-container"
-        className="bg-cover bg-center w-full h-screen"
+        className="bg-cover bg-center w-full h-screen text-lg"
         style={{ backgroundImage: `url(${fujiImage})` }}
       >
         <Navbar />
@@ -78,7 +78,7 @@ const App = ()=> {
       </div>}
       {!pathWithBackground && <div
         id="white-background-container"
-        className="bg-cover bg-center w-full h-screen"
+        className="bg-cover bg-center w-full h-screen text-lg"
       >
         <Navbar/>
         {location.pathname.includes('japanese') && <JapaneseNavbar/>}
