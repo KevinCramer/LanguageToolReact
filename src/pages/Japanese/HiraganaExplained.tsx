@@ -148,321 +148,117 @@ const HiraganaExplained = () => {
     </div>
   );
   
+  const TableHeader = ({ headers }: any) => (
+    <thead>
+      <tr>
+        {headers.map((header: any) => (
+          <th key={header} className="border border-gray-500 px-4 py-2 bg-gray-200">
+            {header}
+          </th>
+        ))}
+      </tr>
+    </thead>
+  );
+  
+  const TableCell = ({ character, audio }: any) => {
+    if(character) {
+      return (
+        <td className="border border-gray-500 relative group">
+          <div
+            className="border px-4 py-2 cursor-pointer"
+            onClick={() => playAudio(audio)}
+          >
+            {character}
+          </div>
+          <span className="absolute right-0 bottom-0 text-sm text-gray-700 opacity-0 group-hover:opacity-100 group-hover:block transition-opacity duration-300">
+            <VolumeUpIcon style={{ fontSize: 16, color: 'black' }} />
+          </span>
+        </td>
+      )
+    }
+    else {
+      return ( <td className="border border-gray-500 px-4 py-2"></td>
+      )
+    }
+   
+  }
+  
   const basicHiraganaTable = (
     <div className="flex justify-center">
       <table className="table-auto border-collapse border border-gray-500">
-        <thead>
-          <tr>
-            <th className="border border-gray-500 px-4 py-2 bg-gray-200">A</th>
-            <th className="border border-gray-500 px-4 py-2 bg-gray-200">I</th>
-            <th className="border border-gray-500 px-4 py-2 bg-gray-200">U</th>
-            <th className="border border-gray-500 px-4 py-2 bg-gray-200">E</th>
-            <th className="border border-gray-500 px-4 py-2 bg-gray-200">O</th>
-          </tr>
-        </thead>
+        <TableHeader headers={['A', 'I', 'U', 'E', 'O']} />
         <tbody>
           <tr>
-            <td className="border border-gray-500 relative group">
-              <div className="border px-4 py-2 cursor-pointer" onClick={() => playAudio(hiraganaAudioA)}>あ (a)</div>
-              <span className="absolute right-0 bottom-0 text-sm text-gray-700 opacity-0 group-hover:opacity-100 group-hover:block transition-opacity duration-300">
-                <VolumeUpIcon style={{ fontSize: 16, color:'black' }}/>
-              </span>
-            </td>
-            <td className="border border-gray-500 relative group">
-              <div className="border px-4 py-2 cursor-pointer" onClick={() => playAudio(hiraganaAudioI)}>い (i)</div>
-              <span className="absolute right-0 bottom-0 text-sm text-gray-700 opacity-0 group-hover:opacity-100 group-hover:block transition-opacity duration-300">
-                <VolumeUpIcon style={{ fontSize: 16, color:'black' }}/>
-              </span>
-            </td>
-            <td className="border border-gray-500 relative group">
-              <div className="border px-4 py-2 cursor-pointer" onClick={() => playAudio(hiraganaAudioU)}>う (u)</div>
-              <span className="absolute right-0 bottom-0 text-sm text-gray-700 opacity-0 group-hover:opacity-100 group-hover:block transition-opacity duration-300">
-                <VolumeUpIcon style={{ fontSize: 16, color:'black' }}/>
-              </span>
-            </td>
-            <td className="border border-gray-500 relative group">
-              <div className="border px-4 py-2 cursor-pointer" onClick={() => playAudio(hiraganaAudioE)}>え (e)</div>
-              <span className="absolute right-0 bottom-0 text-sm text-gray-700 opacity-0 group-hover:opacity-100 group-hover:block transition-opacity duration-300">
-                <VolumeUpIcon style={{ fontSize: 16, color:'black' }}/>
-              </span>
-            </td>
-            <td className="border border-gray-500 relative group">
-              <div className="border px-4 py-2 cursor-pointer" onClick={() => playAudio(hiraganaAudioO)}>お (o)</div>
-              <span className="absolute right-0 bottom-0 text-sm text-gray-700 opacity-0 group-hover:opacity-100 group-hover:block transition-opacity duration-300">
-                <VolumeUpIcon style={{ fontSize: 16, color:'black' }}/>
-              </span>
-            </td>
+            <TableCell character="あ (a)" audio={hiraganaAudioA} />
+            <TableCell character="い (i)" audio={hiraganaAudioI} />
+            <TableCell character="う (u)" audio={hiraganaAudioU} />
+            <TableCell character="え (e)" audio={hiraganaAudioE} />
+            <TableCell character="お (o)" audio={hiraganaAudioO} />
           </tr>
           <tr>
-            <td className="border border-gray-500 relative group">
-              <div className="border px-4 py-2 cursor-pointer" onClick={() => playAudio(hiraganaAudioKa)}>か (ka)</div>
-              <span className="absolute right-0 bottom-0 text-sm text-gray-700 opacity-0 group-hover:opacity-100 group-hover:block transition-opacity duration-300">
-                <VolumeUpIcon style={{ fontSize: 16, color:'black' }}/>
-              </span>
-            </td>
-            <td className="border border-gray-500 relative group">
-              <div className="border px-4 py-2 cursor-pointer" onClick={() => playAudio(hiraganaAudioKi)}>き (ki)</div>
-              <span className="absolute right-0 bottom-0 text-sm text-gray-700 opacity-0 group-hover:opacity-100 group-hover:block transition-opacity duration-300">
-                <VolumeUpIcon style={{ fontSize: 16, color:'black' }}/>
-              </span>
-            </td>
-            <td className="border border-gray-500 relative group">
-              <div className="border px-4 py-2 cursor-pointer" onClick={() => playAudio(hiraganaAudioKu)}>く (ku)</div>
-              <span className="absolute right-0 bottom-0 text-sm text-gray-700 opacity-0 group-hover:opacity-100 group-hover:block transition-opacity duration-300">
-                <VolumeUpIcon style={{ fontSize: 16, color:'black' }}/>
-              </span>
-            </td>
-            <td className="border border-gray-500 relative group">
-              <div className="border px-4 py-2 cursor-pointer" onClick={() => playAudio(hiraganaAudioKe)}>け (ke)</div>
-              <span className="absolute right-0 bottom-0 text-sm text-gray-700 opacity-0 group-hover:opacity-100 group-hover:block transition-opacity duration-300">
-                <VolumeUpIcon style={{ fontSize: 16, color:'black' }}/>
-              </span>
-            </td>
-            <td className="border border-gray-500 relative group">
-              <div className="border px-4 py-2 cursor-pointer" onClick={() => playAudio(hiraganaAudioKo)}>こ (ko)</div>
-              <span className="absolute right-0 bottom-0 text-sm text-gray-700 opacity-0 group-hover:opacity-100 group-hover:block transition-opacity duration-300">
-                <VolumeUpIcon style={{ fontSize: 16, color:'black' }}/>
-              </span>
-            </td>
+            <TableCell character="か (ka)" audio={hiraganaAudioKa} />
+            <TableCell character="き (ki)" audio={hiraganaAudioKi} />
+            <TableCell character="く (ku)" audio={hiraganaAudioKu} />
+            <TableCell character="け (ke)" audio={hiraganaAudioKe} />
+            <TableCell character="こ (ko)" audio={hiraganaAudioKo} />
           </tr>
           <tr>
-            <td className="border border-gray-500 relative group">
-              <div className="border px-4 py-2  cursor-pointer" onClick={() => playAudio(hiraganaAudioSa)}>さ (sa)</div>
-              <span className="absolute right-0 bottom-0 text-sm text-gray-700 opacity-0 group-hover:opacity-100 group-hover:block transition-opacity duration-300">
-                <VolumeUpIcon style={{ fontSize: 16, color:'black' }}/>
-              </span>
-            </td>
-            <td className="border border-gray-500 relative group">
-              <div className="border px-4 py-2  cursor-pointer" onClick={() => playAudio(hiraganaAudioShi)}>し (shi)</div>
-              <span className="absolute right-0 bottom-0 text-sm text-gray-700 opacity-0 group-hover:opacity-100 group-hover:block transition-opacity duration-300">
-                <VolumeUpIcon style={{ fontSize: 16, color:'black' }}/>
-              </span>
-            </td>
-            <td className="border border-gray-500 relative group">
-              <div className="border px-4 py-2  cursor-pointer" onClick={() => playAudio(hiraganaAudioSu)}>す (su)</div>
-              <span className="absolute right-0 bottom-0 text-sm text-gray-700 opacity-0 group-hover:opacity-100 group-hover:block transition-opacity duration-300">
-                <VolumeUpIcon style={{ fontSize: 16, color:'black' }}/>
-              </span>
-            </td>
-            <td className="border border-gray-500 relative group">
-              <div className="border px-4 py-2  cursor-pointer" onClick={() => playAudio(hiraganaAudioSe)}>せ (se)</div>
-              <span className="absolute right-0 bottom-0 text-sm text-gray-700 opacity-0 group-hover:opacity-100 group-hover:block transition-opacity duration-300">
-                <VolumeUpIcon style={{ fontSize: 16, color:'black' }}/>
-              </span>
-            </td>
-            <td className="border border-gray-500 relative group">
-              <div className="border px-4 py-2  cursor-pointer" onClick={() => playAudio(hiraganaAudioSo)}>そ (so)</div>
-              <span className="absolute right-0 bottom-0 text-sm text-gray-700 opacity-0 group-hover:opacity-100 group-hover:block transition-opacity duration-300">
-                <VolumeUpIcon style={{ fontSize: 16, color:'black' }}/>
-              </span>
-            </td>
+            <TableCell character="さ (sa)" audio={hiraganaAudioSa} />
+            <TableCell character="し (shi)" audio={hiraganaAudioShi} />
+            <TableCell character="す (su)" audio={hiraganaAudioSu} />
+            <TableCell character="せ (se)" audio={hiraganaAudioSe} />
+            <TableCell character="そ (so)" audio={hiraganaAudioSo} />
           </tr>
           <tr>
-            <td className="border border-gray-500 relative group">
-              <div className="border px-4 py-2  cursor-pointer" onClick={() => playAudio(hiraganaAudioTa)}>た (ta)</div>
-              <span className="absolute right-0 bottom-0 text-sm text-gray-700 opacity-0 group-hover:opacity-100 group-hover:block transition-opacity duration-300">
-                <VolumeUpIcon style={{ fontSize: 16, color:'black' }}/>
-              </span>
-            </td>
-            <td className="border border-gray-500 relative group">
-              <div className="border px-4 py-2  cursor-pointer" onClick={() => playAudio(hiraganaAudioChi)}>ち (chi)</div>
-              <span className="absolute right-0 bottom-0 text-sm text-gray-700 opacity-0 group-hover:opacity-100 group-hover:block transition-opacity duration-300">
-                <VolumeUpIcon style={{ fontSize: 16, color:'black' }}/>
-              </span>
-            </td>
-            <td className="border border-gray-500 relative group">
-              <div className="border px-4 py-2  cursor-pointer" onClick={() => playAudio(hiraganaAudioTsu)}>つ (tsu)</div>
-              <span className="absolute right-0 bottom-0 text-sm text-gray-700 opacity-0 group-hover:opacity-100 group-hover:block transition-opacity duration-300">
-                <VolumeUpIcon style={{ fontSize: 16, color:'black' }}/>
-              </span>
-            </td>
-            <td className="border border-gray-500 relative group">
-              <div className="border px-4 py-2  cursor-pointer" onClick={() => playAudio(hiraganaAudioTe)}>て (te)</div>
-              <span className="absolute right-0 bottom-0 text-sm text-gray-700 opacity-0 group-hover:opacity-100 group-hover:block transition-opacity duration-300">
-                <VolumeUpIcon style={{ fontSize: 16, color:'black' }}/>
-              </span>
-            </td>
-            <td className="border border-gray-500 relative group">
-              <div className="border px-4 py-2  cursor-pointer" onClick={() => playAudio(hiraganaAudioTo)}>と (to)</div>
-              <span className="absolute right-0 bottom-0 text-sm text-gray-700 opacity-0 group-hover:opacity-100 group-hover:block transition-opacity duration-300">
-                <VolumeUpIcon style={{ fontSize: 16, color:'black' }}/>
-              </span>
-            </td>
+            <TableCell character="た (ta)" audio={hiraganaAudioTa} />
+            <TableCell character="ち (chi)" audio={hiraganaAudioChi} />
+            <TableCell character="つ (tsu)" audio={hiraganaAudioTsu} />
+            <TableCell character="て (te)" audio={hiraganaAudioTe} />
+            <TableCell character="と (to)" audio={hiraganaAudioTo} />
           </tr>
           <tr>
-            <td className="border border-gray-500 relative group">
-              <div className="border px-4 py-2  cursor-pointer" onClick={() => playAudio(hiraganaAudioNa)}>な (na)</div>
-              <span className="absolute right-0 bottom-0 text-sm text-gray-700 opacity-0 group-hover:opacity-100 group-hover:block transition-opacity duration-300">
-                <VolumeUpIcon style={{ fontSize: 16, color:'black' }}/>
-              </span>
-            </td>
-            <td className="border border-gray-500 relative group">
-              <div className="border px-4 py-2  cursor-pointer" onClick={() => playAudio(hiraganaAudioNi)}>に (ni)</div>
-              <span className="absolute right-0 bottom-0 text-sm text-gray-700 opacity-0 group-hover:opacity-100 group-hover:block transition-opacity duration-300">
-                <VolumeUpIcon style={{ fontSize: 16, color:'black' }}/>
-              </span>
-            </td>
-            <td className="border border-gray-500 relative group">
-              <div className="border px-4 py-2  cursor-pointer" onClick={() => playAudio(hiraganaAudioNu)}>ぬ (nu)</div>
-              <span className="absolute right-0 bottom-0 text-sm text-gray-700 opacity-0 group-hover:opacity-100 group-hover:block transition-opacity duration-300">
-                <VolumeUpIcon style={{ fontSize: 16, color:'black' }}/>
-              </span>
-            </td>
-            <td className="border border-gray-500 relative group">
-              <div className="border px-4 py-2  cursor-pointer" onClick={() => playAudio(hiraganaAudioNe)}>ね (ne)</div>
-              <span className="absolute right-0 bottom-0 text-sm text-gray-700 opacity-0 group-hover:opacity-100 group-hover:block transition-opacity duration-300">
-                <VolumeUpIcon style={{ fontSize: 16, color:'black' }}/>
-              </span>
-            </td>
-            <td className="border border-gray-500 relative group">
-              <div className="border px-4 py-2  cursor-pointer" onClick={() => playAudio(hiraganaAudioNo)}>の (no)</div>
-              <span className="absolute right-0 bottom-0 text-sm text-gray-700 opacity-0 group-hover:opacity-100 group-hover:block transition-opacity duration-300">
-                <VolumeUpIcon style={{ fontSize: 16, color:'black' }}/>
-              </span>
-            </td>
+            <TableCell character="な (na)" audio={hiraganaAudioNa} />
+            <TableCell character="に (ni)" audio={hiraganaAudioNi} />
+            <TableCell character="ぬ (nu)" audio={hiraganaAudioNu} />
+            <TableCell character="ね (ne)" audio={hiraganaAudioNe} />
+            <TableCell character="の (no)" audio={hiraganaAudioNo} />
           </tr>
           <tr>
-            <td className="border border-gray-500 relative group">
-              <div className="border px-4 py-2  cursor-pointer" onClick={() => playAudio(hiraganaAudioHa)}>は (ha)</div>
-              <span className="absolute right-0 bottom-0 text-sm text-gray-700 opacity-0 group-hover:opacity-100 group-hover:block transition-opacity duration-300">
-                <VolumeUpIcon style={{ fontSize: 16, color:'black' }}/>
-              </span>
-            </td>
-            <td className="border border-gray-500 relative group">
-              <div className="border px-4 py-2  cursor-pointer" onClick={() => playAudio(hiraganaAudioHi)}>ひ (hi)</div>
-              <span className="absolute right-0 bottom-0 text-sm text-gray-700 opacity-0 group-hover:opacity-100 group-hover:block transition-opacity duration-300">
-                <VolumeUpIcon style={{ fontSize: 16, color:'black' }}/>
-              </span>
-            </td>
-            <td className="border border-gray-500 relative group">
-              <div className="border px-4 py-2  cursor-pointer" onClick={() => playAudio(hiraganaAudioFu)}>ふ (fu)</div>
-              <span className="absolute right-0 bottom-0 text-sm text-gray-700 opacity-0 group-hover:opacity-100 group-hover:block transition-opacity duration-300">
-                <VolumeUpIcon style={{ fontSize: 16, color:'black' }}/>
-              </span>
-            </td>
-            <td className="border border-gray-500 relative group">
-              <div className="border px-4 py-2  cursor-pointer" onClick={() => playAudio(hiraganaAudioHe)}>へ (he)</div>
-              <span className="absolute right-0 bottom-0 text-sm text-gray-700 opacity-0 group-hover:opacity-100 group-hover:block transition-opacity duration-300">
-                <VolumeUpIcon style={{ fontSize: 16, color:'black' }}/>
-              </span>
-            </td>
-            <td className="border border-gray-500 relative group">
-              <div className="border px-4 py-2  cursor-pointer" onClick={() => playAudio(hiraganaAudioHo)}>ほ (ho)</div>
-              <span className="absolute right-0 bottom-0 text-sm text-gray-700 opacity-0 group-hover:opacity-100 group-hover:block transition-opacity duration-300">
-                <VolumeUpIcon style={{ fontSize: 16, color:'black' }}/>
-              </span>
-            </td>
+            <TableCell character="は (ha)" audio={hiraganaAudioHa} />
+            <TableCell character="ひ (hi)" audio={hiraganaAudioHi} />
+            <TableCell character="ふ (fu)" audio={hiraganaAudioFu} />
+            <TableCell character="へ (he)" audio={hiraganaAudioHe} />
+            <TableCell character="ほ (ho)" audio={hiraganaAudioHo} />
           </tr>
           <tr>
-            <td className="border border-gray-500 relative group">
-              <div className="border px-4 py-2  cursor-pointer" onClick={() => playAudio(hiraganaAudioMa)}>ま (ma)</div>
-              <span className="absolute right-0 bottom-0 text-sm text-gray-700 opacity-0 group-hover:opacity-100 group-hover:block transition-opacity duration-300">
-                <VolumeUpIcon style={{ fontSize: 16, color:'black' }}/>
-              </span>
-            </td>
-            <td className="border border-gray-500 relative group">
-              <div className="border px-4 py-2  cursor-pointer" onClick={() => playAudio(hiraganaAudioMi)}>み (mi)</div>
-              <span className="absolute right-0 bottom-0 text-sm text-gray-700 opacity-0 group-hover:opacity-100 group-hover:block transition-opacity duration-300">
-                <VolumeUpIcon style={{ fontSize: 16, color:'black' }}/>
-              </span>
-            </td>
-            <td className="border border-gray-500 relative group">
-              <div className="border px-4 py-2  cursor-pointer" onClick={() => playAudio(hiraganaAudioMu)}>む (mu)</div>
-              <span className="absolute right-0 bottom-0 text-sm text-gray-700 opacity-0 group-hover:opacity-100 group-hover:block transition-opacity duration-300">
-                <VolumeUpIcon style={{ fontSize: 16, color:'black' }}/>
-              </span>
-            </td>
-            <td className="border border-gray-500 relative group">
-              <div className="border px-4 py-2  cursor-pointer" onClick={() => playAudio(hiraganaAudioMe)}>め (me)</div>
-              <span className="absolute right-0 bottom-0 text-sm text-gray-700 opacity-0 group-hover:opacity-100 group-hover:block transition-opacity duration-300">
-                <VolumeUpIcon style={{ fontSize: 16, color:'black' }}/>
-              </span>
-            </td>
-            <td className="border border-gray-500 relative group">
-              <div className="border px-4 py-2  cursor-pointer" onClick={() => playAudio(hiraganaAudioMo)}>も (mo)</div>
-              <span className="absolute right-0 bottom-0 text-sm text-gray-700 opacity-0 group-hover:opacity-100 group-hover:block transition-opacity duration-300">
-                <VolumeUpIcon style={{ fontSize: 16, color:'black' }}/>
-              </span>
-            </td>
+            <TableCell character="ま (ma)" audio={hiraganaAudioMa} />
+            <TableCell character="み (mi)" audio={hiraganaAudioMi} />
+            <TableCell character="む (mu)" audio={hiraganaAudioMu} />
+            <TableCell character="め (me)" audio={hiraganaAudioMe} />
+            <TableCell character="も (mo)" audio={hiraganaAudioMo} />
           </tr>
           <tr>
-            <td className="border border-gray-500 relative group">
-              <div className="border px-4 py-2  cursor-pointer" onClick={() => playAudio(hiraganaAudioYa)}>や (ya)</div>
-              <span className="absolute right-0 bottom-0 text-sm text-gray-700 opacity-0 group-hover:opacity-100 group-hover:block transition-opacity duration-300">
-                <VolumeUpIcon style={{ fontSize: 16, color:'black' }}/>
-              </span>
-            </td>
-            <td className="border border-gray-500 px-4 py-2"></td>
-            <td className="border border-gray-500 relative group">
-              <div className="border px-4 py-2  cursor-pointer" onClick={() => playAudio(hiraganaAudioYu)}> ゆ (yu)</div>
-              <span className="absolute right-0 bottom-0 text-sm text-gray-700 opacity-0 group-hover:opacity-100 group-hover:block transition-opacity duration-300">
-                <VolumeUpIcon style={{ fontSize: 16, color:'black' }}/>
-              </span>
-            </td>
-            <td className="border border-gray-500 px-4 py-2"></td>
-            <td className="border border-gray-500 relative group">
-              <div className="border px-4 py-2  cursor-pointer" onClick={() => playAudio(hiraganaAudioYo)}>よ (yo)</div>
-              <span className="absolute right-0 bottom-0 text-sm text-gray-700 opacity-0 group-hover:opacity-100 group-hover:block transition-opacity duration-300">
-                <VolumeUpIcon style={{ fontSize: 16, color:'black' }}/>
-              </span>
-            </td>
+            <TableCell character="や (ya)" audio={hiraganaAudioYa} />
+            <TableCell />
+            <TableCell character="ゆ (yu)" audio={hiraganaAudioYu} />
+            <TableCell />
+            <TableCell character="よ (yo)" audio={hiraganaAudioYo} />
           </tr>
           <tr>
-            <td className="border border-gray-500 relative group">
-              <div className="border px-4 py-2  cursor-pointer" onClick={() => playAudio(hiraganaAudioRa)}>ら (ra)</div>
-              <span className="absolute right-0 bottom-0 text-sm text-gray-700 opacity-0 group-hover:opacity-100 group-hover:block transition-opacity duration-300">
-                <VolumeUpIcon style={{ fontSize: 16, color:'black' }}/>
-              </span>
-            </td>
-            <td className="border border-gray-500 relative group">
-              <div className="border px-4 py-2  cursor-pointer" onClick={() => playAudio(hiraganaAudioRi)}>り (ri)</div>
-              <span className="absolute right-0 bottom-0 text-sm text-gray-700 opacity-0 group-hover:opacity-100 group-hover:block transition-opacity duration-300">
-                <VolumeUpIcon style={{ fontSize: 16, color:'black' }}/>
-              </span>
-            </td>
-            <td className="border border-gray-500 relative group">
-              <div className="border px-4 py-2  cursor-pointer" onClick={() => playAudio(hiraganaAudioRu)}>る (ru)</div>
-              <span className="absolute right-0 bottom-0 text-sm text-gray-700 opacity-0 group-hover:opacity-100 group-hover:block transition-opacity duration-300">
-                <VolumeUpIcon style={{ fontSize: 16, color:'black' }}/>
-              </span>
-            </td>
-            <td className="border border-gray-500 relative group">
-              <div className="border px-4 py-2  cursor-pointer" onClick={() => playAudio(hiraganaAudioRe)}>れ (re)</div>
-              <span className="absolute right-0 bottom-0 text-sm text-gray-700 opacity-0 group-hover:opacity-100 group-hover:block transition-opacity duration-300">
-                <VolumeUpIcon style={{ fontSize: 16, color:'black' }}/>
-              </span>
-            </td>
-            <td className="border border-gray-500 relative group">
-              <div className="border px-4 py-2  cursor-pointer" onClick={() => playAudio(hiraganaAudioRo)}>ろ (ro)</div>
-              <span className="absolute right-0 bottom-0 text-sm text-gray-700 opacity-0 group-hover:opacity-100 group-hover:block transition-opacity duration-300">
-                <VolumeUpIcon style={{ fontSize: 16, color:'black' }}/>
-              </span>
-            </td>
+            <TableCell character="ら (ra)" audio={hiraganaAudioRa} />
+            <TableCell character="り (ri)" audio={hiraganaAudioRi} />
+            <TableCell character="る (ru)" audio={hiraganaAudioRu} />
+            <TableCell character="れ (re)" audio={hiraganaAudioRe} />
+            <TableCell character="ろ (ro)" audio={hiraganaAudioRo} />
           </tr>
           <tr>
-            <td className="border border-gray-500 relative group">
-              <div className="border px-4 py-2  cursor-pointer" onClick={() => playAudio(hiraganaAudioWa)}>わ (wa)</div>
-              <span className="absolute right-0 bottom-0 text-sm text-gray-700 opacity-0 group-hover:opacity-100 group-hover:block transition-opacity duration-300">
-                <VolumeUpIcon style={{ fontSize: 16, color:'black' }}/>
-              </span>
-            </td>
-            <td className="border border-gray-500 px-4 py-2"></td>
-            <td className="border border-gray-500 relative group">
-              <div className="border px-4 py-2  cursor-pointer" onClick={() => playAudio(hiraganaAudioWo)}>を (wo)</div>
-              <span className="absolute right-0 bottom-0 text-sm text-gray-700 opacity-0 group-hover:opacity-100 group-hover:block transition-opacity duration-300">
-                <VolumeUpIcon style={{ fontSize: 16, color:'black' }}/>
-              </span>
-            </td>
-            <td className="border border-gray-500 px-4 py-2"></td>
-            <td className="border border-gray-500 relative group">
-              <div className="border px-4 py-2  cursor-pointer" onClick={() => playAudio(hiraganaAudioN)}>ん (n)</div>
-              <span className="absolute right-0 bottom-0 text-sm text-gray-700 opacity-0 group-hover:opacity-100 group-hover:block transition-opacity duration-300">
-                <VolumeUpIcon style={{ fontSize: 16, color:'black' }}/>
-              </span>
-            </td>
+            <TableCell character="わ (wa)" audio={hiraganaAudioWa} />
+            <TableCell />
+            <TableCell character="を (wo)" audio={hiraganaAudioWo} />
+            <TableCell />
+            <TableCell character="ん (n)" audio={hiraganaAudioN} />
           </tr>
         </tbody>
-
       </table>
     </div>
   );
