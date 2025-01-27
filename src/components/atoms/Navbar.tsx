@@ -79,7 +79,7 @@ const Navbar = () => {
     <>
       <nav className={`${backgroundColorClass} flex justify-between items-center px-2 md:pr-4 text-white relative`}>
         <NavLink to='/'>
-          <div className={`flex items-center my-3 text-sm md:ml-8`} style={{ fontStretch: navbarFontStretch }}>
+          <div className={`flex items-center my-3 text-sm md:ml-8`} style={{ fontStretch: '100%' }}>
             <div className='text-emerald-400 font-bold text-2xl'>
               L
             </div>
@@ -97,11 +97,11 @@ const Navbar = () => {
        
         {isMobile && 
         <>
+          <NavLink to='/japanese/home-page' className={onJapanese ? 'underline text-white' : 'text-white '}> 
+        Japanese
+          </NavLink>
           <NavLink to='/about' className={({ isActive }) => isActive ? 'underline text-white ' : 'text-white '}style={{ fontStretch: navbarFontStretch }}> 
           About
-          </NavLink>
-          <NavLink to='/contact' className={({ isActive }) => isActive ? 'underline text-white ' : 'text-white '} style={{ fontStretch: navbarFontStretch }}> 
-          Contact
           </NavLink>
         </>
         }
@@ -128,7 +128,7 @@ const Navbar = () => {
             {currentUser && currentUser.email ? 'Log Out' : 
               <div className={pathWithBackground ? 
                 'font-bold' : 
-                'flex items-center md:font-bold text-white rounded-xl'}> 
+                'flex items-center font-bold text-white rounded-xl'}> 
                 <div>Log In </div>
               </div>
             }
