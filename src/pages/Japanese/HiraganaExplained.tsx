@@ -7,6 +7,7 @@ import LockIcon from '@mui/icons-material/Lock';
 import { useAuth } from '../../contexts/AuthContext';
 import { useProtectedLink } from '../../helpers/use-protected-link';
 import { useSearchParams } from 'react-router-dom';
+import VolumeUpIcon from '@mui/icons-material/VolumeUp';
 
 import hiraganaAudioA from '../../data/raw-data/audio_vocab/japanese/hiragana/a.mp3'
 import hiraganaAudioI from '../../data/raw-data/audio_vocab/japanese/hiragana/i.mp3'
@@ -227,12 +228,17 @@ const HiraganaExplained = () => {
           <tr>
             <td className="border border-gray-500 px-4 py-2 hover:bg-gray-100 cursor-pointer" onMouseEnter={() => showTooltip('Click to hear pronunciation')} onMouseLeave={hideTooltip} onClick={() => playAudio(hiraganaAudioYa)}>や (ya)</td>
             <td className="border border-gray-500 px-4 py-2"></td>
-            <td className="border border-gray-500 px-4 py-2 hover:bg-gray-100 cursor-pointer" onMouseEnter={() => showTooltip('Click to hear pronunciation')} onMouseLeave={hideTooltip} onClick={() => playAudio(hiraganaAudioYu)}>ゆ (yu)</td>
+            <td className="border border-gray-500 px-4 py-2 hover:bg-gray-100 cursor-pointer" onMouseEnter={() => showTooltip('Click to hear pronunciation')} onMouseLeave={hideTooltip} onClick={() => playAudio(hiraganaAudioYu)}>
+              ゆ (yu)
+              <span className="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 text-sm text-gray-700 opacity-0 group-hover:opacity-100 group-hover:block transition-opacity duration-300">
+              audio
+              </span>
+            </td>
             <td className="border border-gray-500 px-4 py-2"></td>
             <td className="border border-gray-500 px-4 py-2 hover:bg-gray-100 cursor-pointer" onMouseEnter={() => showTooltip('Click to hear pronunciation')} onMouseLeave={hideTooltip} onClick={() => playAudio(hiraganaAudioYo)}>よ (yo)</td>
           </tr>
           <tr>
-            <td className="border border-gray-500 px-4 py-2 hover:bg-gray-100 cursor-pointer" onMouseEnter={() => showTooltip('Click to hear pronunciation')} onMouseLeave={hideTooltip} onClick={() => playAudio(hiraganaAudioRa)}>ら (ra)</td>
+            <td className="border border-gray-500 px-4 py-2 hover:border-b-4  hover:bg-blue-500  hover:border-blue-700 hover:rounded-lg cursor-pointer hover:text-white" onMouseEnter={() => showTooltip('Click to hear pronunciation')} onMouseLeave={hideTooltip} onClick={() => playAudio(hiraganaAudioRa)}>ら (ra)</td>
             <td className="border border-gray-500 px-4 py-2 hover:bg-gray-100 cursor-pointer" onMouseEnter={() => showTooltip('Click to hear pronunciation')} onMouseLeave={hideTooltip} onClick={() => playAudio(hiraganaAudioRi)}>り (ri)</td>
             <td className="border border-gray-500 px-4 py-2 hover:bg-gray-100 cursor-pointer" onMouseEnter={() => showTooltip('Click to hear pronunciation')} onMouseLeave={hideTooltip} onClick={() => playAudio(hiraganaAudioRu)}>る (ru)</td>
             <td className="border border-gray-500 px-4 py-2 hover:bg-gray-100 cursor-pointer" onMouseEnter={() => showTooltip('Click to hear pronunciation')} onMouseLeave={hideTooltip} onClick={() => playAudio(hiraganaAudioRe)}>れ (re)</td>
@@ -241,7 +247,12 @@ const HiraganaExplained = () => {
           <tr>
             <td className="border border-gray-500 px-4 py-2 hover:bg-gray-100 cursor-pointer" onMouseEnter={() => showTooltip('Click to hear pronunciation')} onMouseLeave={hideTooltip} onClick={() => playAudio(hiraganaAudioWa)}>わ (wa)</td>
             <td className="border border-gray-500 px-4 py-2"></td>
-            <td className="border border-gray-500 px-4 py-2 hover:bg-gray-100 cursor-pointer" onMouseEnter={() => showTooltip('It is pronounced "o". Click to hear pronunciation')} onMouseLeave={hideTooltip} onClick={() => playAudio(hiraganaAudioWo)}>を (wo)</td>
+            <div className="relative group">
+              <td className="border px-4 py-2  cursor-pointer" onClick={() => playAudio(hiraganaAudioWo)}>を (wo)</td>
+              <span className="absolute right-0 bottom-0 text-sm text-gray-700 opacity-0 group-hover:opacity-100 group-hover:block transition-opacity duration-300">
+                <VolumeUpIcon style={{ fontSize: 16, color:'black' }}/>
+              </span>
+            </div>
             <td className="border border-gray-500 px-4 py-2"></td>
             <td className="border border-gray-500 px-4 py-2 hover:bg-gray-100 cursor-pointer" onMouseEnter={() => showTooltip('Click to hear pronunciation')} onMouseLeave={hideTooltip} onClick={() => playAudio(hiraganaAudioN)}>ん (n)</td>
           </tr>
@@ -285,7 +296,7 @@ const HiraganaExplained = () => {
 
           {/* Tooltip Modal */}
           {isTooltipVisible && (
-            <div className="fixed bottom-0 left-1/2 transform -translate-x-1/2 p-4 bg-gray-900 w-full text-center text-white shadow-lg">
+            <div className=" w-full fixed bottom-0 left-1/2 transform -translate-x-1/2 p-4 bg-red-500  text-center text-white shadow-lg text-xl">
               {tooltipText}
             </div>
           )}
