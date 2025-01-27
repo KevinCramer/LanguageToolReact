@@ -1,9 +1,7 @@
-import { createURL } from '../../helpers/createURL';
-
 const KanjiExplained = () => { 
 
   const kanjiTable = (
-    <table className="table-auto border-collapse border border-gray-500 w-full text-left">
+    <table className=" text-base md:text-lg table-auto border-collapse border border-gray-500 w-full text-left">
       <thead>
         <tr className="bg-gray-200">
           <th className="border border-gray-500 px-4 py-2">Kanji</th>
@@ -13,7 +11,7 @@ const KanjiExplained = () => {
         </tr>
       </thead>
       <tbody>
-        <tr>
+        <tr className='text-lg'>
           <td className="border border-gray-500 px-4 py-2">火</td>
           <td className="border border-gray-500 px-4 py-2">Fire</td>
           <td className="border border-gray-500 px-4 py-2">Ka, Hi</td>
