@@ -79,7 +79,7 @@ const Navbar = () => {
     <>
       <nav className={`${backgroundColorClass} flex justify-between items-center px-2 md:pr-4 text-white relative`}>
         <NavLink to='/'>
-          <div className={`flex items-center my-3 text-sm md:ml-8`} style={{ fontStretch: '100%' }}>
+          <div className={`flex items-center my-3 text-sm md:ml-8`} style={{ fontStretch: isMobile ? '50%' : '100%' }}>
             <div className='text-emerald-400 font-bold text-2xl'>
               L
             </div>
@@ -127,8 +127,8 @@ const Navbar = () => {
           >
             {currentUser && currentUser.email ? 'Log Out' : 
               <div className={pathWithBackground ? 
-                'font-bold' : 
-                'flex items-center font-bold text-white rounded-xl'}> 
+                'md:font-bold' : 
+                'flex items-center md:font-bold text-white rounded-xl'}> 
                 <div>Log In </div>
               </div>
             }
