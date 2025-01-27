@@ -152,21 +152,21 @@ const VocabularyGuide = () => {
     gridTemplateColumns: `repeat(${numCols}, 1fr)`,
     gridTemplateRows: `repeat(${numRows}, 1fr)`,
     gridAutoFlow: 'column',
-    gridGap: '10px',
+    gridGap: '20px',
   };
 
   return (
-    <div className="max-w-screen-lg mx-auto px-4 text-center">
+    <div className="max-w-screen-md mx-auto px-4 text-center">
       <h4 className='text-center text-2xl py-12'>Vocabulary Topics</h4>
       <div style={gridStyles}>
         {allTopics.map((topic, index) => (
           <div
             key={index}
-            className="border border-gray-300 rounded-xl p my-4 h-[70px] shadow-md transform transition-transform duration-200 hover:scale-105 hover:cursor-pointer"
+            className="border border-gray-300 rounded-lg h-[70px] shadow-md transform transition-transform duration-200 hover:scale-105 hover:cursor-pointer"
             onClick={() => handleTopicClick(topic)}
           >
-            <div className={`flex justify-between items-start md:text-xl mb-4 ${!topic.slugName ? 'text-gray-500' : ''}`}>
-              <div className="flex-1 h-[70px] ml-6 md:ml-8 flex items-center justify-center">
+            <div className={`flex justify-between items-start ${!topic.slugName ? 'text-gray-500' : ''}`}>
+              <div className={`flex-1 h-[70px] ${topic.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? 'ml-6 md:ml-8' : ''} flex items-center justify-center`}>
                 {topic.Name}
               </div>
               {/* LockIcon aligned at the top-right */}

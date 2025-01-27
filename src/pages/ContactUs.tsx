@@ -17,7 +17,7 @@ const socialLinks = [
 
 const ContactUs = () => {
   return (
-    <div className='flex flex-col items-center text-white md:text-lg'>
+    <div className='flex flex-col items-center text-white'>
       <div className='pt-24'>
         You can reach out to us at&nbsp;
       </div>

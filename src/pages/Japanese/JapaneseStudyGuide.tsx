@@ -48,7 +48,7 @@ const useJapaneseWritingSystems = () => {
 const JapaneseStudyGuide = () => {
 
   return (
-    <div className="max-w-screen-md mx-auto px-4 md:text-lg">
+    <div className="max-w-screen-md mx-auto px-4">
       <h4 className="text-center text-2xl pt-12">Japanese Study Guide </h4>
       <div className='pb-4 pt-8'>
         <div className='underline font-bold'>Step 1:</div>

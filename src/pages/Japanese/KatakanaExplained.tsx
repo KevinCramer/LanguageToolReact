@@ -686,13 +686,10 @@ const KatakanaExplained = () => {
 
               </div>
             </div>
-            <div className='flex py-6'>
-              <div className='py-4'>
-              Now try this exercise:
-              </div>
+            <div className='flex py-6 justify-center'>
               <div className="flex flex-col space-y-2 justify-center items-center ml-4">
     
-                <a className=" border-[1px] border-b-4 bg-blue-500 border-blue-700 bg-200 text-center text-white p-2 rounded-2xl text-lg md:text-xl transform transition-transform duration-200 hover:scale-105"
+                <a className=" border-[1px] border-b-4 bg-blue-500 border-blue-700 bg-200 text-center text-white p-2 rounded-2xl transform transition-transform duration-200 hover:scale-105"
 
                   onClick={handleProtectedClick(katakanaBasicWritingSystem)}
                   href={
@@ -739,12 +736,9 @@ const KatakanaExplained = () => {
                 
             {dakutenHiraganaToKatakanaTable}
           </div>
-          <div className='flex py-6'>
-            <div className='py-4'>
-              Now try this exercise:
-            </div>
+          <div className='flex py-6 justify-center'>
             <div className="flex flex-col space-y-2 justify-center items-center ml-4">
-              <a className=" border-[1px] border-b-4 bg-blue-500 border-blue-700 bg-200 text-center text-white p-2 rounded-2xl text-lg md:text-xl transform transition-transform duration-200 hover:scale-105"
+              <a className=" border-[1px] border-b-4 bg-blue-500 border-blue-700 bg-200 text-center text-white p-2 rounded-2xl transform transition-transform duration-200 hover:scale-105"
                 onClick={handleProtectedClick(katakanaDakutenWritingSystem)}
                 href={
                   createURL(
@@ -777,12 +771,9 @@ const KatakanaExplained = () => {
               {yoonHiraganaToKatakanaTable}
 
             </div>
-            <div className='flex py-6'>
-              <div className='py-4'>
-              Now try this exercise:
-              </div>
+            <div className='flex py-6 justify-center'>
               <div className="flex flex-col space-y-2 justify-center items-center ml-4">
-                <a className=" border-[1px] border-b-4 bg-blue-500 border-blue-700 bg-200 text-center text-white p-2 rounded-2xl text-lg md:text-xl transform transition-transform duration-200 hover:scale-105"
+                <a className=" border-[1px] border-b-4 bg-blue-500 border-blue-700 bg-200 text-center text-white p-2 rounded-2xl transform transition-transform duration-200 hover:scale-105"
                   onClick={handleProtectedClick(katakanaYoonWritingSystem)}
                   href={
                     createURL(
@@ -808,12 +799,9 @@ const KatakanaExplained = () => {
               are foreign sounds in the Japanese loan words <b>ヴァイオリン (vaiorin, violin)</b> and <b>フィルム (firumu, film)</b> respectively.
               There are 22 Foreign Yōon combinations in total.
           </div>
-          <div className='flex py-6'>
-            <div className='py-4'>
-            Now try this exercise:
-            </div>
+          <div className='flex py-6 justify-center'>
             <div className="flex flex-col space-y-2 justify-center items-center ml-4">
-              <a className=" border-[1px] border-b-4 bg-blue-500 border-blue-700 bg-200 text-center text-white p-2 rounded-2xl text-lg md:text-xl transform transition-transform duration-200 hover:scale-105"
+              <a className=" border-[1px] border-b-4 bg-blue-500 border-blue-700 bg-200 text-center text-white p-2 rounded-2xl transform transition-transform duration-200 hover:scale-105"
                 onClick={handleProtectedClick(katakanaSpecialYoonWritingSystem)}
                 href={
                   createURL(
@@ -857,7 +845,7 @@ const KatakanaExplained = () => {
   };
 
   return (
-    <div className="max-w-screen-md mx-auto px-4 md:text-lg">
+    <div className="max-w-screen-md mx-auto px-4">
       {/*@ts-ignore*/}
       <h4 className="text-center text-2xl pt-12">Lesson {currentLesson} - {lessonTitles[currentLesson]}</h4>
       <div className="flex justify-center items-center space-x-4 mt-8 mb-6">

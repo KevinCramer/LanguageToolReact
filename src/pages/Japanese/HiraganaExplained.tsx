@@ -280,12 +280,9 @@ const HiraganaExplained = () => {
           <div className='py-4'>
             {basicHiraganaTable}
           </div>
-          <div className='flex py-6'>
-            <div className='py-4'>
-            Now try this exercise:
-            </div>
+          <div className='flex py-6 justify-center'>
             <div className="flex flex-col space-y-2 justify-center items-center ml-4">
-              <a className=" border-[1px] border-b-4 bg-blue-500 border-blue-700 bg-200 text-center text-white p-2 rounded-2xl text-lg md:text-xl transform transition-transform duration-200 hover:scale-105"
+              <a className=" border-[1px] border-b-4 bg-blue-500 border-blue-700 bg-200 text-center text-white p-2 rounded-2xl transform transition-transform duration-200 hover:scale-105"
 
                 onClick={handleProtectedClick(hiraganaBasicWritingSystem)}
                 href={createURL(LanguageNames.Japanese, LearningSections.WritingSystem, hiraganaBasicWritingSystem)}
@@ -325,12 +322,9 @@ const HiraganaExplained = () => {
                 </div>       
               </div>
             </div>
-            <div className='flex py-6'>
-              <div className='py-4'>
-              Now try this exercise:
-              </div>
+            <div className='flex py-6 justify-center'>
               <div className='flex flex-col space-y-2 justify-center items-center ml-4'>
-                <a className=" border-[1px] border-b-4 bg-blue-500 border-blue-700 bg-200 text-center text-white p-2 rounded-2xl text-lg md:text-xl transform transition-transform duration-200 hover:scale-105"
+                <a className=" border-[1px] border-b-4 bg-blue-500 border-blue-700 bg-200 text-center text-white p-2 rounded-2xl transform transition-transform duration-200 hover:scale-105"
                   onClick={handleProtectedClick(hiraganaDakutenWritingSystem)} 
                   href={
                     createURL(
@@ -360,12 +354,9 @@ const HiraganaExplained = () => {
             like <b>きょう(kyou, today)</b> and <b>
             しょうがっこう(shougakkou, elementary school)</b>. 
           </div>
-          <div className='flex py-6'>
-            <div className='py-4'>
-            Now try this exercise:
-            </div>
+          <div className='flex py-6 justify-center'>
             <div className='flex flex-col space-y-2 justify-center items-center ml-4'>
-              <a className=" border-[1px] border-b-4 bg-blue-500 border-blue-700 bg-200 text-center text-white p-2 rounded-2xl text-lg md:text-xl transform transition-transform duration-200 hover:scale-105"
+              <a className=" border-[1px] border-b-4 bg-blue-500 border-blue-700 bg-200 text-center text-white p-2 rounded-2xl transform transition-transform duration-200 hover:scale-105"
                 onClick={handleProtectedClick(hiraganaYoonWritingSystem)} 
                 href={
                   createURL(
@@ -388,7 +379,7 @@ const HiraganaExplained = () => {
   };
 
   return (
-    <div className="max-w-screen-md mx-auto px-4 md:text-lg">
+    <div className="max-w-screen-md mx-auto px-4">
       {/*@ts-ignore*/}
       <h4 className="text-center text-2xl pt-12">Lesson {currentLesson} - {lessonTitles[currentLesson]}</h4>
       {/* Navigation */}

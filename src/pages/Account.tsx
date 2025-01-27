@@ -17,7 +17,7 @@ const Account = () => {
 
   return (
     <div className='flex flex-col justify-center flex-1 px-4'>
-      <div className='max-w-screen-md mx-auto  md:text-lg rounded-md text-white text-center'>
+      <div className='max-w-screen-md mx-auto rounded-md text-white text-center'>
         <h4 className='text-center text-2xl py-12'>Account Settings</h4>
         <CustomLink isWhite={true} onClick={() => {
           dispatch(setBackwardRoute(location.pathname));

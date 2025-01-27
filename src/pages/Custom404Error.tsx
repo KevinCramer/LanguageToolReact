@@ -5,10 +5,10 @@ const Custom404Error = () => {
       <div className='h-[150px]'>
 
       </div>
-      <div className='max-w-screen-md mx-auto  md:text-lg rounded-md'>
+      <div className='max-w-screen-md mx-auto  rounded-md'>
         Oh no! That page does not exist.
       </div>   
-      <div className='max-w-screen-md mx-auto  md:text-lg rounded-md'>
+      <div className='max-w-screen-md mx-auto  rounded-md'>
       Head to our <a className='text-blue-500 underline' href='/'>homepage</a> that does exist.
       </div>
     </div>

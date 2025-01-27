@@ -25,12 +25,12 @@ const JapaneseWritingSystems = () => {
 
   const typingJapaneseSection = (
     <div className='py-2'>
-      Finally you can click here to learn <a className='text-blue-500 underline' href='/japanese/how-to-type-japanese'>How to Type Japanese</a>.
+      <a className="text-blue-500 underline" href='/japanese/how-to-type-japanese'>How to Type Japanese</a>
     </div>
   );
 
   return (
-    <div className='max-w-screen-md mx-auto px-4 md:text-lg'>
+    <div className='max-w-screen-md mx-auto px-4 '>
       <h4 className='text-center text-2xl py-12'>Japanese Writing Systems Explained</h4>
       <div className='py-2'>The Japanese language has 3 writing systems:</div>
       {sections.map((section, index) => (

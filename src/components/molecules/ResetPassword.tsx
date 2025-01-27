@@ -35,7 +35,7 @@ export default function ResetPassWord() {
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
       <div className="relative bg-white p-6 shadow-lg w-full h-full flex items-center justify-center">
-        <div className="max-w-screen-md mx-auto px-4 md:text-lg">
+        <div className="max-w-screen-md mx-auto px-4">
           <div className="flex justify-end pb-2">
             <button
               onClick={() => navigate(backwardRoute || '/')}

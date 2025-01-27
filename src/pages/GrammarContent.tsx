@@ -73,7 +73,7 @@ const GrammarContent = (props: { languageNumber: number }) => {
   }, []);
 
   return (
-    <div className="max-w-screen-md mx-auto px-4 md:text-lg">
+    <div className="max-w-screen-md mx-auto px-4">
       <h4 className="text-center text-2xl py-12">
         {languages[props.languageNumber].languageName} Grammar
       </h4>

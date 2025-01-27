@@ -373,15 +373,13 @@ const VocabContent = (
   }
   
   return (
-    <div className='flex flex-col items-center text-lg md:text-xl'>
+    <div className='flex flex-col items-center'>
       <div className='flex mt-12 mb-12 items-center'>
         <h4 className='text-center text-2xl flex'>
           {currentLanguage.languageName} Vocabulary -&nbsp;
-          <div className='text-blue-500 text-xl'> &nbsp; </div>
-          <button onClick={displayPopUp} className='text-blue-500 underline text-xl'>
+          <button onClick={displayPopUp} className='text-blue-500 underline text-2xl'>
             Video Guide
           </button>
-          <div className='text-blue-500 text-xl'></div> 
         </h4>
       </div>
     
@@ -429,12 +427,12 @@ const VocabContent = (
         </div>
         <div className='flex justify-center'>
           <button
-            className=" flex items-center border-[1px] border-b-4 bg-blue-500 border-blue-700 text-blue-500 w-[80px] rounded-lg text-base transform transition-transform duration-200 hover:scale-105"
+            className=" flex items-center border-[1px] border-b-4 bg-blue-500 border-blue-700 text-blue-500 rounded-lg text-base p-0.5 transform transition-transform duration-200 hover:scale-105"
             onClick={changeQuizState}
           >
-            <div className='text-xl text-white ml-2'>Quiz</div> 
+            <div className='text-white ml-1'>Quiz</div> 
             <div style={{ display: 'inline-block', borderRadius: '4px' }}
-              className='ml-1.5'>
+              className='ml-1.5 mr-1'>
               {quiz ? <BsCheck size={16}
                 className='text-white bg-blue-500 border border-white rounded'
                 style={{ strokeWidth: '1' }}

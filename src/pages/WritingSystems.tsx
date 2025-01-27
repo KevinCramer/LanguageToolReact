@@ -356,21 +356,19 @@ const WritingSystems = (
   }
     
   return (
-    <div className='flex flex-col items-center text-lg md:text-xl'>
+    <div className='flex flex-col items-center'>
       <div className='flex mt-12 mb-12 items-center'>
-        <h4 className="flex flex-row justify-center text-center text-2xl py-12">
+        <h4 className="flex flex-row justify-center text-center text-2xl">
           <div>
           Japanese Writing Systems -&nbsp;
             <a
               onClick={() => setShowPopUp(true)}
-              className="text-blue-500 underline text-xl"
+              className="text-blue-500 underline text-2xl"
             >
         Video Guide
             </a>
           </div>
-         
         </h4>
-    
       </div>
       <div className="flex min-w-[350px] justify-between items-center mb-2">
         {/* Topic Dropdown */}
@@ -414,12 +412,12 @@ const WritingSystems = (
         </div>
         <div className='flex justify-center'>
           <button
-            className=" flex items-center border-[1px] border-b-4 bg-blue-500 border-blue-700 text-blue-500 w-[80px] rounded-lg text-base transform transition-transform duration-200 hover:scale-105"
+            className=" flex items-center border-[1px] border-b-4 bg-blue-500 border-blue-700 text-blue-500 rounded-lg text-base p-0.5 transform transition-transform duration-200 hover:scale-105"
             onClick={changeQuizState}
           >
-            <div className='text-xl text-white ml-2'>Quiz</div> 
+            <div className=' text-white ml-1'>Quiz</div> 
             <div style={{ display: 'inline-block', borderRadius: '4px' }}
-              className='ml-1.5'>
+              className='ml-1.5 mr-1'>
               {quiz ? <BsCheck size={16}
                 className='text-white bg-blue-500 border border-white rounded'
                 style={{ strokeWidth: '1' }}

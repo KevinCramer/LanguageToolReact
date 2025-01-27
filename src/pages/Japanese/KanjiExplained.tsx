@@ -29,7 +29,7 @@ const KanjiExplained = () => {
     </table>)
     
   return (
-    <div className='max-w-screen-md mx-auto px-4 md:text-lg'>
+    <div className='max-w-screen-md mx-auto px-4'>
       <h4 className='text-center text-2xl py-12'>Kanji Explained</h4>
       <div className='py-2'>
         Kanji are characters used in the Japanese writing system, originally borrowed from Chinese characters. They represent ideas or meanings rather than just sounds. Each kanji can have multiple meanings and pronunciations depending on the context.
@@ -52,7 +52,7 @@ const KanjiExplained = () => {
 
       </div>        
       <div className="flex flex-col space-y-2 justify-center items-center m-4">
-        <a className="border-[1px] border-b-4 bg-blue-500 border-blue-700 bg-200 text-center text-white p-2 rounded-2xl text-lg md:text-xl transform transition-transform duration-200 hover:scale-105"
+        <a className="border-[1px] border-b-4 bg-blue-500 border-blue-700 bg-200 text-center text-white p-2 rounded-2xl transform transition-transform duration-200 hover:scale-105"
           href='vocabulary?s=clo-T2TFT'>
                       Kanji Vocabulary Exercises
         </a>
