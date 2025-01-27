@@ -97,9 +97,6 @@ const Navbar = () => {
        
         {isMobile && 
         <>
-          <NavLink to='/japanese/home-page' className={onJapanese ? 'underline text-white' : 'text-white '} style={{ fontStretch: navbarFontStretch }}> 
-        Japanese
-          </NavLink>
           <NavLink to='/about' className={({ isActive }) => isActive ? 'underline text-white ' : 'text-white '}style={{ fontStretch: navbarFontStretch }}> 
           About
           </NavLink>
