@@ -38,9 +38,6 @@ const Navbar = () => {
     };
   }, []);
 
-  // Check if the current URL starts with '/japanese'
-  const onJapanese = location.pathname.startsWith('/japanese');
-
   const useWindowWidth = () => {
     const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
 
@@ -66,6 +63,9 @@ const Navbar = () => {
 
   // Now you can use width to check screen size in your component
   const isMobile = width < 768; 
+
+  // Check if the current URL starts with '/japanese'
+  const onJapanese = location.pathname.startsWith('/japanese') || ( isMobile ? location.pathname.includes('contact') : false);
 
   const pathWithBackground = location.pathname === '/' 
   || location.pathname === '/account'
