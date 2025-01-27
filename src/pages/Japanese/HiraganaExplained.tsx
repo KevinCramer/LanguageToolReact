@@ -8,11 +8,64 @@ import { useAuth } from '../../contexts/AuthContext';
 import { useProtectedLink } from '../../helpers/use-protected-link';
 import { useSearchParams } from 'react-router-dom';
 
+import hiraganaAudioA from '../../data/raw-data/audio_vocab/japanese/hiragana/a.mp3'
+import hiraganaAudioI from '../../data/raw-data/audio_vocab/japanese/hiragana/i.mp3'
+import hiraganaAudioU from '../../data/raw-data/audio_vocab/japanese/hiragana/u.mp3'
+import hiraganaAudioE from '../../data/raw-data/audio_vocab/japanese/hiragana/e.mp3'
+import hiraganaAudioO from '../../data/raw-data/audio_vocab/japanese/hiragana/o.mp3'
+import hiraganaAudioKa from '../../data/raw-data/audio_vocab/japanese/hiragana/ka.mp3'
+import hiraganaAudioKi from '../../data/raw-data/audio_vocab/japanese/hiragana/ki.mp3'
+import hiraganaAudioKu from '../../data/raw-data/audio_vocab/japanese/hiragana/ku.mp3'
+import hiraganaAudioKe from '../../data/raw-data/audio_vocab/japanese/hiragana/ke.mp3'
+import hiraganaAudioKo from '../../data/raw-data/audio_vocab/japanese/hiragana/ko.mp3'
+import hiraganaAudioSa from '../../data/raw-data/audio_vocab/japanese/hiragana/sa.mp3'
+import hiraganaAudioShi from '../../data/raw-data/audio_vocab/japanese/hiragana/shi.mp3'
+import hiraganaAudioSu from '../../data/raw-data/audio_vocab/japanese/hiragana/su.mp3'
+import hiraganaAudioSe from '../../data/raw-data/audio_vocab/japanese/hiragana/se.mp3'
+import hiraganaAudioSo from '../../data/raw-data/audio_vocab/japanese/hiragana/so.mp3'
+import hiraganaAudioTa from '../../data/raw-data/audio_vocab/japanese/hiragana/ta.mp3'
+import hiraganaAudioChi from '../../data/raw-data/audio_vocab/japanese/hiragana/chi.mp3'
+import hiraganaAudioTsu from '../../data/raw-data/audio_vocab/japanese/hiragana/tsu.mp3'
+import hiraganaAudioTe from '../../data/raw-data/audio_vocab/japanese/hiragana/te.mp3'
+import hiraganaAudioTo from '../../data/raw-data/audio_vocab/japanese/hiragana/to.mp3'
+import hiraganaAudioNa from '../../data/raw-data/audio_vocab/japanese/hiragana/na.mp3'
+import hiraganaAudioNi from '../../data/raw-data/audio_vocab/japanese/hiragana/ni.mp3'
+import hiraganaAudioNu from '../../data/raw-data/audio_vocab/japanese/hiragana/nu.mp3'
+import hiraganaAudioNe from '../../data/raw-data/audio_vocab/japanese/hiragana/ne.mp3'
+import hiraganaAudioNo from '../../data/raw-data/audio_vocab/japanese/hiragana/no.mp3'
+import hiraganaAudioHa from '../../data/raw-data/audio_vocab/japanese/hiragana/ha.mp3'
+import hiraganaAudioHi from '../../data/raw-data/audio_vocab/japanese/hiragana/hi.mp3'
+import hiraganaAudioFu from '../../data/raw-data/audio_vocab/japanese/hiragana/fu.mp3'
+import hiraganaAudioHe from '../../data/raw-data/audio_vocab/japanese/hiragana/he.mp3'
+import hiraganaAudioHo from '../../data/raw-data/audio_vocab/japanese/hiragana/ho.mp3'
+import hiraganaAudioMa from '../../data/raw-data/audio_vocab/japanese/hiragana/ma.mp3'
+import hiraganaAudioMi from '../../data/raw-data/audio_vocab/japanese/hiragana/mi.mp3'
+import hiraganaAudioMu from '../../data/raw-data/audio_vocab/japanese/hiragana/mu.mp3'
+import hiraganaAudioMe from '../../data/raw-data/audio_vocab/japanese/hiragana/me.mp3'
+import hiraganaAudioMo from '../../data/raw-data/audio_vocab/japanese/hiragana/mo.mp3'
+import hiraganaAudioYa from '../../data/raw-data/audio_vocab/japanese/hiragana/ya.mp3'
+import hiraganaAudioYu from '../../data/raw-data/audio_vocab/japanese/hiragana/yu.mp3'
+import hiraganaAudioYo from '../../data/raw-data/audio_vocab/japanese/hiragana/yo.mp3'
+import hiraganaAudioRa from '../../data/raw-data/audio_vocab/japanese/hiragana/ra.mp3'
+import hiraganaAudioRi from '../../data/raw-data/audio_vocab/japanese/hiragana/ri.mp3'
+import hiraganaAudioRu from '../../data/raw-data/audio_vocab/japanese/hiragana/ru.mp3'
+import hiraganaAudioRe from '../../data/raw-data/audio_vocab/japanese/hiragana/re.mp3'
+import hiraganaAudioRo from '../../data/raw-data/audio_vocab/japanese/hiragana/ro.mp3'
+import hiraganaAudioWa from '../../data/raw-data/audio_vocab/japanese/hiragana/wa.mp3'
+import hiraganaAudioWo from '../../data/raw-data/audio_vocab/japanese/hiragana/wo.mp3'
+import hiraganaAudioN from '../../data/raw-data/audio_vocab/japanese/hiragana/n.mp3'
+
 const lessonTitles = {
   1: 'Basic Hiragana',
   2: 'Hiragana with Dakuten and Handakuten',
   3: 'Yoōn Hiragana'
 }
+
+const playAudio = (audioFile:any) => {
+  const audio = new Audio(audioFile);
+  audio.play();
+};
+
 const HiraganaExplained = () => {
   //@ts-ignore
   const { currentUser } = useAuth();
@@ -93,6 +146,21 @@ const HiraganaExplained = () => {
       </table>
     </div>
   );
+
+  // State to control the visibility of the tooltip modal
+  const [isTooltipVisible, setIsTooltipVisible] = useState(false);
+  const [tooltipText, setTooltipText] = useState('');
+  
+  // Function to show the tooltip
+  const showTooltip = (text: any) => {
+    setTooltipText(text);
+    setIsTooltipVisible(true);
+  };
+  
+  // Function to hide the tooltip
+  const hideTooltip = () => {
+    setIsTooltipVisible(false);
+  };
   
   const basicHiraganaTable = (
     <div className="flex justify-center">
@@ -108,76 +176,77 @@ const HiraganaExplained = () => {
         </thead>
         <tbody>
           <tr>
-            <td className="border border-gray-500 px-4 py-2">あ (a)</td>
-            <td className="border border-gray-500 px-4 py-2">い (i)</td>
-            <td className="border border-gray-500 px-4 py-2">う (u)</td>
-            <td className="border border-gray-500 px-4 py-2">え (e)</td>
-            <td className="border border-gray-500 px-4 py-2">お (o)</td>
+            <td className="border border-gray-500 px-4 py-2 hover:bg-gray-100 cursor-pointer" onMouseEnter={() => showTooltip('Click to hear pronunciation')} onMouseLeave={hideTooltip} onClick={() => playAudio(hiraganaAudioA)}>あ (a)</td>
+            <td className="border border-gray-500 px-4 py-2 hover:bg-gray-100 cursor-pointer" onMouseEnter={() => showTooltip('Click to hear pronunciation')} onMouseLeave={hideTooltip} onClick={() => playAudio(hiraganaAudioI)}>い (i)</td>
+            <td className="border border-gray-500 px-4 py-2 hover:bg-gray-100 cursor-pointer" onMouseEnter={() => showTooltip('Click to hear pronunciation')} onMouseLeave={hideTooltip} onClick={() => playAudio(hiraganaAudioU)}>う (u)</td>
+            <td className="border border-gray-500 px-4 py-2 hover:bg-gray-100 cursor-pointer" onMouseEnter={() => showTooltip('Click to hear pronunciation')} onMouseLeave={hideTooltip} onClick={() => playAudio(hiraganaAudioE)}>え (e)</td>
+            <td className="border border-gray-500 px-4 py-2 hover:bg-gray-100 cursor-pointer" onMouseEnter={() => showTooltip('Click to hear pronunciation')} onMouseLeave={hideTooltip} onClick={() => playAudio(hiraganaAudioO)}>お (o)</td>
           </tr>
           <tr>
-            <td className="border border-gray-500 px-4 py-2">か (ka)</td>
-            <td className="border border-gray-500 px-4 py-2">き (ki)</td>
-            <td className="border border-gray-500 px-4 py-2">く (ku)</td>
-            <td className="border border-gray-500 px-4 py-2">け (ke)</td>
-            <td className="border border-gray-500 px-4 py-2">こ (ko)</td>
+            <td className="border border-gray-500 px-4 py-2 hover:bg-gray-100 cursor-pointer" onMouseEnter={() => showTooltip('Click to hear pronunciation')} onMouseLeave={hideTooltip} onClick={() => playAudio(hiraganaAudioKa)}>か (ka)</td>
+            <td className="border border-gray-500 px-4 py-2 hover:bg-gray-100 cursor-pointer" onMouseEnter={() => showTooltip('Click to hear pronunciation')} onMouseLeave={hideTooltip} onClick={() => playAudio(hiraganaAudioKi)}>き (ki)</td>
+            <td className="border border-gray-500 px-4 py-2 hover:bg-gray-100 cursor-pointer" onMouseEnter={() => showTooltip('Click to hear pronunciation')} onMouseLeave={hideTooltip} onClick={() => playAudio(hiraganaAudioKu)}>く (ku)</td>
+            <td className="border border-gray-500 px-4 py-2 hover:bg-gray-100 cursor-pointer" onMouseEnter={() => showTooltip('Click to hear pronunciation')} onMouseLeave={hideTooltip} onClick={() => playAudio(hiraganaAudioKe)}>け (ke)</td>
+            <td className="border border-gray-500 px-4 py-2 hover:bg-gray-100 cursor-pointer" onMouseEnter={() => showTooltip('Click to hear pronunciation')} onMouseLeave={hideTooltip} onClick={() => playAudio(hiraganaAudioKo)}>こ (ko)</td>
           </tr>
           <tr>
-            <td className="border border-gray-500 px-4 py-2">さ (sa)</td>
-            <td className="border border-gray-500 px-4 py-2">し (shi)</td>
-            <td className="border border-gray-500 px-4 py-2">す (su)</td>
-            <td className="border border-gray-500 px-4 py-2">せ (se)</td>
-            <td className="border border-gray-500 px-4 py-2">そ (so)</td>
+            <td className="border border-gray-500 px-4 py-2 hover:bg-gray-100 cursor-pointer" onMouseEnter={() => showTooltip('Click to hear pronunciation')} onMouseLeave={hideTooltip} onClick={() => playAudio(hiraganaAudioSa)}>さ (sa)</td>
+            <td className="border border-gray-500 px-4 py-2 hover:bg-gray-100 cursor-pointer" onMouseEnter={() => showTooltip('Click to hear pronunciation')} onMouseLeave={hideTooltip} onClick={() => playAudio(hiraganaAudioShi)}>し (shi)</td>
+            <td className="border border-gray-500 px-4 py-2 hover:bg-gray-100 cursor-pointer" onMouseEnter={() => showTooltip('Click to hear pronunciation')} onMouseLeave={hideTooltip} onClick={() => playAudio(hiraganaAudioSu)}>す (su)</td>
+            <td className="border border-gray-500 px-4 py-2 hover:bg-gray-100 cursor-pointer" onMouseEnter={() => showTooltip('Click to hear pronunciation')} onMouseLeave={hideTooltip} onClick={() => playAudio(hiraganaAudioSe)}>せ (se)</td>
+            <td className="border border-gray-500 px-4 py-2 hover:bg-gray-100 cursor-pointer" onMouseEnter={() => showTooltip('Click to hear pronunciation')} onMouseLeave={hideTooltip} onClick={() => playAudio(hiraganaAudioSo)}>そ (so)</td>
           </tr>
           <tr>
-            <td className="border border-gray-500 px-4 py-2">た (ta)</td>
-            <td className="border border-gray-500 px-4 py-2">ち (chi)</td>
-            <td className="border border-gray-500 px-4 py-2">つ (tsu)</td>
-            <td className="border border-gray-500 px-4 py-2">て (te)</td>
-            <td className="border border-gray-500 px-4 py-2">と (to)</td>
+            <td className="border border-gray-500 px-4 py-2 hover:bg-gray-100 cursor-pointer" onMouseEnter={() => showTooltip('Click to hear pronunciation')} onMouseLeave={hideTooltip} onClick={() => playAudio(hiraganaAudioTa)}>た (ta)</td>
+            <td className="border border-gray-500 px-4 py-2 hover:bg-gray-100 cursor-pointer" onMouseEnter={() => showTooltip('Click to hear pronunciation')} onMouseLeave={hideTooltip} onClick={() => playAudio(hiraganaAudioChi)}>ち (chi)</td>
+            <td className="border border-gray-500 px-4 py-2 hover:bg-gray-100 cursor-pointer" onMouseEnter={() => showTooltip('Click to hear pronunciation')} onMouseLeave={hideTooltip} onClick={() => playAudio(hiraganaAudioTsu)}>つ (tsu)</td>
+            <td className="border border-gray-500 px-4 py-2 hover:bg-gray-100 cursor-pointer" onMouseEnter={() => showTooltip('Click to hear pronunciation')} onMouseLeave={hideTooltip} onClick={() => playAudio(hiraganaAudioTe)}>て (te)</td>
+            <td className="border border-gray-500 px-4 py-2 hover:bg-gray-100 cursor-pointer" onMouseEnter={() => showTooltip('Click to hear pronunciation')} onMouseLeave={hideTooltip} onClick={() => playAudio(hiraganaAudioTo)}>と (to)</td>
           </tr>
           <tr>
-            <td className="border border-gray-500 px-4 py-2">な (na)</td>
-            <td className="border border-gray-500 px-4 py-2">に (ni)</td>
-            <td className="border border-gray-500 px-4 py-2">ぬ (nu)</td>
-            <td className="border border-gray-500 px-4 py-2">ね (ne)</td>
-            <td className="border border-gray-500 px-4 py-2">の (no)</td>
+            <td className="border border-gray-500 px-4 py-2 hover:bg-gray-100 cursor-pointer" onMouseEnter={() => showTooltip('Click to hear pronunciation')} onMouseLeave={hideTooltip} onClick={() => playAudio(hiraganaAudioNa)}>な (na)</td>
+            <td className="border border-gray-500 px-4 py-2 hover:bg-gray-100 cursor-pointer" onMouseEnter={() => showTooltip('Click to hear pronunciation')} onMouseLeave={hideTooltip} onClick={() => playAudio(hiraganaAudioNi)}>に (ni)</td>
+            <td className="border border-gray-500 px-4 py-2 hover:bg-gray-100 cursor-pointer" onMouseEnter={() => showTooltip('Click to hear pronunciation')} onMouseLeave={hideTooltip} onClick={() => playAudio(hiraganaAudioNu)}>ぬ (nu)</td>
+            <td className="border border-gray-500 px-4 py-2 hover:bg-gray-100 cursor-pointer" onMouseEnter={() => showTooltip('Click to hear pronunciation')} onMouseLeave={hideTooltip} onClick={() => playAudio(hiraganaAudioNe)}>ね (ne)</td>
+            <td className="border border-gray-500 px-4 py-2 hover:bg-gray-100 cursor-pointer" onMouseEnter={() => showTooltip('Click to hear pronunciation')} onMouseLeave={hideTooltip} onClick={() => playAudio(hiraganaAudioNo)}>の (no)</td>
           </tr>
           <tr>
-            <td className="border border-gray-500 px-4 py-2">は (ha)</td>
-            <td className="border border-gray-500 px-4 py-2">ひ (hi)</td>
-            <td className="border border-gray-500 px-4 py-2">ふ (fu)</td>
-            <td className="border border-gray-500 px-4 py-2">へ (he)</td>
-            <td className="border border-gray-500 px-4 py-2">ほ (ho)</td>
+            <td className="border border-gray-500 px-4 py-2 hover:bg-gray-100 cursor-pointer" onMouseEnter={() => showTooltip('Click to hear pronunciation')} onMouseLeave={hideTooltip} onClick={() => playAudio(hiraganaAudioHa)}>は (ha)</td>
+            <td className="border border-gray-500 px-4 py-2 hover:bg-gray-100 cursor-pointer" onMouseEnter={() => showTooltip('Click to hear pronunciation')} onMouseLeave={hideTooltip} onClick={() => playAudio(hiraganaAudioHi)}>ひ (hi)</td>
+            <td className="border border-gray-500 px-4 py-2 hover:bg-gray-100 cursor-pointer" onMouseEnter={() => showTooltip('Click to hear pronunciation')} onMouseLeave={hideTooltip} onClick={() => playAudio(hiraganaAudioFu)}>ふ (fu)</td>
+            <td className="border border-gray-500 px-4 py-2 hover:bg-gray-100 cursor-pointer" onMouseEnter={() => showTooltip('Click to hear pronunciation')} onMouseLeave={hideTooltip} onClick={() => playAudio(hiraganaAudioHe)}>へ (he)</td>
+            <td className="border border-gray-500 px-4 py-2 hover:bg-gray-100 cursor-pointer" onMouseEnter={() => showTooltip('Click to hear pronunciation')} onMouseLeave={hideTooltip} onClick={() => playAudio(hiraganaAudioHo)}>ほ (ho)</td>
           </tr>
           <tr>
-            <td className="border border-gray-500 px-4 py-2">ま (ma)</td>
-            <td className="border border-gray-500 px-4 py-2">み (mi)</td>
-            <td className="border border-gray-500 px-4 py-2">む (mu)</td>
-            <td className="border border-gray-500 px-4 py-2">め (me)</td>
-            <td className="border border-gray-500 px-4 py-2">も (mo)</td>
+            <td className="border border-gray-500 px-4 py-2 hover:bg-gray-100 cursor-pointer" onMouseEnter={() => showTooltip('Click to hear pronunciation')} onMouseLeave={hideTooltip} onClick={() => playAudio(hiraganaAudioMa)}>ま (ma)</td>
+            <td className="border border-gray-500 px-4 py-2 hover:bg-gray-100 cursor-pointer" onMouseEnter={() => showTooltip('Click to hear pronunciation')} onMouseLeave={hideTooltip} onClick={() => playAudio(hiraganaAudioMi)}>み (mi)</td>
+            <td className="border border-gray-500 px-4 py-2 hover:bg-gray-100 cursor-pointer" onMouseEnter={() => showTooltip('Click to hear pronunciation')} onMouseLeave={hideTooltip} onClick={() => playAudio(hiraganaAudioMu)}>む (mu)</td>
+            <td className="border border-gray-500 px-4 py-2 hover:bg-gray-100 cursor-pointer" onMouseEnter={() => showTooltip('Click to hear pronunciation')} onMouseLeave={hideTooltip} onClick={() => playAudio(hiraganaAudioMe)}>め (me)</td>
+            <td className="border border-gray-500 px-4 py-2 hover:bg-gray-100 cursor-pointer" onMouseEnter={() => showTooltip('Click to hear pronunciation')} onMouseLeave={hideTooltip} onClick={() => playAudio(hiraganaAudioMo)}>も (mo)</td>
           </tr>
           <tr>
-            <td className="border border-gray-500 px-4 py-2">や (ya)</td>
+            <td className="border border-gray-500 px-4 py-2 hover:bg-gray-100 cursor-pointer" onMouseEnter={() => showTooltip('Click to hear pronunciation')} onMouseLeave={hideTooltip} onClick={() => playAudio(hiraganaAudioYa)}>や (ya)</td>
             <td className="border border-gray-500 px-4 py-2"></td>
-            <td className="border border-gray-500 px-4 py-2">ゆ (yu)</td>
+            <td className="border border-gray-500 px-4 py-2 hover:bg-gray-100 cursor-pointer" onMouseEnter={() => showTooltip('Click to hear pronunciation')} onMouseLeave={hideTooltip} onClick={() => playAudio(hiraganaAudioYu)}>ゆ (yu)</td>
             <td className="border border-gray-500 px-4 py-2"></td>
-            <td className="border border-gray-500 px-4 py-2">よ (yo)</td>
+            <td className="border border-gray-500 px-4 py-2 hover:bg-gray-100 cursor-pointer" onMouseEnter={() => showTooltip('Click to hear pronunciation')} onMouseLeave={hideTooltip} onClick={() => playAudio(hiraganaAudioYo)}>よ (yo)</td>
           </tr>
           <tr>
-            <td className="border border-gray-500 px-4 py-2">ら (ra)</td>
-            <td className="border border-gray-500 px-4 py-2">り (ri)</td>
-            <td className="border border-gray-500 px-4 py-2">る (ru)</td>
-            <td className="border border-gray-500 px-4 py-2">れ (re)</td>
-            <td className="border border-gray-500 px-4 py-2">ろ (ro)</td>
+            <td className="border border-gray-500 px-4 py-2 hover:bg-gray-100 cursor-pointer" onMouseEnter={() => showTooltip('Click to hear pronunciation')} onMouseLeave={hideTooltip} onClick={() => playAudio(hiraganaAudioRa)}>ら (ra)</td>
+            <td className="border border-gray-500 px-4 py-2 hover:bg-gray-100 cursor-pointer" onMouseEnter={() => showTooltip('Click to hear pronunciation')} onMouseLeave={hideTooltip} onClick={() => playAudio(hiraganaAudioRi)}>り (ri)</td>
+            <td className="border border-gray-500 px-4 py-2 hover:bg-gray-100 cursor-pointer" onMouseEnter={() => showTooltip('Click to hear pronunciation')} onMouseLeave={hideTooltip} onClick={() => playAudio(hiraganaAudioRu)}>る (ru)</td>
+            <td className="border border-gray-500 px-4 py-2 hover:bg-gray-100 cursor-pointer" onMouseEnter={() => showTooltip('Click to hear pronunciation')} onMouseLeave={hideTooltip} onClick={() => playAudio(hiraganaAudioRe)}>れ (re)</td>
+            <td className="border border-gray-500 px-4 py-2 hover:bg-gray-100 cursor-pointer" onMouseEnter={() => showTooltip('Click to hear pronunciation')} onMouseLeave={hideTooltip} onClick={() => playAudio(hiraganaAudioRo)}>ろ (ro)</td>
           </tr>
           <tr>
-            <td className="border border-gray-500 px-4 py-2">わ (wa)</td>
+            <td className="border border-gray-500 px-4 py-2 hover:bg-gray-100 cursor-pointer" onMouseEnter={() => showTooltip('Click to hear pronunciation')} onMouseLeave={hideTooltip} onClick={() => playAudio(hiraganaAudioWa)}>わ (wa)</td>
             <td className="border border-gray-500 px-4 py-2"></td>
-            <td className="border border-gray-500 px-4 py-2">を (wo)</td>
+            <td className="border border-gray-500 px-4 py-2 hover:bg-gray-100 cursor-pointer" onMouseEnter={() => showTooltip('It is pronounced "o". Click to hear pronunciation')} onMouseLeave={hideTooltip} onClick={() => playAudio(hiraganaAudioWo)}>を (wo)</td>
             <td className="border border-gray-500 px-4 py-2"></td>
-            <td className="border border-gray-500 px-4 py-2">ん (n)</td>
+            <td className="border border-gray-500 px-4 py-2 hover:bg-gray-100 cursor-pointer" onMouseEnter={() => showTooltip('Click to hear pronunciation')} onMouseLeave={hideTooltip} onClick={() => playAudio(hiraganaAudioN)}>ん (n)</td>
           </tr>
         </tbody>
+
       </table>
     </div>
   );
@@ -213,6 +282,13 @@ const HiraganaExplained = () => {
               </a>
             </div>
           </div>
+
+          {/* Tooltip Modal */}
+          {isTooltipVisible && (
+            <div className="fixed bottom-0 left-1/2 transform -translate-x-1/2 p-4 bg-gray-900 w-full text-center text-white shadow-lg">
+              {tooltipText}
+            </div>
+          )}
         </div>
       );
     case 2:
