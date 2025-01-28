@@ -48,77 +48,77 @@ const routesMeta = {
     title: 'Japanese Writing Systems Explained',
     meta: [
       { name: 'description', content: 'The Japanese language has 3 writing systems: Hiragana - a phonetic writing system used for native japanese words. Katakana - a phonetic writing system mainly used for loan words from other languages. Kanji - a non phonetic writing system. (It has over 50,000 characters).' },
-      { name: 'keywords', content: 'Japanese writing systems explained, hiragana, katakana, kanji.' },
+      { name: 'keywords', content: 'Japanese writing systems explained, hiragana, katakana, kanji, how to write Japanese' },
     ],
   },
   '/japanese/hiragana-explained?lesson=1': {
     title: 'Lesson 1 - Basic Hiragana',
     meta: [
       { name: 'description', content: 'Learning hiragana is the first step to learning japanese. By learning all 3 concepts below you will learn the basics of Japanese pronunciation. Basic hiragana has 46 sounds.' },
-      { name: 'keywords', content: 'hiragana, japanese writing systems, japanese pronunciation, basics of japanese, phonetic script, hiragana sounds' },
+      { name: 'keywords', content: 'hiragana, japanese writing systems, japanese pronunciation, basics of japanese, phonetic script, hiragana sounds, how to write Japanese. ' },
     ],
   },
   '/japanese/hiragana-explained?lesson=2': {
     title: 'Lesson 2 - Hiragana with Dakuten and Handakuten',
     meta: [
       { name: 'description', content: 'Dakuten and handakuten are marks added on top of hiragana that alter pronunciation. The dakuten mark is ( ゛). There are 20 dakuten variations. For example: か (ka) → が (ga). ' },
-      { name: 'keywords', content: 'hiragana, dakuten, handakuten, japanese writing systems, japanese pronunciation, basics of japanese, phonetic script, hiragana sounds' },
+      { name: 'keywords', content: 'hiragana, dakuten, handakuten, japanese writing systems, japanese pronunciation, basics of japanese, phonetic script, hiragana sounds, How to write Japanese' },
     ],
   },
   '/japanese/hiragana-explained?lesson=3': {
     title: 'Lesson 3 - Yoōn Hiragana',
     meta: [
       { name: 'description', content: 'Some hiragana combine to form Yōon sounds. In these combinations, the first character remains full-sized, while the second is smaller. There are 36 of these combinations in total.' },
-      { name: 'keywords', content: 'hiragana, japanese writing systems, yoōn, japanese pronunciation, basics of japanese, phonetic script, hiragana sounds' },
+      { name: 'keywords', content: 'hiragana, japanese writing systems, yoōn, japanese pronunciation, basics of japanese, phonetic script, hiragana sounds, How to write Japanese' },
     ],
   },
   '/japanese/katakana-explained?lesson=1': {
     title: 'Lesson 1 - Basic Katakana',
     meta: [
       { name: 'description', content: 'Katakana is mapinly used to write Japanese loan words. For example in Japanese the word for `camera` is カメラ (kamera). Learning all 5 concepts below is essential to learning Japanese.' },
-      { name: 'keywords', content: 'katakana, japanese loan words, japanese writing systems, phonetic script, learn japanese, katakana usage' },
+      { name: 'keywords', content: 'katakana, japanese loan words, japanese writing systems, phonetic script, learn japanese, katakana usage, How to write Japanese' },
     ],
   },
   '/japanese/katakana-explained?lesson=2': {
     title: 'Lesson 2 - Katakana with Dakuten and Handakuten',
     meta: [
       { name: 'description', content: 'Dakuten and handakuten are marks added on top of katakana (and hiragana) that alter pronunciation. The dakuten mark is ( ゛). There are 20 dakuten variations.' },
-      { name: 'keywords', content: 'katakana, dakuten, handakuten, japanese loan words, japanese writing systems, phonetic script, learn japanese, katakana usage' },
+      { name: 'keywords', content: 'katakana, dakuten, handakuten, japanese loan words, japanese writing systems, phonetic script, learn japanese, katakana usage, How to write Japanese' },
     ],
   },
   '/japanese/katakana-explained?lesson=3': {
     title: 'Lesson 3 - Yoōn Katakana',
     meta: [
       { name: 'description', content: 'Some katakana combine to form Yōon sounds. In these combinations, the first character remains full-sized, while the second is smaller. There are 36 of these combinations.' },
-      { name: 'keywords', content: 'katakana, yoōn, japanese loan words, japanese writing systems, phonetic script, learn japanese, katakana usage' },
+      { name: 'keywords', content: 'katakana, yoōn, japanese loan words, japanese writing systems, phonetic script, learn japanese, katakana usage, How to write Japanese' },
     ],
   },
   '/japanese/katakana-explained?lesson=4': {
     title: 'Lesson 4 - Foreign Yoōn Katakana',
     meta: [
       { name: 'description', content: 'Some sounds from non Japanese languages cannot be captured by the 36 native katakana yōon sounds. For Example ヴァ (bwa/va) and フィ (fi) are foreign sounds in the Japanese loan words ヴァイオリン (vaiorin, violin) and フィルム (firumu, film) respectively.' },
-      { name: 'keywords', content: 'katakana, foreign yoōn combinations, japanese loan words, japanese writing systems, phonetic script, learn japanese, katakana usage' },
+      { name: 'keywords', content: 'katakana, foreign yoōn combinations, japanese loan words, japanese writing systems, phonetic script, learn japanese, katakana usage, How to write Japanese' },
     ],
   },
   '/japanese/katakana-explained?lesson=5': {
     title: 'Lesson 5 - Katakana Long Vowels',
     meta: [
       { name: 'description', content: 'Long Vowels In Katakana, long vowels are handled differently compared to Hiragana. Instead of adding extra vowels to extend the sound, Katakana uses a simple dash-like symbol: ー' },
-      { name: 'keywords', content: 'katakana, japanese loan words, japanese writing systems, phonetic script, learn japanese, katakana usage' },
+      { name: 'keywords', content: 'katakana, japanese loan words, japanese writing systems, phonetic script, learn japanese, katakana usage, How to write Japanese' },
     ],
   },
   '/japanese/kanji-explained': {
     title: 'Kanji Explained',
     meta: [
       { name: 'description', content: 'Kanji are characters used in the Japanese writing system, originally borrowed from Chinese characters. They represent ideas or meanings rather than just sounds. Each kanji can have multiple meanings and pronunciations depending on the context.' },
-      { name: 'keywords', content: 'kanji, japanese writing systems, chinese characters, japanese language, kanji meanings, kanji pronunciations' },
+      { name: 'keywords', content: 'kanji, japanese writing systems, chinese characters, japanese language, kanji meanings, kanji pronunciations, How to write Japanese' },
     ],
   },
   '/japanese/how-to-type-japanese': {
     title: 'How to Type Japanese',
     meta: [
       { name: 'description', content: 'How to Type Japanese on a Mac (Video Tutorial).' },
-      { name: 'keywords', content: 'type japanese, japanese keyboard, mac tutorial, how to type japanese, japanese typing guide' },
+      { name: 'keywords', content: 'type japanese, japanese keyboard, mac tutorial, how to type japanese, japanese typing guide, How to write Japanese' },
     ],
   },
   '/japanese/writing-systems?s=hir-T0TFT': {
