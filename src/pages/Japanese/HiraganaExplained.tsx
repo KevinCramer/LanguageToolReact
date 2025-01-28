@@ -98,54 +98,75 @@ const HiraganaExplained = () => {
     setSearchParams({ lesson: currentLesson.toString() });
   }, [currentLesson, setSearchParams]);
   
+  const dakutenData = [
+    {
+      kToG: 'か (ka) → が (ga)',
+      sToZ: 'さ (sa) → ざ (za)',
+      tToD: 'た (ta) → だ (da)',
+      hToB: 'は (ha) → ば (ba)',
+      hToP: 'は (ha) → ぱ (pa)'
+    },
+    {
+      kToG: 'き (ki) → ぎ (gi)',
+      sToZ: 'し (shi) → じ (ji)',
+      tToD: 'ち (chi) → ぢ (di)¹', // This needs to be bold
+      hToB: 'ひ (hi) → び (bi)',
+      hToP: 'ひ (hi) → ぴ (pi)'
+    },
+    {
+      kToG: 'く (ku) → ぐ (gu)',
+      sToZ: 'す (su) → ず (zu)',
+      tToD: 'つ (tsu) → づ (du)²', // This needs to be bold
+      hToB: 'ふ (fu) → ぶ (bu)',
+      hToP: 'ふ (fu) → ぷ (pu)'
+    },
+    {
+      kToG: 'け (ke) → げ (ge)',
+      sToZ: 'せ (se) → ぜ (ze)',
+      tToD: 'て (te) → で (de)',
+      hToB: 'へ (he) → べ (be)',
+      hToP: 'へ (he) → ぺ (pe)'
+    },
+    {
+      kToG: 'こ (ko) → ご (go)',
+      sToZ: 'そ (so) → ぞ (zo)',
+      tToD: 'と (to) → ど (do)',
+      hToB: 'ほ (ho) → ぼ (bo)',
+      hToP: 'ほ (ho) → ぽ (po)'
+    }
+  ];
+ 
+  const dakutenTableHeaderStyle = 'border border-gray-500 md:px-4 py-2 bg-gray-200';
+  const dakutenTableCellStyle = 'border border-gray-500 px-2 py-2 md:py-6 text-center';
+  
+  // Function to wrap specific parts of the string in bold
+  const makeBold = (text:any) => {
+    return text.replace(/ぢ \(di\)¹/g, '<span class="font-bold">ぢ (di)¹</span>')
+      .replace(/づ \(du\)²/g, '<span class="font-bold">づ (du)²</span>');
+  };
+  
   const dakutenTable = (
     <div className="flex justify-center my-4">
       <table className="table-auto border-collapse border border-gray-500">
         <thead>
           <tr>
-            <th className="border border-gray-500 md:px-4 py-2 bg-gray-200">K → G</th>
-            <th className="border border-gray-500 md:px-4 py-2 bg-gray-200">S → Z</th>
-            <th className="border border-gray-500 md:px-4 py-2 bg-gray-200">T → D</th>
-            <th className="border border-gray-500 md:px-4 py-2 bg-gray-200">H → B</th>
-            <th className="border border-gray-500 md:px-4 py-2 bg-gray-200">H → P</th>
+            <th className={dakutenTableHeaderStyle}>K → G</th>
+            <th className={dakutenTableHeaderStyle}>S → Z</th>
+            <th className={dakutenTableHeaderStyle}>T → D</th>
+            <th className={dakutenTableHeaderStyle}>H → B</th>
+            <th className={dakutenTableHeaderStyle}>H → P</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td className="border border-gray-500 px-2 py-2 md:py-6 text-center">か (ka) → が (ga)</td>
-            <td className="border border-gray-500 px-2 py-2 md:py-6 text-center">さ (sa) → ざ (za)</td>
-            <td className="border border-gray-500 px-2 py-2 md:py-6 text-center">た (ta) → だ (da)</td>
-            <td className="border border-gray-500 px-2 py-2 md:py-6 text-center">は (ha) → ば (ba)</td>
-            <td className="border border-gray-500 px-2 py-2 md:py-6 text-center">は (ha) → ぱ (pa)</td>
-          </tr>
-          <tr>
-            <td className="border border-gray-500 px-2 py-2 md:py-6 text-center">き (ki) → ぎ (gi)</td>
-            <td className="border border-gray-500 px-2 py-2 md:py-6 text-center">し (shi) → じ (ji)</td>
-            <td className="border border-gray-500 px-2 py-2 md:py-6 text-center">ち (chi) → <b>ぢ (di)¹</b></td>
-            <td className="border border-gray-500 px-2 py-2 md:py-6 text-center">ひ (hi) → び (bi)</td>
-            <td className="border border-gray-500 px-2 py-2 md:py-6 text-center">ひ (hi) → ぴ (pi)</td>
-          </tr>
-          <tr>
-            <td className="border border-gray-500 px-2 py-2 md:py-6 text-center">く (ku) → ぐ (gu)</td>
-            <td className="border border-gray-500 px-2 py-2 md:py-6 text-center">す (su) → ず (zu)</td>
-            <td className="border border-gray-500 px-2 py-2 md:py-6 text-center">つ (tsu) → <b>づ (du)²</b></td>
-            <td className="border border-gray-500 px-2 py-2 md:py-6 text-center">ふ (fu) → ぶ (bu)</td>
-            <td className="border border-gray-500 px-2 py-2 md:py-6 text-center">ふ (fu) → ぷ (pu)</td>
-          </tr>
-          <tr>
-            <td className="border border-gray-500 px-2 py-2 md:py-6 text-center">け (ke) → げ (ge)</td>
-            <td className="border border-gray-500 px-2 py-2 md:py-6 text-center">せ (se) → ぜ (ze)</td>
-            <td className="border border-gray-500 px-2 py-2 md:py-6 text-center">て (te) → で (de)</td>
-            <td className="border border-gray-500 px-2 py-2 md:py-6 text-center">へ (he) → べ (be)</td>
-            <td className="border border-gray-500 px-2 py-2 md:py-6 text-center">へ (he) → ぺ (pe)</td>
-          </tr>
-          <tr>
-            <td className="border border-gray-500 px-2 py-2 md:py-6 text-center">こ (ko) → ご (go)</td>
-            <td className="border border-gray-500 px-2 py-2 md:py-6 text-center">そ (so) → ぞ (zo)</td>
-            <td className="border border-gray-500 px-2 py-2 md:py-6 text-center">と (to) → ど (do)</td>
-            <td className="border border-gray-500 px-2 py-2 md:py-6 text-center">ほ (ho) → ぼ (bo)</td>
-            <td className="border border-gray-500 px-2 py-2 md:py-6 text-center">ほ (ho) → ぽ (po)</td>
-          </tr>
+          {dakutenData.map((row, index) => (
+            <tr key={index}>
+              <td className={dakutenTableCellStyle} dangerouslySetInnerHTML={{ __html: makeBold(row.kToG) }}></td>
+              <td className={dakutenTableCellStyle} dangerouslySetInnerHTML={{ __html: makeBold(row.sToZ) }}></td>
+              <td className={dakutenTableCellStyle} dangerouslySetInnerHTML={{ __html: makeBold(row.tToD) }}></td>
+              <td className={dakutenTableCellStyle} dangerouslySetInnerHTML={{ __html: makeBold(row.hToB) }}></td>
+              <td className={dakutenTableCellStyle} dangerouslySetInnerHTML={{ __html: makeBold(row.hToP) }}></td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>
