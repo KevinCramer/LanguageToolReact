@@ -88,10 +88,12 @@ const WritingSystems = (
   // Close dropdowns if clicked outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (topicDropdownRef.current && !topicDropdownRef.current.contains(event.target as Node)) {
+      if (topicDropdownRef.current && !topicDropdownRef
+        .current.contains(event.target as Node)) {
         setIsTopicDropdownOpen(false);
       }
-      if (settingsDropdownRef.current && !settingsDropdownRef.current.contains(event.target as Node)) {
+      if (settingsDropdownRef.current && !settingsDropdownRef
+        .current.contains(event.target as Node)) {
         setIsSettingsDropdownOpen(false);
       }
     };
@@ -160,7 +162,6 @@ const WritingSystems = (
   var showPopUp = false;
   var [showPopUp,setShowPopUp] = useState(showPopUp)
   const hidePopUp = () => { return setShowPopUp(false)}
-  const displayPopUp = () => { return setShowPopUp(true)}
 
   // Ensure default language is reflected in the URL if not already present
   useEffect(() => {
@@ -194,12 +195,12 @@ const WritingSystems = (
   // Effect for handling changes to `selectedWordsForQuiz`
   useEffect(() => {
     if (!showTrueOrder) {
-      const scrambledWords = scrambleWithoutMutate(selectedWordsForQuiz); // Scramble `selectedWordsForQuiz`
+      const scrambledWords = scrambleWithoutMutate(selectedWordsForQuiz);
       setS(scrambledWords); // Update `s` with scrambled version
     } else {
-      setS(JSON.parse(JSON.stringify(selectedWordsForQuiz))); // Reset `s` when `selectedWordsForQuiz` changes
+      setS(JSON.parse(JSON.stringify(selectedWordsForQuiz)));
     }
-  }, [selectedWordsForQuiz, showTrueOrder]); // This effect runs whenever `selectedWordsForQuiz` or `showTrueOrder` changes
+  }, [selectedWordsForQuiz, showTrueOrder]);
 
   // Effect for handling changes to `currentTopic`
   useEffect(() => {
@@ -214,7 +215,8 @@ const WritingSystems = (
       let count = 0;
       return (
         <div className={`pt-4 space-y-4 ${minWidth}`}>
-          {( modifyQuiz ? (showTrueOrder ? selectedWordsForQuiz : scrambleWithoutMutate(selectedWordsForQuiz)) : topicWords).map((pair: Word) => (
+          {( modifyQuiz ? (showTrueOrder ? selectedWordsForQuiz :
+            scrambleWithoutMutate(selectedWordsForQuiz)) : topicWords).map((pair: Word) => (
             <div
               key={
                 showTrueOrder.toString() +
@@ -283,8 +285,10 @@ const WritingSystems = (
                         showBaseLanguageFirst={showBaseLanguage}
                         strokeOrderVideo={pair.strokeOrderVideo}
                         showLeftLabel={true}
-                        onQuizSelect={(isSelected: boolean) => handleQuizSelection(pair, isSelected)} // Pass onQuizSelect
-                        initialQuizSelect={selectedWordsForQuiz.some((word) => word.englishWord === pair.englishWord)}
+                        onQuizSelect={(isSelected: boolean) =>
+                          handleQuizSelection(pair, isSelected)}
+                        initialQuizSelect={selectedWordsForQuiz.some((word) => 
+                          word.englishWord === pair.englishWord)}
                       />
                     </td>
                     <td className="px-4 py-2 text-sm  border-b border-gray-500 text-center w-1/2">
@@ -305,8 +309,10 @@ const WritingSystems = (
                         showBaseLanguageFirst={showBaseLanguage}
                         strokeOrderVideo={pair.strokeOrderVideo}
                         showLeftLabel={false}
-                        onQuizSelect={(isSelected: boolean) => handleQuizSelection(pair, isSelected)} // Pass onQuizSelect
-                        initialQuizSelect={selectedWordsForQuiz.some((word) => word.englishWord === pair.englishWord)}
+                        onQuizSelect={(isSelected: boolean) => 
+                          handleQuizSelection(pair, isSelected)} // Pass onQuizSelect
+                        initialQuizSelect={selectedWordsForQuiz.some((word) =>
+                          word.englishWord === pair.englishWord)}
 
                       />
                     </td>
@@ -331,9 +337,7 @@ const WritingSystems = (
       topicWords.sort((a: Word, b: Word) => { return a.englishWord < b.englishWord ? -1 : 1 })
     }
   }
-  
-  const prevShowTrueOrder = useRef(showTrueOrder); // To track the previous value of showTrueOrder
-  
+    
   useEffect(() => {
     // Check if showTrueOrder is true
     if (!showTrueOrder) {
