@@ -1,12 +1,12 @@
-import { useNavigate } from 'react-router-dom';
-import { japaneseVocabTopicSlugNames } from '../../data/structured-data/words';
-import { useEffect, useState } from 'react';
-import LockIcon from '@mui/icons-material/Lock';
-import { lingoCommandIsLocked } from '../../constants';
-import { useAuth } from '../../contexts/AuthContext';
 import { setBackwardRoute, setForwardRoute } from '../../redux-store/route';
-import { useDispatch } from 'react-redux';
+import { useEffect, useState } from 'react';
+import { japaneseVocabTopicSlugNames } from '../../data/structured-data/words';
+import { lingoCommandIsLocked } from '../../constants';
+import LockIcon from '@mui/icons-material/Lock';
 import PageTitle from '../../components/atoms/PageTitle';
+import { useAuth } from '../../contexts/AuthContext';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 interface Topic {
   Name: string;
@@ -100,7 +100,7 @@ const allTopics: Topic[] = [
 
 const VocabularyGuide = () => {
   //@ts-ignore
-  const { currentUser } = useAuth(); // Access the auth context
+  const { currentUser } = useAuth();
   const dispatch = useDispatch();
 
   const userIsLoggedIn = currentUser && currentUser.email;
@@ -108,12 +108,12 @@ const VocabularyGuide = () => {
 
   const handleTopicClick = (topic: Topic) => {
     if(topic.isLocked && lingoCommandIsLocked && !userIsLoggedIn) {
-      dispatch(setBackwardRoute(`/japanese/vocabulary-guide`)); // Set the backward route
-      dispatch(setForwardRoute(`/japanese/vocabulary?s=${topic.slugName}-T0TFT`)); // Set the forward route
-      navigate('/free-content'); // Navigate to the login page
+      dispatch(setBackwardRoute(`/japanese/vocabulary-guide`));
+      dispatch(setForwardRoute(`/japanese/vocabulary?s=${topic.slugName}-T0TFT`)); 
+      navigate('/free-content');
     }
     else{
-      navigate(`/japanese/vocabulary?s=${topic.slugName}-T0TFT`); // Navigate to the given subroute
+      navigate(`/japanese/vocabulary?s=${topic.slugName}-T0TFT`);
     }
   };
   const useWindowWidth = () => {
