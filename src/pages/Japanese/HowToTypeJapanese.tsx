@@ -1,3 +1,4 @@
+import PageTitle from '../../components/atoms/PageTitle';
 import howToTypeJapaneseTutorial from '../../data/raw-data/tutorial-videos/how-to-type-japanese.mp4'
 import { useState } from 'react';
 
@@ -11,7 +12,7 @@ const HowToTypeJapanese = () => {
   return (
     <div className='max-w-screen-md mx-auto text-center px-4'>
       <div>
-        <h4 className='text-center text-2xl py-12'>How to Type Japanese</h4>
+        <PageTitle title='How to Type Japanese' />
         <div className='py-2'>
           <a className='text-blue-500 underline' href='#' onClick={openModal}>
               How to Type Japanese on a Mac

@@ -1,34 +1,38 @@
+import PageTitle from '../../components/atoms/PageTitle';
+
 const KanjiExplained = () => { 
 
+  const tableCellStyle = 'border border-gray-500 px-4 py-2';
+
+  const KanjiRow = ({ kanji, meaning, onyomi, kunyomi }: any) => (
+    <tr>
+      <td className={tableCellStyle}>{kanji}</td>
+      <td className={tableCellStyle}>{meaning}</td>
+      <td className={tableCellStyle}>{onyomi}</td>
+      <td className={tableCellStyle}>{kunyomi}</td>
+    </tr>
+  );
+  
   const kanjiTable = (
-    <table className=" text-base md:text-lg table-auto border-collapse border border-gray-500 w-full text-left">
+    <table className="text-base md:text-lg table-auto border-collapse border border-gray-500 w-full text-left">
       <thead>
         <tr className="bg-gray-200">
-          <th className="border border-gray-500 px-4 py-2">Kanji</th>
-          <th className="border border-gray-500 px-4 py-2">Meaning</th>
-          <th className="border border-gray-500 px-4 py-2">On’yomi</th>
-          <th className="border border-gray-500 px-4 py-2">Kun’yomi</th>
+          <th className={tableCellStyle}>Kanji</th>
+          <th className={tableCellStyle}>Meaning</th>
+          <th className={tableCellStyle}>On’yomi</th>
+          <th className={tableCellStyle}>Kun’yomi</th>
         </tr>
       </thead>
       <tbody>
-        <tr className='text-lg'>
-          <td className="border border-gray-500 px-4 py-2">火</td>
-          <td className="border border-gray-500 px-4 py-2">Fire</td>
-          <td className="border border-gray-500 px-4 py-2">Ka, Hi</td>
-          <td className="border border-gray-500 px-4 py-2">Hi, Ho</td>
-        </tr>
-        <tr>
-          <td className="border border-gray-500 px-4 py-2">山</td>
-          <td className="border border-gray-500 px-4 py-2">Mountain</td>
-          <td className="border border-gray-500 px-4 py-2">San, Zan</td>
-          <td className="border border-gray-500 px-4 py-2">Yama</td>
-        </tr>
+        <KanjiRow kanji="火" meaning="Fire" onyomi="Ka, Hi" kunyomi="Hi, Ho" />
+        <KanjiRow kanji="山" meaning="Mountain" onyomi="San, Zan" kunyomi="Yama" />
       </tbody>
-    </table>)
+    </table>
+  );
     
   return (
     <div className='max-w-screen-md mx-auto px-4'>
-      <h4 className='text-center text-2xl py-12'>Kanji Explained</h4>
+      <PageTitle title='Kanji Explained' />
       <div className='py-2'>
         Kanji are characters used in the Japanese writing system, originally borrowed from Chinese characters. They represent ideas or meanings rather than just sounds. Each kanji can have multiple meanings and pronunciations depending on the context.
       </div>

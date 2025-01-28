@@ -1,11 +1,12 @@
 import manStudying from '../assets/man-studying.jpg';
 import womanStudying from '../assets/woman-studying.jpg'
+import PageTitle from '../components/atoms/PageTitle';
 
 const About = () => {
   return (
     <div className='flex flex-col justify-center flex-1 px-4 text-lg'>
       <div className='max-w-screen-md mx-auto rounded-md'>
-        <h4 className='text-center text-2xl py-12'>Our Mission</h4>
+        <PageTitle title='Our Mission' />
         <div className='pb-2'>
         LingoCommand is dedicated to helping people learn Japanese in a streamlined and efficient way. It will accelerate your progress by combining three key principles:
         </div>

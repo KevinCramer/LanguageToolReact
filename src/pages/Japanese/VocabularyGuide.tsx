@@ -6,6 +6,7 @@ import { lingoCommandIsLocked } from '../../constants';
 import { useAuth } from '../../contexts/AuthContext';
 import { setBackwardRoute, setForwardRoute } from '../../redux-store/route';
 import { useDispatch } from 'react-redux';
+import PageTitle from '../../components/atoms/PageTitle';
 
 interface Topic {
   Name: string;
@@ -157,7 +158,7 @@ const VocabularyGuide = () => {
 
   return (
     <div className="max-w-screen-md mx-auto px-4 text-center">
-      <h4 className='text-center text-2xl py-12'>Vocabulary Topics</h4>
+      <PageTitle title='Vocabulary Guide' />
       <div style={gridStyles}>
         {allTopics.map((topic, index) => (
           <div

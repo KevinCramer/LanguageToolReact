@@ -4,6 +4,7 @@ import { getCheckoutUrl } from '../stripePayment';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { setBackwardRoute } from '../redux-store/route';
+import PageTitle from '../components/atoms/PageTitle';
 
 const Account = () => {
   const navigate = useNavigate();
@@ -18,7 +19,7 @@ const Account = () => {
   return (
     <div className='flex flex-col justify-center flex-1 px-4'>
       <div className='max-w-screen-md mx-auto rounded-md text-white text-center'>
-        <h4 className='text-center text-2xl py-12'>Account Settings</h4>
+        <PageTitle title='Account Settings' />
         <CustomLink isWhite={true} onClick={() => {
           dispatch(setBackwardRoute(location.pathname));
           navigate('/reset-password')}

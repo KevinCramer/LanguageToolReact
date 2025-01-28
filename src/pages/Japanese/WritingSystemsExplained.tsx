@@ -1,3 +1,5 @@
+import PageTitle from '../../components/atoms/PageTitle';
+
 const JapaneseWritingSystems = () => {
   const sections = [
     {
@@ -31,7 +33,7 @@ const JapaneseWritingSystems = () => {
 
   return (
     <div className='max-w-screen-md mx-auto px-4 text-lg'>
-      <h4 className='text-center text-2xl py-12'>Japanese Writing Systems Explained</h4>
+      <PageTitle title='Japanese Writing Systems' />
       <div className='py-2'>The Japanese language has 3 writing systems:</div>
       {sections.map((section, index) => (
         <div className='py-2' key={index}>
