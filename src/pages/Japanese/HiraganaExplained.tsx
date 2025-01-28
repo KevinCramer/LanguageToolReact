@@ -1,6 +1,7 @@
-import { useEffect, useState } from 'react';
-import { japaneseWritingSystemsTopicSlugNames, writingSystems } from '../../data/structured-data/writingSystems';
+import { japaneseWritingSystemsTopicSlugNames, writingSystems } 
+  from '../../data/structured-data/writingSystems';
 import { LanguageNames, LearningSections } from '../../../types/LearningSectionsTypes';
+import { useEffect, useState } from 'react';
 import { createURL } from '../../helpers/createURL';
 import { lingoCommandIsLocked } from '../../constants';
 import LockIcon from '@mui/icons-material/Lock';
@@ -9,6 +10,7 @@ import { useProtectedLink } from '../../helpers/use-protected-link';
 import { useSearchParams } from 'react-router-dom';
 import VolumeUpIcon from '@mui/icons-material/VolumeUp';
 
+/* eslint-disable sort-imports */
 import hiraganaAudioA from '../../data/raw-data/audio_vocab/japanese/hiragana/a.mp3'
 import hiraganaAudioI from '../../data/raw-data/audio_vocab/japanese/hiragana/i.mp3'
 import hiraganaAudioU from '../../data/raw-data/audio_vocab/japanese/hiragana/u.mp3'
@@ -55,6 +57,7 @@ import hiraganaAudioRo from '../../data/raw-data/audio_vocab/japanese/hiragana/r
 import hiraganaAudioWa from '../../data/raw-data/audio_vocab/japanese/hiragana/wa.mp3'
 import hiraganaAudioWo from '../../data/raw-data/audio_vocab/japanese/hiragana/wo.mp3'
 import hiraganaAudioN from '../../data/raw-data/audio_vocab/japanese/hiragana/n.mp3'
+/* eslint-enable sort-imports */
 
 const lessonTitles = {
   1: 'Basic Hiragana',

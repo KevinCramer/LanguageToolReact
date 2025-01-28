@@ -1,25 +1,20 @@
-import {
-  Topic,
-  VocabLanguage,
-  Word,
-  WordWithThreeWritingSystems, 
-} from '../../types/learningSections/VocabTypes'
+import { BsCheck, BsSquare } from 'react-icons/bs';
+import { languageToSlugs, lingoCommandIsLocked } from '../constants'
 import { queryParamCompress, queryParamDecompress } from '../helpers/query-param-helpers'
+import { scramble, scrambleWithoutMutate } from '../helpers/vocab-content-helpers';
+import { setBackwardRoute, setForwardRoute } from '../redux-store/route';
+import { Topic, VocabLanguage, Word, WordWithThreeWritingSystems } from '../../types/learningSections/VocabTypes'
 import { useEffect, useRef, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { languages as allLanguages } from '../data/structured-data/words';
-import { languageToSlugs, lingoCommandIsLocked } from '../constants'
+import DownChevronIcon from '../components/atoms/DownChevronIcon';
 import LockIcon from '@mui/icons-material/Lock';
 import { nullOrUndefined } from '../helpers/audio-player-helpers'
 import QuizElement from '../components/atoms/QuizElement';
-import { scramble, scrambleWithoutMutate } from '../helpers/vocab-content-helpers';
+import { sortTopics } from '../helpers/words-data-helper';
 import StudyElement from '../components/molecules/StudyElement';
 import { useAuth } from '../contexts/AuthContext'
-import { sortTopics } from '../helpers/words-data-helper';
-import DownChevronIcon from '../components/atoms/DownChevronIcon';
 import { useDispatch } from 'react-redux';
-import { setBackwardRoute, setForwardRoute } from '../redux-store/route';
-import { BsCheck, BsSquare } from 'react-icons/bs';
 
 const VocabContent = (
   props: {

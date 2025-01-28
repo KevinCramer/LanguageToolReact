@@ -20,12 +20,9 @@ export const routeSlice = createSlice({
   reducers: {
     setBackwardRoute: (state: RouteState, action: PayloadAction<string>) => {
       state.backwardRoute = action.payload;
-      console.log('state.backwardRoute: ', state.backwardRoute)
     },
     setForwardRoute: (state: RouteState, action: PayloadAction<string>) => {
       state.forwardRoute = action.payload;
-      console.log('state.forwardRoute: ', state.forwardRoute)
-
     },
     resetRoutes: (state: RouteState) => {
       state.backwardRoute = null;

@@ -1,10 +1,10 @@
 import { useRef, useState } from 'react';
-import CustomLink from '../atoms/CustomLink';
-import { useAuth } from '../../contexts/AuthContext';
-import { useSelector } from 'react-redux';
 import CloseIcon from '../atoms/CloseIcon';
-import { useNavigate } from 'react-router-dom';
+import CustomLink from '../atoms/CustomLink';
 import { RootStateRoute } from '../../redux-store/route';
+import { useAuth } from '../../contexts/AuthContext';
+import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 export default function Login() {
   const navigate = useNavigate();

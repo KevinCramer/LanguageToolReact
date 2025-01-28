@@ -1,6 +1,6 @@
 import { NavLink, useLocation } from 'react-router-dom';
-import { fontStretch } from '../../constants';
 import { useEffect, useState } from 'react';
+import { fontStretch } from '../../constants';
 
 const useWindowWidth = () => {
   const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);

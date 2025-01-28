@@ -1,9 +1,9 @@
 import { useRef, useState } from 'react';
-import { useAuth } from '../../contexts/AuthContext';
 import CloseIcon from '../atoms/CloseIcon';
+import { RootStateRoute } from '../../redux-store/route';
+import { useAuth } from '../../contexts/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { RootStateRoute } from '../../redux-store/route';
 
 export default function ResetPassWord() {
   const navigate = useNavigate();

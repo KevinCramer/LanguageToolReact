@@ -1,6 +1,6 @@
 import manStudying from '../assets/man-studying.jpg';
-import womanStudying from '../assets/woman-studying.jpg'
 import PageTitle from '../components/atoms/PageTitle';
+import womanStudying from '../assets/woman-studying.jpg'
 
 const About = () => {
   return (

@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import {
   FaFacebook,
   FaInstagram,
@@ -7,12 +6,16 @@ import {
   FaYoutube,
 } from 'react-icons/fa';
 
+import { useEffect, useState } from 'react';
+
 const socialLinks = [
+  /* eslint-disable @stylistic/js/max-len */
   { href: 'https://www.youtube.com/@lingocommand', icon: FaYoutube, label: 'YouTube' },
   { href: 'https://www.tiktok.com/@lingocommand', icon: FaTiktok, label: 'TikTok' },
   { href: 'https://www.instagram.com/lingocommand/', icon: FaInstagram, label: 'Instagram' },
   { href: 'https://www.linkedin.com/company/lingocommand/posts/?feedView=all', icon: FaLinkedin, label: 'LinkedIn' },
   { href: 'https://www.facebook.com/profile.php?id=100068758832446', icon: FaFacebook, label: 'Facebook' },
+  /* eslint-enable @stylistic/js/max-len */
 
 ];
 

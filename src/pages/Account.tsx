@@ -1,10 +1,10 @@
+import { useLocation, useNavigate } from 'react-router-dom';
 import app from '../firebase';
 import CustomLink from '../components/atoms/CustomLink';
 import { getCheckoutUrl } from '../stripePayment';
-import { useLocation, useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import { setBackwardRoute } from '../redux-store/route';
 import PageTitle from '../components/atoms/PageTitle';
+import { setBackwardRoute } from '../redux-store/route';
+import { useDispatch } from 'react-redux';
 
 const Account = () => {
   const navigate = useNavigate();

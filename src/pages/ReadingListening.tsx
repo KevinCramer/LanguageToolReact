@@ -1,14 +1,14 @@
 import { AudioTranscription, ReadingListeningLanguage, TranscriptionType } 
   from '../../types/learningSections/ReadingListeningTypes';
+import { setBackwardRoute, setForwardRoute } from '../redux-store/route';
 import { useEffect, useRef, useState } from 'react';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { languages as allLanguages } from '../data/structured-data/readingListening';
+import DownChevronIcon from '../components/atoms/DownChevronIcon';
 import { lingoCommandIsLocked } from '../constants';
 import LockIcon from '@mui/icons-material/Lock';
 import RenderTableCell from '../components/molecules/RenderTableCell';
 import { useAuth } from '../contexts/AuthContext';
-import DownChevronIcon from '../components/atoms/DownChevronIcon';
-import { setBackwardRoute, setForwardRoute } from '../redux-store/route';
 import { useDispatch } from 'react-redux';
 
 const useWindowWidth = () => {

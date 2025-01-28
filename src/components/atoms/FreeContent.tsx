@@ -1,10 +1,8 @@
-import { useDispatch } from 'react-redux';
-import CustomLink from './CustomLink';
 import CloseIcon from './CloseIcon';
+import CustomLink from './CustomLink';
 import { useNavigate } from 'react-router-dom';
 
 export default function FreeContent() {
-  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   return (

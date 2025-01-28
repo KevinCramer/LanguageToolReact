@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import VolumeUpIcon from '@mui/icons-material/VolumeUp';
 import VolumeOffIcon from '@mui/icons-material/VolumeOff';
+import VolumeUpIcon from '@mui/icons-material/VolumeUp';
 
 const StudyElement = (
   props: 

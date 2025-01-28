@@ -1,11 +1,10 @@
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
-import { BsPerson } from 'react-icons/bs';
-import { useAuth } from '../../contexts/AuthContext';
-import { FaChevronDown } from 'react-icons/fa';
-
-import { useEffect, useRef, useState } from 'react';
-import { fontStretch } from '../../constants';
 import { setBackwardRoute, setForwardRoute } from '../../redux-store/route';
+import { useEffect, useRef, useState } from 'react';
+import { BsPerson } from 'react-icons/bs';
+import { FaChevronDown } from 'react-icons/fa';
+import { fontStretch } from '../../constants';
+import { useAuth } from '../../contexts/AuthContext';
 import { useDispatch } from 'react-redux';
 
 const Navbar = () => {

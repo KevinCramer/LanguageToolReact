@@ -1,12 +1,12 @@
 import { GrammarLanguage, Topic } from '../../types/learningSections/GrammarTypes';
+import { setBackwardRoute, setForwardRoute } from '../redux-store/route';
 import { useEffect, useRef, useState } from 'react';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
+import DownChevronIcon from '../components/atoms/DownChevronIcon';
 import { languages } from '../data/structured-data/grammar';
 import { lingoCommandIsLocked } from '../constants';
 import LockIcon from '@mui/icons-material/Lock';
 import { useAuth } from '../contexts/AuthContext';
-import DownChevronIcon from '../components/atoms/DownChevronIcon';
-import { setBackwardRoute, setForwardRoute } from '../redux-store/route';
 import { useDispatch } from 'react-redux';
 
 const GrammarContent = (props: { languageNumber: number }) => {

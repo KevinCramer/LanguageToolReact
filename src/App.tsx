@@ -1,34 +1,34 @@
 import './index.css';
 import { Route, Routes, useLocation } from 'react-router-dom'
+import { useEffect, useState } from 'react';
+import About from './pages/About'
 import Account from './pages/Account'
 import ContactUs from './pages/ContactUs'
-import About from './pages/About'
 import Custom404Error from './pages/Custom404Error'
 import DeleteAccount from './components/atoms/DeleteAccount'
-import ResetPassword from './components/molecules/ResetPassword'
 import FreeContent from './components/atoms/FreeContent';
+import fujiImage from '/src/assets/mount-fuji.jpg';
 import GrammarContent from './pages/GrammarContent'
-import Home from './pages/Home'
-import JapaneseHomepage from './pages/Japanese/JapaneseHomePage'
-import JapaneseStudyGuide from './pages/Japanese/JapaneseStudyGuide'
-import JapaneseWritingSystems from './pages/Japanese/WritingSystemsExplained'
 import HiraganaExplained from './pages/Japanese/HiraganaExplained'
-import KatakanaExplained from './pages/Japanese/KatakanaExplained'
-import KanjiExplained from './pages/Japanese/KanjiExplained'
+import Home from './pages/Home'
 import HowToTypeJapanese from './pages/Japanese/HowToTypeJapanese'
-import ReadingListening from './pages/ReadingListening'
+import japaneseComprehensionVideo from './data/raw-data/tutorial-videos/japanese-comprehension-tutorial.mp4'
+import JapaneseHomepage from './pages/Japanese/JapaneseHomePage'
+import JapaneseNavbar from './pages/Japanese/JapaneseNavbar';
+import JapaneseStudyGuide from './pages/Japanese/JapaneseStudyGuide'
+import japaneseVocabGuideVideo from './data/raw-data/tutorial-videos/japanese-vocab-guide.mp4'
+import JapaneseWritingSystems from './pages/Japanese/WritingSystemsExplained'
+import japaneseWritingSystemsVideo from './data/raw-data/tutorial-videos/japanese-writing-systems-tutorial.mp4'
+import KanjiExplained from './pages/Japanese/KanjiExplained'
+import KatakanaExplained from './pages/Japanese/KatakanaExplained'
 import Login from './components/molecules/Login'
 import Navbar from './components/atoms/Navbar'
+import ReadingListening from './pages/ReadingListening'
+import ResetPassword from './components/molecules/ResetPassword'
 import Signup from './components/molecules/Signup'
 import VocabContent from './pages/VocabContent'
-import WritingSystems from './pages/WritingSystems'
-import japaneseComprehensionVideo from './data/raw-data/tutorial-videos/japanese-comprehension-tutorial.mp4'
-import japaneseWritingSystemsVideo from './data/raw-data/tutorial-videos/japanese-writing-systems-tutorial.mp4'
-import japaneseVocabGuideVideo from './data/raw-data/tutorial-videos/japanese-vocab-guide.mp4'
-import fujiImage from '/src/assets/mount-fuji.jpg';
-import JapaneseNavbar from './pages/Japanese/JapaneseNavbar';
 import VocabularyGuide from './pages/Japanese/VocabularyGuide';
-import { useEffect, useState } from 'react';
+import WritingSystems from './pages/WritingSystems'
 
 const App = ()=> {
   const location = useLocation();

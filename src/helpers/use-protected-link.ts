@@ -1,9 +1,10 @@
+import { setBackwardRoute, setForwardRoute } from '../redux-store/route';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { lingoCommandIsLocked } from '../constants';
 import { MouseEvent } from 'react';
 import { useAuth } from '../contexts/AuthContext';
-import { lingoCommandIsLocked } from '../constants';
-import { useLocation, useNavigate } from 'react-router-dom';
+
 import { useDispatch } from 'react-redux';
-import { setBackwardRoute, setForwardRoute } from '../redux-store/route';
 
 export const useProtectedLink = () => {
   const navigate = useNavigate();
