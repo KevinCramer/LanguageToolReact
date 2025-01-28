@@ -1,4 +1,4 @@
-const Japanese = () => {
+const JapaneseHomePage = () => {
   return (
     <div className="max-w-screen-md mx-auto px-2  text-center text-lg">
       <h4 className="text-center text-2xl py-12"></h4>
@@ -70,4 +70,4 @@ const Japanese = () => {
   );
 };
 
-export default Japanese;
+export default JapaneseHomePage;

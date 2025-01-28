@@ -9,7 +9,7 @@ import ResetPassword from './components/molecules/ResetPassword'
 import FreeContent from './components/atoms/FreeContent';
 import GrammarContent from './pages/GrammarContent'
 import Home from './pages/Home'
-import Japanese from './pages/Japanese/Japanese'
+import JapaneseHomepage from './pages/Japanese/JapaneseHomePage'
 import JapaneseStudyGuide from './pages/Japanese/JapaneseStudyGuide'
 import JapaneseWritingSystems from './pages/Japanese/WritingSystemsExplained'
 import HiraganaExplained from './pages/Japanese/HiraganaExplained'
@@ -83,7 +83,7 @@ const App = ()=> {
           <Route path="/reset-password" element={<ResetPassword/>} />
           <Route path="/delete-account" element={<DeleteAccount/>} />
           <Route path="/free-content" element={<FreeContent/>} />
-          <Route path="/japanese/home-page" element={<Japanese/>} />
+          <Route path="/japanese/home-page" element={<JapaneseHomepage/>} />
           <Route path="/japanese/vocabulary-guide" 
             element={<VocabularyGuide/>} />
           <Route path="/japanese/vocabulary" 
@@ -118,7 +118,7 @@ const App = ()=> {
             <Route path="/reset-password" element={<ResetPassword/>} />
             <Route path="/delete-account" element={<DeleteAccount/>} />
             <Route path="/free-content" element={<FreeContent/>} />
-            <Route path="/japanese/home-page" element={<Japanese/>} />
+            <Route path="/japanese/home-page" element={<JapaneseHomepage/>} />
             <Route path="/japanese/vocabulary-guide" 
               element={<VocabularyGuide/>} />
             <Route path="/japanese/vocabulary" 
