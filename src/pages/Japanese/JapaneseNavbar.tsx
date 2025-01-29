@@ -1,5 +1,5 @@
+import { consistentStyles, fontStretch, mobileBreakPoint } from '../../constants';
 import { NavLink, useLocation } from 'react-router-dom';
-import { fontStretch, mobileBreakPoint } from '../../constants';
 import useWindowWidth from '../../hooks/useWindowWidth';
   
 const JapaneseNavbar = () => {
@@ -13,7 +13,9 @@ const JapaneseNavbar = () => {
     <>
       <nav className='p-4'>
         {/* Add a wrapper div with horizontal overflow */}
-        <div className="overflow-x-auto whitespace-nowrap" style={{ fontStretch: navbarFontStretch }}>
+        <div 
+          className={`${consistentStyles.textBlack} overflow-x-auto whitespace-nowrap`}
+          style={{ fontStretch: navbarFontStretch }}>
           <ul className="flex space-x-4 justify-start lg:justify-center">
             <li>
               <NavLink 

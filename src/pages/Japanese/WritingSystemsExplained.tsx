@@ -34,7 +34,7 @@ const JapaneseWritingSystems = () => {
 
   const typingJapaneseSection = (
     <div className='py-2'>
-      <a className={`${consistentStyles.blueText} underline" href='/japanese/how-to-type-japanese`}>
+      <a className={`${consistentStyles.blueText} underline`} href='/japanese/how-to-type-japanese'>
         How to Type Japanese
       </a>
     </div>

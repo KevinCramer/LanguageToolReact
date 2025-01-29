@@ -20,7 +20,7 @@ const Account = () => {
   return (
     <div className='flex flex-col justify-center flex-1 px-4'>
       <div className={`max-w-screen-md mx-auto rounded-md ${consistentStyles.textWhite} text-center`}>
-        <PageTitle title='Account Settings' />
+        <PageTitle title='Account Settings' colour={'white'} />
         <CustomLink isWhite={true} onClick={() => {
           dispatch(setBackwardRoute(location.pathname));
           navigate('/reset-password')}

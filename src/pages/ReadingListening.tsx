@@ -160,7 +160,7 @@ const ReadingListeningContent = (props: { languageNumber: number; howToGuideVide
             changeHandler(transcriptionType);
             side === 'Left' ? setIsLeftDropdownOpen(false) : setIsRightDropdownOpen(false);
           }}
-          className={`px-4 py-2 text-sm text-gray-800 cursor-pointer hover:bg-gray-200 ${isSelected ? 'bg-gray-100' : ''}`}
+          className={`${consistentStyles.textBlack} px-4 py-2 text-sm text-gray-800 cursor-pointer hover:bg-gray-200 ${isSelected ? 'bg-gray-100' : ''}`}
         >
           {title}
         </li>
@@ -201,7 +201,7 @@ const ReadingListeningContent = (props: { languageNumber: number; howToGuideVide
                     />
                     {(side === 'Left' ? isLeftDropdownOpen : isRightDropdownOpen) && (
                       <div ref={side === 'Left' ? leftDropdownRef : rightDropdownRef}
-                        className="absolute left-1/2 transform -translate-x-1/2 mt-2 bg-white border border-gray-300 rounded-lg shadow w-44 md:w-64 z-10">                        
+                        className="absolute left-1/2 transform -translate-x-1/2 mt-2 bg-white border border-gray-300 rounded-lg shadow w-44 md:w-64 z-10">                       
                         <ul className="divide-y divide-gray-200">
                           {renderDropdownItems(
         (side === 'Left' ? currentLeft : currentRight) as TranscriptionType,
@@ -253,8 +253,8 @@ const ReadingListeningContent = (props: { languageNumber: number; howToGuideVide
   return (
     <div className="">
       <h4 className="flex flex-row justify-center text-center text-2xl py-12">
-        <div>
-         Japanese Reading and Listening Comprehension
+        <div className={`${consistentStyles.textBlack}`}>
+      Japanese Reading and Listening Comprehension
         </div>    
       </h4>
     
@@ -272,7 +272,8 @@ const ReadingListeningContent = (props: { languageNumber: number; howToGuideVide
                     .map((topic, index) => (
                       <li
                         key={index}
-                        className="px-4 py-2 hover:bg-gray-100 cursor-pointer text-sm"
+                        className={`${consistentStyles.textBlack} px-4 py-2 hover:bg-gray-100 cursor-pointer text-sm`}
+
                         onClick={() => changeTranscription(topic)}
                       >
                         <div className="flex items-center">
@@ -300,7 +301,7 @@ const ReadingListeningContent = (props: { languageNumber: number; howToGuideVide
             {isSettingsDropdownOpen && (
               <div className="absolute right-0 mt-2 bg-white border
                border-gray-300 rounded-lg shadow w-64 z-10">
-                <ul className="divide-y divide-gray-200 text-sm">
+                <ul className={`${consistentStyles.textBlack} divide-y divide-gray-200 text-sm`}>
                   <li 
                     className="flex items-center px-4 py-2  text-sm">
                     <div className="flex-shrink-0 cursor-default">granularity:&nbsp;</div>
@@ -361,7 +362,7 @@ const ReadingListeningContent = (props: { languageNumber: number; howToGuideVide
           <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
             <div className="bg-white rounded shadow-lg max-w-lg w-full">
               <div className="flex justify-between items-center p-4 border-b border-gray-300">
-                <h5 className="text-lg font-semibold">How to Guide</h5>
+                <h5 className={`${consistentStyles.textBlack} text-lg font-semibold`}>How to Guide</h5>
                 <button onClick={() => setShowPopUp(false)} className="text-gray-500
                  hover:text-gray-800">&times;</button>
               </div>

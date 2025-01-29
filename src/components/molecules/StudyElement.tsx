@@ -93,12 +93,11 @@ const StudyElement = (
 
   return (
     <div className='flex justify-between items-center text-xl'>
-      <div className='flex-grow text-center'>
+      <div className={`${consistentStyles.textBlack} flex-grow text-center`}>
         {showLeftLabel ? baseLanguageLabel : foreignLanguageLabel}
       </div>
-
       {showAudio && (showBaseLanguageFirst ? !showLeftLabel : showLeftLabel) && (
-        <div className='flex items-center'>
+        <div className={`${consistentStyles.textBlack} flex items-center`}>
           <audio src={ForeignLanguageWordAudio} id={ForeignLanguageWordAudio}></audio>
           <button disabled={!ForeignLanguageWord} onClick={handleAudioToggle}>
             {ForeignLanguageWordAudio ? (
@@ -125,7 +124,7 @@ const StudyElement = (
             <div className="fixed inset-0 flex justify-center items-center z-50 bg-gray-900 bg-opacity-50">
               <div className="bg-white p-6 rounded-lg shadow-lg max-w-lg w-full">
                 <div className="flex justify-between items-center mb-4">
-                  <h3 className="text-xl font-semibold">
+                  <h3 className={`${consistentStyles.textBlack} text-xl font-semibold`}>
                     {ForeignLanguageWord} - Hiragana Stroke Order
                   </h3>
                   <button

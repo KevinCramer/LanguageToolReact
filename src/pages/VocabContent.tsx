@@ -6,7 +6,6 @@ import { Topic, VocabLanguage, Word, WordWithThreeWritingSystems } from '../../t
 import { useEffect, useRef, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { languages as allLanguages } from '../data/structured-data/words';
-import DownChevronIcon from '../components/atoms/DownChevronIcon';
 import LockIcon from '@mui/icons-material/Lock';
 import { nullOrUndefined } from '../helpers/audio-player-helpers'
 import QuizElement from '../components/atoms/QuizElement';
@@ -16,6 +15,7 @@ import { useAuth } from '../contexts/AuthContext'
 import { useDispatch } from 'react-redux';
 import QuizButton from '../components/molecules/QuizButton';
 import DropdownButton from '../components/molecules/dropdownButton';
+import PageTitle from '../components/atoms/PageTitle';
 
 const VocabContent = (
   props: {
@@ -371,12 +371,14 @@ const VocabContent = (
   return (
     <div className='flex flex-col items-center'>
       <div className='flex mt-12 mb-12 items-center'>
-        <h4 className='text-center text-2xl flex'>
-          {currentLanguage.languageName} Vocabulary -&nbsp;
-          <button onClick={displayPopUp} className={`${consistentStyles.blueText} underline text-2xl`}>
-            Video Guide
-          </button>
-        </h4>
+        <PageTitle title={`${currentLanguage.languageName} Vocabulary - `}/>
+        &nbsp;
+        <button
+          onClick={displayPopUp}
+          className={`${consistentStyles.blueText} underline text-2xl`}
+        >
+    Video Guide
+        </button>
       </div>
     
       <div className="flex min-w-[350px] justify-between items-center">
@@ -393,9 +395,9 @@ const VocabContent = (
                   .map((topic, index) => (
                     <li
                       key={index}
-                      className={`px-4 py-2 text-sm text-gray-800 cursor-pointer hover:bg-gray-200 ${
-                        currentTopic.name === topic.name ? 'bg-gray-100' : ''
-                      }`}
+                      className={`${consistentStyles.textBlack} px-4 py-2 text-sm
+                      text-gray-800 cursor-pointer hover:bg-gray-200 
+                      ${currentTopic.name === topic.name ? 'bg-gray-100' : ''}`}
                       onClick={() => changeCurrentTopic(topic)}
                     >
                       <div className="flex items-center justify-between">
@@ -414,7 +416,7 @@ const VocabContent = (
           <QuizButton quiz={quiz} changeQuizState={changeQuizState}/>
         </div>
         {/* Settings Dropdown */}
-        <div className="relative" ref={settingsDropdownRef}>
+        <div className={ `${consistentStyles.textBlack} relative`} ref={settingsDropdownRef}>
           <DropdownButton text=' Settings' onClick={toggleSettingsDropdown}/>
           {isSettingsDropdownOpen && (
             <div className="absolute right-0 mt-2 bg-white border border-gray-300 rounded-lg shadow w-64 z-10">
@@ -528,7 +530,7 @@ const VocabContent = (
         <div className="modal fixed inset-0 bg-gray-800 bg-opacity-75 flex justify-center items-center">
           <div className="bg-white rounded p-4 max-w-lg w-full">
             <div className="flex justify-between items-center mb-4">
-              <h3 className="text-lg font-semibold">  How to Guide (Video)</h3>
+              <h3 className={`${consistentStyles.textBlack} text-lg font-semibold`}>How to Guide (Video)</h3>
               <button className="text-gray-500" onClick={hidePopUp}>
                 ✕
               </button>

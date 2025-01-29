@@ -1,3 +1,4 @@
+import { consistentStyles } from '../../constants'
 import { roughlyEqual } from '../../helpers/vocab-content-helpers'
 import { useState } from 'react'
 
@@ -39,7 +40,7 @@ const QuizElement = (
     const myPlaceHolder = props.myCounter === 1 ? 'enter your answer here' : '';
 
     return (
-      <div className='flex flex-col items-center'>
+      <div className={`${consistentStyles.textBlack} flex flex-col items-center`}>
         <div className='w-full'>
           <form 
             onBlur={e => checkAnswer(

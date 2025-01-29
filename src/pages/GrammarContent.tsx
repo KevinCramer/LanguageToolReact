@@ -87,7 +87,8 @@ const GrammarContent = (props: { languageNumber: number }) => {
                   {currentLanguage.topics.map((topic: Topic, index: number) => (
                     <li
                       key={index}
-                      className="px-4 py-2 hover:bg-gray-100 cursor-pointer text-sm"
+                      className={`${consistentStyles.textBlack} px-4 py-2 text-sm text-gray-800 cursor-pointer hover:bg-gray-200`}
+
                       onClick={() => changeCurrentTopic(topic)}
                     >
                       <div className="flex items-center">

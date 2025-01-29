@@ -19,7 +19,7 @@ const HowToTypeJapanese = () => {
               How to Type Japanese on a Mac
           </a>
         </div>
-        <div className='py-2'>
+        <div className={`${consistentStyles.textBlack} py-2`}>
           <div>
            Video Tutorials for Windows, iPhone
           </div>

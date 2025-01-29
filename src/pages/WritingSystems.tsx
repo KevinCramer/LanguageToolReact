@@ -358,7 +358,7 @@ const WritingSystems = (
     <div className='flex flex-col items-center'>
       <div className='flex mt-12 mb-12 items-center'>
         <h4 className="flex flex-row justify-center text-center text-2xl">
-          <div>
+          <div className={`${consistentStyles.textBlack}`}>
           Japanese Writing Systems -&nbsp;
             <a
               onClick={() => setShowPopUp(true)}
@@ -375,16 +375,16 @@ const WritingSystems = (
           <DropdownButton text={`Topic 
                 ${currentTopic.name.length > 7
       ? `${currentTopic.name.substring(0, 7)}...`
-      : currentTopic.name}`}/>
+      : currentTopic.name}`} onClick={toggleTopicDropdown}/>
           {isTopicDropdownOpen && (
-            <div className="absolute left-0 mt-2 bg-white border border-gray-300 rounded-lg shadow w-64 z-10">
+            <div className=" absolute left-0 mt-2 bg-white border border-gray-300 rounded-lg shadow w-64 z-10">
               <ul className="divide-y divide-gray-200">
                 {(currentLanguage.topics as Topic[])
                   .sort((t1, t2) => (t1.topicOrder || 0) < (t2.topicOrder || 0) ? -1 : 1)
                   .map((topic, index) => (
                     <li
                       key={index}
-                      className={`px-4 py-2 text-sm text-gray-800 cursor-pointer hover:bg-gray-200 ${
+                      className={`${consistentStyles.textBlack} px-4 py-2 text-sm text-gray-800 cursor-pointer hover:bg-gray-200 ${
                         currentTopic.name === topic.name ? 'bg-gray-100' : ''
                       }`}
                       onClick={() => changeCurrentTopic(topic)}
@@ -403,7 +403,7 @@ const WritingSystems = (
           <QuizButton quiz={quiz} changeQuizState={changeQuizState}/>
         </div>
         {/* Settings Dropdown */}
-        <div className="relative" ref={settingsDropdownRef}>
+        <div className={ `${consistentStyles.textBlack} relative`} ref={settingsDropdownRef}>
           <DropdownButton text='Settings' onClick={toggleSettingsDropdown}/>
           {isSettingsDropdownOpen && (
             <div className="absolute right-0 mt-2 bg-white border border-gray-300 rounded-lg shadow w-64 z-10">
@@ -501,7 +501,7 @@ const WritingSystems = (
         <div className="modal fixed inset-0 bg-gray-800 bg-opacity-75 flex justify-center items-center">
           <div className="bg-white rounded p-4 max-w-lg w-full">
             <div className="flex justify-between items-center mb-4">
-              <h3 className="text-lg font-semibold">How to Guide (Video)</h3>
+              <h3 className={`${consistentStyles.textBlack} text-lg font-semibold`}>How to Guide (Video)</h3>
               <button className="text-gray-500" onClick={hidePopUp}>
                 ✕
               </button>
