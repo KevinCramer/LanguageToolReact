@@ -15,3 +15,8 @@ export const protectedLinkStyle = {
 
 export const fontStretch = '100%'
 
+export const consistentStyles = {
+  darkBlueBorder: 'border-blue-700',
+  blueBackground: 'bg-blue-500',
+  blueText: 'text-blue-500'
+}

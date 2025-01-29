@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import VolumeOffIcon from '@mui/icons-material/VolumeOff';
 import VolumeUpIcon from '@mui/icons-material/VolumeUp';
+import { consistentStyles } from '../../constants';
 
 const StudyElement = (
   props: 
@@ -75,7 +76,7 @@ const StudyElement = (
     <>{BaseLanguageWord}</>
   </label>;
 
-  const foreignLanguageLabelStrokeOrder = <label className='text-blue-500 underline'
+  const foreignLanguageLabelStrokeOrder = <label className={`${consistentStyles.blueText} underline cursor-pointer`}
     onClick={showBaseLanguageFirst ? displayPopUp : () => {}}>
     <> {ForeignLanguageWord}</>
   </label>;
@@ -101,7 +102,7 @@ const StudyElement = (
           <audio src={ForeignLanguageWordAudio} id={ForeignLanguageWordAudio}></audio>
           <button disabled={!ForeignLanguageWord} onClick={handleAudioToggle}>
             {ForeignLanguageWordAudio ? (
-              <VolumeUpIcon className={`${isPlaying ? 'text-blue-500' : 'bg-transparent'}`} />
+              <VolumeUpIcon className={`${isPlaying ? consistentStyles.blueText : 'bg-transparent'}`} />
             ) : (
               <VolumeOffIcon />
             )}

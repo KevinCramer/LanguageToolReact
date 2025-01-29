@@ -1,3 +1,5 @@
+import { consistentStyles } from '../constants';
+
 const Custom404Error = () => { 
   return (
     <div className='flex flex-col flex-1 justify-center px-4'>
@@ -9,7 +11,7 @@ const Custom404Error = () => {
         Oh no! That page does not exist.
       </div>   
       <div className='max-w-screen-md mx-auto  rounded-md'>
-      Head to our <a className='text-blue-500 underline' href='/'>homepage</a> that does exist.
+      Head to our <a className={`${consistentStyles.blueText} underline`} href='/'>homepage</a> that does exist.
       </div>
     </div>
   );

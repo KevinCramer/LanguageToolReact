@@ -5,6 +5,7 @@ import { RootStateRoute } from '../../redux-store/route';
 import { useAuth } from '../../contexts/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { consistentStyles } from '../../constants';
 
 export default function Signup() {
   const navigate = useNavigate();
@@ -100,7 +101,7 @@ export default function Signup() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 disabled:opacity-50"
+              className={`w-full ${consistentStyles.blueBackground} text-white py-2 px-4 rounded hover:bg-blue-600 disabled:opacity-50`}
             >
               Sign Up
             </button>

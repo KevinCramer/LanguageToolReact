@@ -1,3 +1,5 @@
+import { consistentStyles } from '../../constants';
+
 const JapaneseHomePage = () => {
   return (
     <div className="max-w-screen-md mx-auto px-2  text-center text-lg">
@@ -11,7 +13,7 @@ const JapaneseHomePage = () => {
         </div>
         <div>
           <button
-            className="w-[200px] mb-4 border-[1px] border-b-4 bg-blue-500 border-blue-700 text-center text-white p-2 rounded-2xl"
+            className={`w-[200px] mb-4 border-[1px] border-b-4 ${consistentStyles.blueBackground} ${consistentStyles.darkBlueBorder} text-center text-white p-2 rounded-2xl`}
             onClick={() => window.location.href = 'study-guide'}
           >
             <div>Access Study Guide</div>
@@ -22,7 +24,7 @@ const JapaneseHomePage = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 justify-items-center mt-8">
         <div className="md:border border-gray-300 rounded-xl m-2 px-4 py-4 w-full md:text-left hover:cursor-pointer md:hover:bg-gray-100"
           onClick={() => window.location.href = 'writing-systems-explained'}>
-          <div className="text-xl mb-4 text-blue-500 underline">
+          <div className={`text-xl mb-4 ${consistentStyles.blueText} underline`}>
             <a href='writing-systems-explained'>
             Writing Systems
             </a>
@@ -33,7 +35,7 @@ const JapaneseHomePage = () => {
         </div>
         <div className="md:border border-gray-300 rounded-xl m-2 px-4 py-4 w-full md:text-left hover:cursor-pointer md:hover:bg-gray-100"
           onClick={() => window.location.href = 'vocabulary-guide'}>
-          <div className="text-xl mb-4 text-blue-500 underline">
+          <div className={`text-xl mb-4 ${consistentStyles.blueText} underline`}>
             <a href='vocabulary'>
             Vocabulary
             </a>
@@ -44,7 +46,7 @@ const JapaneseHomePage = () => {
         </div>
         <div className="md:border border-gray-300 rounded-xl m-2 px-4 py-4 w-full md:text-left hover:cursor-pointer md:hover:bg-gray-100"
           onClick={() => window.location.href = 'grammar/keigo'}>
-          <div className="text-xl mb-4 text-blue-500 underline">
+          <div className={`text-xl mb-4 ${consistentStyles.blueText} underline`}>
             <a href='grammar/keigo'>
             Grammar
             </a>
@@ -55,8 +57,7 @@ const JapaneseHomePage = () => {
         </div>
         <div className="md:border border-gray-300 rounded-xl m-2 px-4 py-4 w-full md:text-left hover:cursor-pointer md:hover:bg-gray-100"
           onClick={() => window.location.href = 'reading-listening/aikos-book-sanctuary?L=WritingSystem3&R=English&gran=paragraph'}>
-          <div className="text-xl mb-4 text-blue-500 underline"
-          >
+          <div className={`text-xl mb-4 ${consistentStyles.blueText} underline`}>
             <a href='reading-listening/aikos-book-sanctuary?L=WritingSystem3&R=English&gran=paragraph'>
             Reading & Listening
             </a>

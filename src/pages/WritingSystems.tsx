@@ -1,5 +1,4 @@
-import { BsCheck, BsSquare } from 'react-icons/bs';
-import { languageToSlugs, lingoCommandIsLocked } from '../constants'
+import { consistentStyles, languageToSlugs, lingoCommandIsLocked } from '../constants'
 import { queryParamCompress, queryParamDecompress } from '../helpers/query-param-helpers'
 import { scramble, scrambleWithoutMutate } from '../helpers/vocab-content-helpers';
 import { setBackwardRoute, setForwardRoute } from '../redux-store/route';
@@ -362,7 +361,7 @@ const WritingSystems = (
           Japanese Writing Systems -&nbsp;
             <a
               onClick={() => setShowPopUp(true)}
-              className="text-blue-500 underline text-2xl"
+              className={`${consistentStyles.blueText} underline text-2xl`}
             >
         Video Guide
             </a>

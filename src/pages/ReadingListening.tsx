@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { languages as allLanguages } from '../data/structured-data/readingListening';
 import DownChevronIcon from '../components/atoms/DownChevronIcon';
-import { lingoCommandIsLocked, mobileBreakPoint } from '../constants';
+import { consistentStyles, lingoCommandIsLocked, mobileBreakPoint } from '../constants';
 import LockIcon from '@mui/icons-material/Lock';
 import RenderTableCell from '../components/molecules/RenderTableCell';
 import { useAuth } from '../contexts/AuthContext';
@@ -310,7 +310,7 @@ const ReadingListeningContent = (props: { languageNumber: number; howToGuideVide
           </div>
           <div className="relative px-2">
             <button
-              className=" border-[1px] border-b-4 bg-blue-500 border-blue-700 bg-200 text-center text-white px-2 text-base py-0.5 rounded-lg transform transition-transform duration-200 hover:scale-105"
+              className={`border-[1px] border-b-4 ${consistentStyles.blueBackground} ${consistentStyles.darkBlueBorder} bg-200 text-center text-white px-2 text-base py-0.5 rounded-lg transform transition-transform duration-200 hover:scale-105`}
               onClick={() => setShowPopUp(true)} >
             Video Guide
 

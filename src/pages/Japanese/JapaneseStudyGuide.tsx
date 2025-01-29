@@ -1,3 +1,5 @@
+import { consistentStyles } from '../../constants';
+
 const JapaneseStudyGuide = () => {
 
   return (
@@ -6,7 +8,7 @@ const JapaneseStudyGuide = () => {
       <div className='pb-4 pt-8'>
         <div className='underline font-bold'>Step 1:</div>
           It is essential to understand how the Japanese writing systems work. Spend a few minutes reading about it {' '}
-        <a className='text-blue-500 underline' href='/japanese/writing-systems-explained'>
+        <a className={`${consistentStyles.blueText} underline`} href='/japanese/writing-systems-explained'>
          here
         </a>
         .
@@ -17,13 +19,13 @@ const JapaneseStudyGuide = () => {
            Study these lessons in order:
 
         <ul className='flex flex-col'>
-          <a className='text-blue-500 underline' href='/japanese/hiragana-explained?lesson=1'>
+          <a className={`${consistentStyles.blueText} underline`} href='/japanese/hiragana-explained?lesson=1'>
          Lesson 1 - Basic Hiragana
           </a>
-          <a className='text-blue-500 underline' href='/japanese/hiragana-explained?lesson=2'>
+          <a className={`${consistentStyles.blueText} underline`} href='/japanese/hiragana-explained?lesson=2'>
          Lesson 2 - Hiragana with Dakuten and Handakuten
           </a>
-          <a className='text-blue-500 underline' href='/japanese/hiragana-explained?lesson=3'>
+          <a className={`${consistentStyles.blueText} underline`} href='/japanese/hiragana-explained?lesson=3'>
          Lesson 3 - Yoōn Hiragana
           </a>
         </ul>
@@ -34,18 +36,18 @@ const JapaneseStudyGuide = () => {
 
            The next step to mastering Japanese is to learn Katakana. Study these lessons in order:
         <ul className=' flex flex-col'>
-          <a className='text-blue-500 underline' href='/japanese/katakana-explained?lesson=1'>
+          <a className={`${consistentStyles.blueText} underline`} href='/japanese/katakana-explained?lesson=1'>
          Lesson 1 - Basic Katakana
           </a>
-          <a className='text-blue-500 underline' href='/japanese/katakana-explained?lesson=2'>
+          <a className={`${consistentStyles.blueText} underline`} href='/japanese/katakana-explained?lesson=2'>
          Lesson 2 - Katakana with Dakuten and Handakuten
           </a>
-          <a className='text-blue-500 underline' href='/japanese/katakana-explained?lesson=3'>
+          <a className={`${consistentStyles.blueText} underline`} href='/japanese/katakana-explained?lesson=3'>
          Lesson 3 - Yoōn Katakana
-          </a> <a className='text-blue-500 underline' href='/japanese/katakana-explained?lesson=4'>
+          </a> <a className={`${consistentStyles.blueText} underline`} href='/japanese/katakana-explained?lesson=4'>
          Lesson 4 - Foreign Yoōn Katakana
           </a>
-          <a className='text-blue-500 underline' href='/japanese/katakana-explained?lesson=5'>
+          <a className={`${consistentStyles.blueText} underline`} href='/japanese/katakana-explained?lesson=5'>
          Lesson 5 - Katakana Long Vowels
           </a>
         </ul>
@@ -56,7 +58,7 @@ const JapaneseStudyGuide = () => {
         The Kanji writing system is something you will gain familiarity with as you learn vocabulary. For now 
         read this brief explanation:
         <ul className='flex flex-col'>
-          <a className='text-blue-500 underline' href='/japanese/kanji-explained'>
+          <a className={`${consistentStyles.blueText} underline`} href='/japanese/kanji-explained'>
             Lesson 1 - Introduction to Kanji
           </a>
         </ul>
@@ -66,7 +68,7 @@ const JapaneseStudyGuide = () => {
         <div className='underline font-bold'>Step 5:</div>
           Learning how to type Japanese is simpler than you might expect. Spend a few minutes watching the video guide here:
         <ul className='flex flex-col'>
-          <a className='text-blue-500 underline' href='/japanese/how-to-type-japanese'>
+          <a className={`${consistentStyles.blueText} underline`} href='/japanese/how-to-type-japanese'>
           How To Type Japanese
           </a>
         </ul>
@@ -77,7 +79,7 @@ const JapaneseStudyGuide = () => {
         Practice vocabulary exercises on various topics. Dedicate 15 minutes to studying vocabulary for each topic,
          followed by a quiz. Aim to repeat the quiz until you can consistently score at least 90%. Begin your vocabulary practice here:
         <ul className=' flex flex-col max-w-[400px]'>
-          <a className='text-blue-500 underline' href='/japanese/vocabulary-guide'>
+          <a className={`${consistentStyles.blueText} underline`} href='/japanese/vocabulary-guide'>
           Vocabulary Exercises
           </a>
         </ul>
@@ -91,7 +93,7 @@ const JapaneseStudyGuide = () => {
           start these exercises:
         <div>
           <a
-            className='text-blue-500 underline'
+            className={`${consistentStyles.blueText} underline`}
             href='/japanese/reading-listening/aikos-book-sanctuary?eng=F'>
           reading and listening exercises
           </a>

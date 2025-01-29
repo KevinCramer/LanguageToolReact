@@ -1,3 +1,4 @@
+import { consistentStyles } from '../../constants';
 import PageTitle from '../../components/atoms/PageTitle';
 
 const KanjiExplained = () => { 
@@ -54,8 +55,10 @@ const KanjiExplained = () => {
 
       </div>        
       <div className="flex flex-col space-y-2 justify-center items-center m-4">
-        <a className="border-[1px] border-b-4 bg-blue-500 border-blue-700 bg-200 text-center text-white p-2 rounded-2xl transform transition-transform duration-200 hover:scale-105"
-          href='vocabulary?s=clo-T2TFT'>
+        <a className={`border-[1px] border-b-4 ${consistentStyles.blueBackground}
+         ${consistentStyles.darkBlueBorder} bg-200 text-center text-white p-2 
+         rounded-2xl transform transition-transform duration-200 hover:scale-105`}
+        href='vocabulary?s=clo-T2TFT'>
                       Kanji Vocabulary Exercises
         </a>
       </div>

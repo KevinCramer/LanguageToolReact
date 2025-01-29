@@ -1,4 +1,5 @@
 import PageTitle from '../../components/atoms/PageTitle';
+import { consistentStyles } from '../../constants';
 
 const JapaneseWritingSystems = () => {
   const sections = [
@@ -33,7 +34,7 @@ const JapaneseWritingSystems = () => {
 
   const typingJapaneseSection = (
     <div className='py-2'>
-      <a className="text-blue-500 underline" href='/japanese/how-to-type-japanese'>
+      <a className={`${consistentStyles.blueText} underline" href='/japanese/how-to-type-japanese`}>
         How to Type Japanese
       </a>
     </div>
@@ -45,7 +46,7 @@ const JapaneseWritingSystems = () => {
       <div className='py-2'>The Japanese language has 3 writing systems:</div>
       {sections.map((section, index) => (
         <div className='py-2' key={index}>
-          <a className='text-blue-500 underline' href={section.link}>
+          <a className={`${consistentStyles.blueText} underline`} href={section.link}>
             {section.title}
           </a>
            &nbsp;- {section.description}

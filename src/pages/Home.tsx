@@ -1,5 +1,6 @@
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
+import { consistentStyles } from '../constants';
 
 export const Home = () => {
   const navigate = useNavigate(); // React Router's navigation hook
@@ -79,7 +80,9 @@ export const Home = () => {
         Learn Japanese Faster
       </div>
       <button
-        className="mt-8 border-[1px] border-b-4 bg-blue-500 border-blue-700 bg-200 text-center text-white p-2 rounded-2xl text-xl transform transition-transform duration-200 hover:scale-105 tracking-custom"
+        className={`mt-8 border-[1px] border-b-4 ${consistentStyles.blueBackground} 
+        ${consistentStyles.darkBlueBorder} bg-200 text-center text-white p-2 rounded-2xl
+         text-xl transform transition-transform duration-200 hover:scale-105 tracking-custom`}
         onClick={(event) => { navigate('/japanese/home-page') }}
       >
   Start Now

@@ -1,5 +1,6 @@
 import { Paragraph, SentenceWithNumAlphabets, TranscriptionType } 
   from '../../../types/learningSections/ReadingListeningTypes';
+import { consistentStyles } from '../../constants';
 import AudioPlayer from '../atoms/CustomAudioPlayer';
 import { useState } from 'react';
 
@@ -94,7 +95,7 @@ const RenderTableCell = ({
         className="w-full flex flex-col items-center justify-center"
       >
         <button
-          className="text-blue-500 border-[1px] border-b-4 border-gray-300 bg-200 text-center active:bg-gray-300 hover:bg-gray-200 p-2 rounded-2xl"
+          className={`${consistentStyles.blueText} border-[1px] border-b-4 border-gray-300 bg-200 text-center active:bg-gray-300 hover:bg-gray-200 p-2 rounded-2xl`}
           onClick={toggleShow}
         >
           {show ? 'Hide Content' : 'Show Content'}

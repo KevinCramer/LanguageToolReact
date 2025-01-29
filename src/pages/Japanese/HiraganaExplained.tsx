@@ -1,9 +1,9 @@
+import { consistentStyles, lingoCommandIsLocked } from '../../constants';
 import { japaneseWritingSystemsTopicSlugNames, writingSystems } 
   from '../../data/structured-data/writingSystems';
 import { LanguageNames, LearningSections } from '../../../types/LearningSectionsTypes';
 import { useEffect, useState } from 'react';
 import { createURL } from '../../helpers/createURL';
-import { lingoCommandIsLocked } from '../../constants';
 import LockIcon from '@mui/icons-material/Lock';
 import { useAuth } from '../../contexts/AuthContext';
 import { useProtectedLink } from '../../helpers/use-protected-link';
@@ -306,7 +306,7 @@ const HiraganaExplained = () => {
           </div>
           <div className='flex py-6 justify-center'>
             <div className="flex flex-col space-y-2 justify-center items-center ml-4">
-              <a className=" border-[1px] border-b-4 bg-blue-500 border-blue-700 bg-200 text-center text-white p-2 rounded-2xl transform transition-transform duration-200 hover:scale-105"
+              <a className={`border-[1px] border-b-4 ${consistentStyles.blueBackground} ${consistentStyles.darkBlueBorder} bg-200 text-center text-white p-2 rounded-2xl transform transition-transform duration-200 hover:scale-105`}
 
                 onClick={handleProtectedClick(hiraganaBasicWritingSystem)}
                 href={createURL(LanguageNames.Japanese, LearningSections.WritingSystem, hiraganaBasicWritingSystem)}
@@ -348,7 +348,7 @@ const HiraganaExplained = () => {
             </div>
             <div className='flex py-6 justify-center'>
               <div className='flex flex-col space-y-2 justify-center items-center ml-4'>
-                <a className=" border-[1px] border-b-4 bg-blue-500 border-blue-700 bg-200 text-center text-white p-2 rounded-2xl transform transition-transform duration-200 hover:scale-105"
+                <a className={`border-[1px] border-b-4 ${consistentStyles.blueBackground} ${consistentStyles.darkBlueBorder} bg-200 text-center text-white p-2 rounded-2xl transform transition-transform duration-200 hover:scale-105`}
                   onClick={handleProtectedClick(hiraganaDakutenWritingSystem)} 
                   href={
                     createURL(
@@ -380,7 +380,7 @@ const HiraganaExplained = () => {
           </div>
           <div className='flex py-6 justify-center'>
             <div className='flex flex-col space-y-2 justify-center items-center ml-4'>
-              <a className=" border-[1px] border-b-4 bg-blue-500 border-blue-700 bg-200 text-center text-white p-2 rounded-2xl transform transition-transform duration-200 hover:scale-105"
+              <a className={`border-[1px] border-b-4 ${consistentStyles.blueBackground} ${consistentStyles.darkBlueBorder} bg-200 text-center text-white p-2 rounded-2xl transform transition-transform duration-200 hover:scale-105`}
                 onClick={handleProtectedClick(hiraganaYoonWritingSystem)} 
                 href={
                   createURL(
