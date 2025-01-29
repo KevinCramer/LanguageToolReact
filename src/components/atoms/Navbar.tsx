@@ -3,9 +3,10 @@ import { setBackwardRoute, setForwardRoute } from '../../redux-store/route';
 import { useEffect, useRef, useState } from 'react';
 import { BsPerson } from 'react-icons/bs';
 import { FaChevronDown } from 'react-icons/fa';
-import { fontStretch } from '../../constants';
+import { fontStretch, mobileBreakPoint } from '../../constants';
 import { useAuth } from '../../contexts/AuthContext';
 import { useDispatch } from 'react-redux';
+import useWindowWidth from '../../hooks/useWindowWidth';
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -37,31 +38,10 @@ const Navbar = () => {
     };
   }, []);
 
-  const useWindowWidth = () => {
-    const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
-
-    useEffect(() => {
-      // Update the windowWidth state when the window is resized
-      const handleResize = () => {
-        setWindowWidth(window.innerWidth);
-      };
-  
-      // Add event listener to handle window resizing
-      window.addEventListener('resize', handleResize);
-  
-      // Cleanup event listener when the component unmounts
-      return () => {
-        window.removeEventListener('resize', handleResize);
-      };
-    }, []);
-  
-    return windowWidth;
-  };
-
-  const width = useWindowWidth(); // Get the current window width
+  const width = useWindowWidth()
 
   // Now you can use width to check screen size in your component
-  const isMobile = width < 768; 
+  const isMobile = width < mobileBreakPoint; 
 
   // Check if the current URL starts with '/japanese'
   const onJapanese = location.pathname.startsWith('/japanese') || ( isMobile ? location.pathname.includes('contact') : false);

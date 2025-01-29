@@ -1,12 +1,13 @@
 import { setBackwardRoute, setForwardRoute } from '../../redux-store/route';
 import { useEffect, useState } from 'react';
 import { japaneseVocabTopicSlugNames } from '../../data/structured-data/words';
-import { lingoCommandIsLocked } from '../../constants';
+import { lingoCommandIsLocked, mobileBreakPoint } from '../../constants';
 import LockIcon from '@mui/icons-material/Lock';
 import PageTitle from '../../components/atoms/PageTitle';
 import { useAuth } from '../../contexts/AuthContext';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import useWindowWidth from '../../hooks/useWindowWidth';
 
 interface Topic {
   Name: string;
@@ -116,31 +117,11 @@ const VocabularyGuide = () => {
       navigate(`/japanese/vocabulary?s=${topic.slugName}-T0TFT`);
     }
   };
-  const useWindowWidth = () => {
-    const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
-
-    useEffect(() => {
-      // Update the windowWidth state when the window is resized
-      const handleResize = () => {
-        setWindowWidth(window.innerWidth);
-      };
-  
-      // Add event listener to handle window resizing
-      window.addEventListener('resize', handleResize);
-  
-      // Cleanup event listener when the component unmounts
-      return () => {
-        window.removeEventListener('resize', handleResize);
-      };
-    }, []);
-  
-    return windowWidth;
-  };
 
   const width = useWindowWidth(); // Get the current window width
 
   // Now you can use width to check screen size in your component
-  const isMobile = width < 768; 
+  const isMobile = width < mobileBreakPoint; 
 
   const numItems = allTopics.length;
   const numCols = isMobile ? 2 : 3 // 3 columns for large screens, 2 columns for smaller ones.

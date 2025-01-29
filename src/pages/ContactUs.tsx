@@ -7,6 +7,8 @@ import {
 } from 'react-icons/fa';
 
 import { useEffect, useState } from 'react';
+import useWindowWidth from '../hooks/useWindowWidth';
+import { mobileBreakPoint } from '../constants';
 
 const socialLinks = [
   /* eslint-disable @stylistic/js/max-len */
@@ -20,29 +22,9 @@ const socialLinks = [
 ];
 
 const ContactUs = () => {
-  const useWindowWidth = () => {
-    const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
-    
-    useEffect(() => {
-      // Update the windowWidth state when the window is resized
-      const handleResize = () => {
-        setWindowWidth(window.innerWidth);
-      };
-      
-      // Add event listener to handle window resizing
-      window.addEventListener('resize', handleResize);
-      
-      // Cleanup event listener when the component unmounts
-      return () => {
-        window.removeEventListener('resize', handleResize);
-      };
-    }, []);
-      
-    return windowWidth;
-  };
-  
+ 
   const width = useWindowWidth(); // Get the current window width
-  const isMobile = width < 768; 
+  const isMobile = width < mobileBreakPoint; 
   return (
     <div className={`flex flex-col items-center ${isMobile ? 'text-black' : 'text-white'} text-lg`}>
       <div className='pt-24'>

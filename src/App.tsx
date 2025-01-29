@@ -26,9 +26,11 @@ import Navbar from './components/atoms/Navbar'
 import ReadingListening from './pages/ReadingListening'
 import ResetPassword from './components/molecules/ResetPassword'
 import Signup from './components/molecules/Signup'
+import useWindowWidth from './hooks/useWindowWidth';
 import VocabContent from './pages/VocabContent'
 import VocabularyGuide from './pages/Japanese/VocabularyGuide';
 import WritingSystems from './pages/WritingSystems'
+import { mobileBreakPoint } from './constants';
 
 const App = ()=> {
   const location = useLocation();
@@ -36,29 +38,8 @@ const App = ()=> {
   // where the user was active in the last 30 minutes
   // useInactivityTimer(30 * msInMinute, 30 * msInMinute);
 
-  const useWindowWidth = () => {
-    const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
-  
-    useEffect(() => {
-      // Update the windowWidth state when the window is resized
-      const handleResize = () => {
-        setWindowWidth(window.innerWidth);
-      };
-    
-      // Add event listener to handle window resizing
-      window.addEventListener('resize', handleResize);
-    
-      // Cleanup event listener when the component unmounts
-      return () => {
-        window.removeEventListener('resize', handleResize);
-      };
-    }, []);
-    
-    return windowWidth;
-  };
-
   const width = useWindowWidth(); // Get the current window width
-  const isMobile = width < 768; 
+  const isMobile = width < mobileBreakPoint; 
 
   const pathWithBackground = location.pathname === '/' 
   || location.pathname === '/account'

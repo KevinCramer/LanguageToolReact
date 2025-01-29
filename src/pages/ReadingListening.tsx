@@ -5,32 +5,12 @@ import { useEffect, useRef, useState } from 'react';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { languages as allLanguages } from '../data/structured-data/readingListening';
 import DownChevronIcon from '../components/atoms/DownChevronIcon';
-import { lingoCommandIsLocked } from '../constants';
+import { lingoCommandIsLocked, mobileBreakPoint } from '../constants';
 import LockIcon from '@mui/icons-material/Lock';
 import RenderTableCell from '../components/molecules/RenderTableCell';
 import { useAuth } from '../contexts/AuthContext';
 import { useDispatch } from 'react-redux';
-
-const useWindowWidth = () => {
-  const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
-
-  useEffect(() => {
-    // Update the windowWidth state when the window is resized
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-  
-    // Add event listener to handle window resizing
-    window.addEventListener('resize', handleResize);
-  
-    // Cleanup event listener when the component unmounts
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-  
-  return windowWidth;
-};
+import useWindowWidth from '../hooks/useWindowWidth';
 
 const ReadingListeningContent = (props: { languageNumber: number; howToGuideVideo?: any }) => {
 
@@ -279,7 +259,7 @@ const ReadingListeningContent = (props: { languageNumber: number; howToGuideVide
   const width = useWindowWidth(); // Get the current window width
 
   // Now you can use width to check screen size in your component
-  const isMobile = width < 768; 
+  const isMobile = width < mobileBreakPoint; 
   return (
     <div className="">
       <h4 className="flex flex-row justify-center text-center text-2xl py-12">

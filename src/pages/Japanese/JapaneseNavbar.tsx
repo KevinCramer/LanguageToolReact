@@ -1,34 +1,13 @@
 import { NavLink, useLocation } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-import { fontStretch } from '../../constants';
-
-const useWindowWidth = () => {
-  const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
-
-  useEffect(() => {
-    // Update the windowWidth state when the window is resized
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-  
-    // Add event listener to handle window resizing
-    window.addEventListener('resize', handleResize);
-  
-    // Cleanup event listener when the component unmounts
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-  
-  return windowWidth;
-};
+import { fontStretch, mobileBreakPoint } from '../../constants';
+import useWindowWidth from '../../hooks/useWindowWidth';
   
 const JapaneseNavbar = () => {
   const width = useWindowWidth(); // Get the current window width
   const location = useLocation(); 
 
   // Now you can use width to check screen size in your component
-  const isMobile = width < 768; 
+  const isMobile = width < mobileBreakPoint 
   const navbarFontStretch = isMobile ? fontStretch : '100%'
   return (
     <>
