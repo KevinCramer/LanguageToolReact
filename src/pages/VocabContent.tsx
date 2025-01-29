@@ -15,6 +15,7 @@ import { sortTopics } from '../helpers/words-data-helper';
 import StudyElement from '../components/molecules/StudyElement';
 import { useAuth } from '../contexts/AuthContext'
 import { useDispatch } from 'react-redux';
+import QuizButton from '../components/molecules/QuizButton';
 
 const VocabContent = (
   props: {
@@ -421,25 +422,8 @@ const VocabContent = (
           )}
         </div>
         <div className='flex justify-center'>
-          <button
-            className=" flex items-center border-[1px] border-b-4 bg-blue-500 border-blue-700 text-blue-500 rounded-lg text-base p-0.5 transform transition-transform duration-200 hover:scale-105"
-            onClick={changeQuizState}
-          >
-            <div className='text-white ml-1'>Quiz</div> 
-            <div style={{ display: 'inline-block', borderRadius: '4px' }}
-              className='ml-1.5 mr-1'>
-              {quiz ? <BsCheck size={16}
-                className='text-white bg-blue-500 border border-white rounded'
-                style={{ strokeWidth: '1' }}
-                onChange={changeQuizState}
-              /> : <BsSquare size={16}
-                className='text-blue-500 border border-white rounded '
-                onChange={changeQuizState}
-              />}
-            </div>
-          </button>
+          <QuizButton quiz={quiz} changeQuizState={changeQuizState}/>
         </div>
-       
         {/* Settings Dropdown */}
         <div className="relative" ref={settingsDropdownRef}>
           <button
