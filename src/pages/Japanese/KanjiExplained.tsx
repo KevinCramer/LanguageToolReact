@@ -32,7 +32,7 @@ const KanjiExplained = () => {
   );
     
   return (
-    <div className='max-w-screen-md mx-auto px-4'>
+    <div className={`${consistentStyles.textBlack} max-w-screen-md mx-auto px-4`}>
       <PageTitle title='Kanji Explained' />
       <div className='py-2'>
         Kanji are characters used in the Japanese writing system, originally borrowed from Chinese characters. They represent ideas or meanings rather than just sounds. Each kanji can have multiple meanings and pronunciations depending on the context.

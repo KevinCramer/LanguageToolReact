@@ -654,7 +654,8 @@ const KatakanaExplained = () => {
   };
 
   return (
-    <div className="max-w-screen-md mx-auto px-4 text-lg">
+    <div className={`${consistentStyles.textBlack} max-w-screen-md mx-auto px-4 text-lg`}>
+
       {/*@ts-ignore*/}
       <h4 className="text-center text-2xl pt-12">Lesson {currentLesson} - {lessonTitles[currentLesson]}</h4>
       <div className="flex justify-center items-center space-x-4 mt-8 mb-6">
