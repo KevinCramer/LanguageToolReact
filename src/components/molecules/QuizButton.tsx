@@ -9,7 +9,7 @@ const QuizButton = ({ quiz, changeQuizState }: any) => {
        transition-transform duration-200 hover:scale-105`}
       onClick={changeQuizState}
     >
-      <div className='text-white ml-1'>Quiz</div>
+      <div className={`${consistentStyles.textWhite} ml-1`}>Quiz</div>
       <div
         style={{ display: 'inline-block', borderRadius: '4px' }}
         className='ml-1.5 mr-1'
@@ -17,7 +17,7 @@ const QuizButton = ({ quiz, changeQuizState }: any) => {
         {quiz ? (
           <BsCheck
             size={16}
-            className={`text-white ${consistentStyles.blueBackground} border border-white rounded`}
+            className={`${consistentStyles.textWhite} ${consistentStyles.blueBackground} border border-white rounded`}
             style={{ strokeWidth: '1' }}
           />
         ) : (

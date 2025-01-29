@@ -5,6 +5,7 @@ import { getCheckoutUrl } from '../stripePayment';
 import PageTitle from '../components/atoms/PageTitle';
 import { setBackwardRoute } from '../redux-store/route';
 import { useDispatch } from 'react-redux';
+import { consistentStyles } from '../constants';
 
 const Account = () => {
   const navigate = useNavigate();
@@ -18,7 +19,7 @@ const Account = () => {
 
   return (
     <div className='flex flex-col justify-center flex-1 px-4'>
-      <div className='max-w-screen-md mx-auto rounded-md text-white text-center'>
+      <div className={`max-w-screen-md mx-auto rounded-md ${consistentStyles.textWhite} text-center`}>
         <PageTitle title='Account Settings' />
         <CustomLink isWhite={true} onClick={() => {
           dispatch(setBackwardRoute(location.pathname));

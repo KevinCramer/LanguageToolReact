@@ -76,12 +76,12 @@ export const Home = () => {
 
   return (
     <div className='flex flex-col flex-1 justify-center items-center'>
-      <div className='m-2 text-white text-2xl tracking-custom'>
+      <div className={`m-2 ${consistentStyles.textWhite} text-2xl tracking-custom`}>
         Learn Japanese Faster
       </div>
       <button
         className={`mt-8 border-[1px] border-b-4 ${consistentStyles.blueBackground} 
-        ${consistentStyles.darkBlueBorder} bg-200 text-center text-white p-2 rounded-2xl
+        ${consistentStyles.darkBlueBorder} bg-200 text-center ${consistentStyles.textWhite} p-2 rounded-2xl
          text-xl transform transition-transform duration-200 hover:scale-105 tracking-custom`}
         onClick={(event) => { navigate('/japanese/home-page') }}
       >

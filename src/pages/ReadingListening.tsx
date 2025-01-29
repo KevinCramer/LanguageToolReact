@@ -310,7 +310,7 @@ const ReadingListeningContent = (props: { languageNumber: number; howToGuideVide
           </div>
           <div className="relative px-2">
             <button
-              className={`border-[1px] border-b-4 ${consistentStyles.blueBackground} ${consistentStyles.darkBlueBorder} bg-200 text-center text-white px-2 text-base py-0.5 rounded-lg transform transition-transform duration-200 hover:scale-105`}
+              className={`border-[1px] border-b-4 ${consistentStyles.blueBackground} ${consistentStyles.darkBlueBorder} bg-200 text-center ${consistentStyles.textWhite} px-2 text-base py-0.5 rounded-lg transform transition-transform duration-200 hover:scale-105`}
               onClick={() => setShowPopUp(true)} >
             Video Guide
 

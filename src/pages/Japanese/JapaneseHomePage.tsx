@@ -13,7 +13,7 @@ const JapaneseHomePage = () => {
         </div>
         <div>
           <button
-            className={`w-[200px] mb-4 border-[1px] border-b-4 ${consistentStyles.blueBackground} ${consistentStyles.darkBlueBorder} text-center text-white p-2 rounded-2xl`}
+            className={`w-[200px] mb-4 border-[1px] border-b-4 ${consistentStyles.blueBackground} ${consistentStyles.darkBlueBorder} text-center ${consistentStyles.textWhite} p-2 rounded-2xl`}
             onClick={() => window.location.href = 'study-guide'}
           >
             <div>Access Study Guide</div>

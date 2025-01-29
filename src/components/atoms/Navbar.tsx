@@ -3,7 +3,7 @@ import { setBackwardRoute, setForwardRoute } from '../../redux-store/route';
 import { useEffect, useRef, useState } from 'react';
 import { BsPerson } from 'react-icons/bs';
 import { FaChevronDown } from 'react-icons/fa';
-import { fontStretch, mobileBreakPoint } from '../../constants';
+import { consistentStyles, fontStretch, mobileBreakPoint } from '../../constants';
 import { useAuth } from '../../contexts/AuthContext';
 import { useDispatch } from 'react-redux';
 import useWindowWidth from '../../hooks/useWindowWidth';
@@ -56,19 +56,19 @@ const Navbar = () => {
   const navbarFontStretch = isMobile ? fontStretch : '100%'
   return (
     <>
-      <nav className={`${backgroundColorClass} flex justify-between items-center px-2 md:pr-4 text-white relative`}>
+      <nav className={`${backgroundColorClass} flex justify-between items-center px-2 md:pr-4 ${consistentStyles.textWhite} relative`}>
         <NavLink to='/'>
           <div className={`flex items-center my-3 text-sm md:ml-8`} style={{ fontStretch: isMobile ? '50%' : '100%' }}>
             <div className='text-emerald-400 font-bold text-2xl'>
               L
             </div>
-            <div className='text-white text-lg '>
+            <div className={`${consistentStyles.textWhite} text-lg`}>
               ingo
             </div>
             <div className='text-emerald-400 font-bold text-2xl'>
               C
             </div>
-            <div className='text-white text-lg'>
+            <div className={`${consistentStyles.textWhite} text-lg`}>
               ommand
             </div>
           </div>
@@ -76,17 +76,17 @@ const Navbar = () => {
        
         {isMobile && 
         <>
-          <NavLink to='/japanese/home-page' className={onJapanese ? 'underline text-white' : 'text-white '}> 
+          <NavLink to='/japanese/home-page' className={onJapanese ? `underline ${consistentStyles.textWhite}` : `${consistentStyles.textWhite}`}> 
         Japanese
           </NavLink>
-          <NavLink to='/about' className={({ isActive }) => isActive ? 'underline text-white ' : 'text-white '}style={{ fontStretch: navbarFontStretch }}> 
+          <NavLink to='/about' className={({ isActive }) => isActive ? `underline ${consistentStyles.textWhite}` : `${consistentStyles.textWhite}`} style={{ fontStretch: navbarFontStretch }}> 
           About
           </NavLink>
         </>
         }
         {!(currentUser && currentUser.email) && (
           <button
-            className='text-white md:mr-8'
+            className={`${consistentStyles.textWhite} md:mr-8`}
             style={{ fontStretch: navbarFontStretch }}
             onClick={async () => {
               if (currentUser && currentUser.email) {
@@ -107,7 +107,7 @@ const Navbar = () => {
             {currentUser && currentUser.email ? 'Log Out' : 
               <div className={pathWithBackground ? 
                 'md:font-bold' : 
-                'flex items-center md:font-bold text-white rounded-xl'}> 
+                `flex items-center md:font-bold ${consistentStyles.textWhite} rounded-xl`}> 
                 <div>Log In </div>
               </div>
             }
@@ -116,7 +116,7 @@ const Navbar = () => {
 
         {currentUser && currentUser.email && (
           <div className="relative" ref={dropdownRef}>
-            <button className='text-white' onClick={toggleDropdown}>
+            <button className={`${consistentStyles.textWhite}`} onClick={toggleDropdown}>
               <div className='flex justify'>
                 <BsPerson className="w-8 h-8 md:w-10 md:h-10 " />
                 <FaChevronDown className="inline m-auto w-4 h-4" />
@@ -156,13 +156,13 @@ const Navbar = () => {
       </nav>
       {!isMobile && true && <nav className="absolute left-1/2 transform -translate-x-1/2 z-1 bg-opacity-50 h-14 flex items-center px-4">
         <div>
-          <NavLink to='/japanese/home-page' className={onJapanese ? 'underline text-white mx-8' : 'text-white mx-8 '}> 
+          <NavLink to='/japanese/home-page' className={onJapanese ? `underline ${consistentStyles.textWhite} mx-8` : `${consistentStyles.textWhite} mx-8`}> 
         Japanese
           </NavLink>
-          <NavLink to='/about' className={({ isActive }) => isActive ? 'underline text-white mx-8 ' : 'text-white mx-8 '}> 
+          <NavLink to='/about' className={({ isActive }) => isActive ? `underline ${consistentStyles.textWhite} mx-8` : `${consistentStyles.textWhite} mx-8`}> 
           About
           </NavLink>
-          <NavLink to='/contact' className={({ isActive }) => isActive ? 'underline text-white mx-8 ' : 'text-white mx-8 '}> 
+          <NavLink to='/contact' className={({ isActive }) => isActive ? `underline ${consistentStyles.textWhite} mx-8` : `${consistentStyles.textWhite} mx-8`}> 
           Contact
           </NavLink>
         </div>

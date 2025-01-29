@@ -84,7 +84,7 @@ export default function Login() {
             <button
               type="submit"
               disabled={loading}
-              className={`w-full ${consistentStyles.blueBackground} text-white py-2 
+              className={`w-full ${consistentStyles.blueBackground} ${consistentStyles.textWhite} py-2 
               px-4 rounded hover:bg-blue-600 disabled:opacity-50`}
             >
             Log In

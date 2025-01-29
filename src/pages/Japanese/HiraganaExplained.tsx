@@ -306,7 +306,7 @@ const HiraganaExplained = () => {
           </div>
           <div className='flex py-6 justify-center'>
             <div className="flex flex-col space-y-2 justify-center items-center ml-4">
-              <a className={`border-[1px] border-b-4 ${consistentStyles.blueBackground} ${consistentStyles.darkBlueBorder} bg-200 text-center text-white p-2 rounded-2xl transform transition-transform duration-200 hover:scale-105`}
+              <a className={`border-[1px] border-b-4 ${consistentStyles.blueBackground} ${consistentStyles.darkBlueBorder} bg-200 text-center ${consistentStyles.textWhite} p-2 rounded-2xl transform transition-transform duration-200 hover:scale-105`}
 
                 onClick={handleProtectedClick(hiraganaBasicWritingSystem)}
                 href={createURL(LanguageNames.Japanese, LearningSections.WritingSystem, hiraganaBasicWritingSystem)}
@@ -348,7 +348,7 @@ const HiraganaExplained = () => {
             </div>
             <div className='flex py-6 justify-center'>
               <div className='flex flex-col space-y-2 justify-center items-center ml-4'>
-                <a className={`border-[1px] border-b-4 ${consistentStyles.blueBackground} ${consistentStyles.darkBlueBorder} bg-200 text-center text-white p-2 rounded-2xl transform transition-transform duration-200 hover:scale-105`}
+                <a className={`border-[1px] border-b-4 ${consistentStyles.blueBackground} ${consistentStyles.darkBlueBorder} bg-200 text-center ${consistentStyles.textWhite} p-2 rounded-2xl transform transition-transform duration-200 hover:scale-105`}
                   onClick={handleProtectedClick(hiraganaDakutenWritingSystem)} 
                   href={
                     createURL(
@@ -380,7 +380,7 @@ const HiraganaExplained = () => {
           </div>
           <div className='flex py-6 justify-center'>
             <div className='flex flex-col space-y-2 justify-center items-center ml-4'>
-              <a className={`border-[1px] border-b-4 ${consistentStyles.blueBackground} ${consistentStyles.darkBlueBorder} bg-200 text-center text-white p-2 rounded-2xl transform transition-transform duration-200 hover:scale-105`}
+              <a className={`border-[1px] border-b-4 ${consistentStyles.blueBackground} ${consistentStyles.darkBlueBorder} bg-200 text-center ${consistentStyles.textWhite} p-2 rounded-2xl transform transition-transform duration-200 hover:scale-105`}
                 onClick={handleProtectedClick(hiraganaYoonWritingSystem)} 
                 href={
                   createURL(

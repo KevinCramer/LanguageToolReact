@@ -4,6 +4,7 @@ import { useAuth } from '../../contexts/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { useState } from 'react';
+import { consistentStyles } from '../../constants';
 
 export default function DeleteAccount() {
   const navigate = useNavigate();
@@ -58,7 +59,7 @@ export default function DeleteAccount() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600 disabled:opacity-50"
+              className={`w-full bg-red-500 ${consistentStyles.textWhite} py-2 px-4 rounded hover:bg-red-600 disabled:opacity-50`}
             >
               Delete Account
             </button>
