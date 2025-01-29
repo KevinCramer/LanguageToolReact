@@ -15,7 +15,7 @@ const japaneseTopics: Topic[] = [
     'Teineigo (丁寧語) – Polite Language: Adds a general level of formality, often ending with -ます (masu) and -です (desu). It’s commonly used in everyday polite conversation.','\0',
     'Mastering keigo takes practice, as it involves specific word forms and vocabulary shifts. However, understanding keigo is essential for professional interactions and showing respect in Japanese culture.'
   ],
-  isLocked: false
+  hasLoginLock: false
   }, 
 ]
 

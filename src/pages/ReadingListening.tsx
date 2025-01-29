@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { languages as allLanguages } from '../data/structured-data/readingListening';
 import DownChevronIcon from '../components/atoms/DownChevronIcon';
-import { consistentStyles, lingoCommandIsLocked, mobileBreakPoint } from '../constants';
+import { consistentStyles, lingoCommandHasLoginLock, mobileBreakPoint } from '../constants';
 import LockIcon from '@mui/icons-material/Lock';
 import RenderTableCell from '../components/molecules/RenderTableCell';
 import { useAuth } from '../contexts/AuthContext';
@@ -41,7 +41,7 @@ const ReadingListeningContent = (props: { languageNumber: number; howToGuideVide
     useState<AudioTranscription>(initialAudioTranscription);
 
   const changeTranscription = (topic: AudioTranscription) => {
-    if(topic.isLocked && lingoCommandIsLocked && !userIsLoggedIn ){
+    if(topic.hasLoginLock && lingoCommandHasLoginLock && !userIsLoggedIn ){
       dispatch(setBackwardRoute(location.pathname + location.search));
       dispatch(setForwardRoute((location.pathname + location.search)
         .replace(/(?<=\?s=)[^=-]+(?=-)/, topic.slugName)));
@@ -230,7 +230,7 @@ const ReadingListeningContent = (props: { languageNumber: number; howToGuideVide
           <tbody>
             {rowsToRender.map((row, index) => (
               <tr key={index}>
-                <td className="border border-gray-300 px-4 py-2 align-top text-base md:text-lg">
+                <td className={`${consistentStyles.textBlack} border border-gray-300 px-4 py-2 align-top text-base md:text-lg`}>
                   <RenderTableCell
                     current={currentLeft as TranscriptionType}
                     visibility={leftVisibility}
@@ -239,7 +239,7 @@ const ReadingListeningContent = (props: { languageNumber: number; howToGuideVide
                     granularity={granularity}
                   />
                 </td>
-                <td className="border border-gray-300 px-4 py-2 align-top text-base md:text-lg">
+                <td className={`${consistentStyles.textBlack} border border-gray-300 px-4 py-2 align-top text-base md:text-lg`}>
                   <RenderTableCell
                     current={currentRight as TranscriptionType}
                     visibility={rightVisibility}
@@ -275,7 +275,7 @@ const ReadingListeningContent = (props: { languageNumber: number; howToGuideVide
               className="border-[1px] border-b-4 text-sm border-gray-300 bg-200 text-center active:bg-gray-300 hover:bg-gray-200  p-1 pl-2 rounded-lg mb-2"
               onClick={toggleTopicDropdown}
             >
-              <div className='flex'>
+              <div className='flex '>
                 <div>
               Topic:{' '}
                   {currentAudioTranscription.name.length > 7
@@ -298,7 +298,7 @@ const ReadingListeningContent = (props: { languageNumber: number; howToGuideVide
                       >
                         <div className="flex items-center">
                           {topic.name}
-                          {topic.isLocked && lingoCommandIsLocked && !userIsLoggedIn && (
+                          {topic.hasLoginLock && lingoCommandHasLoginLock && !userIsLoggedIn && (
                             <LockIcon className="ml-2" />
                           )}
                         </div>

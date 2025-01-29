@@ -140,7 +140,7 @@ const japaneseAudioTranscriptions: AudioTranscriptionWithFourAlphabet[] = [
         audioFile: aikosBookSanctuaryParagraph3
       }
     ],
-    isLocked: false
+    hasLoginLock: false
   },
 ] 
 export const 

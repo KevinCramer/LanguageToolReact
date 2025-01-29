@@ -4,10 +4,11 @@ import { useEffect, useRef, useState } from 'react';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import DownChevronIcon from '../components/atoms/DownChevronIcon';
 import { languages } from '../data/structured-data/grammar';
-import { lingoCommandIsLocked } from '../constants';
+import { consistentStyles, lingoCommandHasLoginLock } from '../constants';
 import LockIcon from '@mui/icons-material/Lock';
 import { useAuth } from '../contexts/AuthContext';
 import { useDispatch } from 'react-redux';
+import PageTitle from '../components/atoms/PageTitle';
 
 const GrammarContent = (props: { languageNumber: number }) => {
   const navigate = useNavigate();
@@ -27,7 +28,7 @@ const GrammarContent = (props: { languageNumber: number }) => {
   var [currentTopic, setCurrentTopic] = useState(currentTopic);
 
   const changeCurrentTopic = (topic: Topic) => {
-    if(topic.isLocked && lingoCommandIsLocked && !userIsLoggedIn ){
+    if(topic.hasLoginLock && lingoCommandHasLoginLock && !userIsLoggedIn ){
       dispatch(setBackwardRoute(location.pathname + location.search));
       dispatch(setForwardRoute((location.pathname + location.search)
         .replace(/(?<=\?s=)[^=-]+(?=-)/, topic.slugName)));
@@ -74,9 +75,7 @@ const GrammarContent = (props: { languageNumber: number }) => {
 
   return (
     <div className="max-w-screen-md mx-auto px-4">
-      <h4 className="text-center text-2xl py-12">
-        {languages[props.languageNumber].languageName} Grammar
-      </h4>
+      <PageTitle title={`${languages[props.languageNumber].languageName} Grammar`} />
       <div>
         <div className="relative flex justify-center">
           <div className="relative" ref={dropdownRef}>
@@ -85,7 +84,7 @@ const GrammarContent = (props: { languageNumber: number }) => {
               onClick={toggleTopicDropdown}
             >
               <div className="flex items-center">
-                <div>Topic: {currentTopic.name}</div>
+                <div className={`${consistentStyles.textBlack}`}>Topic: {currentTopic.name}</div>
                 <DownChevronIcon/>
               </div>
             </button>
@@ -100,7 +99,7 @@ const GrammarContent = (props: { languageNumber: number }) => {
                     >
                       <div className="flex items-center">
                         {topic.name}
-                        {topic.isLocked && lingoCommandIsLocked && !userIsLoggedIn && (
+                        {topic.hasLoginLock && lingoCommandHasLoginLock && !userIsLoggedIn && (
                           <LockIcon className="ml-2" />
                         )}
                       </div>
@@ -112,7 +111,7 @@ const GrammarContent = (props: { languageNumber: number }) => {
           </div>
         </div>
         <p></p>
-        <div>{ShowGrammarExplanation()}</div>
+        <div className={`${consistentStyles.textBlack}`}>{ShowGrammarExplanation()}</div>
       </div>
     </div>
   );

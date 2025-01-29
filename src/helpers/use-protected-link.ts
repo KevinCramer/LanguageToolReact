@@ -1,6 +1,6 @@
 import { setBackwardRoute, setForwardRoute } from '../redux-store/route';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { lingoCommandIsLocked } from '../constants';
+import { lingoCommandHasLoginLock } from '../constants';
 import { MouseEvent } from 'react';
 import { useAuth } from '../contexts/AuthContext';
 
@@ -17,7 +17,7 @@ export const useProtectedLink = () => {
   const userIsLoggedIn = currentUser && currentUser.email;
 
   const handleProtectedClick = (topic: any) => (e: MouseEvent<HTMLAnchorElement>) => {
-    if (!userIsLoggedIn && topic.isLocked && lingoCommandIsLocked) {
+    if (!userIsLoggedIn && topic.hasLoginLock && lingoCommandHasLoginLock) {
       e.preventDefault(); // Prevent navigation
       dispatch(setBackwardRoute(location.pathname + location.search));
       dispatch(setForwardRoute(`/japanese/writing-systems?s=${topic.slugName}-T0TFT`));

@@ -1,4 +1,4 @@
-import { consistentStyles, lingoCommandIsLocked } from '../../constants';
+import { consistentStyles, lingoCommandHasLoginLock } from '../../constants';
 import { japaneseWritingSystemsTopicSlugNames, writingSystems } 
   from '../../data/structured-data/writingSystems';
 import { LanguageNames, LearningSections } from '../../../types/LearningSectionsTypes';
@@ -556,8 +556,8 @@ const KatakanaExplained = () => {
                     katakanaDakutenWritingSystem)
                 }>
               Katakana Dakuten/Handakuten Exercise
-                {katakanaDakutenWritingSystem?.isLocked &&
-                    lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon/> : ''}
+                {katakanaDakutenWritingSystem?.hasLoginLock &&
+                    lingoCommandHasLoginLock && !userIsLoggedIn ? <LockIcon/> : ''}
               </a>
             </div>
           </div>
@@ -591,8 +591,8 @@ const KatakanaExplained = () => {
                       katakanaYoonWritingSystem)
                   }>
               Yoōn Katakana Exercise
-                  {katakanaYoonWritingSystem?.isLocked &&
-                    lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon/> : ''}
+                  {katakanaYoonWritingSystem?.hasLoginLock &&
+                    lingoCommandHasLoginLock && !userIsLoggedIn ? <LockIcon/> : ''}
                 </a>
               </div>
             </div>
@@ -619,8 +619,8 @@ const KatakanaExplained = () => {
                     katakanaSpecialYoonWritingSystem)
                 }>
              Foreign Yoōn Katakana Exercise
-                {katakanaSpecialYoonWritingSystem?.isLocked &&
-                  lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon/> : ''}
+                {katakanaSpecialYoonWritingSystem?.hasLoginLock &&
+                  lingoCommandHasLoginLock && !userIsLoggedIn ? <LockIcon/> : ''}
               </a>
             </div>
           </div>

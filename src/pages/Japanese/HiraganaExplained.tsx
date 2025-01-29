@@ -1,4 +1,4 @@
-import { consistentStyles, lingoCommandIsLocked } from '../../constants';
+import { consistentStyles, lingoCommandHasLoginLock } from '../../constants';
 import { japaneseWritingSystemsTopicSlugNames, writingSystems } 
   from '../../data/structured-data/writingSystems';
 import { LanguageNames, LearningSections } from '../../../types/LearningSectionsTypes';
@@ -356,8 +356,8 @@ const HiraganaExplained = () => {
                       LearningSections.WritingSystem,
                       hiraganaDakutenWritingSystem)
                   }> Hiragana with Dakuten and Handakuten Exercise
-                  {hiraganaDakutenWritingSystem?.isLocked &&
-                    lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon/> : ''}
+                  {hiraganaDakutenWritingSystem?.hasLoginLock &&
+                    lingoCommandHasLoginLock && !userIsLoggedIn ? <LockIcon/> : ''}
                 </a>
               </div>    
             </div>
@@ -389,8 +389,8 @@ const HiraganaExplained = () => {
                     hiraganaYoonWritingSystem)
                 }>
                 Yoōn Hiragana Exercise
-                {hiraganaYoonWritingSystem?.isLocked &&
-                   lingoCommandIsLocked && !userIsLoggedIn ? <LockIcon/> : ''}
+                {hiraganaYoonWritingSystem?.hasLoginLock &&
+                   lingoCommandHasLoginLock && !userIsLoggedIn ? <LockIcon/> : ''}
               </a>
             </div>
           </div>

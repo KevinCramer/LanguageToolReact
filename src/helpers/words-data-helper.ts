@@ -2,18 +2,18 @@ import {
   Topic, 
   TopicWithThreeWritingSystems,
 } from '../../types/learningSections/VocabTypes';
-import { lingoCommandIsLocked } from '../constants';
+import { lingoCommandHasLoginLock } from '../constants';
 
 export const sortTopics = (
   topics: TopicWithThreeWritingSystems[],
   userIsLoggedIn: boolean,
 ) => {
   return topics.sort((a: Topic, b: Topic) => {
-    if(lingoCommandIsLocked && !userIsLoggedIn){
-      if (a.isLocked === b.isLocked) {
+    if(lingoCommandHasLoginLock && !userIsLoggedIn){
+      if (a.hasLoginLock === b.hasLoginLock) {
         return a.name < b.name ? -1 : 1;
       }
-      return a.isLocked ? 1 : -1;
+      return a.hasLoginLock ? 1 : -1;
       
     }
     else{

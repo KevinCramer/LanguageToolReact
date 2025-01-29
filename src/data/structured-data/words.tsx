@@ -170,7 +170,7 @@ export const japaneseVocabTopicSlugNames = {
   food: 'food',
 }
 const japaneseTopics: TopicWithThreeWritingSystems[] = [
-  { name:'Numbers',slugName: japaneseVocabTopicSlugNames.numbers, hasOrdering:true, isLocked: false, isAlphabet: false, words: [
+  { name:'Numbers',slugName: japaneseVocabTopicSlugNames.numbers, hasOrdering:true, hasLoginLock: false, isAlphabet: false, words: [
     { englishWord: 'one', foreignWord: ['ichi', 'いち','一'], foreignAudio: japaneseAudioOne, order:1 },
     { englishWord: 'two', foreignWord: ['ni', 'に','二'], foreignAudio: japaneseAudioTwo, order:2 },
     { englishWord: 'three',foreignWord: ['san', 'さん','三'], foreignAudio: japaneseAudioThree, order:3 },
@@ -185,7 +185,7 @@ const japaneseTopics: TopicWithThreeWritingSystems[] = [
     { englishWord: 'nine (II)', foreignWord: ['kyuu', 'きゅう','九'], foreignAudio: japaneseAudioNineKyuu, order:9 },
     { englishWord: 'ten', foreignWord: ['juu', 'じゅう','十'], foreignAudio: japaneseAudioTen, order:10 },
   ] },
-  { name:'Colours', slugName: japaneseVocabTopicSlugNames.colours, hasOrdering:false, isLocked: false, isAlphabet: false, words: [
+  { name:'Colours', slugName: japaneseVocabTopicSlugNames.colours, hasOrdering:false, hasLoginLock: false, isAlphabet: false, words: [
     { englishWord: 'red', foreignWord: ['aka', 'あか', '赤'], foreignAudio: japaneseAudioRed },
     { englishWord: 'blue', foreignWord: ['ao', 'あお', '青'], foreignAudio: japaneseAudioBlue },
     { englishWord: 'green', foreignWord: ['midori', 'みどり', '緑'], foreignAudio: japaneseAudioGreen },
@@ -197,7 +197,7 @@ const japaneseTopics: TopicWithThreeWritingSystems[] = [
     { englishWord: 'purple', foreignWord: ['murasaki', 'むらさき', '紫'], foreignAudio: japaneseAudioPurple },
     { englishWord: 'pink', foreignWord: ['pinku', 'ピンク', 'unknown'], foreignAudio: japaneseAudioPink }
   ] },
-  { name: 'Clothes', slugName: japaneseVocabTopicSlugNames.clothes, hasOrdering: false, isLocked: false, isAlphabet: false,words: [
+  { name: 'Clothes', slugName: japaneseVocabTopicSlugNames.clothes, hasOrdering: false, hasLoginLock: false, isAlphabet: false,words: [
     { englishWord: 'trousers', foreignWord: ['zubon', 'ズボン', 'ズボン'], foreignAudio: japaneseAudioTrousers },
     { englishWord: 'sweater', foreignWord: ['se-ta-', 'セーター', 'セーター'], foreignAudio: japaneseAudioSweater },
     { englishWord: 'underwear', foreignWord: ['shitagi', 'したぎ', '下着'], foreignAudio: japaneseAudioUnderwear },
@@ -211,7 +211,7 @@ const japaneseTopics: TopicWithThreeWritingSystems[] = [
   ]
   },
   { 
-    name: 'Days of the Week', slugName: japaneseVocabTopicSlugNames.daysOfWeek, hasOrdering: true, isLocked: true, isAlphabet: false, words: [
+    name: 'Days of the Week', slugName: japaneseVocabTopicSlugNames.daysOfWeek, hasOrdering: true, hasLoginLock: true, isAlphabet: false, words: [
       { englishWord: 'Monday', foreignWord: ['getsuyōbi', 'げつようび', '月曜日'], foreignAudio: japaneseAudioMonday, order: 1 },
       { englishWord: 'Tuesday', foreignWord: ['kayōbi', 'かようび', '火曜日'], foreignAudio: japaneseAudioTuesday, order: 2 },
       { englishWord: 'Wednesday', foreignWord: ['suiyōbi', 'すいようび', '水曜日'], foreignAudio: japaneseAudioWednesday, order: 3 },
@@ -222,7 +222,7 @@ const japaneseTopics: TopicWithThreeWritingSystems[] = [
     ] 
   },
   { 
-    name: 'Months of the Year', slugName: japaneseVocabTopicSlugNames.monthsOfYear, hasOrdering: true, isLocked: true, isAlphabet: false, 
+    name: 'Months of the Year', slugName: japaneseVocabTopicSlugNames.monthsOfYear, hasOrdering: true, hasLoginLock: true, isAlphabet: false, 
     words: [
       { englishWord: 'January', foreignWord: ['ichigatsu', 'いちがつ', '一月'], foreignAudio: japaneseAudioJanuary, order: 1 },
       { englishWord: 'February', foreignWord: ['nigatsu', 'にがつ', '二月'], foreignAudio: japaneseAudioFebruary, order: 2 },
@@ -239,7 +239,7 @@ const japaneseTopics: TopicWithThreeWritingSystems[] = [
     ] 
   },
   { 
-    name: 'Regular Adjectives', slugName: japaneseVocabTopicSlugNames.regularAdjectives, hasOrdering: false, isLocked: true, isAlphabet: false, 
+    name: 'Regular Adjectives', slugName: japaneseVocabTopicSlugNames.regularAdjectives, hasOrdering: false, hasLoginLock: true, isAlphabet: false, 
     words: [
       { englishWord: 'happy', foreignWord: ['ureshii', 'うれしい', '嬉しい'], foreignAudio: japaneseAudioHappy },
       { englishWord: 'sad', foreignWord: ['kanashii', 'かなしい', '悲しい'], foreignAudio: japaneseAudioSad },
@@ -278,7 +278,7 @@ const japaneseTopics: TopicWithThreeWritingSystems[] = [
     ] 
   },
   {
-    name: 'Irregular Adjectives', slugName: japaneseVocabTopicSlugNames.irregularAdjectives, hasOrdering: false, isLocked: true, isAlphabet: false, words: [
+    name: 'Irregular Adjectives', slugName: japaneseVocabTopicSlugNames.irregularAdjectives, hasOrdering: false, hasLoginLock: true, isAlphabet: false, words: [
       { englishWord: 'calm', foreignWord: ['ochitsuita', 'おちついた', '落ち着いた'], foreignAudio: japaneseAudioCalm },
       { englishWord: 'polite', foreignWord: ['teinei', 'ていねい', '丁寧'], foreignAudio: japaneseAudioPolite },
       { englishWord: 'honest', foreignWord: ['seijitsu', 'せいじつ', '誠実'], foreignAudio: japaneseAudioHonest },
@@ -295,7 +295,7 @@ const japaneseTopics: TopicWithThreeWritingSystems[] = [
     ]
   },
   {
-    name: 'Animals', slugName: japaneseVocabTopicSlugNames.animals, hasOrdering: false, isLocked: true, isAlphabet: false, words: [
+    name: 'Animals', slugName: japaneseVocabTopicSlugNames.animals, hasOrdering: false, hasLoginLock: true, isAlphabet: false, words: [
       { englishWord: 'dog', foreignWord: ['inu', 'いぬ', '犬'], foreignAudio: japaneseAudioDog },
       { englishWord: 'cat', foreignWord: ['neko', 'ねこ', '猫'], foreignAudio: japaneseAudioCat },
       { englishWord: 'chicken', foreignWord: ['niwatori', 'にわとり', '鶏'], foreignAudio: japaneseAudioChickenAnimal },
@@ -309,7 +309,7 @@ const japaneseTopics: TopicWithThreeWritingSystems[] = [
     ]
   },
   {
-    name: 'Locations', slugName: japaneseVocabTopicSlugNames.locations, hasOrdering: false, isLocked: true, isAlphabet: false, words: [
+    name: 'Locations', slugName: japaneseVocabTopicSlugNames.locations, hasOrdering: false, hasLoginLock: true, isAlphabet: false, words: [
       { englishWord: 'bakery', foreignWord: ['panya', 'ぱんや', 'パン屋'], foreignAudio: japaneseAudioBakery },
       { englishWord: 'supermarket', foreignWord: ['suupaa', 'スーパー', 'unknown'], foreignAudio: japaneseAudioSupermarket },
       { englishWord: 'cinema', foreignWord: ['eigakan', 'えいがかん', '映画館'], foreignAudio: japaneseAudioCinema },
@@ -323,7 +323,7 @@ const japaneseTopics: TopicWithThreeWritingSystems[] = [
     ]
   },
   { 
-    name: 'Body', slugName: japaneseVocabTopicSlugNames.body, hasOrdering: false, isLocked: true, isAlphabet: false, words: [
+    name: 'Body', slugName: japaneseVocabTopicSlugNames.body, hasOrdering: false, hasLoginLock: true, isAlphabet: false, words: [
       { englishWord: 'arm', foreignWord: ['ude', 'うで', '腕'], foreignAudio: japaneseAudioArm },
       { englishWord: 'leg', foreignWord: ['ashi', 'あし', '足'], foreignAudio: japaneseAudioLeg },
       { englishWord: 'eyes', foreignWord: ['me', 'め', '目'], foreignAudio: japaneseAudioEyes },
@@ -338,7 +338,7 @@ const japaneseTopics: TopicWithThreeWritingSystems[] = [
     ]
   },
   {
-    name: 'Food', slugName: japaneseVocabTopicSlugNames.food, hasOrdering: false, isLocked: true, isAlphabet: false, words: [
+    name: 'Food', slugName: japaneseVocabTopicSlugNames.food, hasOrdering: false, hasLoginLock: true, isAlphabet: false, words: [
       { englishWord: 'bread', foreignWord: ['pan', 'パン', 'unknown'], foreignAudio: japaneseAudioBread },
       { englishWord: 'eggs', foreignWord: ['tamago', 'たまご', '卵'], foreignAudio: japaneseAudioEggs },
       { englishWord: 'chicken', foreignWord: ['toriniku', 'とりにく', '鶏肉'], foreignAudio: japaneseAudioChicken },

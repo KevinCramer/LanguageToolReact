@@ -219,7 +219,7 @@ export const japaneseWritingSystemsTopicSlugNames = {
   katakanaSpecialYoon: 'katspecyoon',
 }
 const japaneseTopics: TopicWithThreeWritingSystems[] = [
-  { name:'Basic Hiragana', slugName: japaneseWritingSystemsTopicSlugNames.basicHiragana, hasOrdering:true, topicOrder:1, isLocked: false, isAlphabet: true, words: [
+  { name:'Basic Hiragana', slugName: japaneseWritingSystemsTopicSlugNames.basicHiragana, hasOrdering:true, topicOrder:1, hasLoginLock: false, isAlphabet: true, words: [
     { englishWord: 'a', foreignWord: ['あ','あ','あ'], foreignAudio: hiraganaAudioA, order: 1, strokeOrderVideo: hiraganaVideoA },
     { englishWord: 'i', foreignWord: ['い','い','い'], foreignAudio: hiraganaAudioI, order: 2, strokeOrderVideo: hiraganaVideoI },
     { englishWord: 'u', foreignWord: ['う','う','う'], foreignAudio: hiraganaAudioU, order: 3, strokeOrderVideo: hiraganaVideoU },
@@ -268,7 +268,7 @@ const japaneseTopics: TopicWithThreeWritingSystems[] = [
     { englishWord: 'n', foreignWord: ['ん','ん','ん'], foreignAudio: hiraganaAudioN, order: 46, strokeOrderVideo: hiraganaVideoN },
   ] },
   {
-    name: 'Hiragana with Dakuten and Handakuten', slugName: japaneseWritingSystemsTopicSlugNames.hiraganaDakuten, hasOrdering: true, topicOrder:2, isLocked: true, isAlphabet: true, words: [
+    name: 'Hiragana with Dakuten and Handakuten', slugName: japaneseWritingSystemsTopicSlugNames.hiraganaDakuten, hasOrdering: true, topicOrder:2, hasLoginLock: true, isAlphabet: true, words: [
       { englishWord: 'ga', foreignWord: ['が','が','が'], foreignAudio: hiraganaDakutenAudioGa, order: 1, strokeOrderVideo: hiraganaDakutenVideoGa },
       { englishWord: 'gi', foreignWord: ['ぎ','ぎ','ぎ'], foreignAudio: hiraganaDakutenAudioGi, order: 2, strokeOrderVideo: hiraganaDakutenVideoGi },
       { englishWord: 'gu', foreignWord: ['ぐ','ぐ','ぐ'], foreignAudio: hiraganaDakutenAudioGu, order: 3, strokeOrderVideo: hiraganaDakutenVideoGu },
@@ -296,7 +296,7 @@ const japaneseTopics: TopicWithThreeWritingSystems[] = [
       { englishWord: 'po', foreignWord: ['ぽ','ぽ','ぽ'], foreignAudio: hiraganaDakutenAudioPo, order: 25, strokeOrderVideo: hiraganaDakutenVideoPo },
     ]
   },
-  { name: 'Hiragana Yōon Combinations', slugName: japaneseWritingSystemsTopicSlugNames.hiraganaYoon, hasOrdering: true, topicOrder:3, isLocked: true, isAlphabet: true,words: [
+  { name: 'Hiragana Yōon Combinations', slugName: japaneseWritingSystemsTopicSlugNames.hiraganaYoon, hasOrdering: true, topicOrder:3, hasLoginLock: true, isAlphabet: true,words: [
     { englishWord: 'kya', foreignWord: ['きゃ', 'きゃ', 'きゃ'], foreignAudio: hiraganaYoonAudioKya, order: 1 },
     { englishWord: 'kyu', foreignWord: ['きゅ', 'きゅ', 'きゅ'], foreignAudio: hiraganaYoonAudioKyu, order: 2 },
     { englishWord: 'kyo', foreignWord: ['きょ', 'きょ', 'きょ'], foreignAudio: hiraganaYoonAudioKyo, order: 3 },
@@ -336,7 +336,7 @@ const japaneseTopics: TopicWithThreeWritingSystems[] = [
   ]
   },
   // see https://www.tofugu.com/japanese/learn-katakana/ for explanation
-  { name:'Basic Katakana', slugName: japaneseWritingSystemsTopicSlugNames.basicKatakana, hasOrdering:true, topicOrder:4, isLocked: false, isAlphabet: true, words: [
+  { name:'Basic Katakana', slugName: japaneseWritingSystemsTopicSlugNames.basicKatakana, hasOrdering:true, topicOrder:4, hasLoginLock: false, isAlphabet: true, words: [
     { englishWord: 'a', foreignWord: ['ア','ア','ア'], foreignAudio: hiraganaAudioA, order: 1 },
     { englishWord: 'i', foreignWord: ['イ','イ','イ'], foreignAudio: hiraganaAudioI, order: 2 },
     { englishWord: 'u', foreignWord: ['ウ','ウ','ウ'], foreignAudio: hiraganaAudioU, order: 3 },
@@ -389,7 +389,7 @@ const japaneseTopics: TopicWithThreeWritingSystems[] = [
     name: 'Katakana with Dakuten and Handakuten',
     slugName: japaneseWritingSystemsTopicSlugNames.katakanaDakuten,
     hasOrdering: true,
-    isLocked: true,
+    hasLoginLock: true,
     topicOrder:5, 
     isAlphabet: true,
     words: [
@@ -425,7 +425,7 @@ const japaneseTopics: TopicWithThreeWritingSystems[] = [
     name: 'Katakana Yōon Combinations',
     slugName: japaneseWritingSystemsTopicSlugNames.katakanaYoon,
     hasOrdering: true,
-    isLocked: true,
+    hasLoginLock: true,
     topicOrder:6, 
     isAlphabet: true,
     words: [
@@ -472,7 +472,7 @@ const japaneseTopics: TopicWithThreeWritingSystems[] = [
     name: 'Katakana foreign Yōon Combinations',
     slugName: japaneseWritingSystemsTopicSlugNames.katakanaSpecialYoon,
     hasOrdering: true,
-    isLocked: true,
+    hasLoginLock: true,
     isAlphabet: true,
     topicOrder:7, 
     words: [

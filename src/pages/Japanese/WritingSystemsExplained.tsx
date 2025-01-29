@@ -43,16 +43,18 @@ const JapaneseWritingSystems = () => {
   return (
     <div className='max-w-screen-md mx-auto px-4 text-lg'>
       <PageTitle title='Japanese Writing Systems' />
-      <div className='py-2'>The Japanese language has 3 writing systems:</div>
+      <div className={`${consistentStyles.textBlack} py-2`}>The Japanese language has 3 writing systems:</div>
       {sections.map((section, index) => (
-        <div className='py-2' key={index}>
+        <div className={` ${consistentStyles.textBlack} py-2`} key={index}>
           <a className={`${consistentStyles.blueText} underline`} href={section.link}>
             {section.title}
           </a>
            &nbsp;- {section.description}
         </div>
       ))}
-      {romajiSection}
+      <div className={`${consistentStyles.textBlack}`}>
+        {romajiSection}
+      </div>
       {typingJapaneseSection}
     </div>
   );

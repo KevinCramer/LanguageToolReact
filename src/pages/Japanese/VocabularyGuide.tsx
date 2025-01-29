@@ -1,7 +1,6 @@
+import { consistentStyles, lingoCommandHasLoginLock, mobileBreakPoint } from '../../constants';
 import { setBackwardRoute, setForwardRoute } from '../../redux-store/route';
-import { useEffect, useState } from 'react';
 import { japaneseVocabTopicSlugNames } from '../../data/structured-data/words';
-import { lingoCommandIsLocked, mobileBreakPoint } from '../../constants';
 import LockIcon from '@mui/icons-material/Lock';
 import PageTitle from '../../components/atoms/PageTitle';
 import { useAuth } from '../../contexts/AuthContext';
@@ -12,7 +11,7 @@ import useWindowWidth from '../../hooks/useWindowWidth';
 interface Topic {
   Name: string;
   slugName: string;
-  isLocked: boolean;
+  hasLoginLock: boolean;
 
 }
 
@@ -22,7 +21,7 @@ interface Topic {
 // 2: https://www.learnalanguage.com/learn-japanese/japanese-verbs/
 // 3: https://www.learnalanguage.com/learn-japanese/japanese-phrases/
 const allTopics: Topic[] = [
-  { Name: 'Animals', slugName: japaneseVocabTopicSlugNames.animals, isLocked: true },
+  { Name: 'Animals', slugName: japaneseVocabTopicSlugNames.animals, hasLoginLock: true },
   // { Name: 'Appliances' },
   // { Name: 'At a Party' },
   // { Name: 'At the Beach' },
@@ -31,22 +30,22 @@ const allTopics: Topic[] = [
   // { Name: 'Bank and Finance' },
   // { Name: 'Bathroom' },
   // { Name: 'Bedroom' },
-  { Name: 'Body Parts I', slugName: japaneseVocabTopicSlugNames.body, isLocked: true },
+  { Name: 'Body Parts I', slugName: japaneseVocabTopicSlugNames.body, hasLoginLock: true },
   // { Name: 'Body Parts II' },
   // { Name: 'Car Parts' },
   // { Name: 'Cleaning Supplies' },
-  { Name: 'Clothes', slugName: japaneseVocabTopicSlugNames.clothes, isLocked: false },
-  { Name: 'Colours', slugName: japaneseVocabTopicSlugNames.colours, isLocked: false },
+  { Name: 'Clothes', slugName: japaneseVocabTopicSlugNames.clothes, hasLoginLock: false },
+  { Name: 'Colours', slugName: japaneseVocabTopicSlugNames.colours, hasLoginLock: false },
   // { Name: 'Common Japanese Phrases' },
   // { Name: 'Conjunctions' },
   // { Name: 'Countries and Continents' },
-  { Name: 'Days of Week', slugName: japaneseVocabTopicSlugNames.daysOfWeek, isLocked: true },
+  { Name: 'Days of Week', slugName: japaneseVocabTopicSlugNames.daysOfWeek, hasLoginLock: true },
   // { Name: 'Family' },
-  { Name: 'Food I', slugName: japaneseVocabTopicSlugNames.food, isLocked: true },
+  { Name: 'Food I', slugName: japaneseVocabTopicSlugNames.food, hasLoginLock: true },
   // { Name: 'Food II' },
   // { Name: 'Furniture' },
   // { Name: 'Government' },
-  { Name: 'Irregular Adjectives', slugName: japaneseVocabTopicSlugNames.irregularAdjectives, isLocked: true },
+  { Name: 'Irregular Adjectives', slugName: japaneseVocabTopicSlugNames.irregularAdjectives, hasLoginLock: true },
   // { Name: 'Irregular Adjectives Group 2' },
   // { Name: 'Irregular Adjectives Group 3' },
   // { Name: 'Irregular Adjectives Group 4' },
@@ -56,17 +55,17 @@ const allTopics: Topic[] = [
   // { Name: 'Japanese Slang' },
   // { Name: 'Kitchen' },
   // { Name: 'Living Room' },
-  { Name: 'Locations', slugName: japaneseVocabTopicSlugNames.locations, isLocked: true },
+  { Name: 'Locations', slugName: japaneseVocabTopicSlugNames.locations, hasLoginLock: true },
   // { Name: 'Military' },
-  { Name: 'Months', slugName: japaneseVocabTopicSlugNames.monthsOfYear, isLocked: true },
+  { Name: 'Months', slugName: japaneseVocabTopicSlugNames.monthsOfYear, hasLoginLock: true },
   // { Name: 'Music' },
   // { Name: 'Nature' },
-  { Name: 'Numbers', slugName: japaneseVocabTopicSlugNames.numbers, isLocked: false },
+  { Name: 'Numbers', slugName: japaneseVocabTopicSlugNames.numbers, hasLoginLock: false },
   // { Name: 'Outside' },
   // { Name: 'Prepositions' },
   // { Name: 'Professions' },
   // { Name: 'Pronouns' },
-  { Name: 'Regular Adjectives', slugName: japaneseVocabTopicSlugNames.regularAdjectives, isLocked: true },
+  { Name: 'Regular Adjectives', slugName: japaneseVocabTopicSlugNames.regularAdjectives, hasLoginLock: true },
   // { Name: 'Regular Adjectives Group 2' },
   // { Name: 'Regular Adjectives Group 3' },
   // { Name: 'Regular Adjectives Group 4' },
@@ -108,7 +107,7 @@ const VocabularyGuide = () => {
   const navigate = useNavigate();
 
   const handleTopicClick = (topic: Topic) => {
-    if(topic.isLocked && lingoCommandIsLocked && !userIsLoggedIn) {
+    if(topic.hasLoginLock && lingoCommandHasLoginLock && !userIsLoggedIn) {
       dispatch(setBackwardRoute(`/japanese/vocabulary-guide`));
       dispatch(setForwardRoute(`/japanese/vocabulary?s=${topic.slugName}-T0TFT`)); 
       navigate('/free-content');
@@ -148,11 +147,11 @@ const VocabularyGuide = () => {
             onClick={() => handleTopicClick(topic)}
           >
             <div className={`flex justify-between items-start ${!topic.slugName ? 'text-gray-500' : ''}`}>
-              <div className={`flex-1 h-[70px] ${topic.isLocked && lingoCommandIsLocked && !userIsLoggedIn ? 'ml-6 md:ml-8' : ''} flex items-center justify-center`}>
+              <div className={`flex-1 h-[70px] ${consistentStyles.textBlack} ${topic.hasLoginLock && lingoCommandHasLoginLock && !userIsLoggedIn ? 'ml-6 md:ml-8' : ''} flex items-center justify-center`}>
                 {topic.Name}
               </div>
               {/* LockIcon aligned at the top-right */}
-              {topic.isLocked && lingoCommandIsLocked && !userIsLoggedIn && (
+              {topic.hasLoginLock && lingoCommandHasLoginLock && !userIsLoggedIn && (
                 <div className="m-1">
                   <LockIcon style={{ fontSize: isMobile ? '20px' : '25px' }} /> 
                 </div>

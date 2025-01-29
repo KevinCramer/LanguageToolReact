@@ -20,20 +20,20 @@ export type AudioTranscriptionWithOneAlphabet = {
     name: string;
     slugName: string;
     contents: ParagraphWithNumAlphabets<1>[];
-    isLocked: boolean;
+    hasLoginLock: boolean;
 }
 export type AudioTranscriptionWithTwoAlphabet = {
     name: string;
     slugName: string;
     contents: ParagraphWithNumAlphabets<2>[];
-    isLocked: boolean;
+    hasLoginLock: boolean;
 
 }
 export type AudioTranscriptionWithThreeAlphabet = {
     name: string;
     slugName: string;
     contents: ParagraphWithNumAlphabets<3>[];
-    isLocked: boolean;
+    hasLoginLock: boolean;
 
 }
 
@@ -41,7 +41,7 @@ export type AudioTranscriptionWithFourAlphabet = {
     name: string;
     slugName: string;
     contents: ParagraphWithNumAlphabets<4>[];
-    isLocked: boolean;
+    hasLoginLock: boolean;
 }
 
 export type AudioTranscription = 

@@ -18,7 +18,7 @@ export type TopicWithThreeWritingSystems = {
     hasOrdering: boolean;
     words: WordWithThreeWritingSystems[];
     isAlphabet: boolean;
-    isLocked: boolean;
+    hasLoginLock: boolean;
     topicOrder?: number;
 }
 

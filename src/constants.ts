@@ -4,7 +4,7 @@ export const languageToSlugs: Record<string,string> = {
 
 export const lightGrey = 'rgb(230,230,230)'
 
-export const lingoCommandIsLocked = true;
+export const lingoCommandHasLoginLock = true;
 
 export const mobileBreakPoint = 768;
 
@@ -27,5 +27,6 @@ export const consistentStyles = {
   blueBackground: 'bg-blue-500',
   blueText: 'text-blue-500',
   textWhite: 'text-white',
-  textBlack: 'text-black'
+  textBlack: 'text-red-500',
+  fillBlack: 'fill-red-500',
 }

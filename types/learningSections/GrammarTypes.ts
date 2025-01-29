@@ -2,7 +2,7 @@ export type Topic = {
     name: string;
     slugName: string;
     contents: string[];
-    isLocked: boolean;
+    hasLoginLock: boolean;
 }
 
 export type GrammarLanguage = {

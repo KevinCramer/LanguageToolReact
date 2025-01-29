@@ -1,4 +1,4 @@
-import { consistentStyles, languageToSlugs, lingoCommandIsLocked } from '../constants'
+import { consistentStyles, languageToSlugs, lingoCommandHasLoginLock } from '../constants'
 import { queryParamCompress, queryParamDecompress } from '../helpers/query-param-helpers'
 import { scramble, scrambleWithoutMutate } from '../helpers/vocab-content-helpers';
 import { setBackwardRoute, setForwardRoute } from '../redux-store/route';
@@ -130,7 +130,7 @@ const VocabContent = (
   const changeOrder = () => { return setShowTrueOrder(!showTrueOrder)}
 
   const changeCurrentTopic = (topic: Topic) => {
-    if(topic.isLocked && lingoCommandIsLocked && !userIsLoggedIn ){
+    if(topic.hasLoginLock && lingoCommandHasLoginLock && !userIsLoggedIn ){
       dispatch(setBackwardRoute(location.pathname + location.search));
       dispatch(setForwardRoute((location.pathname + location.search)
         .replace(/(?<=\?s=)[^=-]+(?=-)/, topic.slugName)));
@@ -410,7 +410,7 @@ const VocabContent = (
                     >
                       <div className="flex items-center justify-between">
                         {topic.name}
-                        {topic.isLocked && lingoCommandIsLocked && !userIsLoggedIn && (
+                        {topic.hasLoginLock && lingoCommandHasLoginLock && !userIsLoggedIn && (
                           <LockIcon className="" />
                         )}
                       </div>
