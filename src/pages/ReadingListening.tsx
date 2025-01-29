@@ -4,7 +4,6 @@ import { setBackwardRoute, setForwardRoute } from '../redux-store/route';
 import { useEffect, useRef, useState } from 'react';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { languages as allLanguages } from '../data/structured-data/readingListening';
-import DownChevronIcon from '../components/atoms/DownChevronIcon';
 import { consistentStyles, lingoCommandHasLoginLock, mobileBreakPoint } from '../constants';
 import LockIcon from '@mui/icons-material/Lock';
 import RenderTableCell from '../components/molecules/RenderTableCell';
@@ -264,7 +263,7 @@ const ReadingListeningContent = (props: { languageNumber: number; howToGuideVide
           <div className="relative px-2" ref={topicDropdownRef}>
             <DropdownButton text={`Topic: ${currentAudioTranscription.name.length > 7
               ? `${currentAudioTranscription.name.substring(0, 7)}...`
-              : currentAudioTranscription.name}`}/>
+              : currentAudioTranscription.name}`} onClick={toggleTopicDropdown}/>
             {isTopicDropdownOpen && (
               <div className="absolute left-0 mt-2 bg-white border
                border-gray-300 rounded-lg shadow w-64 z-10">
