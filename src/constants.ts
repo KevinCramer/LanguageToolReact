@@ -27,6 +27,6 @@ export const consistentStyles = {
   blueBackground: 'bg-blue-500',
   blueText: 'text-blue-500',
   textWhite: 'text-white',
-  textBlack: 'text-red-500',
-  fillBlack: 'fill-red-500',
+  textBlack: 'text-black',
+  fillBlack: 'fill-black',
 }

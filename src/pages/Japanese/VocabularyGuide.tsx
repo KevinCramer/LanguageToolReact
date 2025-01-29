@@ -153,7 +153,7 @@ const VocabularyGuide = () => {
               {/* LockIcon aligned at the top-right */}
               {topic.hasLoginLock && lingoCommandHasLoginLock && !userIsLoggedIn && (
                 <div className="m-1">
-                  <LockIcon style={{ fontSize: isMobile ? '20px' : '25px' }} /> 
+                  <LockIcon style={{ fontSize: isMobile ? '20px' : '25px' }} className={consistentStyles.textBlack} /> 
                 </div>
               )}
             </div>
