@@ -15,13 +15,17 @@ export const protectedLinkStyle = {
 
 export const fontStretch = '100%'
 
-// colours used:
+// Tailwind's JIT compiler does not detect dynamically generated classes,  
+// so colours cannot be extracted dynamically from `consistentStyles`.  
+// Instead, use (Ctrl + D) to quickly select and replace colours  
+// across both the 'coloursList' and 'consistentStyles'.  
 
-// blue-500, blue-700, 
-// white
+// coloursList = ['blue-500', 'blue-700', 'white','black']
+
 export const consistentStyles = {
   darkBlueBorder: 'border-blue-700',
   blueBackground: 'bg-blue-500',
   blueText: 'text-blue-500',
-  textWhite: 'text-white'
+  textWhite: 'text-white',
+  textBlack: 'text-black'
 }

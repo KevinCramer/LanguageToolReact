@@ -249,7 +249,7 @@ const WritingSystems = (
         <div className='pt-2'>
           <div className={`overflow-x-auto border shadow ${minWidth}`}>
             <table className="w-full bg-white border-separate border-t border-l border-r border-gray-500 border-spacing-0">
-              <thead className=" text-black bg-gray-200">
+              <thead className={`${consistentStyles.textBlack} bg-gray-200`}>
                 <tr>
                   <th className="px-4 py-2 text-center border-r border-b border-gray-800 w-1/2">
                     {showBaseLanguage ? 'English' : currentLanguage.languageName}
