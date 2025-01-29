@@ -11,6 +11,7 @@ import RenderTableCell from '../components/molecules/RenderTableCell';
 import { useAuth } from '../contexts/AuthContext';
 import { useDispatch } from 'react-redux';
 import useWindowWidth from '../hooks/useWindowWidth';
+import DropdownButton from '../components/molecules/dropdownButton';
 
 const ReadingListeningContent = (props: { languageNumber: number; howToGuideVideo?: any }) => {
 
@@ -188,27 +189,17 @@ const ReadingListeningContent = (props: { languageNumber: number; howToGuideVide
           <thead>
             <tr>
               {['Left', 'Right'].map((side) => (
-                <th
-                  key={side}
-                  className="border border-gray-300 px-4 py-2 w-1/2 text-center font-normal"
-                >
+                <th key={side} className="border border-gray-300 px-4 py-2 w-1/2 
+                  text-center font-normal">
                   <div className="relative">
-                    <button
-                      className="border-[1px] border-b-4 text-sm border-gray-300 bg-200 text-center active:bg-gray-300 hover:bg-gray-200  p-1 pl-2 rounded-lg mb-2"
-                      onClick={() => side === 'Left' ? toggleLeftDropdown() : toggleRightDropdown()}
-                    >
-                      <div className='flex'>
-                        {titleMap[
+                    <DropdownButton text= {titleMap[
                 (side === 'Left' ? currentLeft : currentRight) as TranscriptionType
-                        ].length > 20
-                          ? `${titleMap[(side === 'Left' ? currentLeft :
-                            currentRight) as TranscriptionType].substring(0, isMobile ? 12 : 20)}...`
-                          : titleMap[(side === 'Left' ? currentLeft : 
-                            currentRight) as TranscriptionType]}
-                        <DownChevronIcon/>
-                      </div>
-                    </button>
-
+                    ].length > 20
+                      ? `${titleMap[(side === 'Left' ? currentLeft :
+                        currentRight) as TranscriptionType].substring(0, isMobile ? 12 : 20)}...`
+                      : titleMap[(side === 'Left' ? currentLeft : 
+                        currentRight) as TranscriptionType]} onClick={() => side === 'Left' ? toggleLeftDropdown() : toggleRightDropdown()}
+                    />
                     {(side === 'Left' ? isLeftDropdownOpen : isRightDropdownOpen) && (
                       <div ref={side === 'Left' ? leftDropdownRef : rightDropdownRef}
                         className="absolute left-1/2 transform -translate-x-1/2 mt-2 bg-white border border-gray-300 rounded-lg shadow w-44 md:w-64 z-10">                        
@@ -271,20 +262,9 @@ const ReadingListeningContent = (props: { languageNumber: number; howToGuideVide
       <div className="max-w-7xl mx-auto">
         <div className='flex justify-center mb-2'>
           <div className="relative px-2" ref={topicDropdownRef}>
-            <button
-              className="border-[1px] border-b-4 text-sm border-gray-300 bg-200 text-center active:bg-gray-300 hover:bg-gray-200  p-1 pl-2 rounded-lg mb-2"
-              onClick={toggleTopicDropdown}
-            >
-              <div className='flex '>
-                <div>
-              Topic:{' '}
-                  {currentAudioTranscription.name.length > 7
-                    ? `${currentAudioTranscription.name.substring(0, 7)}...`
-                    : currentAudioTranscription.name}
-                </div>
-                <DownChevronIcon/>
-              </div>
-            </button>
+            <DropdownButton text={`Topic: ${currentAudioTranscription.name.length > 7
+              ? `${currentAudioTranscription.name.substring(0, 7)}...`
+              : currentAudioTranscription.name}`}/>
             {isTopicDropdownOpen && (
               <div className="absolute left-0 mt-2 bg-white border
                border-gray-300 rounded-lg shadow w-64 z-10">
@@ -317,17 +297,7 @@ const ReadingListeningContent = (props: { languageNumber: number; howToGuideVide
             </button>
           </div>
           <div className="relative px-2" ref={settingsDropdownRef}>
-            <button
-              className="border-[1px] border-b-4 text-sm border-gray-300 bg-200 text-center active:bg-gray-300 hover:bg-gray-200  p-1 pl-2 rounded-lg mb-2"
-              onClick={toggleSettingsDropdown}
-            >
-              <div className='flex'>
-                <div>
-                Settings
-                </div>
-                <DownChevronIcon/>
-              </div> 
-            </button>
+            <DropdownButton text='Settings' onClick={toggleSettingsDropdown}/>
             {isSettingsDropdownOpen && (
               <div className="absolute right-0 mt-2 bg-white border
                border-gray-300 rounded-lg shadow w-64 z-10">

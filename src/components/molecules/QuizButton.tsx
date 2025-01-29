@@ -5,7 +5,7 @@ const QuizButton = ({ quiz, changeQuizState }: any) => {
   return (
     <button
       className={`flex items-center border-[1px] border-b-4 ${consistentStyles.blueBackground} 
-      ${consistentStyles.darkBlueBorder} ${consistentStyles.blueText} rounded-lg text-base p-0.5 transform
+      ${consistentStyles.darkBlueBorder} ${consistentStyles.blueText} rounded-lg text-base p-0.5 mb-2 transform
        transition-transform duration-200 hover:scale-105`}
       onClick={changeQuizState}
     >

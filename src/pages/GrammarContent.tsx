@@ -2,13 +2,13 @@ import { GrammarLanguage, Topic } from '../../types/learningSections/GrammarType
 import { setBackwardRoute, setForwardRoute } from '../redux-store/route';
 import { useEffect, useRef, useState } from 'react';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
-import DownChevronIcon from '../components/atoms/DownChevronIcon';
 import { languages } from '../data/structured-data/grammar';
 import { consistentStyles, lingoCommandHasLoginLock } from '../constants';
+import DropdownButton from '../components/molecules/dropdownButton';
 import LockIcon from '@mui/icons-material/Lock';
+import PageTitle from '../components/atoms/PageTitle';
 import { useAuth } from '../contexts/AuthContext';
 import { useDispatch } from 'react-redux';
-import PageTitle from '../components/atoms/PageTitle';
 
 const GrammarContent = (props: { languageNumber: number }) => {
   const navigate = useNavigate();
@@ -79,15 +79,8 @@ const GrammarContent = (props: { languageNumber: number }) => {
       <div>
         <div className="relative flex justify-center">
           <div className="relative" ref={dropdownRef}>
-            <button
-              className="border-[1px] border-b-4 text-sm border-gray-300 bg-200 text-center active:bg-gray-300 hover:bg-gray-200 p-1 pl-2 rounded-lg mb-2"
-              onClick={toggleTopicDropdown}
-            >
-              <div className="flex items-center">
-                <div className={`${consistentStyles.textBlack}`}>Topic: {currentTopic.name}</div>
-                <DownChevronIcon/>
-              </div>
-            </button>
+          
+            <DropdownButton text={`Topic: ${currentTopic.name}`} onClick={toggleTopicDropdown} />
             {isTopicDropdownOpen && (
               <div className="absolute left-0 mt-2 bg-white border border-gray-300 rounded-lg shadow w-64 z-10">
                 <ul className="divide-y divide-gray-200">

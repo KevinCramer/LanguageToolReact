@@ -15,6 +15,7 @@ import StudyElement from '../components/molecules/StudyElement';
 import { useAuth } from '../contexts/AuthContext'
 import { useDispatch } from 'react-redux';
 import QuizButton from '../components/molecules/QuizButton';
+import DropdownButton from '../components/molecules/dropdownButton';
 
 const WritingSystems = (
   props: {
@@ -368,23 +369,13 @@ const WritingSystems = (
           </div>
         </h4>
       </div>
-      <div className="flex min-w-[350px] justify-between items-center mb-2">
+      <div className="flex min-w-[350px] justify-between items-center">
         {/* Topic Dropdown */}
         <div className="relative" ref={topicDropdownRef}>
-          <button
-            className="border-[1px] border-b-4 text-sm w-[145px] border-gray-300 bg-200 text-center active:bg-gray-300 hover:bg-gray-200  p-1 pl-2 rounded-lg"
-            onClick={toggleTopicDropdown}
-          >
-            <div className='flex'>
-              <div>
-              Topic:{' '}
-                {currentTopic.name.length > 7
-                  ? `${currentTopic.name.substring(0, 7)}...`
-                  : currentTopic.name}
-              </div>
-              <DownChevronIcon/>
-            </div>
-          </button>
+          <DropdownButton text={`Topic 
+                ${currentTopic.name.length > 7
+      ? `${currentTopic.name.substring(0, 7)}...`
+      : currentTopic.name}`}/>
           {isTopicDropdownOpen && (
             <div className="absolute left-0 mt-2 bg-white border border-gray-300 rounded-lg shadow w-64 z-10">
               <ul className="divide-y divide-gray-200">
@@ -413,17 +404,7 @@ const WritingSystems = (
         </div>
         {/* Settings Dropdown */}
         <div className="relative" ref={settingsDropdownRef}>
-          <button
-            className="border-[1px] border-b-4 text-sm border-gray-300 bg-200 text-center active:bg-gray-300 hover:bg-gray-200  p-1 pl-2 rounded-lg"
-            onClick={toggleSettingsDropdown}
-          >
-            <div className='flex'>
-              <div>
-              Settings
-              </div>
-              <DownChevronIcon/>
-            </div>          
-          </button>
+          <DropdownButton text='Settings' onClick={toggleSettingsDropdown}/>
           {isSettingsDropdownOpen && (
             <div className="absolute right-0 mt-2 bg-white border border-gray-300 rounded-lg shadow w-64 z-10">
               <ul className="divide-y divide-gray-200">
