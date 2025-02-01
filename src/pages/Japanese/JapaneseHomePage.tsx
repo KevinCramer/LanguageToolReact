@@ -1,11 +1,14 @@
 import { consistentStyles } from '../../constants';
+import { useNavigate } from 'react-router-dom';
 
 const JapaneseHomePage = () => {
+  const navigate = useNavigate();
+
   return (
-    <div className="max-w-screen-md mx-auto px-2  text-center text-lg">
+    <div className="max-w-screen-md mx-auto px-2 text-center text-lg">
       <h4 className="text-center text-2xl py-12"></h4>
       <div className="md:border border-gray-300 rounded-xl px-4 py-4 w-full hover:cursor-pointer md:hover:bg-gray-100"
-        onClick={() => window.location.href = 'study-guide'}>
+        onClick={() => navigate('/japanese/study-guide')}>
         <div className={`text-xl mb-4 font-bold ${consistentStyles.textBlack}`}> Japanese Study Guide</div>
         <div className={`mb-4 ${consistentStyles.textBlack}`}>   
                Take the guesswork out of learning Japanese with our study guide. 
@@ -14,7 +17,7 @@ const JapaneseHomePage = () => {
         <div>
           <button
             className={`w-[200px] mb-4 border-[1px] border-b-4 ${consistentStyles.blueBackground} ${consistentStyles.darkBlueBorder} text-center ${consistentStyles.textWhite} p-2 rounded-2xl`}
-            onClick={() => window.location.href = 'study-guide'}
+            onClick={() => navigate('/japanese/study-guide')}
           >
             <div>Access Study Guide</div>
           </button>
@@ -23,9 +26,9 @@ const JapaneseHomePage = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 justify-items-center mt-8">
         <div className="md:border border-gray-300 rounded-xl m-2 px-4 py-4 w-full md:text-left hover:cursor-pointer md:hover:bg-gray-100"
-          onClick={() => window.location.href = 'writing-systems-explained'}>
+          onClick={() => navigate('/japanese/writing-systems-explained')}>
           <div className={`text-xl mb-4 ${consistentStyles.blueText} underline`}>
-            <a href='writing-systems-explained'>
+            <a href='/japanese/writing-systems-explained'>
             Writing Systems
             </a>
           </div>
@@ -34,9 +37,9 @@ const JapaneseHomePage = () => {
           </div>
         </div>
         <div className="md:border border-gray-300 rounded-xl m-2 px-4 py-4 w-full md:text-left hover:cursor-pointer md:hover:bg-gray-100"
-          onClick={() => window.location.href = 'vocabulary-guide'}>
+          onClick={() => navigate('/japanese/vocabulary-guide')}>
           <div className={`text-xl mb-4 ${consistentStyles.blueText} underline`}>
-            <a href='vocabulary'>
+            <a href='/japanese/vocabulary-guide'>
             Vocabulary
             </a>
           </div>
@@ -45,9 +48,9 @@ const JapaneseHomePage = () => {
           </div>
         </div>
         <div className="md:border border-gray-300 rounded-xl m-2 px-4 py-4 w-full md:text-left hover:cursor-pointer md:hover:bg-gray-100"
-          onClick={() => window.location.href = 'grammar/keigo'}>
+          onClick={() => navigate('/japanese/grammar/keigo')}>
           <div className={`text-xl mb-4 ${consistentStyles.blueText} underline`}>
-            <a href='grammar/keigo'>
+            <a href='/japanese/grammar/keigo'>
             Grammar
             </a>
           </div>
@@ -56,9 +59,9 @@ const JapaneseHomePage = () => {
           </div>
         </div>
         <div className="md:border border-gray-300 rounded-xl m-2 px-4 py-4 w-full md:text-left hover:cursor-pointer md:hover:bg-gray-100"
-          onClick={() => window.location.href = 'reading-listening/aikos-book-sanctuary?L=WritingSystem3&R=English&gran=paragraph'}>
+          onClick={() => navigate('/japanese/reading-listening/aikos-book-sanctuary?L=WritingSystem3&R=English&gran=paragraph')}>
           <div className={`text-xl mb-4 ${consistentStyles.blueText} underline`}>
-            <a href='reading-listening/aikos-book-sanctuary?L=WritingSystem3&R=English&gran=paragraph'>
+            <a href='/japanese/reading-listening/aikos-book-sanctuary?L=WritingSystem3&R=English&gran=paragraph'>
             Reading & Listening
             </a>
           </div>
