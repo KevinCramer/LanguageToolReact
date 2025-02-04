@@ -181,6 +181,24 @@ import hiraganaVideoWa from '../raw-data/writing-system-videos/japanese/hiragana
 import hiraganaVideoWo from '../raw-data/writing-system-videos/japanese/hiragana/basic/wo.mp4'
 import hiraganaVideoN from '../raw-data/writing-system-videos/japanese/hiragana/basic/n.mp4'
 
+import katakanaVideoA from '../raw-data/writing-system-videos/japanese/katakana/basic/a.mp4'
+import katakanaVideoI from '../raw-data/writing-system-videos/japanese/katakana/basic/i.mp4'
+import katakanaVideoU from '../raw-data/writing-system-videos/japanese/katakana/basic/u.mp4'
+import katakanaVideoE from '../raw-data/writing-system-videos/japanese/katakana/basic/e.mp4'
+import katakanaVideoO from '../raw-data/writing-system-videos/japanese/katakana/basic/o.mp4'
+import katakanaVideoKa from '../raw-data/writing-system-videos/japanese/katakana/basic/ka.mp4'
+import katakanaVideoKi from '../raw-data/writing-system-videos/japanese/katakana/basic/ki.mp4'
+import katakanaVideoKu from '../raw-data/writing-system-videos/japanese/katakana/basic/ku.mp4'
+import katakanaVideoKe from '../raw-data/writing-system-videos/japanese/katakana/basic/ke.mp4'
+import katakanaVideoKo from '../raw-data/writing-system-videos/japanese/katakana/basic/ko.mp4'
+import katakanaVideoSa from '../raw-data/writing-system-videos/japanese/katakana/basic/sa.mp4'
+import katakanaVideoShi from '../raw-data/writing-system-videos/japanese/katakana/basic/shi.mp4'
+import katakanaVideoSu from '../raw-data/writing-system-videos/japanese/katakana/basic/su.mp4'
+import katakanaVideoSe from '../raw-data/writing-system-videos/japanese/katakana/basic/se.mp4'
+import katakanaVideoSo from '../raw-data/writing-system-videos/japanese/katakana/basic/so.mp4'
+import katakanaVideoTa from '../raw-data/writing-system-videos/japanese/katakana/basic/ta.mp4'
+import katakanaVideoChi from '../raw-data/writing-system-videos/japanese/katakana/basic/chi.mp4'
+
 import hiraganaDakutenVideoGa from '../raw-data/writing-system-videos/japanese/hiragana/dakuten-handakuten/ga.mp4'
 import hiraganaDakutenVideoGi from '../raw-data/writing-system-videos/japanese/hiragana/dakuten-handakuten/gi.mp4'
 import hiraganaDakutenVideoGu from '../raw-data/writing-system-videos/japanese/hiragana/dakuten-handakuten/gu.mp4'
@@ -337,23 +355,23 @@ const japaneseTopics: TopicWithThreeWritingSystems[] = [
   },
   // see https://www.tofugu.com/japanese/learn-katakana/ for explanation
   { name:'Basic Katakana', slugName: japaneseWritingSystemsTopicSlugNames.basicKatakana, hasOrdering:true, topicOrder:4, hasLoginLock: false, isAlphabet: true, words: [
-    { englishWord: 'a', foreignWord: ['ア','ア','ア'], foreignAudio: hiraganaAudioA, order: 1 },
-    { englishWord: 'i', foreignWord: ['イ','イ','イ'], foreignAudio: hiraganaAudioI, order: 2 },
-    { englishWord: 'u', foreignWord: ['ウ','ウ','ウ'], foreignAudio: hiraganaAudioU, order: 3 },
-    { englishWord: 'e', foreignWord: ['エ','エ','エ'], foreignAudio: hiraganaAudioE, order: 4 },
-    { englishWord: 'o', foreignWord: ['オ','オ','オ'], foreignAudio: hiraganaAudioO, order: 5 },
-    { englishWord: 'ka', foreignWord: ['カ','カ','カ'], foreignAudio: hiraganaAudioKa, order: 6 },
-    { englishWord: 'ki', foreignWord: ['キ','キ','キ'], foreignAudio: hiraganaAudioKi, order: 7 },
-    { englishWord: 'ku', foreignWord: ['ク','ク','ク'], foreignAudio: hiraganaAudioKu, order: 8 },
-    { englishWord: 'ke', foreignWord: ['ケ','ケ','ケ'], foreignAudio: hiraganaAudioKe, order: 9 },
-    { englishWord: 'ko', foreignWord: ['コ','コ','コ'], foreignAudio: hiraganaAudioKo, order: 10 },
-    { englishWord: 'sa', foreignWord: ['サ','サ','サ'], foreignAudio: hiraganaAudioSa, order: 11 },
-    { englishWord: 'shi', foreignWord: ['シ','シ','シ'], foreignAudio: hiraganaAudioShi, order: 12 },
-    { englishWord: 'su', foreignWord: ['ス','ス','ス'], foreignAudio: hiraganaAudioSu, order: 13 },
-    { englishWord: 'se', foreignWord: ['セ','セ','セ'], foreignAudio: hiraganaAudioSe, order: 14 },
-    { englishWord: 'so', foreignWord: ['ソ','ソ','ソ'], foreignAudio: hiraganaAudioSo, order: 15 },
-    { englishWord: 'ta', foreignWord: ['タ','タ','タ'], foreignAudio: hiraganaAudioTa, order: 16 },
-    { englishWord: 'chi', foreignWord: ['チ','チ','チ'], foreignAudio: hiraganaAudioChi, order: 17 },
+    { englishWord: 'a', foreignWord: ['ア','ア','ア'], foreignAudio: hiraganaAudioA, order: 1, strokeOrderVideo: katakanaVideoA },
+    { englishWord: 'i', foreignWord: ['イ','イ','イ'], foreignAudio: hiraganaAudioI, order: 2, strokeOrderVideo: katakanaVideoI },
+    { englishWord: 'u', foreignWord: ['ウ','ウ','ウ'], foreignAudio: hiraganaAudioU, order: 3, strokeOrderVideo: katakanaVideoU },
+    { englishWord: 'e', foreignWord: ['エ','エ','エ'], foreignAudio: hiraganaAudioE, order: 4, strokeOrderVideo: katakanaVideoE },
+    { englishWord: 'o', foreignWord: ['オ','オ','オ'], foreignAudio: hiraganaAudioO, order: 5, strokeOrderVideo: katakanaVideoO },
+    { englishWord: 'ka', foreignWord: ['カ','カ','カ'], foreignAudio: hiraganaAudioKa, order: 6, strokeOrderVideo: katakanaVideoKa },
+    { englishWord: 'ki', foreignWord: ['キ','キ','キ'], foreignAudio: hiraganaAudioKi, order: 7, strokeOrderVideo: katakanaVideoKi },
+    { englishWord: 'ku', foreignWord: ['ク','ク','ク'], foreignAudio: hiraganaAudioKu, order: 8, strokeOrderVideo: katakanaVideoKu },
+    { englishWord: 'ke', foreignWord: ['ケ','ケ','ケ'], foreignAudio: hiraganaAudioKe, order: 9, strokeOrderVideo: katakanaVideoKe },
+    { englishWord: 'ko', foreignWord: ['コ','コ','コ'], foreignAudio: hiraganaAudioKo, order: 10, strokeOrderVideo: katakanaVideoKo },
+    { englishWord: 'sa', foreignWord: ['サ','サ','サ'], foreignAudio: hiraganaAudioSa, order: 11, strokeOrderVideo: katakanaVideoSa },
+    { englishWord: 'shi', foreignWord: ['シ','シ','シ'], foreignAudio: hiraganaAudioShi, order: 12, strokeOrderVideo: katakanaVideoShi },
+    { englishWord: 'su', foreignWord: ['ス','ス','ス'], foreignAudio: hiraganaAudioSu, order: 13, strokeOrderVideo: katakanaVideoSu },
+    { englishWord: 'se', foreignWord: ['セ','セ','セ'], foreignAudio: hiraganaAudioSe, order: 14, strokeOrderVideo: katakanaVideoSe },
+    { englishWord: 'so', foreignWord: ['ソ','ソ','ソ'], foreignAudio: hiraganaAudioSo, order: 15, strokeOrderVideo: katakanaVideoSo },
+    { englishWord: 'ta', foreignWord: ['タ','タ','タ'], foreignAudio: hiraganaAudioTa, order: 16, strokeOrderVideo: katakanaVideoTa },
+    { englishWord: 'chi', foreignWord: ['チ','チ','チ'], foreignAudio: hiraganaAudioChi, order: 17, strokeOrderVideo: katakanaVideoChi },
     { englishWord: 'tsu', foreignWord: ['ツ','ツ','ツ'], foreignAudio: hiraganaAudioTsu, order: 18 },
     { englishWord: 'te', foreignWord: ['テ','テ','テ'], foreignAudio: hiraganaAudioTe, order: 19 },
     { englishWord: 'to', foreignWord: ['ト','ト','ト'], foreignAudio: hiraganaAudioTo, order: 20 },
