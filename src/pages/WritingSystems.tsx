@@ -372,7 +372,7 @@ const WritingSystems = (
       <div className="flex min-w-[350px] justify-between items-center">
         {/* Topic Dropdown */}
         <div className="relative" ref={topicDropdownRef}>
-          <DropdownButton text={`Topic 
+          <DropdownButton text={`Topic: 
                 ${currentTopic.name.length > 7
       ? `${currentTopic.name.substring(0, 7)}...`
       : currentTopic.name}`} onClick={toggleTopicDropdown}/>
