@@ -277,8 +277,8 @@ const KatakanaExplained = () => {
         <tbody>
           {hiraganaKatakanaPairs.map(([hiragana, katakana], index) => (
             <tr key={index}>
-              <td className="border border-gray-500 px-4 py-2">{hiragana}</td>
-              <td className="border border-gray-500 px-4 py-2">{katakana}</td>
+              <td className="border border-gray-500 px-4 py-2 text-center">{hiragana}</td>
+              <td className="border border-gray-500 px-4 py-2 text-center">{katakana}</td>
             </tr>
           ))}
         </tbody>
@@ -363,10 +363,10 @@ const KatakanaExplained = () => {
 
   const TableRow = ({ hiragana, katakana, note }: any) => (
     <tr>
-      <td className="border border-gray-500 px-4 py-2">
+      <td className="border border-gray-500 px-4 py-2 text-center">
         {hiragana} {note && <small>({note})</small>}
       </td>
-      <td className="border border-gray-500 px-4 py-2">{katakana}</td>
+      <td className="border border-gray-500 px-4 py-2 text-center">{katakana}</td>
     </tr>
   );
   

@@ -7,14 +7,13 @@ const JapaneseStudyGuide = () => {
       <h4 className={`text-center text-2xl pt-12 ${consistentStyles.textBlack}`}>Japanese Study Guide </h4>
       <div className='pb-4 pt-8'>
         <div className={`underline font-bold ${consistentStyles.textBlack}`}>Step 1:</div>
-        <span className={`${consistentStyles.textBlack}`}>
+        <div className={`${consistentStyles.textBlack}`}>
         It is essential to understand how the Japanese writing systems work.
-         Spend a few minutes reading about it {' '}
-        </span>
+         Spend a few minutes reading about it here:
+        </div>
         <a className={`${consistentStyles.blueText} underline`} href='/japanese/writing-systems-explained'>
-         here
+         Japanese Writing Systems
         </a>
-        .
       </div>
       <div className='py-4'>
         <div className={`underline font-bold ${consistentStyles.textBlack}`}>Step 2:</div>
@@ -90,7 +89,7 @@ const JapaneseStudyGuide = () => {
         <div className={`underline font-bold ${consistentStyles.textBlack}`}>Step 6:</div>
         <div className={`${consistentStyles.textBlack}`}>
           Practice vocabulary exercises on various topics. Dedicate 15 minutes to studying 
-          vocabulary for each topic,followed by a quiz. Aim to repeat the quiz until you can 
+          vocabulary for each topic, followed by a quiz. Aim to repeat the quiz until you can 
           consistently score at least 90%. Begin your vocabulary practice here:
         </div>
       
