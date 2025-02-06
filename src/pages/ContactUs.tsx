@@ -9,6 +9,7 @@ import {
 import { useEffect, useState } from 'react';
 import useWindowWidth from '../hooks/useWindowWidth';
 import { consistentStyles, mobileBreakPoint } from '../constants';
+import PageTitle from '../components/atoms/PageTitle';
 
 const socialLinks = [
   /* eslint-disable @stylistic/js/max-len */
@@ -27,7 +28,8 @@ const ContactUs = () => {
   const isMobile = width < mobileBreakPoint; 
   return (
     <div className={`flex flex-col items-center ${isMobile ? consistentStyles.textBlack : consistentStyles.textWhite} text-lg`}>
-      <div className='pt-24'>
+      {isMobile && <PageTitle title='Contact Us' />}
+      <div className={isMobile ? '' : 'pt-24'}>
         You can reach out to us at&nbsp;
       </div>
       <a href='mailto:contact@lingocommand.com' className={`${isMobile ? consistentStyles.textBlack : consistentStyles.textWhite} underline`}>

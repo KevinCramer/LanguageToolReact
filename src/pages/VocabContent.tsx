@@ -370,7 +370,7 @@ const VocabContent = (
   
   return (
     <div className='flex flex-col items-center'>
-      <div className='flex mt-12 mb-12 items-center'>
+      <div className='flex items-center'>
         <PageTitle title={`${currentLanguage.languageName} Vocabulary - `}/>
         &nbsp;
         <button

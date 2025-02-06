@@ -21,7 +21,7 @@ interface Topic {
 // 2: https://www.learnalanguage.com/learn-japanese/japanese-verbs/
 // 3: https://www.learnalanguage.com/learn-japanese/japanese-phrases/
 const allTopics: Topic[] = [
-  { Name: 'Animals', slugName: japaneseVocabTopicSlugNames.animals, hasLoginLock: true },
+  { Name: 'Animals', slugName: japaneseVocabTopicSlugNames.animals, hasLoginLock: false },
   // { Name: 'Appliances' },
   // { Name: 'At a Party' },
   // { Name: 'At the Beach' },
@@ -30,12 +30,12 @@ const allTopics: Topic[] = [
   // { Name: 'Bank and Finance' },
   // { Name: 'Bathroom' },
   // { Name: 'Bedroom' },
-  { Name: 'Body Parts I', slugName: japaneseVocabTopicSlugNames.body, hasLoginLock: true },
+  { Name: 'Body Parts', slugName: japaneseVocabTopicSlugNames.body, hasLoginLock: false },
   // { Name: 'Body Parts II' },
   // { Name: 'Car Parts' },
   // { Name: 'Cleaning Supplies' },
   { Name: 'Clothes', slugName: japaneseVocabTopicSlugNames.clothes, hasLoginLock: false },
-  { Name: 'Colours', slugName: japaneseVocabTopicSlugNames.colours, hasLoginLock: false },
+  { Name: 'Colours', slugName: japaneseVocabTopicSlugNames.colours, hasLoginLock: true },
   // { Name: 'Common Japanese Phrases' },
   // { Name: 'Conjunctions' },
   // { Name: 'Countries and Continents' },
@@ -60,7 +60,7 @@ const allTopics: Topic[] = [
   { Name: 'Months', slugName: japaneseVocabTopicSlugNames.monthsOfYear, hasLoginLock: true },
   // { Name: 'Music' },
   // { Name: 'Nature' },
-  { Name: 'Numbers', slugName: japaneseVocabTopicSlugNames.numbers, hasLoginLock: false },
+  { Name: 'Numbers', slugName: japaneseVocabTopicSlugNames.numbers, hasLoginLock: true },
   // { Name: 'Outside' },
   // { Name: 'Prepositions' },
   // { Name: 'Professions' },

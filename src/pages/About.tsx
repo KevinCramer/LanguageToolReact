@@ -6,7 +6,7 @@ import { consistentStyles } from '../constants';
 const About = () => {
   return (
     <div className='flex flex-col justify-center flex-1 px-4 text-lg'>
-      <div className={`${consistentStyles.textBlack} smax-w-screen-md mx-auto rounded-md`}>
+      <div className={`${consistentStyles.textBlack} max-w-screen-md mx-auto rounded-md`}>
         <PageTitle title='Our Mission' />
         <div className='pb-2'>
         LingoCommand is dedicated to helping people learn Japanese in a streamlined and efficient way. It will accelerate your progress by combining three key principles:

@@ -170,7 +170,7 @@ export const japaneseVocabTopicSlugNames = {
   food: 'food',
 }
 const japaneseTopics: TopicWithThreeWritingSystems[] = [
-  { name:'Numbers',slugName: japaneseVocabTopicSlugNames.numbers, hasOrdering:true, hasLoginLock: false, isAlphabet: false, words: [
+  { name:'Numbers',slugName: japaneseVocabTopicSlugNames.numbers, hasOrdering:true, hasLoginLock: true, isAlphabet: false, words: [
     { englishWord: 'one', foreignWord: ['ichi', 'いち','一'], foreignAudio: japaneseAudioOne, order:1 },
     { englishWord: 'two', foreignWord: ['ni', 'に','二'], foreignAudio: japaneseAudioTwo, order:2 },
     { englishWord: 'three',foreignWord: ['san', 'さん','三'], foreignAudio: japaneseAudioThree, order:3 },
@@ -185,7 +185,7 @@ const japaneseTopics: TopicWithThreeWritingSystems[] = [
     { englishWord: 'nine (II)', foreignWord: ['kyuu', 'きゅう','九'], foreignAudio: japaneseAudioNineKyuu, order:9 },
     { englishWord: 'ten', foreignWord: ['juu', 'じゅう','十'], foreignAudio: japaneseAudioTen, order:10 },
   ] },
-  { name:'Colours', slugName: japaneseVocabTopicSlugNames.colours, hasOrdering:false, hasLoginLock: false, isAlphabet: false, words: [
+  { name:'Colours', slugName: japaneseVocabTopicSlugNames.colours, hasOrdering:false, hasLoginLock: true, isAlphabet: false, words: [
     { englishWord: 'red', foreignWord: ['aka', 'あか', '赤'], foreignAudio: japaneseAudioRed },
     { englishWord: 'blue', foreignWord: ['ao', 'あお', '青'], foreignAudio: japaneseAudioBlue },
     { englishWord: 'green', foreignWord: ['midori', 'みどり', '緑'], foreignAudio: japaneseAudioGreen },
@@ -295,7 +295,7 @@ const japaneseTopics: TopicWithThreeWritingSystems[] = [
     ]
   },
   {
-    name: 'Animals', slugName: japaneseVocabTopicSlugNames.animals, hasOrdering: false, hasLoginLock: true, isAlphabet: false, words: [
+    name: 'Animals', slugName: japaneseVocabTopicSlugNames.animals, hasOrdering: false, hasLoginLock: false, isAlphabet: false, words: [
       { englishWord: 'dog', foreignWord: ['inu', 'いぬ', '犬'], foreignAudio: japaneseAudioDog },
       { englishWord: 'cat', foreignWord: ['neko', 'ねこ', '猫'], foreignAudio: japaneseAudioCat },
       { englishWord: 'chicken', foreignWord: ['niwatori', 'にわとり', '鶏'], foreignAudio: japaneseAudioChickenAnimal },
@@ -323,7 +323,7 @@ const japaneseTopics: TopicWithThreeWritingSystems[] = [
     ]
   },
   { 
-    name: 'Body', slugName: japaneseVocabTopicSlugNames.body, hasOrdering: false, hasLoginLock: true, isAlphabet: false, words: [
+    name: 'Body Parts', slugName: japaneseVocabTopicSlugNames.body, hasOrdering: false, hasLoginLock: false, isAlphabet: false, words: [
       { englishWord: 'arm', foreignWord: ['ude', 'うで', '腕'], foreignAudio: japaneseAudioArm },
       { englishWord: 'leg', foreignWord: ['ashi', 'あし', '足'], foreignAudio: japaneseAudioLeg },
       { englishWord: 'eyes', foreignWord: ['me', 'め', '目'], foreignAudio: japaneseAudioEyes },

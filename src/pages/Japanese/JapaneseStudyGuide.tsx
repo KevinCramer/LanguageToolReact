@@ -7,10 +7,10 @@ const JapaneseStudyGuide = () => {
       <h4 className={`text-center text-2xl pt-12 ${consistentStyles.textBlack}`}>Japanese Study Guide </h4>
       <div className='pb-4 pt-8'>
         <div className={`underline font-bold ${consistentStyles.textBlack}`}>Step 1:</div>
-        <div className={`${consistentStyles.textBlack}`}>
+        <span className={`${consistentStyles.textBlack}`}>
         It is essential to understand how the Japanese writing systems work.
          Spend a few minutes reading about it {' '}
-        </div>
+        </span>
         <a className={`${consistentStyles.blueText} underline`} href='/japanese/writing-systems-explained'>
          here
         </a>
