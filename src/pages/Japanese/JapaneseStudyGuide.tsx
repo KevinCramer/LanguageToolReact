@@ -104,9 +104,8 @@ const JapaneseStudyGuide = () => {
       <div className='py-4'>
         <div className={`underline font-bold ${consistentStyles.textBlack}`}>Step 7:</div>
         <div className={`${consistentStyles.textBlack}`}>
-          In order to gain true familiarity with the japanese language being able to listen and read Japanese is essential.
-          Now that you understand how Japanese writing systems work and you have built up some vocabulary you are ready to 
-          start these exercises:
+        To truly grasp Japanese, you must become comfortable listening and reading the language.
+        Now that you understand the writing systems and have built up your vocabulary, you're ready for these exercises:
         </div>
         
         <div>
