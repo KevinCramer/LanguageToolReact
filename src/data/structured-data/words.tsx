@@ -189,13 +189,13 @@ const japaneseTopics: TopicWithThreeWritingSystems[] = [
     { englishWord: 'red', foreignWord: ['aka', 'あか', '赤'], foreignAudio: japaneseAudioRed },
     { englishWord: 'blue', foreignWord: ['ao', 'あお', '青'], foreignAudio: japaneseAudioBlue },
     { englishWord: 'green', foreignWord: ['midori', 'みどり', '緑'], foreignAudio: japaneseAudioGreen },
-    { englishWord: 'orange', foreignWord: ['orenji', 'オレンジ', 'unknown'], foreignAudio: japaneseAudioOrange },
+    { englishWord: 'orange', foreignWord: ['orenji', 'オレンジ', 'オレンジ'], foreignAudio: japaneseAudioOrange },
     { englishWord: 'brown', foreignWord: ['chairo', 'ちゃいろ', '茶色'], foreignAudio: japaneseAudioBrown },
     { englishWord: 'grey', foreignWord: ['haiiro', 'はいいろ', '灰色'], foreignAudio: japaneseAudioGrey },
     { englishWord: 'white', foreignWord: ['shiro', 'しろ', '白'], foreignAudio: japaneseAudioWhite },
     { englishWord: 'black', foreignWord: ['kuro', 'くろ', '黒'], foreignAudio: japaneseAudioBlack },
     { englishWord: 'purple', foreignWord: ['murasaki', 'むらさき', '紫'], foreignAudio: japaneseAudioPurple },
-    { englishWord: 'pink', foreignWord: ['pinku', 'ピンク', 'unknown'], foreignAudio: japaneseAudioPink }
+    { englishWord: 'pink', foreignWord: ['pinku', 'ピンク', 'ピンク'], foreignAudio: japaneseAudioPink }
   ] },
   { name: 'Clothes', slugName: japaneseVocabTopicSlugNames.clothes, hasOrdering: false, hasLoginLock: false, isAlphabet: false,words: [
     { englishWord: 'trousers', foreignWord: ['zubon', 'ズボン', 'ズボン'], foreignAudio: japaneseAudioTrousers },
@@ -311,15 +311,15 @@ const japaneseTopics: TopicWithThreeWritingSystems[] = [
   {
     name: 'Locations', slugName: japaneseVocabTopicSlugNames.locations, hasOrdering: false, hasLoginLock: true, isAlphabet: false, words: [
       { englishWord: 'bakery', foreignWord: ['panya', 'ぱんや', 'パン屋'], foreignAudio: japaneseAudioBakery },
-      { englishWord: 'supermarket', foreignWord: ['suupaa', 'スーパー', 'unknown'], foreignAudio: japaneseAudioSupermarket },
+      { englishWord: 'supermarket', foreignWord: ['suupaa', 'スーパー', 'スーパー'], foreignAudio: japaneseAudioSupermarket },
       { englishWord: 'cinema', foreignWord: ['eigakan', 'えいがかん', '映画館'], foreignAudio: japaneseAudioCinema },
       { englishWord: 'park', foreignWord: ['kouen', 'こうえん', '公園'], foreignAudio: japaneseAudioPark },
       { englishWord: 'school', foreignWord: ['gakkou', 'がっこう', '学校'], foreignAudio: japaneseAudioSchool },
       { englishWord: 'library', foreignWord: ['toshokan', 'としょかん', '図書館'], foreignAudio: japaneseAudioLibrary },
       { englishWord: 'hospital', foreignWord: ['byouin', 'びょういん', '病院'], foreignAudio: japaneseAudioHospital },
       { englishWord: 'station', foreignWord: ['eki', 'えき', '駅'], foreignAudio: japaneseAudioStation },
-      { englishWord: 'restaurant', foreignWord: ['resutoran', 'レストラン', 'unknown'], foreignAudio: japaneseAudioRestaurant },
-      { englishWord: 'hotel', foreignWord: ['hoteru', 'ホテル', 'unknown'], foreignAudio: japaneseAudioHotel }
+      { englishWord: 'restaurant', foreignWord: ['resutoran', 'レストラン', 'レストラン'], foreignAudio: japaneseAudioRestaurant },
+      { englishWord: 'hotel', foreignWord: ['hoteru', 'ホテル', 'ホテル'], foreignAudio: japaneseAudioHotel }
     ]
   },
   { 
@@ -339,15 +339,15 @@ const japaneseTopics: TopicWithThreeWritingSystems[] = [
   },
   {
     name: 'Food', slugName: japaneseVocabTopicSlugNames.food, hasOrdering: false, hasLoginLock: true, isAlphabet: false, words: [
-      { englishWord: 'bread', foreignWord: ['pan', 'パン', 'unknown'], foreignAudio: japaneseAudioBread },
+      { englishWord: 'bread', foreignWord: ['pan', 'パン', 'パン'], foreignAudio: japaneseAudioBread },
       { englishWord: 'eggs', foreignWord: ['tamago', 'たまご', '卵'], foreignAudio: japaneseAudioEggs },
       { englishWord: 'chicken', foreignWord: ['toriniku', 'とりにく', '鶏肉'], foreignAudio: japaneseAudioChicken },
       { englishWord: 'rice', foreignWord: ['gohan', 'ごはん', 'ご飯'], foreignAudio: japaneseAudioRice },
       { englishWord: 'fish', foreignWord: ['sakana', 'さかな', '魚'], foreignAudio: japaneseAudioFish },
       { englishWord: 'milk', foreignWord: ['gyūnyū', 'ぎゅうにゅう', '牛乳'], foreignAudio: japaneseAudioMilk },
-      { englishWord: 'cheese', foreignWord: ['chiizu', 'チーズ', 'unknown'], foreignAudio: japaneseAudioCheese },
+      { englishWord: 'cheese', foreignWord: ['chiizu', 'チーズ', 'チーズ'], foreignAudio: japaneseAudioCheese },
       { englishWord: 'apple', foreignWord: ['ringo', 'りんご', '林檎'], foreignAudio: japaneseAudioApple },
-      { englishWord: 'banana', foreignWord: ['banana', 'バナナ', 'unknown'], foreignAudio: japaneseAudioBanana },
+      { englishWord: 'banana', foreignWord: ['banana', 'バナナ', 'バナナ'], foreignAudio: japaneseAudioBanana },
       { englishWord: 'carrot', foreignWord: ['ninjin', 'にんじん', '人参'], foreignAudio: japaneseAudioCarrot },
       { englishWord: 'potato', foreignWord: ['jagaimo', 'じゃがいも', 'じゃが芋'], foreignAudio: japaneseAudioPotato },
       { englishWord: 'water', foreignWord: ['mizu', 'みず', '水'], foreignAudio: japaneseAudioWater }
