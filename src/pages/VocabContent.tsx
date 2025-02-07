@@ -433,8 +433,8 @@ const VocabContent = (
                     value={currentAlphabet}
                   >
                     <option value="0">romaji</option>
-                    <option value="1">hiragana, katakana</option>
-                    <option value="2">hiragana, katakana, kanji</option>
+                    <option value="1">hiragana and katakana</option>
+                    <option value="2">hiragana, katakana, and kanji</option>
                   </select>
                 </li>
                 {!quiz && (
