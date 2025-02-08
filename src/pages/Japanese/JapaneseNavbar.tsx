@@ -22,7 +22,7 @@ const JapaneseNavbar = () => {
                 to='/japanese/home-page' 
                 className={({ isActive }) => (isActive) ? 'block px-4  underline' : 'block px-4 '}
               >
-                Japanese Home Page
+                 Home Page
               </NavLink>
             </li>
             <li>
