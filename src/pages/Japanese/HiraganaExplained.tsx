@@ -355,7 +355,7 @@ const HiraganaExplained = () => {
                       LanguageNames.Japanese,
                       LearningSections.WritingSystem,
                       hiraganaDakutenWritingSystem)
-                  }> Hiragana with Dakuten and Handakuten Exercise
+                  }> Hiragana Dakuten/Handakuten Exercise
                   {hiraganaDakutenWritingSystem?.hasLoginLock &&
                     lingoCommandHasLoginLock && !userIsLoggedIn ? <LockIcon/> : ''}
                 </a>
