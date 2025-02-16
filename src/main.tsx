@@ -10,17 +10,17 @@ import { Helmet } from 'react-helmet'
 // Meta Data Configuration
 const routesMeta = {
   '/': {
-    title: 'LingoCommand - Learn Foreign Languages Faster',
+    title: 'LingoCommand - Learn Japanese Faster',
     meta: [
       { name: 'description', content: 'Fast-track your Japanese language studies with LingoCommand! Our innovative technology lets you customise study sessions to align with your goals and learning style.' },
-      { name: 'keywords', content: 'japanese language learning, japanese language, learn japanese, japanese language study tools, fast japanese language learning, online japanese language courses, japanese language practice,, japanese language learning platform' },
+      { name: 'keywords', content: 'japanese language learning, japanese language, learn japanese, japanese language study tools, fast japanese language learning, online japanese language courses, japanese language practice, japanese language learning platform, japanese' },
     ],
   },
   '/contact': {
     title: 'Contact',
     meta: [
       { name: 'description', content: 'You can reach out to us at contact@lingocommand.com. Social media: Youtube, TikTok, Instragram, Facebook, Linkedin, Pinterest.' },
-      { name: 'keywords', content: 'contact us, LingoCommand support, customer support, japanese language learning help, japanese language app support, contact japanese language platform, reach out, LingoCommand inquiries, contact page, social media, YouTube, TikTok, Instagram' },
+      { name: 'keywords', content: 'contact us, LingoCommand support, customer support, japanese language learning help, japanese language app support, contact japanese language platform, reach out, LingoCommand inquiries, contact page, social media, YouTube, TikTok, Instagram, Facebook, LinkedIn' },
     ],
   },
   '/about': {
