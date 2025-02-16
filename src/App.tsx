@@ -1,6 +1,6 @@
 import './index.css';
 import { Route, Routes, useLocation } from 'react-router-dom'
-import About from './pages/languageAgnostic/About'
+import About from './pages/japaneseSpecific/About'
 import Account from './pages/languageAgnostic/Account'
 import ContactUs from './pages/languageAgnostic/ContactUs'
 import Custom404Error from './pages/languageAgnostic/Custom404Error'
@@ -10,9 +10,8 @@ import FreeContent from './components/atoms/FreeContent';
 import fujiImage from '/src/assets/mount-fuji.jpg';
 import GrammarContent from './pages/languageAgnostic/GrammarContent'
 import HiraganaExplained from './pages/japaneseSpecific/JapaneseExplained/HiraganaExplained'
-import Home from './pages/languageAgnostic/Home'
+import Home from './pages/japaneseSpecific/Home'
 import HomeVocabularyGuide from './pages/japaneseSpecific/VocabularyGuides/HomeVocabularyGuide'
-import TypingJapaneseExplained from './pages/japaneseSpecific/JapaneseExplained/TypingJapaneseExplained'
 import japaneseComprehensionVideo from './data/raw-data/tutorial-videos/japanese-comprehension-tutorial.mp4'
 import JapaneseHomepage from './pages/japaneseSpecific/JapaneseHomePage'
 import JapaneseNavbar from './pages/japaneseSpecific/JapaneseNavbar';
@@ -28,6 +27,7 @@ import Navbar from './components/atoms/Navbar'
 import ReadingListening from './pages/languageAgnostic/ReadingListening'
 import ResetPassword from './components/molecules/ResetPassword'
 import Signup from './components/molecules/Signup'
+import TypingJapaneseExplained from './pages/japaneseSpecific/JapaneseExplained/TypingJapaneseExplained'
 import useWindowWidth from './hooks/useWindowWidth';
 import VocabContent from './pages/languageAgnostic/VocabContent'
 import MainVocabularyGuide from './pages/japaneseSpecific/VocabularyGuides/MainVocabularyGuide';

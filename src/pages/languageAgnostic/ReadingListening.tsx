@@ -254,7 +254,7 @@ const ReadingListeningContent = (props: { languageNumber: number; howToGuideVide
     <div className="">
       <h4 className="flex flex-row justify-center text-center text-2xl py-12">
         <div className={`${consistentStyles.textBlack}`}>
-      Japanese Reading and Listening Comprehension
+          {currentLanguage.languageName} Reading and Listening Comprehension
         </div>    
       </h4>
     
@@ -367,17 +367,13 @@ const ReadingListeningContent = (props: { languageNumber: number; howToGuideVide
                  hover:text-gray-800">&times;</button>
               </div>
               <div className="p-4">
-                {currentLanguage.languageName === 'Japanese' ? (
-                  <div>
-                    <video
-                      controls
-                      src={props.howToGuideVideo}
-                      className="w-full rounded"
-                    />
-                  </div>
-                ) : (
-                  <div>Video coming soon</div>
-                )}
+                <div>
+                  <video
+                    controls
+                    src={props.howToGuideVideo}
+                    className="w-full rounded"
+                  />
+                </div>
               </div>
             </div>
           </div>

@@ -359,7 +359,7 @@ const WritingSystems = (
       <div className='flex mt-12 mb-12 items-center'>
         <h4 className="flex flex-row justify-center text-center text-2xl">
           <div className={`${consistentStyles.textBlack}`}>
-          Japanese Writing Systems -&nbsp;
+            {currentLanguage.languageName} Writing Systems -&nbsp;
             <a
               onClick={() => setShowPopUp(true)}
               className={`${consistentStyles.blueText} underline text-2xl`}
