@@ -31,6 +31,7 @@ import Signup from './components/molecules/Signup'
 import useWindowWidth from './hooks/useWindowWidth';
 import VocabContent from './pages/VocabContent'
 import VocabularyGuide from './pages/Japanese/VocabularyGuide';
+import VerbVocabularyGuide from './pages/Japanese/VerbVocabularyGuide'
 import WritingSystems from './pages/WritingSystems'
 
 const App = ()=> {
@@ -72,6 +73,8 @@ const App = ()=> {
             element={<FoodVocabularyGuide/>} />
           <Route path="/japanese/home-vocabulary-guide" 
             element={<HomeVocabularyGuide/>} />
+          <Route path="/japanese/verb-vocabulary-guide" 
+            element={<VerbVocabularyGuide/>} />
           <Route path="/japanese/vocabulary" 
             element={<VocabContent howToGuideVideo={japaneseVocabGuideVideo} />} />
           <Route path="/japanese/writing-systems-explained" element={<JapaneseWritingSystems />} />
@@ -111,6 +114,8 @@ const App = ()=> {
               element={<FoodVocabularyGuide/>} />
             <Route path="/japanese/home-vocabulary-guide" 
               element={<HomeVocabularyGuide/>} />
+            <Route path="/japanese/verb-vocabulary-guide" 
+              element={<VerbVocabularyGuide/>} />
             <Route path="/japanese/vocabulary" 
               element={<VocabContent howToGuideVideo={japaneseVocabGuideVideo} />} />
             <Route path="/japanese/writing-systems-explained" element={<JapaneseWritingSystems />} />

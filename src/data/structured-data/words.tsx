@@ -165,7 +165,13 @@ export const japaneseVocabTopicSlugNames = {
   family:'fam',
   food: {
     name: 'food',
-    subTopics: {},
+    subTopics: {
+      carbs: 'carbs',
+      drinks: 'drinks',
+      fruitsAndVegetables: 'fruitandveg',
+      meat: 'meat',
+      miscellaneous: 'misc',
+    },
   },
   home: {
     name: 'home',
@@ -188,10 +194,38 @@ export const japaneseVocabTopicSlugNames = {
   timeAndSeasons:'time',
   technology: 'tech',
   travel: 'tra',
-  weather: 'wea',
+  verbs: {
+    name: 'verbs',
+    subTopics: {
+      verbs1: 'verbs1',
+      verbs2: 'verbs2',
+      verbs3: 'verbs3',
+      verbs4: 'verbs4',
+    },
+  },
+  weather: 'weather',
 
 }
+
 const japaneseTopics: TopicWithThreeWritingSystems[] = [
+
+  { name: 'Carbs', slugName: japaneseVocabTopicSlugNames.food.subTopics.carbs, hasOrdering:false, hasLoginLock: true, isAlphabet: false, words: [] },
+  { name: 'Drinks', slugName: japaneseVocabTopicSlugNames.food.subTopics.drinks, hasOrdering:false, hasLoginLock: true, isAlphabet: false, words: [] },
+  { name: 'Fruits and Vegetables', slugName: japaneseVocabTopicSlugNames.food.subTopics.fruitsAndVegetables, hasOrdering:false, hasLoginLock: true, isAlphabet: false, words: [] },
+  { name: 'Meat', slugName: japaneseVocabTopicSlugNames.food.subTopics.meat, hasOrdering:false, hasLoginLock: true, isAlphabet: false, words: [] },
+  { name: 'Miscellaneous', slugName: japaneseVocabTopicSlugNames.food.subTopics.miscellaneous, hasOrdering:false, hasLoginLock: true, isAlphabet: false, words: [] },
+
+  { name: 'Bedroom', slugName: japaneseVocabTopicSlugNames.home.subTopics.bedroom, hasOrdering:false, hasLoginLock: true, isAlphabet: false, words: [] },
+  { name: 'Bathroom', slugName: japaneseVocabTopicSlugNames.home.subTopics.bathroom, hasOrdering:false, hasLoginLock: true, isAlphabet: false, words: [] },
+  { name: 'Kitchen', slugName: japaneseVocabTopicSlugNames.home.subTopics.kitchen, hasOrdering:false, hasLoginLock: true, isAlphabet: false, words: [] },
+  { name: 'Living Room', slugName: japaneseVocabTopicSlugNames.home.subTopics.livingRoom, hasOrdering:false, hasLoginLock: true, isAlphabet: false, words: [] },
+  { name: 'Furniture', slugName: japaneseVocabTopicSlugNames.home.subTopics.furniture, hasOrdering:false, hasLoginLock: true, isAlphabet: false, words: [] },
+
+  { name: 'Verbs I', slugName: japaneseVocabTopicSlugNames.verbs.subTopics.verbs1, hasOrdering:false, hasLoginLock: true, isAlphabet: false, words: [] },
+  { name: 'Verbs II', slugName: japaneseVocabTopicSlugNames.verbs.subTopics.verbs2, hasOrdering:false, hasLoginLock: true, isAlphabet: false, words: [] },
+  { name: 'Verbs III', slugName: japaneseVocabTopicSlugNames.verbs.subTopics.verbs3, hasOrdering:false, hasLoginLock: true, isAlphabet: false, words: [] },
+  { name: 'Verbs IV', slugName: japaneseVocabTopicSlugNames.verbs.subTopics.verbs4, hasOrdering:false, hasLoginLock: true, isAlphabet: false, words: [] },
+
   { name:'Numbers',slugName: japaneseVocabTopicSlugNames.numbers, hasOrdering:true, hasLoginLock: true, isAlphabet: false, words: [
     { englishWord: 'one', foreignWord: ['ichi', 'いち','一'], foreignAudio: japaneseAudioOne, order:1 },
     { englishWord: 'two', foreignWord: ['ni', 'に','二'], foreignAudio: japaneseAudioTwo, order:2 },

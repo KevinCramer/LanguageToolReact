@@ -21,11 +21,11 @@ interface Topic {
 // 2: https://www.learnalanguage.com/learn-japanese/japanese-verbs/
 // 3: https://www.learnalanguage.com/learn-japanese/japanese-phrases/
 const allTopics: Topic[] = [
-  { Name: 'Bathroom', slugName: japaneseVocabTopicSlugNames.weather, hasLoginLock: true },
-  { Name: 'Bedroom', slugName: japaneseVocabTopicSlugNames.weather, hasLoginLock: true },
-  { Name: 'Furniture', slugName: japaneseVocabTopicSlugNames.weather, hasLoginLock: true },
-  { Name: 'Kitchen', slugName: japaneseVocabTopicSlugNames.weather, hasLoginLock: true },
-  { Name: 'Living Room', slugName: japaneseVocabTopicSlugNames.weather, hasLoginLock: true },
+  { Name: 'Bathroom', slugName: japaneseVocabTopicSlugNames.home.subTopics.bathroom, hasLoginLock: true },
+  { Name: 'Bedroom', slugName: japaneseVocabTopicSlugNames.home.subTopics.bedroom, hasLoginLock: true },
+  { Name: 'Furniture', slugName: japaneseVocabTopicSlugNames.home.subTopics.furniture, hasLoginLock: true },
+  { Name: 'Kitchen', slugName: japaneseVocabTopicSlugNames.home.subTopics.kitchen, hasLoginLock: true },
+  { Name: 'Living Room', slugName: japaneseVocabTopicSlugNames.home.subTopics.livingRoom, hasLoginLock: true },
 
 ];
 

@@ -16,14 +16,13 @@ interface Topic {
 }
 
 const allTopics: Topic[] = [
-  { Name: 'Carbs', slugName: japaneseVocabTopicSlugNames.food.subTopics.carbs, hasLoginLock: true },
-  { Name: 'Drinks', slugName: japaneseVocabTopicSlugNames.food.subTopics.drinks, hasLoginLock: true },
-  { Name: 'Fruits & Vegetables', slugName: japaneseVocabTopicSlugNames.food.subTopics.fruitsAndVegetables, hasLoginLock: true },
-  { Name: 'Meat', slugName: japaneseVocabTopicSlugNames.food.subTopics.meat, hasLoginLock: true },
-  { Name: 'Miscellaneous', slugName: japaneseVocabTopicSlugNames.food.subTopics.miscellaneous, hasLoginLock: true },
+  { Name: 'Verbs I', slugName: japaneseVocabTopicSlugNames.verbs.subTopics.verbs1, hasLoginLock: true },
+  { Name: 'Verbs II', slugName: japaneseVocabTopicSlugNames.verbs.subTopics.verbs2, hasLoginLock: true },
+  { Name: 'Verbs III', slugName: japaneseVocabTopicSlugNames.verbs.subTopics.verbs3, hasLoginLock: true },
+  { Name: 'Verbs IV', slugName: japaneseVocabTopicSlugNames.verbs.subTopics.verbs4, hasLoginLock: true },
 ];
 
-const FoodVocabularyGuide = () => {
+const VerbVocabularyGuide = () => {
   //@ts-ignore
   const { currentUser } = useAuth();
   const dispatch = useDispatch();
@@ -63,7 +62,7 @@ const FoodVocabularyGuide = () => {
 
   return (
     <div className="max-w-screen-md mx-auto px-4 text-center">
-      <PageTitle title='Food Vocabulary Guide' />
+      <PageTitle title='Verbs Vocabulary Guide' />
       <div style={gridStyles}>
         {allTopics.map((topic, index) => (
           <div
@@ -90,4 +89,4 @@ const FoodVocabularyGuide = () => {
   );
 };
 
-export default FoodVocabularyGuide;
+export default VerbVocabularyGuide;

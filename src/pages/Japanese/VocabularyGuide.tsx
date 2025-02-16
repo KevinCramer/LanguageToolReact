@@ -81,6 +81,7 @@ const allTopics: Topic[] = [
   { Name: 'Travel', slugName: japaneseVocabTopicSlugNames.travel, hasLoginLock: true },
   // { Name: 'Types of Restaurants' },
   // { Name: 'Vehicles' },
+  { Name: 'Verbs', slugName: japaneseVocabTopicSlugNames.verbs.name, hasLoginLock: true },
   // { Name: 'Verbs Group 1' },
   // { Name: 'Verbs Group 2' },
   // { Name: 'Verbs Group 3' },
@@ -116,6 +117,9 @@ const VocabularyGuide = () => {
       else if(topic.slugName === japaneseVocabTopicSlugNames.home.name){
         dispatch(setForwardRoute('/japanese/home-vocabulary-guide')); 
       }
+      else if(topic.slugName === japaneseVocabTopicSlugNames.verbs.name){
+        dispatch(setForwardRoute('/japanese/verb-vocabulary-guide')); 
+      }
       else{
         dispatch(setForwardRoute(`/japanese/vocabulary?s=${topic.slugName}-T0TFT`)); 
       }
@@ -127,6 +131,9 @@ const VocabularyGuide = () => {
       }
       else if(topic.slugName === japaneseVocabTopicSlugNames.home.name){
         navigate('/japanese/home-vocabulary-guide'); 
+      }
+      else if(topic.slugName === japaneseVocabTopicSlugNames.verbs.name){
+        navigate('/japanese/verb-vocabulary-guide'); 
       }
       else {
         navigate(`/japanese/vocabulary?s=${topic.slugName}-T0TFT`);
