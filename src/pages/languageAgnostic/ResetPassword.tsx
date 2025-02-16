@@ -1,10 +1,10 @@
 import { useRef, useState } from 'react';
 import CloseIcon from '../../components/atoms/CloseIcon';
+import { consistentStyles } from '../../constants';
 import { RootStateRoute } from '../../redux-store/route';
 import { useAuth } from '../../contexts/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { consistentStyles } from '../../constants';
 
 export default function ResetPassWord() {
   const navigate = useNavigate();

@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test';
 
-test.describe('Vocabulary Study and Quiz Table', () => {
+test.describe('Vocabulary Table', () => {
   // AC1 - Column headers are English and Japanese
   // GIVEN a user is on the Japanese Vocabulary page
   // WHEN user selects the animals topic
