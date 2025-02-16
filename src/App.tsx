@@ -1,16 +1,17 @@
 import './index.css';
 import { Route, Routes, useLocation } from 'react-router-dom'
-import { useEffect, useState } from 'react';
 import About from './pages/About'
 import Account from './pages/Account'
 import ContactUs from './pages/ContactUs'
 import Custom404Error from './pages/Custom404Error'
 import DeleteAccount from './components/atoms/DeleteAccount'
+import FoodVocabularyGuide from './pages/Japanese/FoodVocabularyGuide'
 import FreeContent from './components/atoms/FreeContent';
 import fujiImage from '/src/assets/mount-fuji.jpg';
 import GrammarContent from './pages/GrammarContent'
 import HiraganaExplained from './pages/Japanese/HiraganaExplained'
 import Home from './pages/Home'
+import HomeVocabularyGuide from './pages/Japanese/HomeVocabularyGuide'
 import HowToTypeJapanese from './pages/Japanese/HowToTypeJapanese'
 import japaneseComprehensionVideo from './data/raw-data/tutorial-videos/japanese-comprehension-tutorial.mp4'
 import JapaneseHomepage from './pages/Japanese/JapaneseHomePage'
@@ -22,6 +23,7 @@ import japaneseWritingSystemsVideo from './data/raw-data/tutorial-videos/japanes
 import KanjiExplained from './pages/Japanese/KanjiExplained'
 import KatakanaExplained from './pages/Japanese/KatakanaExplained'
 import Login from './components/molecules/Login'
+import { mobileBreakPoint } from './constants';
 import Navbar from './components/atoms/Navbar'
 import ReadingListening from './pages/ReadingListening'
 import ResetPassword from './components/molecules/ResetPassword'
@@ -30,7 +32,6 @@ import useWindowWidth from './hooks/useWindowWidth';
 import VocabContent from './pages/VocabContent'
 import VocabularyGuide from './pages/Japanese/VocabularyGuide';
 import WritingSystems from './pages/WritingSystems'
-import { mobileBreakPoint } from './constants';
 
 const App = ()=> {
   const location = useLocation();
@@ -67,6 +68,10 @@ const App = ()=> {
           <Route path="/japanese/home-page" element={<JapaneseHomepage/>} />
           <Route path="/japanese/vocabulary-guide" 
             element={<VocabularyGuide/>} />
+          <Route path="/japanese/food-vocabulary-guide" 
+            element={<FoodVocabularyGuide/>} />
+          <Route path="/japanese/home-vocabulary-guide" 
+            element={<HomeVocabularyGuide/>} />
           <Route path="/japanese/vocabulary" 
             element={<VocabContent howToGuideVideo={japaneseVocabGuideVideo} />} />
           <Route path="/japanese/writing-systems-explained" element={<JapaneseWritingSystems />} />
@@ -102,6 +107,10 @@ const App = ()=> {
             <Route path="/japanese/home-page" element={<JapaneseHomepage/>} />
             <Route path="/japanese/vocabulary-guide" 
               element={<VocabularyGuide/>} />
+            <Route path="/japanese/food-vocabulary-guide" 
+              element={<FoodVocabularyGuide/>} />
+            <Route path="/japanese/home-vocabulary-guide" 
+              element={<HomeVocabularyGuide/>} />
             <Route path="/japanese/vocabulary" 
               element={<VocabContent howToGuideVideo={japaneseVocabGuideVideo} />} />
             <Route path="/japanese/writing-systems-explained" element={<JapaneseWritingSystems />} />

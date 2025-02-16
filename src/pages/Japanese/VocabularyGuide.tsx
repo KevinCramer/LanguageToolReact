@@ -41,10 +41,11 @@ const allTopics: Topic[] = [
   // { Name: 'Countries and Continents' },
   { Name: 'Days of Week', slugName: japaneseVocabTopicSlugNames.daysOfWeek, hasLoginLock: true },
   { Name: 'Family', slugName: japaneseVocabTopicSlugNames.family, hasLoginLock: true },
-  { Name: 'Food I', slugName: japaneseVocabTopicSlugNames.food, hasLoginLock: true },
+  { Name: 'Food', slugName: japaneseVocabTopicSlugNames.food.name, hasLoginLock: true },
   // { Name: 'Food II' },
   // { Name: 'Furniture' },
   // { Name: 'Government' },
+  { Name: 'Home', slugName: japaneseVocabTopicSlugNames.home.name, hasLoginLock: true },
   { Name: 'Irregular Adjectives', slugName: japaneseVocabTopicSlugNames.irregularAdjectives, hasLoginLock: true },
   // { Name: 'Irregular Adjectives Group 2' },
   // { Name: 'Irregular Adjectives Group 3' },
@@ -109,11 +110,27 @@ const VocabularyGuide = () => {
   const handleTopicClick = (topic: Topic) => {
     if(topic.hasLoginLock && lingoCommandHasLoginLock && !userIsLoggedIn) {
       dispatch(setBackwardRoute(`/japanese/vocabulary-guide`));
-      dispatch(setForwardRoute(`/japanese/vocabulary?s=${topic.slugName}-T0TFT`)); 
+      if(topic.slugName === japaneseVocabTopicSlugNames.food.name){
+        dispatch(setForwardRoute('/japanese/food-vocabulary-guide')); 
+      }
+      else if(topic.slugName === japaneseVocabTopicSlugNames.home.name){
+        dispatch(setForwardRoute('/japanese/home-vocabulary-guide')); 
+      }
+      else{
+        dispatch(setForwardRoute(`/japanese/vocabulary?s=${topic.slugName}-T0TFT`)); 
+      }
       navigate('/free-content');
     }
     else{
-      navigate(`/japanese/vocabulary?s=${topic.slugName}-T0TFT`);
+      if(topic.slugName === japaneseVocabTopicSlugNames.food.name){
+        navigate('/japanese/food-vocabulary-guide'); 
+      }
+      else if(topic.slugName === japaneseVocabTopicSlugNames.home.name){
+        navigate('/japanese/home-vocabulary-guide'); 
+      }
+      else {
+        navigate(`/japanese/vocabulary?s=${topic.slugName}-T0TFT`);
+      }
     }
   };
 

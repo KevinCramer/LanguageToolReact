@@ -163,7 +163,20 @@ export const japaneseVocabTopicSlugNames = {
   colours: 'col',
   daysOfWeek: 'day',
   family:'fam',
-  food: 'food',
+  food: {
+    name: 'food',
+    subTopics: {},
+  },
+  home: {
+    name: 'home',
+    subTopics: {
+      bedroom: 'bedroom',
+      bathroom: 'bathroom',
+      kitchen: 'kitchen',
+      livingRoom: 'livingRoom',
+      furniture: 'furniture',
+    }
+  },
   irregularAdjectives: 'adj2',
   locations: 'locations',
   monthsOfYear: 'mon',
@@ -481,7 +494,7 @@ const japaneseTopics: TopicWithThreeWritingSystems[] = [
     ]
   },
   {
-    name: 'Food', slugName: japaneseVocabTopicSlugNames.food, hasOrdering: false, hasLoginLock: true, isAlphabet: false, words: [
+    name: 'Food', slugName: japaneseVocabTopicSlugNames.food.name, hasOrdering: false, hasLoginLock: true, isAlphabet: false, words: [
       { englishWord: 'bread', foreignWord: ['pan', 'パン', 'パン'], foreignAudio: japaneseAudioBread },
       { englishWord: 'eggs', foreignWord: ['tamago', 'たまご', '卵'], foreignAudio: japaneseAudioEggs },
       { englishWord: 'chicken', foreignWord: ['toriniku', 'とりにく', '鶏肉'], foreignAudio: japaneseAudioChicken },
