@@ -2,8 +2,6 @@ export const languageToSlugs: Record<string,string> = {
   'Japanese': 'jap',
 }
 
-export const lightGrey = 'rgb(230,230,230)'
-
 export const lingoCommandHasLoginLock = true;
 
 export const mobileBreakPoint = 768;
