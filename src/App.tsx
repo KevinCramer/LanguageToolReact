@@ -5,13 +5,13 @@ import Account from './pages/Account'
 import ContactUs from './pages/ContactUs'
 import Custom404Error from './pages/Custom404Error'
 import DeleteAccount from './components/atoms/DeleteAccount'
-import FoodVocabularyGuide from './pages/Japanese/FoodVocabularyGuide'
+import FoodVocabularyGuide from './pages/Japanese/VocabularyGuides/FoodVocabularyGuide'
 import FreeContent from './components/atoms/FreeContent';
 import fujiImage from '/src/assets/mount-fuji.jpg';
 import GrammarContent from './pages/GrammarContent'
 import HiraganaExplained from './pages/Japanese/HiraganaExplained'
 import Home from './pages/Home'
-import HomeVocabularyGuide from './pages/Japanese/HomeVocabularyGuide'
+import HomeVocabularyGuide from './pages/Japanese/VocabularyGuides/HomeVocabularyGuide'
 import HowToTypeJapanese from './pages/Japanese/HowToTypeJapanese'
 import japaneseComprehensionVideo from './data/raw-data/tutorial-videos/japanese-comprehension-tutorial.mp4'
 import JapaneseHomepage from './pages/Japanese/JapaneseHomePage'
@@ -30,8 +30,8 @@ import ResetPassword from './components/molecules/ResetPassword'
 import Signup from './components/molecules/Signup'
 import useWindowWidth from './hooks/useWindowWidth';
 import VocabContent from './pages/VocabContent'
-import VocabularyGuide from './pages/Japanese/VocabularyGuide';
-import VerbVocabularyGuide from './pages/Japanese/VerbVocabularyGuide'
+import MainVocabularyGuide from './pages/Japanese/VocabularyGuides/MainVocabularyGuide';
+import VerbVocabularyGuide from './pages/Japanese/VocabularyGuides/VerbVocabularyGuide'
 import WritingSystems from './pages/WritingSystems'
 
 const App = ()=> {
@@ -68,7 +68,7 @@ const App = ()=> {
           <Route path="/free-content" element={<FreeContent/>} />
           <Route path="/japanese/home-page" element={<JapaneseHomepage/>} />
           <Route path="/japanese/vocabulary-guide" 
-            element={<VocabularyGuide/>} />
+            element={<MainVocabularyGuide/>} />
           <Route path="/japanese/food-vocabulary-guide" 
             element={<FoodVocabularyGuide/>} />
           <Route path="/japanese/home-vocabulary-guide" 
@@ -109,7 +109,7 @@ const App = ()=> {
             <Route path="/free-content" element={<FreeContent/>} />
             <Route path="/japanese/home-page" element={<JapaneseHomepage/>} />
             <Route path="/japanese/vocabulary-guide" 
-              element={<VocabularyGuide/>} />
+              element={<MainVocabularyGuide/>} />
             <Route path="/japanese/food-vocabulary-guide" 
               element={<FoodVocabularyGuide/>} />
             <Route path="/japanese/home-vocabulary-guide" 

@@ -1,12 +1,12 @@
-import { consistentStyles, lingoCommandHasLoginLock, mobileBreakPoint } from '../../constants';
-import { setBackwardRoute, setForwardRoute } from '../../redux-store/route';
-import { japaneseVocabTopicSlugNames } from '../../data/structured-data/words';
+import { consistentStyles, lingoCommandHasLoginLock, mobileBreakPoint } from '../../../constants';
+import { setBackwardRoute, setForwardRoute } from '../../../redux-store/route';
+import { japaneseVocabTopicSlugNames } from '../../../data/structured-data/words';
 import LockIcon from '@mui/icons-material/Lock';
-import PageTitle from '../../components/atoms/PageTitle';
-import { useAuth } from '../../contexts/AuthContext';
+import PageTitle from '../../../components/atoms/PageTitle';
+import { useAuth } from '../../../contexts/AuthContext';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import useWindowWidth from '../../hooks/useWindowWidth';
+import useWindowWidth from '../../../hooks/useWindowWidth';
 
 interface Topic {
   Name: string;
@@ -15,11 +15,6 @@ interface Topic {
 
 }
 
-// commented out topics are not yet implemented
-// go to these links for vocab data:
-// 1: https://www.learnalanguage.com/learn-japanese/japanese-words/
-// 2: https://www.learnalanguage.com/learn-japanese/japanese-verbs/
-// 3: https://www.learnalanguage.com/learn-japanese/japanese-phrases/
 const allTopics: Topic[] = [
   { Name: 'Bathroom', slugName: japaneseVocabTopicSlugNames.home.subTopics.bathroom, hasLoginLock: true },
   { Name: 'Bedroom', slugName: japaneseVocabTopicSlugNames.home.subTopics.bedroom, hasLoginLock: true },

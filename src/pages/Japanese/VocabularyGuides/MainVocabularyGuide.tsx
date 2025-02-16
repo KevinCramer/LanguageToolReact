@@ -1,12 +1,12 @@
-import { consistentStyles, lingoCommandHasLoginLock, mobileBreakPoint } from '../../constants';
-import { setBackwardRoute, setForwardRoute } from '../../redux-store/route';
-import { japaneseVocabTopicSlugNames } from '../../data/structured-data/words';
+import { consistentStyles, lingoCommandHasLoginLock, mobileBreakPoint } from '../../../constants';
+import { setBackwardRoute, setForwardRoute } from '../../../redux-store/route';
+import { japaneseVocabTopicSlugNames } from '../../../data/structured-data/words';
 import LockIcon from '@mui/icons-material/Lock';
-import PageTitle from '../../components/atoms/PageTitle';
-import { useAuth } from '../../contexts/AuthContext';
+import PageTitle from '../../../components/atoms/PageTitle';
+import { useAuth } from '../../../contexts/AuthContext';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import useWindowWidth from '../../hooks/useWindowWidth';
+import useWindowWidth from '../../../hooks/useWindowWidth';
 
 interface Topic {
   Name: string;
@@ -100,7 +100,7 @@ const allTopics: Topic[] = [
   { Name: 'Weather', slugName: japaneseVocabTopicSlugNames.weather, hasLoginLock: true },
 ];
 
-const VocabularyGuide = () => {
+const MainVocabularyGuide = () => {
   //@ts-ignore
   const { currentUser } = useAuth();
   const dispatch = useDispatch();
@@ -189,4 +189,4 @@ const VocabularyGuide = () => {
   );
 };
 
-export default VocabularyGuide;
+export default MainVocabularyGuide;
