@@ -1,62 +1,62 @@
-import { consistentStyles, lingoCommandHasLoginLock } from '../../constants';
+import { consistentStyles, lingoCommandHasLoginLock } from '../../../constants';
 import { japaneseWritingSystemsTopicSlugNames, writingSystems } 
-  from '../../data/structured-data/writingSystems';
-import { LanguageNames, LearningSections } from '../../../types/LearningSectionsTypes';
+  from '../../../data/structured-data/writingSystems';
+import { LanguageNames, LearningSections } from '../../../../types/LearningSectionsTypes';
 import { useEffect, useState } from 'react';
-import { createURL } from '../../helpers/createURL';
+import { createURL } from '../../../helpers/createURL';
 import LockIcon from '@mui/icons-material/Lock';
-import { useAuth } from '../../contexts/AuthContext';
-import { useProtectedLink } from '../../helpers/use-protected-link';
+import { useAuth } from '../../../contexts/AuthContext';
+import { useProtectedLink } from '../../../helpers/use-protected-link';
 import { useSearchParams } from 'react-router-dom';
 import VolumeUpIcon from '@mui/icons-material/VolumeUp';
 
 /* eslint-disable sort-imports */
-import hiraganaAudioA from '../../data/raw-data/audio_vocab/japanese/hiragana/a.mp3'
-import hiraganaAudioI from '../../data/raw-data/audio_vocab/japanese/hiragana/i.mp3'
-import hiraganaAudioU from '../../data/raw-data/audio_vocab/japanese/hiragana/u.mp3'
-import hiraganaAudioE from '../../data/raw-data/audio_vocab/japanese/hiragana/e.mp3'
-import hiraganaAudioO from '../../data/raw-data/audio_vocab/japanese/hiragana/o.mp3'
-import hiraganaAudioKa from '../../data/raw-data/audio_vocab/japanese/hiragana/ka.mp3'
-import hiraganaAudioKi from '../../data/raw-data/audio_vocab/japanese/hiragana/ki.mp3'
-import hiraganaAudioKu from '../../data/raw-data/audio_vocab/japanese/hiragana/ku.mp3'
-import hiraganaAudioKe from '../../data/raw-data/audio_vocab/japanese/hiragana/ke.mp3'
-import hiraganaAudioKo from '../../data/raw-data/audio_vocab/japanese/hiragana/ko.mp3'
-import hiraganaAudioSa from '../../data/raw-data/audio_vocab/japanese/hiragana/sa.mp3'
-import hiraganaAudioShi from '../../data/raw-data/audio_vocab/japanese/hiragana/shi.mp3'
-import hiraganaAudioSu from '../../data/raw-data/audio_vocab/japanese/hiragana/su.mp3'
-import hiraganaAudioSe from '../../data/raw-data/audio_vocab/japanese/hiragana/se.mp3'
-import hiraganaAudioSo from '../../data/raw-data/audio_vocab/japanese/hiragana/so.mp3'
-import hiraganaAudioTa from '../../data/raw-data/audio_vocab/japanese/hiragana/ta.mp3'
-import hiraganaAudioChi from '../../data/raw-data/audio_vocab/japanese/hiragana/chi.mp3'
-import hiraganaAudioTsu from '../../data/raw-data/audio_vocab/japanese/hiragana/tsu.mp3'
-import hiraganaAudioTe from '../../data/raw-data/audio_vocab/japanese/hiragana/te.mp3'
-import hiraganaAudioTo from '../../data/raw-data/audio_vocab/japanese/hiragana/to.mp3'
-import hiraganaAudioNa from '../../data/raw-data/audio_vocab/japanese/hiragana/na.mp3'
-import hiraganaAudioNi from '../../data/raw-data/audio_vocab/japanese/hiragana/ni.mp3'
-import hiraganaAudioNu from '../../data/raw-data/audio_vocab/japanese/hiragana/nu.mp3'
-import hiraganaAudioNe from '../../data/raw-data/audio_vocab/japanese/hiragana/ne.mp3'
-import hiraganaAudioNo from '../../data/raw-data/audio_vocab/japanese/hiragana/no.mp3'
-import hiraganaAudioHa from '../../data/raw-data/audio_vocab/japanese/hiragana/ha.mp3'
-import hiraganaAudioHi from '../../data/raw-data/audio_vocab/japanese/hiragana/hi.mp3'
-import hiraganaAudioFu from '../../data/raw-data/audio_vocab/japanese/hiragana/fu.mp3'
-import hiraganaAudioHe from '../../data/raw-data/audio_vocab/japanese/hiragana/he.mp3'
-import hiraganaAudioHo from '../../data/raw-data/audio_vocab/japanese/hiragana/ho.mp3'
-import hiraganaAudioMa from '../../data/raw-data/audio_vocab/japanese/hiragana/ma.mp3'
-import hiraganaAudioMi from '../../data/raw-data/audio_vocab/japanese/hiragana/mi.mp3'
-import hiraganaAudioMu from '../../data/raw-data/audio_vocab/japanese/hiragana/mu.mp3'
-import hiraganaAudioMe from '../../data/raw-data/audio_vocab/japanese/hiragana/me.mp3'
-import hiraganaAudioMo from '../../data/raw-data/audio_vocab/japanese/hiragana/mo.mp3'
-import hiraganaAudioYa from '../../data/raw-data/audio_vocab/japanese/hiragana/ya.mp3'
-import hiraganaAudioYu from '../../data/raw-data/audio_vocab/japanese/hiragana/yu.mp3'
-import hiraganaAudioYo from '../../data/raw-data/audio_vocab/japanese/hiragana/yo.mp3'
-import hiraganaAudioRa from '../../data/raw-data/audio_vocab/japanese/hiragana/ra.mp3'
-import hiraganaAudioRi from '../../data/raw-data/audio_vocab/japanese/hiragana/ri.mp3'
-import hiraganaAudioRu from '../../data/raw-data/audio_vocab/japanese/hiragana/ru.mp3'
-import hiraganaAudioRe from '../../data/raw-data/audio_vocab/japanese/hiragana/re.mp3'
-import hiraganaAudioRo from '../../data/raw-data/audio_vocab/japanese/hiragana/ro.mp3'
-import hiraganaAudioWa from '../../data/raw-data/audio_vocab/japanese/hiragana/wa.mp3'
-import hiraganaAudioWo from '../../data/raw-data/audio_vocab/japanese/hiragana/wo.mp3'
-import hiraganaAudioN from '../../data/raw-data/audio_vocab/japanese/hiragana/n.mp3'
+import hiraganaAudioA from '../../../data/raw-data/audio_vocab/japanese/hiragana/a.mp3'
+import hiraganaAudioI from '../../../data/raw-data/audio_vocab/japanese/hiragana/i.mp3'
+import hiraganaAudioU from '../../../data/raw-data/audio_vocab/japanese/hiragana/u.mp3'
+import hiraganaAudioE from '../../../data/raw-data/audio_vocab/japanese/hiragana/e.mp3'
+import hiraganaAudioO from '../../../data/raw-data/audio_vocab/japanese/hiragana/o.mp3'
+import hiraganaAudioKa from '../../../data/raw-data/audio_vocab/japanese/hiragana/ka.mp3'
+import hiraganaAudioKi from '../../../data/raw-data/audio_vocab/japanese/hiragana/ki.mp3'
+import hiraganaAudioKu from '../../../data/raw-data/audio_vocab/japanese/hiragana/ku.mp3'
+import hiraganaAudioKe from '../../../data/raw-data/audio_vocab/japanese/hiragana/ke.mp3'
+import hiraganaAudioKo from '../../../data/raw-data/audio_vocab/japanese/hiragana/ko.mp3'
+import hiraganaAudioSa from '../../../data/raw-data/audio_vocab/japanese/hiragana/sa.mp3'
+import hiraganaAudioShi from '../../../data/raw-data/audio_vocab/japanese/hiragana/shi.mp3'
+import hiraganaAudioSu from '../../../data/raw-data/audio_vocab/japanese/hiragana/su.mp3'
+import hiraganaAudioSe from '../../../data/raw-data/audio_vocab/japanese/hiragana/se.mp3'
+import hiraganaAudioSo from '../../../data/raw-data/audio_vocab/japanese/hiragana/so.mp3'
+import hiraganaAudioTa from '../../../data/raw-data/audio_vocab/japanese/hiragana/ta.mp3'
+import hiraganaAudioChi from '../../../data/raw-data/audio_vocab/japanese/hiragana/chi.mp3'
+import hiraganaAudioTsu from '../../../data/raw-data/audio_vocab/japanese/hiragana/tsu.mp3'
+import hiraganaAudioTe from '../../../data/raw-data/audio_vocab/japanese/hiragana/te.mp3'
+import hiraganaAudioTo from '../../../data/raw-data/audio_vocab/japanese/hiragana/to.mp3'
+import hiraganaAudioNa from '../../../data/raw-data/audio_vocab/japanese/hiragana/na.mp3'
+import hiraganaAudioNi from '../../../data/raw-data/audio_vocab/japanese/hiragana/ni.mp3'
+import hiraganaAudioNu from '../../../data/raw-data/audio_vocab/japanese/hiragana/nu.mp3'
+import hiraganaAudioNe from '../../../data/raw-data/audio_vocab/japanese/hiragana/ne.mp3'
+import hiraganaAudioNo from '../../../data/raw-data/audio_vocab/japanese/hiragana/no.mp3'
+import hiraganaAudioHa from '../../../data/raw-data/audio_vocab/japanese/hiragana/ha.mp3'
+import hiraganaAudioHi from '../../../data/raw-data/audio_vocab/japanese/hiragana/hi.mp3'
+import hiraganaAudioFu from '../../../data/raw-data/audio_vocab/japanese/hiragana/fu.mp3'
+import hiraganaAudioHe from '../../../data/raw-data/audio_vocab/japanese/hiragana/he.mp3'
+import hiraganaAudioHo from '../../../data/raw-data/audio_vocab/japanese/hiragana/ho.mp3'
+import hiraganaAudioMa from '../../../data/raw-data/audio_vocab/japanese/hiragana/ma.mp3'
+import hiraganaAudioMi from '../../../data/raw-data/audio_vocab/japanese/hiragana/mi.mp3'
+import hiraganaAudioMu from '../../../data/raw-data/audio_vocab/japanese/hiragana/mu.mp3'
+import hiraganaAudioMe from '../../../data/raw-data/audio_vocab/japanese/hiragana/me.mp3'
+import hiraganaAudioMo from '../../../data/raw-data/audio_vocab/japanese/hiragana/mo.mp3'
+import hiraganaAudioYa from '../../../data/raw-data/audio_vocab/japanese/hiragana/ya.mp3'
+import hiraganaAudioYu from '../../../data/raw-data/audio_vocab/japanese/hiragana/yu.mp3'
+import hiraganaAudioYo from '../../../data/raw-data/audio_vocab/japanese/hiragana/yo.mp3'
+import hiraganaAudioRa from '../../../data/raw-data/audio_vocab/japanese/hiragana/ra.mp3'
+import hiraganaAudioRi from '../../../data/raw-data/audio_vocab/japanese/hiragana/ri.mp3'
+import hiraganaAudioRu from '../../../data/raw-data/audio_vocab/japanese/hiragana/ru.mp3'
+import hiraganaAudioRe from '../../../data/raw-data/audio_vocab/japanese/hiragana/re.mp3'
+import hiraganaAudioRo from '../../../data/raw-data/audio_vocab/japanese/hiragana/ro.mp3'
+import hiraganaAudioWa from '../../../data/raw-data/audio_vocab/japanese/hiragana/wa.mp3'
+import hiraganaAudioWo from '../../../data/raw-data/audio_vocab/japanese/hiragana/wo.mp3'
+import hiraganaAudioN from '../../../data/raw-data/audio_vocab/japanese/hiragana/n.mp3'
 /* eslint-enable sort-imports */
 
 const lessonTitles = {

@@ -9,19 +9,19 @@ import FoodVocabularyGuide from './pages/Japanese/VocabularyGuides/FoodVocabular
 import FreeContent from './components/atoms/FreeContent';
 import fujiImage from '/src/assets/mount-fuji.jpg';
 import GrammarContent from './pages/GrammarContent'
-import HiraganaExplained from './pages/Japanese/HiraganaExplained'
+import HiraganaExplained from './pages/Japanese/JapaneseExplained/HiraganaExplained'
 import Home from './pages/Home'
 import HomeVocabularyGuide from './pages/Japanese/VocabularyGuides/HomeVocabularyGuide'
-import HowToTypeJapanese from './pages/Japanese/HowToTypeJapanese'
+import HowToTypeJapanese from './pages/Japanese//JapaneseExplained/HowToTypeJapanese'
 import japaneseComprehensionVideo from './data/raw-data/tutorial-videos/japanese-comprehension-tutorial.mp4'
 import JapaneseHomepage from './pages/Japanese/JapaneseHomePage'
 import JapaneseNavbar from './pages/Japanese/JapaneseNavbar';
 import JapaneseStudyGuide from './pages/Japanese/JapaneseStudyGuide'
 import japaneseVocabGuideVideo from './data/raw-data/tutorial-videos/japanese-vocab-guide.mp4'
-import JapaneseWritingSystems from './pages/Japanese/WritingSystemsExplained'
+import JapaneseWritingSystems from './pages/Japanese//JapaneseExplained/WritingSystemsExplained'
 import japaneseWritingSystemsVideo from './data/raw-data/tutorial-videos/japanese-writing-systems-tutorial.mp4'
-import KanjiExplained from './pages/Japanese/KanjiExplained'
-import KatakanaExplained from './pages/Japanese/KatakanaExplained'
+import KanjiExplained from './pages/Japanese//JapaneseExplained/KanjiExplained'
+import KatakanaExplained from './pages/Japanese/JapaneseExplained/KatakanaExplained'
 import Login from './components/molecules/Login'
 import { mobileBreakPoint } from './constants';
 import Navbar from './components/atoms/Navbar'

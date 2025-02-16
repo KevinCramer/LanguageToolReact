@@ -1,6 +1,6 @@
-import { consistentStyles } from '../../constants';
-import howToTypeJapaneseTutorial from '../../data/raw-data/tutorial-videos/how-to-type-japanese.mp4'
-import PageTitle from '../../components/atoms/PageTitle';
+import { consistentStyles } from '../../../constants';
+import howToTypeJapaneseTutorial from '../../../data/raw-data/tutorial-videos/how-to-type-japanese.mp4'
+import PageTitle from '../../../components/atoms/PageTitle';
 import { useState } from 'react';
 
 const HowToTypeJapanese = () => {

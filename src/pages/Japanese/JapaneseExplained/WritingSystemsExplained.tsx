@@ -1,5 +1,5 @@
-import PageTitle from '../../components/atoms/PageTitle';
-import { consistentStyles } from '../../constants';
+import PageTitle from '../../../components/atoms/PageTitle';
+import { consistentStyles } from '../../../constants';
 
 const JapaneseWritingSystems = () => {
   const sections = [
