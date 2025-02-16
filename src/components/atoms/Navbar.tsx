@@ -3,7 +3,7 @@ import { setBackwardRoute, setForwardRoute } from '../../redux-store/route';
 import { useEffect, useRef, useState } from 'react';
 import { BsPerson } from 'react-icons/bs';
 import { FaChevronDown } from 'react-icons/fa';
-import { consistentStyles, fontStretch, mobileBreakPoint } from '../../constants';
+import { consistentStyles, mobileBreakPoint } from '../../constants';
 import { useAuth } from '../../contexts/AuthContext';
 import { useDispatch } from 'react-redux';
 import useWindowWidth from '../../hooks/useWindowWidth';
@@ -53,7 +53,6 @@ const Navbar = () => {
   // Define dynamic text color class
   const backgroundColorClass = pathWithBackground ? '' : 'bg-gray-800';
 
-  const navbarFontStretch = isMobile ? fontStretch : '100%'
   return (
     <>
       <nav className={`${backgroundColorClass} flex justify-between items-center px-2 md:pr-4 ${consistentStyles.textWhite} relative`}>
@@ -79,7 +78,7 @@ const Navbar = () => {
           <NavLink to='/japanese/home-page' className={onJapanese ? `underline ${consistentStyles.textWhite}` : `${consistentStyles.textWhite}`}> 
         Japanese
           </NavLink>
-          <NavLink to='/about' className={({ isActive }) => isActive ? `underline ${consistentStyles.textWhite}` : `${consistentStyles.textWhite}`} style={{ fontStretch: navbarFontStretch }}> 
+          <NavLink to='/about' className={({ isActive }) => isActive ? `underline ${consistentStyles.textWhite}` : `${consistentStyles.textWhite}`}> 
           About
           </NavLink>
         </>
@@ -87,7 +86,6 @@ const Navbar = () => {
         {!(currentUser && currentUser.email) && (
           <button
             className={`${consistentStyles.textWhite} md:mr-8`}
-            style={{ fontStretch: navbarFontStretch }}
             onClick={async () => {
               if (currentUser && currentUser.email) {
                 try {

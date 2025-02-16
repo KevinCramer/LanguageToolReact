@@ -1,4 +1,4 @@
-import { consistentStyles, fontStretch, mobileBreakPoint } from '../../constants';
+import { consistentStyles, mobileBreakPoint } from '../../constants';
 import { NavLink, useLocation } from 'react-router-dom';
 import useWindowWidth from '../../hooks/useWindowWidth';
   
@@ -8,14 +8,12 @@ const JapaneseNavbar = () => {
 
   // Now you can use width to check screen size in your component
   const isMobile = width < mobileBreakPoint 
-  const navbarFontStretch = isMobile ? fontStretch : '100%'
   return (
     <>
       <nav className='p-4'>
         {/* Add a wrapper div with horizontal overflow */}
         <div 
-          className={`${consistentStyles.textBlack} overflow-x-auto whitespace-nowrap`}
-          style={{ fontStretch: navbarFontStretch }}>
+          className={`${consistentStyles.textBlack} overflow-x-auto whitespace-nowrap`}>
           <ul className="flex space-x-4 justify-start lg:justify-center">
             <li>
               <NavLink 

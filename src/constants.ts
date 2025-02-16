@@ -11,8 +11,6 @@ export const protectedLinkStyle = {
   display:'flex',alignItems: 'center', justifyContent: 'space-between' 
 }
 
-export const fontStretch = '100%'
-
 // Tailwind's JIT compiler does not detect dynamically generated classes,  
 // so colours cannot be extracted dynamically from `consistentStyles`.  
 // Instead, use (Ctrl + D) to quickly select and replace colours  
