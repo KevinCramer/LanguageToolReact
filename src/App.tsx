@@ -12,7 +12,7 @@ import GrammarContent from './pages/GrammarContent'
 import HiraganaExplained from './pages/Japanese/JapaneseExplained/HiraganaExplained'
 import Home from './pages/Home'
 import HomeVocabularyGuide from './pages/Japanese/VocabularyGuides/HomeVocabularyGuide'
-import HowToTypeJapanese from './pages/Japanese//JapaneseExplained/HowToTypeJapanese'
+import TypingJapaneseExplained from './pages/Japanese/JapaneseExplained/TypingJapaneseExplained'
 import japaneseComprehensionVideo from './data/raw-data/tutorial-videos/japanese-comprehension-tutorial.mp4'
 import JapaneseHomepage from './pages/Japanese/JapaneseHomePage'
 import JapaneseNavbar from './pages/Japanese/JapaneseNavbar';
@@ -81,7 +81,7 @@ const App = ()=> {
           <Route path="/japanese/hiragana-explained" element={<HiraganaExplained />} />
           <Route path="/japanese/katakana-explained" element={<KatakanaExplained />} />
           <Route path="/japanese/kanji-explained" element={<KanjiExplained />} />
-          <Route path="/japanese/how-to-type-japanese" element={<HowToTypeJapanese />} />
+          <Route path="/japanese/how-to-type-japanese" element={<TypingJapaneseExplained />} />
           <Route path="/japanese/writing-systems" element={<WritingSystems howToGuideVideo={japaneseWritingSystemsVideo}/>} />
           <Route path="/japanese/study-guide" element={<JapaneseStudyGuide/>} />
           <Route path="/japanese/grammar/:topicSlug" element={<GrammarContent languageNumber={0} />} />
@@ -122,7 +122,7 @@ const App = ()=> {
             <Route path="/japanese/hiragana-explained" element={<HiraganaExplained />} />
             <Route path="/japanese/katakana-explained" element={<KatakanaExplained />} />
             <Route path="/japanese/kanji-explained" element={<KanjiExplained />} />
-            <Route path="/japanese/how-to-type-japanese" element={<HowToTypeJapanese />} />
+            <Route path="/japanese/how-to-type-japanese" element={<TypingJapaneseExplained />} />
             <Route path="/japanese/writing-systems" element={<WritingSystems howToGuideVideo={japaneseWritingSystemsVideo}/>} />
             <Route path="/japanese/study-guide" element={<JapaneseStudyGuide/>} />
             <Route path="/japanese/grammar/:topicSlug" element={<GrammarContent languageNumber={0} />} />

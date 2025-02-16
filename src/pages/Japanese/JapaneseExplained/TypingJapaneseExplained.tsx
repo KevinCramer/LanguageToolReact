@@ -3,7 +3,7 @@ import howToTypeJapaneseTutorial from '../../../data/raw-data/tutorial-videos/ho
 import PageTitle from '../../../components/atoms/PageTitle';
 import { useState } from 'react';
 
-const HowToTypeJapanese = () => {
+const TypingJapaneseExplained = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => {
@@ -52,4 +52,4 @@ const HowToTypeJapanese = () => {
   );
 };
 
-export default HowToTypeJapanese;
+export default TypingJapaneseExplained;
