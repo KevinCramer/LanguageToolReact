@@ -1,4 +1,4 @@
-import { consistentStyles } from '../constants';
+import { consistentStyles } from '../../constants';
 
 const Custom404Error = () => { 
   return (

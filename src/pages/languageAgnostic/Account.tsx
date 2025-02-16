@@ -1,11 +1,11 @@
 import { useLocation, useNavigate } from 'react-router-dom';
-import app from '../firebase';
-import CustomLink from '../components/atoms/CustomLink';
-import { getCheckoutUrl } from '../stripePayment';
-import PageTitle from '../components/atoms/PageTitle';
-import { setBackwardRoute } from '../redux-store/route';
+import app from '../../firebase';
+import CustomLink from '../../components/atoms/CustomLink';
+import { getCheckoutUrl } from '../../stripePayment';
+import PageTitle from '../../components/atoms/PageTitle';
+import { setBackwardRoute } from '../../redux-store/route';
 import { useDispatch } from 'react-redux';
-import { consistentStyles } from '../constants';
+import { consistentStyles } from '../../constants';
 
 const Account = () => {
   const navigate = useNavigate();

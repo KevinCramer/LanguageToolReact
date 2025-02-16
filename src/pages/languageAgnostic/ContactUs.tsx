@@ -7,9 +7,9 @@ import {
 } from 'react-icons/fa';
 
 import { useEffect, useState } from 'react';
-import useWindowWidth from '../hooks/useWindowWidth';
-import { consistentStyles, mobileBreakPoint } from '../constants';
-import PageTitle from '../components/atoms/PageTitle';
+import useWindowWidth from '../../hooks/useWindowWidth';
+import { consistentStyles, mobileBreakPoint } from '../../constants';
+import PageTitle from '../../components/atoms/PageTitle';
 
 const socialLinks = [
   /* eslint-disable @stylistic/js/max-len */

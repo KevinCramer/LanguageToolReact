@@ -1,7 +1,7 @@
-import manStudying from '../assets/man-studying.jpg';
-import PageTitle from '../components/atoms/PageTitle';
-import womanStudying from '../assets/woman-studying.jpg'
-import { consistentStyles } from '../constants';
+import manStudying from '../../assets/man-studying.jpg'
+import PageTitle from '../../components/atoms/PageTitle'
+import womanStudying from '../../assets/woman-studying.jpg'
+import { consistentStyles } from '../../constants';
 
 const About = () => {
   return (

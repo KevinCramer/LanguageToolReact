@@ -1,6 +1,6 @@
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
-import { consistentStyles } from '../constants';
+import { consistentStyles } from '../../constants';
 
 export const Home = () => {
   const navigate = useNavigate(); // React Router's navigation hook

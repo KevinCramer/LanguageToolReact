@@ -1,13 +1,13 @@
-import { GrammarLanguage, Topic } from '../../types/learningSections/GrammarTypes';
-import { setBackwardRoute, setForwardRoute } from '../redux-store/route';
+import { GrammarLanguage, Topic } from '../../../types/learningSections/GrammarTypes';
+import { setBackwardRoute, setForwardRoute } from '../../redux-store/route';
 import { useEffect, useRef, useState } from 'react';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
-import { languages } from '../data/structured-data/grammar';
-import { consistentStyles, lingoCommandHasLoginLock } from '../constants';
-import DropdownButton from '../components/molecules/dropdownButton';
+import { languages } from '../../data/structured-data/grammar';
+import { consistentStyles, lingoCommandHasLoginLock } from '../../constants';
+import DropdownButton from '../../components/molecules/dropdownButton';
 import LockIcon from '@mui/icons-material/Lock';
-import PageTitle from '../components/atoms/PageTitle';
-import { useAuth } from '../contexts/AuthContext';
+import PageTitle from '../../components/atoms/PageTitle';
+import { useAuth } from '../../contexts/AuthContext';
 import { useDispatch } from 'react-redux';
 
 const GrammarContent = (props: { languageNumber: number }) => {

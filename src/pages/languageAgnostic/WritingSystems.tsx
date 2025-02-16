@@ -1,46 +1,46 @@
-import { consistentStyles, languageToSlugs, lingoCommandHasLoginLock } from '../constants'
-import { queryParamCompress, queryParamDecompress } from '../helpers/query-param-helpers'
-import { scramble, scrambleWithoutMutate } from '../helpers/vocab-content-helpers';
-import { setBackwardRoute, setForwardRoute } from '../redux-store/route';
-import { Topic, VocabLanguage, Word, WordWithThreeWritingSystems } from '../../types/learningSections/VocabTypes'
+import { consistentStyles, languageToSlugs, lingoCommandHasLoginLock } from '../../constants'
+import { queryParamCompress, queryParamDecompress } from '../../helpers/query-param-helpers'
+import { scramble, scrambleWithoutMutate } from '../../helpers/vocab-content-helpers';
+import { setBackwardRoute, setForwardRoute } from '../../redux-store/route';
+import { Topic, VocabLanguage, Word, WordWithThreeWritingSystems } from '../../../types/learningSections/VocabTypes'
 import { useEffect, useRef, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { languages as allLanguages } from '../data/structured-data/words';
+import { writingSystems as allWritingSystems } from '../../data/structured-data/writingSystems';
+import DownChevronIcon from '../../components/atoms/DownChevronIcon';
 import LockIcon from '@mui/icons-material/Lock';
-import { nullOrUndefined } from '../helpers/audio-player-helpers'
-import QuizElement from '../components/atoms/QuizElement';
-import { sortTopics } from '../helpers/words-data-helper';
-import StudyElement from '../components/molecules/StudyElement';
-import { useAuth } from '../contexts/AuthContext'
+import { nullOrUndefined } from '../../helpers/audio-player-helpers'
+import QuizElement from '../../components/atoms/QuizElement';
+import { sortTopics } from '../../helpers/words-data-helper';
+import StudyElement from '../../components/molecules/StudyElement';
+import { useAuth } from '../../contexts/AuthContext'
 import { useDispatch } from 'react-redux';
-import QuizButton from '../components/molecules/QuizButton';
-import DropdownButton from '../components/molecules/dropdownButton';
-import PageTitle from '../components/atoms/PageTitle';
+import QuizButton from '../../components/molecules/QuizButton';
+import DropdownButton from '../../components/molecules/dropdownButton';
 
-const VocabContent = (
+const WritingSystems = (
   props: {
     howToGuideVideo?: any
    }) => {
       
   //@ts-ignore
   const { currentUser } = useAuth();
-  const location = useLocation();
   const dispatch = useDispatch();
+  const location = useLocation();
   
   const userIsLoggedIn = currentUser && currentUser.email
 
-  let languages = allLanguages.map(language => ({
-    ...language, // Spread the existing language properties
-    topics: sortTopics(language.topics, userIsLoggedIn), // Replace topics with sorted ones
+  let writingSystems = allWritingSystems.map(writingSystem => ({
+    ...writingSystem, // Spread the existing language properties
+    topics: sortTopics(writingSystem.topics, userIsLoggedIn), // Replace topics with sorted ones
   }));
-  
+
   const navigate = useNavigate();
 
   var urlSearchParams = new URLSearchParams(useLocation().search);
   const urlSettings = JSON.parse(
     queryParamDecompress(urlSearchParams.get('s') as string) as string
   ) || []
-  var currentLanguage: VocabLanguage = languages[0]
+  var currentLanguage: VocabLanguage = writingSystems[0]
  
   const urlTopic = urlSettings[1]
   var currentTopic: Topic = (currentLanguage.topics as Topic[])
@@ -52,24 +52,7 @@ const VocabContent = (
   var [showBaseLanguage,setShowBaseLanguage] = useState(showBaseLanguage)
   const changeBaseLanguage = () => { return setShowBaseLanguage(!showBaseLanguage)}
 
-  const urlCurrentAlphabet = urlSettings[3]
-  var currentAlphabet: number = parseInt(urlCurrentAlphabet as string) || 0;
-  var [currentAlphabet,setCurrentAlphabet] = useState(currentAlphabet)
-  const changeCurrentAlphabet = (number: number) => { return setCurrentAlphabet(
-    currentAlphabet = number)}
-
-  const handleSelectChange = (event: any) => {
-    // Handle select change (optional)
-    if(event.target.value === '0'){
-      changeCurrentAlphabet(0)
-    }
-    if(event.target.value === '1'){
-      changeCurrentAlphabet(1)
-    }
-    if(event.target.value === '2'){
-      changeCurrentAlphabet(2)
-    }
-  };
+  var currentAlphabet: number = 0;
 
   const [isTopicDropdownOpen, setIsTopicDropdownOpen] = useState(false);
   const [isSettingsDropdownOpen, setIsSettingsDropdownOpen] = useState(false);
@@ -100,17 +83,18 @@ const VocabContent = (
       }
     });
   };
-
   const topicDropdownRef = useRef<HTMLDivElement | null>(null);
   const settingsDropdownRef = useRef<HTMLDivElement | null>(null);
 
   // Close dropdowns if clicked outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (topicDropdownRef.current && !topicDropdownRef.current.contains(event.target as Node)) {
+      if (topicDropdownRef.current && !topicDropdownRef
+        .current.contains(event.target as Node)) {
         setIsTopicDropdownOpen(false);
       }
-      if (settingsDropdownRef.current && !settingsDropdownRef.current.contains(event.target as Node)) {
+      if (settingsDropdownRef.current && !settingsDropdownRef
+        .current.contains(event.target as Node)) {
         setIsSettingsDropdownOpen(false);
       }
     };
@@ -166,7 +150,7 @@ const VocabContent = (
   var audioBool = !nullOrUndefined(urlAudio) ? urlAudio : true 
   var [audioBool,setAudioBool] = useState(audioBool)
   const changeAudioBool = () => { return setAudioBool(!audioBool)}
-
+  
   var modifyQuiz = false
   var [modifyQuiz,setModifyQuiz] = useState(modifyQuiz)
   const changeModifyQuiz = () => {
@@ -176,11 +160,9 @@ const VocabContent = (
     }
     setModifyQuiz(!modifyQuiz);
   };
-  
   var showPopUp = false;
   var [showPopUp,setShowPopUp] = useState(showPopUp)
   const hidePopUp = () => { return setShowPopUp(false)}
-  const displayPopUp = () => { return setShowPopUp(true)}
 
   // Ensure default language is reflected in the URL if not already present
   useEffect(() => {
@@ -200,6 +182,7 @@ const VocabContent = (
     currentAlphabet,showTrueOrder,quiz,audioBool, navigate ]);
 
   const minWidth = 'min-w-[350px]'
+  
   var [s, setS] = useState(JSON.parse(JSON.stringify(selectedWordsForQuiz))); // Using state instead of a regular variable
   let keyRender = 0;
   
@@ -213,12 +196,12 @@ const VocabContent = (
   // Effect for handling changes to `selectedWordsForQuiz`
   useEffect(() => {
     if (!showTrueOrder) {
-      const scrambledWords = scrambleWithoutMutate(selectedWordsForQuiz); // Scramble `selectedWordsForQuiz`
+      const scrambledWords = scrambleWithoutMutate(selectedWordsForQuiz);
       setS(scrambledWords); // Update `s` with scrambled version
     } else {
-      setS(JSON.parse(JSON.stringify(selectedWordsForQuiz))); // Reset `s` when `selectedWordsForQuiz` changes
+      setS(JSON.parse(JSON.stringify(selectedWordsForQuiz)));
     }
-  }, [selectedWordsForQuiz, showTrueOrder]); // This effect runs whenever `selectedWordsForQuiz` or `showTrueOrder` changes
+  }, [selectedWordsForQuiz, showTrueOrder]);
 
   // Effect for handling changes to `currentTopic`
   useEffect(() => {
@@ -232,8 +215,9 @@ const VocabContent = (
     if (quiz) {
       let count = 0;
       return (
-        <div className={`pt-4 space-y-4 ${minWidth}`} key={keyRender}>
-          {( modifyQuiz ? (showTrueOrder ? selectedWordsForQuiz : s) : topicWords).map((pair: Word) => (
+        <div className={`pt-4 space-y-4 ${minWidth}`}>
+          {( modifyQuiz ? (showTrueOrder ? selectedWordsForQuiz :
+            scrambleWithoutMutate(selectedWordsForQuiz)) : topicWords).map((pair: Word) => (
             <div
               key={
                 showTrueOrder.toString() +
@@ -302,8 +286,10 @@ const VocabContent = (
                         showBaseLanguageFirst={showBaseLanguage}
                         strokeOrderVideo={pair.strokeOrderVideo}
                         showLeftLabel={true}
-                        onQuizSelect={(isSelected: boolean) => handleQuizSelection(pair, isSelected)} // Pass onQuizSelect
-                        initialQuizSelect={selectedWordsForQuiz.some((word) => word.englishWord === pair.englishWord)}
+                        onQuizSelect={(isSelected: boolean) =>
+                          handleQuizSelection(pair, isSelected)}
+                        initialQuizSelect={selectedWordsForQuiz.some((word) => 
+                          word.englishWord === pair.englishWord)}
                       />
                     </td>
                     <td className="px-4 py-2 text-sm  border-b border-gray-500 text-center w-1/2">
@@ -324,8 +310,10 @@ const VocabContent = (
                         showBaseLanguageFirst={showBaseLanguage}
                         strokeOrderVideo={pair.strokeOrderVideo}
                         showLeftLabel={false}
-                        onQuizSelect={(isSelected: boolean) => handleQuizSelection(pair, isSelected)} // Pass onQuizSelect
-                        initialQuizSelect={selectedWordsForQuiz.some((word) => word.englishWord === pair.englishWord)}
+                        onQuizSelect={(isSelected: boolean) => 
+                          handleQuizSelection(pair, isSelected)} // Pass onQuizSelect
+                        initialQuizSelect={selectedWordsForQuiz.some((word) =>
+                          word.englishWord === pair.englishWord)}
 
                       />
                     </td>
@@ -350,61 +338,60 @@ const VocabContent = (
       topicWords.sort((a: Word, b: Word) => { return a.englishWord < b.englishWord ? -1 : 1 })
     }
   }
-
-  const prevShowTrueOrder = useRef(showTrueOrder); // To track the previous value of showTrueOrder
-
+    
   useEffect(() => {
     // Check if showTrueOrder is true
     if (!showTrueOrder) {
       var topicWords = scramble(
-        currentTopic.words as (Word)[]) as 
-        WordWithThreeWritingSystems[]
+          currentTopic.words as (Word)[]) as 
+          WordWithThreeWritingSystems[]
       // Your logic here
     } 
   }, [showTrueOrder]);
-
-  if (!showTrueOrder) {
   
+  if (!showTrueOrder) {
+    
     var topicWords = currentTopic.words      
   }
-  
+    
   return (
     <div className='flex flex-col items-center'>
-      <div className='flex items-center'>
-        <PageTitle title={`${currentLanguage.languageName} Vocabulary - `}/>
-        &nbsp;
-        <button
-          onClick={displayPopUp}
-          className={`${consistentStyles.blueText} underline text-2xl`}
-        >
-    Video Guide
-        </button>
+      <div className='flex mt-12 mb-12 items-center'>
+        <h4 className="flex flex-row justify-center text-center text-2xl">
+          <div className={`${consistentStyles.textBlack}`}>
+          Japanese Writing Systems -&nbsp;
+            <a
+              onClick={() => setShowPopUp(true)}
+              className={`${consistentStyles.blueText} underline text-2xl`}
+            >
+        Video Guide
+            </a>
+          </div>
+        </h4>
       </div>
-    
       <div className="flex min-w-[350px] justify-between items-center">
         {/* Topic Dropdown */}
         <div className="relative" ref={topicDropdownRef}>
-          <DropdownButton className='pt-1' text={`Topic: ${currentTopic.name.length > 7
-            ? `${currentTopic.name.substring(0, 7)}...`
-            : currentTopic.name}`} onClick={toggleTopicDropdown}/>
+          <DropdownButton text={`Topic: 
+                ${currentTopic.name.length > 7
+      ? `${currentTopic.name.substring(0, 7)}...`
+      : currentTopic.name}`} onClick={toggleTopicDropdown}/>
           {isTopicDropdownOpen && (
-            <div className="absolute left-0 mt-2 bg-white border border-gray-300 rounded-lg shadow w-64 z-10">
+            <div className=" absolute left-0 mt-2 bg-white border border-gray-300 rounded-lg shadow w-64 z-10">
               <ul className="divide-y divide-gray-200">
                 {(currentLanguage.topics as Topic[])
                   .sort((t1, t2) => (t1.topicOrder || 0) < (t2.topicOrder || 0) ? -1 : 1)
                   .map((topic, index) => (
                     <li
                       key={index}
-                      className={`${consistentStyles.textBlack} px-4 py-2 text-sm
-                      text-gray-800 cursor-pointer hover:bg-gray-200 
-                      ${currentTopic.name === topic.name ? 'bg-gray-100' : ''}`}
+                      className={`${consistentStyles.textBlack} px-4 py-2 text-sm text-gray-800 cursor-pointer hover:bg-gray-200 ${
+                        currentTopic.name === topic.name ? 'bg-gray-100' : ''
+                      }`}
                       onClick={() => changeCurrentTopic(topic)}
                     >
                       <div className="flex items-center justify-between">
                         {topic.name}
-                        {topic.hasLoginLock && lingoCommandHasLoginLock && !userIsLoggedIn && (
-                          <LockIcon className="" />
-                        )}
+                        {topic.hasLoginLock && lingoCommandHasLoginLock && !userIsLoggedIn && <LockIcon />}
                       </div>
                     </li>
                   ))}
@@ -417,26 +404,10 @@ const VocabContent = (
         </div>
         {/* Settings Dropdown */}
         <div className={ `${consistentStyles.textBlack} relative`} ref={settingsDropdownRef}>
-          <DropdownButton text=' Settings' onClick={toggleSettingsDropdown}/>
+          <DropdownButton text='Settings' onClick={toggleSettingsDropdown}/>
           {isSettingsDropdownOpen && (
             <div className="absolute right-0 mt-2 bg-white border border-gray-300 rounded-lg shadow w-64 z-10">
               <ul className="divide-y divide-gray-200">
-                <li 
-                  className="flex items-center px-4 py-2  text-sm">
-                  <div className="flex-shrink-0 cursor-default">writing system:&nbsp;</div>
-                  <select
-                    name="alphabets"
-                    id="alphabets"
-                    onChange={handleSelectChange}
-                    onClick={preventDropdownClose}
-                    className="ml-2 block w-28 max-w-full truncate overflow-hidden rounded border border-gray-300 bg-white px-2 py-1 text-sm shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 cursor-pointer"
-                    value={currentAlphabet}
-                  >
-                    <option value="0">romaji</option>
-                    <option value="1">hiragana and katakana</option>
-                    <option value="2">hiragana, katakana, and kanji</option>
-                  </select>
-                </li>
                 {!quiz && (
                   <li
                     className="px-4 py-2 hover:bg-gray-100 cursor-pointer text-sm"
@@ -496,7 +467,7 @@ const VocabContent = (
                     />
                     <div>
                       Random ordering
-                    </div>  
+                    </div>
                   </div>
                 </li>
                 {!quiz && (
@@ -515,11 +486,11 @@ const VocabContent = (
                         className="mr-2 cursor-pointer w-4 h-4"
                       />
                       <div>
-                      Select questions for quiz
+                        Select questions for quiz
                       </div>
                     </div>
                   </li>
-                )}
+                )} 
               </ul>
             </div>
           )}
@@ -549,4 +520,4 @@ const VocabContent = (
   );
 };
  
-export default VocabContent 
+export default WritingSystems;
