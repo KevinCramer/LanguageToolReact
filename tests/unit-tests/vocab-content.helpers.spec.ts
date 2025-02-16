@@ -1,5 +1,5 @@
 import { expect, it } from 'vitest'
-import { roughlyEqual } from '../../helpers/vocab-content-helpers';
+import { roughlyEqual } from '../../src/helpers/vocab-content-helpers';
 
 it(`GIVEN two string params that are equal ignoring case and whitespace
 THEN roughlyEqual returns true`, () => {

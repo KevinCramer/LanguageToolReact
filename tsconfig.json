@@ -16,6 +16,6 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": ["src", "types/learningSections/VocabTypes.ts", "types/learningSections/ReadingListeningTypes.ts", "src/components/atoms/CustomDropDownButton.tsx", "src/data/structured-data/comprehension.tsx"],
+  "include": ["src", "types/learningSections/VocabTypes.ts", "types/learningSections/ReadingListeningTypes.ts", "src/components/atoms/CustomDropDownButton.tsx", "src/data/structured-data/comprehension.tsx", "tests/unit-tests"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
