@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
-import CloseIcon from '../atoms/CloseIcon';
-import CustomLink from '../atoms/CustomLink';
+import CloseIcon from '../../components/atoms/CloseIcon';
+import CustomLink from '../../components/atoms/CustomLink';
 import { RootStateRoute } from '../../redux-store/route';
 import { useAuth } from '../../contexts/AuthContext';
 import { useNavigate } from 'react-router-dom';
@@ -91,7 +91,7 @@ export default function Login() {
             </button>
           </form>
           <div className="mt-4 text-center">
-            <CustomLink onClick={() => navigate('/forgot-password')}>
+            <CustomLink onClick={() => navigate('/reset-password')}>
             Forgot Password?
             </CustomLink>
           </div>

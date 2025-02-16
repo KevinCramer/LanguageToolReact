@@ -6,7 +6,6 @@ import { Topic, VocabLanguage, Word, WordWithThreeWritingSystems } from '../../.
 import { useEffect, useRef, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { writingSystems as allWritingSystems } from '../../data/structured-data/writingSystems';
-import DownChevronIcon from '../../components/atoms/DownChevronIcon';
 import LockIcon from '@mui/icons-material/Lock';
 import { nullOrUndefined } from '../../helpers/audio-player-helpers'
 import QuizElement from '../../components/atoms/QuizElement';

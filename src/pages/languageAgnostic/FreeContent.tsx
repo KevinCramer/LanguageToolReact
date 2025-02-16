@@ -1,5 +1,5 @@
-import CloseIcon from './CloseIcon';
-import CustomLink from './CustomLink';
+import CloseIcon from '../../components/atoms/CloseIcon';
+import CustomLink from '../../components/atoms/CustomLink';
 import { useNavigate } from 'react-router-dom';
 
 export default function FreeContent() {

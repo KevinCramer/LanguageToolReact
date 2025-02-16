@@ -1,4 +1,4 @@
-import CloseIcon from './CloseIcon';
+import CloseIcon from '../../components/atoms/CloseIcon';
 import { RootStateRoute } from '../../redux-store/route';
 import { useAuth } from '../../contexts/AuthContext';
 import { useNavigate } from 'react-router-dom';
