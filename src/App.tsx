@@ -31,7 +31,7 @@ import ResetPassword from './pages/languageAgnostic/ResetPassword'
 import Signup from './pages/languageAgnostic/Signup'
 import TypingJapaneseExplained from './pages/japaneseSpecific/JapaneseExplained/TypingJapaneseExplained'
 import useWindowWidth from './hooks/useWindowWidth'
-import VocabContent from './pages/languageAgnostic/VocabContent'
+import VocabAndPhrases from './pages/languageAgnostic/VocabAndPhrases'
 import MainVocabularyGuide from './pages/japaneseSpecific/VocabularyGuides/MainVocabularyGuide'
 import VerbVocabularyGuide from './pages/japaneseSpecific/VocabularyGuides/VerbVocabularyGuide'
 import WritingSystems from './pages/languageAgnostic/WritingSystems'
@@ -78,7 +78,7 @@ const App = ()=> {
           <Route path="/japanese/verb-vocabulary-guide" 
             element={<VerbVocabularyGuide/>} />
           <Route path="/japanese/vocabulary" 
-            element={<VocabContent howToGuideVideo={japaneseVocabGuideVideo} />} />
+            element={<VocabAndPhrases howToGuideVideo={japaneseVocabGuideVideo} />} />
           <Route path="/japanese/phrases-guide" 
             element={<PhrasesGuide/>} />
           <Route path="/japanese/writing-systems-explained" element={<JapaneseWritingSystems />} />
@@ -121,7 +121,7 @@ const App = ()=> {
             <Route path="/japanese/verb-vocabulary-guide" 
               element={<VerbVocabularyGuide/>} />
             <Route path="/japanese/vocabulary" 
-              element={<VocabContent howToGuideVideo={japaneseVocabGuideVideo} />} />
+              element={<VocabAndPhrases howToGuideVideo={japaneseVocabGuideVideo} />} />
             <Route path="/japanese/phrases-guide" 
               element={<PhrasesGuide/>} />
             <Route path="/japanese/writing-systems-explained" element={<JapaneseWritingSystems />} />

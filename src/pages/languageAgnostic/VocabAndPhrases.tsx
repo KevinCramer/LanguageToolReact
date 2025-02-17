@@ -5,7 +5,7 @@ import { setBackwardRoute, setForwardRoute } from '../../redux-store/route';
 import { Topic, VocabLanguage, Word, WordWithThreeWritingSystems } from '../../../types/learningSections/VocabTypes'
 import { useEffect, useRef, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { languages as allLanguages } from '../../data/structured-data/words';
+import { languages as allLanguages, japaneseVocabTopicSlugNames } from '../../data/structured-data/words';
 import LockIcon from '@mui/icons-material/Lock';
 import { nullOrUndefined } from '../../helpers/audio-player-helpers'
 import QuizElement from '../../components/atoms/QuizElement';
@@ -17,7 +17,7 @@ import QuizButton from '../../components/molecules/QuizButton';
 import DropdownButton from '../../components/molecules/dropdownButton';
 import PageTitle from '../../components/atoms/PageTitle';
 
-const VocabContent = (
+const VocabAndPhrases = (
   props: {
     howToGuideVideo?: any
    }) => {
@@ -367,11 +367,13 @@ const VocabContent = (
   
     var topicWords = currentTopic.words      
   }
-  
+  const isItAPhrase = Object.values(japaneseVocabTopicSlugNames.phrases.subTopics)
+    .includes(currentTopic.slugName)
   return (
     <div className='flex flex-col items-center'>
       <div className='flex items-center'>
-        <PageTitle title={`${currentLanguage.languageName} Vocabulary - `}/>
+        <PageTitle title={`${currentLanguage.languageName} 
+        ${ isItAPhrase ? 'Phrases' : 'Vocabulary'} - `}/>
         &nbsp;
         <button
           onClick={displayPopUp}
@@ -549,4 +551,4 @@ const VocabContent = (
   );
 };
  
-export default VocabContent 
+export default VocabAndPhrases 
