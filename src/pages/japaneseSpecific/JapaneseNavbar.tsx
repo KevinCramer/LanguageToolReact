@@ -43,6 +43,16 @@ const JapaneseNavbar = () => {
             </li>
             <li>
               <NavLink 
+                to='/japanese/phrases-guide' 
+                className={({ isActive }) => isActive 
+                || location.pathname.includes('phrases') 
+                  ? 'block px-4  underline' : 'block px-4 '}
+              >
+                Phrases
+              </NavLink>
+            </li>
+            <li>
+              <NavLink 
                 to='/japanese/writing-systems-explained' 
                 className={({ isActive }) => isActive 
                 || location.pathname.includes('hiragana-explained') 

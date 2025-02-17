@@ -24,6 +24,8 @@ import KatakanaExplained from './pages/japaneseSpecific/JapaneseExplained/Kataka
 import Login from './pages/languageAgnostic/Login'
 import { mobileBreakPoint } from './constants'
 import Navbar from './components/atoms/Navbar'
+import PhrasesGuide from './pages/japaneseSpecific/VocabularyGuides/PhrasesGuide'
+
 import ReadingListening from './pages/languageAgnostic/ReadingListening'
 import ResetPassword from './pages/languageAgnostic/ResetPassword'
 import Signup from './pages/languageAgnostic/Signup'
@@ -77,6 +79,8 @@ const App = ()=> {
             element={<VerbVocabularyGuide/>} />
           <Route path="/japanese/vocabulary" 
             element={<VocabContent howToGuideVideo={japaneseVocabGuideVideo} />} />
+          <Route path="/japanese/phrases-guide" 
+            element={<PhrasesGuide/>} />
           <Route path="/japanese/writing-systems-explained" element={<JapaneseWritingSystems />} />
           <Route path="/japanese/hiragana-explained" element={<HiraganaExplained />} />
           <Route path="/japanese/katakana-explained" element={<KatakanaExplained />} />
@@ -118,6 +122,8 @@ const App = ()=> {
               element={<VerbVocabularyGuide/>} />
             <Route path="/japanese/vocabulary" 
               element={<VocabContent howToGuideVideo={japaneseVocabGuideVideo} />} />
+            <Route path="/japanese/phrases-guide" 
+              element={<PhrasesGuide/>} />
             <Route path="/japanese/writing-systems-explained" element={<JapaneseWritingSystems />} />
             <Route path="/japanese/hiragana-explained" element={<HiraganaExplained />} />
             <Route path="/japanese/katakana-explained" element={<KatakanaExplained />} />
