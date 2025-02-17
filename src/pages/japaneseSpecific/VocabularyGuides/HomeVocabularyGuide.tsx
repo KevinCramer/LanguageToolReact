@@ -9,18 +9,18 @@ import { useNavigate } from 'react-router-dom';
 import useWindowWidth from '../../../hooks/useWindowWidth';
 
 interface Topic {
-  Name: string;
+  name: string;
   slugName: string;
   hasLoginLock: boolean;
 
 }
 
 const allTopics: Topic[] = [
-  { Name: 'Bathroom', slugName: japaneseVocabTopicSlugNames.home.subTopics.bathroom, hasLoginLock: true },
-  { Name: 'Bedroom', slugName: japaneseVocabTopicSlugNames.home.subTopics.bedroom, hasLoginLock: true },
-  { Name: 'Furniture', slugName: japaneseVocabTopicSlugNames.home.subTopics.furniture, hasLoginLock: true },
-  { Name: 'Kitchen', slugName: japaneseVocabTopicSlugNames.home.subTopics.kitchen, hasLoginLock: true },
-  { Name: 'Living Room', slugName: japaneseVocabTopicSlugNames.home.subTopics.livingRoom, hasLoginLock: true },
+  { name: 'Bathroom', slugName: japaneseVocabTopicSlugNames.home.subTopics.bathroom, hasLoginLock: true },
+  { name: 'Bedroom', slugName: japaneseVocabTopicSlugNames.home.subTopics.bedroom, hasLoginLock: true },
+  { name: 'Furniture', slugName: japaneseVocabTopicSlugNames.home.subTopics.furniture, hasLoginLock: true },
+  { name: 'Kitchen', slugName: japaneseVocabTopicSlugNames.home.subTopics.kitchen, hasLoginLock: true },
+  { name: 'Living Room', slugName: japaneseVocabTopicSlugNames.home.subTopics.livingRoom, hasLoginLock: true },
 
 ];
 
@@ -74,7 +74,7 @@ const HomeVocabularyGuide = () => {
           >
             <div className={`flex justify-between items-start ${!topic.slugName ? 'text-gray-500' : ''}`}>
               <div className={`flex-1 h-[70px] ${consistentStyles.textBlack} ${topic.hasLoginLock && lingoCommandHasLoginLock && !userIsLoggedIn ? 'ml-6 md:ml-8' : ''} flex items-center justify-center`}>
-                {topic.Name}
+                {topic.name}
               </div>
               {/* LockIcon aligned at the top-right */}
               {topic.hasLoginLock && lingoCommandHasLoginLock && !userIsLoggedIn && (

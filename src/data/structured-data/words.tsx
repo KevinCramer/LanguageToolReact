@@ -166,11 +166,14 @@ export const japaneseVocabTopicSlugNames = {
   food: {
     name: 'food',
     subTopics: {
-      carbs: 'carbs',
-      drinks: 'drinks',
       fruitsAndVegetables: 'fruitandveg',
-      meat: 'meat',
-      miscellaneous: 'misc',
+      grainsBreadPasta: 'grains',
+      meatPoultryFish: 'meat',
+      dairyEggs: 'dairy',
+      beverages: 'bev',
+      snacksSweets: 'snacks',
+      spicesCondimentsSauces: 'spices',
+      preparedFastFood: 'fastfood',
     },
   },
   home: {
@@ -209,17 +212,164 @@ export const japaneseVocabTopicSlugNames = {
 
 const japaneseTopics: TopicWithThreeWritingSystems[] = [
 
-  { name: 'Carbs', slugName: japaneseVocabTopicSlugNames.food.subTopics.carbs, hasOrdering:false, hasLoginLock: true, isAlphabet: false, words: [] },
-  { name: 'Drinks', slugName: japaneseVocabTopicSlugNames.food.subTopics.drinks, hasOrdering:false, hasLoginLock: true, isAlphabet: false, words: [] },
-  { name: 'Fruits and Vegetables', slugName: japaneseVocabTopicSlugNames.food.subTopics.fruitsAndVegetables, hasOrdering:false, hasLoginLock: true, isAlphabet: false, words: [] },
-  { name: 'Meat', slugName: japaneseVocabTopicSlugNames.food.subTopics.meat, hasOrdering:false, hasLoginLock: true, isAlphabet: false, words: [] },
-  { name: 'Miscellaneous', slugName: japaneseVocabTopicSlugNames.food.subTopics.miscellaneous, hasOrdering:false, hasLoginLock: true, isAlphabet: false, words: [] },
+  { name: 'Fruits and Vegetables', slugName: japaneseVocabTopicSlugNames.food.subTopics.fruitsAndVegetables, hasOrdering:false, hasLoginLock: true, isAlphabet: false, words: 
+    [
+      { englishWord: 'avocado', foreignWord: ['abokado', 'アボカド', 'アボカド'], foreignAudio: '' },
+      { englishWord: 'cauliflower', foreignWord: ['karifurawaa', 'カリフラワー', 'カリフラワー'], foreignAudio: '' },
+      { englishWord: 'celery', foreignWord: ['serori', 'セロリ', 'セロリ'], foreignAudio: '' },
+      { englishWord: 'tomato', foreignWord: ['tomato', 'トマト', 'トマト'], foreignAudio: '' },
+      { englishWord: 'radish', foreignWord: ['hatsukadaikon', 'はつかだいこん', '春大根'], foreignAudio: '' },
+      { englishWord: 'raisin', foreignWord: ['hoshibudo', 'ほしぶどう', '干葡萄'], foreignAudio: '' },
+      { englishWord: 'apricot', foreignWord: ['anzu', 'あんず', '杏子'], foreignAudio: '' },
+      { englishWord: 'banana', foreignWord: ['banana', 'バナナ', 'バナナ'], foreignAudio: '' },
+      { englishWord: 'beans', foreignWord: ['mame', 'まめ', '豆'], foreignAudio: '' },
+      { englishWord: 'pear', foreignWord: ['yonashi', 'よなし', '洋梨'], foreignAudio: '' },
+      { englishWord: 'grape', foreignWord: ['budo', 'ぶどう', '葡萄'], foreignAudio: '' },
+      { englishWord: 'pineapple', foreignWord: ['painappuru', 'パイナップル', 'パイナップル'], foreignAudio: '' },
+      { englishWord: 'beet', foreignWord: ['biito', 'ビート', 'ビート'], foreignAudio: '' },
+      { englishWord: 'potatoes', foreignWord: ['jagaimo', 'じゃがいも', 'ジャガイモ'], foreignAudio: '' },
+      { englishWord: 'lemon', foreignWord: ['remon', 'レモン', 'レモン'], foreignAudio: '' },
+      { englishWord: 'lime', foreignWord: ['raimu', 'ライム', 'ライム'], foreignAudio: '' },
+      { englishWord: 'lettuce', foreignWord: ['retasu', 'レタス', 'レタス'], foreignAudio: '' },
+      { englishWord: 'peach', foreignWord: ['momo', 'もも', '桃'], foreignAudio: '' },
+    ]
+  },
+  { name: 'Grains, Bread, Pasta', slugName: japaneseVocabTopicSlugNames.food.subTopics.grainsBreadPasta, hasOrdering:false, hasLoginLock: true, isAlphabet: false, words: 
+    [
+      { englishWord: 'bread', foreignWord: ['pan', 'パン', 'パン'], foreignAudio: '' },
+      { englishWord: 'pasta', foreignWord: ['pasuta', 'パスタ', 'パスタ'], foreignAudio: '' },
+      { englishWord: 'rice', foreignWord: ['gohan', 'ごはん', 'ご飯'], foreignAudio: '' },
+      { englishWord: 'croissant', foreignWord: ['kurowassan', 'クロワッサン', 'クロワッサン'], foreignAudio: '' }
+    ]
+  },
+  { name: 'Meat, Poultry, Fish', slugName: japaneseVocabTopicSlugNames.food.subTopics.meatPoultryFish, hasOrdering:false, hasLoginLock: true, isAlphabet: false, words: 
+    [
+      { englishWord: 'turkey', foreignWord: ['shichimencho', 'しちめんちょう', '七面鳥'], foreignAudio: '' },
+      { englishWord: 'beef', foreignWord: ['gyuuniku', 'ぎゅうにく', '牛肉'], foreignAudio: '' },
+      { englishWord: 'chicken', foreignWord: ['chikin', 'チキン', 'チキン'], foreignAudio: '' },
+      { englishWord: 'fish (cooked)', foreignWord: ['sakana', 'さかな', '魚'], foreignAudio: '' },
+      { englishWord: 'pork', foreignWord: ['butaniku', 'ぶたにく', '豚肉'], foreignAudio: '' },
+    ]
+  },
+  { name: 'Dairy, Eggs', slugName: japaneseVocabTopicSlugNames.food.subTopics.dairyEggs, hasOrdering:false, hasLoginLock: true, isAlphabet: false, words: 
+    [
+      { englishWord: 'cheese', foreignWord: ['chiizu', 'チーズ', 'チーズ'], foreignAudio: '' },
+      { englishWord: 'egg', foreignWord: ['tamago', 'たまご', '卵'], foreignAudio: '' },
+      // note that milk also in beverages section
+      { englishWord: 'milk', foreignWord: ['gyuunyuu', 'ぎゅうにゅう', '牛乳'], foreignAudio: '' },
+      { englishWord: 'butter', foreignWord: ['bataa', 'バター', 'バター'], foreignAudio: '' },
 
-  { name: 'Bedroom', slugName: japaneseVocabTopicSlugNames.home.subTopics.bedroom, hasOrdering:false, hasLoginLock: true, isAlphabet: false, words: [] },
-  { name: 'Bathroom', slugName: japaneseVocabTopicSlugNames.home.subTopics.bathroom, hasOrdering:false, hasLoginLock: true, isAlphabet: false, words: [] },
-  { name: 'Kitchen', slugName: japaneseVocabTopicSlugNames.home.subTopics.kitchen, hasOrdering:false, hasLoginLock: true, isAlphabet: false, words: [] },
-  { name: 'Living Room', slugName: japaneseVocabTopicSlugNames.home.subTopics.livingRoom, hasOrdering:false, hasLoginLock: true, isAlphabet: false, words: [] },
-  { name: 'Furniture', slugName: japaneseVocabTopicSlugNames.home.subTopics.furniture, hasOrdering:false, hasLoginLock: true, isAlphabet: false, words: [] },
+    ]
+  },
+  { name: 'Beverages', slugName: japaneseVocabTopicSlugNames.food.subTopics.beverages, hasOrdering:false, hasLoginLock: true, isAlphabet: false, words: 
+    [
+      { englishWord: 'water', foreignWord: ['mizu', 'みず', '水'], foreignAudio: '' },
+      { englishWord: 'milk', foreignWord: ['gyuunyuu', 'ぎゅうにゅう', '牛乳'], foreignAudio: '' },
+      { englishWord: 'juice', foreignWord: ['juusu', 'ジュース', 'ジュース'], foreignAudio: '' },
+    ]
+  },
+  { name: 'Snacks, Sweets', slugName: japaneseVocabTopicSlugNames.food.subTopics.snacksSweets, hasOrdering:false, hasLoginLock: true, isAlphabet: false, words: 
+    [
+      { englishWord: 'chocolate', foreignWord: ['chokoreeto', 'チョコレート', 'チョコレート'], foreignAudio: '' },
+      { englishWord: 'cake', foreignWord: ['keeki', 'ケーキ', 'ケーキ'], foreignAudio: '' },
+      { englishWord: 'cookie', foreignWord: ['kukkii', 'クッキー', 'クッキー'], foreignAudio: '' },
+      { englishWord: 'donut', foreignWord: ['doonatsu', 'ドーナツ', 'ドーナツ'], foreignAudio: '' },
+      { englishWord: 'ice cream', foreignWord: ['aisukuriimu', 'アイスクリーム', 'アイスクリーム'], foreignAudio: '' },
+      { englishWord: 'pudding', foreignWord: ['purin', 'プリン', 'プリン'], foreignAudio: '' },
+      { englishWord: 'candy', foreignWord: ['kyande', 'キャンディ', 'キャンディ'], foreignAudio: '' },
+      { englishWord: 'popcorn', foreignWord: ['poppukon', 'ポップコーン', 'ポップコーン'], foreignAudio: '' },
+      { englishWord: 'crisps/potato chips', foreignWord: ['potetochippu', 'ポテトチップ', 'ポテトチップ'], foreignAudio: '' },
+      { englishWord: 'waffle', foreignWord: ['waffuru', 'ワッフル', 'ワッフル'], foreignAudio: '' }
+    ]
+  },
+  { name: 'Spices, Condiments, Sauces', slugName: japaneseVocabTopicSlugNames.food.subTopics.spicesCondimentsSauces, hasOrdering:false, hasLoginLock: true, isAlphabet: false, words: 
+    [
+      { englishWord: 'mayonnaise', foreignWord: ['mayonezu', 'マヨネーズ', 'マヨネーズ'], foreignAudio: '' },
+      { englishWord: 'mustard', foreignWord: ['masutaado', 'マスタード', 'マスタード'], foreignAudio: '' },
+      { englishWord: 'ketchup', foreignWord: ['kechappu', 'ケチャップ', 'ケチャップ'], foreignAudio: '' },
+    ]
+  },
+  { name: 'Prepared, Fast Food', slugName: japaneseVocabTopicSlugNames.food.subTopics.preparedFastFood, hasOrdering:false, hasLoginLock: true, isAlphabet: false, words: 
+    [
+      { englishWord: 'peanut butter', foreignWord: ['piinatsubataa', 'ピーナツバター', 'ピーナツバター'], foreignAudio: '' },
+      { englishWord: 'french fries', foreignWord: ['potetofurai', 'ポテトフライ', 'ポテトフライ'], foreignAudio: '' },
+      { englishWord: 'hamburger', foreignWord: ['hanbaagaa', 'ハンバーガー', 'ハンバーガー'], foreignAudio: '' },
+      { englishWord: 'hotdog', foreignWord: ['hottodoggu', 'ホットドッグ', 'ホットドッグ'], foreignAudio: '' },
+      { englishWord: 'salad', foreignWord: ['sarada', 'サラダ', 'サラダ'], foreignAudio: '' },
+      { englishWord: 'sandwich', foreignWord: ['sandoicchi', 'サンドイッチ', 'サンドイッチ'], foreignAudio: '' },
+      { englishWord: 'soup', foreignWord: ['suupu', 'スープ', 'スープ'], foreignAudio: '' },
+    ]
+  },
+
+  { name: 'Bedroom', slugName: japaneseVocabTopicSlugNames.home.subTopics.bedroom, hasOrdering:false, hasLoginLock: true, isAlphabet: false, words: 
+    [  
+      { englishWord: 'alarm clock', foreignWord: ['mezamashidokei', 'めざましどけい', '目覚まし時計'], foreignAudio: '' },  
+      { englishWord: 'bed', foreignWord: ['beddo', 'ベッド', 'ベッド'], foreignAudio: '' },  
+      { englishWord: 'bedroom', foreignWord: ['shinshitsu', 'しんしつ', '寝室'], foreignAudio: '' },  
+      { englishWord: 'blanket', foreignWord: ['mofu', 'もうふ', '毛布'], foreignAudio: '' },  
+      { englishWord: 'ceiling', foreignWord: ['tenjo', 'てんじょう', '天井'], foreignAudio: '' },  
+      { englishWord: 'closet', foreignWord: ['kurozetto', 'クローゼット', 'クローゼット'], foreignAudio: '' },  
+      { englishWord: 'dresser', foreignWord: ['doressaa', 'ドレッサー', 'ドレッサー'], foreignAudio: '' },  
+      { englishWord: 'hanger', foreignWord: ['hangaa', 'ハンガー', 'ハンガー'], foreignAudio: '' },  
+      { englishWord: 'lamp', foreignWord: ['ranpu', 'ランプ', 'ランプ'], foreignAudio: '' },  
+      { englishWord: 'nightstand', foreignWord: ['naitosutando', 'ナイトスタンド', 'ナイトスタンド'], foreignAudio: '' },  
+      { englishWord: 'pillow', foreignWord: ['makura', 'まくら', '枕'], foreignAudio: '' },  
+      { englishWord: 'sheets', foreignWord: ['shiitsu', 'シーツ', 'シーツ'], foreignAudio: '' },  
+      { englishWord: 'wall', foreignWord: ['kabe', 'かべ', '壁'], foreignAudio: '' }  
+    ]  
+  },
+  { name: 'Bathroom', slugName: japaneseVocabTopicSlugNames.home.subTopics.bathroom, hasOrdering:false, hasLoginLock: true, isAlphabet: false, words: [  
+    { englishWord: 'bathroom', foreignWord: ['basuruumu', 'バスルーム', 'バスルーム'], foreignAudio: '' },  
+    { englishWord: 'bathtub', foreignWord: ['yokuso', 'よくそう', '浴槽'], foreignAudio: '' },  
+    { englishWord: 'mirror', foreignWord: ['kagami', 'かがみ', '鏡'], foreignAudio: '' },  
+    { englishWord: '(water) pipe', foreignWord: ['suidokan', 'すいどうかん', '水道管'], foreignAudio: '' },  
+    { englishWord: 'shampoo', foreignWord: ['shanpuu', 'シャンプー', 'シャンプー'], foreignAudio: '' },  
+    { englishWord: 'shower', foreignWord: ['shawaa', 'シャワー', 'シャワー'], foreignAudio: '' },  
+    { englishWord: 'sink', foreignWord: ['senmenjo', 'せんめんじょ', '洗面所'], foreignAudio: '' },  
+    { englishWord: 'soap', foreignWord: ['sekken', 'せっけん', '石鹸'], foreignAudio: '' },  
+    { englishWord: 'toilet', foreignWord: ['toire', 'トイレ', 'トイレ'], foreignAudio: '' }  
+  ] 
+  },
+  { name: 'Kitchen', slugName: japaneseVocabTopicSlugNames.home.subTopics.kitchen, hasOrdering:false, hasLoginLock: true, isAlphabet: false, words: 
+    [  
+      { englishWord: 'bowl', foreignWord: ['bouru', 'ボウル', 'ボウル'], foreignAudio: '' },  
+      { englishWord: 'cabinet', foreignWord: ['todana', 'とだな', '戸棚'], foreignAudio: '' },  
+      { englishWord: 'drain', foreignWord: ['haisuiko', 'はいすいこう', '排水口'], foreignAudio: '' },  
+      { englishWord: 'freezer', foreignWord: ['reitoko', 'れいとうこ', '冷凍庫'], foreignAudio: '' },  
+      { englishWord: 'fridge', foreignWord: ['reizoko', 'れいぞうこ', '冷蔵庫'], foreignAudio: '' },  
+      { englishWord: 'frying pan', foreignWord: ['furaipan', 'フライパン', 'フライパン'], foreignAudio: '' },  
+      { englishWord: 'kitchen', foreignWord: ['daidokoro', 'だいどころ', '台所'], foreignAudio: '' },  
+      { englishWord: 'lid', foreignWord: ['futa', 'ふた', '蓋'], foreignAudio: '' },  
+      { englishWord: 'oven', foreignWord: ['obun', 'オーブン', 'オーブン'], foreignAudio: '' },  
+      { englishWord: 'sauce pan', foreignWord: ['sosupan', 'ソースパン', 'ソースパン'], foreignAudio: '' },  
+      { englishWord: 'stove', foreignWord: ['konro', 'こんろ', 'コンロ'], foreignAudio: '' }  
+    ] 
+  },
+  { name: 'Living Room', slugName: japaneseVocabTopicSlugNames.home.subTopics.livingRoom, hasOrdering:false, hasLoginLock: true, isAlphabet: false, words: 
+    [  
+      { englishWord: 'carpet', foreignWord: ['kaapetto', 'カーペット', 'カーペット'], foreignAudio: '' },  
+      { englishWord: 'fire place', foreignWord: ['danro', 'だんろ', '暖炉'], foreignAudio: '' },  
+      { englishWord: 'living room', foreignWord: ['ribingu ruumu', 'リビングルーム', 'リビングルーム'], foreignAudio: '' },  
+      { englishWord: 'painting', foreignWord: ['kaiga', 'かいが', '絵画'], foreignAudio: '' },  
+      { englishWord: 'recliner', foreignWord: ['rikurainingu chea', 'リクライニングチェア', 'リクライニングチェア'], foreignAudio: '' },  
+      { englishWord: 'shelf', foreignWord: ['tana', 'たな', '棚'], foreignAudio: '' },  
+      { englishWord: 'sofa', foreignWord: ['sofa', 'ソファ', 'ソファ'], foreignAudio: '' },  
+      { englishWord: 'staircase', foreignWord: ['kaidan', 'かいだん', '階段'], foreignAudio: '' },  
+      { englishWord: 'tv', foreignWord: ['terebi', 'テレビ', 'テレビ'], foreignAudio: '' },  
+      { englishWord: 'vase', foreignWord: ['kabin', 'かびん', '花瓶'], foreignAudio: '' }  
+    ]  
+  },
+  { name: 'Furniture', slugName: japaneseVocabTopicSlugNames.home.subTopics.furniture, hasOrdering:false, hasLoginLock: true, isAlphabet: false, words: [  
+    { englishWord: 'armchair', foreignWord: ['hijikakeisu', 'ひじかけいす', '肘掛け椅子'], foreignAudio: '' },  
+    { englishWord: 'bed', foreignWord: ['beddo', 'ベッド', 'ベッド'], foreignAudio: '' },  
+    { englishWord: 'chair', foreignWord: ['isu', 'いす', '椅子'], foreignAudio: '' },  
+    { englishWord: 'desk', foreignWord: ['tsukue', 'つくえ', '机'], foreignAudio: '' },  
+    { englishWord: 'furniture', foreignWord: ['kagu', 'かぐ', '家具'], foreignAudio: '' },  
+    { englishWord: 'garbage can', foreignWord: ['gomiire', 'ごみいれ', 'ゴミ入れ'], foreignAudio: '' },  
+    { englishWord: 'piano', foreignWord: ['piano', 'ピアノ', 'ピアノ'], foreignAudio: '' },  
+    { englishWord: 'sofa', foreignWord: ['sofa', 'ソファ', 'ソファ'], foreignAudio: '' },  
+    { englishWord: 'table', foreignWord: ['teburu', 'テーブル', 'テーブル'], foreignAudio: '' }  
+  ] },
 
   { name: 'Verbs I', slugName: japaneseVocabTopicSlugNames.verbs.subTopics.verbs1, hasOrdering:false, hasLoginLock: true, isAlphabet: false, words: 
     [  

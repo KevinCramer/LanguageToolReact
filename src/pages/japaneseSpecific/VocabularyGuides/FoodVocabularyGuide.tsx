@@ -9,18 +9,20 @@ import { useNavigate } from 'react-router-dom';
 import useWindowWidth from '../../../hooks/useWindowWidth';
 
 interface Topic {
-  Name: string;
+  name: string;
   slugName: string;
   hasLoginLock: boolean;
 
 }
 
 const allTopics: Topic[] = [
-  { Name: 'Carbs', slugName: japaneseVocabTopicSlugNames.food.subTopics.carbs, hasLoginLock: true },
-  { Name: 'Drinks', slugName: japaneseVocabTopicSlugNames.food.subTopics.drinks, hasLoginLock: true },
-  { Name: 'Fruits & Vegetables', slugName: japaneseVocabTopicSlugNames.food.subTopics.fruitsAndVegetables, hasLoginLock: true },
-  { Name: 'Meat', slugName: japaneseVocabTopicSlugNames.food.subTopics.meat, hasLoginLock: true },
-  { Name: 'Miscellaneous', slugName: japaneseVocabTopicSlugNames.food.subTopics.miscellaneous, hasLoginLock: true },
+  { name: 'Fruits and Vegetables', slugName: japaneseVocabTopicSlugNames.food.subTopics.fruitsAndVegetables, hasLoginLock: true },
+  { name: 'Grains, Bread, Pasta', slugName: japaneseVocabTopicSlugNames.food.subTopics.grainsBreadPasta, hasLoginLock: true },
+  { name: 'Meat, Fish, Poultry', slugName: japaneseVocabTopicSlugNames.food.subTopics.meatPoultryFish, hasLoginLock: true },
+  { name: 'Beverages', slugName: japaneseVocabTopicSlugNames.food.subTopics.beverages, hasLoginLock: true },
+  { name: 'Snacks, Sweets', slugName: japaneseVocabTopicSlugNames.food.subTopics.snacksSweets, hasLoginLock: true },
+  { name: 'Spices, Condiments, Sauces', slugName: japaneseVocabTopicSlugNames.food.subTopics.spicesCondimentsSauces, hasLoginLock: true },
+  { name: 'Prepared/Fast Food', slugName: japaneseVocabTopicSlugNames.food.subTopics.preparedFastFood, hasLoginLock: true },
 ];
 
 const FoodVocabularyGuide = () => {
@@ -73,7 +75,7 @@ const FoodVocabularyGuide = () => {
           >
             <div className={`flex justify-between items-start ${!topic.slugName ? 'text-gray-500' : ''}`}>
               <div className={`flex-1 h-[70px] ${consistentStyles.textBlack} ${topic.hasLoginLock && lingoCommandHasLoginLock && !userIsLoggedIn ? 'ml-6 md:ml-8' : ''} flex items-center justify-center`}>
-                {topic.Name}
+                {topic.name}
               </div>
               {/* LockIcon aligned at the top-right */}
               {topic.hasLoginLock && lingoCommandHasLoginLock && !userIsLoggedIn && (

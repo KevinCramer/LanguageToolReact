@@ -9,17 +9,17 @@ import { useNavigate } from 'react-router-dom';
 import useWindowWidth from '../../../hooks/useWindowWidth';
 
 interface Topic {
-  Name: string;
+  name: string;
   slugName: string;
   hasLoginLock: boolean;
 
 }
 
 const allTopics: Topic[] = [
-  { Name: 'Verbs I', slugName: japaneseVocabTopicSlugNames.verbs.subTopics.verbs1, hasLoginLock: true },
-  { Name: 'Verbs II', slugName: japaneseVocabTopicSlugNames.verbs.subTopics.verbs2, hasLoginLock: true },
-  { Name: 'Verbs III', slugName: japaneseVocabTopicSlugNames.verbs.subTopics.verbs3, hasLoginLock: true },
-  { Name: 'Verbs IV', slugName: japaneseVocabTopicSlugNames.verbs.subTopics.verbs4, hasLoginLock: true },
+  { name: 'Verbs I', slugName: japaneseVocabTopicSlugNames.verbs.subTopics.verbs1, hasLoginLock: true },
+  { name: 'Verbs II', slugName: japaneseVocabTopicSlugNames.verbs.subTopics.verbs2, hasLoginLock: true },
+  { name: 'Verbs III', slugName: japaneseVocabTopicSlugNames.verbs.subTopics.verbs3, hasLoginLock: true },
+  { name: 'Verbs IV', slugName: japaneseVocabTopicSlugNames.verbs.subTopics.verbs4, hasLoginLock: true },
 ];
 
 const VerbVocabularyGuide = () => {
@@ -72,7 +72,7 @@ const VerbVocabularyGuide = () => {
           >
             <div className={`flex justify-between items-start ${!topic.slugName ? 'text-gray-500' : ''}`}>
               <div className={`flex-1 h-[70px] ${consistentStyles.textBlack} ${topic.hasLoginLock && lingoCommandHasLoginLock && !userIsLoggedIn ? 'ml-6 md:ml-8' : ''} flex items-center justify-center`}>
-                {topic.Name}
+                {topic.name}
               </div>
               {/* LockIcon aligned at the top-right */}
               {topic.hasLoginLock && lingoCommandHasLoginLock && !userIsLoggedIn && (
