@@ -1,6 +1,6 @@
 import { consistentStyles, lingoCommandHasLoginLock, mobileBreakPoint } from '../../../constants';
 import { setBackwardRoute, setForwardRoute } from '../../../redux-store/route';
-import { japaneseVocabTopicSlugNames } from '../../../data/structured-data/words';
+import { japaneseVocabTopicSlugNames } from '../../../data/structured-data/wordsAndPhrases';
 import LockIcon from '@mui/icons-material/Lock';
 import PageTitle from '../../../components/atoms/PageTitle';
 import { useAuth } from '../../../contexts/AuthContext';

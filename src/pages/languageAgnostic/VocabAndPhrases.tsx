@@ -5,7 +5,7 @@ import { setBackwardRoute, setForwardRoute } from '../../redux-store/route';
 import { Topic, VocabLanguage, Word, WordWithThreeWritingSystems } from '../../../types/learningSections/VocabTypes'
 import { useEffect, useRef, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { languages as allLanguages, japaneseVocabTopicSlugNames } from '../../data/structured-data/words';
+import { languages as allLanguages, japaneseVocabTopicSlugNames } from '../../data/structured-data/wordsAndPhrases';
 import LockIcon from '@mui/icons-material/Lock';
 import { nullOrUndefined } from '../../helpers/audio-player-helpers'
 import QuizElement from '../../components/atoms/QuizElement';
