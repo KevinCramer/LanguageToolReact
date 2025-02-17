@@ -520,7 +520,7 @@ const japaneseTopics: TopicWithThreeWritingSystems[] = [
       { englishWord: 'to invite', foreignWord: ['shootai suru', 'しょうたいする', '招待する'], foreignAudio: '' },
     ]  
   },
-  { name: 'Verbs VI', slugName: japaneseVocabTopicSlugNames.verbs.subTopics.verbs4, hasOrdering:false, hasLoginLock: true, isAlphabet: false, words: 
+  { name: 'Verbs VI', slugName: japaneseVocabTopicSlugNames.verbs.subTopics.verbs6, hasOrdering:false, hasLoginLock: true, isAlphabet: false, words: 
     [  
       { englishWord: 'to plan', foreignWord: ['keikaku suru', 'けいかくする', '計画する'], foreignAudio: '' },
       { englishWord: 'to prepare', foreignWord: ['junbi suru', 'じゅんびする', '準備する'], foreignAudio: '' },
