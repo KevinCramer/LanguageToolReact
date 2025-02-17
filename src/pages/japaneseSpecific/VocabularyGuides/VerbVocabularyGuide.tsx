@@ -20,6 +20,8 @@ const allTopics: Topic[] = [
   { name: 'Verbs II', slugName: japaneseVocabTopicSlugNames.verbs.subTopics.verbs2, hasLoginLock: true },
   { name: 'Verbs III', slugName: japaneseVocabTopicSlugNames.verbs.subTopics.verbs3, hasLoginLock: true },
   { name: 'Verbs IV', slugName: japaneseVocabTopicSlugNames.verbs.subTopics.verbs4, hasLoginLock: true },
+  { name: 'Verbs V', slugName: japaneseVocabTopicSlugNames.verbs.subTopics.verbs5, hasLoginLock: true },
+  { name: 'Verbs VI', slugName: japaneseVocabTopicSlugNames.verbs.subTopics.verbs6, hasLoginLock: true },
 ];
 
 const VerbVocabularyGuide = () => {
