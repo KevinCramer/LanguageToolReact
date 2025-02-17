@@ -306,14 +306,12 @@ const japaneseTopics: TopicWithThreeWritingSystems[] = [
 
   { name: 'Bedroom', slugName: japaneseVocabTopicSlugNames.home.subTopics.bedroom, hasOrdering:false, hasLoginLock: true, isAlphabet: false, words: 
     [  
-      { englishWord: 'alarm clock', foreignWord: ['mezamashidokei', 'めざましどけい', '目覚まし時計'], foreignAudio: '' },  
       { englishWord: 'bed', foreignWord: ['beddo', 'ベッド', 'ベッド'], foreignAudio: '' },  
       { englishWord: 'bedroom', foreignWord: ['shinshitsu', 'しんしつ', '寝室'], foreignAudio: '' },  
       { englishWord: 'blanket', foreignWord: ['mofu', 'もうふ', '毛布'], foreignAudio: '' },  
       { englishWord: 'ceiling', foreignWord: ['tenjo', 'てんじょう', '天井'], foreignAudio: '' },  
       { englishWord: 'closet', foreignWord: ['kurozetto', 'クローゼット', 'クローゼット'], foreignAudio: '' },  
       { englishWord: 'dresser', foreignWord: ['doressaa', 'ドレッサー', 'ドレッサー'], foreignAudio: '' },  
-      { englishWord: 'hanger', foreignWord: ['hangaa', 'ハンガー', 'ハンガー'], foreignAudio: '' },  
       { englishWord: 'lamp', foreignWord: ['ranpu', 'ランプ', 'ランプ'], foreignAudio: '' },  
       { englishWord: 'nightstand', foreignWord: ['naitosutando', 'ナイトスタンド', 'ナイトスタンド'], foreignAudio: '' },  
       { englishWord: 'pillow', foreignWord: ['makura', 'まくら', '枕'], foreignAudio: '' },  
@@ -325,8 +323,6 @@ const japaneseTopics: TopicWithThreeWritingSystems[] = [
     { englishWord: 'bathroom', foreignWord: ['basuruumu', 'バスルーム', 'バスルーム'], foreignAudio: '' },  
     { englishWord: 'bathtub', foreignWord: ['yokuso', 'よくそう', '浴槽'], foreignAudio: '' },  
     { englishWord: 'mirror', foreignWord: ['kagami', 'かがみ', '鏡'], foreignAudio: '' },  
-    { englishWord: '(water) pipe', foreignWord: ['suidokan', 'すいどうかん', '水道管'], foreignAudio: '' },  
-    { englishWord: 'shampoo', foreignWord: ['shanpuu', 'シャンプー', 'シャンプー'], foreignAudio: '' },  
     { englishWord: 'shower', foreignWord: ['shawaa', 'シャワー', 'シャワー'], foreignAudio: '' },  
     { englishWord: 'sink', foreignWord: ['senmenjo', 'せんめんじょ', '洗面所'], foreignAudio: '' },  
     { englishWord: 'soap', foreignWord: ['sekken', 'せっけん', '石鹸'], foreignAudio: '' },  
@@ -337,12 +333,10 @@ const japaneseTopics: TopicWithThreeWritingSystems[] = [
     [  
       { englishWord: 'bowl', foreignWord: ['bouru', 'ボウル', 'ボウル'], foreignAudio: '' },  
       { englishWord: 'cabinet', foreignWord: ['todana', 'とだな', '戸棚'], foreignAudio: '' },  
-      { englishWord: 'drain', foreignWord: ['haisuiko', 'はいすいこう', '排水口'], foreignAudio: '' },  
       { englishWord: 'freezer', foreignWord: ['reitoko', 'れいとうこ', '冷凍庫'], foreignAudio: '' },  
       { englishWord: 'fridge', foreignWord: ['reizoko', 'れいぞうこ', '冷蔵庫'], foreignAudio: '' },  
       { englishWord: 'frying pan', foreignWord: ['furaipan', 'フライパン', 'フライパン'], foreignAudio: '' },  
       { englishWord: 'kitchen', foreignWord: ['daidokoro', 'だいどころ', '台所'], foreignAudio: '' },  
-      { englishWord: 'lid', foreignWord: ['futa', 'ふた', '蓋'], foreignAudio: '' },  
       { englishWord: 'oven', foreignWord: ['obun', 'オーブン', 'オーブン'], foreignAudio: '' },  
       { englishWord: 'sauce pan', foreignWord: ['sosupan', 'ソースパン', 'ソースパン'], foreignAudio: '' },  
       { englishWord: 'stove', foreignWord: ['konro', 'こんろ', 'コンロ'], foreignAudio: '' }  
@@ -351,15 +345,12 @@ const japaneseTopics: TopicWithThreeWritingSystems[] = [
   { name: 'Living Room', slugName: japaneseVocabTopicSlugNames.home.subTopics.livingRoom, hasOrdering:false, hasLoginLock: true, isAlphabet: false, words: 
     [  
       { englishWord: 'carpet', foreignWord: ['kaapetto', 'カーペット', 'カーペット'], foreignAudio: '' },  
-      { englishWord: 'fire place', foreignWord: ['danro', 'だんろ', '暖炉'], foreignAudio: '' },  
       { englishWord: 'living room', foreignWord: ['ribingu ruumu', 'リビングルーム', 'リビングルーム'], foreignAudio: '' },  
       { englishWord: 'painting', foreignWord: ['kaiga', 'かいが', '絵画'], foreignAudio: '' },  
-      { englishWord: 'recliner', foreignWord: ['rikurainingu chea', 'リクライニングチェア', 'リクライニングチェア'], foreignAudio: '' },  
       { englishWord: 'shelf', foreignWord: ['tana', 'たな', '棚'], foreignAudio: '' },  
       { englishWord: 'sofa', foreignWord: ['sofa', 'ソファ', 'ソファ'], foreignAudio: '' },  
       { englishWord: 'staircase', foreignWord: ['kaidan', 'かいだん', '階段'], foreignAudio: '' },  
       { englishWord: 'tv', foreignWord: ['terebi', 'テレビ', 'テレビ'], foreignAudio: '' },  
-      { englishWord: 'vase', foreignWord: ['kabin', 'かびん', '花瓶'], foreignAudio: '' }  
     ]  
   },
   { name: 'Furniture', slugName: japaneseVocabTopicSlugNames.home.subTopics.furniture, hasOrdering:false, hasLoginLock: true, isAlphabet: false, words: [  
@@ -367,8 +358,6 @@ const japaneseTopics: TopicWithThreeWritingSystems[] = [
     { englishWord: 'bed', foreignWord: ['beddo', 'ベッド', 'ベッド'], foreignAudio: '' },  
     { englishWord: 'chair', foreignWord: ['isu', 'いす', '椅子'], foreignAudio: '' },  
     { englishWord: 'desk', foreignWord: ['tsukue', 'つくえ', '机'], foreignAudio: '' },  
-    { englishWord: 'furniture', foreignWord: ['kagu', 'かぐ', '家具'], foreignAudio: '' },  
-    { englishWord: 'garbage can', foreignWord: ['gomiire', 'ごみいれ', 'ゴミ入れ'], foreignAudio: '' },  
     { englishWord: 'sofa', foreignWord: ['sofa', 'ソファ', 'ソファ'], foreignAudio: '' },  
     { englishWord: 'table', foreignWord: ['teburu', 'テーブル', 'テーブル'], foreignAudio: '' }  
   ] },
